@@ -1,0 +1,15 @@
+node_modules
+.next
+out
+coverage
+.env
+.env.local
+.env.*.local
+*.log
+*.tsbuildinfo
+.DS_Store
+
+# Local environment copies and package caches
+.env*
+!.env.example
+.pnpm-store/

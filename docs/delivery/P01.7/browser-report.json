@@ -1,0 +1,30 @@
+{
+  "scope": "Two unconfigured local production applications; not real Auth/MFA acceptance",
+  "checks": [
+    "Public /admin:404 without redirect",
+    "Public /admin/security:404 without redirect",
+    "Public /admin/audit:404 without redirect",
+    "Public /api/admin/summary:404 without redirect",
+    "Public /api/admin/audit:404 without redirect",
+    "Public homepage has no admin entry link",
+    "Docs release1.7 and all three new documents respond",
+    "Public workspace honest unconfigured state retained",
+    "Admin root redirects locally to its login",
+    "Admin login only; no public signup/docs/workspace links",
+    "Admin /workspaces:404",
+    "Admin /bizoveya/docs:404",
+    "Admin /start:404",
+    "Admin /projects:404",
+    "Admin data APIs fail closed and reject unsupported writes",
+    "No fabricated admin authorization/data",
+    "Admin login mobile fits viewport",
+    "Web docs mobile fits viewport"
+  ],
+  "screenshots": [
+    "web-docs-dark.png",
+    "admin-login-desktop.png",
+    "admin-login-mobile.png"
+  ],
+  "errors": [],
+  "passed": true
+}

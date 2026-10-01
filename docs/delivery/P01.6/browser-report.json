@@ -1,0 +1,79 @@
+{
+  "startedAt": "2026-10-01T08:41:02.815Z",
+  "scope": "Actual local browser: public document room and unconfigured admin/workspace screens. No real Auth, MFA or tenant session acceptance.",
+  "checks": [
+    {
+      "name": "Current release/count agree with canonical source",
+      "status": "passed",
+      "detail": {
+        "version": "1.6",
+        "documents": 32
+      }
+    },
+    {
+      "name": "Document dark theme persists after reload",
+      "status": "passed"
+    },
+    {
+      "name": "Category filters and empty search recover",
+      "status": "passed"
+    },
+    {
+      "name": "Document navigation and detail release metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Architecture Mermaid diagram renders",
+      "status": "passed"
+    },
+    {
+      "name": "Document overview fits 390px viewport",
+      "status": "passed"
+    },
+    {
+      "name": "Route tables stay inside mobile scrolling containers",
+      "status": "passed"
+    },
+    {
+      "name": "Admin skip navigation and honest setup state",
+      "status": "passed"
+    },
+    {
+      "name": "Admin theme persists after reload",
+      "status": "passed"
+    },
+    {
+      "name": "Admin secondary routes expose only setup state",
+      "status": "passed"
+    },
+    {
+      "name": "Admin setup fits mobile viewport",
+      "status": "passed"
+    },
+    {
+      "name": "Workspace setup and theme persistence",
+      "status": "passed"
+    },
+    {
+      "name": "Unconfigured APIs fail closed and reject unsupported writes",
+      "status": "passed"
+    },
+    {
+      "name": "No browser page/console errors on tested paths",
+      "status": "passed"
+    }
+  ],
+  "screenshots": [
+    "docs-desktop-light.png",
+    "docs-desktop-dark.png",
+    "docs-mobile-dark.png",
+    "admin-setup-desktop-dark.png",
+    "admin-setup-mobile-light.png",
+    "workspace-setup-mobile-dark.png"
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "browserVersion": "153.0.8010.0",
+  "status": "passed",
+  "finishedAt": "2026-10-01T08:41:17.282Z"
+}

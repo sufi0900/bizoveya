@@ -1,0 +1,1 @@
+export default function WorkspaceLoading() { return <main className="bz-loading" role="status" aria-live="polite"><span className="bz-kicker">BIZOVEYA</span><h1>Opening your workspace…</h1><p>Loading your sites and permissions.</p></main>; }

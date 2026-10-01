@@ -1,0 +1,14 @@
+{
+  "name": "bizoveya-phase1-verification",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:sql": "node run-sql.mjs",
+    "test:browser": "node run-browser.mjs"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.8",
+    "playwright": "1.62.1"
+  }
+}

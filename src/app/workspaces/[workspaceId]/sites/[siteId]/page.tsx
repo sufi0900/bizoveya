@@ -1,0 +1,15 @@
+import Link from "next/link";
+import { ArrowUpRight, ShieldCheck } from "lucide-react";
+import { canWriteWorkspace, siteCapabilityLabel } from "@/domain/workspaces";
+import { loadWorkspacePage } from "@/features/workspaces/page-data";
+import { getSite } from "@/features/workspaces/store";
+import { WorkspaceFrame } from "@/features/workspaces/frame";
+import { SetupNotice, WorkspaceHeading } from "@/features/workspaces/views";
+import { SiteEditForm } from "@/features/workspaces/forms";
+export const dynamic = "force-dynamic";
+export default async function SitePage({ params }: { params: Promise<{ workspaceId: string; siteId: string }> }) {
+  const { workspaceId, siteId } = await params; const state = await loadWorkspacePage(`/workspaces/${workspaceId}/sites/${siteId}`, (db, userId) => getSite(db, userId, workspaceId, siteId));
+  if (!state.ready) return <WorkspaceFrame><SetupNotice message={state.message} /></WorkspaceFrame>;
+  const { workspace, site, canOpenStudio } = state.value;
+  return <WorkspaceFrame email={state.email} workspace={workspace}><WorkspaceHeading eyebrow={`${site.kind.toUpperCase()} WEBSITE · ${site.status.toUpperCase()}`} title={site.name} description={siteCapabilityLabel(site)} action={canOpenStudio && site.project_id && <Link className="bz-button" href={`/studio/${site.project_id}`}>Open existing Studio<ArrowUpRight size={17} aria-hidden="true" /></Link>} /><div className="bz-detail-layout"><section className="bz-panel bz-details"><h2>Site record</h2><dl><div><dt>Mode</dt><dd>{site.mode.replaceAll("_", " ")}</dd></div><div><dt>Access</dt><dd>{site.mode === "external" ? "Public URL only · no connector grant" : canOpenStudio ? "Your owned portfolio" : "Registry metadata only"}</dd></div><div><dt>Record version</dt><dd>{site.version}</dd></div><div><dt>Site ID</dt><dd className="bz-mono">{site.id}</dd></div></dl>{site.url && <a className="bz-card-link" href={site.url} target="_blank" rel="noopener noreferrer">Visit website<ArrowUpRight size={16} aria-hidden="true" /></a>}<div className="bz-callout"><ShieldCheck size={20} aria-hidden="true" /><p>{site.mode === "native_business" ? "This is a planning record. Business building and publishing are not implemented yet." : site.mode === "external" ? "No remote content has been read or changed. CMS, GitHub and social connections will be added in later phases." : canOpenStudio ? "Studio editing and publishing use the existing portfolio controls and owner permissions." : "Only the original portfolio owner can enter Studio. Linking does not change those permissions."}</p></div></section><section className="bz-panel bz-form-panel"><h2>Manage this record</h2>{canWriteWorkspace(workspace.role) ? <SiteEditForm site={site} /> : <p>Your workspace role is read-only.</p>}</section></div></WorkspaceFrame>;
+}

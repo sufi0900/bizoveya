@@ -1,0 +1,1307 @@
+{
+  "package": "Bizoveya_1.3_Dependencies-and-Transition-Plan.zip",
+  "phase": "P01.3-Plan documentary preparation; P01.3 workspace not implemented",
+  "recorded_at_pkt": "2026-10-01T00:25:27+05:00",
+  "baseline_filename": "Bizoveya_1.2_Discussion-and-Backend-Plan.zip",
+  "baseline_sha256": "4cd2fa8445c557a5fdcc06c947a4591455dbd454a15d98b33c4999feaaf10fc1",
+  "baseline_files": 304,
+  "changed_existing_files": [
+    {
+      "path": "bizoveya-platform/README.md",
+      "before_sha256": "cd57bd8d7e49993370f66b12c527993126b5a88e74ec57ac1a0eec6bce95a62d",
+      "after_sha256": "2ad92edfe78f0e91879bd266cbb54c28a522bdc6d424c0aebcd548ec7f07a165"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/00_INDEX.md",
+      "before_sha256": "c7554506bb2868422c831cdafb2195f65c8682b6fdbd7988e07928b29f56a4b9",
+      "after_sha256": "0d7ae7b3dc876f5a4fa24faf9739794336d07ab38b61452cd1ab8d2b3acedd20"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/01_ORIGIN_AND_PRODUCT.md",
+      "before_sha256": "8f46b718ddb28d255c049e2f32f42e5036e0afef35185a516b6a118be19a7675",
+      "after_sha256": "5ef28235cbdabbf84eccac34800f5d0c7c21a323a1ea17f1ffc1a4279bf0382e"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/02_REQUIREMENTS.md",
+      "before_sha256": "b1e628e8141230a2479deeabd382b6ff541aa097a0508e42f726a7af8a0da546",
+      "after_sha256": "56022f4105e67aec21e228e044020b5d47e7f2a980e194ab1cc9281af5a1bddd"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/03_EXPERIENCE_AND_ROUTES.md",
+      "before_sha256": "07d5e86b1eb45f4ecbe8b2f85e9409aa88f850ab1321ed87a88433eb48005afa",
+      "after_sha256": "f18c85ede42c9c4216b787d5967587de3e7399c76fa26327509ae886efd84ef2"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/04_SYSTEM_ARCHITECTURE.md",
+      "before_sha256": "f46225d63eacf6dfd090cc84a8628e09092429cc26bd332363cf43732b103a9d",
+      "after_sha256": "6788f326675df73d6f76f699f3d2f4cb69c43d2638cb42c82de000142ee7cdf0"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/05_DATA_AND_MEMORY.md",
+      "before_sha256": "22d3fef775fdb9da4fb8f87627cbf5752bec2ae4597193acc93fd7a5f35dd9db",
+      "after_sha256": "6518b3d661fb65526a6473ccca1d8efea1ceae206960e26a040910f1bc816c9e"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/06_AGENT_OPERATIONS.md",
+      "before_sha256": "1045d6ec04a7e67c52fd62c6cc3a0d061bd89dfa426ff06c9ae2ba01480654df",
+      "after_sha256": "1e3b1c01ab57fcde46b7865d7f25fe858055d0052afea3b901afba4b80f4f7b7"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/07_CONNECTORS_AND_SITE_MODES.md",
+      "before_sha256": "e501538458dc163adda32b5d0a515380649de63c6440dc380cb996eb628e1b5f",
+      "after_sha256": "22a68337b9af752e2e80b194478b4e5f546381da504f450f9df1e1e284c9daf7"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/08_TECH_STACK_AND_SECURITY.md",
+      "before_sha256": "6228a05ffb26b499e716cb7e659495fcc0a2b84b8f543d9408d68616278958e6",
+      "after_sha256": "a2690d49b48a38c16a499da0e06b0be8f2abc9d0ccbc16a991c6b35a17998fa5"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/09_DESIGN_AND_BRAND.md",
+      "before_sha256": "b6d1dae6e4505bae2003bcd50fc567763d1d4bf0c16106a7fb212c158d959c23",
+      "after_sha256": "db9f1d680eef2b7619d0514bcf7b05c7fc7692e149205a59e76755d11344813d"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/10_PHASES_AND_STATUS.md",
+      "before_sha256": "b029c7c265ba90312ca3c2e8dbc12bab0494533f9f38b249263b94f1ddf830c9",
+      "after_sha256": "b89dc113c1d32a97b36d6badbf981882b01f9232a479d84132deb1d134a906dc"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/11_VERIFICATION_AND_RELEASE.md",
+      "before_sha256": "001f196efee2a3eedc6c4ea25d295f4b0f6952e34dc0c112ee341d8aa5512f9f",
+      "after_sha256": "8c0e7bf3171d449365327b66b6a3031958546ba24173c19a08db4b9686c0430e"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/13_USER_MANUAL.md",
+      "before_sha256": "cf1b83d4cc19dfeef67351ba77e47d970d139e8fae317cb509db25340baa8bea",
+      "after_sha256": "d471623a736209885e5501621e31b068c3793022422200fb93d0e00c9eeae2ab"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/14_OPERATING_RUBRIC.md",
+      "before_sha256": "804d3858db87462e30be657c438d7a38ccc9713e2a9b8ece93caeba94c6de609",
+      "after_sha256": "4c041b05904949feb6f6b647dda7e15b8141d2e226eee9542565e1d23e326948"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/16_DOCUMENT_PORTAL.md",
+      "before_sha256": "0b07049df92c55d5afc9f7a2139e4498a73ccea54a8ae7fc12d49dd5cafefc6f",
+      "after_sha256": "9e924095507f15185a53ae704c15fd62a477129d3151bbc82cd35b718fa53a8f"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/17_DISCUSSION_AND_DECISION_RECORD.md",
+      "before_sha256": "eaef7b8cb8abd4fd3ba08683e7b81020ba7758092ded009e86c2a93b561eb62e",
+      "after_sha256": "2b31e11fde1a05cd89a622a1a19062eaea8de5df67d2b8304a4e3f5a57ab98c8"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/18_BACKEND_AND_ADMIN_CONTROL.md",
+      "before_sha256": "12746f7d8b2b7cf8023e625bbf3db1f6b83f4bf513b6339962ffe2e12ac6b4a5",
+      "after_sha256": "c0557c1b40b21bb0fbab57aed092f18a8e17d81bb688750745fa1c6406092154"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/ACTIVITY_LOG.md",
+      "before_sha256": "1db6bc317322445aa606eac5df6b26d5e2ad5516520b78aaa686943683f03a23",
+      "after_sha256": "124e0512c01e950814ff4ccff5b4007e2319b5b5cac10654085e112a60b26e94"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/CHANGELOG.md",
+      "before_sha256": "f851c2b5c0eb3a8b301810d41a2c0ba3c2c3bb2192fa442cdc21523e42d8857e",
+      "after_sha256": "b76358141b5c2c0c2448d9bdbc6da5d7ff5dbef65fc7518c52deb3f4b4543eed"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/COMPLETED_WORK.md",
+      "before_sha256": "d70b119c3119ef695fb1b1910e85898132dda0775488a3913b0d2c6de606aa43",
+      "after_sha256": "f3e9eb28e642220284344af6ed6b071e57c9ca6c205d6bc44dd90ae8d6dba47d"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/OPEN_QUESTIONS.md",
+      "before_sha256": "700cdd80f96cc3cfae9eb7d2ed6ff41ef7f4d8ad6c73d8ad220429e3fd8effa4",
+      "after_sha256": "bb8135c5c0c5d0c6a8fae1ac8a5fa8b149e46895103892dc03ab25ed5cab0308"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/PACKAGE_VERSIONS.md",
+      "before_sha256": "bff87e37e7cf4749fe5224915965b3c7b7fd4d311950b58b7be4b9bf261d3205",
+      "after_sha256": "6a379283f8bdabdc6d2f560f67c9284e4c7a4d99e6e7649b6e2237759c03f58c"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/PHASE_HANDOFF_TEMPLATE.md",
+      "before_sha256": "93753f12f9a107915ff8087956f7158ab0751a828f92b88aa0a5059d322e89d0",
+      "after_sha256": "a5e4dc11e4b17aa7467fbaac304db79fa0528f6f751469dff11b7fa206a0e341"
+    }
+  ],
+  "new_markdown_files": [
+    {
+      "path": "bizoveya-platform/docs/platform/19_DEPENDENCIES_AND_CHANGE_IMPACT.md",
+      "sha256": "48444af92430893b54de72e1cedda52c97b27d6d8ae452f96a95069dbafb71e8"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/20_ROUTE_AND_TRANSITION_REGISTER.md",
+      "sha256": "f6487aa7726afe134d0417ffd3a26a70e25db4aa08aa8fd0e5f47d35404d5f37"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/decisions/ADR-0003-transition-and-dependency-traceability.md",
+      "sha256": "483349a521500c8fefa45d1dee587afa1f7188c67d24b3baa8cc3c7744d1b049"
+    }
+  ],
+  "unchanged_files": [
+    {
+      "path": "bizoveya-platform/.env.example",
+      "sha256": "98ea191596b9c4ab418df53ae433e46f936c91f7152b6834c523d88e9d7ff8ce"
+    },
+    {
+      "path": "bizoveya-platform/.gitignore",
+      "sha256": "ff815b83738fc7c6f6c85607388980d34e43fb590208daea4a3765b78f36ad49"
+    },
+    {
+      "path": "bizoveya-platform/docs/delivery/P01.2_VERIFICATION.json",
+      "sha256": "23f4578c0de46f73a4aa252fcc653dc9cdea18aa7ec305021a577e36372a6f0e"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/planning/PROJECT_DOCUMENTATION_BLUEPRINT.md",
+      "sha256": "bffc9d8fe44179bae1434b0eab545509f77e34e7ac722360e710ef768ee507ce"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/GIT_COMMIT_MESSAGE.txt",
+      "sha256": "bd0d3c2965e4b55ebd706ba53f8815f74131f748f3aa710723fabdbfe9620675"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/IMPLEMENTATION_AUDIT.md",
+      "sha256": "c10f19d44b1e3b0b79f261093769d324d76ca4b5efa38b13270f4748397bca86"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/MILESTONE.md",
+      "sha256": "5219546a6981c524349ca826bb3bc94a0712e921f0bf7343b4e8cf55ac0c1a8c"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/RELEASE_V24.md",
+      "sha256": "a077bef1454fec708e58d741672b3ac6f33726a9227980ccd518444987ec55dd"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/RELEASE_V24_2.md",
+      "sha256": "6aca4df3f4c91dd934e4f3d0865306fc8234920759babf51b4e5739d684377a3"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/RELEASE_V24_3.md",
+      "sha256": "bad5ac248a8649a74405871299f193dc2f8b147ed83d171b4023fee93edea4e4"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/RELEASE_V25.md",
+      "sha256": "f9136e47b028118b24534e850c99899776a7caa8a5339121d34016600fd8236f"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/RELEASE_V25_1.md",
+      "sha256": "d57b1fdd59a79c877514839f4d3b2a3031a02c7f99a67ebc490473098e8e8d08"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/RELEASE_V26.md",
+      "sha256": "9761d3ac09e0e1c45189298b2e178545ca9f785dd0fc2eb8e22fe86e7ef2b349"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/RELEASE_V27.md",
+      "sha256": "4466e240023117caf00a46ddc94d7202e38a9f06dcf7f649f733e773ffa1837d"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/RELEASE_V27_1.md",
+      "sha256": "491f91652df475368e769f4901707963236ffc560d70d577e0d34cbdc2183542"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/RELEASE_V27_10.md",
+      "sha256": "9773615db0142dc1db8a85c68081e160683216fe2e0ef850f090ada554713929"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/RELEASE_V27_11.md",
+      "sha256": "2669f2e74f21b6fc1c1e0f5593bae3885307bb80d25d4ab827648c841893becd"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/RELEASE_V27_12.md",
+      "sha256": "8e5b82264302e3b8c497fa7dd84fdacae6028f182f0be3f369c943fd26b4de2b"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/RELEASE_V27_2.md",
+      "sha256": "1f7894f14fa33bf2a83d02a3ea738999ec85f7f523e3e9b75cb3cc314143e37e"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/RELEASE_V27_3.md",
+      "sha256": "ff0891b5c91ad06f539a86f2775d770fe83c01d89c6964771b2f8f924f374fdc"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/RELEASE_V27_4.md",
+      "sha256": "d57592a4b8abe7a62af34516141ab5736d8e788eb0d2952a6d20f54699d0690a"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/RELEASE_V27_5.md",
+      "sha256": "123fe9798a79fe484e6debf16c78b9873da21e751ea8cf74b233b972ef702109"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/RELEASE_V27_6.md",
+      "sha256": "28040253a048455ac37dbc40535102451fd435326fbe5cc745dbf5cecf59285c"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/RELEASE_V27_7.md",
+      "sha256": "3f46229a94cff2103f4185afa5df84b842bdae23c9304cf9c607feb34c7c51bf"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/RELEASE_V27_8.md",
+      "sha256": "efbfd55a6baae6094e7a637e4692213243dbbacaec026756818a85c4606010f5"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/RELEASE_V27_9.md",
+      "sha256": "bf44a843d01598e48674d8cbfc4a7aa4e63dcb6ab484a2aba8ec0198cc5bf7a2"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/ROADMAP.md",
+      "sha256": "55cff04d5e9620398d3742e556408b119d1e415e982a88efa73e79f360f88e99"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/V18_1_RELEASE_NOTES.md",
+      "sha256": "0637c99caf31d9a85c5e5f070559c22f2d8eb8533287ed825c387be96e3d97f7"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/V18_2_RELEASE_NOTES.md",
+      "sha256": "42a3b2f01cc9838c9a136221a920a5a2c3ff719eb3e22c2ff4eaee6145c2d047"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/V18_RELEASE_NOTES.md",
+      "sha256": "b3924d5c192b07aa52752de94e7eb8a600fd66367f2ffd143720a8d04a565a77"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/V19_1_RELEASE_NOTES.md",
+      "sha256": "9a5c3fbbc60d27cf2183e39b68f5fcff8d1a696ba38b2397381454caee4c5068"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/V19_2_RELEASE_NOTES.md",
+      "sha256": "ef36920c918da7f9264d28e7948fa284a9f95ee984a7234a0fd39e24f6726bd1"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/V19_RELEASE_NOTES.md",
+      "sha256": "129b9184bed2ecb67a1345f04073a806c02db9659bd392779339f9bb89542ba6"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/V20_1_RELEASE_NOTES.md",
+      "sha256": "91426cf737677d434ad5e44ae2b868eb550c7919fe20e691a369c367bfba6c34"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/V20_2_RELEASE_NOTES.md",
+      "sha256": "4daf0b8e152a673443624668a755f6541a4b31dffddaa9e9faa87199d6a9356a"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/V20_3_RELEASE_NOTES.md",
+      "sha256": "f0240e73239845c0f4f5b9fef1fe4949508bd5d5a3132b263605a9698dc80da1"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/V20_RELEASE_NOTES.md",
+      "sha256": "c3a12a9e8870a5a60cfeb379969c57450ed1ffaab1d897bd58c2487ca91f0d86"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/V21_RELEASE_NOTES.md",
+      "sha256": "6156b1abbcd5989baab256dc6cecd2b1037eedb575ee0d5c96ec22c7067ed115"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/V22_RELEASE_NOTES.md",
+      "sha256": "b1936d912c04ca67ae8a542c977e4ef3f268decd7f8f56ed5da8ab3f9595f279"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/V23_1_RELEASE_NOTES.md",
+      "sha256": "c2105c2396bfbd5aaad2c67c6000f3389da45874145ba2792730b018d794dd27"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/V23_2_RELEASE_NOTES.md",
+      "sha256": "771f27394d4cb83c7992a2efcb823a1fd3119a6f5c1ad8e07a602c5570bbfdae"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/V23_RELEASE_NOTES.md",
+      "sha256": "2f027b3988616ca77e8083755fd1ba77ad816f8bd939e2ca13f5a0356e060238"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/V26_ARCHITECTURE.md",
+      "sha256": "79b58610f3ae0a5bbb830f5f0feaf80c813132ff03605abfdda93f06f927d3b6"
+    },
+    {
+      "path": "bizoveya-platform/docs/history/voxfolio-v27-and-earlier/Voxfolio_Next_Implementation_Architecture.docx",
+      "sha256": "5a4dc429d8b195ea8ed7f16f97ca394acd53790847e706d997002abca28190b0"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/12_HACKATHON.md",
+      "sha256": "9abb85eae9f7363054e1d37d7159eb97e5a440dc4e672e8262fa3b8dfd2352d8"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/15_COMMERCIAL_PRESENTATION.md",
+      "sha256": "2485c3acc5f558b4a56d0f67f277ca3669e6b0ffcecbb45ac5f1864d9a1dac71"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/decisions/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/decisions/ADR-0001-provisional-brand-and-preserved-baseline.md",
+      "sha256": "30fe2c06c877a56be33aee151f9a26d57fa7632b07b5e54ab49bb053dea54463"
+    },
+    {
+      "path": "bizoveya-platform/docs/platform/decisions/ADR-0002-configurable-agents-and-admin-control.md",
+      "sha256": "380c8cf3a3fd77a5b3ebc84296522920bcbc52997e20a2f1107d07659815c4fe"
+    },
+    {
+      "path": "bizoveya-platform/eslint.config.mjs",
+      "sha256": "72e1fdac399a9ca28dd17d9154b859f2dec2a5d47a7a9123d514d310d9cb66d9"
+    },
+    {
+      "path": "bizoveya-platform/next-env.d.ts",
+      "sha256": "85ae5aee75f011967cf2d25cbc342f62d69314e9d925f7f4aa3456fc2cffcca6"
+    },
+    {
+      "path": "bizoveya-platform/next.config.ts",
+      "sha256": "29c52536efcb72089d4890381708be9e6b313b0eeaf896995226c06fe0fc729a"
+    },
+    {
+      "path": "bizoveya-platform/package.json",
+      "sha256": "0a054609cfc278634d31de9e1f1895e90b811dc29be62bc77c4226a67ea5cf3b"
+    },
+    {
+      "path": "bizoveya-platform/pnpm-lock.yaml",
+      "sha256": "cca280e249c980fc77bff9dbc331bb4686de50e29955d273afe1ac24b0565831"
+    },
+    {
+      "path": "bizoveya-platform/pnpm-workspace.yaml",
+      "sha256": "671c4cec0b2df2d6b0817458ff51569389f92846fac4e8fd218247dc4ca8d803"
+    },
+    {
+      "path": "bizoveya-platform/public/pcm-processor.js",
+      "sha256": "56d89e716ba868075cc00985ef282768487a19807e9b042a95f0c53d314b6d23"
+    },
+    {
+      "path": "bizoveya-platform/scripts/check-bundle-budget.mjs",
+      "sha256": "79abe415d6f83ba7383a3575a88d5254a515d5e67b218fa1cea70638f448e183"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/assemblyai/onboarding-token/route.test.ts",
+      "sha256": "d9920193f25eb7b81c459ff38eda7587332963ba5f1ee526dd572ecf84cc4f75"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/assemblyai/onboarding-token/route.ts",
+      "sha256": "8b2c2f6d80722dd7e1ce94d117f5a67498dc04d5f6d6bb014dcb038bb84e2cea"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/assemblyai/session/[sessionId]/route.ts",
+      "sha256": "ae56cc74303f52e976b325c32f8741ce3b119a122ba06adedc4183ede04cda1c"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/assemblyai/token/route.ts",
+      "sha256": "d8740fa3e865ef2854a13760f8366a1613b8b8ae76fa70fb37c3fb6b50ad5a1f"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/assistant/chat/route.ts",
+      "sha256": "f87f5e003abd38d5e3029b8d4147918d0f6a5ce8fdba5d04a3b3ba006a7bd4ad"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/connect/command/route.ts",
+      "sha256": "eefa82af87665e5dc95e7978f48dcf2679a4e70b168b20c50bad54b4f3923ac1"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/connect/openapi/route.ts",
+      "sha256": "dfb4f4d3216448998dd409bd47e8e01ba86bc442b04bc8cd438c91d48ea1728e"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/connect/portfolio/route.ts",
+      "sha256": "fe579e34282214ce65905ce161e55620c646e6bd243dee2f39d1f8bd6b85ab1b"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/content/blog-draft/route.ts",
+      "sha256": "fceb7eaa67a40a0813c10ccc8132bad43db4837e19b49509c3e67f3356635b81"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/content/polish/route.ts",
+      "sha256": "48fd090bd0a1ee5f1d9b058b9c7f7ddb2d4e3ce1a7caabe273fabaf093a0f525"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/cv/extract/route.ts",
+      "sha256": "07efce9dd176736aa8925e59e4d1597f76db263c5b412ee05a196ab428ffcf5a"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/projects/[projectId]/agent-health/route.ts",
+      "sha256": "25b6c00288dce5315161d260e2abc93029610a5f04694512fc72867782a6d059"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/projects/[projectId]/connections/route.ts",
+      "sha256": "18996d161092418e26237a1e4422d045aa6e85337fd67011d876ccd233a73280"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/projects/[projectId]/headshot/route.ts",
+      "sha256": "7a3eae0b41232c30be46eac5437d2bc2cf228f146a3c3119d68e1a6ae288d5be"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/projects/[projectId]/media/route.ts",
+      "sha256": "780eaf3290449ea36bd161f33097771f2563b8a5887a1b9587e694c9066b4bf2"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/projects/[projectId]/memory/route.ts",
+      "sha256": "03ffa5726cb5b94bc9cd3aea127898c0604a0f809828017ba359f234a9891032"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/projects/[projectId]/opportunity-plan/route.ts",
+      "sha256": "78a753ed0aecd8b44e9c5693e8af10dc33ce6b81875bc67e4ab49f63f17ee41a"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/projects/[projectId]/publish/route.ts",
+      "sha256": "a72b61dc255b0a503700ab7bc98f10820ec4ccced861d614b1fc7833b7b69445"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/projects/[projectId]/revisions/route.ts",
+      "sha256": "5f86d6c96d2d03a98b39246de06495cae8981678a3168416c9fc307065e692ad"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/projects/[projectId]/route.ts",
+      "sha256": "7ad3932f9425900b23e92ac866bf804cc59b2befe0ee9aaa6055a560b9ec0a1c"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/projects/[projectId]/shares/[shareId]/feedback/route.ts",
+      "sha256": "5be4957eb0fac6361af570c717b7496b344031205fcff4386494e2b75b1db561"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/projects/[projectId]/shares/route.ts",
+      "sha256": "2b4849c7f641f97c5d5517d80ccdf46460a71fa2af6494ce4a7f1817b843d4e0"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/projects/[projectId]/source-review/route.ts",
+      "sha256": "a71ff34de0c681315db69d6bdf991877db2f92e0eeffd12f4aac1d943454e345"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/projects/[projectId]/variants/route.ts",
+      "sha256": "66681c5b3beb85da570676139809b3feab8262b90ea0cbf08fcf0425eec7c68c"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/projects/[projectId]/visitor-documents/route.ts",
+      "sha256": "2081b30cb0f1631d9ddc312e42d356276254a9fae77f0cbb529daa80f62df6bb"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/projects/[projectId]/visitor-extract/route.ts",
+      "sha256": "1c60e60fe7e0d4e77bedb963649afb81ebfe28c3bae71f262dc2f7077c9a357c"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/projects/route.ts",
+      "sha256": "94366e8e87069f1f1d7f5b21ea02658fe28715f64acb5d7d07a679260f8d6131"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/shares/[token]/feedback/route.ts",
+      "sha256": "5e7dff46d3d3d227bb862a6492433da17ac6ed28936f5ea6b6c9274a430c1f15"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/visitor/[slug]/ask/route.ts",
+      "sha256": "816e9f59f8d52e1cb1da09e630a435561034c049bbdfe7901e8389f3d3320380"
+    },
+    {
+      "path": "bizoveya-platform/src/app/api/visitor/[slug]/token/route.ts",
+      "sha256": "dee70527103e38ce24429c85fbc83da192786662ebb05470afbbdf1ce1d79611"
+    },
+    {
+      "path": "bizoveya-platform/src/app/bizoveya/docs/[slug]/page.tsx",
+      "sha256": "1cdc4c4f70527058210ae41ad6b77060e7f04174c0289a5c57826b06afbb7e02"
+    },
+    {
+      "path": "bizoveya-platform/src/app/bizoveya/docs/document-room.css",
+      "sha256": "e42e51460cf8a5efd05aa8863921526971d0223156d90bab930c8fc60697ea0f"
+    },
+    {
+      "path": "bizoveya-platform/src/app/bizoveya/docs/page.tsx",
+      "sha256": "ec504559780b61f946e6fae5540da49756b015f59e024c2196e0f7e083a99a9b"
+    },
+    {
+      "path": "bizoveya-platform/src/app/claim/claim-demo.tsx",
+      "sha256": "d2b42a7206188e9b6ad2cfef123fa1dac885ec6e7584ca34d10647d3fcee7977"
+    },
+    {
+      "path": "bizoveya-platform/src/app/claim/page.tsx",
+      "sha256": "c19d4d0f401ab1463104c3ede75104930b4799281e60422e994df12e662dcfd8"
+    },
+    {
+      "path": "bizoveya-platform/src/app/globals.css",
+      "sha256": "8f701da896a1cc52175ac3717328008622da497e9455753c57c43df906d5bd73"
+    },
+    {
+      "path": "bizoveya-platform/src/app/icon.tsx",
+      "sha256": "3b9ba436849a7c5560ccad9e69dd12f9ef247d47c8fd392c91211d8438feaf01"
+    },
+    {
+      "path": "bizoveya-platform/src/app/layout.tsx",
+      "sha256": "7463f1c19f91469c2a8eeb5b9e5538a81fec665e8669dcd8bb05c0d3d3acdf3d"
+    },
+    {
+      "path": "bizoveya-platform/src/app/login/auth-form.tsx",
+      "sha256": "9c1f3679f40a170501e2cf425d2bab7bc8655d2028a8deb5ce99b368dc530ad7"
+    },
+    {
+      "path": "bizoveya-platform/src/app/login/page.tsx",
+      "sha256": "6889bd8fd817e868d3e68cc82705e1e01647c836aaa4ebc7c398530cda46bb5f"
+    },
+    {
+      "path": "bizoveya-platform/src/app/manifest.ts",
+      "sha256": "9f3d186f1cc0b8710da46078d05edde551b4030b1c8598ee63f1a42a3fe4785a"
+    },
+    {
+      "path": "bizoveya-platform/src/app/p/[slug]/blog/[postSlug]/page.tsx",
+      "sha256": "1fdbdc38516d5e275cb7be1f7a76ec1c5ab8dd677134b39f67f2ba8a873dd0ab"
+    },
+    {
+      "path": "bizoveya-platform/src/app/p/[slug]/blog/page.tsx",
+      "sha256": "00f6c3b023575b38f0ff5ba13b4e0c012d069b1687977f459a32157dd8c79384"
+    },
+    {
+      "path": "bizoveya-platform/src/app/p/[slug]/opengraph-image.tsx",
+      "sha256": "adb5cdbe52d3f11db190cae54eda2f1a59c1e81ceb662373fa2ba14a278c1d55"
+    },
+    {
+      "path": "bizoveya-platform/src/app/p/[slug]/page.tsx",
+      "sha256": "1254da1b7999ff55241ba5f7f3a80578c7836a7ce71cb41465f80831ed9b3863"
+    },
+    {
+      "path": "bizoveya-platform/src/app/p/[slug]/pages/[pageSlug]/page.tsx",
+      "sha256": "437561975d5ad86886e25289201b84a0278e68583b88734f72408f8353fc1269"
+    },
+    {
+      "path": "bizoveya-platform/src/app/p/[slug]/projects/[projectSlug]/page.tsx",
+      "sha256": "3aa9591a2e34f428d11fc05a74b4d16075c21cf5363098f15ba046b059b9eae1"
+    },
+    {
+      "path": "bizoveya-platform/src/app/p/[slug]/projects/page.tsx",
+      "sha256": "96109caac2df7eba22ce2bd59e70f8c6b38440b287c8c5a2983005605f577cc5"
+    },
+    {
+      "path": "bizoveya-platform/src/app/page.tsx",
+      "sha256": "dba535afdb511de49d0dcc2fce6644c4fec7b4e3001cb50961a52c5d29b05aaa"
+    },
+    {
+      "path": "bizoveya-platform/src/app/projects/[projectId]/settings/page.tsx",
+      "sha256": "9d773b027e78268a57f884c7f025486f8fe16d93a3bd8690d8cd49a13a2e9e0d"
+    },
+    {
+      "path": "bizoveya-platform/src/app/projects/page.tsx",
+      "sha256": "e730f82a78cb9869361522d7ad06f1e228c53e7f2630a8cac4ff96bf7f9e2d6b"
+    },
+    {
+      "path": "bizoveya-platform/src/app/projects/project-dashboard.tsx",
+      "sha256": "af36d6b8d035efde460dc7299962736952531ba2c484fcef1a98094311698e82"
+    },
+    {
+      "path": "bizoveya-platform/src/app/robots.ts",
+      "sha256": "9c2f9e1b99bc30da469b575fd58fdb10fd44c4e549a94b12bafa360800e34903"
+    },
+    {
+      "path": "bizoveya-platform/src/app/s/[token]/[[...path]]/page.tsx",
+      "sha256": "c8076b247afa9057dd40da401fd36bc6132fb2447a197fe3b5eb5e297e7bdddd"
+    },
+    {
+      "path": "bizoveya-platform/src/app/sitemap.ts",
+      "sha256": "e02a99d877232ac705e4972f282e877eec684ed5b91be7a8db80874de16544ec"
+    },
+    {
+      "path": "bizoveya-platform/src/app/start/creation-flow.tsx",
+      "sha256": "d762a75859344c51c841aab53780f6aa5c56427ea0a77497ce28f7f9a73c891f"
+    },
+    {
+      "path": "bizoveya-platform/src/app/start/guided-interview.tsx",
+      "sha256": "bcfa72ee380843c0af34a68c6a4b565caa6a515bd7faf3b9ecbc41f20b16b0f5"
+    },
+    {
+      "path": "bizoveya-platform/src/app/start/page.tsx",
+      "sha256": "70b658d76f191b0a48f2c71bb993e8e2bb5fb92f658129d530e948d93222c553"
+    },
+    {
+      "path": "bizoveya-platform/src/app/start/vox-guided-interview.tsx",
+      "sha256": "00e005862ade4887cd9148a699b00e14bbcfa1e8865b6b8f6737e48f6efd2a9c"
+    },
+    {
+      "path": "bizoveya-platform/src/app/studio/[projectId]/page.tsx",
+      "sha256": "add3e30ff8454cff58d50b9599269e4db90b71df18a1fa52b61f28b05063798f"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/blog-writing.test.ts",
+      "sha256": "a392a4c7cef6ef9c8f299e75112b3978437c30ff94134d9bf819b869acd2a527"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/blog-writing.ts",
+      "sha256": "75adef30f046694100f38d521e3337d971a4adbe62ab86076971a4a523aef705"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/commands.test.ts",
+      "sha256": "1426dc85c630e32c436396b5f99fcb122f2431ffede86bef56f741e5a891f2d4"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/commands.ts",
+      "sha256": "e6d163fbc0ce8f9b1dfad65bf47391e0d61ceedf53a70114402565801c6a460b"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/cv-ingestion.test.ts",
+      "sha256": "b78485182499c82d811328de5613a947bf9bb2abfdd3252be44cf11fe9e81fcd"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/cv-ingestion.ts",
+      "sha256": "3cce43ff4e13af4b7d67d55e364ec74d833916f9124949640d7cef434f10395e"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/guided-interview.test.ts",
+      "sha256": "629ca35f3d06adab50eec49324d53fedeb826468af412f93d56e82a4f02437b4"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/guided-interview.ts",
+      "sha256": "31459a5027d6c36c0791f88f8a8fc27741c17d3f504d3bf51bfef530b749dbb8"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/legacy-rich-document.ts",
+      "sha256": "9a494fa75307c7a17d82fdf53e841c04f35d7d80cf2a083b26eea42b491ff8e4"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/media.test.ts",
+      "sha256": "addf76f9b6cbe108755725318aeed782461a955b5faa5c28843b0565f36dd7c1"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/media.ts",
+      "sha256": "26c7d7611c059fab687c01c9ad9c8734ab06efd73ac7a08552b1475cd1134c0c"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/opportunity-plan.test.ts",
+      "sha256": "e54da735494d12cdaba9660a921f50e47e01a3d0ef1a243cd1323397ca9b10d5"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/opportunity-plan.ts",
+      "sha256": "c1dc436be0fc6c60bdfeffd5821fa43f7536ed395926ffe4490d84550b2db562"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/opportunity-review.test.ts",
+      "sha256": "8e3e4d9e2e4fe78da336b128c94d0abf1dcfc59134b4346f8b958485f3505362"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/opportunity-review.ts",
+      "sha256": "5aeec8b4ec8ecfdd6e1467959d698e35bc05546f191f3ee6df7e6ab7a442bfc5"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/opportunity-share.test.ts",
+      "sha256": "67702bd8bdf16f24bd3c423d5ba8b29df981ef6bff0bf932f7560ce114b7108c"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/opportunity-share.ts",
+      "sha256": "a307d3bdc55da3acd56dda5c7151e94c47ed1c77002c129e22d8913c3299d126"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/opportunity-source-review.test.ts",
+      "sha256": "767042ebe97646c03d944677f9dc62da48b50f2afbcd8df4bf56348cad955bb6"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/opportunity-source-review.ts",
+      "sha256": "6b8e0d656010acee5717e1c690457e4ed8b9ef84101d3953a2c1ed3edd281097"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/opportunity-variant.test.ts",
+      "sha256": "2cbd031e2add87cb40d65afe285e0ed1701c44528e2e86d0cf9c782331c3edb2"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/opportunity-variant.ts",
+      "sha256": "ac2cf905fbfe03cabc5bc17b84035707d85c51c033cd1c7b756b48c78accc2f1"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/opportunity.ts",
+      "sha256": "ead0ad2759150f968fade916ebb2089a18fc4dd8b2e2df9d584793f01f694b78"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/project-creation.test.ts",
+      "sha256": "e9999544c9a7a802c3d231bce2f0524611515a396c4c5933a28c6bbc5edf0d72"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/project-creation.ts",
+      "sha256": "8ef008d3a467596d51d27335aa5129406b6cbede21667e72f0a65d499ae7afed"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/publication-selection.test.ts",
+      "sha256": "d09fdd56999d3336499ea6429702fe2c5865ee4eba080f5eb7825266e32c2315"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/publication-selection.ts",
+      "sha256": "91f7fc94564cf972e10bf61e73db4a378408385483cb8b9b9e61e9af6e9e3956"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/publication.test.ts",
+      "sha256": "489d0e7e31d9700f5bbbc680bbc7640745d988f52c457558e4edb34d0d9da0ec"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/publication.ts",
+      "sha256": "d79f738b17e02d9dc249f318959702bf95a0cff3551ccfa87995589b8026295f"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/revision-history.test.ts",
+      "sha256": "5219b45190f0fd27587dc25870c0f7a5f76db0f0062ad2bb936195ef96e08f68"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/revision-history.ts",
+      "sha256": "07fe420f062f9dd7f4fe82ec4a2ed3e61291c9f33f355356c5daf4754ab043cd"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/rich-document.ts",
+      "sha256": "1454f61086cc42db9339d3462b66befbc0cf1726f187d1100aa721d0b2e6a78f"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/site-document.ts",
+      "sha256": "1e9063ac2939274660ee72907a25823c56d84b23d8b4cbc9d349214975b3adc6"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/site-wide-replace.test.ts",
+      "sha256": "e6fd293c1cd51c1f96397a70998526423788128f47b1844feaa72e7461f9ca1c"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/site-wide-replace.ts",
+      "sha256": "c0998e3c1339d804c31b2f630656bc6e957f48dbec260d2a9674b6a413ac8a57"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/template-contracts.ts",
+      "sha256": "b2d5aa6fc8c7049c3dc71732dcb75ca37742a250d1368c34c671d8defee8e3cf"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/templates.test.ts",
+      "sha256": "706db9742ced8cb236349de6989b716213adf11a3417b60d59e49e60079a9cc6"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/templates.ts",
+      "sha256": "4c3b6d3e312357132cb8ae78063900ebad1d0ca7d6e3c64e712c232c101e5186"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/user-lifecycle.test.ts",
+      "sha256": "49b78e083684ccfce64d89e49377ca9f5487a0b0abb9031a00ad05d67fb8857c"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/user-lifecycle.ts",
+      "sha256": "ac08d0f75af963ba71001d7bcdd0c0c8abfdf78929134b752c7e283a7c84097c"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/voice-conversation.test.ts",
+      "sha256": "b3ba786fff96cb84d770082e2d00a4fa78f85ea42a47ee969119515644067964"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/voice-conversation.ts",
+      "sha256": "d0fc58d0a64d258ac86678b9c3f9d052826deb23f6bff92579c478672ac16481"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/voice-onboarding.test.ts",
+      "sha256": "d8e49f60e082e598d12add4229a6e5b232dc1bda5532b9eda99ecd4f7eaab220"
+    },
+    {
+      "path": "bizoveya-platform/src/domain/voice-onboarding.ts",
+      "sha256": "407fcbfd7e28bef9ef35870d123580cc33e6c9b10814f7e7abd21fe86d525957"
+    },
+    {
+      "path": "bizoveya-platform/src/features/content/document-editor.tsx",
+      "sha256": "6f68d60fdceab7b7b7ce3e4e80e9f8d91239c37a01f774c20b21ca09297da78a"
+    },
+    {
+      "path": "bizoveya-platform/src/features/content/inline-text.test.tsx",
+      "sha256": "71665b63aa18656614f717ad80f7b4e606e86bb56bd25e9184ece67f0aac6a44"
+    },
+    {
+      "path": "bizoveya-platform/src/features/content/inline-text.tsx",
+      "sha256": "69e55541aa4c83d0c6a9cb2bd33c659da4f2cb368ab0bc60affb029650138765"
+    },
+    {
+      "path": "bizoveya-platform/src/features/content/rich-document-view.tsx",
+      "sha256": "879ae9836324a571d24b683688ffb5316269c61ab0b187f64eebc138820c8800"
+    },
+    {
+      "path": "bizoveya-platform/src/features/content/rich-document.test.tsx",
+      "sha256": "9887561ab6a032e03e92bdb20e25484069bcf26890db8e9ddd4b5786a8e117a6"
+    },
+    {
+      "path": "bizoveya-platform/src/features/content/rich-text.tsx",
+      "sha256": "0988ca263b701e54d179e1d62166a39ab3f0bc2c77b4fbf766527d02ceaa0658"
+    },
+    {
+      "path": "bizoveya-platform/src/features/document-room/diagram.tsx",
+      "sha256": "f1fc293d80ba54a5f476779d774aef437ce244576b95d679a64a0271de14237b"
+    },
+    {
+      "path": "bizoveya-platform/src/features/document-room/documents.ts",
+      "sha256": "88ab8c0d9447cef6efe31202060f94cee40f192432a1b4ab598d7f45e9bd03be"
+    },
+    {
+      "path": "bizoveya-platform/src/features/document-room/explorer.tsx",
+      "sha256": "612ac2e4f22f363ce895ba16f29838ada0780186fea5e74b430a070a431618cb"
+    },
+    {
+      "path": "bizoveya-platform/src/features/document-room/insights.ts",
+      "sha256": "635bcf9d9e8b1a4ac6a1955195e916ae3eaf714f0bd351bdba37de8a2d0ac47f"
+    },
+    {
+      "path": "bizoveya-platform/src/features/document-room/markdown.tsx",
+      "sha256": "16d6e0c4b59580aa2362bbab97af1ff2251f3a4ecb0121df8ea0ec13c24de237"
+    },
+    {
+      "path": "bizoveya-platform/src/features/document-room/theme-switch.tsx",
+      "sha256": "5bb49f6d44d893e89e7ee0979afbf63240df445f3e65df453d080f9c9dc73ea6"
+    },
+    {
+      "path": "bizoveya-platform/src/features/document-room/visuals.tsx",
+      "sha256": "ebcd23637e93cecb7b07298c029b292a476d35461d991e7f1f17cb9409a0b4ec"
+    },
+    {
+      "path": "bizoveya-platform/src/features/portfolio/cinematic-backdrop.tsx",
+      "sha256": "4436ecb4b8ae11fba10836409273b5a6c754790d6681f27eba07c31c3d414af4"
+    },
+    {
+      "path": "bizoveya-platform/src/features/portfolio/collection-templates.css",
+      "sha256": "c41a0b5c49f2b8ede7187ce350305d3c0bc044287308e73825e9d37f79e791b0"
+    },
+    {
+      "path": "bizoveya-platform/src/features/portfolio/collection-templates.test.tsx",
+      "sha256": "884ba2809b439eb227f701337a7ab6e9488e493504e346744169a62fa71b3441"
+    },
+    {
+      "path": "bizoveya-platform/src/features/portfolio/collection-templates.tsx",
+      "sha256": "1b5fbc97f34c01330d8b2798182dc4bf7b7924c8b96f0b931187745370897134"
+    },
+    {
+      "path": "bizoveya-platform/src/features/portfolio/homepage-journal.tsx",
+      "sha256": "0931f6c2a8034f8fbdda8246d7a413c279936abe3f87f31744de84ccdcd8106c"
+    },
+    {
+      "path": "bizoveya-platform/src/features/portfolio/portfolio-sections.tsx",
+      "sha256": "ceab08465c80017669ae2593f3ecaa3cfa85c2121a1fcd67a221f914c36b8f65"
+    },
+    {
+      "path": "bizoveya-platform/src/features/portfolio/professional-hero-aside.tsx",
+      "sha256": "024dd5590103c0ca445580d04e59c19fd3ed6db590eefd3ad7ce28ae609e38a1"
+    },
+    {
+      "path": "bizoveya-platform/src/features/portfolio/professional-portfolio-sections.test.tsx",
+      "sha256": "a0549e39a40134e6c7e74c70c09d310e1929a83c09a84bdb8eae385cc27bd011"
+    },
+    {
+      "path": "bizoveya-platform/src/features/portfolio/professional-portfolio-sections.tsx",
+      "sha256": "dcb4aa4b38784304f7bebefeac40cbd1354409e51db66574451aeaf467171c79"
+    },
+    {
+      "path": "bizoveya-platform/src/features/portfolio/section-cinema-engine.ts",
+      "sha256": "3cff1f7add70be2461591ea5d8f70be1eae558abcc7845a6a63def5edf4a456c"
+    },
+    {
+      "path": "bizoveya-platform/src/features/portfolio/section-cinema-math.test.ts",
+      "sha256": "6c31ce7e0f184a459d3aa9e68e485e00f8a547836a8e6e9c18c48a410fc86140"
+    },
+    {
+      "path": "bizoveya-platform/src/features/portfolio/section-cinema-math.ts",
+      "sha256": "35484bbbca2d188810ac1bbef959beba5c384cb3552ad6da99181757c823e9f3"
+    },
+    {
+      "path": "bizoveya-platform/src/features/portfolio/section-cinema-velocity.css",
+      "sha256": "6c5bcea632bb22f258f077eff8a33c0f0152447ea49d8ac306f3ee9b194f4524"
+    },
+    {
+      "path": "bizoveya-platform/src/features/portfolio/section-cinema.css",
+      "sha256": "d8623fe2a7a51dc2b1c9892337d6ba655f7b899db206d87835955ffec2e4774e"
+    },
+    {
+      "path": "bizoveya-platform/src/features/portfolio/section-cinema.test.tsx",
+      "sha256": "e59c67bb48876da1060850238f8b86e184fefbb37ae08fe4737240956b383be8"
+    },
+    {
+      "path": "bizoveya-platform/src/features/portfolio/section-cinema.tsx",
+      "sha256": "5241b773f109532a750ded80ecdc0487b3447fcd333c4b218dbe937d2021ee2d"
+    },
+    {
+      "path": "bizoveya-platform/src/features/public/public-case-study.tsx",
+      "sha256": "da6a4a28bead0f52e2c412edffb55a6c9409934ef95d91c1d0663a3612e6776a"
+    },
+    {
+      "path": "bizoveya-platform/src/features/public/public-content.tsx",
+      "sha256": "80bcc3c6f9e653121d437e495a69f7db227ed2b7e55cfc2b2e03599e03e06a2d"
+    },
+    {
+      "path": "bizoveya-platform/src/features/public/public-portfolio.tsx",
+      "sha256": "d6da6e0f3b8eadc59f593f9d596debca955c156a5a098376b1f2606130c0ef59"
+    },
+    {
+      "path": "bizoveya-platform/src/features/public/public-projects-index.tsx",
+      "sha256": "d7849ca83c1b2be43e97a16327faf3377b43b46817fb231c1cf1902e78d6a756"
+    },
+    {
+      "path": "bizoveya-platform/src/features/public/share-feedback-widget.tsx",
+      "sha256": "53a085085dcc7b4abc523b1800ead86986adbe98ab870d11f35f4a8788f9620e"
+    },
+    {
+      "path": "bizoveya-platform/src/features/public/visitor-vox.tsx",
+      "sha256": "696d7fbb1ce06296d818354c36c3ebb5bb8d225560718d23580e9a730dcdce1e"
+    },
+    {
+      "path": "bizoveya-platform/src/features/scene/aurora-archive.tsx",
+      "sha256": "80c5a86e6af045bab6d50bf9419748a4830ae3b1a1f38d8c4ef2df2213b970e2"
+    },
+    {
+      "path": "bizoveya-platform/src/features/scene/constellation-field.tsx",
+      "sha256": "a0e661db9767a609b3e69ce4cc264f360b905284f7460a4007e15c591b37857e"
+    },
+    {
+      "path": "bizoveya-platform/src/features/scene/kinetic-gallery.tsx",
+      "sha256": "6f14164e0619f6cc071a3110564a5c5ee255601759bea0ad7b29cd7b5b741757"
+    },
+    {
+      "path": "bizoveya-platform/src/features/scene/orbital-showcase.tsx",
+      "sha256": "ecc70b9bc1037af9220e07289ea8e518cf8f73e27906045bf9e684c6260d181d"
+    },
+    {
+      "path": "bizoveya-platform/src/features/scene/professional-2d.tsx",
+      "sha256": "fe1dc54d10a1e2ee727c41059d302c08864b97821135d1cf26e53510102c02f0"
+    },
+    {
+      "path": "bizoveya-platform/src/features/scene/scene-renderer.tsx",
+      "sha256": "94d578228f3125687e704de3a616165c6a74a0e380cbbbc41b110c0efbad9808"
+    },
+    {
+      "path": "bizoveya-platform/src/features/scene/velocity/car-geometry.test.ts",
+      "sha256": "6ea6a8ecd7dc1708cb1ea05561015674de1854c54830fb01e4e0fd509b51cde1"
+    },
+    {
+      "path": "bizoveya-platform/src/features/scene/velocity/car-geometry.ts",
+      "sha256": "e715d1f20bbe90eaf7c296b6340a7b01cdc3558f32383d5c1ec72eb01d05d3bc"
+    },
+    {
+      "path": "bizoveya-platform/src/features/scene/velocity/car-model.tsx",
+      "sha256": "0943db733160c17779301c34f0f6a0e55fe8692712182137b7d1a11c45b7c8ab"
+    },
+    {
+      "path": "bizoveya-platform/src/features/scene/velocity/car-parts.ts",
+      "sha256": "8682b09e867df5accf9fd0479dac921b4597b14b8f05f225cd6d1e8367c6997e"
+    },
+    {
+      "path": "bizoveya-platform/src/features/scene/velocity/spline.ts",
+      "sha256": "8c2df622ed30f56d2af881e86115d68e350704259ff64c66e1ffc77b110ab2c6"
+    },
+    {
+      "path": "bizoveya-platform/src/features/scene/velocity/studio-environment.ts",
+      "sha256": "b0a488978fd86dc1163b87ff8eda613ebcfb6c13eebf659eb708e43150e185cd"
+    },
+    {
+      "path": "bizoveya-platform/src/features/scene/velocity/textures.ts",
+      "sha256": "981f0a97fbaa569270646c13be4fb5823093c13c34adcc8ecb3a497ddeee44e8"
+    },
+    {
+      "path": "bizoveya-platform/src/features/scene/velocity/velocity-stage.tsx",
+      "sha256": "e41d3806878c58c8b4035d926c3faccbed5b60f23774972f929b6925e01225be"
+    },
+    {
+      "path": "bizoveya-platform/src/features/scene/velocity-roadster.tsx",
+      "sha256": "0c62d48ea621c56121e46ab1937338cc40b62ef0ee78902a76fdf0cdb14540cf"
+    },
+    {
+      "path": "bizoveya-platform/src/features/studio/agent-health.tsx",
+      "sha256": "eec289ce418f85accfd89361062d7937029b433a38a48fd0a28a86b537fe3677"
+    },
+    {
+      "path": "bizoveya-platform/src/features/studio/blog-writing-assistant.tsx",
+      "sha256": "e4640e9dfc9ed7c7a53b6e5788cbd6739f3cf39c0043b091a057a0ca402474fd"
+    },
+    {
+      "path": "bizoveya-platform/src/features/studio/drain-draft-queue.test.ts",
+      "sha256": "7bc7e2fce69957319b3cc94fe6e9dbdbb43dc69b5644136338e7634c5d868ff5"
+    },
+    {
+      "path": "bizoveya-platform/src/features/studio/drain-draft-queue.ts",
+      "sha256": "83b3cd54b9f9d0c03e90f455ce956f88384d009b0e9a5d672dfc5acb6ed6e303"
+    },
+    {
+      "path": "bizoveya-platform/src/features/studio/gpt-connection.tsx",
+      "sha256": "fa6d403e3870a90b867055787f3b45b537875c120930c7eeab0386808c5f15f0"
+    },
+    {
+      "path": "bizoveya-platform/src/features/studio/manual-controls.tsx",
+      "sha256": "399f69cc2360948c173313eff5075f2fe4962726fcc0ccccb5c59ffbd5699087"
+    },
+    {
+      "path": "bizoveya-platform/src/features/studio/opportunity-planner.tsx",
+      "sha256": "a3b7fe9515fb436c4d1364c3d76334dfbbe33906156c52c097dd2cb2f7e73f47"
+    },
+    {
+      "path": "bizoveya-platform/src/features/studio/opportunity-share-consent.tsx",
+      "sha256": "c23c13bd103f5a07301c4029aeb483990df54418b37011d2a493745294eec7ff"
+    },
+    {
+      "path": "bizoveya-platform/src/features/studio/opportunity-share.tsx",
+      "sha256": "dfec3472479e924b4bef8e7c7fd8818df0824ecdf440e15ca1e281e14dfbec41"
+    },
+    {
+      "path": "bizoveya-platform/src/features/studio/opportunity-source-review.tsx",
+      "sha256": "6ee72ee99044241e4d95a2904b428189f0bc77df6d98dd062d65dcbc3ef03543"
+    },
+    {
+      "path": "bizoveya-platform/src/features/studio/portfolio-studio.tsx",
+      "sha256": "6e680447497ee0ddba562f6f20102e7d34a8beca924f1e61e720b91c1f0f6b2d"
+    },
+    {
+      "path": "bizoveya-platform/src/features/studio/preview-navigation.test.ts",
+      "sha256": "c084ce2530a97deffd34495a8459d6586a9569ec3facdd39270bddc081103887"
+    },
+    {
+      "path": "bizoveya-platform/src/features/studio/preview-navigation.ts",
+      "sha256": "9323ec5c18f2f2c5bfd541b9ad8a1fcaad353165ee20ea27163094ae8d1acdf3"
+    },
+    {
+      "path": "bizoveya-platform/src/features/studio/professional-memory.tsx",
+      "sha256": "078bfe414bd1d369d58a76807493cfbce48ef7cd297ef16f3129a8e4f5b74e23"
+    },
+    {
+      "path": "bizoveya-platform/src/features/studio/publishing-editor.tsx",
+      "sha256": "96f6b764385d6aa9151b4952dadd72b09bc485e5d6e4b65c850fd8f551c271cc"
+    },
+    {
+      "path": "bizoveya-platform/src/features/studio/revision-history.tsx",
+      "sha256": "dc5ccf52efb2c4fc428cb44377343fd0f44af6552cc2c200c5888823171cee60"
+    },
+    {
+      "path": "bizoveya-platform/src/features/studio/studio-reducer.ts",
+      "sha256": "bd0c379b56e1539899f192b1cf65b47c17b5c78c58fdd5acc4e02dc44b324311"
+    },
+    {
+      "path": "bizoveya-platform/src/features/studio/use-draft-save.ts",
+      "sha256": "f5d33fdcb5c1687dac45a841fdfc870ffebb8d3067e4164044612a484239bd7e"
+    },
+    {
+      "path": "bizoveya-platform/src/features/studio/visitor-knowledge.tsx",
+      "sha256": "0a0a2b0236fa1a21891e23811d4bb79a22fd9df0139743a0118187930aab7c19"
+    },
+    {
+      "path": "bizoveya-platform/src/features/voice/assistant-sounds.ts",
+      "sha256": "d4920db082466f12e5e0950ac54bde21861a3ec38f9cb3cc2ebdc52096e2f1a0"
+    },
+    {
+      "path": "bizoveya-platform/src/features/voice/assistant-steps.test.ts",
+      "sha256": "fafeb1a49ce91bf5b81afaf1989c9f25d1d16a63f90804154484ac0582382c4c"
+    },
+    {
+      "path": "bizoveya-platform/src/features/voice/assistant-steps.ts",
+      "sha256": "246a861d11e7ae319e045db602b10b6cd900d71e8b6eec0cab64d4060dae1b32"
+    },
+    {
+      "path": "bizoveya-platform/src/features/voice/local-assistant.test.ts",
+      "sha256": "3ef36464de9def5eec6c5263ce7e1c6e6885b5d6a55fe9b11f6ac71a40742192"
+    },
+    {
+      "path": "bizoveya-platform/src/features/voice/local-assistant.ts",
+      "sha256": "407d015f356395f72eb3425cb5458e9997a590a88310ad2d052cf9476686e3dd"
+    },
+    {
+      "path": "bizoveya-platform/src/features/voice/task-context.test.ts",
+      "sha256": "683af117cde378d132062275163ec5fb80e549794a09258395d274ba82991ecf"
+    },
+    {
+      "path": "bizoveya-platform/src/features/voice/task-context.ts",
+      "sha256": "8046d6cc93d8b5fd0cc04647e47bab9ac8341dfd371dffd42926b80611e86301"
+    },
+    {
+      "path": "bizoveya-platform/src/features/voice/use-assemblyai-agent.ts",
+      "sha256": "01a0b181453fff54c608047017d1289fbd32dcb1825a1e26ff59ce7a8f27bfd9"
+    },
+    {
+      "path": "bizoveya-platform/src/features/voice/voice-panel.tsx",
+      "sha256": "c2bb30885a81f02ea25c09cd9cbb7a8d4e13c09c5e931e04190e2af5537d37d8"
+    },
+    {
+      "path": "bizoveya-platform/src/features/voice/voice-tools.test.ts",
+      "sha256": "c761d8238f1a7bbe3ef9d0355409a215021d9246544d54d759455fe852fc3a28"
+    },
+    {
+      "path": "bizoveya-platform/src/features/voice/voice-tools.ts",
+      "sha256": "ffa325caf7af5167630f359367d7756928889708220778d6f96b445493d1fa2d"
+    },
+    {
+      "path": "bizoveya-platform/src/lib/agent-events.ts",
+      "sha256": "8d33e5927462726cb3a64183eee6b8d2ae13ab6741f9658727e755ea7d28b308"
+    },
+    {
+      "path": "bizoveya-platform/src/lib/agent-provider.test.ts",
+      "sha256": "66a1f22dfb91403e1f09b7a40f2ef597309d4d8cab5ba6d4707496f65c1528c2"
+    },
+    {
+      "path": "bizoveya-platform/src/lib/agent-provider.ts",
+      "sha256": "7ec37db8bdccd30c01e61f4b2cf57608c2a7b5328b8d25a6be8546930af1fd42"
+    },
+    {
+      "path": "bizoveya-platform/src/lib/external-connection.ts",
+      "sha256": "d0db1949b590369921270cc9afc3a6f740f9208496be264228e9206cb7cf4fd6"
+    },
+    {
+      "path": "bizoveya-platform/src/lib/gemini.test.ts",
+      "sha256": "fa460a7b282ef7d5bc475c4dd9ad50633567f303bef5b453acd6cb57f6fd6c32"
+    },
+    {
+      "path": "bizoveya-platform/src/lib/gemini.ts",
+      "sha256": "c3abc78465caf9435856fc895ba65cf0195103bf2c69bcf0ce135ee4f963a3e5"
+    },
+    {
+      "path": "bizoveya-platform/src/lib/openai/cv-extractor.test.ts",
+      "sha256": "13260ac8daaa98eaeebe235d4809020da708d249d69c2d845019ece92c429e80"
+    },
+    {
+      "path": "bizoveya-platform/src/lib/openai/cv-extractor.ts",
+      "sha256": "1c20554c93546a5e8209bc72ac8c9e116ddf6683a9738daa364f0a31fff18894"
+    },
+    {
+      "path": "bizoveya-platform/src/lib/openai-json.ts",
+      "sha256": "6fb60196da08201acd0ec7b666d98a12e93e31790b8a2c94932c202c1104d231"
+    },
+    {
+      "path": "bizoveya-platform/src/lib/professional-memory.ts",
+      "sha256": "df67e3a19a456b433b8a9e07d8e5d0ee0c90985af35efa996b123e58e714b56c"
+    },
+    {
+      "path": "bizoveya-platform/src/lib/publication-snapshot.ts",
+      "sha256": "1ccb1dc478e941cae9f6005dad9693877d74981a1b7f923c3d0731053873563f"
+    },
+    {
+      "path": "bizoveya-platform/src/lib/supabase/browser.ts",
+      "sha256": "6ea3748dc86db00cb2d78c016fbf338751dde4dc34c4aaacefdd09d94af9dcd1"
+    },
+    {
+      "path": "bizoveya-platform/src/lib/supabase/config.ts",
+      "sha256": "4ecc9f5f19433d2d118382495ef0a24be2b9581309190a5933282b648969e5cc"
+    },
+    {
+      "path": "bizoveya-platform/src/lib/supabase/server.ts",
+      "sha256": "8281b4c5a881c8e3884a28ab888a89cd15c260998747bb55182d6c1d645dff38"
+    },
+    {
+      "path": "bizoveya-platform/src/lib/visitor-document.test.ts",
+      "sha256": "4779c29fd46e9072a3c16b3afb31548152a38f8249a8d991a1954c9322abc70c"
+    },
+    {
+      "path": "bizoveya-platform/src/lib/visitor-document.ts",
+      "sha256": "3cd742aec9e76255bdb8b522bc622992f89a390a81b9c6db9385bceec6af4c23"
+    },
+    {
+      "path": "bizoveya-platform/src/lib/visitor-evidence.test.ts",
+      "sha256": "85130c5a1fbdd860e0c0727c89b752abb5303b27ea24f15b2a51528617d95fb5"
+    },
+    {
+      "path": "bizoveya-platform/src/lib/visitor-evidence.ts",
+      "sha256": "be8d34866f97b46f6df8d563c3eda11de62e097530e8f91dc71dd33b517bcf64"
+    },
+    {
+      "path": "bizoveya-platform/src/lib/visitor-rate.ts",
+      "sha256": "5796563612112c08b57774e66f1e0724495c969d61998f548f951daa191f8dd0"
+    },
+    {
+      "path": "bizoveya-platform/src/middleware.ts",
+      "sha256": "9952614c98b39daa2d2a257b4b825df44d9ef8072e3972e831ef03d2f599460b"
+    },
+    {
+      "path": "bizoveya-platform/supabase/migrations/001_projects.sql",
+      "sha256": "7bcd7239d01b18c5bb0b37558c589225ebb61d7d1e6d2b0ad5379efe49d3939c"
+    },
+    {
+      "path": "bizoveya-platform/supabase/migrations/002_publications.sql",
+      "sha256": "f8d4b224e4dc632a0a5bf5da793a0a698f20fd7b3e84a63fee3695443cf2b98a"
+    },
+    {
+      "path": "bizoveya-platform/supabase/migrations/003_revision_restore.sql",
+      "sha256": "95e1107ce76abd512be82569cc587ff3765cae18746b5af5404af85a7dd36b8d"
+    },
+    {
+      "path": "bizoveya-platform/supabase/migrations/004_portfolio_media.sql",
+      "sha256": "68eab3c329b0b2429835fabebd114fd594fe0e1517a9f96b247fad8043193264"
+    },
+    {
+      "path": "bizoveya-platform/supabase/migrations/005_fix_portfolio_media_policies.sql",
+      "sha256": "68eab3c329b0b2429835fabebd114fd594fe0e1517a9f96b247fad8043193264"
+    },
+    {
+      "path": "bizoveya-platform/supabase/migrations/006_opportunity_variants.sql",
+      "sha256": "e452e7ba7f59c245caca858224714525bee45ea6e7aa3b22b3b01dd7c59c63b0"
+    },
+    {
+      "path": "bizoveya-platform/supabase/migrations/007_private_opportunity_publication_guard.sql",
+      "sha256": "ebffd88c80e19e0ba6e8a87ca7932d30c6c4418d1423419509da5ae3a3089ca5"
+    },
+    {
+      "path": "bizoveya-platform/supabase/migrations/008_opportunity_share_tokens.sql",
+      "sha256": "3a983623815628a3fbd6aa15dae3fb1e5ebfde9bb1bfbce33242ccbfe6075510"
+    },
+    {
+      "path": "bizoveya-platform/supabase/migrations/009_professional_memory_agent_events.sql",
+      "sha256": "3c9145b53f698315c8f0e9eb9a55c3c9fea959b5cba402e74a9923e16da0d6c4"
+    },
+    {
+      "path": "bizoveya-platform/supabase/migrations/010_agent_activity_controls.sql",
+      "sha256": "bf37be10c0e3d76afdffaf985532e9302b9c98612cb1928e0b2b8030488c542f"
+    },
+    {
+      "path": "bizoveya-platform/supabase/migrations/011_selective_opportunity_refresh.sql",
+      "sha256": "d0f3b8d024230b786e910d7c5cfbe656e4ffeabc1f68570a67b89b7d35eb2e62"
+    },
+    {
+      "path": "bizoveya-platform/supabase/migrations/012_opportunity_share_feedback.sql",
+      "sha256": "25ebb8dd31e8e401b3bc1d8bcdbe4088b5eb3df81b3f144c8d0574d7d27e7f25"
+    },
+    {
+      "path": "bizoveya-platform/supabase/migrations/013_public_visitor_agent_limits.sql",
+      "sha256": "08eb0c9eea0fd7350aec733102c03b2e38348ae3b08f5e99f7eafbef5292307e"
+    },
+    {
+      "path": "bizoveya-platform/supabase/migrations/014_private_content_connections.sql",
+      "sha256": "f3093c44e63095c589cb2205c1a8dcb82e7425ea8a0ad8ea35efaef493e333e3"
+    },
+    {
+      "path": "bizoveya-platform/supabase/migrations/015_visitor_documents.sql",
+      "sha256": "0447eb4a7387b6c548dc25c45ffbf609539de2890adf6113a0fd533f5e79b8ca"
+    },
+    {
+      "path": "bizoveya-platform/supabase/migrations/016_publication_snapshot.sql",
+      "sha256": "a4b85a173a06e1d7939273eb78fcd335c2ae863244915ec2f3845d904dfafc0e"
+    },
+    {
+      "path": "bizoveya-platform/supabase/migrations/017_vox_interview_demo_sessions.sql",
+      "sha256": "caaed6c58817ca547a8b1521da1745afd7e1769c7b74c4e00dc95fa445e7750c"
+    },
+    {
+      "path": "bizoveya-platform/tsconfig.json",
+      "sha256": "48b7f07be255f22b817d9369107c143c738bc723486d95d3c23eb7b1005315bd"
+    },
+    {
+      "path": "bizoveya-platform/tsconfig.tsbuildinfo",
+      "sha256": "d8c9122a46618a0e8ed0ed082de0da670e8f2bb953e6467e55228f3aca683e01"
+    },
+    {
+      "path": "bizoveya-platform/vitest.config.ts",
+      "sha256": "d9f71dbe50b6b5164bfe4524ea10252432326aa75b8b011d9d9e88371acc4831"
+    }
+  ],
+  "checks": {
+    "markdown_files": 30,
+    "missing_local_markdown_links": 0,
+    "balanced_code_fences": true,
+    "route_ids_unique": true,
+    "observed_route_files": 45,
+    "planned_workspace_pages": 15,
+    "planned_admin_pages": 13,
+    "proposed_api_contracts": 19,
+    "all_application_dependencies_sql_assets_history_byte_identical": true,
+    "build_command": "node node_modules/next/dist/bin/next build",
+    "build_exit_code": 0,
+    "build_scope": "Existing installed dependencies; production compile, lint/types and static generation; not a clean install",
+    "static_document_pages": 30,
+    "all_document_overview_links": true,
+    "latest_route_entry_W015_generated": true,
+    "dashboard_CW011_BZ019_present": true,
+    "historical_files_not_projected": true,
+    "standalone_lint_command": "node node_modules/next/dist/bin/next lint",
+    "standalone_lint_exit_code": 0,
+    "lint_note": "Build lint initially blocked by missing top-level plugin links in existing installed dependencies. Re-linked already-installed ESLint plugins locally (no package or lock changes); standalone lint passed with no warnings/errors. next lint emitted a CLI deprecation notice.",
+    "fresh_unit_tests": "Not run; app code unchanged. Earlier results remain historical.",
+    "browser_and_deployment": "Not verified",
+    "live_database_and_providers": "Not exercised"
+  },
+  "attempts": [
+    {
+      "result": "Initial launcher failed before build because dependency symlink target used a relative path from the wrong working directory; corrected without source change."
+    },
+    {
+      "result": "First successful build passed; final route-selector addition required a rebuild. Static coverage caught a missing visual table row: W-015 was separated by a blank line, so the existing renderer skipped the isolated row. The source/table formatting was corrected without changing application code."
+    },
+    {
+      "result": "A clean rebuild confirmed the issue was document formatting rather than caching; after correcting the row, the final production build and every route ID projection were verified."
+    }
+  ],
+  "build_diagnostics": [
+    "\u2a2f ESLint: Failed to load plugin 'react-hooks' declared in ' \u00bb eslint-config-next/core-web-vitals \u00bb /workspace/scratch/d9b71760f8f4/staging/bizoveya-platform/node_modules/.pnpm/eslint-config-next@15.5.25_eslint@9.39.5_supports-color@7.2.0__supports-color@7.2.0_typescript@5.9.3/node_modules/eslint-config-next/index.js': Cannot find module 'eslint-plugin-react-hooks' Require stack: - /workspace/scratch/d9b71760f8f4/revision-1.3/bizoveya-platform/__placeholder__.js Referenced from: /workspace/scratch/d9b71760f8f4/staging/bizoveya-platform/node_modules/.pnpm/eslint-config-next@15.5.25_eslint@9.39.5_supports-color@7.2.0__supports-color@7.2.0_typescript@5.9.3/node_modules/eslint-config-next/index.js"
+  ],
+  "standalone_lint_output": "`next lint` is deprecated and will be removed in Next.js 16.\nFor new projects, use create-next-app to choose your preferred linter.\nFor existing projects, migrate to the ESLint CLI:\nnpx @next/codemod@canary next-lint-to-eslint-cli .\n\n\u2714 No ESLint warnings or errors\n",
+  "zip_hash_note": "Self ZIP hash and exact creation time recorded in external handoff; cannot embed its own exact hash."
+}

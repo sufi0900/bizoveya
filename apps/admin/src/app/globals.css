@@ -1,0 +1,1 @@
+html,body{margin:0;padding:0;background:#0c111a} .ba-login{max-width:480px;margin:0 auto}.ba-login form{display:grid;gap:18px}.ba-login label{display:grid;gap:8px}.ba-login input{width:100%;box-sizing:border-box;border:1px solid var(--ba-line);border-radius:8px;background:var(--ba-bg);color:var(--ba-text);padding:12px;font:inherit}
