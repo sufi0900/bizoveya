@@ -1,5 +1,110 @@
 # Founder discussion: Muse concern to configurable operations
 
+## Current contract — 1.19 / P04.3.2
+
+This update supersedes conflicting older “current” blocks below; historical records remain unchanged. Admin-only spending controls are at `/admin/spending` and `/api/admin/spending`. Migration032 follows031; never rerun applied migrations. New connectivity tests require reviewed USD pricing and enabled limits. The ledger reserves a conservative estimate before a provider call, settles reported usage, and holds uncertain/overrun charges until evidence-based reconciliation. Customer draft generation and publishing remain disabled. See [39 Spending controls](39_SPENDING_CONTROLS_AND_TESTING.md).
+
+Founder reported all1.18 MT095–101 passed on2026-10-03; this is founder-reported local acceptance, not independent deployment verification. New MT102–109 remain pending. GitHub write access is restored; delivery uses `phase/p04-3-2-spending-controls`, not main. Main was inspected at1.7; this branch carries cumulative1.19 source. See38 and CONTINUATION for delivery state.
+
+
+## Historical snapshot — 1.18 / P04.3.1
+
+Reviewed model assignments are implemented at `/admin/bindings` and `/api/admin/bindings` on the separate admin host only. Migration 031 is additive after 030. An assignment pins a checked latest preview-approved agent version, matching-tier checked model profile, enabled credential-reference version and successful matching connectivity-test ID. Evidence must remain less than 24 hours old. Version changes, rotation, revocation or expiry require review; disable retains history. This is assignment configuration, not paid execution, budget enforcement or customer draft generation.
+
+Use [37 Agent model assignments](37_AGENT_MODEL_ASSIGNMENTS.md) for setup and pending MT095–101. Next are P04.3.2 spending controls, P04.3.3 durable text drafts, and P04.3.4 visual composition. Publishing remains deferred. The founder's successful local Gemini test is accepted only for the evidenced case; all other unevidenced manual tests stay pending.
+
+The founder approved one branch/PR per phase and six-hour continuation. GitHub reads succeeded but branch creation returned HTTP403 `Resource not accessible by integration`. No remote branch, commit or PR was created. The schedule was created then paused pending write access. See [38 Delivery and continuation](38_DELIVERY_AND_CONTINUATION.md). Earlier contracts below remain historical where superseded.
+
+
+## Current contract — package1.17 / P04.0
+
+P04.0 adds an admin-only model connectivity room at /admin/model-tests and /api/admin/model-tests. The saved provider/model uses the AI SDK with fixed OpenAI, Nebius Token Factory and Gemini adapters. It sends a fixed synthetic prompt, requests128 output tokens, waits20 seconds, makes no automatic retry/fallback, and stores redacted results with profile/reference versions, actor, reason and timestamps. No customer knowledge or prompt is sent. This is connectivity evidence, not quality evaluation, agent activation or a spending-budget implementation.
+
+Live tests default off. Explicit operator setup requires the selected private provider key plus an admin-only SUPABASE_SERVICE_ROLE_KEY for server-attested result recording, then BIZOVEYA_ENABLE_MODEL_TESTS=true and per-request pricing/charge acknowledgement. No secret-entry form exists. Named current admin+AAL2 is required; client roles cannot mark results passed. Additive030 enforces one running test and five attempts per UTC day platform-wide, durable request IDs, expiry/unknown states and version-sensitive evidence. Failures/unknown attempts still consume the attempt allowance and may be billed. Existing dailyBudgetCents remains planning metadata; monetary enforcement precedes customer runtime.
+
+Read36_MODEL_CONNECTIVITY_AND_TESTING.md for exact setup, supported evidence and MT087–094. All1.16 tests and earlier unevidenced founder gates stay pending; the founder is currently testing and has supplied no new pass results. Preserve001–029 and historical files. One cumulative ZIP/repository and the same two Vercel roots. No hosted SQL/deploy/provider request was performed by the assistant. Next implementation dependency: reviewed exact-model evidence, agent/profile binding, enforced monetary limits and durable draft runs, then visual output composition. The35 draft-only pilot and34 Studio/removal scope remain in force; publishing remains deferred.
+
+Earlier release contracts below are historical and superseded where they conflict with this current contract.
+
+
+## Historical contract — package1.16 / P02.5
+
+The initial new-website audience is freelancers, consultants and small digital-service agencies. Existing sites remain niche-independent registrations. P02.5 repairs Studio and adds owner-only permanent site-record removal: collapsible workspace navigation (collapsed on Studio entry), bounded independently scrolling panels, whole-card section selection, canvas-local selected-section scrolling, homepage Hero/FAQ placement rules, explicit legacy order repair, 120-character headline/320-character hero introduction with counters, bounded responsive photo frames with fitting/focus, optional shared HTTPS logo, sample-fill with confirmation/Undo, section navigation/mobile menu and focused Professional Practice/Creative Business styling. Shared rendering serves preview and existing snapshot publication. No silent legacy row rewrite or automatic sample save/publish.
+
+Additive029_business_studio_and_site_removal.sql preserves001–028. It accepts optional logo/photo metadata, keeps legacy read compatibility, enforces editorial rules on new saves/publication, and exposes owner-only version/name-confirmed bz_delete_site. Site removal cascades this site's business draft/public snapshots/history, knowledge/revisions/events and agent preferences, retaining a content-free owner-readable removal event. External hosting and original portfolio projects remain intact. This is permanent removal, not archiving/restoration. Old duplicate records are removed individually by their owner; no automatic merge.
+
+The first agent pilot is now drafts only for doitwithai.tools: blog, Pinterest copy+rendered graphic, LinkedIn post and rendered carousel/PDF. This phase documents the pilot; live model execution and visual generation are not implemented here. Five proposed roles (coordinator, writer, QA, Pinterest, LinkedIn) share a future visual composer. Social OAuth and CMS writes are not prerequisites for draft generation. Model provider qualification/binding/enforced budget and stored runs remain prerequisites. Multipage/custom collections/listing-entry/navigation/media uploads/gallery/video blocks remain planned; current business sites still have one homepage with section navigation.34 contains current repairs/manual cases;35 contains pilot briefs and owner-reviewable starter knowledge.30 remains cumulative.
+
+Founder reported all newly created Supabase files applied in the review; record this as founder-reported through028 setup, not independently verified database state. Studio/onboarding/deletion findings are open until owner retests1.16. Earlier unspecified acceptance/security gates remain pending. This is a living plan; subsequent founder instructions can revise it, with affected documents, code, migration, dependency and activity records updated together. One cumulative ZIP/repository, two existing Vercel app roots. No remote database/deployment/provider action performed.
+
+Earlier sections remain historical; this current contract supersedes conflicts.
+
+
+## Historical contract — package1.15 / P04.2.1
+
+Founder said continue at2026-10-02T20:36:22+05:00 without manual results. Assistant advanced planned P04.2 as boundedP04.2.1 candidate profiles/env references rather than selecting an unproven SDK or secret vault. This is a recorded implementation decision, not founder approval of hosted tests or a new provider claim. ADR-0012 explains remaining work.
+
+P04.2.1 adds model-profile preparation and fixed credential references on the separate admin host. /admin/models saves immutable candidate versions and checks syntax/reference eligibility; /admin/credentials enables/disables or records rotation of the three fixed platform references. All reads/writes require current named admin+AAL2 in server and SQL. No key value is stored in the database or accepted by these forms/APIs. Keys are optional server-only BIZOVEYA_NEBIUS_API_KEY, BIZOVEYA_OPENAI_API_KEY or BIZOVEYA_GEMINI_API_KEY variables managed privately in deployment settings. Presence checks return only a boolean for the current admin deployment, providerValidated:false and runtimeEnabled:false. They do not authenticate providers or prove model availability.
+
+No live calls, SDK runtime, secret-entry dashboard, actual provider revocation, model evaluation, profile-to-agent binding, fallback execution or enforced spend budget is implemented. Profiles remain candidates; tiers/token/budget values are future runtime metadata. Disabling a reference or recording rotation increments its version and invalidates prior dependent profile checks. Changing an environment variable alone is not detected as rotation; operator must redeploy and record it. Checks record current reference eligibility, not credential health. Admin scope remains separate from customer tenancy.
+
+Additive028_model_profiles.sql preserves001–027 and historical data.32 profile definitions/100 versions each; latest30 versions and100 events displayed, older records retained. Same cumulative source repository and two Vercel projects. Optional provider variables belong on admin server for presence checks; a future runtime deployment must be configured independently. No key is needed to test missing-key states; no provider call/spend performed. See33 for exact workflow/new MT068–074;30 accumulates all pending steps. No founder test result was supplied by the continuation request, so all unevidenced acceptance remains pending.50 previous current MD plus33 and ADR-0012 makes52 current sources after rebuild.
+
+Earlier sections retain history; this current contract supersedes conflicts.
+
+## Historical contract — package1.14 / P04.1
+
+Founder reported PC now on and pending tests in progress, then authorized next implementation. No pass/fail/file-application results given. Assistant chose the next planned P04.1 slice as preview-only configuration, preserving deferred runtime/credentials/SDK work; ADR-0011 records the scope distinction. Earlier Muse/model/admin discussions are preserved without adding new provider availability claims.
+
+P04.1 implements agent configuration and readiness only. The separate admin host has /admin/agents: versioned drafts, schema/capability checks, human approval for context preview, review events, revocation and rollback to a previously checked version. Three migration-authored starter drafts (coordinator, content, quality) begin unchecked and unapproved. A saved edit creates a new immutable version; previous preview approval remains pinned until explicitly changed or revoked. Editing does not activate an agent. No live model execution, credential store, SDK runtime, external tools, provider calls or API spend is added.
+
+Customer route /workspaces/[workspaceId]/sites/[siteId]/agents supports versioned site preferences and a current approved-knowledge context preview. Owner/editor write preferences; viewer reads. The backend checks membership/site binding, exact agent preview version and preferences version. Facts carry source/fact/revision citations. Platform instructions remain admin-only; platform admin alone cannot read customer knowledge. Client guidance and uploaded facts cannot grant permission. Preview is a snapshot, not a model answer; future execution must revalidate all approvals and versions.
+
+Additive027_agent_configuration.sql retains001–026 and old project data. One shared @bizoveya/agent-contract workspace package defines typed role/capability/request contracts for both apps. The lockfile adds workspace links; third-party dependency versions stay unchanged. No new environment variable, model key, repository or deployment project. Upload packages/ along with both apps and rebuild both Vercel projects. See32 for exact setup, limits, routes and manual cases;30 combines all deferred actions. Founder has started testing but reported no results yet, so every unevidenced manual gate remains pending.
+
+Earlier sections retain history and are superseded where they conflict with this current contract.
+
+## Historical contract — package1.13 / P03.1
+
+Founder reiterated that the PC is still off and all prior manual actions remain pending, to be performed together later. Requested continuation plus an updated complete pending list with every delivery. Assistant chose bounded P03.1 text knowledge before agent execution. Record is BZ-043/044; no past test result or remote setup was inferred.
+
+P03.1 adds a private knowledge room to every registered site mode. Sources may be pasted or imported as UTF-8 .txt/.md, reviewed as editable fact candidates, saved with revisions, and explicitly approved by the workspace owner. Changes remove approval; retrieval is authenticated, current, approved-only and site-scoped. Editors draft; viewers read; only owners approve/revoke/delete. No model call, API key, embeddings, PDF/OCR, public chatbot or automatic website update is added. Additive026 supplies private sources/revisions/content-free activity events and membership-gated RPCs. See31 for behavior and30 for all pending manual/setup steps. All previously deferred founder tests remain pending.
+
+Earlier sections retain historical delivery context and are superseded where they conflict with this current contract.
+
+## Historical contract — package1.12 / P02.4
+
+Founder stated they are using mobile, will test later on PC, and authorized next implementation. Assistant advanced agreed P02.4 without inventing acceptance. Three extra family choices are implementation design proposals, adjustable in later iterations. QA identified dark Product Launch inherited text contrast, fixed before browser verification. See ADR-0009 and activityBZ-040/041. P02.4 adds Wellness Studio, Education Academy and Product Launch: six business families total. One catalog drives schema, template pages, creation and Studio; the shared section renderer also serves published snapshots. Additive025 expands accepted IDs without rewriting old data. Eight section types/nineteen layouts remain unchanged. No booking, checkout, LMS, enquiry inbox, custom domains or agents are added. See29 for template scope and30 for the combined pending setup/tests. Manual acceptance remains pending.
+
+Older delivery sections retain history; this current contract supersedes conflicting capability/setup statements.
+
+## Historical contract — package1.11 / P02.3.1
+
+ADR-0008 accepted for source implementation: native publication snapshots with sanitized anonymous reader; UUID visitor URL and no automatic external deployment. Founder continuation instruction permits concurrent implementation with earlier retest pending. See activity record; no invented manual pass.
+
+Earlier release sections retain history and are superseded where they conflict with this current contract.
+
+
+
+## Historical contract — package1.10 / P02.2.Fix-1
+
+D10 — founder reviewed 1.9 and reported stale homepage Sign in, returning workspace creation priority, retained journey redirect, incorrect Your sites highlight, repeat saves/duplicate sites, superficial template differences and missing creation-time design selection. Founder also reported other manual checks/022 applied, but supplied no per-case hosted evidence. Assistant traced missing session wiring, wrong journey/navigation contracts, early submission unlock and absent database name/URL guards; adopted fixes and a full authenticated journey QA gate. QA additionally found unchanged saves, dirty internal navigation/sign-out and duplicate workspace rename. ADR-0007 records the adopted response. Exact original report timestamp is unavailable here; current implementation activity is recorded with actual timestamps.
+
+Earlier release sections retain history; this current contract supersedes conflicting behavior descriptions.
+
+## Historical contract — package1.9 / P02.2
+
+## Business research → approved P02.2
+
+Founder question: business owners need business-specific attractive templates and an understandable Studio, not portfolio templates; can each section have compatible layout variants, adding/removing/reordering and shared styling? He emphasized ongoing agents rather than creation speed as the strongest selling point.
+
+Assistant research: split editor-pattern and customer-needs research across two assistants at the founder's explicit team-research request. Primary docs establish WordPress patterns, Wix sections and Webflow variants. BrightLocal US consumer research supports prominent accurate contact/hours/genuine proof; GoDaddy selected-client research supports assisted ownership. These do not establish Pakistani template demand. No actual client interviews were conducted. Wix documents site/marketing/phone agents, correcting any assumption that agents alone differentiate us.
+
+Proposed resolution: shared content/section engine and three first recipes before business publishing; later expansion guided by client observations. Presets and layout changes preserve facts/content; future agents consume a common catalogue, not duplicated prompts. Founder accepted these points and authorized code plus all affected documentation on2026-10-02 00:31:45 PKT. Earlier founder message reports all previous manual tests working; details/browser/security-case evidence not supplied. Decision ADR-0006; research and future validation questions in26. Practical result/caveats in25 and activity log. This records the actual available discussion, not invented answers from other chats.
+
+Earlier dated sections below retain history; this current contract supersedes conflicting instructions.
+
+
 **Current package1.7:** public/admin host ownership has changed. Read the Package1.7 section below and document24 before applying older setup instructions.
 
 **Package 1.2 / P01.2; recorded 2026-09-30, PKT.** This is a detailed English reconstruction of the discussion visible in this conversation, beginning when Sufian Mustafa paused development after package 1.1. It is a summary, not a verbatim transcript or a recording of inaccessible chats. Exact times are shown only where supplied by message metadata. Actor: **Sufian Mustafa, founder/product owner**. Responding actor: **ChatGPT Codex assistant; exact underlying model/version not independently verified**. Research statements are dated and require rechecking before provider use. No credentials or private client content are included.
@@ -160,3 +265,16 @@ This section supersedes earlier same-host admin/source-path instructions for the
 ### D14 — founder testing and admin separation
 
 Founder reported routes/planning-record/existing-site registration working, explicitly excluded admin login, and proposed a separate subdomain to remove admin entry from public UI. Assistant explained route secrecy is not authorization and separate deployment reduces some shared runtime risk without eliminating shared DB/deployment risks. Founder asked about ZIP/Git/Vercel ownership; agreed direction is one repository/ZIP with two app roots and two Vercel projects. At22:17:02 PKT on1 October2026, founder clarified public /admin must never show login or navigate to admin, and authorized synchronized documentation plus practical separation in one cumulative ZIP. Clarification: apps/web and apps/admin are filesystem paths, not URL segments. Admin tests move to the new host but remain mandatory. No domain bought, DNS changed or real session proved.
+
+
+## D09 — deployed split apps and next business slice
+
+Founder provided Ready/Production screenshots for both projects at2026-10-01T23:23:19+05:00 and asked for the next phase. Assistant proposed P02.1 public transition, business entry/catalog and initial template, retaining pending P01 manual gates. Founder authorized implementation at23:25:56PKT while continuing testing. ADR-0005 records the bounded private-draft implementation. This authorizes source work, not a claim that all owner tests passed or live SQL was applied.
+
+## Founder review and scope decisions — 2026-10-02
+
+At22:59 PKT founder reported newly created Supabase files applied and described cramped workspace/Studio width, partial section-card click targets, missing selection scroll, absent bounded canvas, unrestricted placement, image proportions, long text, incomplete pages/navigation/logo/upload, signed-in get-started copy and inability to remove duplicate sites. Asked whether knowledge/config are live and for sample inputs and website/Pinterest/LinkedIn pilot. Source review confirmed real persisted knowledge/config but no model runtime; candidate extraction/lookup deterministic. Answer proposed builder repair, explicit business-page expansion and agent prerequisites. These defects are not marked passed by the broad setup report.
+
+At23:34 PKT founder highlighted niche-dependent website structures, selected a narrower initial digital-service direction, requested custom listing pages/labels, prioritised agents and changed first pilot to drafts only, including Pinterest visuals and LinkedIn carousels. Answer proposed separate niche/content/design layers, reusable collections/entry renderers, five roles plus shared composer, and approved source knowledge from doitwithai.tools. Publishing/OAuth/CMS-write setup deferred; model runtime still needed. Public retrieval not complete and marketing claims not evidence. No code updated during those discussions.
+
+At23:44:51 PKT founder explicitly approved freelancers/consultants/small digital agencies and authorised next implementation incl existing-site deletion for earlier duplicate cleanup, Studio/template repair and affected documentation. This package implements the P02.5 scope in34 and records future work in35. Founder instructions remain able to revise later drafts; completion requires concrete implementation evidence and separate manual results.

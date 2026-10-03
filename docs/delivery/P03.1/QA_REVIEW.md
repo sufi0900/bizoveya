@@ -1,0 +1,7 @@
+# P03.1 source and runtime review
+
+Schema/file/candidate/citation unit tests and SQL assertions cover draft exclusion, owner approval/revoke, correction invalidation, scoped retrieval, history, duplicate source rejection, expected versions, viewer/editor/outsider denials, direct-write and anonymous privilege denial, deletion cascades, membership revocation and emergency revoke at capacity. SQL uses PGlite fixtures, not a hosted Supabase service or concurrent PostgREST proof.
+
+Synthetic browser verification exercises inherited business/template/publishing flows and the new knowledge user journey, import/error/duplicate/conflict/export/history/approval/reset/revoke/delete, roles and anonymous API denial. Desktop/mobile/dark/light screenshots reviewed. Fact/source textareas gained explicit accessible labels after the first browser run found the wrapping-label ambiguity. Harness duplicate variable naming was corrected before execution. No failed run is treated as successful acceptance.
+
+Separate server authorization before reads/RPCs, fixed-path database checks and private no-store responses retained. No service role, external fetch, executable source HTML, model key or cost. Future agents must treat sources as untrusted data and revalidate current approval/permissions. Back/Forward is still an explicit unsaved SPA guard limitation. Provider backup erasure and PDF/OCR/semantic RAG are not implemented. Founder tests and every earlier deferred manual action remain pending in30.

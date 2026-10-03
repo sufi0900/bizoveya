@@ -1,6 +1,23 @@
 # Owner decisions and evidence still needed
 
-**Current package1.7:** public/admin host ownership has changed. Read the Package1.7 section below and document24 before applying older setup instructions.
+## Historical contract — package1.10 / P02.2.Fix-1
+
+Pending: founder1.10 hosted journey/design acceptance, real concurrent API requests, unchanged/duplicate rename outcomes, reviewed cleanup of old duplicate records, browser Back SPA unsaved handling, and inherited portfolio/admin live regressions. No new logo/domain/provider/pricing decision. Backend agency agents and business publishing remain future work.
+
+Earlier release sections retain history; this current contract supersedes conflicting behavior descriptions.
+
+## Historical contract — package1.9 / P02.2
+
+New business questions: Which three business archetypes resonate with actual first clients? Which visual recipe needs founder adjustment? Should publication support an email link only first or an operational enquiry form? Which owned image host/upload policy should follow? Need actual owner observations before ranking demand. Multi-page business sites, arbitrary colors/freeform positioning, durable revision history, live bookings/store and agent operations remain future scope. No question blocks the authorized modular draft implementation.
+
+Earlier dated sections below retain history; this current contract supersedes conflicting instructions.
+
+
+## Historical contract — package1.8 / P02.1
+
+Founder live tests are underway; collect exact outcomes before accepting P01/P02. Pending business decisions: approved first business sample/content, final logo/domain/colors, publication route/custom-domain contract, contact delivery, testimonials/evidence, additional templates and revision-history policy. Current Service Studio/dark-mint design is a provisional implementation choice authorized within P02.1, not a frozen brand decision.
+
+Earlier sections below retain planning/delivery history; conflicting capability or path descriptions are superseded by this current contract and document25.
 
 **Draft 0.1.** These do not block reading or editing the initial specs; they gate the named implementation/release step. Close each item with evidence, date and the affected doc/ADR.
 
@@ -58,3 +75,36 @@ Local SQL and public/setup browser evidence are now available, including the rep
 ## Package1.7 — separate admin application (current contract)
 
 This section supersedes earlier same-host admin/source-path instructions for the current package, while preserving those earlier delivery records. Under ADR-0004, public code is apps/web/src; admin code is apps/admin/src. Source folders are not URL prefixes. The main host has no /admin or /api/admin pages/handlers, no admin button or redirect. Admin-only paths belong to the separate host; / redirects to its /login, with approved-role/MFA checks for protected pages/APIs. Admin has no customer/docs/marketing routes. All canonical Markdown remains at root docs/platform and is visualized only by the main app. Both deploy independently from one repository/ZIP; shared Supabase/migrations remain centrally managed. See23 for founder-reported testing,24 for explicit install/deploy/environment/manual instructions, and ADR-0004 for the decision. No new migration or live domain configuration is delivered. Real admin Auth/MFA, tenant isolation and production acceptance remain pending. Current source paths elsewhere in prior historical sections must be interpreted through this ownership map.
+
+
+## Current1.11 acceptance and follow-on questions
+
+1. Founder1.10 MT033–040 and1.11 MT041–047 results remain pending.
+2. Customer custom domains/aliases require ownership/DNS/TLS/redirect policy; not enabled.
+3. Enquiry-form inbox/provider/spam/storage policy and cost need a separate decision. Current email/call links only.
+4. Publication history/rollback UI is not built; full member history is retained in DB.
+5. Nebius runtime and agents remain planned; do not skip knowledge/model/tool permission proof.
+
+
+## Current1.12 pending decisions
+
+Manual acceptance for all deferred gates remains pending per30. New designs are adjustable; no demand survey or vertical-backend capability inferred. P03 site-approved business knowledge is next planned core work. Contact form/domain follow-ons and agent runtime remain unimplemented.
+
+
+## P03.1 carry-forward
+
+All deferred founder/hosted cases in30 remain pending. Decide PDF/OCR limits/parser, semantic retrieval/provider, provider-backup retention and future derived-output invalidation before adding them. No model choice or complete production RAG claim made. Existing source capacity bounds are revisable. Next core P04 requirements/config/model/credential rollout must be reviewed with the approved-knowledge dependency; pending founder testing does not become acceptance.
+
+
+## P04.1 follow-on decisions
+
+Choose exact provider/model/SDK through deferredP04.0 qualifying task evidence; decide encrypted credential ownership/rotation/audit beforeP04.2. Define saved model-quality cases and activation approval beforeP04.3/4. Decide longer preference history and old version lifecycle before increasing limits. Obtain founder hosted case outcomes, MFA/RLS/concurrency evidence. No secrets/model names/cost claims invented.
+
+
+## P04.2.1 follow-on
+
+Environment-backed references chosen for metadata-only preparation; actual secret-entry store and fresh reauth/provider-auth test still open. No SDK/provider/model capability proof done. Profile-to-agent binding and live enforced budgets remainP04.3. Obtain case-specific founder hosted outcomes. Do not infer old gates from continuation.
+
+##1.16 decisions and remaining input
+
+Focused audience selected, drafts-only pilot selected, permanent record deletion selected. Owner still reviews final template visual fidelity, provides logo/reference article, and performs MT075–086. Archive/restoration, upload-media policies, collection limits and exact runtime qualification remain open. No need for CMS/social write credentials during draft pilot.

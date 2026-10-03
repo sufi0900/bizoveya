@@ -1,3 +1,109 @@
+# Bizoveya1.19 — spending controls
+
+Current cumulative source, P04.3.2. Read [spending setup and tests](docs/platform/39_SPENDING_CONTROLS_AND_TESTING.md). If001–031 are applied, apply only032. Admin: `pnpm dev:admin`, port3001; public: `pnpm dev:web`, port3000. Preserve local environment settings and run `pnpm install --frozen-lockfile` after checkout. New model tests require an enabled reviewed pricing policy; saving pricing makes no AI call. Customer draft generation and publishing remain disabled.
+
+GitHub delivery uses `phase/p04-3-2-spending-controls` and a review PR; main remains unchanged. Founder reported all1.18 assignment tests passed; new MT102–109 pending. Historical release notes below are retained, not current delivery status.
+
+## Historical release1.18
+
+# Bizoveya 1.18 — reviewed agent model assignments
+
+Apply migration031 only after030. Read docs/platform/37_AGENT_MODEL_ASSIGNMENTS.md for manual steps. GitHub writes are blocked and the six-hour task is paused: see38_DELIVERY_AND_CONTINUATION.md. Source includes cumulative1.17 fixes. Model assignments do not yet activate customer draft generation.
+
+# Bizoveya1.17 — Model connectivity tests
+
+P04.0 adds /admin/model-tests on the separate admin application. Read docs/platform/36_MODEL_CONNECTIVITY_AND_TESTING.md before setup. Apply only030 if through029 is confirmed; preserve old migrations. Update the complete repository and rebuild both existing Vercel projects using the new pnpm lockfile. Tests default disabled. Actual paid connectivity tests require explicit setup/acknowledgement and an admin-server recording key; no actual provider call was performed during development. Customer agent execution remains planned.57 living Markdown documents project to /bizoveya/docs.30 retains all pending founder checks, including1.16.
+
+## Historical delivery notes
+
+# Bizoveya 1.16 — Studio repairs and site removal
+
+P02.5 improves the digital-service business Studio and adds owner-only permanent site-record removal. Read `docs/platform/34_STUDIO_REPAIR_AND_SITE_REMOVAL.md` for installation, scope and manual cases MT075–086. Read `35_DRAFT_PILOT_AND_FOCUSED_BUILDER.md` for the next draft-only agent pilot and starter knowledge. All pending founder checks are combined in `30_COMBINED_PENDING_SETUP_AND_TESTS.md`.
+
+If migrations001–028 are confirmed applied, apply only `supabase/migrations/029_business_studio_and_site_removal.sql`, once and in full. Never apply tests or fixture SQL to production. Keep the complete repository and redeploy both existing Vercel projects, rooted at `apps/web` and `apps/admin`. No new environment variable or model key is required for this release. From the repository root: `pnpm install --frozen-lockfile`, then `pnpm dev:web` (3000) or `pnpm dev:admin` (3001). Preserve private environment settings.
+
+55 living Markdown documents project automatically to `/bizoveya/docs`. New saves enforce Hero/FAQ order and hero text limits; old content is not silently rewritten. Samples are illustrative, require confirmation and are never automatically saved or published. Deletion removes native Bizoveya site data; external websites and original portfolio projects remain intact. Live agents, separate business pages and media uploads remain planned. Local automated verification does not replace founder/hosted acceptance.
+
+## Earlier delivery descriptions
+
+# Bizoveya1.15 — Model profiles and credential references
+
+P04.2.1 candidate metadata/admin preparation only. No live model/profile-agent binding/actual key writes. Read docs/platform/00_INDEX.md,30 combined pending checklist and33 model guide. Apply missing028 after confirmed027. Same repository/two Vercel roots apps/web/apps/admin; all packages retained. Optional server provider keys only in private deployment settings; none needed for safe missing-key tests.52 Markdown sources project to /bizoveya/docs. Real hosted/founder acceptance remains pending.
+
+## Historical deliveries
+
+# Bizoveya1.14 — Agent configuration and readiness
+
+Cumulative P04.1 source: separate-admin versioned defaults/check/review/preview rollback/revoke/history and private site preferences/approved context preview. No live models, credentials or tool execution. Source verified locally; all unevidenced founder/hosted acceptance stays pending.
+
+Read docs/platform/00_INDEX.md and30_COMBINED_PENDING_SETUP_AND_TESTS.md. New guide32_AGENT_CONFIGURATION_AND_READINESS.md; additive027 only after confirmed026. Same GitHub repository, same Vercel roots apps/web and apps/admin; include new packages/agent-contract and workspace/lock files. Rebuild both apps.50 current Markdown documents automatically project to /bizoveya/docs. Do not paste tests/tools fixtures into production. No new env/key required. Preserve private environment and Git/local changes.
+
+## Historical delivery descriptions
+
+# Bizoveya 1.12 — Expanded business templates
+
+## Current delivery — Bizoveya1.13 / P03.1
+
+Private site knowledge via text/TXT/MD, fact review/owner approval, scoped lookup, history/export/removal. No AI key/model/agent runtime. Same two app roots. All founder manual actions remain pending: docs/platform/30_COMBINED_PENDING_SETUP_AND_TESTS.md. New knowledge guide31; apply only missing026 after reconciling001–025.48 living docs at /bizoveya/docs. Previous source/history preserved; evidence docs/delivery/P03.1_VERIFICATION.json.
+
+Six business design families, shared Studio/sections and saved snapshot publishing. Current phase P02.4 source; founder manual acceptance pending.
+
+Start with [combined setup and pending tests](docs/platform/30_COMBINED_PENDING_SETUP_AND_TESTS.md) and [template guide](docs/platform/29_EXPANDED_BUSINESS_TEMPLATES.md). One cumulative ZIP/repository; same Vercel roots apps/web/apps/admin. Apply only missing023/024/025 in order. No new env/key required. Preserve private configuration and Git/local changes.
+
+46 current MD sources visualize under /bizoveya/docs; current evidence is docs/delivery/P02.4. New template designs do not add booking, payments, student portals, enquiry inboxes, domains or agents.
+
+## Previous delivery history
+
+# Bizoveya 1.11 — Business publication snapshots
+
+Current source: **P02.3.1**. Read [publishing setup and manual tests](docs/platform/28_BUSINESS_PUBLISHING_AND_TESTING.md). Apply only missing migrations: if001–022 are applied,023 then024; if023 already applied, only024. Keep the same repository and Vercel roots apps/web/apps/admin; preserve private environment values.
+
+Saved native drafts can be explicitly published to `/sites/<site UUID>`, republished and taken offline. Draft saves remain private; hidden sections are excluded from anonymous payloads. Email/call contact links and snapshot metadata are included; custom domains, enquiry forms and agents remain planned. Founder1.10 and1.11 manual acceptance is pending.
+
+Current evidence: docs/delivery/P02.3.1.43 current MD documents render under `/bizoveya/docs`.
+
+## Previous delivery history
+
+# Bizoveya 1.10 — customer journey and template fixes
+
+Current delivery: **Bizoveya1.10 / P02.2.Fix-1**. Start with [release setup and manual tests](docs/platform/27_CUSTOMER_JOURNEY_QA_AND_RELEASE.md). Existing DB through022: apply only023 once. Merge cumulative source; public/admin Vercel roots remain unchanged.
+
+See the release guide above for current setup, limitations, verification evidence, and pending hosted manual checks.
+
+## Historical 1.9 delivery notes
+
+One cumulative repository/ZIP, two Vercel apps. Three business presets share eight section types/nineteen layouts, brand/contact facts and the same Studio. Existing portfolio remains `/portfolio`; separate admin unchanged. Business sites remain private drafts; publishing and agents are planned.
+
+**Manual action:** if001–021 applied, apply only [022](supabase/migrations/022_modular_business_sections.sql) once in the shared Supabase project's SQL Editor. If021 missing, apply021 first after prerequisites. No new env/API keys. Keep old migration files. Read [setup/manual testing](docs/platform/25_BUSINESS_BUILDER_AND_TESTING.md), [section specification](docs/platform/26_BUSINESS_TEMPLATES_AND_SECTIONS.md), [deployment](docs/platform/24_DEPLOYMENT_AND_ENVIRONMENTS.md) and [current index](docs/platform/00_INDEX.md).
+
+Merge preserving Git/private env/local changes. Existing Vercel roots apps/web and apps/admin stay. Rebuild main app for updated docs/routes. Try `/templates/service-studio`, `/templates/local-services`, `/templates/creative-business`; saved native-business editor supports design choice. Demos reset on reload. Evidence is under docs/delivery/P02.2.
+
+```sh
+pnpm install --frozen-lockfile
+pnpm dev:web
+# Separate terminal:
+pnpm dev:admin
+```
+
+These historical1.9 instructions are superseded by the1.10 release guide above. Source implementation is not live deployment or hosted database acceptance.
+
+# Bizoveya1.8 — business entry and private draft builder
+
+One Git repository, one cumulative ZIP, two Vercel applications. Public root is now Bizoveya; inherited portfolio demo is at `/portfolio`. Try `/templates/service-studio` without an account, then save your own native-business draft from a workspace. Business publishing and AI workforce remain planned.
+
+**Manual action:** reconcile Supabase history and apply only missing `supabase/migrations/021_business_drafts.sql` after001–020. No new environment keys. Read [setup and test checklist](docs/platform/25_BUSINESS_BUILDER_AND_TESTING.md), [deployment guide](docs/platform/24_DEPLOYMENT_AND_ENVIRONMENTS.md), [manual evidence](docs/platform/23_FOUNDER_MANUAL_TESTING.md) and [current index](docs/platform/00_INDEX.md). Keep Vercel roots `apps/web` / `apps/admin`; no new repository/project required. Preserve private env files and current Git changes when merging this cumulative source.
+
+```sh
+pnpm install --frozen-lockfile
+pnpm dev:web
+# Second terminal:
+pnpm dev:admin
+```
+
+Local public port3000, admin port3001. Optional SQL verification remains under tools/phase1-verification. Do not paste tooling fixtures into production. Local reports/screenshots are in docs/delivery/P02.1; real Supabase saved-draft/MFA/tenant tests remain pending.
+
+Earlier README sections below are retained history. Current1.8 instructions and document25 supersede conflicting entry/capability/setup descriptions.
+
 # Bizoveya1.7 — public and admin applications
 
 One repository, one full ZIP, two separately deployed Next.js apps. Start here: [Deployment and manual setup](docs/platform/24_DEPLOYMENT_AND_ENVIRONMENTS.md), [Admin operator setup](docs/platform/21_ADMIN_SETUP_AND_RECOVERY.md), [Founder tests](docs/platform/23_FOUNDER_MANUAL_TESTING.md).

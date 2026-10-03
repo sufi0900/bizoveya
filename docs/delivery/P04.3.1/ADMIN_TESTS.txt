@@ -1,0 +1,18 @@
+
+ RUN  v3.2.7 /workspace/scratch/d9b71760f8f4/restore/bizoveya-platform/apps/admin
+
+ ✓ src/features/models/contracts.test.ts (8 tests) 8ms
+ ✓ src/features/admin/views.test.tsx (4 tests) 33ms
+ ✓ src/features/admin/page-data.test.ts (5 tests) 7ms
+ ✓ src/features/admin/access.test.ts (19 tests) 23ms
+ ✓ src/features/model-tests/provider.test.ts (6 tests) 55ms
+ ✓ src/features/model-tests/store.test.ts (7 tests) 14ms
+ ✓ src/features/bindings/store.test.ts (8 tests) 14ms
+ ✓ src/features/admin/login-policy.test.ts (2 tests) 3ms
+ ✓ src/features/agents/input.test.ts (3 tests) 12ms
+
+ Test Files  9 passed (9)
+      Tests  62 passed (62)
+   Start at  20:16:40
+   Duration  682ms (transform 484ms, setup 0ms, collect 1.90s, tests 168ms, environment 1ms, prepare 568ms)
+

@@ -3,6 +3,7 @@ import path from "node:path";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  transpilePackages: ["@bizoveya/agent-contract"],
   outputFileTracingRoot: path.resolve(process.cwd(), "../.."),
   outputFileTracingIncludes: { "/bizoveya/docs/**": ["../../docs/platform/**/*"] },
   poweredByHeader: false,

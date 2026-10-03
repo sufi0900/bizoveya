@@ -62,7 +62,7 @@ export function ProjectDashboard({ projects: initialProjects, email }: { project
     finally { setCreatingVariant(false); }
   }
 
-  return <main className="flow-page wide"><header className="flow-nav"><div className="flow-nav-start"><Link href="/">Home</Link><Link href="/workspaces">Bizoveya workspaces</Link><span>{email}</span></div><Link className="flow-brand" href="/">VOXFOLIO</Link><button className="text-action" onClick={signOut}>Sign out</button></header>
+  return <main className="flow-page wide"><header className="flow-nav"><div className="flow-nav-start"><Link href="/">Home</Link><Link href="/workspaces">Bizoveya workspaces</Link><span>{email}</span></div><Link className="flow-brand" href="/portfolio">VOXFOLIO</Link><button className="text-action" onClick={signOut}>Sign out</button></header>
     <div className="dashboard-heading"><div><p className="eyebrow">YOUR WORKSPACE</p><h1>Saved portfolios</h1><p>Your main portfolios and their opportunity pages are below. Open Settings to manage Visitor Vox for each portfolio.</p></div><Link className="primary-action" href="/start">Create new</Link></div>
     <p className="dashboard-group-heading">Main portfolios · {projects.filter((entry) => !entry.variant_of_project_id).length}</p>
     {renameError && <div className="form-message dashboard-message">{renameError}</div>}

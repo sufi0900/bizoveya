@@ -1,0 +1,31 @@
+{
+  "version": "1.18",
+  "phase": "P04.3.1",
+  "verifiedAt": "2026-10-03T11:20:29.056192+00:00",
+  "unitTests": {
+    "admin": 62,
+    "web": 313,
+    "total": 375
+  },
+  "sqlSteps": 47,
+  "browserChecks": 44,
+  "browserErrors": 0,
+  "screenshotsGenerated": 12,
+  "screenshotsRetained": 2,
+  "productionBuilds": {
+    "web": "passed",
+    "admin": "passed"
+  },
+  "typeValidation": "passed in both builds",
+  "targetedLint": "passed",
+  "boundaries": "passed",
+  "oldMigrationsHistoryLock": "byte-preserved versus1.17",
+  "recovery": "Truncated original delivery reconstructed from CRC-verified source entries and verified1.17 baseline;031 exactly matches prior recorded SHA256; docs and SQL/browser assertions reconstructed and verification repeated.",
+  "scopeLimits": [
+    "Synthetic local Auth/PostgREST and PGlite; no hosted security or true concurrency proof",
+    "No paid provider call, remote migration or deployment",
+    "Generation and enforced monetary budgets not delivered",
+    "GitHub403; no remote branch/PR; schedule paused; founder manual acceptance pending"
+  ],
+  "archive": "Bizoveya_1.18_Agent-Model-Assignments.zip"
+}

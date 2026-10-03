@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 2,
+  "templateId": "creative-business-v1",
+  "accent": "amber",
+  "name": "Founder Test Business",
+  "headline": "Approved heading survives design changes",
+  "description": "A fictional sample showing how your services and business story can come together. Replace this with your approved information.",
+  "about": "Introduce your approach, your team and what customers can expect. This sample does not claim real credentials or results.",
+  "location": "",
+  "email": "contact@example.com",
+  "phone": "",
+  "services": [
+    {
+      "title": "Strategy",
+      "description": "Help customers understand what this service includes."
+    },
+    {
+      "title": "Design",
+      "description": "Explain your process and the outcome you deliver."
+    },
+    {
+      "title": "Ongoing support",
+      "description": "Describe how you support customers after the project."
+    }
+  ],
+  "font": "editorial",
+  "hours": "",
+  "sections": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "layout": "editorial",
+      "visible": true,
+      "tone": "base",
+      "heading": "",
+      "body": "",
+      "image": "",
+      "items": []
+    },
+    {
+      "id": "projects-1",
+      "type": "projects",
+      "layout": "grid",
+      "visible": true,
+      "tone": "base",
+      "heading": "",
+      "body": "",
+      "image": "",
+      "items": []
+    },
+    {
+      "id": "services",
+      "type": "services",
+      "layout": "rows",
+      "visible": true,
+      "tone": "base",
+      "heading": "",
+      "body": "",
+      "image": "",
+      "items": []
+    },
+    {
+      "id": "about",
+      "type": "about",
+      "layout": "split",
+      "visible": true,
+      "tone": "soft",
+      "heading": "",
+      "body": "",
+      "image": "",
+      "items": []
+    },
+    {
+      "id": "contact",
+      "type": "contact",
+      "layout": "panel",
+      "visible": true,
+      "tone": "base",
+      "heading": "",
+      "body": "",
+      "image": "",
+      "items": []
+    },
+    {
+      "id": "faq-1",
+      "type": "faq",
+      "layout": "list",
+      "visible": true,
+      "tone": "base",
+      "heading": "",
+      "body": "",
+      "image": "",
+      "items": [
+        {
+          "title": "How can we contact you?",
+          "body": "Use the approved email address.",
+          "image": ""
+        },
+        {
+          "title": "",
+          "body": "",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "id": "cta-1",
+      "type": "cta",
+      "layout": "banner",
+      "visible": true,
+      "tone": "base",
+      "heading": "",
+      "body": "",
+      "image": "",
+      "items": []
+    },
+    {
+      "id": "testimonials-2",
+      "type": "testimonials",
+      "layout": "cards",
+      "visible": true,
+      "tone": "base",
+      "heading": "",
+      "body": "",
+      "image": "",
+      "items": [
+        {
+          "title": "Test customer A",
+          "body": "Founder-supplied test quote A",
+          "image": ""
+        },
+        {
+          "title": "Test customer B",
+          "body": "Founder-supplied test quote B",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "id": "testimonials-1",
+      "type": "testimonials",
+      "layout": "cards",
+      "visible": true,
+      "tone": "base",
+      "heading": "",
+      "body": "",
+      "image": "",
+      "items": [
+        {
+          "title": "Test customer A",
+          "body": "Founder-supplied test quote A",
+          "image": ""
+        },
+        {
+          "title": "Test customer B",
+          "body": "Founder-supplied test quote B",
+          "image": ""
+        }
+      ]
+    }
+  ]
+}

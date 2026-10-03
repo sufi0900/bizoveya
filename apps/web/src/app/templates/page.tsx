@@ -1,0 +1,10 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowUpRight, Building2, Orbit } from "lucide-react";
+import { templates } from "@/domain/business";
+import { MarketingShell } from "@/features/marketing/shell";
+export const metadata: Metadata = { title: "Website templates", description: "Explore Bizoveya business and portfolio templates." };
+export default async function Templates({ searchParams }: { searchParams: Promise<{ category?: string }> }) {
+  const category = (await searchParams).category; const selected = category === "business" || category === "portfolio" ? category : "all";
+  return <MarketingShell><section className="biz-page-intro"><p className="biz-eyebrow">A BETTER STARTING POINT</p><h1>Choose your <em>direction.</em></h1><p>Our first business focus is freelancers, consultants and small digital agencies. Explore Professional Practice or Creative Business, or continue with the existing portfolio editor.</p><nav className="biz-filters" aria-label="Template categories">{["all", "business", "portfolio"].map(value => <Link key={value} aria-current={selected === value ? "page" : undefined} href={value === "all" ? "/templates" : `/templates?category=${value}`}>{value}</Link>)}</nav></section><section className="biz-template-grid">{templates.filter(t => selected === "all" || t.category === selected).map(t => <article className="biz-template-card" key={t.id}><div className={`biz-template-art ${t.category} ${t.id}`} aria-hidden="true">{t.category === "business" ? <><Building2 size={36} /><strong>{t.name}</strong><span>Flexible sections / Shared styles</span></> : <><Orbit size={80} /><strong>Your work.<br />Your story.</strong><span>Voice-directed portfolio</span></>}</div><div><p className="biz-eyebrow">{t.category} · {t.status}</p><h2>{t.name}</h2><p>{t.description}</p><Link className="biz-btn secondary" href={t.href}>Explore template <ArrowUpRight size={16} aria-hidden="true" /></Link></div></article>)}</section></MarketingShell>;
+}

@@ -1,5 +1,66 @@
 # Phase 1 verification guide
 
+## Current contract — package1.15 / P04.2.1
+
+Current tests append MT068–074 in33/30; phase1 setup legacy retained. Separate admin hosted checks still mandatory; AAL1/ungranted/revoked cannot inspect profile metadata or probe env presence. Main-domain admin pages/API unavailable. P04.2.1 source success does not accept phase1/manual gates.
+
+P04.2.1 adds model-profile preparation and fixed credential references on the separate admin host. /admin/models saves immutable candidate versions and checks syntax/reference eligibility; /admin/credentials enables/disables or records rotation of the three fixed platform references. All reads/writes require current named admin+AAL2 in server and SQL. No key value is stored in the database or accepted by these forms/APIs. Keys are optional server-only BIZOVEYA_NEBIUS_API_KEY, BIZOVEYA_OPENAI_API_KEY or BIZOVEYA_GEMINI_API_KEY variables managed privately in deployment settings. Presence checks return only a boolean for the current admin deployment, providerValidated:false and runtimeEnabled:false. They do not authenticate providers or prove model availability.
+
+No live calls, SDK runtime, secret-entry dashboard, actual provider revocation, model evaluation, profile-to-agent binding, fallback execution or enforced spend budget is implemented. Profiles remain candidates; tiers/token/budget values are future runtime metadata. Disabling a reference or recording rotation increments its version and invalidates prior dependent profile checks. Changing an environment variable alone is not detected as rotation; operator must redeploy and record it. Checks record current reference eligibility, not credential health. Admin scope remains separate from customer tenancy.
+
+Additive028_model_profiles.sql preserves001–027 and historical data.32 profile definitions/100 versions each; latest30 versions and100 events displayed, older records retained. Same cumulative source repository and two Vercel projects. Optional provider variables belong on admin server for presence checks; a future runtime deployment must be configured independently. No key is needed to test missing-key states; no provider call/spend performed. See33 for exact workflow/new MT068–074;30 accumulates all pending steps. No founder test result was supplied by the continuation request, so all unevidenced acceptance remains pending.50 previous current MD plus33 and ADR-0012 makes52 current sources after rebuild.
+
+Earlier sections retain history; this current contract supersedes conflicts.
+
+## Historical contract — package1.14 / P04.1
+
+Current combined checklist30 and new32 add MT060–067. Phase1 routes are inherited; this delivery adds separate-host admin configuration and scoped customer readiness. A route opening alone does not prove permissions or model readiness.
+
+P04.1 implements agent configuration and readiness only. The separate admin host has /admin/agents: versioned drafts, schema/capability checks, human approval for context preview, review events, revocation and rollback to a previously checked version. Three migration-authored starter drafts (coordinator, content, quality) begin unchecked and unapproved. A saved edit creates a new immutable version; previous preview approval remains pinned until explicitly changed or revoked. Editing does not activate an agent. No live model execution, credential store, SDK runtime, external tools, provider calls or API spend is added.
+
+Customer route /workspaces/[workspaceId]/sites/[siteId]/agents supports versioned site preferences and a current approved-knowledge context preview. Owner/editor write preferences; viewer reads. The backend checks membership/site binding, exact agent preview version and preferences version. Facts carry source/fact/revision citations. Platform instructions remain admin-only; platform admin alone cannot read customer knowledge. Client guidance and uploaded facts cannot grant permission. Preview is a snapshot, not a model answer; future execution must revalidate all approvals and versions.
+
+Additive027_agent_configuration.sql retains001–026 and old project data. One shared @bizoveya/agent-contract workspace package defines typed role/capability/request contracts for both apps. The lockfile adds workspace links; third-party dependency versions stay unchanged. No new environment variable, model key, repository or deployment project. Upload packages/ along with both apps and rebuild both Vercel projects. See32 for exact setup, limits, routes and manual cases;30 combines all deferred actions. Founder has started testing but reported no results yet, so every unevidenced manual gate remains pending.
+
+Earlier sections retain history and are superseded where they conflict with this current contract.
+
+## Historical contract — package1.13 / P03.1
+
+Keep every unperformed historical real-role/MFA/hosted security check pending. New026 must be applied only if missing; new026 assertion is isolated/staging-only and never a production migration. Consolidated steps are30.
+
+P03.1 adds a private knowledge room to every registered site mode. Sources may be pasted or imported as UTF-8 .txt/.md, reviewed as editable fact candidates, saved with revisions, and explicitly approved by the workspace owner. Changes remove approval; retrieval is authenticated, current, approved-only and site-scoped. Editors draft; viewers read; only owners approve/revoke/delete. No model call, API key, embeddings, PDF/OCR, public chatbot or automatic website update is added. Additive026 supplies private sources/revisions/content-free activity events and membership-gated RPCs. See31 for behavior and30 for all pending manual/setup steps. All previously deferred founder tests remain pending.
+
+Earlier sections retain historical delivery context and are superseded where they conflict with this current contract.
+
+## Historical contract — package1.12 / P02.4
+
+Use latest combined checklist30 for outstanding hosted checks. Earlier phase reports remain historical; local1.12 evidence is under delivery/P02.4. No broad old pass closes pending1.10–1.12 cases. P02.4 adds Wellness Studio, Education Academy and Product Launch: six business families total. One catalog drives schema, template pages, creation and Studio; the shared section renderer also serves published snapshots. Additive025 expands accepted IDs without rewriting old data. Eight section types/nineteen layouts remain unchanged. No booking, checkout, LMS, enquiry inbox, custom domains or agents are added. See29 for template scope and30 for the combined pending setup/tests. Manual acceptance remains pending.
+
+Older delivery sections retain history; this current contract supersedes conflicting capability/setup statements.
+
+## Historical contract — package1.11 / P02.3.1
+
+Previous local reports remain historical evidence. New publication proof is separate under docs/delivery/P02.3.1; local API fixtures and PGlite cannot certify hosted tenant isolation/MFA. Keep old acceptance gaps visible. Native business publishing now uses an explicit saved snapshot and `/sites/[siteId]` visitor route. Saves remain private; publishing/republishing/unpublishing use membership checks, draft/publication version conflicts, and additive024. Hidden sections are removed from anonymous payloads; full snapshot history stays member-only. Owner/editor can publish; viewer cannot. Custom domains, enquiry-form delivery and AI agents remain planned. See28 for setup/manual acceptance and ADR-0008 for architecture. Admin app and inherited portfolio remain unchanged.
+
+Earlier release sections retain history and are superseded where they conflict with this current contract.
+
+## Historical contract — package1.10 / P02.2.Fix-1
+
+The SQL runner now includes migration023 and assertions023 for duplicate names/URL aliases, update/rename bypasses, atomic initial template, role denial, failed-create rollback and preserved legacy duplicates. New `run-auth-browser.mjs` verifies customer journeys using a declared synthetic Supabase fixture; read27 for required build environment. Existing unconfigured browser runner remains a separate mode. Do not run assertion/fixture scripts in production or use mock-auth evidence as live Supabase acceptance.
+
+Earlier release sections retain history; this current contract supersedes conflicting behavior descriptions.
+
+## Historical contract — package1.9 / P02.2
+
+Current optional SQL runner now applies001–022 and assertions018–022 to a disposable PGlite database; includes legacy business021→022 no-row-rewrite proof. Browser runner covers both isolated production apps and the modular demos. Run from root: `node tools/phase1-verification/run-sql.mjs --report results.json`; browser prerequisites and commands remain below. Tool fixtures/tests are not migrations and should not be pasted into production. Latest evidence directory `docs/delivery/P02.2`; historical Phase1 evidence remains preserved.
+
+Earlier dated sections below retain history; this current contract supersedes conflicting instructions.
+
+
+## Historical contract — package1.8 / P02.1
+
+The optional tools/phase1-verification directory is reused across phases; its directory name is historical. The current SQL runner applies001–021 locally, runs018/019/020/021 assertions and verifies legacy data survives additive upgrades. The browser runner tests two unconfigured production apps, business demo/mobile/theme/download behavior and admin boundaries. Reports in docs/delivery/P02.1 are local evidence, not real Supabase authenticated acceptance. Follow document25 for hosted setup/manual tests; do not paste local bootstrap/fixtures into Supabase.
+
 **Current package1.7:** public/admin host ownership has changed. Read the Package1.7 section below and document24 before applying older setup instructions.
 
 **Bizoveya 1.6. Repeatable local evidence, not production acceptance.** This package closes specific gaps left by earlier mocked tests and supplies two regression fixes. Run only in an isolated local checkout or a separately authorized staging environment, as described below. Never put real keys, user identities, setup QR codes or private customer evidence in the public document room.

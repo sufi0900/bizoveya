@@ -1,0 +1,3 @@
+# ADR-0016 — Reviewed spending policies and conservative reservations
+
+Accepted implementation direction,2026-10-03, actor founder; implemented by ChatGPT/Codex. Use immutable manually reviewed USD pricing snapshots, per-run and daily caps, transactional reservations and evidence-based reconciliation. Extend existing test RPC signatures so there is no old public bypass. Unknown costs fail closed across days; never release automatically after a timeout. Do not infer free-tier prices or claim exact invoice protection. Future durable generation must reuse the same accounting principles before activation. Historical migrations/tests remain unchanged.

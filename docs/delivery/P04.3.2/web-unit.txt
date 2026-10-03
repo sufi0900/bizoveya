@@ -1,0 +1,63 @@
+
+ RUN  v3.2.7 /workspace/scratch/d9b71760f8f4/restore/bizoveya-platform/apps/web
+
+ ✓ src/domain/commands.test.ts (28 tests) 76ms
+ ✓ src/features/scene/velocity/car-geometry.test.ts (12 tests) 112ms
+ ✓ src/features/business/preview.test.tsx (10 tests) 51ms
+ ✓ src/features/document-room/dashboard.test.tsx (2 tests) 30ms
+ ✓ src/features/portfolio/collection-templates.test.tsx (6 tests) 62ms
+ ✓ src/features/portfolio/section-cinema.test.tsx (8 tests) 260ms
+ ✓ src/features/portfolio/professional-portfolio-sections.test.tsx (3 tests) 294ms
+ ✓ src/features/voice/voice-tools.test.ts (14 tests) 41ms
+ ✓ src/domain/business.test.ts (22 tests) 35ms
+ ✓ src/domain/opportunity-variant.test.ts (9 tests) 40ms
+ ✓ src/lib/visitor-evidence.test.ts (3 tests) 24ms
+ ✓ src/domain/publication-selection.test.ts (5 tests) 35ms
+ ✓ src/features/workspaces/store.test.ts (10 tests) 27ms
+ ✓ src/domain/voice-onboarding.test.ts (7 tests) 42ms
+ ✓ src/domain/site-wide-replace.test.ts (1 test) 22ms
+ ✓ src/domain/templates.test.ts (4 tests) 22ms
+ ✓ src/features/workspaces/api.test.ts (8 tests) 29ms
+ ✓ src/domain/blog-writing.test.ts (2 tests) 22ms
+ ✓ src/domain/guided-interview.test.ts (3 tests) 21ms
+ ✓ src/features/workspaces/views.test.tsx (5 tests) 15ms
+ ✓ src/features/content/rich-document.test.tsx (3 tests) 15ms
+ ✓ src/app/api/assemblyai/onboarding-token/route.test.ts (4 tests) 12ms
+ ✓ src/lib/agent-provider.test.ts (3 tests) 21ms
+ ✓ src/features/business/publication-store.test.ts (4 tests) 16ms
+ ✓ src/features/knowledge/store.test.ts (9 tests) 19ms
+ ✓ src/domain/opportunity-source-review.test.ts (4 tests) 11ms
+ ✓ src/features/business/store.test.ts (6 tests) 16ms
+ ✓ src/domain/workspaces.test.ts (19 tests) 15ms
+ ✓ src/lib/gemini.test.ts (2 tests) 11ms
+ ✓ src/domain/opportunity-plan.test.ts (4 tests) 15ms
+ ✓ src/domain/knowledge.test.ts (14 tests) 13ms
+ ✓ src/domain/business-policy.test.ts (4 tests) 13ms
+ ✓ src/features/content/inline-text.test.tsx (2 tests) 11ms
+ ✓ src/domain/cv-ingestion.test.ts (4 tests) 13ms
+ ✓ src/domain/voice-conversation.test.ts (4 tests) 9ms
+ ✓ src/lib/visitor-document.test.ts (2 tests) 7ms
+ ✓ src/features/voice/local-assistant.test.ts (5 tests) 10ms
+ ✓ src/features/agents/contracts.test.ts (7 tests) 8ms
+ ✓ src/domain/business-publication.test.ts (3 tests) 7ms
+ ✓ src/features/studio/drain-draft-queue.test.ts (3 tests) 6ms
+ ✓ src/domain/publication.test.ts (3 tests) 6ms
+ ✓ src/features/studio/preview-navigation.test.ts (3 tests) 6ms
+ ✓ src/features/portfolio/section-cinema-math.test.ts (7 tests) 4ms
+ ✓ src/domain/project-creation.test.ts (2 tests) 6ms
+ ✓ src/lib/openai/cv-extractor.test.ts (5 tests) 5ms
+ ✓ src/features/voice/assistant-steps.test.ts (2 tests) 3ms
+ ✓ src/domain/opportunity-share.test.ts (2 tests) 3ms
+ ✓ src/features/agents/store.test.ts (5 tests) 6ms
+ ✓ src/features/document-room/insights.test.ts (8 tests) 4ms
+ ✓ src/features/voice/task-context.test.ts (1 test) 3ms
+ ✓ src/domain/revision-history.test.ts (2 tests) 5ms
+ ✓ src/domain/user-lifecycle.test.ts (3 tests) 3ms
+ ✓ src/domain/media.test.ts (2 tests) 3ms
+ ✓ src/domain/opportunity-review.test.ts (1 test) 2ms
+
+ Test Files  54 passed (54)
+      Tests  314 passed (314)
+   Start at  10:46:30
+   Duration  2.98s (transform 1.74s, setup 0ms, collect 6.68s, tests 1.57s, environment 10ms, prepare 3.38s)
+

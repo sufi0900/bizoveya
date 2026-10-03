@@ -1,0 +1,38 @@
+{
+  "package": "1.16",
+  "phase": "P02.5",
+  "filename": "Bizoveya_1.16_Studio-Repairs-and-Site-Removal.zip",
+  "finalizedAtUTC": "2026-10-02T19:25:05.400482+00:00",
+  "finalizedAtPKT": "2026-10-03T00:25:05.400482+05:00",
+  "baselineSha256": "b1387e8b9c4e9717bae0d7b0a059fe82b3486102e34a14c6ddd45c0800b0aa08",
+  "unitTests": {
+    "web": 313,
+    "admin": 41,
+    "total": 354
+  },
+  "sqlSteps": 43,
+  "browserChecks": {
+    "customer": 82,
+    "admin": 31,
+    "total": 113
+  },
+  "screenshots": 30,
+  "pageErrors": 0,
+  "productionBuilds": "both passed, including lint and type validation",
+  "eslint": "both passed",
+  "boundaries": "passed",
+  "currentMarkdownSources": 55,
+  "existingLivingDocumentsUpdated": 37,
+  "newLivingDocuments": 3,
+  "historicalFilesBytePreserved": 41,
+  "oldMigrationsBytePreserved": 28,
+  "dependencyLock": "byte-preserved",
+  "founderAcceptance": "pending MT075\u2013086 and earlier unconfirmed cases",
+  "limitations": [
+    "Local production Next app with explicit synthetic Supabase Auth/REST/RPC fixtures. UI/navigation/HTTP adapter evidence only; separate SQL tests cover authorization and constraints. No hosted credential/MFA/concurrent PostgREST proof.",
+    "Production local Next apps with synthetic Auth/PostgREST contracts. SQL covers privilege constraints separately; no hosted MFA/RLS/concurrency proof.",
+    "Ephemeral local SQL with simulated Supabase Auth/Storage schema and JWT settings; no real Auth, PostgREST, Storage, concurrency or remote migration proof.",
+    "No hosted migration, deployment, provider call or actual customer mutation performed."
+  ],
+  "evidenceDirectory": "docs/delivery/P02.5"
+}

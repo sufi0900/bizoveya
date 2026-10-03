@@ -23,8 +23,8 @@ export function AuthForm({ nextPath = "/projects" }: { nextPath?: string }) {
   }
 
   return <form className="auth-card" onSubmit={submit}>
-    <p className="eyebrow">SECURE WORKSPACE</p><h1>{mode === "signin" ? "Welcome back" : "Create your studio"}</h1>
-    <p>Save portfolios, reopen them later, and keep every accepted edit in a revision history.</p>
+    <p className="eyebrow">SECURE WORKSPACE</p><h1>{mode === "signin" ? "Welcome back" : "Create your account"}</h1>
+    <p>Organize your websites, save business drafts and continue working on your portfolios.</p>
     <label>Email<input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required autoComplete="email" /></label>
     <label>Password<input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required minLength={8} autoComplete={mode === "signin" ? "current-password" : "new-password"} /></label>
     {message && <div className="form-message">{message}</div>}

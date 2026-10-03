@@ -1,5 +1,27 @@
 # Nebius x NVIDIA hackathon workstream
 
+## Historical snapshot — 1.18 / P04.3.1
+
+Reviewed model assignments are implemented at `/admin/bindings` and `/api/admin/bindings` on the separate admin host only. Migration 031 is additive after 030. An assignment pins a checked latest preview-approved agent version, matching-tier checked model profile, enabled credential-reference version and successful matching connectivity-test ID. Evidence must remain less than 24 hours old. Version changes, rotation, revocation or expiry require review; disable retains history. This is assignment configuration, not paid execution, budget enforcement or customer draft generation.
+
+Use [37 Agent model assignments](37_AGENT_MODEL_ASSIGNMENTS.md) for setup and pending MT095–101. Next are P04.3.2 spending controls, P04.3.3 durable text drafts, and P04.3.4 visual composition. Publishing remains deferred. The founder's successful local Gemini test is accepted only for the evidenced case; all other unevidenced manual tests stay pending.
+
+The founder approved one branch/PR per phase and six-hour continuation. GitHub reads succeeded but branch creation returned HTTP403 `Resource not accessible by integration`. No remote branch, commit or PR was created. The schedule was created then paused pending write access. See [38 Delivery and continuation](38_DELIVERY_AND_CONTINUATION.md). Earlier contracts below remain historical where superseded.
+
+
+## Historical contract — package1.9 / P02.2
+
+P02.2 strengthens the business editor/demo but does not implement Nebius, NVIDIA, Gemini or agency agents. Do not present those planned features as live hackathon functionality. Demonstrate template selection, content-preserving layout switching and workspace drafts honestly. Before submission verify the current official event rules separately; this phase does not certify eligibility or winning criteria.
+
+Earlier dated sections below retain history; this current contract supersedes conflicting instructions.
+
+
+## Historical contract — package1.8 / P02.1
+
+Judge entry can now start on the Bizoveya homepage and test the public Service Studio demo before signing in. The example is explicitly fictional and unsaved. Do not claim business publishing, AI workforce automation, channel connections or required sponsor-model execution from P02.1; those features/evidence remain later phases. Existing portfolio voice functionality remains inherited and requires its own live keys/tests.
+
+Earlier sections below retain planning/delivery history; conflicting capability or path descriptions are superseded by this current contract and document25.
+
 **Draft 0.1, 29 September 2026. Rules need a fresh check before submission.** Official rules: <https://nebiusglobalaihackathon.devpost.com/rules>; overview: <https://nebiusglobalaihackathon.devpost.com/>. Submission deadline shown as **30 October 2026, 10:00 a.m. PDT**. The existing Voxfolio predates this submission period; disclose it and show substantive new Bizoveya work performed during the allowed period. Do not frame inherited portfolio features as newly built.
 
 ## Competition proof

@@ -1,0 +1,161 @@
+{
+  "startedAt": "2026-10-01T19:57:21.754Z",
+  "engine": "PGlite 0.5.8 (PostgreSQL WASM)",
+  "scope": "Ephemeral local SQL with simulated Supabase Auth/Storage schema and JWT settings; no real Auth, PostgREST, Storage, concurrency or remote migration proof.",
+  "steps": [
+    {
+      "name": "migration:001_projects.sql",
+      "status": "passed",
+      "sha256": "7bcd7239d01b18c5bb0b37558c589225ebb61d7d1e6d2b0ad5379efe49d3939c"
+    },
+    {
+      "name": "migration:002_publications.sql",
+      "status": "passed",
+      "sha256": "f8d4b224e4dc632a0a5bf5da793a0a698f20fd7b3e84a63fee3695443cf2b98a"
+    },
+    {
+      "name": "migration:003_revision_restore.sql",
+      "status": "passed",
+      "sha256": "95e1107ce76abd512be82569cc587ff3765cae18746b5af5404af85a7dd36b8d"
+    },
+    {
+      "name": "migration:004_portfolio_media.sql",
+      "status": "passed",
+      "sha256": "68eab3c329b0b2429835fabebd114fd594fe0e1517a9f96b247fad8043193264"
+    },
+    {
+      "name": "migration:005_fix_portfolio_media_policies.sql",
+      "status": "passed",
+      "sha256": "68eab3c329b0b2429835fabebd114fd594fe0e1517a9f96b247fad8043193264"
+    },
+    {
+      "name": "migration:006_opportunity_variants.sql",
+      "status": "passed",
+      "sha256": "e452e7ba7f59c245caca858224714525bee45ea6e7aa3b22b3b01dd7c59c63b0"
+    },
+    {
+      "name": "migration:007_private_opportunity_publication_guard.sql",
+      "status": "passed",
+      "sha256": "ebffd88c80e19e0ba6e8a87ca7932d30c6c4418d1423419509da5ae3a3089ca5"
+    },
+    {
+      "name": "migration:008_opportunity_share_tokens.sql",
+      "status": "passed",
+      "sha256": "3a983623815628a3fbd6aa15dae3fb1e5ebfde9bb1bfbce33242ccbfe6075510"
+    },
+    {
+      "name": "migration:009_professional_memory_agent_events.sql",
+      "status": "passed",
+      "sha256": "3c9145b53f698315c8f0e9eb9a55c3c9fea959b5cba402e74a9923e16da0d6c4"
+    },
+    {
+      "name": "migration:010_agent_activity_controls.sql",
+      "status": "passed",
+      "sha256": "bf37be10c0e3d76afdffaf985532e9302b9c98612cb1928e0b2b8030488c542f"
+    },
+    {
+      "name": "migration:011_selective_opportunity_refresh.sql",
+      "status": "passed",
+      "sha256": "d0f3b8d024230b786e910d7c5cfbe656e4ffeabc1f68570a67b89b7d35eb2e62"
+    },
+    {
+      "name": "migration:012_opportunity_share_feedback.sql",
+      "status": "passed",
+      "sha256": "25ebb8dd31e8e401b3bc1d8bcdbe4088b5eb3df81b3f144c8d0574d7d27e7f25"
+    },
+    {
+      "name": "migration:013_public_visitor_agent_limits.sql",
+      "status": "passed",
+      "sha256": "08eb0c9eea0fd7350aec733102c03b2e38348ae3b08f5e99f7eafbef5292307e"
+    },
+    {
+      "name": "migration:014_private_content_connections.sql",
+      "status": "passed",
+      "sha256": "f3093c44e63095c589cb2205c1a8dcb82e7425ea8a0ad8ea35efaef493e333e3"
+    },
+    {
+      "name": "migration:015_visitor_documents.sql",
+      "status": "passed",
+      "sha256": "0447eb4a7387b6c548dc25c45ffbf609539de2890adf6113a0fd533f5e79b8ca"
+    },
+    {
+      "name": "migration:016_publication_snapshot.sql",
+      "status": "passed",
+      "sha256": "a4b85a173a06e1d7939273eb78fcd335c2ae863244915ec2f3845d904dfafc0e"
+    },
+    {
+      "name": "migration:017_vox_interview_demo_sessions.sql",
+      "status": "passed",
+      "sha256": "caaed6c58817ca547a8b1521da1745afd7e1769c7b74c4e00dc95fa445e7750c"
+    },
+    {
+      "name": "migration:018_bizoveya_workspaces.sql",
+      "status": "passed",
+      "sha256": "8e17c54297bd5a442190057a5a6df02bb47f0c76228fdf622c46f5e6160218be"
+    },
+    {
+      "name": "migration:019_bizoveya_admin_identity.sql",
+      "status": "passed",
+      "sha256": "20526cfdeddfa7ed1a6db13c99736dc52b2c33ea40c538a436b61dcebbf17672"
+    },
+    {
+      "name": "migration:020_bizoveya_admin_recovery.sql",
+      "status": "passed",
+      "sha256": "a378bd56f9a80449c354cdbf77a584c08030524a86c8654d867e2ff46dffa99c"
+    },
+    {
+      "name": "migration:021_business_drafts.sql",
+      "status": "passed",
+      "sha256": "e6a9876c8ceca5aa5221762483014878d4fe955d2145cac4273cd101a63dcc6f"
+    },
+    {
+      "name": "migration:022_modular_business_sections.sql",
+      "status": "passed",
+      "sha256": "5626f15a4e7cb3c72e85ee0f98419168a18a6faad038732dbc088e379d6abe53"
+    },
+    {
+      "name": "assertions:018_workspace_acceptance.sql",
+      "status": "passed",
+      "sha256": "dc004d4621d76fb7880902570c0e6110a0c2b7b04daa317579c293250387dc61"
+    },
+    {
+      "name": "assertions:019_admin_acceptance.sql",
+      "status": "passed",
+      "sha256": "d1c482df0fe638a84eaea02077dd9d8b66bf936e0953959ffd8a6062af31994b"
+    },
+    {
+      "name": "assertions:020_admin_recovery_acceptance.sql",
+      "status": "passed",
+      "sha256": "55fa1e06e52a70c21788bc354d5b315fb64b4f0df253917a8bb4eab2fca53e36"
+    },
+    {
+      "name": "assertions:021_business_draft_assertions.sql",
+      "status": "passed",
+      "sha256": "7ece250abf8896cc6e25aa77cd5642fdf08fdb16d8551d61f15358ee17637453"
+    },
+    {
+      "name": "assertions:022_modular_business_assertions.sql",
+      "status": "passed",
+      "sha256": "a988ccc25d189d82c8b6266fc9556818d6a4aff998ce69b1fd9497dc4e7d68af"
+    },
+    {
+      "name": "upgrade:021 -> 022 preserves schema-v1 draft byte-equivalent JSON, version and metadata",
+      "status": "passed"
+    },
+    {
+      "name": "upgrade:017 legacy -> 018 workspace -> 019 admin -> 020 recovery -> 021 private drafts -> 022 modular validation",
+      "status": "passed",
+      "preserved": [
+        "project document",
+        "workspace",
+        "membership",
+        "native project mapping",
+        "admin grant",
+        "audit events"
+      ]
+    }
+  ],
+  "postgres": "PostgreSQL 18.3 (PGlite 0.5.8) on wasm32-unknown-emscripten, compiled by emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 3.1.74 (1092ec30a3fb1d46b1782ff1b4db5094d3d06ae5), 32-bit",
+  "status": "passed",
+  "finishedAt": "2026-10-01T19:57:23.524Z"
+}

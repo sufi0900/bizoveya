@@ -1,0 +1,49 @@
+   ▲ Next.js 15.5.25
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 11.7s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/10) ...
+   Generating static pages (2/10) 
+   Generating static pages (4/10) 
+   Generating static pages (7/10) 
+ ✓ Generating static pages (10/10)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                      159 B         103 kB
+├ ○ /_not-found                            990 B         104 kB
+├ ƒ /admin                               1.69 kB         178 kB
+├ ƒ /admin/agents                        5.28 kB         206 kB
+├ ƒ /admin/audit                         1.69 kB         178 kB
+├ ƒ /admin/bindings                      4.16 kB         205 kB
+├ ƒ /admin/credentials                     131 B         206 kB
+├ ƒ /admin/model-tests                   5.05 kB         206 kB
+├ ƒ /admin/models                          130 B         206 kB
+├ ƒ /admin/security                      8.76 kB         185 kB
+├ ƒ /api/admin/agents                      159 B         103 kB
+├ ƒ /api/admin/agents/[id]/history         159 B         103 kB
+├ ƒ /api/admin/audit                       159 B         103 kB
+├ ƒ /api/admin/bindings                    159 B         103 kB
+├ ƒ /api/admin/credentials                 159 B         103 kB
+├ ƒ /api/admin/credentials/presence        159 B         103 kB
+├ ƒ /api/admin/model-tests                 159 B         103 kB
+├ ƒ /api/admin/models                      159 B         103 kB
+├ ƒ /api/admin/models/[id]/history         159 B         103 kB
+├ ƒ /api/admin/models/events               159 B         103 kB
+├ ƒ /api/admin/summary                     159 B         103 kB
+├ ƒ /login                               2.06 kB         178 kB
+└ ○ /robots.txt                            159 B         103 kB
++ First Load JS shared by all             103 kB
+  ├ chunks/383-3e242deaf0733721.js       46.4 kB
+  ├ chunks/c2bfd26e-d1337e1751bf52f8.js  54.2 kB
+  └ other shared chunks (total)          1.92 kB
+
+
+ƒ Middleware                             93.5 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

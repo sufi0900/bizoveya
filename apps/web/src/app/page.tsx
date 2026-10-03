@@ -1,19 +1,11 @@
-import { PortfolioStudio } from "@/features/studio/portfolio-studio";
-import { hasSupabaseConfig } from "@/lib/supabase/config";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
-import { validateSiteDocument } from "@/domain/site-document";
-
-export const dynamic = "force-dynamic";
-
-export default async function Home() {
-  if (!hasSupabaseConfig) return <PortfolioStudio />;
-  const supabase = await createSupabaseServerClient();
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user) return <PortfolioStudio />;
-  const { data: project } = await supabase.from("projects").select("id,name,document,revision").order("updated_at", { ascending: false }).limit(1).maybeSingle();
-  if (!project) return <PortfolioStudio authenticated userEmail={user.email} />;
-  const { data: live } = await supabase.from("project_publications").select("slug,revision,published_at,document").eq("project_id", project.id).is("superseded_at", null).maybeSingle();
-  const document = validateSiteDocument(project.document);
-  const publication = live ? { ...live, document: validateSiteDocument(live.document) } : undefined;
-  return <PortfolioStudio initialDocument={{ ...document, revision: project.revision }} projectName={project.name} persistence="server" initialPublication={publication} authenticated userEmail={user.email} />;
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight, Building2, Check, Globe2, Layers3, LayoutTemplate } from "lucide-react";
+import { MarketingShell } from "@/features/marketing/shell";
+export const metadata: Metadata = { title: "Bizoveya — A home for your business on the web", description: "Create a business website draft, keep your existing websites together, and build your digital workspace with Bizoveya." };
+export default function Home() {
+  return <MarketingShell><section className="biz-hero"><div className="biz-hero-copy"><p className="biz-eyebrow"><span /> YOUR BUSINESS. YOUR NEXT CHAPTER.</p><h1>Bring your business <em>into focus.</em></h1><p className="biz-lead">A place to shape your website and organize your digital presence. Start with a business template or bring the websites you already have.</p><div className="biz-actions"><Link className="biz-btn" href="/get-started?journey=new">Create a website <ArrowUpRight size={19} aria-hidden="true" /></Link><Link className="biz-btn secondary" href="/get-started?journey=existing">I have a website <ArrowRight size={18} aria-hidden="true" /></Link></div><p className="biz-caption">Explore a live template demo before creating an account.</p></div><div className="biz-hero-visual"><div className="biz-window"><div className="biz-window-bar"><span /><span /><span /><small>Business website · draft preview</small></div><div className="biz-mini-site"><p>NORTHLINE / STUDIO</p><h2>Small studio.<br /><em>Big possibilities.</em></h2><span className="biz-mini-pill">Design & strategy ↗</span><div className="biz-mini-art" aria-hidden="true"><i /><i /><i /></div><div className="biz-mini-services"><span>01 / Website design</span><span>02 / Brand direction</span></div></div></div><div className="biz-floating"><Layers3 size={22} aria-hidden="true" /><div><strong>Your websites, together</strong><span>One workspace. Separate site records.</span></div></div></div></section>
+    <section className="biz-paths"><div className="biz-section-heading"><p className="biz-eyebrow">START WHERE YOU ARE</p><h2>Two ways in.<br />Room to grow.</h2></div><Link className="biz-path-card" href="/get-started?journey=new"><Building2 size={28} aria-hidden="true" /><h3>I need a website</h3><p>Choose a business template, add your details and preview your draft as you work.</p><span>Create your starting point <ArrowRight size={18} aria-hidden="true" /></span></Link><Link className="biz-path-card" href="/get-started?journey=existing"><Globe2 size={28} aria-hidden="true" /><h3>I have a website</h3><p>Register your existing sites in a workspace. Keep their hosting and content where they are.</p><span>Bring your websites together <ArrowRight size={18} aria-hidden="true" /></span></Link></section>
+    <section className="biz-feature-band"><div><p className="biz-eyebrow">LESS BLANK PAGE. MORE DIRECTION.</p><h2>A starting point<br />you can make yours.</h2><p>Six business starting designs, reusable sections and shared styles help you shape a website around your business.</p><Link className="biz-btn" href="/templates?category=business">Explore business templates <LayoutTemplate size={18} aria-hidden="true" /></Link></div><ul>{["Edit your business information", "Preview every change immediately", "Save drafts in your workspace", "Keep your existing portfolio workflow"].map(item => <li key={item}><Check size={19} aria-hidden="true" />{item}</li>)}</ul></section>
+    <section className="biz-roadmap"><p className="biz-eyebrow">AN HONEST LOOK AT WHAT’S HERE</p><h2>Build today. Grow from here.</h2><div><article><span className="biz-status">Available now</span><h3>Websites & drafts</h3><p>Workspace records, a business draft editor, live preview and the existing portfolio Studio.</p></article><article><span className="biz-status">Available now</span><h3>Business publishing</h3><p>Publish a saved business snapshot. Custom domains remain planned.</p></article><article><span className="biz-status future">Planned</span><h3>Your AI workforce</h3><p>Private knowledge and agent context previews are available. Live agents and distribution remain planned.</p></article></div></section></MarketingShell>;
 }

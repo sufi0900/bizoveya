@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { hasSupabaseConfig } from "@/lib/supabase/config";
 import { validateSiteDocument } from "@/domain/site-document";
 import { projectsForPresentation } from "@/domain/opportunity";
 
@@ -9,6 +10,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: base, changeFrequency: "weekly", priority: 1 },
     { url: `${base}/start`, changeFrequency: "monthly", priority: .8 },
   ];
+  urls.push({ url: `${base}/templates`, changeFrequency: "monthly", priority: .8 }, { url: `${base}/templates/service-studio`, priority: .7 }, { url: `${base}/get-started`, priority: .7 }, { url: `${base}/portfolio`, priority: .6 });
+  urls.push({ url: `${base}/templates/local-services`, priority: .7 }, { url: `${base}/templates/creative-business`, priority: .7 });
+  if (!hasSupabaseConfig) return urls;
   const supabase = await createSupabaseServerClient();
   const { data } = await supabase.from("project_publications").select("slug,document,published_at").is("superseded_at", null).limit(1000);
   for (const record of data ?? []) {

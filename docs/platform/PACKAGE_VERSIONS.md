@@ -1,5 +1,21 @@
 # Bizoveya ZIP and sub-implementation register
 
+## Current contract — 1.19 / P04.3.2
+
+This update supersedes conflicting older “current” blocks below; historical records remain unchanged. Admin-only spending controls are at `/admin/spending` and `/api/admin/spending`. Migration032 follows031; never rerun applied migrations. New connectivity tests require reviewed USD pricing and enabled limits. The ledger reserves a conservative estimate before a provider call, settles reported usage, and holds uncertain/overrun charges until evidence-based reconciliation. Customer draft generation and publishing remain disabled. See [39 Spending controls](39_SPENDING_CONTROLS_AND_TESTING.md).
+
+Founder reported all1.18 MT095–101 passed on2026-10-03; this is founder-reported local acceptance, not independent deployment verification. New MT102–109 remain pending. GitHub write access is restored; delivery uses `phase/p04-3-2-spending-controls`, not main. Main was inspected at1.7; this branch carries cumulative1.19 source. See38 and CONTINUATION for delivery state.
+
+
+## Historical snapshot — 1.18 / P04.3.1
+
+Reviewed model assignments are implemented at `/admin/bindings` and `/api/admin/bindings` on the separate admin host only. Migration 031 is additive after 030. An assignment pins a checked latest preview-approved agent version, matching-tier checked model profile, enabled credential-reference version and successful matching connectivity-test ID. Evidence must remain less than 24 hours old. Version changes, rotation, revocation or expiry require review; disable retains history. This is assignment configuration, not paid execution, budget enforcement or customer draft generation.
+
+Use [37 Agent model assignments](37_AGENT_MODEL_ASSIGNMENTS.md) for setup and pending MT095–101. Next are P04.3.2 spending controls, P04.3.3 durable text drafts, and P04.3.4 visual composition. Publishing remains deferred. The founder's successful local Gemini test is accepted only for the evidenced case; all other unevidenced manual tests stay pending.
+
+The founder approved one branch/PR per phase and six-hour continuation. GitHub reads succeeded but branch creation returned HTTP403 `Resource not accessible by integration`. No remote branch, commit or PR was created. The schedule was created then paused pending write access. See [38 Delivery and continuation](38_DELIVERY_AND_CONTINUATION.md). Earlier contracts below remain historical where superseded.
+
+
 **Living record; time zone PKT (UTC+05:00).** Bizoveya starts at **phase 0**. The package label `0.n` means grand phase P00, sub-delivery n. With phase 1, use `1.0`, then `1.1`, etc.; a phase with a single delivery may only have `.0`. The phase number is an implementation stream, not a claim that the whole phase is accepted. Every delivered ZIP gets a unique, monotonically increasing version, exact filename, creation time, actor, source archive/commit, SHA-256, content/change summary, validation, and status. Never reuse a version or rename an already delivered ZIP retrospectively. A corrected package gets the next number and supersedes the earlier one explicitly.
 
 **New package naming:** `Bizoveya_<phase>.<sub>_<short-description>.zip`, e.g. `Bizoveya_0.4_Versioning-and-Docs.zip`. Version identifies the phase-stream delivery substep; feature work IDs can span deliveries (ADR-0003 clarification below). For a significant new phase, update `10_PHASES_AND_STATUS.md` with its substeps before delivery; later discovery may add, reorder or skip substeps with recorded reason. Historical Voxfolio V27.12 and migration `017` are inherited source labels/SQL sequence numbers, **not Bizoveya release or ZIP versions**. Existing migration filenames remain unchanged because altering an applied migration can break upgrade tracking. Future migration IDs will be chosen after comparing the live migration ledger.
@@ -57,6 +73,98 @@ Package1.4 is superseded as current source and preserved unchanged: SHA-256 `a8c
 
 Package1.5 is superseded as current source, preserved unchanged: SHA-256 `99197dedea6d487354b435a181738d4703cdbfcda24551073fcba03b4c8bc5a8`, creation `2026-10-01T02:28:58+05:00`. Thirteen produced labels are recorded (0.0–0.5,1.0–1.6). ZIP1.6 and application1.6.0 are separate labels; stable work IDs include P01.4.Fix-1/P01.1.Fix-1. Next ZIP in this stream is1.7. No historical file is renamed.
 
-| 1.7 | P01.5 source separation and documentation | `Bizoveya_1.7_Separate-Admin-Application.zip` | Two app roots in one cumulative archive; hosted/operator acceptance pending |
+| 1.7 / P01.5 | `Bizoveya_1.7_Separate-Admin-Application.zip`; creation time external | Two app roots in one cumulative archive; hosted/operator acceptance pending | docs/delivery/P01.7_VERIFICATION.json |
 
 Next P01 ordinal:1.8. Never reuse1.7 or infer parent acceptance from packaging.
+
+
+## Package1.8 — business entry and private draft builder
+
+| Version / work item | Exact filename and creation time | Purpose / status | Evidence |
+|---|---|---|---|
+| 1.8 / P02.1 | `Bizoveya_1.8_Business-Entry-and-Draft-Builder.zip`; exact archive timestamp/hash in external delivery metadata | Cumulative public/admin source; branded entry, template/demo, private draft API/editor/021 and synchronized docs; owner acceptance pending | docs/delivery/P02.1_VERIFICATION.json; SQL/browser reports |
+
+Fifteen produced labels known:0.0–0.5 and1.0–1.8. Prior package1.7 preserved; this is the current cumulative archive. Next delivery1.9, independent of featureP02.1/P02.2. No self-referential ZIP checksum is embedded inside its own archive.
+
+
+## Package1.9 — modular Business Studio (current)
+
+| Version / work item | Exact filename and creation time (PKT) | Purpose/status | SHA-256/evidence |
+|---|---|---|---|
+| 1.9 / P02.2 | `Bizoveya_1.9_Modular-Business-Studio.zip`; exact ZIP creation time in external delivery metadata | Cumulative source, two apps, modular Studio/presets,022, living docs/research/history/manual; new hosted acceptance pending | Exact ZIP hash external; docs/delivery/P02.2_VERIFICATION.json and reports |
+
+Package1.8 remains unchanged and is superseded as current delivery. Its confirmed SHA is24b3641f99766ff892d737bf7eb7257263fe1d39e287af2d7593ea255b6549f2. Next cumulative ordinal1.10; stable work itemP02.2 is separate. No restart to a Voxfolio version. Version1.9.0 is application metadata only; dependencies unchanged.
+
+
+## Package1.10 — Customer journey and template fixes (current)
+
+| Version / work item | Exact filename and creation time | Purpose/status | Evidence |
+|---|---|---|---|
+| 1.10 / P02.2 | `Bizoveya_1.10_Customer-Journey-and-Template-Fixes.zip`; actual ZIP timestamp/hash in external handoff | P02.2.Fix-1 cumulative source,023, customer-flow/design fixes and41 living docs; founder retest pending | docs/delivery/P02.2.Fix-1_VERIFICATION.json |
+
+Previous1.9 SHA-256: `a9fad9de08a12cda2d24ec959cecd8981f15111acadfc2c38285931b6a37cbc8`. New application metadata1.10.0; next cumulative ordinal1.11. Package ordinal is independent of stable feature/defect IDs; no Voxfolio version continuation. This register does not embed its own ZIP hash.
+
+
+## Package1.11 — Business publication snapshots (current)
+
+| Version / substep | Exact filename | Purpose / status | Evidence |
+|---|---|---|---|
+| 1.11 / P02.3 | `Bizoveya_1.11_Business-Publication-Snapshots.zip` | P02.3.1 cumulative source,024, snapshot visitor pages and43 living docs; founder acceptance pending | docs/delivery/P02.3.1_VERIFICATION.json; exact archive time/hash in external handoff |
+
+Supersedes1.10 as cumulative delivery;1.10 SHA256 f5e9bb90bbaaea085c7c2c192492262638892eafea167d3e11e15fc476b246e8 preserved externally. Application metadata1.11.0; dependencies/lock unchanged. Next ordinal1.12. No old Voxfolio numbering or timeline estimates.
+
+
+## Package1.12 — Expanded business templates (current)
+
+| Version / substep | Exact filename | Purpose/status | Evidence |
+|---|---|---|---|
+| 1.12 / P02.4 | `Bizoveya_1.12_Expanded-Business-Templates.zip` | Six shared families,025,46 current docs and combined deferred acceptance checklist | docs/delivery/P02.4_VERIFICATION.json; exact hash/time external |
+
+Previous1.11 preserved as history; baseline SHA25669868a69a237cd04666d88c6ec052fc151bb3a3ffc75e4e6434694eecfd4b305. Next ordinal1.13. No timeline estimate or owner pass inferred.
+
+
+## Package1.13 — private site knowledge (current)
+
+| Version / work item | Exact filename and creation time | Purpose / status | Evidence |
+|---|---|---|---|
+| 1.13 / P03.1 | `Bizoveya_1.13_Private-Site-Knowledge.zip`; exact creation time/hash in external delivery metadata | Cumulative two-app source, private site knowledge and026; every deferred founder action remains pending | docs/delivery/P03.1_VERIFICATION.json;BZ-043/044 |
+
+Package1.12 preserved unchanged, superseded as current: SHA256 f502f2d0d9f20b75e8583a3ac197d1692cfbfa16dc40c9b02aaa288b1fee2d60. Next ordinal1.14. Stable work item P03.1 does not change ordinal stream under ADR-0003. ZIP creation/hash cannot be self-referential; external metadata accompanies delivery.
+
+
+## Package1.14 — Agent configuration and readiness (current)
+
+| Version / work item | Exact ZIP filename | Scope | Evidence |
+|---|---|---|---|
+| 1.14 / P04.1 | `Bizoveya_1.14_Agent-Configuration-and-Readiness.zip`; exact creation time/hash external | Cumulative source,027, shared contracts, preview-only admin/site readiness,50 current Markdown sources; manual pending | docs/delivery/P04.1_VERIFICATION.json and P04.1/ |
+
+Baseline1.13 SHA256 fa06bc8c54c3882cac2ce2949dfebcf34bfcddc466320805bd2d26f7f9a8d052. Application/root metadata1.14.0; new internal contract0.1.0. Intentional workspace importer links in lock; third-party versions unchanged. Next ordinal1.15. No self-referential ZIP hash embedded.
+
+
+## Package1.15 — Model profiles and credential references (current)
+
+| Version / work item | Exact ZIP filename | Scope | Evidence |
+|---|---|---|---|
+| 1.15 / P04.2.1 | `Bizoveya_1.15_Model-Profiles-and-Credential-References.zip`; exact creation time/hash external | Cumulative source,028, candidate/admin preparation and52 living docs; manual pending | docs/delivery/P04.2.1_VERIFICATION.json |
+
+Baseline1.14 SHA25650f84dac967edd8287e12e7694d3e6473c3b024fa2ecea080fed6513d1ee40f5. Root/apps metadata1.15.0; dependencies/lock unchanged. Next ordinal1.16. No old Voxfolio numbering resumed.
+
+| 1.16 / P02.5 | Bizoveya_1.16_Studio-Repairs-and-Site-Removal.zip | 2026-10-02T23:59:42.117988+05:00 PKT | Studio repairs, focused templates, owner removal029 and living plan updates; manual acceptance pending |
+
+Package1.16 verification/package assembly: 2026-10-03T00:25:05.400482+05:00 PKT (2026-10-02T19:25:05.400482+00:00 UTC), ChatGPT Codex assistant. Exact filename Bizoveya_1.16_Studio-Repairs-and-Site-Removal.zip; evidence P02.5_VERIFICATION.json. Next delivery ordinal1.17, actual phase determined by authorized work; no grand-phase completion implied.
+
+## Package1.17 / P04.0 — 2026-10-03T00:54:03.490300+05:00
+
+Actor: ChatGPT Codex assistant, authorized by founder continuation while testing1.16. Model connectivity room, fixed SDK adapters, versioned redacted evidence and030 implemented;36 and ADR-0014 added. Exact ZIP Bizoveya_1.17_Model-Connectivity-Tests.zip. Local verification is recorded in docs/delivery/P04.0; founder/hosted/live-provider checks remain pending. No provider request, remote migration or deployment performed. Next ordinal1.18.
+
+| Version / subphase | Delivery record |
+|---|---|
+| 1.18 / P04.3.1 | `Bizoveya_1.18_Agent-Model-Assignments.zip` — corrected fallback after truncated upload; GitHub403, schedule paused; manual acceptance pending |
+
+## GitHub delivery1.19 — P04.3.2
+
+| Version / substep | Delivery reference | Purpose / status | Evidence |
+|---|---|---|---|
+| 1.19 / P04.3.2 | `GitHub:phase/p04-3-2-spending-controls` | Spending controls; cumulative source; founder tests pending | Exact commit and PR recorded in delivery handoff |
+
+No1.19ZIP is claimed or created. Delivery numbering continues across ZIP and GitHub deliveries; historical ZIP filenames stay unchanged.

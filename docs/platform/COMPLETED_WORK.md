@@ -1,5 +1,21 @@
 # Completed Bizoveya work only
 
+## Current contract — 1.19 / P04.3.2
+
+This update supersedes conflicting older “current” blocks below; historical records remain unchanged. Admin-only spending controls are at `/admin/spending` and `/api/admin/spending`. Migration032 follows031; never rerun applied migrations. New connectivity tests require reviewed USD pricing and enabled limits. The ledger reserves a conservative estimate before a provider call, settles reported usage, and holds uncertain/overrun charges until evidence-based reconciliation. Customer draft generation and publishing remain disabled. See [39 Spending controls](39_SPENDING_CONTROLS_AND_TESTING.md).
+
+Founder reported all1.18 MT095–101 passed on2026-10-03; this is founder-reported local acceptance, not independent deployment verification. New MT102–109 remain pending. GitHub write access is restored; delivery uses `phase/p04-3-2-spending-controls`, not main. Main was inspected at1.7; this branch carries cumulative1.19 source. See38 and CONTINUATION for delivery state.
+
+
+## Historical snapshot — 1.18 / P04.3.1
+
+Reviewed model assignments are implemented at `/admin/bindings` and `/api/admin/bindings` on the separate admin host only. Migration 031 is additive after 030. An assignment pins a checked latest preview-approved agent version, matching-tier checked model profile, enabled credential-reference version and successful matching connectivity-test ID. Evidence must remain less than 24 hours old. Version changes, rotation, revocation or expiry require review; disable retains history. This is assignment configuration, not paid execution, budget enforcement or customer draft generation.
+
+Use [37 Agent model assignments](37_AGENT_MODEL_ASSIGNMENTS.md) for setup and pending MT095–101. Next are P04.3.2 spending controls, P04.3.3 durable text drafts, and P04.3.4 visual composition. Publishing remains deferred. The founder's successful local Gemini test is accepted only for the evidenced case; all other unevidenced manual tests stay pending.
+
+The founder approved one branch/PR per phase and six-hour continuation. GitHub reads succeeded but branch creation returned HTTP403 `Resource not accessible by integration`. No remote branch, commit or PR was created. The schedule was created then paused pending write access. See [38 Delivery and continuation](38_DELIVERY_AND_CONTINUATION.md). Earlier contracts below remain historical where superseded.
+
+
 **Living progress snapshot — 2026-10-01, Asia/Karachi (PKT).** This file lists **what has actually been completed** for the Bizoveya transition. Future phases, planned features and unaccepted claims belong in `10_PHASES_AND_STATUS.md`. The detailed sequence of changes, reversals, actors and evidence is in `ACTIVITY_LOG.md`. Update this snapshot after each verified delivery, and remove or correct a completion claim if later evidence disproves it; preserve the correction trail in the activity log.
 
 | ID | Completed result | Evidence and location | Limit |
@@ -34,3 +50,70 @@
 | CW-014 | Reproduced and repaired soft-deleted admin revocation and stale docs release/count labels; added repeatable SQL/browser verification and synchronized living evidence. | `Bizoveya_1.6_Phase1-Verification-and-Hardening.zip`; migration020, recovery SQL, document projections, tools/phase1-verification;250 unit tests; local SQL/upgrade and browser reports; BZ-024/BZ-025. | Verified in the named local layers; real Supabase Auth/MFA/PostgREST/concurrency/deployment and owner acceptance not claimed. |
 
 | CW-015 | Separated admin application source/routes/session config and delivered monorepo/runbooks plus founder report. | Bizoveya_1.7_Separate-Admin-Application.zip; apps/web, apps/admin, ADR-0004,23/24; delivery verification | Hosted domains/Auth/MFA and owner acceptance pending; no remote migration or agents added |
+
+
+| ID | Completed result | Evidence and location | Limit |
+|---|---|---|---|
+| CW-016 | Recorded founder evidence of both separate1.7 production deployments reaching Ready. | Supplied Vercel screenshots; manual recordMT-007/008 and BZ-028 | Deployment only; authenticated/admin acceptance pending. |
+| CW-017 | Implemented Bizoveya public entry, category templates, Service Studio interactive demo and private saved-draft editor/API/schema021; preserved existing portfolio entry and admin separation; synchronized living docs. | Bizoveya_1.8_Business-Entry-and-Draft-Builder.zip; apps/web/src/features/business and marketing; docs/delivery/P02.1; BZ-029 | Local source evidence only; business publishing/AI not delivered; hosted/founder tests pending. |
+
+
+| ID | Completed result | Evidence/location | Limit |
+|---|---|---|---|
+| CW-018 | Recorded founder1.8 functional pass, business research and owner-approved phase reorder | MT-021; BZ-031/032;17/26 andADR-0006 | Broad self-report; no invented per-case security evidence |
+| CW-019 | Implemented shared modular Studio and three presets, eight section types/nineteen layouts, safev1 read upgrade/additive022, section editing/undo and JSON restore | apps/web business module; SQL022; docs/delivery/P02.2 | Source implementation; new hosted/founder gates pending; no business publication/agents |
+
+
+| ID | Completed result | Evidence/location | Limit |
+|---|---|---|---|
+| CW-020 | Implemented1.9 customer-flow repairs, atomic initial selected template, identity guards, separate workspace creation, distinct family styles and targeted QA/documentation | Bizoveya_1.10_Customer-Journey-and-Template-Fixes.zip;P02.2.Fix-1; delivery verification;BZ-035/036 | Local evidence only; founder hosted retest pending; old duplicates retained |
+
+
+## P02.3.1 implementation evidence
+
+Implemented saved native-business publication/unpublication, independent versions/history, active sanitized anonymous visitor snapshots, semantic metadata/H1 and email/call actions. Public/admin separation and inherited portfolio preserved. Local verification recorded in delivery/P02.3.1; hosted/manual acceptance pending. Source delivery is not automatic live publishing.
+
+
+| ID | Completed result | Evidence/location | Limit |
+|---|---|---|---|
+| CW-021 | Implemented saved native business publication, independent versions/history, sanitized visitor pages, SEO and email/call actions | Bizoveya_1.11_Business-Publication-Snapshots.zip;P02.3.1;docs/delivery/P02.3.1;BZ-038/039 | Local verified source; hosted/founder acceptance pending; no forms/domains/agents |
+
+
+| ID | Completed result | Evidence/location | Limit |
+|---|---|---|---|
+| CW-022 | Implemented six business families via shared catalog/page/renderer, three distinct added styles,025 accepted IDs and combined pending checklist | Bizoveya_1.12_Expanded-Business-Templates.zip;P02.4;delivery verification;BZ-040/041 | Local source evidence only; founder/hosted acceptance pending; no booking/checkout/LMS/agents |
+
+| CW-023 | Private site knowledge: text import/review/owner approval/reset/revoke, scoped current facts, revisions/export/erase,026 and combined pending checklist | Bizoveya_1.13_Private-Site-Knowledge.zip;P03.1;BZ-043/044;delivery verification | Implemented source only; founder/hosted acceptance pending; PDF/OCR/agents not implemented |
+
+
+| ID | Completed result | Evidence/location | Limit |
+|---|---|---|---|
+| CW-024 | Versioned admin agent configuration/check/review/preview rollback/revoke/history, shared contracts, scoped site preferences and approved context preview | Bizoveya_1.14_Agent-Configuration-and-Readiness.zip; P04.1; BZ-046; delivery verification | Implemented source only; hosted/founder pending; no models/keys/worker/evaluation/activation |
+
+
+| ID | Completed result | Evidence/location | Limit |
+|---|---|---|---|
+| CW-025 | Versioned candidate profiles, current fixed reference checks, reasoned reference enable/disable/rotation record, activity/history and boolean admin-server key presence | Bizoveya_1.15_Model-Profiles-and-Credential-References.zip;P04.2.1;BZ-048;delivery verification | Source only; hosted/founder pending; no live models/actual key writes/health/binding/spend enforcement |
+
+### CW-026 — 2026-10-02T23:59:42.117988+05:00 — Source/document delivery P02.5
+
+Studio/navigation/onboarding/template/image policy and owner record deletion implemented;34/35/ADR0013 plus affected living docs. Filename Bizoveya_1.16_Studio-Repairs-and-Site-Removal.zip. Automated evidence recorded separately; no future work or unperformed manual acceptance marked complete.
+
+Local verification finalized at 2026-10-03T00:25:05.400482+05:00 PKT (2026-10-02T19:25:05.400482+00:00 UTC), actor ChatGPT Codex assistant:354 unit cases,43 isolated SQL steps,113 production browser checks,30 screenshots and zero page errors. Both builds/lint/type validation and application boundaries passed.37 living Markdown documents updated,34/35/ADR-0013 added (55 current sources); README updated.001–028,41 historical files and dependency lock byte-preserved. Exact ZIP Bizoveya_1.16_Studio-Repairs-and-Site-Removal.zip; source evidence docs/delivery/P02.5 and P02.5_VERIFICATION.json. Founder/hosted acceptance remains pending; no remote/provider action.
+
+## Package1.17 / P04.0 — 2026-10-03T00:54:03.490300+05:00
+
+Actor: ChatGPT Codex assistant, authorized by founder continuation while testing1.16. Model connectivity room, fixed SDK adapters, versioned redacted evidence and030 implemented;36 and ADR-0014 added. Exact ZIP Bizoveya_1.17_Model-Connectivity-Tests.zip. Local verification is recorded in docs/delivery/P04.0; founder/hosted/live-provider checks remain pending. No provider request, remote migration or deployment performed. Next ordinal1.18.
+
+CW-027: Admin connectivity-test implementation and living-document update; evidence in P04.0. Source delivery only.
+
+
+### 1.17 delivery verification — 2026-10-02T20:07:16.811839+00:00
+
+Local verification: 367 unit tests, 45 SQL steps, 119 browser checks, both production builds passed. Evidence: `docs/delivery/P04.0_VERIFICATION.json`. Archive: `Bizoveya_1.17_Model-Connectivity-Tests.zip`. No remote changes or paid requests. Founder acceptance and previous pending manual tests remain pending.
+
+| ID | Completed work | Evidence |
+|---|---|---|
+| CW-028 | Reviewed model assignments; recorded founder evidence and delivery decisions | P04.3.1 source and verification; manual acceptance pending |
+
+| CW-063 | P04.3.2 spending policy, reservation and reconciliation implementation | Migration032,39,49 local SQL steps and385 unit tests; founder acceptance pending |

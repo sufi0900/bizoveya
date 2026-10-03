@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "templateId": "service-studio-v1",
+  "accent": "blue",
+  "name": "Founder Test Business",
+  "headline": "A clearer next chapter",
+  "description": "A fictional creative studio helping service businesses turn their ideas into a confident digital presence.",
+  "about": "This example shows how a small service business can introduce its work, explain its services and make it easy for visitors to get in touch. Replace every example with your own approved information.",
+  "location": "Sample business · replace with your location",
+  "email": "hello@business.com",
+  "phone": "",
+  "services": [
+    {
+      "title": "Website design",
+      "description": "A clear, responsive website built around the way your customers find and choose you."
+    },
+    {
+      "title": "Brand direction",
+      "description": "A consistent visual identity for your next chapter."
+    },
+    {
+      "title": "Content planning",
+      "description": "Useful pages that explain your services and answer real customer questions."
+    }
+  ]
+}

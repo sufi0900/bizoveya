@@ -1,5 +1,21 @@
 # Living documentation changelog
 
+## Current contract — 1.19 / P04.3.2
+
+This update supersedes conflicting older “current” blocks below; historical records remain unchanged. Admin-only spending controls are at `/admin/spending` and `/api/admin/spending`. Migration032 follows031; never rerun applied migrations. New connectivity tests require reviewed USD pricing and enabled limits. The ledger reserves a conservative estimate before a provider call, settles reported usage, and holds uncertain/overrun charges until evidence-based reconciliation. Customer draft generation and publishing remain disabled. See [39 Spending controls](39_SPENDING_CONTROLS_AND_TESTING.md).
+
+Founder reported all1.18 MT095–101 passed on2026-10-03; this is founder-reported local acceptance, not independent deployment verification. New MT102–109 remain pending. GitHub write access is restored; delivery uses `phase/p04-3-2-spending-controls`, not main. Main was inspected at1.7; this branch carries cumulative1.19 source. See38 and CONTINUATION for delivery state.
+
+
+## Historical snapshot — 1.18 / P04.3.1
+
+Reviewed model assignments are implemented at `/admin/bindings` and `/api/admin/bindings` on the separate admin host only. Migration 031 is additive after 030. An assignment pins a checked latest preview-approved agent version, matching-tier checked model profile, enabled credential-reference version and successful matching connectivity-test ID. Evidence must remain less than 24 hours old. Version changes, rotation, revocation or expiry require review; disable retains history. This is assignment configuration, not paid execution, budget enforcement or customer draft generation.
+
+Use [37 Agent model assignments](37_AGENT_MODEL_ASSIGNMENTS.md) for setup and pending MT095–101. Next are P04.3.2 spending controls, P04.3.3 durable text drafts, and P04.3.4 visual composition. Publishing remains deferred. The founder's successful local Gemini test is accepted only for the evidenced case; all other unevidenced manual tests stay pending.
+
+The founder approved one branch/PR per phase and six-hour continuation. GitHub reads succeeded but branch creation returned HTTP403 `Resource not accessible by integration`. No remote branch, commit or PR was created. The schedule was created then paused pending write access. See [38 Delivery and continuation](38_DELIVERY_AND_CONTINUATION.md). Earlier contracts below remain historical where superseded.
+
+
 ## 2026-09-29 — Draft 0.1 (P00 in progress)
 
 - Created first drafts of the 13 core specifications, handoff template and open-questions register within the Bizoveya package.
@@ -112,3 +128,57 @@ Admin setup notices now link to the current runbook rather than freezing a migra
 ## Bizoveya1.7
 
 Public/admin Next.js app separation, admin-only sign-in/no public signup, distinct host-only sessions/refresh, public404 for removed admin paths/APIs, root workspace commands/lockfile, docs tracing. Adds manual-testing record23, deployment runbook24, ADR-0004. Updates affected architecture/security/routes/manual/phase/dependency/release records. Existing SQL/history preserved. No new business builder/agent/config-editor feature; no remote deployment.
+
+
+## 1.8 / P02.1
+
+Bizoveya public entry, dark/light marketing, two guided journeys, business/portfolio category catalog, interactive Service Studio demo, private business draft editor and GET/PUT API. Former root Studio moved to/portfolio; unchanged project APIs/publication routes. Added021_business_drafts.sql and rollback-only assertions. Source and DB validate document/role/version; draft export and explicit unsaved/conflict/status messages. Updated affected docs and added25/ADR-0005. Package1.7 deployments recorded with authenticated tests pending. No new runtime dependencies/env keys, admin feature or public business publish route. See delivery inventory for exact changed paths.
+
+
+## 1.9 / P02.2 — 2026-10-02 00:54:59 PKT
+
+Added shared typed sections and three business presets; visual outline/canvas/inspector, layout/tone/brand choices, reorder/hide/duplicate/delete,30-edit local undo/redo, optionalHTTPS images/manual testimonial slider/FAQ, JSON restore, safe legacy read migration. Added022strictSQLvalidation/acceptance tests;21previous migrations preserved. Main public templates/home/sitemap updated; admin functional source and portfolio preserved. Added26spec/ADR-0006; affected living docs, founder report, discussion/phase/activity/package/manual updated. Publishing shiftsP02.3. New hosted/founder acceptance pending; final verification in delivery evidence.
+
+
+## 2026-10-02 — package1.10 / P02.2.Fix-1
+
+Customer journey, authenticated header, workspace/sidebar/create navigation, atomic selected-design creation, normalized duplicate guards, repeat/unchanged save protections and distinct template styling. Added27,ADR-0007,023/operator/assertions/auth harness. Current contracts updated in: 00_INDEX.md, 02_REQUIREMENTS.md, 03_EXPERIENCE_AND_ROUTES.md, 04_SYSTEM_ARCHITECTURE.md, 05_DATA_AND_MEMORY.md, 07_CONNECTORS_AND_SITE_MODES.md, 08_TECH_STACK_AND_SECURITY.md, 09_DESIGN_AND_BRAND.md, 10_PHASES_AND_STATUS.md, 11_VERIFICATION_AND_RELEASE.md, 13_USER_MANUAL.md, 14_OPERATING_RUBRIC.md, 15_COMMERCIAL_PRESENTATION.md, 16_DOCUMENT_PORTAL.md, 17_DISCUSSION_AND_DECISION_RECORD.md, 19_DEPENDENCIES_AND_CHANGE_IMPACT.md, 20_ROUTE_AND_TRANSITION_REGISTER.md, 22_PHASE1_VERIFICATION_GUIDE.md, 23_FOUNDER_MANUAL_TESTING.md, 24_DEPLOYMENT_AND_ENVIRONMENTS.md, 25_BUSINESS_BUILDER_AND_TESTING.md, 26_BUSINESS_TEMPLATES_AND_SECTIONS.md, OPEN_QUESTIONS.md, PHASE_HANDOFF_TEMPLATE.md. Activity/completed/package/changelog records updated;41 sources in visual room. Specific1.9 failures remain recorded; hosted1.10 acceptance pending.
+
+
+## 1.11 / P02.3.1
+
+Added explicit saved publication snapshots, private version/action history and sanitized public visitor rendering, basic SEO and contact links. Additive024; no older migration modifications. Corrected QA-discovered published author instructions, hidden-data payload exposure and unknown status reporting. Updated current docs and phase dependency/acceptance records;1.10 retest still pending.
+
+
+## 1.12 / P02.4
+
+Added three distinct families, six total; shared demo page composition, schema/025 compatibility and unified deferred setup/tests. Preserved existing templates/portfolio/admin/history. Fixed new dark-family text/tones and aligned public hero typography with preview. New owner manual acceptance pending.
+
+
+## 1.13 / P03.1
+
+Private text knowledge room for every registered mode; review/explicit owner approval, resets/citations/revisions/export/removal;026 additive and scoped tests. New31/ADR-0010; combined manual30 carries every earlier pending case plus MT053–059. No new env/model/provider/deploy, no pending test marked accepted.
+
+
+## 1.14 / P04.1
+
+Added preview-only agent configuration/readiness, versioned current-MFA admin controls, role capability shared contract, private site preferences/approved context preview and027. New32/ADR-0011 and living affected records/manual pending updated. Previous migrations/history preserved. Live models/secret management remain planned.
+
+Also corrected stale homepage counts/capability copy and improved preference labels/new-draft dirty guards. Local evidence:339 unit cases,39 SQL steps,85 browser checks,23 screenshots; real acceptance pending.
+
+
+## 1.15 / P04.2.1
+
+Model candidate profiles/history/current reference checks; fixed env references/reviewed enable/disable/record-rotation and events; boolean current-admin-deployment presence;028. No secret value forms/database/provider calls/runtime binding. Updated living docs;33 and ADR-0012 new;30 accumulates all pending cases.
+
+##1.16 / P02.5
+
+Studio corrections, focused digital-service styling, optional logo/photo fitting, signed-in onboarding, permanent owner deletion029,34/35/ADR0013,MT075–086. Publishing pilot deferred, runtime/visual composer/multipage/uploads still planned.
+
+## Package1.17 / P04.0 — 2026-10-03T00:54:03.490300+05:00
+
+Actor: ChatGPT Codex assistant, authorized by founder continuation while testing1.16. Model connectivity room, fixed SDK adapters, versioned redacted evidence and030 implemented;36 and ADR-0014 added. Exact ZIP Bizoveya_1.17_Model-Connectivity-Tests.zip. Local verification is recorded in docs/delivery/P04.0; founder/hosted/live-provider checks remain pending. No provider request, remote migration or deployment performed. Next ordinal1.18.
+
+## 1.18 / P04.3.1
+
+Added admin-only model assignments, additive031 and audit events; version/freshness/review validation. Updated25 living documents and added37,38,CONTINUATION andADR0015. Recorded branch/schedule/hackathon decisions and local Gemini evidence. Corrected truncated archive recovery. Spending and generation remain pending.

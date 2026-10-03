@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { checkDatabaseError, getSite, getWorkspace, registerSite, updateSite, createWorkspace, renameWorkspace } from "./store";
+import { deleteSite, checkDatabaseError, getSite, getWorkspace, registerSite, updateSite, createWorkspace, renameWorkspace } from "./store";
 const uid = "11111111-1111-4111-8111-111111111111", wid = "22222222-2222-4222-8222-222222222222", sid = "33333333-3333-4333-8333-333333333333", pid = "44444444-4444-4444-8444-444444444444";
 const workspace = { id: wid, name: "Workspace", owner_id: uid, version: 1, created_at: "2026-10-01", updated_at: "2026-10-01" };
 const site = { id: sid, workspace_id: wid, name: "Site", mode: "external", kind: "business", url: "https://doitwithai.tools/", project_id: null, status: "active", version: 1, created_by: uid, created_at: "2026-10-01", updated_at: "2026-10-01" };
@@ -42,4 +42,9 @@ describe("workspace authorization and persistence adapter", () => {
     expect(() => checkDatabaseError({ code: "42P01" })).toThrow(/migration 018/);
     expect(() => checkDatabaseError({ message: "secret backend trace" })).toThrow("Workspace storage is temporarily unavailable. Please retry.");
   });
+});
+
+describe("owner site deletion adapter", () => {
+ it("blocks editors before destructive RPC", async () => {const f=fixture([{data:{role:"editor"},error:null},{data:workspace,error:null},{data:site,error:null}]);await expect(deleteSite(f.db,uid,wid,sid,1,"Site")).rejects.toMatchObject({status:403});expect(f.rpc).not.toHaveBeenCalled();});
+ it("sends owner version/name confirmation and reports missing setup", async () => {const f=fixture([{data:{role:"owner"},error:null},{data:workspace,error:null},{data:site,error:null}]);f.rpc.mockResolvedValue({data:null,error:null});expect(await deleteSite(f.db,uid,wid,sid,1,"Site")).toEqual({deleted:true,siteId:sid});expect(f.rpc).toHaveBeenCalledWith("bz_delete_site",{p_workspace_id:wid,p_site_id:sid,p_expected_version:1,p_confirmation_name:"Site"});});
 });

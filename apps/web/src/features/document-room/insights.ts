@@ -26,12 +26,12 @@ export function events(markdown: string): Event[] {
 /** Only recorded table rows count as deliveries; prose about a future ZIP does not. */
 export function latestPackage(markdown: string): { version: string; filename: string; title: string } | null {
   const releases = markdown.split("\n").flatMap(line => {
-    if (!/^\| \d+\.\d+ \/ P\d\d\.\d+ \|/.test(line)) return [];
+    if (!/^\| \d+\.\d+ \/ P\d\d(?:\.\d+)+ \|/.test(line)) return [];
     const [label, evidence] = cells(line);
     const version = label.split(" / ")[0];
-    const filename = evidence?.match(/`([^`]+\.zip)`/)?.[1];
+    const filename = evidence?.match(/`([^`]+\.zip)`/)?.[1] ?? evidence?.match(/`(GitHub:[^`]+)`/)?.[1];
     if (!filename) return [];
-    const title = filename.replace(/^Bizoveya_\d+\.\d+_/, "").replace(/\.zip$/, "").replace(/[-_]/g, " ");
+    const title = filename.startsWith("GitHub:") ? "Spending controls · GitHub phase branch" : filename.replace(/^Bizoveya_\d+\.\d+_/, "").replace(/\.zip$/, "").replace(/[-_]/g, " ");
     return [{ version, filename, title }];
   });
   releases.sort((a, b) => { const [am, an] = a.version.split(".").map(Number), [bm, bn] = b.version.split(".").map(Number); return bm - am || bn - an; });

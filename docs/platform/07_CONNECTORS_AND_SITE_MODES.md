@@ -1,5 +1,72 @@
 # Site modes and external connectors
 
+## Current contract — package1.17 / P04.0
+
+P04.0 adds an admin-only model connectivity room at /admin/model-tests and /api/admin/model-tests. The saved provider/model uses the AI SDK with fixed OpenAI, Nebius Token Factory and Gemini adapters. It sends a fixed synthetic prompt, requests128 output tokens, waits20 seconds, makes no automatic retry/fallback, and stores redacted results with profile/reference versions, actor, reason and timestamps. No customer knowledge or prompt is sent. This is connectivity evidence, not quality evaluation, agent activation or a spending-budget implementation.
+
+Live tests default off. Explicit operator setup requires the selected private provider key plus an admin-only SUPABASE_SERVICE_ROLE_KEY for server-attested result recording, then BIZOVEYA_ENABLE_MODEL_TESTS=true and per-request pricing/charge acknowledgement. No secret-entry form exists. Named current admin+AAL2 is required; client roles cannot mark results passed. Additive030 enforces one running test and five attempts per UTC day platform-wide, durable request IDs, expiry/unknown states and version-sensitive evidence. Failures/unknown attempts still consume the attempt allowance and may be billed. Existing dailyBudgetCents remains planning metadata; monetary enforcement precedes customer runtime.
+
+Read36_MODEL_CONNECTIVITY_AND_TESTING.md for exact setup, supported evidence and MT087–094. All1.16 tests and earlier unevidenced founder gates stay pending; the founder is currently testing and has supplied no new pass results. Preserve001–029 and historical files. One cumulative ZIP/repository and the same two Vercel roots. No hosted SQL/deploy/provider request was performed by the assistant. Next implementation dependency: reviewed exact-model evidence, agent/profile binding, enforced monetary limits and durable draft runs, then visual output composition. The35 draft-only pilot and34 Studio/removal scope remain in force; publishing remains deferred.
+
+Earlier release contracts below are historical and superseded where they conflict with this current contract.
+
+
+## Historical contract — package1.16 / P02.5
+
+The initial new-website audience is freelancers, consultants and small digital-service agencies. Existing sites remain niche-independent registrations. P02.5 repairs Studio and adds owner-only permanent site-record removal: collapsible workspace navigation (collapsed on Studio entry), bounded independently scrolling panels, whole-card section selection, canvas-local selected-section scrolling, homepage Hero/FAQ placement rules, explicit legacy order repair, 120-character headline/320-character hero introduction with counters, bounded responsive photo frames with fitting/focus, optional shared HTTPS logo, sample-fill with confirmation/Undo, section navigation/mobile menu and focused Professional Practice/Creative Business styling. Shared rendering serves preview and existing snapshot publication. No silent legacy row rewrite or automatic sample save/publish.
+
+Additive029_business_studio_and_site_removal.sql preserves001–028. It accepts optional logo/photo metadata, keeps legacy read compatibility, enforces editorial rules on new saves/publication, and exposes owner-only version/name-confirmed bz_delete_site. Site removal cascades this site's business draft/public snapshots/history, knowledge/revisions/events and agent preferences, retaining a content-free owner-readable removal event. External hosting and original portfolio projects remain intact. This is permanent removal, not archiving/restoration. Old duplicate records are removed individually by their owner; no automatic merge.
+
+The first agent pilot is now drafts only for doitwithai.tools: blog, Pinterest copy+rendered graphic, LinkedIn post and rendered carousel/PDF. This phase documents the pilot; live model execution and visual generation are not implemented here. Five proposed roles (coordinator, writer, QA, Pinterest, LinkedIn) share a future visual composer. Social OAuth and CMS writes are not prerequisites for draft generation. Model provider qualification/binding/enforced budget and stored runs remain prerequisites. Multipage/custom collections/listing-entry/navigation/media uploads/gallery/video blocks remain planned; current business sites still have one homepage with section navigation.34 contains current repairs/manual cases;35 contains pilot briefs and owner-reviewable starter knowledge.30 remains cumulative.
+
+Founder reported all newly created Supabase files applied in the review; record this as founder-reported through028 setup, not independently verified database state. Studio/onboarding/deletion findings are open until owner retests1.16. Earlier unspecified acceptance/security gates remain pending. This is a living plan; subsequent founder instructions can revise it, with affected documents, code, migration, dependency and activity records updated together. One cumulative ZIP/repository, two existing Vercel app roots. No remote database/deployment/provider action performed.
+
+Earlier sections remain historical; this current contract supersedes conflicts.
+
+
+## Current contract — package1.13 / P03.1
+
+All registered native/external/portfolio modes can store site knowledge. This never fetches or logs into the registered website. Linking a portfolio does not grant its original editor permissions. No connector/browser automation/model access is inferred.
+
+P03.1 adds a private knowledge room to every registered site mode. Sources may be pasted or imported as UTF-8 .txt/.md, reviewed as editable fact candidates, saved with revisions, and explicitly approved by the workspace owner. Changes remove approval; retrieval is authenticated, current, approved-only and site-scoped. Editors draft; viewers read; only owners approve/revoke/delete. No model call, API key, embeddings, PDF/OCR, public chatbot or automatic website update is added. Additive026 supplies private sources/revisions/content-free activity events and membership-gated RPCs. See31 for behavior and30 for all pending manual/setup steps. All previously deferred founder tests remain pending.
+
+Earlier sections retain historical delivery context and are superseded where they conflict with this current contract.
+
+## Historical contract — package1.12 / P02.4
+
+P02.4 adds Wellness Studio, Education Academy and Product Launch: six business families total. One catalog drives schema, template pages, creation and Studio; the shared section renderer also serves published snapshots. Additive025 expands accepted IDs without rewriting old data. Eight section types/nineteen layouts remain unchanged. No booking, checkout, LMS, enquiry inbox, custom domains or agents are added. See29 for template scope and30 for the combined pending setup/tests. Manual acceptance remains pending.
+
+Older delivery sections retain history; this current contract supersedes conflicting capability/setup statements.
+
+## Historical contract — package1.11 / P02.3.1
+
+Native business can publish to the public application visitor path. Registration status is registry metadata, not publication status. External registered sites are unaffected and cannot use this native publication RPC; portfolio uses its original controls. Native business publishing now uses an explicit saved snapshot and `/sites/[siteId]` visitor route. Saves remain private; publishing/republishing/unpublishing use membership checks, draft/publication version conflicts, and additive024. Hidden sections are removed from anonymous payloads; full snapshot history stays member-only. Owner/editor can publish; viewer cannot. Custom domains, enquiry-form delivery and AI agents remain planned. See28 for setup/manual acceptance and ADR-0008 for architecture. Admin app and inherited portfolio remain unchanged.
+
+Earlier release sections retain history and are superseded where they conflict with this current contract.
+
+
+
+
+
+## Historical contract — package1.10 / P02.2.Fix-1
+
+External registration still saves a public URL only. Equivalent HTTP/HTTPS, www, default-port and trailing-slash URLs in the same workspace are rejected even under different labels. Other subdomains and distinct path case remain separate. Native business creation opens Studio with the selected saved design; native portfolio linking opens the owned inherited Studio. No remote URL fetch, login, connector grant or publication is introduced.
+
+Earlier release sections retain history; this current contract supersedes conflicting behavior descriptions.
+
+## Historical contract — package1.9 / P02.2
+
+The modular editor applies only to `native_business`. Existing/external sites remain registry entries; this release does not edit their GitHub, Sanity, Vercel or content. Native portfolio retains the inherited workflow. Three business presets do not create new site modes. External HTTPS image references load directly in the browser with Next Image unoptimized; there is no media upload connector or server-side fetch added.
+
+Earlier dated sections below retain history; this current contract supersedes conflicting instructions.
+
+
+## Historical contract — package1.8 / P02.1
+
+Native business mode now has a private Service Studio draft editor after migration021. External sites remain registration-only; entering a URL never grants CMS/Git/social access. Native portfolios keep their existing project owner and Studio controls. Business draft editing does not create a publication or custom domain. Connector consent/capability plans remain deferred.
+
+Earlier sections below retain planning/delivery history; conflicting capability or path descriptions are superseded by this current contract and document25.
+
 **Draft 0.1.** Existing `/api/connect/*` routes in Voxfolio do not constitute a complete GitHub/Vercel/Sanity connector. Verify each integration with an authorized test account and explicit capability probes.
 
 | Mode / adapter | Read | Draft/propose | Publish/merge | Source of truth and proof |

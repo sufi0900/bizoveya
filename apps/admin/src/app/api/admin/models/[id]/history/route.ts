@@ -1,0 +1,2 @@
+import {z} from "zod";import {adminApi} from "@/features/admin/api";import {AdminError} from "@/features/admin/access";import {modelHistory} from "@/features/models/store";
+export const GET=(_r:Request,{params}:{params:Promise<{id:string}>})=>adminApi(async db=>{const {id}=await params;if(!z.uuid().safeParse(id).success)throw new AdminError(400,"INVALID_REQUEST","Select a valid profile.");return modelHistory(db,id);});

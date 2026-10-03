@@ -1,0 +1,32 @@
+{
+  "version": "1.17",
+  "phase": "P04.0",
+  "recordedAt": "2026-10-02T20:07:16.811839+00:00",
+  "unitTests": {
+    "web": 313,
+    "admin": 54,
+    "total": 367
+  },
+  "sqlSteps": 45,
+  "browserChecks": {
+    "admin": 37,
+    "customer": 82,
+    "total": 119
+  },
+  "productionBuilds": [
+    "web passed",
+    "admin passed"
+  ],
+  "preservedMigrations": 29,
+  "preservedHistoryFiles": 44,
+  "manualAcceptance": "pending",
+  "realProviderRequests": 0,
+  "remoteDatabaseChanges": 0,
+  "deployments": 0,
+  "limits": [
+    "Browser Auth/PostgREST and provider responses are synthetic fixtures.",
+    "SQL uses local PGlite; hosted permissions, MFA and concurrent requests require manual verification.",
+    "No paid provider qualification, customer agent runtime or publishing has been completed.",
+    "Only docs screenshot and customer report are included from customer regression run; 22 screenshots captured locally."
+  ]
+}

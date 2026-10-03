@@ -9,3 +9,7 @@ describe("document-room release projection", () => {
   it("does not invent a version for empty or malformed records", () => { expect(latestPackage("")).toBeNull(); expect(latestPackage("Bizoveya 1.1")).toBeNull(); });
   it("keeps parent acceptance separate from an implemented substep", () => { expect(phases("| [ ] P01 Workspace | Scope |\n| [x] P01.4 Admin | Done |\n| [~] P02 Business | Scope |").map(p => [p.id, p.status])).toEqual([["P01", "planned"], ["P02", "in-progress"]]); });
 });
+
+ it("recognizes nested subphase package records",()=>{expect(latestPackage('| 1.15 / P04.2.1 | `Bizoveya_1.15_Model-Profiles.zip` | Source | Evidence |')?.version).toBe("1.15");});
+
+ it("recognizes recorded GitHub deliveries without inventing a ZIP",()=>{expect(latestPackage("| 1.19 / P04.3.2 | `GitHub:phase/p04-3-2-spending-controls` | Source | Evidence |")?.version).toBe("1.19")});

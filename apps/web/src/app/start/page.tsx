@@ -14,7 +14,7 @@ export default async function StartPage() {
     const candidate = data.user?.user_metadata?.full_name ?? data.user?.user_metadata?.name;
     if (typeof candidate === "string") suggestedName = candidate.trim().slice(0, 60);
   }
-  return <main className="flow-page wide"><header className="flow-nav"><div className="flow-nav-start"><Link href="/">Try demo</Link><Link href="/workspaces">Bizoveya workspaces</Link></div><strong>VOXFOLIO</strong><Link href={authenticated ? "/projects" : "/login"}>{authenticated ? "My projects" : "Sign in"}</Link></header>
+  return <main className="flow-page wide"><header className="flow-nav"><div className="flow-nav-start"><Link href="/portfolio">Try portfolio demo</Link><Link href="/workspaces">Bizoveya workspaces</Link></div><strong>VOXFOLIO</strong><Link href={authenticated ? "/projects" : "/login"}>{authenticated ? "My projects" : "Sign in"}</Link></header>
     <div className="flow-heading"><p className="eyebrow">VOICE-DIRECTED CREATION</p><h1>Build your portfolio with Vox.</h1><p>Tell Vox about your work, confirm the exact details, and watch a private cinematic portfolio take shape. Accessible text and template routes remain available.</p></div>
     <CreationFlow authenticated={authenticated} suggestedName={suggestedName} ownerId={ownerId} />
   </main>;

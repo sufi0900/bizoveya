@@ -1,0 +1,13 @@
+import {describe,it,expect} from "vitest";
+import {extractKnowledgeCandidates,knowledgeDocumentSchema,knowledgeMutationSchema,knowledgeMatches,readKnowledgeFile} from "./knowledge";
+const document={title:"Services",filename:"services.md",sourceText:"We repair bicycles.",facts:[{id:"one",text:"Bicycle repairs are available."}]};
+describe("knowledge boundaries",()=>{
+ it("accepts plain source with editable reviewed facts",()=>expect(knowledgeDocumentSchema.parse(document)).toEqual(document));
+ it.each([{...document,title:""},{...document,sourceText:"x".repeat(16001)},{...document,filename:"../secret.txt"},{...document,facts:[...document.facts,...document.facts]},{...document,facts:[{id:"bad id",text:"x"}]},{...document,extra:"key"},{...document,sourceText:"\u0001bad"}])("rejects malformed or unbounded document %#",d=>expect(knowledgeDocumentSchema.safeParse(d).success).toBe(false));
+ it("does not allow facts or approval to bypass the action contract",()=>{expect(knowledgeMutationSchema.safeParse({action:"approve",id:"11111111-1111-4111-8111-111111111111",expectedVersion:1,document}).success).toBe(false);expect(knowledgeMutationSchema.safeParse({action:"delete",id:"11111111-1111-4111-8111-111111111111",expectedVersion:0}).success).toBe(false);});
+ it("splits candidates without verifying or silently hiding a cap",()=>{const text=Array.from({length:45},(_,i)=>`Statement ${i}`).join("\n\n");const v=extractKnowledgeCandidates(text);expect(v.facts).toHaveLength(40);expect(v.omitted).toBe(5);expect(v.facts[0].text).toBe("Statement 0");});
+ it("splits long paragraphs into bounded candidates",()=>{const v=extractKnowledgeCandidates("x".repeat(1001));expect(v.facts.map(f=>f.text.length)).toEqual([500,500,1]);});
+ it("rejects unsupported and oversized uploads",()=>{expect(()=>readKnowledgeFile("a.pdf",new Uint8Array())).toThrow(/not supported/);expect(()=>readKnowledgeFile("a.txt",new Uint8Array(48001))).toThrow(/48,000/);expect(()=>readKnowledgeFile("a.txt",new Uint8Array([255]))).toThrow(/UTF-8/);});
+ it("keeps Markdown as text with filename provenance",()=>{expect(readKnowledgeFile("policy.md",new TextEncoder().encode("# Policy\n\nApproved text"))).toMatchObject({filename:"policy.md",sourceText:"# Policy\n\nApproved text",facts:[]});});
+ it("returns revision-bound citations only for matching facts",()=>{const s={id:"11111111-1111-4111-8111-111111111111",title:"Repairs",filename:"repairs.txt",facts:document.facts,version:3,approved_at:"2026-10-02T00:00:00Z"};expect(knowledgeMatches(s,"BICYCLE repairs")[0]).toMatchObject({sourceVersion:3,factId:"one",sourceId:s.id});expect(knowledgeMatches(s,"refund")).toEqual([]);});
+});

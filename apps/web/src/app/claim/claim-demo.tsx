@@ -32,11 +32,11 @@ export function ClaimDemo({ email }: { email: string }) {
     router.replace(`/studio/${result.projectId}`); router.refresh();
   }
 
-  return <main className="flow-page"><header className="flow-nav"><Link href="/">← Back to portfolio</Link><strong>VOXFOLIO</strong><Link href="/projects">My projects</Link></header>
+  return <main className="flow-page"><header className="flow-nav"><Link href="/portfolio">← Back to portfolio</Link><strong>VOXFOLIO</strong><Link href="/projects">My projects</Link></header>
     <section className="claim-card"><p className="eyebrow">SAVE YOUR GUEST PORTFOLIO</p><h1>Move this draft into your workspace</h1><p>Signed in as {email}. Your local portfolio will become a private cloud project. You can review it in Studio before publishing.</p>
       {document ? <><div className="claim-summary"><span style={{ background: accents[document.design.accent] }} /><div><strong>{document.identity.name}</strong><small>{document.identity.role}</small></div><em>{document.skills.length} skills · revision {document.revision}</em></div>
         <label>Project name<input value={projectName} maxLength={80} onChange={(event) => setProjectName(event.target.value)} /></label>
-        {error && <div className="form-message">{error}</div>}<button type="button" className="primary-action" disabled={busy || !projectName.trim()} onClick={save}>{busy ? "Saving…" : "Save and continue to Studio"}</button></> : <div className="claim-empty"><h2>No guest draft was found</h2><p>Return to the homepage, customize the demo, then choose Save & publish.</p><Link className="primary-action" href="/">Open portfolio demo</Link></div>}
+        {error && <div className="form-message">{error}</div>}<button type="button" className="primary-action" disabled={busy || !projectName.trim()} onClick={save}>{busy ? "Saving…" : "Save and continue to Studio"}</button></> : <div className="claim-empty"><h2>No guest draft was found</h2><p>Return to the portfolio editor, customize the demo, then choose Save & publish.</p><Link className="primary-action" href="/portfolio">Open portfolio demo</Link></div>}
     </section>
   </main>;
 }

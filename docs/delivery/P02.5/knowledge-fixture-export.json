@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "siteId": "33333333-3333-4333-8333-000000000001",
+  "exportedAt": "2026-10-02T19:23:47.164Z",
+  "sources": [
+    {
+      "id": "3795642a-154b-4b53-a511-db4621e94985",
+      "site_id": "33333333-3333-4333-8333-000000000001",
+      "document": {
+        "title": "Workshop policy",
+        "filename": "",
+        "sourceText": "Opening hours are Monday to Friday.\n\nBicycle repairs are available.",
+        "facts": [
+          {
+            "id": "fact-1",
+            "text": "Opening hours are Monday through Thursday."
+          },
+          {
+            "id": "fact-2",
+            "text": "Bicycle repairs are available."
+          }
+        ]
+      },
+      "version": 4,
+      "approved": false,
+      "approved_by": null,
+      "approved_at": null,
+      "updated_by": "11111111-1111-4111-8111-111111111111",
+      "updated_at": "2026-10-02T19:23:47.079Z"
+    }
+  ]
+}

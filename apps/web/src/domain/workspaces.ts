@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { presetIds } from "./business";
 
 export const workspaceNameSchema = z.string().trim().min(1, "Enter a name.").max(80, "Use at most 80 characters.");
 export const workspaceRoleSchema = z.enum(["owner", "editor", "viewer"]);
@@ -28,7 +29,7 @@ export const renameWorkspaceSchema = z.object({ name: workspaceNameSchema, expec
 export const registerSiteSchema = z.discriminatedUnion("mode", [
   z.object({ ...sharedSite, mode: z.literal("external"), kind: z.enum(["business", "portfolio"]), url: sourceUrl }).strict(),
   z.object({ ...sharedSite, mode: z.literal("native_portfolio"), projectId: z.uuid() }).strict(),
-  z.object({ ...sharedSite, mode: z.literal("native_business") }).strict(),
+  z.object({ ...sharedSite, mode: z.literal("native_business"), templateId: z.enum(presetIds).optional() }).strict(),
 ]);
 export const updateSiteSchema = z.object({ name: workspaceNameSchema, status: z.enum(["active", "paused"]), expectedVersion: z.number().int().positive(), url: sourceUrl.optional(), ownershipConfirmed: z.literal(true).optional() }).strict().superRefine((value, ctx) => {
   if (value.url && !value.ownershipConfirmed) ctx.addIssue({ code: "custom", message: "Confirm authorization for the new URL.", path: ["ownershipConfirmed"] });
@@ -42,6 +43,26 @@ export type RegisterSiteInput = z.infer<typeof registerSiteSchema>;
 export type UpdateSiteInput = z.infer<typeof updateSiteSchema>;
 export function siteCapabilityLabel(site: Pick<SiteRecord, "mode" | "project_id">) {
   if (site.mode === "external") return "Registered · read-only";
-  if (site.mode === "native_business") return "Planning record · builder coming later";
+  if (site.mode === "native_business") return "Business draft · editor available";
   return site.project_id ? "Owned portfolio · existing Studio" : "Portfolio source unavailable";
 }
+
+/** Registry identity: HTTP/HTTPS, www, default ports and trailing slashes are aliases.
+ * Subdomains other than www and distinct paths remain independent sites. */
+export function siteNameKey(value: string) { return value.trim().replace(/\s+/g, " ").toLowerCase(); }
+export function siteUrlKey(value: string) {
+  const normalized = normalizeSiteUrl(value);
+  if (!normalized) return null;
+  const u = new URL(normalized);
+  return u.hostname.replace(/^www\./, "") + u.pathname.replace(/\/+$/, "");
+}
+export function duplicateSiteIds(sites: SiteRecord[]): Set<string> {
+  const groups = new Map<string, string[]>();
+  for (const site of sites) {
+    const keys = [`name:${siteNameKey(site.name)}`, ...(site.mode === "external" && site.url ? [`url:${siteUrlKey(site.url)}`] : [])];
+    for (const key of keys) groups.set(key, [...(groups.get(key) ?? []), site.id]);
+  }
+  return new Set([...groups.values()].filter(ids => ids.length > 1).flat());
+}
+
+export const deleteSiteSchema = z.object({ expectedVersion: z.number().int().positive(), confirmationName: workspaceNameSchema }).strict();

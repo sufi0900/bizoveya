@@ -15,7 +15,7 @@ describe("workspace registration boundaries", () => {
     expect(registerSiteSchema.parse({ mode: "native_portfolio", projectId, name: "Portfolio", ownershipConfirmed: true }).status).toBe("active");
     expect(registerSiteSchema.safeParse({ mode: "native_portfolio", name: "Portfolio", ownershipConfirmed: true }).success).toBe(false);
     expect(registerSiteSchema.safeParse({ mode: "native_business", projectId, name: "Business", ownershipConfirmed: true }).success).toBe(false);
-    expect(siteCapabilityLabel({ mode: "native_business", project_id: null })).toContain("Planning record");
+    expect(siteCapabilityLabel({ mode: "native_business", project_id: null })).toContain("Business draft");
   });
   it("requires explicit reattestation and version for URL changes", () => {
     expect(updateSiteSchema.safeParse({ name: "Site", status: "paused", expectedVersion: 1, url: "https://lionxe.com/" }).success).toBe(false);
@@ -23,4 +23,9 @@ describe("workspace registration boundaries", () => {
     expect(updateSiteSchema.safeParse({ name: "Site", status: "paused", expectedVersion: 2, mode: "external" }).success).toBe(false);
   });
   it("does not turn a viewer into a mutating role", () => { expect(canWriteWorkspace("viewer")).toBe(false); expect(canWriteWorkspace("editor")).toBe(true); expect(canWriteWorkspace("owner")).toBe(true); });
+});
+
+describe("registry duplicate identity", () => {
+ it("normalizes case and repeated whitespace in names", async () => { const { siteNameKey } = await import("./workspaces"); expect(siteNameKey("  Local   Business ")).toBe(siteNameKey("local business")); });
+ it("equates website aliases without folding distinct path case or subdomains", async () => { const { siteUrlKey } = await import("./workspaces"); expect(siteUrlKey("http://www.doitwithai.tools:80/" )).toBe(siteUrlKey("https://doitwithai.tools")); expect(siteUrlKey("https://doitwithai.tools/Blog")).not.toBe(siteUrlKey("https://doitwithai.tools/blog")); expect(siteUrlKey("https://docs.doitwithai.tools")).not.toBe(siteUrlKey("https://doitwithai.tools")); });
 });

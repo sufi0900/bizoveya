@@ -1,0 +1,22 @@
+{
+  "release": "1.19",
+  "phase": "P04.3.2",
+  "actor": "ChatGPT/Codex",
+  "verifiedAt": "2026-10-03",
+  "branch": "phase/p04-3-2-spending-controls",
+  "adminUnitTests": 78,
+  "webUnitTests": 314,
+  "sqlSteps": 49,
+  "boundary": "passed",
+  "typechecks": "passed",
+  "builds": {
+    "admin": "passed",
+    "web": "passed"
+  },
+  "browser": "not run for this phase; founder MT102\u2013109 pending",
+  "paidProviderRequests": 0,
+  "hostedMigrationsApplied": 0,
+  "productionDeployments": 0,
+  "mainModified": false,
+  "preservedBaselineFiles": 31
+}

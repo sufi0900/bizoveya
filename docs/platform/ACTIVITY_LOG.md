@@ -1,5 +1,21 @@
 # Bizoveya chronological activity and decision log
 
+## Current contract — 1.19 / P04.3.2
+
+This update supersedes conflicting older “current” blocks below; historical records remain unchanged. Admin-only spending controls are at `/admin/spending` and `/api/admin/spending`. Migration032 follows031; never rerun applied migrations. New connectivity tests require reviewed USD pricing and enabled limits. The ledger reserves a conservative estimate before a provider call, settles reported usage, and holds uncertain/overrun charges until evidence-based reconciliation. Customer draft generation and publishing remain disabled. See [39 Spending controls](39_SPENDING_CONTROLS_AND_TESTING.md).
+
+Founder reported all1.18 MT095–101 passed on2026-10-03; this is founder-reported local acceptance, not independent deployment verification. New MT102–109 remain pending. GitHub write access is restored; delivery uses `phase/p04-3-2-spending-controls`, not main. Main was inspected at1.7; this branch carries cumulative1.19 source. See38 and CONTINUATION for delivery state.
+
+
+## Historical snapshot — 1.18 / P04.3.1
+
+Reviewed model assignments are implemented at `/admin/bindings` and `/api/admin/bindings` on the separate admin host only. Migration 031 is additive after 030. An assignment pins a checked latest preview-approved agent version, matching-tier checked model profile, enabled credential-reference version and successful matching connectivity-test ID. Evidence must remain less than 24 hours old. Version changes, rotation, revocation or expiry require review; disable retains history. This is assignment configuration, not paid execution, budget enforcement or customer draft generation.
+
+Use [37 Agent model assignments](37_AGENT_MODEL_ASSIGNMENTS.md) for setup and pending MT095–101. Next are P04.3.2 spending controls, P04.3.3 durable text drafts, and P04.3.4 visual composition. Publishing remains deferred. The founder's successful local Gemini test is accepted only for the evidenced case; all other unevidenced manual tests stay pending.
+
+The founder approved one branch/PR per phase and six-hour continuation. GitHub reads succeeded but branch creation returned HTTP403 `Resource not accessible by integration`. No remote branch, commit or PR was created. The schedule was created then paused pending write access. See [38 Delivery and continuation](38_DELIVERY_AND_CONTINUATION.md). Earlier contracts below remain historical where superseded.
+
+
 **Living, append-only record. Time zone: Asia/Karachi (PKT, UTC+05:00).** This log records **what happened, including reversals, skipped work, omissions and corrections**, with actor, location and evidence. `COMPLETED_WORK.md` is the shorter current-state view; `10_PHASES_AND_STATUS.md` includes future work. The inherited Voxfolio evolution before this transition remains in `docs/history/voxfolio-v27-and-earlier/`.
 
 ## Recording rules for every future assistant or developer
@@ -200,3 +216,192 @@ Report at2026-10-01T21:43:55+05:00: Sufian Mustafa reported route/site-registrat
 Recorded at2026-10-01T22:23:53+05:00; actor: ChatGPT Codex assistant (exact model ID not independently exposed). Workspace: revision-1.7/bizoveya-platform. Moved admin routes/APIs to separate app, preserved inherited SQL/history, added host-only distinct cookie configuration/login/refresh, updated docs and checks. No hosted deploy, DNS, real credentials or database mutations. Verification outcomes and exact archive identity in docs/delivery/P01.7_VERIFICATION.json and external metadata; this timestamp is assembly, not ZIP creation.
 
 P01.7 final checks:252 unit tests, both production builds/type/lint, frozen workspace lock validation,18 real local two-app browser checks, no page errors,35 current docs/local links, unchanged001–020 SQL/history. Three final screenshots in docs/delivery/P01.7. Actual hosted Auth/MFA and domains pending. Archive name Bizoveya_1.7_Separate-Admin-Application.zip.
+
+
+### BZ-028 — 2026-10-01T23:25:56+05:00 — founder deployment evidence and implementation authorization
+
+Actor: Sufian Mustafa. Location: conversation; Vercel projects bizoveya-web and bizoveya-admin. Earlier report at23:23:19PKT includes screenshots showing both Ready/Production. Founder requested next practical implementation while independently testing. This is not a report that Auth/MFA, tenant isolation or all tests passed.
+
+### BZ-029 — 2026-10-01T23:40:08.253+05:00 — P02.1 source and local verification activity
+
+Actor: ChatGPT Codex assistant; exact model identity not independently exposed. Location: revision-1.8/bizoveya-platform. Timestamp is the local SQL verification interval (report started18:40:08UTC), not archive creation. Added marketing homepage, preserved former root at/portfolio, business template catalog/demo/editor, scoped draft API/store/schema, migration021 and tests. Updated affected specs/manual/dependencies/phase/records; all canonical content remains in the main visual document room. Fixed a stale native-business planning-only test expectation and test JSX import during verification. No remote SQL, hosted deployment, private keys or DNS changes by assistant. Verification and exact ZIP identity are recorded in delivery/P02.1 and external metadata.
+
+
+### BZ-030 — 2026-10-01T23:54:46+05:00 — P02.1 verification and cumulative delivery preparation
+
+Actor: ChatGPT Codex assistant; exact model identity not independently exposed. Location: revision-1.8/bizoveya-platform, delivery/P02.1. Local evidence:271 unit tests (241web/30admin), both production builds with type/lint, frozen lock installation,001–021 SQL plus four assertion scripts and legacy upgrade preservation,31 actual local browser checks, eight browser screenshots and no page errors. Real hosted saved-draft/Auth/MFA/tenant acceptance remains pending. Fixed accent label accessibility and legacy portfolio-entry links during browser review. Prior run timing/selector failures were resolved; final report records actual passing steps. Preserved founder1.7 Ready screenshots separately. Final archive: Bizoveya_1.8_Business-Entry-and-Draft-Builder.zip; creation time and checksum in external metadata. No hosted deployment or SQL by assistant.
+
+
+### BZ-031 — 2026-10-02 00:16:40 PKT — Founder baseline report and research request
+
+- Actor: Sufian Mustafa; reported all manual testing working, actual test time/environment not supplied. Requested business template/Studio customer and competitor research, section variants and business differentiation.
+- Assistant: ChatGPT Codex, exact served model version not independently verified; two research assistants at the user's explicit request. Primary source links/findings and limitations in26; discussion summary in17.
+- Result: shared modular engine/three recipes recommended before publishing; agents alone not exclusive because Wix documents competing agents. No code changed during the research discussion. Broad founder functional pass is separate from detailed security evidence.
+
+### BZ-032 — 2026-10-02 00:31:45 PKT — P02.2 authorization / phase reorder
+
+- Actor: Sufian Mustafa accepted research and instructed all implementation/docs/manual instructions in the next cumulativeZIP, emphasizing reusable components.
+- Decision: ADR-0006. P02.2 modularStudio; publication shifts toP02.3; expansionP02.4. Source baseline1.8 SHA24b3641f99766ff892d737bf7eb7257263fe1d39e287af2d7593ea255b6549f2. No prior package renamed.
+
+### BZ-033 — 2026-10-02 00:54:59 PKT (2026-10-01T19:54:59.737562+00:00) — P02.2 source and documentation prepared
+
+- Actor: ChatGPT Codex assistant. Location: apps/web domain/business.ts, features/business, three demo routes/catalogue/sitemap, scoped API/read-size/store; additive022 and SQL assertions; updated verification tooling and living docs.
+- Result: three presets/eight reusable section types/nineteen layouts, content-preserving recipe changes, stableIDs/shared facts, section editing/session undo/redo, JSON backup restore, safe legacy read migration. No new admin functional code, external agent integration or remote deployment/migration.
+- Evidence: final source inventory and verification reports under docs/delivery/P02.2; final packaging event records actual results. Hosted/1.9 founder testing pending. Historical docs and applied migration files preserved.
+
+
+### BZ-034 — 2026-10-02 01:14:19 PKT — P02.2 verification and cumulative package preparation
+
+- Actor: ChatGPT Codex assistant; local source/testing. ZIP filename: `Bizoveya_1.9_Modular-Business-Studio.zip`, stable workP02.2, source1.8; one archive/two applications. Exact creation time/hash recorded externally after archive validation.
+- Results: P02.2 local verification passed:288 unit tests (258web/30admin), lint with no warnings, both production build/type checks, frozen lock install, application-boundary check,001–022 SQL/all five assertion suites plus legacy021→022 row/version/metadata preservation,48 local production-browser checks with no page errors and9 screenshots. Optional photo checks used a mocked HTTPS asset response, not a real owner asset host. Local SQL simulates Auth/JWT and is not hosted PostgREST/MFA or parallel-connection concurrency proof. Founder1.9 hosted checks remain pending. Source/public docs are not remotely deployed here.
+- Corrections during testing: explicit labels added to populated textarea/select controls; section-outline typography scoped against marketing styles; contact fallback labels now describe services when no contact destination exists. Browser locator ambiguity and async-restore waiting corrected in the verification tool. Initial truncated browser binary replaced with an existing complete local Chromium; one interrupted parallel build retried sequentially. No production platform configuration changed for these local tooling issues.
+- Preservation: all21 earlier SQL files and41 history files byte-identical; inherited portfolio Studio/voice and33 admin source files unchanged; lockfile unchanged. No baseline file removed.32 platform docs updated,26spec/ADR-0006 added; current count39.
+- Status: source/local verification complete; P02.2 remains[~] for new founder/hosted gates, grandP02 unfinished. No live database migration, deployment, agent runtime, business publication, bookings or checkout claimed. Final archive metadata/CRC/source readback recorded in delivery handoff.
+
+
+### BZ-035 — 2026-10-02, exact report time unavailable PKT — Founder1.9 customer-flow defects
+
+- Actor: Sufian Mustafa, founder/product owner. Reported other manual checks successful and022 applied, then identified stale Sign in, forced/new workspace priority, wrong route highlight/destination, repeated saves/duplicate names/URLs, missing creation template choices and insufficient design distinction.
+- Evidence: visible founder message and supplied screenshots image(20261001-203727).png / image(20261001-203911).png. Earlier broad pass is superseded for these specific failing scenarios; no fabricated per-case security pass.
+- Result: P02.2 stays unaccepted; fix scopeP02.2.Fix-1 adopted.
+
+### BZ-036 — 2026-10-02T05:20:10+05:00 PKT (2026-10-02T00:20:10+00:00 UTC) — Customer-flow integrity implemented
+
+- Actor: ChatGPT Codex assistant under founder authorization; independent qa_review agent inspected code. Exact underlying model build is not independently established.
+- Source: marketing/workspace/business modules, additive023, duplicate operator report, SQL assertions and authenticated UI fixture harness; current27/ADR-0007. Selected design and initial draft saved atomically; direct Studio navigation; account-aware public header; returning-workspace overview; separate create route; identity guards; distinct visual families and unchanged-save/dirty-navigation protections.
+- Review: identified extra workspace-rename and sign-out bypasses, addressed in same source. Browser Back limitation remains explicit. Environment reverted to older local snapshot; recovered authoritative1.9 from saved package, reapplied fixes, then reran verification.
+- Evidence: docs/delivery/P02.2.Fix-1_VERIFICATION.json and reports in its evidence folder. No remote migration/deploy/data cleanup performed. Real hosted/founder acceptance remains pending.
+
+
+### BZ-037 — 2026-10-02T05:26:11+05:00 PKT (2026-10-02T00:26:11+00:00 UTC) — Targeted verification and1.10 package preparation
+
+- Actor: ChatGPT Codex assistant; independent qa_review source review.
+- Verified:291 unit tests (261 public,30 admin); typecheck/lint/both builds/boundary check; 31 isolated SQL migration/assertion/upgrade steps; 21 local authenticated UI/route/doc checks, zero page errors; seven screenshots inspected for main/design/mobile/docs views.
+- Evidence/location: docs/delivery/P02.2.Fix-1; final JSON inventory beside it. Local UI uses declared synthetic Supabase fixtures; SQL uses PGlite. No real hosted credentials, MFA, PostgREST, simultaneous transaction or founder1.10 acceptance claimed.
+- Preservation: prior001–022, inherited history, admin implementation and lockfile remain byte-identical to1.9. Exact cumulative filename Bizoveya_1.10_Customer-Journey-and-Template-Fixes.zip; archive timestamp/hash provided in external handoff.
+
+
+### BZ-038 — 2026-10-02T06:09:49.395289+05:00 PKT (2026-10-02T01:09:49.395289+00:00 UTC) — Founder continuation and publication slice
+
+- Founder Sufian Mustafa said1.10 testing will happen later and authorized next implementations. Assistant advanced boundedP02.3.1; earlier acceptance remains pending.
+- Added explicit publication API/UI, migration024, active snapshot visitor page, metadata/contact actions and private action history. QA source reviewer found public author placeholders, hidden snapshot payload exposure and false-private status on failed load; corrected all three before delivery.
+- Evidence: docs/delivery/P02.3.1 reports and verification inventory. Exact ZIP Bizoveya_1.11_Business-Publication-Snapshots.zip. No remote SQL/deployment or founder acceptance fabricated.
+
+
+### BZ-039 — 2026-10-02T06:20:07.882845+05:00 PKT (2026-10-02T01:20:07.882845+00:00 UTC) — Publication verification and cumulative delivery
+
+- Actor: ChatGPT Codex assistant under founder continuation authorization; independent qa_review source review.
+- Passed:301 unit tests (271 web,30 admin), typecheck/lint/two production builds/application boundaries;33 isolated SQL migration/assertion/upgrade steps;33 synthetic authenticated/anonymous browser checks, zero page errors,10 screenshots. Local fixture failures were corrected before final pass; checks retain declared limits.
+- Evidence: docs/delivery/P02.3.1 and its verification JSON. Unit/type checks caught a business/portfolio module naming collision; restored inherited publication code/tests and separated business-publication module before delivery. Clean dependency installation/cache fixed local runner artifacts; dependency lock remains unchanged.
+- Preservation: migrations001–023, admin implementation, inherited portfolio and old archived history retained byte-identical to1.10. No remote migration, deployment, customer publish or founder acceptance performed. Manual tests remain pending. Exact ZIP Bizoveya_1.11_Business-Publication-Snapshots.zip; timestamp/hash external.
+
+
+### BZ-040 — 2026-10-02T14:41:10+05:00 PKT (2026-10-02T09:41:10+00:00 UTC) — Founder mobile continuation
+
+- Actor: Sufian Mustafa, founder. Requested next implementation while using mobile; stated manual tests will be done later when PC is available. Message time is context metadata, not a claimed test execution time.
+- Decision: advance P02.4, keep1.10–1.12/older security gates pending, provide one combined checklist.
+
+
+### BZ-041 — 2026-10-02T14:54:08.730567+05:00 PKT (2026-10-02T09:54:08.730567+00:00 UTC) — Shared template expansion implemented
+
+- Actor: ChatGPT Codex assistant; independent qa_review source reviewer. Recovered saved1.11 archive because temporary source was unavailable; SHA256 verified against prior delivery.
+- Added Wellness Studio/Education Academy/Product Launch via shared catalog/renderer/page composition,025 forward validator and living documentation/combined checklist. QA found inherited dark text in Product Launch; fixed token/soft/accent styles before browser checks. Public H1 typography shares preview styles.
+- Evidence: docs/delivery/P02.4 and verification inventory. Exact ZIP Bizoveya_1.12_Expanded-Business-Templates.zip. No remote migration/deploy, no founder manual pass or agent implementation claimed.
+
+
+### BZ-042 — 2026-10-02T15:05:52.402929+05:00 PKT (2026-10-02T10:05:52.402929+00:00 UTC) — Local verification and visual review
+
+- Actor: ChatGPT Codex assistant. Completed301 unit tests,35 isolated SQL steps,49 synthetic browser checks with zero page errors and16 screenshots; typecheck, lint, both builds and boundary checks passed. These remain local evidence, not founder/hosted acceptance.
+- Reviewed new desktop/mobile screenshots. Refined Academy Hero sizing to avoid splitting ordinary heading words, and corrected stale registration text saying publishing was future work. Final rebuilt evidence accompanies the delivered source.
+- Evidence: docs/delivery/P02.4 and P02.4_VERIFICATION.json; exact ZIP Bizoveya_1.12_Expanded-Business-Templates.zip. Previous migrations001–024/history/dependency lock preserved. No remote setup/deploy/publish. Combined pending instructions in30; next core work remainsP03 thenP04.
+
+
+### BZ-043 — 2026-10-02T18:30:26+05:00 PKT (2026-10-02T13:30:26+00:00 UTC) — Founder continuation and pending status
+
+- Actor: Sufian Mustafa, founder. PC still off; every previously deferred manual test/setup action remains pending and will be reviewed together later. Requested next implementation plus complete pending action list with every delivery. This is not acceptance or a remote migration report.
+
+### BZ-044 — 2026-10-02T18:46:25.412166+05:00 PKT (2026-10-02T13:46:25.412166+00:00 UTC) — Private site knowledge P03.1
+
+- Actor: ChatGPT Codex assistant. Recovered saved1.12; verified SHA256 f502f2d0d9f20b75e8583a3ac197d1692cfbfa16dc40c9b02aaa288b1fee2d60. Implemented bounded text/TXT/MD preparation, fact review/owner approval/reset/revoke, private lookup with revision citations, history/export/erase, forward026 and living docs.
+- Exact delivery Bizoveya_1.13_Private-Site-Knowledge.zip. Source/verification evidence docs/delivery/P03.1 and P03.1_VERIFICATION.json.31 and ADR-0010 new;30 combines all pending steps. No AI key/API spend, agent runtime, PDF/OCR or public knowledge reader. No remote SQL/deploy/customer mutation or founder manual pass performed.
+- Earlier pending groups remain pending. Full evidence timestamps/check totals in delivery report; no prior failures are treated as successful acceptance. Next package ordinal1.14.
+
+
+### BZ-045 — 2026-10-02T19:32:11+05:00 PKT — Founder testing in progress
+
+Actor: Sufian Mustafa, founder. PC started; pending tests now in progress. Authorized next implementation meanwhile. No case outcome or DB migration report supplied; all unevidenced gates remain pending.
+
+### BZ-046 — 2026-10-02T19:55:22.677721+05:00 PKT (2026-10-02T14:55:22.677721+00:00 UTC) — P04.1 agent configuration and readiness
+
+Actor: ChatGPT Codex assistant. Verified baseline1.13 SHA256 fa06bc8c54c3882cac2ce2949dfebcf34bfcddc466320805bd2d26f7f9a8d052. Implemented shared contracts, admin versioned rules/check/review/preview rollback/revoke/history, site preferences and current approved context preview; additive027. SDK/model/profile/secret/evaluation/runtime remain deferred, not marked complete. Exact delivery Bizoveya_1.14_Agent-Configuration-and-Readiness.zip; CW-024; evidence docs/delivery/P04.1_VERIFICATION.json and P04.1/. New32 and ADR-0011; affected living docs updated. Founder testing remains pending until results;30 accumulates MT060–067 and027. No remote SQL/deploy, API/model calls, or founder pass performed.
+
+Local verification finalized at2026-10-02T20:10:30.599088+05:00 PKT (2026-10-02T15:10:30.599088+00:00 UTC):339 unit cases,39 isolated SQL steps,67 regression browser checks,18 agent browser checks,23 screenshots and zero page errors; typecheck/lint/both builds/application boundaries passed.30 existing living Markdown files updated plus32 and ADR-0011 added (50 total). Historical archive/prior001–026 byte-preserved and third-party lock packages/snapshots unchanged. Evidence limits in docs/delivery/P04.1_VERIFICATION.json and QA_REVIEW.md; real hosted/founder acceptance stays pending.
+
+
+### BZ-047 — 2026-10-02T20:36:22+05:00 PKT — Founder continuation
+
+Actor: Sufian Mustafa, founder. Asked continue. No case results or remote migration confirmations supplied; all unevidenced manual gates remain pending.
+
+### BZ-048 — 2026-10-02T20:49:33.495255+05:00 PKT — P04.2.1 model preparation
+
+Actor: ChatGPT Codex assistant. Recovered1.14 SHA25650f84dac967edd8287e12e7694d3e6473c3b024fa2ecea080fed6513d1ee40f5. Added separate-admin model profiles, immutable versions/current-reference checks, fixed credential metadata/rotation/disable/events and boolean server presence;028. Actual keys stay in private environment settings. No provider/SDK/worker/profile-agent binding, actual key rotation/revoke, provider validation or paid call performed. Exact delivery Bizoveya_1.15_Model-Profiles-and-Credential-References.zip;CW-025;evidence docs/delivery/P04.2.1_VERIFICATION.json and P04.2.1/. New33 and ADR-0012; affected docs and30 pending list updated. All unreported hosted/founder tests remain pending.
+
+Local verification finalized for1.15 at2026-10-02T21:00:01.669755+05:00 PKT (2026-10-02T16:00:01.669755+00:00 UTC):348 unit tests,41 local SQL steps,98 browser checks,27 screenshots and no page errors. Both builds/typecheck/lint/boundaries passed.30 existing Markdown documents updated,33 and ADR-0012 added (52 current sources). Local fixtures only; founder/hosted gates stay pending. Exact ZIP Bizoveya_1.15_Model-Profiles-and-Credential-References.zip; evidence P04.2.1_VERIFICATION.json and QA_REVIEW.md.
+
+### BZ-049 — 2026-10-02T23:44:51+05:00 — Founder authorisation
+
+Sufian Mustafa approved focused audience and requested corrections/deletion/doc updates. Previous setup self-reported; failed/untested manual cases retained.
+
+### BZ-050 — 2026-10-02T23:59:42.117988+05:00 — P02.5 implementation
+
+Actor: ChatGPT Codex assistant. Baseline1.15 SHA256b1387e8b9c4e9717bae0d7b0a059fe82b3486102e34a14c6ddd45c0800b0aa08. Implemented34 scope and029;35 draft-only scope recorded. Exact delivery Bizoveya_1.16_Studio-Repairs-and-Site-Removal.zip. No remote/provider activity. Evidence docs/delivery/P02.5/. CW-026.
+
+Local verification finalized at 2026-10-03T00:25:05.400482+05:00 PKT (2026-10-02T19:25:05.400482+00:00 UTC), actor ChatGPT Codex assistant:354 unit cases,43 isolated SQL steps,113 production browser checks,30 screenshots and zero page errors. Both builds/lint/type validation and application boundaries passed.37 living Markdown documents updated,34/35/ADR-0013 added (55 current sources); README updated.001–028,41 historical files and dependency lock byte-preserved. Exact ZIP Bizoveya_1.16_Studio-Repairs-and-Site-Removal.zip; source evidence docs/delivery/P02.5 and P02.5_VERIFICATION.json. Founder/hosted acceptance remains pending; no remote/provider action.
+
+## Package1.17 / P04.0 — 2026-10-03T00:54:03.490300+05:00
+
+Actor: ChatGPT Codex assistant, authorized by founder continuation while testing1.16. Model connectivity room, fixed SDK adapters, versioned redacted evidence and030 implemented;36 and ADR-0014 added. Exact ZIP Bizoveya_1.17_Model-Connectivity-Tests.zip. Local verification is recorded in docs/delivery/P04.0; founder/hosted/live-provider checks remain pending. No provider request, remote migration or deployment performed. Next ordinal1.18.
+
+BZ-051: Founder authorized continuation while testing; no completed manual cases reported. BZ-052: P04.0 source/document/verification delivery. Dates above are actual PKT timestamps, not inferred test acceptance.
+
+
+### 1.17 delivery verification — 2026-10-02T20:07:16.811839+00:00
+
+Local verification: 367 unit tests, 45 SQL steps, 119 browser checks, both production builds passed. Evidence: `docs/delivery/P04.0_VERIFICATION.json`. Archive: `Bizoveya_1.17_Model-Connectivity-Tests.zip`. No remote changes or paid requests. Founder acceptance and previous pending manual tests remain pending.
+
+### BZ-053 — 2026-10-03T02:54:21+05:00 — Founder Gemini evidence recorded
+
+Actor Sufian Mustafa; reviewed by ChatGPT/Codex. Screenshot image(20261002-205016).png shows gemini-3.5-flash-lite, profile/referencev2,response_matched,20input/7outputtokens,start2026-10-02T20:49:35.8239Z,finish20:49:38.235821Z. Companion205017 shows checked profile. Only the shown local success is accepted, not hosted/mobile/full-phase acceptance.
+
+### BZ-054 — 2026-10-03T02:54:21+05:00 — Hackathon project draft recorded
+
+Founder opened Bizoveya project creation in Nebius × NVIDIA Devpost. Screenshots205952/205954 show project details/story/Built with/media fields. Proposed tagline: Your AI team for turning business knowledge into website content and social campaigns. Discussed filling stable facts now and adding final demo/media later. Final submission and saved tagline are unverified. Gemini evidence does not establish live Nebius/NVIDIA use.
+
+### BZ-055 — 2026-10-03T02:54:21+05:00 — GitHub and scheduling decision
+
+Founder approved branch-per-phase and six-hour continuation. Repository read succeeded; main was1.7. Actual branch creation returned403. No remote commit/PR. Task created then paused until write permission is fixed. Source and checkpoint remain available in fallback delivery.
+
+### BZ-056 — 2026-10-03T02:54:21+05:00 — Model assignment implementation
+
+Actor ChatGPT/Codex; exact model identifier not available as delivery evidence. Paths apps/admin/src/features/bindings and migration031. Implements reviewed/version-pinned assignments, invalidation, disable and audit history. Generation/spending controls remain planned. MT095–101 pending.
+
+### BZ-057 — 2026-10-02T22:04:00+00:00 — Initial verification recorded
+
+Initial execution verified375 app unit tests,47 isolated SQL steps,44 synthetic browser checks,12screenshots and both builds; zero browser errors. Timestamp is approximate from the recorded work session, not an invented exact test timestamp. New desktop/mobile screenshots were inspected. Local evidence does not prove hosted acceptance. No provider call, remote SQL or deployment was performed.
+
+### BZ-058 — 2026-10-03T16:16:07.225288+05:00 — Truncated delivery recovery
+
+User asked to continue. Workspace maintenance removed transient source. Saved1.18 archive was found truncated with600 complete CRC-verified entries and no central directory. Those entries recovered the new application code. Baseline1.17 was recovered and verified SHA256728c481ccd6d277a81ca85997137a393f3ac438916e9571cc152468a9b27c8c4. Migration031 was reconstructed from the recorded full source and matches its earlier SHA256ae4c23636ec1bcbbcae6313bade6bf0d6279b2f2ddf1d041567e33d5bb6d25f8. Living documentation and test harness were rebuilt from the recorded decisions. Initial1.18 screenshot/log files were not recoverable; refreshed evidence is stored in docs/delivery/P04.3.1. The corrected archive replaces the damaged1.18 delivery, not a new implementation phase. Founder acceptance remains pending.
+
+### BZ-059 — 2026-10-03T11:20:29.056192+00:00 — Recovered release verification
+
+Repeated375 app unit tests,47 SQL steps,44 browser checks and both production builds successfully. Targeted lint/type checks/boundaries passed. Twelve screenshots generated,two new assignment screenshots retained and visually inspected. Evidence docs/delivery/P04.3.1/VERIFICATION.json. Corrected1.18 archive delivery; manual tests remain pending.
+
+### BZ-060 — 2026-10-03 (exact user-message time unavailable) — Founder accepts1.18 tests
+Founder Sufian Mustafa reported all pending MT095–101 passed, including earlier MT096 and MT098 stale-tab passes. Evidence: conversation self-report; no invented independent screenshot/time.
+
+### BZ-061 — 2026-10-03 — GitHub write access restored
+ChatGPT/Codex successfully created phase/p04-3-2-spending-controls from inspected main b1dfbcf2b00cef032dee4773e73a05f21347796b. This supersedes earlier403-blocked delivery state; main remains unchanged.
+
+### BZ-062 — 2026-10-03 — P04.3.2 spending implementation
+ChatGPT/Codex added migration032, private spending policies/history/ledger, admin page/API and validation/tests. Local49 SQL and385 unit tests passed; no paid provider or hosted SQL call. Founder MT102–109 pending. Repository paths: apps/admin/src/features/spending, supabase/migrations/032_spending_controls.sql, docs/platform/39_SPENDING_CONTROLS_AND_TESTING.md. Delivery report records final upload evidence.

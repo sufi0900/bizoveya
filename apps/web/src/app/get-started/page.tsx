@@ -1,0 +1,16 @@
+import { hasSupabaseConfig } from "@/lib/supabase/config";
+import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { listWorkspaces } from "@/features/workspaces/store";
+import { businessPresets } from "@/domain/business";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight, Building2, Globe2 } from "lucide-react";
+import { MarketingShell } from "@/features/marketing/shell";
+export const metadata: Metadata = { title: "Get started with Bizoveya" };
+export default async function GetStarted({ searchParams }: { searchParams: Promise<{ journey?: string; template?: string }> }) {
+  const query = await searchParams; const template = businessPresets.find(p => p.id === query.template);
+  let signedIn = false; let nextWorkspace: string | null = null;
+  if (hasSupabaseConfig) { const db = await createSupabaseServerClient(); const { data: { user } } = await db.auth.getUser(); signedIn = Boolean(user); if (user) { try { const spaces = await listWorkspaces(db,user.id); if (spaces.length === 1) nextWorkspace = spaces[0].role === "viewer" ? `/workspaces/${spaces[0].id}` : `/workspaces/${spaces[0].id}/sites/new`; else if (!spaces.length) nextWorkspace = "/workspaces/new"; } catch { /* Workspace page provides the setup/retry state. */ } } }
+  const journey = query.journey === "existing" ? "existing" : "new";
+  return <MarketingShell><section className="biz-page-intro"><p className="biz-eyebrow">YOUR STARTING POINT</p><h1>{journey === "new" ? "Let’s shape your" : "Bring your websites"}<br /><em>{journey === "new" ? "business website." : "into one place."}</em></h1><p>{journey === "new" ? "Choose a workspace, register a new business site, then open its draft editor." : "Choose a workspace and register each website’s public URL. Registration does not connect its accounts or change its content."}</p></section><section className="biz-start-grid"><article className="biz-start-card">{journey === "new" ? <Building2 size={28} /> : <Globe2 size={28} />}<h2>{journey === "new" ? "Create a business draft" : "Register your existing site"}</h2><ol>{!signedIn && <li>Sign in or create an account.</li>}<li>Create or select a workspace.</li><li>{journey === "new" ? "Add a site → I need a website → New business site." : "Add a site → I have a website → enter its public URL."}</li><li>{journey === "new" ? "Open the business editor, add your details and save a draft." : "Keep separate records for each website you manage."}</li></ol><Link className="biz-btn" href={`${nextWorkspace ?? "/workspaces"}?journey=${journey}${template ? `&template=${template.id}` : ""}`}>{signedIn ? "Continue with your account" : "Continue to workspace"} <ArrowRight size={17} /></Link></article><article className="biz-start-card"><p className="biz-eyebrow">EXPLORE FIRST</p><h2>{signedIn ? "Explore a sample website." : "Try before you sign in."}</h2><p>Edit a fictional business sample and preview the template. The demo resets on reload; {signedIn ? "Your own drafts are saved in your workspace." : "Saved workspace drafts require your account."}</p><Link className="biz-btn secondary" href="/templates/service-studio">Try business demo</Link><Link className="biz-text-link" href="/start">Or create a portfolio →</Link></article></section></MarketingShell>;
+}

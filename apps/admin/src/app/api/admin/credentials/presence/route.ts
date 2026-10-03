@@ -1,0 +1,2 @@
+import {z} from "zod";import {adminApi} from "@/features/admin/api";import {readInput} from "@/features/agents/input";import {credentialRecordSchema} from "@/features/models/contracts";import {credentialPresence} from "@/features/models/presence";import {loadModels} from "@/features/models/store";
+export const POST=(r:Request)=>adminApi(async db=>{const {id}=await readInput(r,z.object({id:credentialRecordSchema.shape.id}).strict(),512);await loadModels(db);return credentialPresence(id,process.env);});

@@ -1,0 +1,38 @@
+{
+  "scope": "Local production Next app with explicit synthetic Supabase Auth/REST/RPC fixtures. UI/navigation/HTTP adapter evidence only; separate SQL tests cover authorization and constraints. No hosted credential/MFA/concurrent PostgREST proof.",
+  "checks": [
+    "Signed-in public header shows account and no Sign in",
+    "First workspace creation transitions automatically to its overview",
+    "Returning workspace fills overview and does not hijack card with onboarding intent",
+    "Extra workspace creation has separate route and exact navigation",
+    "Creation activates Add a site only",
+    "Double-click makes one registration; selected design saved before direct Studio navigation",
+    "Unchanged saved draft cannot be saved again",
+    "Unsaved internal navigation prompts; cancel preserves editor",
+    "Dirty sign-out cancellation retains session and editor",
+    "Save persists edits and disables unchanged repeat",
+    "Returning native site card opens Studio directly, with separate record management",
+    "Duplicate 409 shown clearly, allows correction, does not create another site",
+    "Authenticated creation fits mobile viewport",
+    "Distinct service-studio design renders full preview",
+    "Distinct local-services design renders full preview",
+    "Distinct creative-business design renders full preview",
+    "Public selected-template intent survives get-started and workspace selection",
+    "Creative selection creates its saved design and direct Studio",
+    "Public admin routes/API remain404 with no redirect",
+    "Rebuilt visual docs include1.10,41 sources, current release guide and ADR",
+    "Inherited portfolio entry still renders"
+  ],
+  "screenshots": [
+    "returning-workspaces.png",
+    "template-creation.png",
+    "creation-mobile.png",
+    "service-studio-full-preview.png",
+    "local-services-full-preview.png",
+    "creative-business-full-preview.png",
+    "docs-1.10.png"
+  ],
+  "errors": [],
+  "passed": true,
+  "finishedAt": "2026-10-02T00:29:36.399Z"
+}

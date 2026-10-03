@@ -10,27 +10,29 @@ let current = 'bootstrap';
 try {
   await db.exec(await read('tools/phase1-verification/bootstrap.sql'));
   report.postgres = (await db.query('select version()')).rows[0].version;
-  for (const name of (await readdir(new URL('supabase/migrations/',root))).filter(x => x.endsWith('.sql')).sort()) {
+  for (const name of (await readdir(new URL('supabase/migrations/',root))).filter(x => x.endsWith('.sql') && !x.startsWith('032_')).sort()) {
     current = `migration:${name}`; const sql = await read(`supabase/migrations/${name}`);
     await db.exec(sql); report.steps.push({ name: current, status: 'passed', sha256: createHash('sha256').update(sql).digest('hex') });
   }
-  for (const name of (await readdir(new URL('supabase/tests/',root))).filter(x => x.endsWith('.sql')).sort()) {
+  for (const name of (await readdir(new URL('supabase/tests/',root))).filter(x => x.endsWith('.sql') && !x.startsWith('032_')).sort()) {
     current = `assertions:${name}`; const sql = await read(`supabase/tests/${name}`);
     await db.exec(sql); report.steps.push({ name: current, status: 'passed', sha256: createHash('sha256').update(sql).digest('hex') });
     const counts = await db.query('select (select count(*) from auth.users)::int as users,(select count(*) from public.bizoveya_workspaces)::int as workspaces,(select count(*) from bizoveya_private.admin_audit)::int as audit');
     if (Object.values(counts.rows[0]).some(v => v !== 0)) throw new Error('Assertion fixtures did not roll back');
   }
+  current='migration:032_spending_controls.sql';await db.exec(await read('supabase/migrations/032_spending_controls.sql'));report.steps.push({name:current,status:'passed'});
+  current='assertions:032_spending_assertions.sql';await db.exec(await read('supabase/tests/032_spending_assertions.sql'));report.steps.push({name:current,status:'passed'});
   // Independent upgrade path with real SQL data written between release boundaries.
   current = 'upgrade scenario';
   const upgrade = await PGlite.create({ extensions: { pgcrypto } });
   try {
     await upgrade.exec(await read('tools/phase1-verification/bootstrap.sql'));
-    let beforeRepair;
+    let beforeRepair; let legacyDraft;
     const snapshot = async () => (await upgrade.query(`select jsonb_build_object(
       'projects',(select jsonb_agg(to_jsonb(p) order by id) from public.projects p),
       'workspaces',(select jsonb_agg(to_jsonb(w) order by id) from public.bizoveya_workspaces w),
       'memberships',(select jsonb_agg(to_jsonb(m) order by user_id) from public.bizoveya_memberships m),
-      'sites',(select jsonb_agg(to_jsonb(s) order by id) from public.bizoveya_sites s),
+      'sites',(select jsonb_agg(to_jsonb(s) order by id) from public.bizoveya_sites s where mode <> 'native_business'),
       'admins',(select jsonb_agg(to_jsonb(a) order by user_id) from bizoveya_private.platform_admins a),
       'audit',(select jsonb_agg(to_jsonb(e) order by id) from bizoveya_private.admin_audit e)
     ) as state`)).rows[0].state;
@@ -39,6 +41,20 @@ try {
       await upgrade.exec(await read(`supabase/migrations/${name}`));
       if (name.startsWith('017_')) await upgrade.exec(await read('tools/phase1-verification/upgrade-fixture.sql'));
       if (name.startsWith('018_')) await upgrade.exec(await read('tools/phase1-verification/upgrade-workspace.sql'));
+      if (name.startsWith('021_')) {
+        const fixture = JSON.stringify({schemaVersion:1,templateId:'service-studio-v1',accent:'mint',name:'Preserved business',headline:'Original content',description:'Original introduction',about:'Original story',location:'Original area',email:'',phone:'',services:[{title:'Original service',description:'Original detail'}]});
+        await upgrade.exec(`set role authenticated; select set_config('request.jwt.claim.sub','11111111-1111-4111-8111-111111111111',false);`);
+        const workspace = (await upgrade.query("select id from public.bizoveya_workspaces where name='Preserved workspace'")).rows[0].id;
+        const site = (await upgrade.query("select id from public.bz_register_site($1,'Preserved business','native_business','business',null,null,'active',true)",[workspace])).rows[0].id;
+        await upgrade.query('select public.bz_save_business_draft($1,$2,$3::jsonb,0)',[workspace,site,fixture]);
+        await upgrade.exec('reset role');
+        legacyDraft = (await upgrade.query('select to_jsonb(d) as row from public.bizoveya_business_drafts d')).rows[0].row;
+      }
+      if (name.startsWith('022_')) {
+        const after = (await upgrade.query('select to_jsonb(d) as row from public.bizoveya_business_drafts d')).rows[0].row;
+        if (JSON.stringify(legacyDraft) !== JSON.stringify(after)) throw new Error('022 rewrote existing business draft or metadata');
+        report.steps.push({name:'upgrade:021 -> 022 preserves schema-v1 draft byte-equivalent JSON, version and metadata',status:'passed'});
+      }
       if (name.startsWith('019_')) {
         await upgrade.query("select bizoveya_private.set_platform_admin($1,true,$2,$3)",['11111111-1111-4111-8111-111111111111','upgrade-test-operator','Preserved operator grant before repair']);
         beforeRepair = await snapshot();
@@ -47,7 +63,7 @@ try {
     const afterRepair = await snapshot();
     if (!beforeRepair || JSON.stringify(beforeRepair) !== JSON.stringify(afterRepair)) throw new Error('Repair changed pre-existing project/workspace/grant/audit data');
     if (afterRepair.projects?.[0]?.document?.fixture !== 'legacy document unchanged' || afterRepair.sites?.[0]?.project_id !== '22222222-2222-4222-8222-222222222222') throw new Error('Legacy upgrade fixture was not preserved');
-    report.steps.push({ name:'upgrade:017 legacy -> 018 workspace -> 019 admin -> 020 recovery',status:'passed', preserved:['project document','workspace','membership','native project mapping','admin grant','audit events'] });
+    report.steps.push({ name:'upgrade:017 legacy -> 018 workspace -> 019 admin -> 020 recovery -> 021 private drafts -> 022 modular validation',status:'passed', preserved:['project document','workspace','membership','native project mapping','admin grant','audit events'] });
   } finally { await upgrade.close(); }
   report.status = 'passed';
 } catch (error) {

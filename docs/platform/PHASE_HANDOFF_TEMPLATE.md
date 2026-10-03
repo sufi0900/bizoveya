@@ -1,6 +1,53 @@
 # Phase handoff template — copy for each delivery
 
-**Current package1.7:** public/admin host ownership has changed. Read the Package1.7 section below and document24 before applying older setup instructions.
+## Current contract — package1.15 / P04.2.1
+
+Read all cumulative source/current docs first. Preserve001–027/archive; apply028 only when missing. Carry all30/MT068–074 pending, never infer results from continuation. Candidate profiles/env refs not connected to agents; keys only private environment, no secret input/export/model call. Source evidence and future acceptance distinct. New instructions may revise draft requirements with coordinated code/docs/ADR updates.
+
+## Historical contract — package1.14 / P04.1
+
+Read cumulative source and every current Markdown document before implementation. Carry all pending cases in30 and new MT060–067 in32; no result inferred from PC started. Configuration is preview-only; provider/secret/SDK/evaluation/runtime remain planned. Preserve001–026; new027 only when absent. Same repo/two roots plus shared packages/. Include exact ZIP filename, work ID, actual test evidence and pending owner actions. Later instructions may revise draft contracts with coordinated docs/code updates.
+
+## Historical contract — package1.13 / P03.1
+
+Every next handoff must explicitly carry30 pending action groups plus new cases/setup steps; never infer completion from elapsed time or implementation authorization.
+
+P03.1 adds a private knowledge room to every registered site mode. Sources may be pasted or imported as UTF-8 .txt/.md, reviewed as editable fact candidates, saved with revisions, and explicitly approved by the workspace owner. Changes remove approval; retrieval is authenticated, current, approved-only and site-scoped. Editors draft; viewers read; only owners approve/revoke/delete. No model call, API key, embeddings, PDF/OCR, public chatbot or automatic website update is added. Additive026 supplies private sources/revisions/content-free activity events and membership-gated RPCs. See31 for behavior and30 for all pending manual/setup steps. All previously deferred founder tests remain pending.
+
+Earlier sections retain historical delivery context and are superseded where they conflict with this current contract.
+
+## Historical contract — package1.12 / P02.4
+
+Current handoff1.12/P02.4; start from cumulative ZIP and read all current MD. Preserve old migrations/history, mark only evidenced work, and use30 to collect deferred manual gates. Explicit future owner instructions can revise the draft specs. P02.4 adds Wellness Studio, Education Academy and Product Launch: six business families total. One catalog drives schema, template pages, creation and Studio; the shared section renderer also serves published snapshots. Additive025 expands accepted IDs without rewriting old data. Eight section types/nineteen layouts remain unchanged. No booking, checkout, LMS, enquiry inbox, custom domains or agents are added. See29 for template scope and30 for the combined pending setup/tests. Manual acceptance remains pending.
+
+Older delivery sections retain history; this current contract supersedes conflicting capability/setup statements.
+
+## Historical contract — package1.11 / P02.3.1
+
+Read the cumulative source/current MD before changing code; latest owner instruction permits P02.3.1 while1.10 acceptance remains pending. Start from package1.11. Keep original migrations001–023 immutable, append forward migrations, preserve history and admin isolation. Any field/layout/public-read change must update domain, SQL public projection, renderer, metadata, tests,28 and dependency document19 together. Native business publishing now uses an explicit saved snapshot and `/sites/[siteId]` visitor route. Saves remain private; publishing/republishing/unpublishing use membership checks, draft/publication version conflicts, and additive024. Hidden sections are removed from anonymous payloads; full snapshot history stays member-only. Owner/editor can publish; viewer cannot. Custom domains, enquiry-form delivery and AI agents remain planned. See28 for setup/manual acceptance and ADR-0008 for architecture. Admin app and inherited portfolio remain unchanged.
+
+Earlier release sections retain history and are superseded where they conflict with this current contract.
+
+
+
+## Historical contract — package1.10 / P02.2.Fix-1
+
+Include exact1.10 ZIP filename/hash,023-only action for an001–022 existing DB, changed-source/doc inventory, founder1.9 partial/failing report, independent review findings/resolution, local Auth-fixture evidence limits and pending MT-033–040. Preserve history/applied SQL. Next assistant must retest the actual hosted customer flow before accepting P02.2 or starting publishing.
+
+Earlier release sections retain history; this current contract supersedes conflicting behavior descriptions.
+
+## Historical contract — package1.9 / P02.2
+
+For P02.2 handoff include the exact1.9 ZIP filename/hash, affected docs/source inventory,022 prerequisite/action, test report limitations, founder1.8 broad report and pending1.9 acceptance. Explicitly verify content-preserving preset changes and legacyv1 read/save. Next assistant must not interpret three draft templates as published businesses or ready agents; start P02.3 only after reconciling source and manual findings.
+
+Earlier dated sections below retain history; this current contract supersedes conflicting instructions.
+
+
+## Historical contract — package1.8 / P02.1
+
+For P02.1 handoff, list homepage/portfolio-entry change, business template/editor/API, additive021, exact ZIP identity, local checks and manual testsMT-009–020. State no business publishing/AI features. Record public/admin/shared impacts and leave founder statuses pending until reported. Preserve private env files when merging cumulative source.
+
+Earlier sections below retain planning/delivery history; conflicting capability or path descriptions are superseded by this current contract and document25.
 
 - **Bizoveya phase.substep/version, exact new ZIP filename, date/time PKT, owner/assistant/tool, source commit or ZIP checksum:**
 - **Latest instruction and any change to earlier plan:**
@@ -53,3 +100,9 @@ Carry the failing019/passing020 recovery evidence, executed local SQL report and
 ## Package1.7 — separate admin application (current contract)
 
 This section supersedes earlier same-host admin/source-path instructions for the current package, while preserving those earlier delivery records. Under ADR-0004, public code is apps/web/src; admin code is apps/admin/src. Source folders are not URL prefixes. The main host has no /admin or /api/admin pages/handlers, no admin button or redirect. Admin-only paths belong to the separate host; / redirects to its /login, with approved-role/MFA checks for protected pages/APIs. Admin has no customer/docs/marketing routes. All canonical Markdown remains at root docs/platform and is visualized only by the main app. Both deploy independently from one repository/ZIP; shared Supabase/migrations remain centrally managed. See23 for founder-reported testing,24 for explicit install/deploy/environment/manual instructions, and ADR-0004 for the decision. No new migration or live domain configuration is delivered. Real admin Auth/MFA, tenant isolation and production acceptance remain pending. Current source paths elsewhere in prior historical sections must be interpreted through this ownership map.
+
+For1.16 handoff read34/35/ADR0013 and full source; retain all pending manual IDs, installation029 and exact ZIP filename. Report actual checks/results and affected files. Public docs contain no credentials/customer private content.
+
+## Package1.17 / P04.0 — 2026-10-03T00:54:03.490300+05:00
+
+Actor: ChatGPT Codex assistant, authorized by founder continuation while testing1.16. Model connectivity room, fixed SDK adapters, versioned redacted evidence and030 implemented;36 and ADR-0014 added. Exact ZIP Bizoveya_1.17_Model-Connectivity-Tests.zip. Local verification is recorded in docs/delivery/P04.0; founder/hosted/live-provider checks remain pending. No provider request, remote migration or deployment performed. Next ordinal1.18.

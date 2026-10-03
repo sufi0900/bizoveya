@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { newBusinessDocument } from "@/domain/business";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { canWriteWorkspace, workspaceRecordSchema, workspaceRoleSchema, siteRecordSchema, type RegisterSiteInput, type UpdateSiteInput } from "@/domain/workspaces";
 
@@ -9,7 +10,11 @@ type DbError = { code?: string; message?: string } | null;
 export function checkDatabaseError(error: DbError) {
   if (!error) return;
   if (["42P01", "42703", "PGRST202", "PGRST205"].includes(error.code ?? "")) throw new WorkspaceError(503, "Workspace storage needs migration 018. Ask the platform operator to complete setup.");
+  if (error.message === "bz_duplicate_name") throw new WorkspaceError(409, "A site with this name already exists in this workspace. Open it from Your sites, or use a different name.");
+  if (error.message === "bz_duplicate_url") throw new WorkspaceError(409, "This website URL is already registered in this workspace, possibly under another name. Open it from Your sites.");
+  if (error.message === "bz_duplicate_workspace") throw new WorkspaceError(409, "You already have a workspace with this name. Open your existing workspace.");
   if (error.code === "23505") throw new WorkspaceError(409, "This portfolio is already registered. Open its existing site record.");
+  if (error.message === "bz_invalid_business_order") throw new WorkspaceError(400, "Review Hero/FAQ placement and hero text lengths in Studio before publishing.");
   if (error.message === "bz_conflict") throw new WorkspaceError(409, "This record changed in another session. Reload before saving.");
   if (error.message === "bz_forbidden" || error.code === "42501") throw new WorkspaceError(403, "You do not have permission for this action.");
   if (error.message === "bz_not_found") throw new WorkspaceError(404, "This record is unavailable.");
@@ -77,7 +82,9 @@ export async function listOwnedProjects(db: SupabaseClient, userId: string) {
 }
 export async function registerSite(db: SupabaseClient, userId: string, workspaceId: string, input: RegisterSiteInput) {
   await getWorkspace(db, userId, workspaceId, true);
-  const result = await db.rpc("bz_register_site", { p_workspace_id: workspaceId, p_name: input.name, p_mode: input.mode, p_kind: input.mode === "native_portfolio" ? "portfolio" : input.mode === "native_business" ? "business" : input.kind, p_url: input.mode === "external" ? input.url : null, p_project_id: input.mode === "native_portfolio" ? input.projectId : null, p_status: input.status, p_ownership_confirmed: input.ownershipConfirmed });
+  const args = { p_workspace_id: workspaceId, p_name: input.name, p_mode: input.mode, p_kind: input.mode === "native_portfolio" ? "portfolio" : input.mode === "native_business" ? "business" : input.kind, p_url: input.mode === "external" ? input.url : null, p_project_id: input.mode === "native_portfolio" ? input.projectId : null, p_status: input.status, p_ownership_confirmed: input.ownershipConfirmed };
+  const result = input.mode === "native_business" ? await db.rpc("bz_register_business_site", { p_workspace_id: workspaceId, p_name: input.name, p_status: input.status, p_ownership_confirmed: input.ownershipConfirmed, p_document: newBusinessDocument(input.name, input.templateId) }) : await db.rpc("bz_register_site", args);
+  if (result.error?.code === "PGRST202" && input.mode === "native_business") throw new WorkspaceError(503, "Business creation needs migration 023. Ask the platform operator to complete setup.");
   checkDatabaseError(result.error);
   return siteRecordSchema.parse(firstRecord(result.data));
 }
@@ -86,4 +93,14 @@ export async function updateSite(db: SupabaseClient, userId: string, workspaceId
   const result = await db.rpc("bz_update_site", { p_workspace_id: workspaceId, p_site_id: siteId, p_name: input.name, p_status: input.status, p_expected_version: input.expectedVersion, p_url: input.url ?? null, p_ownership_confirmed: input.ownershipConfirmed ?? false });
   checkDatabaseError(result.error);
   return siteRecordSchema.parse(firstRecord(result.data));
+}
+
+export async function deleteSite(db: SupabaseClient, userId: string, workspaceId: string, siteId: string, expectedVersion: number, confirmationName: string) {
+ const { workspace } = await getSite(db, userId, workspaceId, siteId);
+ if (workspace.role !== "owner") throw new WorkspaceError(403, "Only the workspace owner can delete a site record.");
+ const result = await db.rpc("bz_delete_site", { p_workspace_id: workspaceId, p_site_id: siteId, p_expected_version: expectedVersion, p_confirmation_name: confirmationName });
+ if (result.error?.code === "PGRST202") throw new WorkspaceError(503, "Site deletion needs migration 029. Ask the operator to complete setup.");
+ if (result.error?.message === "bz_confirmation_mismatch") throw new WorkspaceError(400, "Type the current site name exactly to confirm deletion.");
+ checkDatabaseError(result.error);
+ return { deleted: true, siteId };
 }
