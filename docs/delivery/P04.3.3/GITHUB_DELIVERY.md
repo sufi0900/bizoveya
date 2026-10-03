@@ -1,8 +1,8 @@
 # Verified GitHub checkpoint
 
-## 1.21 source checkpoint pending final commit
+## 1.21 source checkpoint
 
-P04.3.3.2 adds additive034, immutable generation input snapshots, sanitized history, safe UI preparation, structured plan/draft/QA contracts and local SQL/privacy/replay/cascade coverage. Feature remains non-executing: no reservation, provider request, output or publication. Founder superseded branch-only delivery and authorized verified non-force fast-forward to main; exact final commit is recorded after upload. MT110–113 are founder-reported passed; MT114–126 remain pending. Old branch/PR statements below describe the prior1.20 checkpoint.
+P04.3.3.2 adds additive034, immutable generation input snapshots, sanitized history, safe UI preparation, structured plan/draft/QA contracts and local SQL/privacy/replay/cascade coverage. Feature remains non-executing: no reservation, provider request, output or publication. Founder superseded branch-only delivery and authorized verified non-force fast-forward to main. Verified source commit: `af4a01cc0f3e4c0c62310a75fe690939de47751a`; main advanced without force from ancestor `b1dfbcf2b00cef032dee4773e73a05f21347796b`, retaining cumulative phase history. MT110–113 are founder-reported passed; MT114–126 remain pending. Old branch/PR statements below describe the prior1.20 checkpoint.
 
 Source commit: a2543331870dee7a2f555fb01351bc265c1384ed
 Branch: phase/p04-3-3-durable-drafts

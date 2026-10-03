@@ -9,3 +9,5 @@ Founder-reported evidence: migrations032/033 applied; MT107 Gemini connectivity/
 Next same phase: generation-stage spending reservations/settlement reusing032 rules, durable stage state, disabled-by-default provider execution, bounded coordinator→content→QA orchestration, persisted structured outputs and human review. No live activation, paid call, hosted SQL, customer publication, visual composition or Vercel setting change without explicit authority.
 
 Delivery: verified coherent checkpoints go directly to main, never force-push. Main may auto-deploy under accepted existing settings. Keep exact commit/checks/manual steps in GitHub docs and chat. Inspect branches/PRs/lease before resuming; no active lease was recorded here.
+
+Verified source locator: main commit `af4a01cc0f3e4c0c62310a75fe690939de47751a`. A documentation locator commit follows it; resolve remote main for the newest HEAD. Automated evidence:398 unit tests,53 local SQL migration/assertion/upgrade steps, both typechecks/lints/builds and application boundaries passed; existing CSS autoprefixer warnings remain non-failing. No hosted/browser acceptance inferred.
