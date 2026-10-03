@@ -411,3 +411,9 @@ ChatGPT/Codex uploaded cumulative1.19 source to the same P04.3.2 phase branch. S
 
 ### BZ-064 — 2026-10-03 PKT (message21:26) — Founder setup/deployment/API clarification
 Founder reports032 applied and requests simpler deployment, in-chat steps, free Gemini testing and Nemotron access with missing Pakistan verification. ChatGPT/Codex verified official Google/Vercel/Nebius/Devpost/NVIDIA guidance and updated39/38/12/30: merge-to-main automatic deployment shortcut, verified free pricing example, conditional tests and Nebius Token Factory route. No main merge, deployment-setting change, credit request, external message or provider request was performed. Tests remain pending.
+
+### BZ-065 — 2026-10-03 PKT — Founder spending screenshots reviewed
+Actor Sufian Mustafa supplied170618/170641 screenshots. ChatGPT/Codex confirmed settled Gemini run e5be1ac3-5620-40e0-9498-97febb96fb15,20input/7outputtokens,zero held/count amount,pricingv1. The earlier connectivity screenshot finished2026-10-03T16:52:41.722836Z. Only evidenced MT107 parts passed; no whole-phase acceptance inferred. Founder requests Nebius support draft; assistant drafted it but sent nothing. Raw screenshots with private account details are not committed.
+
+### BZ-066 — 2026-10-03 PKT — P04.3.3.1 campaign persistence checkpoint
+Actor ChatGPT/Codex; founder authorized proceeding after screenshot review. New branch phase/p04-3-3-durable-drafts starts at b0686b3ec34492b9a33812ea2027f21053b0215b. Private manually authored campaign room, current/revision tables, owner/editor RPC, RLS, bounded fields and saved URLs added. No live AI generation claim. New033 requires founder setup; MT110–117 pending. Phase remains in progress; execution/accounting is next on the same branch. Verification and exact GitHub checkpoint recorded in delivery evidence.

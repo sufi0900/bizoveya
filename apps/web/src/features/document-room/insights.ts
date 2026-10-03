@@ -31,7 +31,7 @@ export function latestPackage(markdown: string): { version: string; filename: st
     const version = label.split(" / ")[0];
     const filename = evidence?.match(/`([^`]+\.zip)`/)?.[1] ?? evidence?.match(/`(GitHub:[^`]+)`/)?.[1];
     if (!filename) return [];
-    const title = filename.startsWith("GitHub:") ? "Spending controls · GitHub phase branch" : filename.replace(/^Bizoveya_\d+\.\d+_/, "").replace(/\.zip$/, "").replace(/[-_]/g, " ");
+    const title = filename.startsWith("GitHub:") ? "GitHub phase checkpoint" : filename.replace(/^Bizoveya_\d+\.\d+_/, "").replace(/\.zip$/, "").replace(/[-_]/g, " ");
     return [{ version, filename, title }];
   });
   releases.sort((a, b) => { const [am, an] = a.version.split(".").map(Number), [bm, bn] = b.version.split(".").map(Number); return bm - am || bn - an; });
