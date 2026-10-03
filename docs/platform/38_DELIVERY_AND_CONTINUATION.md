@@ -32,3 +32,9 @@ Read CONTINUATION.md and current phase/affected documents, then inspect actual s
 ## Verified1.19 delivery
 
 Branch phase/p04-3-2-spending-controls; source commit `e05aaede9d191ae63f5b687bbd3d57080f18f281`; draft PR https://github.com/sufi0900/bizoveya/pull/1 . Cumulative1.19, all798 source blobs/modes verified. Existing continuation task verified enabled2026-10-03; old paused/403 statements above are historical. No new task was created. Main remains b1dfbcf2b00cef032dee4773e73a05f21347796b. See phase delivery report and CONTINUATION before the next action.
+
+## Deployment shortcut clarification2026-10-03
+
+Founder prefers direct-main uploads if branches cannot update production automatically. Verified shortcut: configure both Vercel projects to track main as Production branch. A tested PR merged into main triggers production builds and updates the respective assigned domains, without manually selecting branches or promoting every preview. Ordinary preview-branch pushes alone do not update production domains. Recommended path remains phase branch -> reviewed merge into main -> automatic Git deployments. No main write/merge or settings change was performed.
+
+One-time settings per project: Settings -> Environments -> Production -> Branch Tracking=main; GitHub connection active; public Root Directory apps/web, admin apps/admin; respective custom domains attached. Current PR1 is draft: Ready for review then Merge pull request/Confirm merge after reviewing checks. If merge is blocked, resolve the visible check; do not force push or disable safeguards. Keep manual steps in chat as well as documentation. Official https://vercel.com/docs/git and https://vercel.com/docs/deployments/promoting-a-deployment .

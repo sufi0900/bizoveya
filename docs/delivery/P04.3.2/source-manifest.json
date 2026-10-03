@@ -2281,8 +2281,8 @@
   },
   {
     "path": "docs/platform/38_DELIVERY_AND_CONTINUATION.md",
-    "sha256": "3809ecd797a74f777de70aa34e2ae1b8c6b1597d92760d6c83ad52cac582eb2e",
-    "bytes": 4266
+    "sha256": "a809d4cd942d1416a8e3e8fb4c761645568f8b4344dbfc55a14063806c1a984d",
+    "bytes": 5427
   },
   {
     "path": "docs/platform/03_EXPERIENCE_AND_ROUTES.md",
@@ -2346,8 +2346,8 @@
   },
   {
     "path": "docs/platform/12_HACKATHON.md",
-    "sha256": "6777ff3eb94daa9caaf3569f13b3cf89a2d5e85e288e186b40911aa381e86354",
-    "bytes": 7488
+    "sha256": "d54812acd1f6012f462875f6ee8f6b55d63e661e202a96bfc277e21926e9d583",
+    "bytes": 10394
   },
   {
     "path": "docs/platform/19_DEPENDENCIES_AND_CHANGE_IMPACT.md",
@@ -2366,8 +2366,8 @@
   },
   {
     "path": "docs/platform/ACTIVITY_LOG.md",
-    "sha256": "70c2d5b0e3dcdeb202c99d5e5e4f902d074ee70a7b0c8f73187d8934d2597a5a",
-    "bytes": 61384
+    "sha256": "82b4ff407fd934db354ccde115cf1a0bf7e42fdcf93466567062b13e550cb2db",
+    "bytes": 61987
   },
   {
     "path": "docs/platform/CONTINUATION.md",
@@ -2391,8 +2391,8 @@
   },
   {
     "path": "docs/platform/39_SPENDING_CONTROLS_AND_TESTING.md",
-    "sha256": "1a74046538a2c0341853eeda09c916cd032e9231804800058433c8bd5949cc31",
-    "bytes": 5295
+    "sha256": "18d86fbc12f6091fae407a017ecfc1da5ff6eb4e7120c6e3f349f01bea42df10",
+    "bytes": 8255
   },
   {
     "path": "docs/platform/PACKAGE_VERSIONS.md",
@@ -2466,8 +2466,8 @@
   },
   {
     "path": "docs/platform/30_COMBINED_PENDING_SETUP_AND_TESTS.md",
-    "sha256": "8aebcce296567ed3eb4f14f91abb6363b9ffdd79221a7a82a4b8f439a6bccda6",
-    "bytes": 17406
+    "sha256": "08c648f8ef2605f177d9ecbd05aedd12e646e96041a51e8f1536f6b2577c9d1b",
+    "bytes": 17736
   },
   {
     "path": "docs/platform/17_DISCUSSION_AND_DECISION_RECORD.md",

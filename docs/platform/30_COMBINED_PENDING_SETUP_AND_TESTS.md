@@ -133,3 +133,7 @@ Founder asked continue at2026-10-02T20:36:22+05:00 with no new acceptance result
 ## New1.16 setup and pending cases
 
 Founder reported all previous new Supabase files applied through028 in this review (self-reported; exact migration history not inspected). Apply029 only if028 is confirmed; otherwise missing files ascending. Preserve existing SQL/history. Upload full cumulative source and rebuild both existing deployments. No new key/env is required for P02.5. MT075–086 in34 are all [ ] pending. Earlier cases remain pending unless separately evidenced; reported Studio/onboarding/removal defects must be retested.35 gives copy/paste knowledge/preferences and future draft-pilot inputs. Runtime/social/CMS setup deferred; do not treat draft-only planning as executed functionality.
+
+## Founder setup report2026-10-03
+
+032 reported applied; do not reapply. MT102–109 remain pending. Read39 for exact Gemini Free Tier walkthrough, MT106 N/A for zero rates, MT108 conditional. Read12 for Nebius/NVIDIA key route and38 for automatic production deployment after PR merge. Manual steps must be provided in chat too.
