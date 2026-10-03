@@ -116,4 +116,4 @@ Local verification: 367 unit tests, 45 SQL steps, 119 browser checks, both produ
 |---|---|---|
 | CW-028 | Reviewed model assignments; recorded founder evidence and delivery decisions | P04.3.1 source and verification; manual acceptance pending |
 
-| CW-063 | P04.3.2 spending policy, reservation and reconciliation implementation | Migration032,39,49 local SQL steps and385 unit tests; founder acceptance pending |
+| CW-063 | P04.3.2 spending policy, reservation and reconciliation implementation | Migration032,39,49 local SQL steps and392 unit tests; founder acceptance pending |

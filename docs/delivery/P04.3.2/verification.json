@@ -18,5 +18,12 @@
   "hostedMigrationsApplied": 0,
   "productionDeployments": 0,
   "mainModified": false,
-  "preservedBaselineFiles": 31
+  "preservedBaselineFiles": 31,
+  "sourceCommit": "e05aaede9d191ae63f5b687bbd3d57080f18f281",
+  "pullRequest": "https://github.com/sufi0900/bizoveya/pull/1",
+  "sourceFilesHashVerified": 798,
+  "historicalFilesPreserved": 44,
+  "updatedPlatformDocuments": 30,
+  "newPlatformDocuments": 2,
+  "externalCI": "No GitHub Actions workflow runs returned at verification; external preview checks are not claimed passed"
 }

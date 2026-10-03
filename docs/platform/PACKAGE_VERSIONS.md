@@ -168,3 +168,5 @@ Actor: ChatGPT Codex assistant, authorized by founder continuation while testing
 | 1.19 / P04.3.2 | `GitHub:phase/p04-3-2-spending-controls` | Spending controls; cumulative source; founder tests pending | Exact commit and PR recorded in delivery handoff |
 
 No1.19ZIP is claimed or created. Delivery numbering continues across ZIP and GitHub deliveries; historical ZIP filenames stay unchanged.
+
+GitHub1.19 source commit: `e05aaede9d191ae63f5b687bbd3d57080f18f281`; draft PR https://github.com/sufi0900/bizoveya/pull/1 . Final documentation checkpoint remains on the same branch. No1.19ZIP was created.

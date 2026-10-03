@@ -2281,8 +2281,8 @@
   },
   {
     "path": "docs/platform/38_DELIVERY_AND_CONTINUATION.md",
-    "sha256": "5e677f9d7cce85d0726468c810309f42fb6a2e2fbe28d6e49f52f8deed8a5e6f",
-    "bytes": 3784
+    "sha256": "3809ecd797a74f777de70aa34e2ae1b8c6b1597d92760d6c83ad52cac582eb2e",
+    "bytes": 4266
   },
   {
     "path": "docs/platform/03_EXPERIENCE_AND_ROUTES.md",
@@ -2366,13 +2366,13 @@
   },
   {
     "path": "docs/platform/ACTIVITY_LOG.md",
-    "sha256": "fe00be8e851d5e41fc1ebf3be2715a8cde685ceda431f9f60ba6e4f2011fccdb",
-    "bytes": 60644
+    "sha256": "70c2d5b0e3dcdeb202c99d5e5e4f902d074ee70a7b0c8f73187d8934d2597a5a",
+    "bytes": 61384
   },
   {
     "path": "docs/platform/CONTINUATION.md",
-    "sha256": "9ca201706f3ec2c50a20f7c9966fe9488f166ba03c6ef4ae0e250d5f7660b8dd",
-    "bytes": 1097
+    "sha256": "662f2cf9f3fd9c923fa03f038640999cc2b7ef3fa2543fb6ff8f7344c27009fb",
+    "bytes": 2156
   },
   {
     "path": "docs/platform/24_DEPLOYMENT_AND_ENVIRONMENTS.md",
@@ -2391,13 +2391,13 @@
   },
   {
     "path": "docs/platform/39_SPENDING_CONTROLS_AND_TESTING.md",
-    "sha256": "25b4facc663af27e2b669cd32181915fea2ed6ec5627b4d9897a1505bea38ead",
+    "sha256": "1a74046538a2c0341853eeda09c916cd032e9231804800058433c8bd5949cc31",
     "bytes": 5295
   },
   {
     "path": "docs/platform/PACKAGE_VERSIONS.md",
-    "sha256": "f5c30a88d63a43834af2e545a37b501734b4e3a388b7922dbcc5a4007af9db52",
-    "bytes": 20173
+    "sha256": "a8a38de2973cda3291a7791f4ae4bddd618c5eafe1ac72b72ce9c27ad1666312",
+    "bytes": 20381
   },
   {
     "path": "docs/platform/07_CONNECTORS_AND_SITE_MODES.md",
@@ -2421,7 +2421,7 @@
   },
   {
     "path": "docs/platform/COMPLETED_WORK.md",
-    "sha256": "6e28472cdeacb439dd31a6790578b4d7097c3eb3781d166ba2adf555f894c2a3",
+    "sha256": "3ad51c16d3d7c283e01d4ca74c595917d96f27f020a133b1f49f46c63caff56d",
     "bytes": 16742
   },
   {
@@ -3406,13 +3406,13 @@
   },
   {
     "path": "docs/delivery/P04.3.2/web-build.txt",
-    "sha256": "61f5f64a63987615762dedd3546933fcd98a36bfcaa1eb3df98f329da2907532",
+    "sha256": "39b91f22f29252df2e4fb0b94819f5ca383e772f78c29b4e35598808a8ea6d1c",
     "bytes": 9810
   },
   {
     "path": "docs/delivery/P04.3.2/verification.json",
-    "sha256": "c9623abd626e9079fd3089ea4bd19a5fd62ae1a6d3ac66be8bd4ef5077624401",
-    "bytes": 547
+    "sha256": "293944020c5d1b67a63796cfbc29ed4e08fe656453f09dbff55f74886ac0ba01",
+    "bytes": 928
   },
   {
     "path": "docs/delivery/P04.3.2/web-unit.txt",

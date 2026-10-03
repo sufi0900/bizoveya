@@ -28,3 +28,7 @@ A periodic task is not an inactivity detector or a guaranteed usage-limit reset 
 ## Recovery
 
 Read CONTINUATION.md and current phase/affected documents, then inspect actual source. Preserve user edits. Save coherent progress frequently. Current fallback archive is `Bizoveya_1.18_Agent-Model-Assignments.zip`. A truncated initial upload was detected and replaced after rebuilding; do not use an earlier damaged copy. Recovery is recorded in the activity log and delivery evidence.
+
+## Verified1.19 delivery
+
+Branch phase/p04-3-2-spending-controls; source commit `e05aaede9d191ae63f5b687bbd3d57080f18f281`; draft PR https://github.com/sufi0900/bizoveya/pull/1 . Cumulative1.19, all798 source blobs/modes verified. Existing continuation task verified enabled2026-10-03; old paused/403 statements above are historical. No new task was created. Main remains b1dfbcf2b00cef032dee4773e73a05f21347796b. See phase delivery report and CONTINUATION before the next action.
