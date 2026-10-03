@@ -22,6 +22,7 @@ export function ActivityVisual({ content, compact = false }: { content: string; 
 }
 
 export function DocumentSpotlight({ slug, content }: { slug: string; content: string }) {
+  if (slug === "40_CAMPAIGN_DRAFTS_AND_TESTING") return <section className="doc-data-panel"><span className="doc-kicker"><Layers3 size={15}/> CAMPAIGN CHECKPOINT</span><h2>A shared brief, three private drafts</h2><div className="doc-work-grid">{["Blog draft","Pinterest copy","LinkedIn post"].map(label=><article className="doc-work-card" key={label}><h3>{label}</h3><p>Editable text · durable versions · human review</p></article>)}</div><p>Storage implemented. AI execution, visual composition and publishing are not yet available. Manual tests MT110–117 are pending.</p></section>;
   if (slug === "10_PHASES_AND_STATUS") return <PhaseVisual content={content} />;
   if (slug === "COMPLETED_WORK") return <WorkVisual content={content} />;
   if (slug === "ACTIVITY_LOG") return <ActivityVisual content={content} />;

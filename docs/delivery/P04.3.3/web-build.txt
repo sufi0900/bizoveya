@@ -1,0 +1,117 @@
+   ▲ Next.js 15.5.25
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 30.4s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/95) ...
+   Generating static pages (23/95) 
+   Generating static pages (47/95) 
+   Generating static pages (71/95) 
+ ✓ Generating static pages (95/95)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                                                       Size  First Load JS
+┌ ○ /                                                                          2.38 kB         179 kB
+├ ○ /_not-found                                                                   1 kB         105 kB
+├ ƒ /api/assemblyai/onboarding-token                                             247 B         104 kB
+├ ƒ /api/assemblyai/session/[sessionId]                                          247 B         104 kB
+├ ƒ /api/assemblyai/token                                                        247 B         104 kB
+├ ƒ /api/assistant/chat                                                          247 B         104 kB
+├ ƒ /api/connect/command                                                         247 B         104 kB
+├ ƒ /api/connect/openapi                                                         247 B         104 kB
+├ ƒ /api/connect/portfolio                                                       247 B         104 kB
+├ ƒ /api/content/blog-draft                                                      247 B         104 kB
+├ ƒ /api/content/polish                                                          247 B         104 kB
+├ ƒ /api/cv/extract                                                              247 B         104 kB
+├ ƒ /api/projects                                                                247 B         104 kB
+├ ƒ /api/projects/[projectId]                                                    247 B         104 kB
+├ ƒ /api/projects/[projectId]/agent-health                                       247 B         104 kB
+├ ƒ /api/projects/[projectId]/connections                                        247 B         104 kB
+├ ƒ /api/projects/[projectId]/headshot                                           247 B         104 kB
+├ ƒ /api/projects/[projectId]/media                                              247 B         104 kB
+├ ƒ /api/projects/[projectId]/memory                                             247 B         104 kB
+├ ƒ /api/projects/[projectId]/opportunity-plan                                   247 B         104 kB
+├ ƒ /api/projects/[projectId]/publish                                            247 B         104 kB
+├ ƒ /api/projects/[projectId]/revisions                                          247 B         104 kB
+├ ƒ /api/projects/[projectId]/shares                                             247 B         104 kB
+├ ƒ /api/projects/[projectId]/shares/[shareId]/feedback                          247 B         104 kB
+├ ƒ /api/projects/[projectId]/source-review                                      247 B         104 kB
+├ ƒ /api/projects/[projectId]/variants                                           247 B         104 kB
+├ ƒ /api/projects/[projectId]/visitor-documents                                  247 B         104 kB
+├ ƒ /api/projects/[projectId]/visitor-extract                                    247 B         104 kB
+├ ƒ /api/shares/[token]/feedback                                                 247 B         104 kB
+├ ƒ /api/visitor/[slug]/ask                                                      247 B         104 kB
+├ ƒ /api/visitor/[slug]/token                                                    247 B         104 kB
+├ ƒ /api/workspaces                                                              247 B         104 kB
+├ ƒ /api/workspaces/[workspaceId]                                                247 B         104 kB
+├ ƒ /api/workspaces/[workspaceId]/sites                                          247 B         104 kB
+├ ƒ /api/workspaces/[workspaceId]/sites/[siteId]                                 247 B         104 kB
+├ ƒ /api/workspaces/[workspaceId]/sites/[siteId]/agents                          247 B         104 kB
+├ ƒ /api/workspaces/[workspaceId]/sites/[siteId]/agents/preview                  247 B         104 kB
+├ ƒ /api/workspaces/[workspaceId]/sites/[siteId]/business                        247 B         104 kB
+├ ƒ /api/workspaces/[workspaceId]/sites/[siteId]/campaigns                       247 B         104 kB
+├ ƒ /api/workspaces/[workspaceId]/sites/[siteId]/knowledge                       247 B         104 kB
+├ ƒ /api/workspaces/[workspaceId]/sites/[siteId]/knowledge/[sourceId]/history    247 B         104 kB
+├ ƒ /api/workspaces/[workspaceId]/sites/[siteId]/knowledge/approved              247 B         104 kB
+├ ƒ /api/workspaces/[workspaceId]/sites/[siteId]/publication                     247 B         104 kB
+├ ○ /bizoveya/docs                                                               203 B         110 kB
+├ ● /bizoveya/docs/[slug]                                                        802 B         111 kB
+├   ├ /bizoveya/docs/00_INDEX
+├   ├ /bizoveya/docs/01_ORIGIN_AND_PRODUCT
+├   ├ /bizoveya/docs/02_REQUIREMENTS
+├   └ [+61 more paths]
+├ ƒ /claim                                                                     4.96 kB         139 kB
+├ ƒ /get-started                                                               2.38 kB         179 kB
+├ ○ /icon                                                                        247 B         104 kB
+├ ƒ /login                                                                     1.21 kB         177 kB
+├ ○ /manifest.webmanifest                                                        247 B         104 kB
+├ ƒ /p/[slug]                                                                    189 B         160 kB
+├ ƒ /p/[slug]/blog                                                               506 B         110 kB
+├ ƒ /p/[slug]/blog/[postSlug]                                                    506 B         110 kB
+├ ƒ /p/[slug]/opengraph-image                                                    247 B         104 kB
+├ ƒ /p/[slug]/pages/[pageSlug]                                                   506 B         110 kB
+├ ƒ /p/[slug]/projects                                                           506 B         110 kB
+├ ƒ /p/[slug]/projects/[projectSlug]                                             506 B         110 kB
+├ ƒ /portfolio                                                                   161 B         352 kB
+├ ƒ /projects                                                                  5.34 kB         182 kB
+├ ƒ /projects/[projectId]/settings                                             2.13 kB         150 kB
+├ ○ /robots.txt                                                                  247 B         104 kB
+├ ƒ /s/[token]/[[...path]]                                                       202 B         160 kB
+├ ○ /sitemap.xml                                                                 247 B         104 kB
+├ ƒ /sites/[siteId]                                                            1.94 kB         146 kB
+├ ○ /start                                                                     20.2 kB         167 kB
+├ ƒ /studio/[projectId]                                                          161 B         352 kB
+├ ƒ /templates                                                                 2.38 kB         179 kB
+├ ● /templates/[slug]                                                          1.31 kB         227 kB
+├   ├ /templates/wellness-studio
+├   ├ /templates/education-academy
+├   └ /templates/product-launch
+├ ○ /templates/creative-business                                               1.31 kB         227 kB
+├ ○ /templates/local-services                                                  1.31 kB         227 kB
+├ ○ /templates/service-studio                                                  1.31 kB         227 kB
+├ ƒ /workspaces                                                                  203 B         215 kB
+├ ƒ /workspaces/[workspaceId]                                                    138 B         180 kB
+├ ƒ /workspaces/[workspaceId]/settings                                           202 B         215 kB
+├ ƒ /workspaces/[workspaceId]/sites                                              138 B         180 kB
+├ ƒ /workspaces/[workspaceId]/sites/[siteId]                                   1.25 kB         216 kB
+├ ƒ /workspaces/[workspaceId]/sites/[siteId]/agents                            6.27 kB         209 kB
+├ ƒ /workspaces/[workspaceId]/sites/[siteId]/campaigns                           141 B         209 kB
+├ ƒ /workspaces/[workspaceId]/sites/[siteId]/campaigns/[campaignId]              141 B         209 kB
+├ ƒ /workspaces/[workspaceId]/sites/[siteId]/editor                            2.88 kB         229 kB
+├ ƒ /workspaces/[workspaceId]/sites/[siteId]/knowledge                         9.74 kB         213 kB
+├ ƒ /workspaces/[workspaceId]/sites/new                                          202 B         215 kB
+└ ƒ /workspaces/new                                                              202 B         215 kB
++ First Load JS shared by all                                                   104 kB
+  ├ chunks/7383-07fe519b7e5552c4.js                                            46.4 kB
+  ├ chunks/c2bfd26e-cba4abbafd92a092.js                                        54.2 kB
+  └ other shared chunks (total)                                                3.39 kB
+
+
+ƒ Middleware                                                                   93.7 kB
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
