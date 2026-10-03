@@ -7,3 +7,6 @@ Read40_CAMPAIGN_DRAFTS_AND_TESTING.md,10,19,30,activity log and current code. Ca
 Founder reports032 applied. MT107 Gemini connectivity+settlement evidenced:20input/7output,$0,pricingv1; MT103 policy save/history visible, refresh persistence not explicitly reported. Other unevidenced tests pending; new033/MT110–117 pending. Token Factory country onboarding blocked; Builder under review. No assistant support email sent. No active lease after delivered checkpoint. Future runs must inspect any new lease/branches/PR and resume same phase, not create another branch per run.
 
 Delivery: one cumulative GitHub phase branch; public apps/web and admin apps/admin unchanged. No ZIP invented. Exact commit/PR and verification live in docs/delivery/P04.3.3; update this checkpoint and affected visual/Markdown docs with each coherent change.
+
+## Verified delivery locator
+Source commit a2543331870dee7a2f555fb01351bc265c1384ed; draft PR https://github.com/sufi0900/bizoveya/pull/2. Read branch HEAD for subsequent documentation checkpoints. Source checks passed; phase remains in progress. No active lease. Resume the bound-agent/runtime/accounting work on this SAME branch.
