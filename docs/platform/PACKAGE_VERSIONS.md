@@ -1,5 +1,9 @@
 # Bizoveya ZIP and sub-implementation register
 
+## Current GitHub source — 1.21 / P04.3.3.2
+
+Verified cumulative GitHub delivery advances to source1.21; no new ZIP is created. Migration034 and private generation preparation are additive after1.20. The founder's superseding direct-main policy is recorded in38. P04.3.3 remains in progress and hosted/manual acceptance is pending.
+
 ## Current checkpoint — 1.20 / P04.3.3.1
 
 Private campaign draft storage is implemented at `/workspaces/[workspaceId]/sites/[siteId]/campaigns`, with saved campaign URLs ending in `/[campaignId]`. This checkpoint stores manually authored brief/blog/Pinterest/LinkedIn text; it makes no model request and does not publish. Additive migration033 follows032. P04.3.3 remains in progress: bound-agent orchestration, generation reservations, durable execution/usage and output review are the next work on the SAME `phase/p04-3-3-durable-drafts` branch. See [40 Campaign drafts](40_CAMPAIGN_DRAFTS_AND_TESTING.md).

@@ -1,5 +1,9 @@
 # Implementation phases and status ledger
 
+## Current checkpoint — 1.21 / P04.3.3.2
+
+Private generation preparation is implemented behind migration034: durable run IDs and exact campaign/knowledge/preferences/agent/binding/profile/pricing snapshots, plus bounded structured plan/draft/QA contracts. It makes no provider call or spending reservation and produces no output. P04.3.3 remains `[~]`; executable three-stage orchestration, shared032 reservation/settlement, persisted outputs and human review are next. MT110–113 are founder-reported passed; MT114–126 stay pending as applicable. Verified cumulative delivery now targets `main` under the founder's superseding policy.
+
 ## Current checkpoint — 1.20 / P04.3.3.1
 
 Private campaign draft storage is implemented at `/workspaces/[workspaceId]/sites/[siteId]/campaigns`, with saved campaign URLs ending in `/[campaignId]`. This checkpoint stores manually authored brief/blog/Pinterest/LinkedIn text; it makes no model request and does not publish. Additive migration033 follows032. P04.3.3 remains in progress: bound-agent orchestration, generation reservations, durable execution/usage and output review are the next work on the SAME `phase/p04-3-3-durable-drafts` branch. See [40 Campaign drafts](40_CAMPAIGN_DRAFTS_AND_TESTING.md).

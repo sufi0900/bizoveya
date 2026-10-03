@@ -1,5 +1,9 @@
 # Private campaign draft room and testing
 
+## Current update — 1.21 / P04.3.3.2
+
+Migration034 and the campaign UI now prepare private, immutable generation snapshots after rechecking campaign version, approved knowledge, preferences, three current agent/model bindings and reviewed pricing. No provider call, reservation, output or publication occurs. Structured plan/draft/QA contracts are defined for the next runtime checkpoint. See [41 Generation snapshots and testing](41_GENERATION_SNAPSHOTS_AND_TESTING.md). Founder reported MT110–113 passed; MT114–117 remain pending.
+
 P04.3.3.1 / source1.20 is the first durable-storage checkpoint of the draft-generation phase. It is not completed AI generation. Phase P04.3.3 remains in progress.
 
 ## Available now
@@ -43,10 +47,10 @@ Register/open your existing Do It With AI Tools site. Click Content campaigns �
 
 | ID | Action | Expected | Status |
 |---|---|---|---|
-| MT110 | Apply only033; open site → Content campaigns | Private room; starter brief; no Generate/Publish action | Pending |
-| MT111 | Fill starter and three test outputs; save; refresh; reopen exact URL | All text/version retained; no provider request | Pending |
-| MT112 | Edit one output and save; open revision history | New version; old full content remains | Pending |
-| MT113 | Open same saved URL in two tabs; save one then other | Stale tab denied; unsaved text retained | Pending |
+| MT110 | Apply only033; open site → Content campaigns | Private room; starter brief; no Generate/Publish action | Founder reported passed,2026-10-03 |
+| MT111 | Fill starter and three test outputs; save; refresh; reopen exact URL | All text/version retained; no provider request | Founder reported passed,2026-10-03 |
+| MT112 | Edit one output and save; open revision history | New version; old full content remains | Founder screenshot/report passed,2026-10-03 |
+| MT113 | Open same saved URL in two tabs; save one then other | Stale tab denied; unsaved text retained | Founder reported passed,2026-10-03 |
 | MT114 | Viewer/outsider/anonymous access, including API | Viewer reads only; outsiders denied/hidden; anonymous sign-in/API401 | Pending |
 | MT115 | Exceed field bounds/submit extra publish field; blank brief | UI/API/SQL reject invalid data; no content leak/request | Pending |
 | MT116 | Delete a disposable test site via existing owner confirmation | Associated campaigns/history gone; actual external website untouched | Pending |

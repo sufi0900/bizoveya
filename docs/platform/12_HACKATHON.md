@@ -1,5 +1,9 @@
 # Nebius x NVIDIA hackathon workstream
 
+## Nebius access clarification — 2026-10-03
+
+Founder evidence from Token Factory support states Pakistan is unavailable in the self-service country/billing flow; the Builder application does not bypass that restriction and no AI Cloud workaround was offered. Treat qualifying Nebius runtime evidence as blocked pending written organizer/provider clarification. This is not proof that a Pakistani person is categorically ineligible for prizes; competition eligibility and required runtime access are separate questions. Gemini or a generic third-party Nemotron endpoint may support commercial development but does not satisfy the documented Nebius-runtime requirement unless organizers explicitly approve it.
+
 ## Historical snapshot — 1.18 / P04.3.1
 
 Reviewed model assignments are implemented at `/admin/bindings` and `/api/admin/bindings` on the separate admin host only. Migration 031 is additive after 030. An assignment pins a checked latest preview-approved agent version, matching-tier checked model profile, enabled credential-reference version and successful matching connectivity-test ID. Evidence must remain less than 24 hours old. Version changes, rotation, revocation or expiry require review; disable retains history. This is assignment configuration, not paid execution, budget enforcement or customer draft generation.

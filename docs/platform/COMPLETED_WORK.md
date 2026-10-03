@@ -1,5 +1,7 @@
 # Completed Bizoveya work only
 
+| CW-028 | Implemented private immutable generation preparation with exact dependency/version snapshots, sanitized history, bounded structured output contracts and local SQL privacy/replay/cascade tests. | Source1.21; migration/test034; document41; BZ-061. | Preparation only; no reservation, provider execution, generated output, visual or publication. Hosted/manual MT118–126 pending. |
+
 ## Current checkpoint — 1.20 / P04.3.3.1
 
 Private campaign draft storage is implemented at `/workspaces/[workspaceId]/sites/[siteId]/campaigns`, with saved campaign URLs ending in `/[campaignId]`. This checkpoint stores manually authored brief/blog/Pinterest/LinkedIn text; it makes no model request and does not publish. Additive migration033 follows032. P04.3.3 remains in progress: bound-agent orchestration, generation reservations, durable execution/usage and output review are the next work on the SAME `phase/p04-3-3-durable-drafts` branch. See [40 Campaign drafts](40_CAMPAIGN_DRAFTS_AND_TESTING.md).

@@ -1,5 +1,9 @@
 # Dependencies and change-impact register
 
+## Current generation dependency contract — 1.21
+
+Campaign generation preparation now fails closed unless the saved campaign version, approved site knowledge, site preferences, exactly one ready coordinator/content/quality agent, current bindings, current connectivity evidence and enabled unexpired reviewed pricing are all available. Migration034 snapshots those exact versions privately. Any later knowledge, agent, model, credential, binding or pricing change affects only future snapshots; a prepared snapshot never silently changes. Execution must revalidate authority and accounting before stage calls. See41.
+
 ## Current checkpoint — 1.20 / P04.3.3.1
 
 Private campaign draft storage is implemented at `/workspaces/[workspaceId]/sites/[siteId]/campaigns`, with saved campaign URLs ending in `/[campaignId]`. This checkpoint stores manually authored brief/blog/Pinterest/LinkedIn text; it makes no model request and does not publish. Additive migration033 follows032. P04.3.3 remains in progress: bound-agent orchestration, generation reservations, durable execution/usage and output review are the next work on the SAME `phase/p04-3-3-durable-drafts` branch. See [40 Campaign drafts](40_CAMPAIGN_DRAFTS_AND_TESTING.md).

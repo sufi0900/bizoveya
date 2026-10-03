@@ -1,5 +1,9 @@
 # Verified GitHub checkpoint
 
+## 1.21 source checkpoint pending final commit
+
+P04.3.3.2 adds additive034, immutable generation input snapshots, sanitized history, safe UI preparation, structured plan/draft/QA contracts and local SQL/privacy/replay/cascade coverage. Feature remains non-executing: no reservation, provider request, output or publication. Founder superseded branch-only delivery and authorized verified non-force fast-forward to main; exact final commit is recorded after upload. MT110–113 are founder-reported passed; MT114–126 remain pending. Old branch/PR statements below describe the prior1.20 checkpoint.
+
 Source commit: a2543331870dee7a2f555fb01351bc265c1384ed
 Branch: phase/p04-3-3-durable-drafts
 Draft phase PR: https://github.com/sufi0900/bizoveya/pull/2

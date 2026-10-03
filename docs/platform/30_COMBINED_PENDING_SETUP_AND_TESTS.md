@@ -1,5 +1,9 @@
 # Combined pending setup and manual tests
 
+## Current action — 1.21
+
+Founder reports migration033 and MT110–113 complete. Apply only034 next; then follow document41 for MT118–126. MT114–117 and other unevidenced older security/regression checks remain pending. Snapshot preparation needs no new key and makes no provider request. Live generation must remain disabled because generation-stage reservation/settlement and execution are not implemented.
+
 ## Current checkpoint — 1.20 / P04.3.3.1
 
 Private campaign draft storage is implemented at `/workspaces/[workspaceId]/sites/[siteId]/campaigns`, with saved campaign URLs ending in `/[campaignId]`. This checkpoint stores manually authored brief/blog/Pinterest/LinkedIn text; it makes no model request and does not publish. Additive migration033 follows032. P04.3.3 remains in progress: bound-agent orchestration, generation reservations, durable execution/usage and output review are the next work on the SAME `phase/p04-3-3-durable-drafts` branch. See [40 Campaign drafts](40_CAMPAIGN_DRAFTS_AND_TESTING.md).

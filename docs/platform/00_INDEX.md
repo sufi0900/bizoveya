@@ -1,5 +1,7 @@
 # Bizoveya platform documentation — start here
 
+Latest guide: [41 Generation snapshots and testing](41_GENERATION_SNAPSHOTS_AND_TESTING.md). Source1.21 safely prepares immutable future-run context; live generation, stage spending reservation, visual composition and publishing remain disabled.
+
 ## Current checkpoint — 1.20 / P04.3.3.1
 
 Private campaign draft storage is implemented at `/workspaces/[workspaceId]/sites/[siteId]/campaigns`, with saved campaign URLs ending in `/[campaignId]`. This checkpoint stores manually authored brief/blog/Pinterest/LinkedIn text; it makes no model request and does not publish. Additive migration033 follows032. P04.3.3 remains in progress: bound-agent orchestration, generation reservations, durable execution/usage and output review are the next work on the SAME `phase/p04-3-3-durable-drafts` branch. See [40 Campaign drafts](40_CAMPAIGN_DRAFTS_AND_TESTING.md).

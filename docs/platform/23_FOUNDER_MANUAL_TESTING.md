@@ -1,5 +1,9 @@
 # Founder manual testing record
 
+## Current record — 1.21 / P04.3.3.2
+
+Founder reported MT110–113 campaign setup, refresh persistence, revision history and stale-tab behavior passed on2026-10-03. This does not accept role/isolation, invalid-input, destructive deletion, mobile/regression or new snapshot cases. Migration034 and MT118–126 are pending; exact steps and copy/paste values are in41. No live model generation is claimed.
+
 ## Current checkpoint — 1.20 / P04.3.3.1
 
 Private campaign draft storage is implemented at `/workspaces/[workspaceId]/sites/[siteId]/campaigns`, with saved campaign URLs ending in `/[campaignId]`. This checkpoint stores manually authored brief/blog/Pinterest/LinkedIn text; it makes no model request and does not publish. Additive migration033 follows032. P04.3.3 remains in progress: bound-agent orchestration, generation reservations, durable execution/usage and output review are the next work on the SAME `phase/p04-3-3-durable-drafts` branch. See [40 Campaign drafts](40_CAMPAIGN_DRAFTS_AND_TESTING.md).

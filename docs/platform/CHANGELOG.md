@@ -1,5 +1,9 @@
 # Living documentation changelog
 
+## Source1.21 — P04.3.3.2
+
+Added migration034 private generation-run snapshots, sanitized campaign run history, a safe prepare control/API, campaign plan/draft/QA schemas and SQL assertions. Updated founder evidence, direct-main delivery policy, Nebius Pakistan access evidence and living docs. No provider execution, spending reservation, hosted SQL, deployment setting change, visual composition or publication.
+
 ## Current contract — 1.19 / P04.3.2
 
 This update supersedes conflicting older “current” blocks below; historical records remain unchanged. Admin-only spending controls are at `/admin/spending` and `/api/admin/spending`. Migration032 follows031; never rerun applied migrations. New connectivity tests require reviewed USD pricing and enabled limits. The ledger reserves a conservative estimate before a provider call, settles reported usage, and holds uncertain/overrun charges until evidence-based reconciliation. Customer draft generation and publishing remain disabled. See [39 Spending controls](39_SPENDING_CONTROLS_AND_TESTING.md).
