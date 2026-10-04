@@ -1,0 +1,299 @@
+{
+  "startedAt": "2026-10-04T18:01:33.113Z",
+  "engine": "PGlite 0.5.8 (PostgreSQL WASM)",
+  "scope": "Ephemeral local SQL with simulated Supabase Auth/Storage schema and JWT settings; no real Auth, PostgREST, Storage, concurrency or remote migration proof.",
+  "steps": [
+    {
+      "name": "migration:001_projects.sql",
+      "status": "passed",
+      "sha256": "7bcd7239d01b18c5bb0b37558c589225ebb61d7d1e6d2b0ad5379efe49d3939c"
+    },
+    {
+      "name": "migration:002_publications.sql",
+      "status": "passed",
+      "sha256": "f8d4b224e4dc632a0a5bf5da793a0a698f20fd7b3e84a63fee3695443cf2b98a"
+    },
+    {
+      "name": "migration:003_revision_restore.sql",
+      "status": "passed",
+      "sha256": "95e1107ce76abd512be82569cc587ff3765cae18746b5af5404af85a7dd36b8d"
+    },
+    {
+      "name": "migration:004_portfolio_media.sql",
+      "status": "passed",
+      "sha256": "68eab3c329b0b2429835fabebd114fd594fe0e1517a9f96b247fad8043193264"
+    },
+    {
+      "name": "migration:005_fix_portfolio_media_policies.sql",
+      "status": "passed",
+      "sha256": "68eab3c329b0b2429835fabebd114fd594fe0e1517a9f96b247fad8043193264"
+    },
+    {
+      "name": "migration:006_opportunity_variants.sql",
+      "status": "passed",
+      "sha256": "e452e7ba7f59c245caca858224714525bee45ea6e7aa3b22b3b01dd7c59c63b0"
+    },
+    {
+      "name": "migration:007_private_opportunity_publication_guard.sql",
+      "status": "passed",
+      "sha256": "ebffd88c80e19e0ba6e8a87ca7932d30c6c4418d1423419509da5ae3a3089ca5"
+    },
+    {
+      "name": "migration:008_opportunity_share_tokens.sql",
+      "status": "passed",
+      "sha256": "3a983623815628a3fbd6aa15dae3fb1e5ebfde9bb1bfbce33242ccbfe6075510"
+    },
+    {
+      "name": "migration:009_professional_memory_agent_events.sql",
+      "status": "passed",
+      "sha256": "3c9145b53f698315c8f0e9eb9a55c3c9fea959b5cba402e74a9923e16da0d6c4"
+    },
+    {
+      "name": "migration:010_agent_activity_controls.sql",
+      "status": "passed",
+      "sha256": "bf37be10c0e3d76afdffaf985532e9302b9c98612cb1928e0b2b8030488c542f"
+    },
+    {
+      "name": "migration:011_selective_opportunity_refresh.sql",
+      "status": "passed",
+      "sha256": "d0f3b8d024230b786e910d7c5cfbe656e4ffeabc1f68570a67b89b7d35eb2e62"
+    },
+    {
+      "name": "migration:012_opportunity_share_feedback.sql",
+      "status": "passed",
+      "sha256": "25ebb8dd31e8e401b3bc1d8bcdbe4088b5eb3df81b3f144c8d0574d7d27e7f25"
+    },
+    {
+      "name": "migration:013_public_visitor_agent_limits.sql",
+      "status": "passed",
+      "sha256": "08eb0c9eea0fd7350aec733102c03b2e38348ae3b08f5e99f7eafbef5292307e"
+    },
+    {
+      "name": "migration:014_private_content_connections.sql",
+      "status": "passed",
+      "sha256": "f3093c44e63095c589cb2205c1a8dcb82e7425ea8a0ad8ea35efaef493e333e3"
+    },
+    {
+      "name": "migration:015_visitor_documents.sql",
+      "status": "passed",
+      "sha256": "0447eb4a7387b6c548dc25c45ffbf609539de2890adf6113a0fd533f5e79b8ca"
+    },
+    {
+      "name": "migration:016_publication_snapshot.sql",
+      "status": "passed",
+      "sha256": "a4b85a173a06e1d7939273eb78fcd335c2ae863244915ec2f3845d904dfafc0e"
+    },
+    {
+      "name": "migration:017_vox_interview_demo_sessions.sql",
+      "status": "passed",
+      "sha256": "caaed6c58817ca547a8b1521da1745afd7e1769c7b74c4e00dc95fa445e7750c"
+    },
+    {
+      "name": "migration:018_bizoveya_workspaces.sql",
+      "status": "passed",
+      "sha256": "8e17c54297bd5a442190057a5a6df02bb47f0c76228fdf622c46f5e6160218be"
+    },
+    {
+      "name": "migration:019_bizoveya_admin_identity.sql",
+      "status": "passed",
+      "sha256": "20526cfdeddfa7ed1a6db13c99736dc52b2c33ea40c538a436b61dcebbf17672"
+    },
+    {
+      "name": "migration:020_bizoveya_admin_recovery.sql",
+      "status": "passed",
+      "sha256": "a378bd56f9a80449c354cdbf77a584c08030524a86c8654d867e2ff46dffa99c"
+    },
+    {
+      "name": "migration:021_business_drafts.sql",
+      "status": "passed",
+      "sha256": "e6a9876c8ceca5aa5221762483014878d4fe955d2145cac4273cd101a63dcc6f"
+    },
+    {
+      "name": "migration:022_modular_business_sections.sql",
+      "status": "passed",
+      "sha256": "5626f15a4e7cb3c72e85ee0f98419168a18a6faad038732dbc088e379d6abe53"
+    },
+    {
+      "name": "migration:023_creation_integrity.sql",
+      "status": "passed",
+      "sha256": "f17615fa7a48e96ddc7ae6f2e7e5736fdb52c19c7023ad2cbffb49b2aa475f85"
+    },
+    {
+      "name": "migration:024_business_publications.sql",
+      "status": "passed",
+      "sha256": "a88a60010671449d0183bd48180160c9829d61b1eef8787cf7dff66579372c9b"
+    },
+    {
+      "name": "migration:025_expanded_business_templates.sql",
+      "status": "passed",
+      "sha256": "21464cf46fce27d51798205a9c61421649b17fb7b2873d5119a83f7d27d115d6"
+    },
+    {
+      "name": "migration:026_site_knowledge.sql",
+      "status": "passed",
+      "sha256": "0d6e5d3741453ce798b12246412cfb885957dc80d7d56995d21d8d09229dbee0"
+    },
+    {
+      "name": "migration:027_agent_configuration.sql",
+      "status": "passed",
+      "sha256": "a68833f4d0fc5f5f57fa90c09e59da0401042f46ecb1fed9f410c7a59be61a5d"
+    },
+    {
+      "name": "migration:028_model_profiles.sql",
+      "status": "passed",
+      "sha256": "1ecb82b82af96c0dffd24f2f641537c2f009ab5981a0dbfc9e2a447def4d4b45"
+    },
+    {
+      "name": "migration:029_business_studio_and_site_removal.sql",
+      "status": "passed",
+      "sha256": "828083f76159ab04ad96f94d058f862998025cb0185f30f7525f837140c362bc"
+    },
+    {
+      "name": "migration:030_model_connectivity_tests.sql",
+      "status": "passed",
+      "sha256": "944f72cfea534442382086c487d438349d651dcd984f37a10a47a3006f6201f2"
+    },
+    {
+      "name": "migration:031_agent_model_bindings.sql",
+      "status": "passed",
+      "sha256": "ae4c23636ec1bcbbcae6313bade6bf0d6279b2f2ddf1d041567e33d5bb6d25f8"
+    },
+    {
+      "name": "assertions:018_workspace_acceptance.sql",
+      "status": "passed",
+      "sha256": "dc004d4621d76fb7880902570c0e6110a0c2b7b04daa317579c293250387dc61"
+    },
+    {
+      "name": "assertions:019_admin_acceptance.sql",
+      "status": "passed",
+      "sha256": "d1c482df0fe638a84eaea02077dd9d8b66bf936e0953959ffd8a6062af31994b"
+    },
+    {
+      "name": "assertions:020_admin_recovery_acceptance.sql",
+      "status": "passed",
+      "sha256": "55fa1e06e52a70c21788bc354d5b315fb64b4f0df253917a8bb4eab2fca53e36"
+    },
+    {
+      "name": "assertions:021_business_draft_assertions.sql",
+      "status": "passed",
+      "sha256": "7ece250abf8896cc6e25aa77cd5642fdf08fdb16d8551d61f15358ee17637453"
+    },
+    {
+      "name": "assertions:022_modular_business_assertions.sql",
+      "status": "passed",
+      "sha256": "a988ccc25d189d82c8b6266fc9556818d6a4aff998ce69b1fd9497dc4e7d68af"
+    },
+    {
+      "name": "assertions:023_creation_integrity_assertions.sql",
+      "status": "passed",
+      "sha256": "c4d2c84595eaafe86687d1d43009c29448bc65141977bd2b192d278096841992"
+    },
+    {
+      "name": "assertions:024_publication_assertions.sql",
+      "status": "passed",
+      "sha256": "1f0261554a75836b120735f966b35fbed0416eb745db64b105e32cc3dfe9d4f5"
+    },
+    {
+      "name": "assertions:025_expanded_templates_assertions.sql",
+      "status": "passed",
+      "sha256": "d975f36876cd01150569b1dde1c3d8908932bd23580509a3d89107de06872521"
+    },
+    {
+      "name": "assertions:026_site_knowledge_assertions.sql",
+      "status": "passed",
+      "sha256": "7157de7db050bcf5d3220fb59dfdc1a115b33073975c45c7250ef1bddfeed7b3"
+    },
+    {
+      "name": "assertions:027_agent_configuration_assertions.sql",
+      "status": "passed",
+      "sha256": "099a1bbef90fa06c7637405ff76587be5901087468cb5b59de8a422231e37951"
+    },
+    {
+      "name": "assertions:028_model_profile_assertions.sql",
+      "status": "passed",
+      "sha256": "22654517b7120418eb3d82b71ed87562832cb8596e22d41e706b9fa5a0a03ae6"
+    },
+    {
+      "name": "assertions:029_studio_and_site_removal_assertions.sql",
+      "status": "passed",
+      "sha256": "8a9f3b740a389516cd701020e3d5de3a00de270f7032454a4102f63f13c10310"
+    },
+    {
+      "name": "assertions:030_model_test_assertions.sql",
+      "status": "passed",
+      "sha256": "681229da82139dcbca3b128bf1a69938da7e439c67a7c40df409e2531982303e"
+    },
+    {
+      "name": "assertions:031_binding_assertions.sql",
+      "status": "passed",
+      "sha256": "4776fff29b0668c8522e19bc98dbaf32a0b49403637310c63a2849b2e4cff519"
+    },
+    {
+      "name": "migration:032_spending_controls.sql",
+      "status": "passed"
+    },
+    {
+      "name": "migration:033_campaign_draft_foundation.sql",
+      "status": "passed"
+    },
+    {
+      "name": "migration:034_generation_run_snapshots.sql",
+      "status": "passed"
+    },
+    {
+      "name": "migration:035_generation_stage_accounting.sql",
+      "status": "passed"
+    },
+    {
+      "name": "migration:036_generation_runtime_claims.sql",
+      "status": "passed"
+    },
+    {
+      "name": "migration:037_generation_dispatch_and_review.sql",
+      "status": "passed"
+    },
+    {
+      "name": "assertions:032_spending_assertions.sql",
+      "status": "passed"
+    },
+    {
+      "name": "assertions:033_campaign_assertions.sql",
+      "status": "passed"
+    },
+    {
+      "name": "assertions:034_generation_snapshot_assertions.sql",
+      "status": "passed"
+    },
+    {
+      "name": "assertions:035_generation_stage_accounting_assertions.sql",
+      "status": "passed"
+    },
+    {
+      "name": "assertions:036_generation_runtime_assertions.sql",
+      "status": "passed"
+    },
+    {
+      "name": "assertions:037_generation_dispatch_assertions.sql",
+      "status": "passed"
+    },
+    {
+      "name": "upgrade:021 -> 022 preserves schema-v1 draft byte-equivalent JSON, version and metadata",
+      "status": "passed"
+    },
+    {
+      "name": "upgrade:017 legacy -> 018 workspace -> 019 admin -> 020 recovery -> 021 private drafts -> 022 modular validation",
+      "status": "passed",
+      "preserved": [
+        "project document",
+        "workspace",
+        "membership",
+        "native project mapping",
+        "admin grant",
+        "audit events"
+      ]
+    }
+  ],
+  "postgres": "PostgreSQL 18.3 (PGlite 0.5.8) on wasm32-unknown-emscripten, compiled by emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 3.1.74 (1092ec30a3fb1d46b1782ff1b4db5094d3d06ae5), 32-bit",
+  "status": "passed",
+  "finishedAt": "2026-10-04T18:01:35.715Z"
+}

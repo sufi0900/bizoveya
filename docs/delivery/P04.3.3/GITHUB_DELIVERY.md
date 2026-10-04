@@ -1,3 +1,11 @@
+# Current delivery — 1.24 / P04.3.3.5
+
+Source base:`3ce1ce2465d5ca02a59b6e9e6ffd141a72c6f245`. Verified checkpoint adds default-off founder-owner admin dispatch, private saved channel output and versioned human review.436 unit tests,59 local SQL checks, both typechecks/lints/builds and app boundaries pass. No hosted SQL/provider request/publishing/browser acceptance. Exact source commit follows non-force main delivery. No new branch/PR/ZIP. Historical phase PR2 must not be merged over main. No active lease recorded at delivery.
+
+Next: apply missing036 then037, verify default-off UI and explicitly activate one Gemini pilot only when the founder is ready. Read CONTINUATION.md and44_DRAFT_PILOT_AND_HUMAN_REVIEW.md. New manual tests remain pending; do not infer acceptance from connectivity.
+
+---
+
 # Verified main delivery — 1.23 / P04.3.3.4
 
 Source commit: `6e375f838ea1e3860c4890e5b2edda05d8bff9dc` on `main`. Exact verified tree: `e0980cb10ba2e620cf995dcc019f5f67d1fd0e17`. Non-force update succeeded on 2026-10-04 PKT. No active checkpoint lease remains. This locator-only record follows the source commit; no new PR/branch/ZIP was created. Older phase PR2 is historical and must not be merged over current main.

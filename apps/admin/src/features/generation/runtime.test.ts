@@ -23,3 +23,5 @@ describe('bounded draft runtime',()=>{
  it('requires citations for every channel',()=>{const c=context();expect(()=>validateOutput('content',{...outputs.content,pinterest:{...outputs.content.pinterest,citations:[]}},c.snapshot)).toThrow('Each channel');});
  it('rejects approval with blockers',()=>{expect(()=>validateOutput('quality',{...outputs.quality,issues:[{channel:'shared',severity:'blocker',message:'Unsupported claim'}]},context().snapshot)).toThrow('Conflicting');});
 });
+it('rechecks operator access before each stage',async()=>{const h=harness();const beforeStage=vi.fn(async()=>true);await executeGeneration(source,source,{...h.deps,beforeStage});expect(beforeStage).toHaveBeenCalledTimes(3);});
+it('revoked operator access stops before reservation or provider work',async()=>{const h=harness();await expect(executeGeneration(source,source,{...h.deps,beforeStage:async()=>{throw Error('Revoked');}})).rejects.toThrow('Revoked');expect(h.rpc).not.toHaveBeenCalled();expect(h.provider).not.toHaveBeenCalled();});

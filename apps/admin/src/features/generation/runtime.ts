@@ -3,12 +3,13 @@ import {agentKinds,type AgentKind} from '@bizoveya/agent-contract';
 import {slots} from '../models/contracts';
 import {claimSchema,stagePrompt,validateOutput,type Claim,type ProviderResult} from './contracts';
 import {generateStage} from './provider';
-export type RuntimeDependencies={recorder:Pick<SupabaseClient,'rpc'>;env:Record<string,string|undefined>;provider?:(kind:AgentKind,claim:Claim,env:Record<string,string|undefined>)=>Promise<ProviderResult>;uuid?:()=>string};
+export type RuntimeDependencies={recorder:Pick<SupabaseClient,'rpc'>;env:Record<string,string|undefined>;provider?:(kind:AgentKind,claim:Claim,env:Record<string,string|undefined>)=>Promise<ProviderResult>;beforeStage?:()=>Promise<unknown>;uuid?:()=>string};
 /** Server module only. No route imports it yet; activation/review wiring is the next checkpoint. */
 export async function executeGeneration(generationId:string,actorId:string,deps:RuntimeDependencies){
  if(deps.env.BIZOVEYA_ENABLE_CAMPAIGN_GENERATION!=='true')return {status:'disabled' as const};
  const uuid=deps.uuid??(()=>crypto.randomUUID());
  for(const kind of agentKinds){
+  await deps.beforeStage?.();
   const id=uuid(),claim=uuid();
   const begin=await deps.recorder.rpc('bz_claim_campaign_generation_stage',{p_generation_id:generationId,p_stage_id:id,p_kind:kind,p_claim:claim,p_actor_id:actorId});
   if(begin.error)throw new Error('Generation prerequisites changed or reservation unavailable');

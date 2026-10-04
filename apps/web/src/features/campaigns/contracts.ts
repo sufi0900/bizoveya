@@ -17,3 +17,4 @@ export const starterCampaign: CampaignDocument = {
  brief: "Audience: freelancers and small business owners. Explain a practical AI-assisted SEO workflow. Create a blog, Pinterest copy and a LinkedIn post. Use only approved site knowledge. Avoid invented statistics, guarantees and unsupported product claims. End with a relevant next step to explore Do It With AI Tools. These are drafts for human review; do not publish.",
  blog:"",pinterest:"",linkedin:""
 };
+export const reviewGenerationSchema=z.object({id:z.uuid(),expectedVersion:z.number().int().nonnegative(),decision:z.enum(['accepted','changes_requested']),reason:z.string().trim().min(10).max(300).refine(s=>!/[\u0000-\u001f]/.test(s))}).strict();

@@ -1,0 +1,79 @@
+# Draft pilot and human review
+
+## Current checkpoint: 1.24 / P04.3.3.5
+
+The bounded runtime is now wired to explicit founder-owner controls on the **separate admin deployment**. Completed structured outputs appear in the private campaign room. Human review is durable and versioned. The default activation flag stays false; installing this release makes no provider request. Images, carousels, automatic regeneration and publishing remain outside this checkpoint. P04.3.3 stays IN PROGRESS pending real pilot acceptance.
+
+## Routes and access
+
+| Surface | Route | Access / effect |
+|---|---|---|
+| Separate admin | `/admin/generations` | Current platform admin + MFA; shows only snapshots originally requested by this same user in a workspace they currently own |
+| Separate admin API | `/api/admin/generations` | GET reads own run queue; POST requires explicit consent and server-derived actor, dispatches one selected immutable snapshot only when activated |
+| Main private campaign | `/workspaces/[workspaceId]/sites/[siteId]/campaigns/[campaignId]` | Workspace members read saved generated outputs; only owner records human review |
+| Main private review API | `/api/workspaces/[workspaceId]/sites/[siteId]/campaigns/reviews` | Owner-only, expected review version, reason and decision; never publishes or calls a model |
+
+There is no main-domain admin route/link. No admin link to the public app is added. Credentials remain private admin-server environment variables. Admin privilege alone does not permit reading or executing another tenant's snapshot. Original requester and workspace-owner checks are enforced again in SQL; admin access is rechecked before each stage. Direct table access is revoked. Provider request documents remain private and are not returned to clients.
+
+## Dispatch and recovery
+
+A reviewed authorization reason and checkbox acquire a 120-second dispatch lease and append a private authorization event. Duplicate dispatch during that lease is blocked. Coordinator → Content → Quality each runs at most once, with existing reserve/request/output/usage accounting. Settled successful stages can be skipped during an explicitly authorized resume; failed or uncertain stages are not silently resent. A lost connection requires reading run and spending records before any further action. Refresh is read-only. No automatic worker, retry, fallback or background provider call is added.
+
+Run summaries are capped at100. Stale assignment revisions or a changed campaign reject the old snapshot. Runtime036 still rechecks exact knowledge/preferences/pricing and saved profile/reference freshness before each new stage. An old prepared snapshot is historical, not silently migrated. After refreshing assignments, prepare a **new** snapshot for the pilot; retain the old one.
+
+Saved output separates Blog title/summary/body, Pinterest title/description/suggested alt text, LinkedIn post, approved fact references, Coordinator plan and advisory QA. Display escapes text; no generated HTML/scripts execute. Copy controls copy text only. Human `accepted` requires successful output and positive QA without blockers; `changes_requested` records feedback without regeneration. Both require a10–300-character reason and expected review version. Review history is bounded to100 entries per run; history is preserved and review never changes the editable campaign document or publishes it.
+
+## Founder evidence
+
+On2026-10-04 PKT the founder reported **all checks in the preceding message passed**: new Gemini connectivity, refreshed Coordinator/Content/Quality assignments and campaign reload/readiness. Screenshot174029 independently shows run `c17284e7-f1c6-49db-8895-92245872f18e`, passed/response_matched, profile/referencev2,20input/7output, finished `2026-10-04T17:40:21.012876+00:00`;174126/174142 independently show Coordinator assignmentrevision2 current. Content/Quality and readiness are founder-reported, not independently screenshot-evidenced. The preceding video shows old24-hour-expired assignments and spending history surviving reload. Connectivity is not structured drafting quality or whole-phase acceptance. This does not independently confirm036 installation or other unrelated tests.
+
+## Installation — no provider requests
+
+1. Wait for both existing Vercel projects to be Ready for the delivery commit. If local, pull main and run `pnpm install`, `pnpm dev:web` and `pnpm dev:admin` in separate terminals.
+2. In Supabase SQL Editor, apply **037_generation_dispatch_and_review.sql** once after036. If036 is not yet applied, apply only036 then037, in order.034/035 were already founder-reported installed. Do not rerun old applied migrations, or execute anything in `supabase/tests` on hosted data.
+3. Keep `BIZOVEYA_ENABLE_CAMPAIGN_GENERATION` absent or `false` on the admin deployment for the default-off tests below. No new API key or provider account is required. The main/web deployment must never receive the service-role/provider keys.
+4. Open admin Draft runs. Expect a disabled pilot notice, your own prepared snapshots and a disabled Run control. Refresh must make no charge or output. Older prepared snapshots can show stale after assignment changes.
+5. Open the private campaign. Expect a Generated drafts and human review section with an honest empty state until a successful model run exists. Existing campaign text/history/snapshots remain intact.
+6. Open `/bizoveya/docs` on the main app and locate document44. Main `/admin` and `/api/admin/generations` must still return404.
+
+## Explicit one-run Gemini pilot — makes real provider requests
+
+Only perform this when ready to authorize actual provider use. Free-tier applicability depends on your provider account; recorded$0 rates are estimates, not independent confirmation of provider billing.
+
+1. Sign into the admin app with MFA using the **same account** that owns the main workspace and prepares the campaign. Use the current checked Gemini profile/reference and reviewed enabled pricing. If the bound connectivity evidence is older than24hours, run one fresh connectivity test and save each of the three assignments against it. Do not recreate agents or rotate the key merely because a test expired.
+2. On the **admin Vercel project only**, set `BIZOVEYA_ENABLE_CAMPAIGN_GENERATION=true` and redeploy that project with the existing private Gemini and Supabase recording keys. Do not expose secrets in chat, forms or NEXT_PUBLIC variables. `BIZOVEYA_ENABLE_MODEL_TESTS` is a separate flag; it does not activate this pilot.
+3. In Do It With AI Tools' private campaign, use only approved site knowledge you have verified. Use the following sample fields; leave existing manual channel drafts as they are or blank. Manual drafts are not used as factual evidence.
+
+| Field | Copy/paste example |
+|---|---|
+| Campaign title | `A practical AI-assisted SEO workflow` |
+| Shared brief | `For freelancers and small digital agencies, explain a practical AI-assisted SEO workflow using only approved Do It With AI Tools facts. Create a concise blog of about 200–300 words, one Pinterest title and description with suggested alt text, and one LinkedIn post. Use English, cite approved facts, avoid invented statistics or guarantees, and suggest a relevant next step only if supported by the approved facts. Prepare text for human review; do not publish.` |
+| Blog draft (optional manual text) | `Manual draft placeholder. Generated output must remain separate from this field.` |
+| Pinterest title and description (optional manual text) | `Manual Pinterest placeholder. Do not publish this text.` |
+| LinkedIn post (optional manual text) | `Manual LinkedIn placeholder. Do not publish this text.` |
+
+4. Save the campaign and prepare **one new generation snapshot** with current settings. Expect one new prepared entry retaining older snapshots; preparation still makes no model call or charge. Note the new snapshot UUID.
+5. Open admin Draft runs and refresh. Select that exact new snapshot, enter run authorization reason `Authorize one draft-only Gemini pilot for Do It With AI Tools using approved facts.`, review pricing/knowledge and tick consent. Click **Run selected snapshot once**. Keep the page open. The engine may make up to three model requests. Do not repeatedly click or create another run while this one is pending.
+6. Expect `Drafts saved` and status `succeeded` on success. If stopped/failed/connection lost, refresh run and Spending records and report the displayed message/stage status; do not blindly rerun or assume free usage. Unknown/overrun usage needs evidence-based operator reconciliation.
+7. Reload the main private campaign. Expect three settled successful stages and separate Blog/Pinterest/LinkedIn output, citations and QA. Review fact accuracy, source versions, language and channel suitability. Each Copy button should copy only the displayed channel text. No blog/pin/post is published.
+8. If QA passed and your own review agrees, enter human review reason `Checked facts, citations, brand voice and channel suitability; accepted for draft use only.` then click **Accept for draft use**. Expect a new human-review history entry. If changes are needed, instead use reason `Revise unsupported claims and improve the channel-specific wording before draft use.` and **Request changes**. This records feedback; it does not regenerate or publish.
+9. Reload the campaign again. Expect the same generated outputs and human decision/history, with no new run or charge. Check Spending for each actual stage and reported token usage. Confirm provider billing in your own provider account separately.
+10. After the pilot, set the admin generation flag back to `false` and redeploy if you want the pilot closed. Existing outputs/reviews stay readable.
+
+## Pending manual acceptance
+
+| Check | Scope | Status |
+|---|---|---|
+| MT138 |036/037 setup, default-off room and read-only refresh, existing data/docs intact | Pending |
+| MT139 | Fresh immutable snapshot after refreshed assignments; stale old snapshot blocked | Pending |
+| MT140 | Explicit single Gemini run, successful structured output, stage settlement | Pending — provider use requires explicit activation/consent |
+| MT141 | Three outputs/citations/copy controls and positive/negative human review | Pending after MT140 |
+| MT142 | Reload persists output/review without requests; stale review tab conflicts | Pending after MT140 |
+| MT143 | Conditional second account/viewer/unrelated-admin access denial | Pending; do not create/revoke production grants just for testing |
+| MT144 | Main admin routes absent, separate admin MFA and phone/desktop readability | Pending |
+
+For the stale-review check, open two campaign tabs after an output exists. Save a review in tabA; submit from tabB with its old review version. Expect conflict, with tabA's history preserved. This adds a review record but no provider request. For role checks use disposable existing accounts: viewer can read its own workspace outputs but cannot submit review; unrelated account cannot read the site/output API; admin with no ownership cannot see or dispatch this snapshot. Existing unrelated security/spending tests remain pending unless explicitly reported.
+
+## Next action
+
+Complete the controlled Gemini pilot and fix any evidenced integration/output issue before treating P04.3.3 as accepted. Visual composition (including pins/carousels) and customer publishing remain separate later stages. No scheduled provider execution is authorized.
