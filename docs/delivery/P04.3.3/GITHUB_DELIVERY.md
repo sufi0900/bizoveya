@@ -1,3 +1,13 @@
+# Verified main delivery — 1.23 / P04.3.3.4
+
+Source commit: `6e375f838ea1e3860c4890e5b2edda05d8bff9dc` on `main`. Exact verified tree: `e0980cb10ba2e620cf995dcc019f5f67d1fd0e17`. Non-force update succeeded on 2026-10-04 PKT. No active checkpoint lease remains. This locator-only record follows the source commit; no new PR/branch/ZIP was created. Older phase PR2 is historical and must not be merged over current main.
+
+Completed: bounded default-off draft runtime, request claims, cited structured outputs, settled-stage recovery, bidirectional spending admission and retained agent review reasons. Verification:415 unit tests,57 local SQL steps, typechecks/lints/boundaries and both builds. The web build passed in an isolated local copy after watched-workspace ENOTEMPTY cleanup failures; no source/config/dependency change was needed. No hosted SQL, provider request, browser/production acceptance or publication was performed.
+
+Next: authorized admin founder-owner dispatch, private saved-output/human-review UI and an explicit single-run Gemini pilot guide. Keep generation disabled. Founder034/035 installed; apply only036. Snapshot preparation is evidenced; refresh persistence and new MT133–137 remain pending (MT134 only on a disposable agent). Read CONTINUATION.md and43_DRAFT_RUNTIME_AND_TESTING.md before resuming.
+
+---
+
 # Verified GitHub checkpoint
 
 ## Current checkpoint — 1.23 / P04.3.3.4
