@@ -1,5 +1,18 @@
 # Bizoveya chronological activity and decision log
 
+## Content-stage investigation checkpoint — 2026-10-05 PKT
+
+Founder screenshot at02:20 shows read-only stage diagnostics working: failed run ba2fafcf-050f-41c0-9ff1-a07c6834fa59, Coordinator succeeded/settled (661input,482output), Content failed/unknown with historical provider_or_output_error. Exact historical cause cannot be recovered; not labelled timeout, billing, quota or schema rejection. New prepared snapshot7106d14f-55a3-459f-843d-1e23a4061b27 remains unrun in evidence. Diagnostics visibility is accepted by screenshot; successful generation is not accepted.
+
+Source/installed SDK investigation found schema serialization converts literal const to enum for Gemini. Synthetic transport tests exercise the real installed Google adapter and ToolLoopAgent with network replaced by a fixture: valid three-channel JSON succeeds; invalid structured JSON retains usage; truncated response reports output_limit with usage; HTTP429 reports rate_limited without invented usage or retry. These tests prove local adapter behavior only, not live provider/model compatibility.
+
+Prompt hardening: each stage now receives its exact output contract; Content explicitly returns blog/title/summary/body/citations, Pinterest/title/description/altText/citations and LinkedIn/post/citations, rather than a generic proposal. The frozen output budget is explicit, and coordinator output is guidance rather than factual evidence. Existing model/agent token caps,20second timeout, snapshots, failed records, no-retry and reconciliation guards remain intact. No claim that this fixes the unknown historical cause. No provider request, hosted SQL, configuration change or accounting reconciliation performed.
+
+Verification for this checkpoint:120 admin tests, admin typecheck/lint, both production builds and boundary checks passed. No live provider or browser acceptance claimed.
+
+Manual next steps: no new migration or field is added by this checkpoint. Keep the new snapshot unrun while Content usage remains unknown. To reconcile through existing Spending controls, first independently verify applicable provider charges/free-tier status; only then enter the verified USD amount and factual evidence/reference, tick the evidence checkbox and record it. Do not use a zero estimate or the failed output as evidence. A factual reason template is: 'Verified [provider project/account reference] for [request time interval]: [verified free-tier/billing evidence and amount]. This records cost only; Content token usage remains unknown and the failed run is preserved.' Replace brackets with actual evidence; never paste API secrets. If evidence is unavailable, leave unresolved. Reconciliation does not make the failed run resumable or accepted. A later explicit controlled attempt can use improved error classification only after prerequisites permit.
+
+
 ## Diagnostic repair delivery — P04.3.3, 2026-10-05 PKT
 
 Implemented additive migration038 to expose stored stage error codes, status, accounting state and token counts through the existing admin queue. Its original admin/MFA, requesting-owner and tenant filters are preserved; no prompts, credentials or raw provider responses are returned. Admin Draft runs renders these diagnostics and explicit blocked-button explanations. Refresh also updates activation state and clears consent.
