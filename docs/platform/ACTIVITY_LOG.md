@@ -1,5 +1,9 @@
 # Bizoveya chronological activity and decision log
 
+### BZ-068 — 2026-10-04 PKT — P04.3.3.3 durable stage/accounting foundation
+
+ChatGPT/Codex resumed clean remote main after checking branches, the stale draft PR and continuation lease. It added migration035 private ordered coordinator/content/quality stages, service-only reservation/settlement, combined model-test/campaign daily accounting, fail-closed unknown/overrun reconciliation, sanitized stage summaries, admin labels and synthetic SQL coverage. Installed AI SDK v7 structured-output documentation was inspected for the next runtime, but no provider adapter was invoked or enabled. Hosted034/035, MT114–132, browser/concurrency and provider evidence remain pending.
+
 ### BZ-061 — 2026-10-04 PKT — Generation preparation and direct-main policy
 
 Founder reported campaign refresh, revision-history and stale-tab tests passed and superseded branch-only delivery with verified non-force direct-main checkpoints. ChatGPT/Codex reconciled old main as an ancestor of cumulative P04.3.3, preserved history, and implemented source1.21: migration034 private generation snapshots, sanitized member history, campaign preparation control, exact dependency/version snapshots, structured plan/draft/QA contracts, SQL privacy/idempotency/stale/cascade coverage and synchronized living docs. No provider request, spending reservation, hosted migration, Vercel setting change, visual composition or publication occurred. Founder Token Factory support evidence records Pakistan self-service unavailability and no Builder/AI Cloud bypass; competition eligibility remains organizer-confirmation dependent.

@@ -1,5 +1,9 @@
 # Living documentation changelog
 
+## Source1.22 — P04.3.3.3
+
+Added migration035 private generation stages, ordered service-only reservation/settlement, shared profile/day accounting across connectivity tests and campaign stages, combined admin visibility, sanitized stage summaries and synthetic SQL coverage. Updated manual/setup and dependency records. No provider execution, hosted SQL, deployment-setting change, visual composition or publication.
+
 ## Source1.21 — P04.3.3.2
 
 Added migration034 private generation-run snapshots, sanitized campaign run history, a safe prepare control/API, campaign plan/draft/QA schemas and SQL assertions. Updated founder evidence, direct-main delivery policy, Nebius Pakistan access evidence and living docs. No provider execution, spending reservation, hosted SQL, deployment setting change, visual composition or publication.

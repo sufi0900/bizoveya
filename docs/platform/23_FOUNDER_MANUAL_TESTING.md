@@ -1,5 +1,9 @@
 # Founder manual testing record
 
+## Current record — 1.22 / P04.3.3.3
+
+Migration035 and MT127–132 are pending hosted installation/acceptance. The checkpoint adds no new form field or live generation button; exact installation steps, existing-field sample text and expected results are in42. MT114–126 and other unevidenced older gates remain pending. Automated local evidence does not infer provider, hosted concurrency or browser acceptance.
+
 ## Current record — 1.21 / P04.3.3.2
 
 Founder reported MT110–113 campaign setup, refresh persistence, revision history and stale-tab behavior passed on2026-10-03. This does not accept role/isolation, invalid-input, destructive deletion, mobile/regression or new snapshot cases. Migration034 and MT118–126 are pending; exact steps and copy/paste values are in41. No live model generation is claimed.

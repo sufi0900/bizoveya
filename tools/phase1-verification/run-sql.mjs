@@ -10,18 +10,18 @@ let current = 'bootstrap';
 try {
   await db.exec(await read('tools/phase1-verification/bootstrap.sql'));
   report.postgres = (await db.query('select version()')).rows[0].version;
-  for (const name of (await readdir(new URL('supabase/migrations/',root))).filter(x => x.endsWith('.sql') && !/^03[2-4]_/.test(x)).sort()) {
+  for (const name of (await readdir(new URL('supabase/migrations/',root))).filter(x => x.endsWith('.sql') && !/^03[2-5]_/.test(x)).sort()) {
     current = `migration:${name}`; const sql = await read(`supabase/migrations/${name}`);
     await db.exec(sql); report.steps.push({ name: current, status: 'passed', sha256: createHash('sha256').update(sql).digest('hex') });
   }
-  for (const name of (await readdir(new URL('supabase/tests/',root))).filter(x => x.endsWith('.sql') && !/^03[2-4]_/.test(x)).sort()) {
+  for (const name of (await readdir(new URL('supabase/tests/',root))).filter(x => x.endsWith('.sql') && !/^03[2-5]_/.test(x)).sort()) {
     current = `assertions:${name}`; const sql = await read(`supabase/tests/${name}`);
     await db.exec(sql); report.steps.push({ name: current, status: 'passed', sha256: createHash('sha256').update(sql).digest('hex') });
     const counts = await db.query('select (select count(*) from auth.users)::int as users,(select count(*) from public.bizoveya_workspaces)::int as workspaces,(select count(*) from bizoveya_private.admin_audit)::int as audit');
     if (Object.values(counts.rows[0]).some(v => v !== 0)) throw new Error('Assertion fixtures did not roll back');
   }
-  for(const name of ['032_spending_controls.sql','033_campaign_draft_foundation.sql','034_generation_run_snapshots.sql']){current=`migration:${name}`;await db.exec(await read(`supabase/migrations/${name}`));report.steps.push({name:current,status:'passed'});}
-  for(const name of ['032_spending_assertions.sql','033_campaign_assertions.sql','034_generation_snapshot_assertions.sql']){current=`assertions:${name}`;await db.exec(await read(`supabase/tests/${name}`));report.steps.push({name:current,status:'passed'});}
+  for(const name of ['032_spending_controls.sql','033_campaign_draft_foundation.sql','034_generation_run_snapshots.sql','035_generation_stage_accounting.sql']){current=`migration:${name}`;await db.exec(await read(`supabase/migrations/${name}`));report.steps.push({name:current,status:'passed'});}
+  for(const name of ['032_spending_assertions.sql','033_campaign_assertions.sql','034_generation_snapshot_assertions.sql','035_generation_stage_accounting_assertions.sql']){current=`assertions:${name}`;await db.exec(await read(`supabase/tests/${name}`));report.steps.push({name:current,status:'passed'});}
   // Independent upgrade path with real SQL data written between release boundaries.
   current = 'upgrade scenario';
   const upgrade = await PGlite.create({ extensions: { pgcrypto } });

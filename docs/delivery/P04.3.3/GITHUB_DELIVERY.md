@@ -1,5 +1,9 @@
 # Verified GitHub checkpoint
 
+## 1.22 source checkpoint
+
+P04.3.3.3 adds migration035 private ordered stage state and shared spending enforcement. It is delivered under the founder's direct-main policy after local verification; the exact source commit is filled in by the following documentation locator commit. No provider request, hosted migration, Vercel setting change, customer publication or visual composition was performed. MT114–132 remain pending as applicable.
+
 ## 1.21 source checkpoint
 
 P04.3.3.2 adds additive034, immutable generation input snapshots, sanitized history, safe UI preparation, structured plan/draft/QA contracts and local SQL/privacy/replay/cascade coverage. Feature remains non-executing: no reservation, provider request, output or publication. Founder superseded branch-only delivery and authorized verified non-force fast-forward to main. Verified source commit: `af4a01cc0f3e4c0c62310a75fe690939de47751a`; main advanced without force from ancestor `b1dfbcf2b00cef032dee4773e73a05f21347796b`, retaining cumulative phase history. MT110–113 are founder-reported passed; MT114–126 remain pending. Old branch/PR statements below describe the prior1.20 checkpoint.

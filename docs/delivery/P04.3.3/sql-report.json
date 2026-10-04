@@ -1,5 +1,5 @@
 {
-  "startedAt": "2026-10-03T17:17:11.563Z",
+  "startedAt": "2026-10-04T03:54:18.598Z",
   "engine": "PGlite 0.5.8 (PostgreSQL WASM)",
   "scope": "Ephemeral local SQL with simulated Supabase Auth/Storage schema and JWT settings; no real Auth, PostgREST, Storage, concurrency or remote migration proof.",
   "steps": [
@@ -237,11 +237,27 @@
       "status": "passed"
     },
     {
+      "name": "migration:034_generation_run_snapshots.sql",
+      "status": "passed"
+    },
+    {
+      "name": "migration:035_generation_stage_accounting.sql",
+      "status": "passed"
+    },
+    {
       "name": "assertions:032_spending_assertions.sql",
       "status": "passed"
     },
     {
       "name": "assertions:033_campaign_assertions.sql",
+      "status": "passed"
+    },
+    {
+      "name": "assertions:034_generation_snapshot_assertions.sql",
+      "status": "passed"
+    },
+    {
+      "name": "assertions:035_generation_stage_accounting_assertions.sql",
       "status": "passed"
     },
     {
@@ -263,5 +279,5 @@
   ],
   "postgres": "PostgreSQL 18.3 (PGlite 0.5.8) on wasm32-unknown-emscripten, compiled by emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 3.1.74 (1092ec30a3fb1d46b1782ff1b4db5094d3d06ae5), 32-bit",
   "status": "passed",
-  "finishedAt": "2026-10-03T17:17:13.785Z"
+  "finishedAt": "2026-10-04T03:54:20.915Z"
 }

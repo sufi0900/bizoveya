@@ -1,5 +1,9 @@
 # Dependencies and change-impact register
 
+## Current execution dependency contract — 1.22
+
+Migration035 turns each future generation stage into a durable, ordered, service-only accounting unit. Stage start depends on a prepared034 snapshot, current write-capable membership, successful settled predecessor, unexpired snapshotted pricing, no unresolved test/stage charge and remaining shared profile/day allowance. Stage finish persists structured output/error and usage before terminal state; unknown/overrun remains held for admin reconciliation. Changing rates or bindings affects future034 snapshots, not existing ones. Runtime/provider activation is still absent. See42.
+
 ## Current generation dependency contract — 1.21
 
 Campaign generation preparation now fails closed unless the saved campaign version, approved site knowledge, site preferences, exactly one ready coordinator/content/quality agent, current bindings, current connectivity evidence and enabled unexpired reviewed pricing are all available. Migration034 snapshots those exact versions privately. Any later knowledge, agent, model, credential, binding or pricing change affects only future snapshots; a prepared snapshot never silently changes. Execution must revalidate authority and accounting before stage calls. See41.

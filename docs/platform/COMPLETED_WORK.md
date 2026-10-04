@@ -1,5 +1,6 @@
 # Completed Bizoveya work only
 
+| CW-029 | Implemented private ordered generation-stage state, service-only reservation/settlement, combined model-test/campaign accounting and local SQL authorization/order/replay/output tests. | Source1.22; migration/test035; document42. | Accounting foundation only; provider runtime, generated customer drafts and hosted/manual MT127–132 remain disabled/pending. |
 | CW-028 | Implemented private immutable generation preparation with exact dependency/version snapshots, sanitized history, bounded structured output contracts and local SQL privacy/replay/cascade tests. | Source1.21; migration/test034; document41; BZ-061. | Preparation only; no reservation, provider execution, generated output, visual or publication. Hosted/manual MT118–126 pending. |
 
 ## Current checkpoint — 1.20 / P04.3.3.1

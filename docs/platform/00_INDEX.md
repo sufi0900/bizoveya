@@ -1,6 +1,6 @@
 # Bizoveya platform documentation — start here
 
-Latest guide: [41 Generation snapshots and testing](41_GENERATION_SNAPSHOTS_AND_TESTING.md). Source1.21 safely prepares immutable future-run context; live generation, stage spending reservation, visual composition and publishing remain disabled.
+Latest guide: [42 Generation stage accounting and testing](42_GENERATION_STAGE_ACCOUNTING_AND_TESTING.md). Source1.22 adds private ordered stage state and shared spending reservations/settlement; live provider execution, visual composition and publishing remain disabled.
 
 ## Current checkpoint — 1.20 / P04.3.3.1
 

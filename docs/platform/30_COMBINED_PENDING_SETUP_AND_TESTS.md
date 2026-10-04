@@ -1,5 +1,9 @@
 # Combined pending setup and manual tests
 
+## Current action — 1.22
+
+Apply only missing034 and then035; never run test SQL on hosted data. Deploy cumulative main to the existing web/admin projects, then perform MT127–132 from42 plus still-pending MT114–126. No new environment variable or input field exists. Campaign generation remains disabled, so these checks must not produce provider usage or a bill.
+
 ## Current action — 1.21
 
 Founder reports migration033 and MT110–113 complete. Apply only034 next; then follow document41 for MT118–126. MT114–117 and other unevidenced older security/regression checks remain pending. Snapshot preparation needs no new key and makes no provider request. Live generation must remain disabled because generation-stage reservation/settlement and execution are not implemented.

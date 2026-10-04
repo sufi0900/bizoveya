@@ -1,5 +1,9 @@
 # Implementation phases and status ledger
 
+## Current checkpoint — 1.22 / P04.3.3.3
+
+Migration035 implements private ordered coordinator/content/quality stage records, service-only reservation/settlement, shared profile/day accounting with model tests, fail-closed unknown/overrun handling, combined admin spending visibility and sanitized customer stage summaries. P04.3.3 remains `[~]`: no provider adapter is called and no Generate control is enabled. Apply missing034 then035; MT114–132 remain pending as applicable. See42.
+
 ## Current checkpoint — 1.21 / P04.3.3.2
 
 Private generation preparation is implemented behind migration034: durable run IDs and exact campaign/knowledge/preferences/agent/binding/profile/pricing snapshots, plus bounded structured plan/draft/QA contracts. It makes no provider call or spending reservation and produces no output. P04.3.3 remains `[~]`; executable three-stage orchestration, shared032 reservation/settlement, persisted outputs and human review are next. MT110–113 are founder-reported passed; MT114–126 stay pending as applicable. Verified cumulative delivery now targets `main` under the founder's superseding policy.
