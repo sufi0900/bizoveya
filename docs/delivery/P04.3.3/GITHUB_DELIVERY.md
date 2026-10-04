@@ -1,3 +1,13 @@
+# Verified main source — 1.24 / P04.3.3.5
+
+Source commit:`7dccdd7fd9b1f70dbf85be1aacd555324a3b63ae`. Verified tree:`2d6ab7da0db9e9cd6f39b87a0c4597aa4cfaac33`. Non-force main delivery succeeded. This locator-only documentation commit follows the source checkpoint. No active lease remains; inspect current remote main before resuming. No new PR/branch/ZIP was created.
+
+Completed: disabled-by-default admin founder-owner dispatch, authorization lease/history, per-stage operator recheck, private member-readable saved Blog/Pinterest/LinkedIn output and versioned owner-only human review.436 tests,59 local SQL checks, typechecks/lints/boundaries and both builds passed. No real provider request, hosted SQL, publishing or hosted/browser acceptance. Main may auto-deploy under the already accepted Vercel settings; deployment success was not independently verified.
+
+Next: founder applies missing036 then037, verifies default-off behavior, explicitly activates the admin-only pilot flag and consents to one fresh snapshot run. Use document44 for all setup/test fields, expected outcomes and failure handling. New MT138–144 pending. Earlier all-pass report covers current connectivity/reassignment/readiness checks only; unrelated tests and036 installation are not inferred. P04.3.3 stays IN PROGRESS until real pilot acceptance; visual composition/publication remain later stages.
+
+---
+
 # Current delivery — 1.24 / P04.3.3.5
 
 Source base:`3ce1ce2465d5ca02a59b6e9e6ffd141a72c6f245`. Verified checkpoint adds default-off founder-owner admin dispatch, private saved channel output and versioned human review.436 unit tests,59 local SQL checks, both typechecks/lints/builds and app boundaries pass. No hosted SQL/provider request/publishing/browser acceptance. Exact source commit follows non-force main delivery. No new branch/PR/ZIP. Historical phase PR2 must not be merged over main. No active lease recorded at delivery.
