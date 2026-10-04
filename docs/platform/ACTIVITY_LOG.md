@@ -1,5 +1,12 @@
 # Bizoveya chronological activity and decision log
 
+## Current checkpoint — 1.23 / P04.3.3.4
+
+Server-only bounded draft engine is implemented with exact private request records, one attempt per Coordinator/Content/Quality role, approved-citation validation, durable output/usage settlement and no automatic retries. Additive036 revalidates execution dependencies and repairs connectivity admission to include campaign spending. No Generate route, activation, provider request, customer publication or hosted SQL was performed. See [43 Draft runtime and testing](43_DRAFT_RUNTIME_AND_TESTING.md). This block supersedes older current-state blocks below; those remain historical.
+
+Founder reports034/035 applied; screenshots confirm three agentv2 approvals, Gemini assignments and prepared campaignv3 snapshot/3 stages/count1. Refresh persistence and all other unevidenced manual checks remain pending. Next is authorized dispatch, saved output review and explicit founder pilot activation within the same unfinished P04.3.3 phase.
+
+
 2026-10-04 PKT: founder approved proceeding after the delivery block. Non-force main update to source commit `24c1acb17903c94956f5549b4854fbf2e5f6a648` succeeded. Source1.22 / P04.3.3.3 passed400 unit tests,55 local SQL steps, typechecks, lint, boundaries and both builds. Hosted034/035 and unevidenced MT114–132 remain pending; no provider requests, hosted SQL or publishing performed. Next: default-off server orchestration and human review within the same unfinished phase.
 
 ### BZ-068 — 2026-10-04 PKT — P04.3.3.3 durable stage/accounting foundation
@@ -427,3 +434,7 @@ Actor Sufian Mustafa supplied170618/170641 screenshots. ChatGPT/Codex confirmed 
 
 ### BZ-066 — 2026-10-03 PKT — P04.3.3.1 campaign persistence checkpoint
 Actor ChatGPT/Codex; founder authorized proceeding after screenshot review. New branch phase/p04-3-3-durable-drafts starts at b0686b3ec34492b9a33812ea2027f21053b0215b. Private manually authored campaign room, current/revision tables, owner/editor RPC, RLS, bounded fields and saved URLs added. No live AI generation claim. New033 requires founder setup; MT110–117 pending. Phase remains in progress; execution/accounting is next on the same branch. Verification and exact GitHub checkpoint recorded in delivery evidence.
+
+## BZ-063 — 2026-10-04 PKT — ChatGPT Codex implementation
+
+Founder requested the next implementation after manual approval/binding/snapshot setup. Source started at main34b90c985a642a0ffff177123e3cff8ad6e4159a. Implemented1.23 / P04.3.3.4 server engine, migration036, local tests, audit reason retention and corrected agent-room model copy. Founder evidence and pending checks are itemized in43. No live request/hosted SQL/publishing performed. Exact delivery hash is recorded in the GitHub continuation delivery locator; no new ZIP or remote phase branch.

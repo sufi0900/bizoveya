@@ -1,5 +1,12 @@
 # Dependencies and change-impact register
 
+## Current checkpoint — 1.23 / P04.3.3.4
+
+Server-only bounded draft engine is implemented with exact private request records, one attempt per Coordinator/Content/Quality role, approved-citation validation, durable output/usage settlement and no automatic retries. Additive036 revalidates execution dependencies and repairs connectivity admission to include campaign spending. No Generate route, activation, provider request, customer publication or hosted SQL was performed. See [43 Draft runtime and testing](43_DRAFT_RUNTIME_AND_TESTING.md). This block supersedes older current-state blocks below; those remain historical.
+
+Founder reports034/035 applied; screenshots confirm three agentv2 approvals, Gemini assignments and prepared campaignv3 snapshot/3 stages/count1. Refresh persistence and all other unevidenced manual checks remain pending. Next is authorized dispatch, saved output review and explicit founder pilot activation within the same unfinished P04.3.3 phase.
+
+
 ## Current execution dependency contract — 1.22
 
 Migration035 turns each future generation stage into a durable, ordered, service-only accounting unit. Stage start depends on a prepared034 snapshot, current write-capable membership, successful settled predecessor, unexpired snapshotted pricing, no unresolved test/stage charge and remaining shared profile/day allowance. Stage finish persists structured output/error and usage before terminal state; unknown/overrun remains held for admin reconciliation. Changing rates or bindings affects future034 snapshots, not existing ones. Runtime/provider activation is still absent. See42.
@@ -276,3 +283,15 @@ This section supersedes earlier same-host admin/source-path instructions for the
 business.ts optional metadata -> workbench -> shared preview -> draft API ->029 validator -> saved/public snapshots. Editing policy -> add/move/duplicate/hide/explicit arrange -> saveBusinessSchema ->029 save and publication gates. Existing rows/read schema stay permissive, new writes strict. WorkspaceFrame collapse affects editor width only. Auth-aware get-started -> verified server user -> workspace lookup -> retained journey/template.
 
 DeleteSite -> DELETE site API -> getSite/owner ->029 locked DB deletion -> existing child FKs -> public read unavailable -> list refresh -> removal event. Original portfolio is referenced parent, not child. Future media/jobs/connectors must extend removal rules before introduction. Collection/page model will affect slugs/menu refs/list/detail renderers, knowledge refresh and future website agent tools; not implemented now. Social roles require shared agent-contract + SQL/registry/UI/tool enforcement before eligibility.
+
+## Runtime change-impact map — 1.23
+
+| Change | Effect before the next provider stage | Required action |
+|---|---|---|
+| Campaign or preferences version | Existing snapshot becomes stale | Save and prepare a fresh snapshot |
+| Knowledge edit/revocation | Exact approved versions are no longer valid | Review/approve facts and prepare fresh snapshot |
+| Agent approval/model/credential/binding change or expired test | Stage claim is rejected | Review configuration, connectivity and binding; prepare fresh snapshot |
+| Pricing policy change/expiry | Captured policy can no longer authorize execution | Review current prices and prepare fresh snapshot |
+| Prior uncertain/overrun spending | Both connectivity and generation admission block | Evidence-based reconciliation; never blindly retry |
+| Settled successful stage | Resume skips that role | Continue only unclaimed next role |
+| Provider dispatch recorded without result | Role remains held; no second attempt | Operator reviews provider evidence |

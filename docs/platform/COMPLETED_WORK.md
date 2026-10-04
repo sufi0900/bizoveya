@@ -1,5 +1,12 @@
 # Completed Bizoveya work only
 
+## Current checkpoint — 1.23 / P04.3.3.4
+
+Server-only bounded draft engine is implemented with exact private request records, one attempt per Coordinator/Content/Quality role, approved-citation validation, durable output/usage settlement and no automatic retries. Additive036 revalidates execution dependencies and repairs connectivity admission to include campaign spending. No Generate route, activation, provider request, customer publication or hosted SQL was performed. See [43 Draft runtime and testing](43_DRAFT_RUNTIME_AND_TESTING.md). This block supersedes older current-state blocks below; those remain historical.
+
+Founder reports034/035 applied; screenshots confirm three agentv2 approvals, Gemini assignments and prepared campaignv3 snapshot/3 stages/count1. Refresh persistence and all other unevidenced manual checks remain pending. Next is authorized dispatch, saved output review and explicit founder pilot activation within the same unfinished P04.3.3 phase.
+
+
 | CW-029 | Implemented private ordered generation-stage state, service-only reservation/settlement, combined model-test/campaign accounting and local SQL authorization/order/replay/output tests. | Source1.22; migration/test035; document42. | Accounting foundation only; provider runtime, generated customer drafts and hosted/manual MT127–132 remain disabled/pending. |
 | CW-028 | Implemented private immutable generation preparation with exact dependency/version snapshots, sanitized history, bounded structured output contracts and local SQL privacy/replay/cascade tests. | Source1.21; migration/test034; document41; BZ-061. | Preparation only; no reservation, provider execution, generated output, visual or publication. Hosted/manual MT118–126 pending. |
 

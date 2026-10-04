@@ -1,5 +1,12 @@
 # Implementation phases and status ledger
 
+## Current checkpoint — 1.23 / P04.3.3.4
+
+Server-only bounded draft engine is implemented with exact private request records, one attempt per Coordinator/Content/Quality role, approved-citation validation, durable output/usage settlement and no automatic retries. Additive036 revalidates execution dependencies and repairs connectivity admission to include campaign spending. No Generate route, activation, provider request, customer publication or hosted SQL was performed. See [43 Draft runtime and testing](43_DRAFT_RUNTIME_AND_TESTING.md). This block supersedes older current-state blocks below; those remain historical.
+
+Founder reports034/035 applied; screenshots confirm three agentv2 approvals, Gemini assignments and prepared campaignv3 snapshot/3 stages/count1. Refresh persistence and all other unevidenced manual checks remain pending. Next is authorized dispatch, saved output review and explicit founder pilot activation within the same unfinished P04.3.3 phase.
+
+
 ## Current checkpoint — 1.22 / P04.3.3.3
 
 Migration035 implements private ordered coordinator/content/quality stage records, service-only reservation/settlement, shared profile/day accounting with model tests, fail-closed unknown/overrun handling, combined admin spending visibility and sanitized customer stage summaries. P04.3.3 remains `[~]`: no provider adapter is called and no Generate control is enabled. Apply missing034 then035; MT114–132 remain pending as applicable. See42.
