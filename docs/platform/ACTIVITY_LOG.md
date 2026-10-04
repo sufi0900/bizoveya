@@ -1,5 +1,39 @@
 # Bizoveya chronological activity and decision log
 
+## Diagnostic repair delivery — P04.3.3, 2026-10-05 PKT
+
+Implemented additive migration038 to expose stored stage error codes, status, accounting state and token counts through the existing admin queue. Its original admin/MFA, requesting-owner and tenant filters are preserved; no prompts, credentials or raw provider responses are returned. Admin Draft runs renders these diagnostics and explicit blocked-button explanations. Refresh also updates activation state and clears consent.
+
+Provider failure handling now distinguishes timeout, HTTP429, access denial, rejected request, server failure and structured output/length failures using installed SDK error types. Available SDK usage is retained on structured-output failure; unavailable usage remains unknown. Historical provider_or_output_error cannot be retroactively classified.20-second timeout, one-attempt policy, spending guards and failed history remain unchanged. No live provider call, hosted SQL or reconciliation performed.
+
+Manual setup and test (no model request):
+1. After the new main delivery deploys, apply only supabase/migrations/038_generation_diagnostics.sql once after037 in Supabase SQL Editor. Do not rerun old migrations or test fixtures.
+2. Open admin Draft runs, refresh and select failed campaignv5 snapshot ba2fafcf-050f-41c0-9ff1-a07c6834fa59. Expect Coordinator succeeded/settled and Content failed/unknown plus a safe stored error explanation/code. Send that code; do not execute another snapshot yet.
+3. The failed run button must remain disabled with an explanation. Refresh must make no provider request or new spending record. The prepared new snapshot must remain unrun.
+4. Open /bizoveya/docs and confirm this repair/evidence record appears. No new API key, billing setup, campaign field or approval is required for these read-only checks.
+
+Verification:115 admin unit tests passed, admin typecheck/lint, both production builds and application boundaries passed. No local PostgreSQL runtime is installed in this environment;038 is derived from037 with only an additional per-run stage projection, but database execution and hosted acceptance remain pending. End-to-end draft generation remains failed/pending until the actual Content error is diagnosed and corrected.
+
+
+## Diagnostic checkpoint — 2026-10-05 02:09:53 PKT
+
+Actor: Sufian Mustafa (founder); ChatGPT Codex (screenshot and source investigation). P04.3.3 remains IN PROGRESS. This records a failed live pilot, not successful phase acceptance.
+
+Evidence and troubleshooting:
+- Initial campaign-v3 snapshot was stale after campaign edits to v5. Admin activation, consent and reason were present; stale-state protection correctly blocked dispatch.
+- Model assignments screenshot showed Coordinator current, Content and Quality bound to expired connectivity evidence. Founder refreshed Content to revision3 and Quality to revision2 against the already passing current Gemini test; screenshots confirmed both current.
+- Campaign-v5 snapshot prepared at 2026-10-05 01:53:38 PKT. Founder dispatched it. Admin recorded failed/no completed output.
+- Campaign stage view confirmed Coordinator succeeded with settled usage; Content failed with unknown usage. No Quality result or completed channel drafts was shown.
+- Founder prepared another snapshot at01:58:47 PKT. Its displayed state is prepared; do not infer execution.
+- Spending screenshot confirmed unknown Content usage and Reconciliation required, despite a recorded zero estimate. Zero estimate does not prove actual provider usage or charges.
+- Founder reports Gemini free API usage without billing setup. No billing activation is required for this investigation.
+- Source inspection: provider.ts imposes a20-second abort and catches errors as timeout or provider_or_output_error, discarding token usage in that catch. runtime.ts persists stage error codes but current visible screens do not expose enough diagnostic detail. Exact historical cause remains UNCONFIRMED; timeout, provider failure and structured-output failure are hypotheses only.
+
+Next authorized repair: expose safe stored stage codes and actionable explanations; classify provider errors without leaking keys/prompts/raw responses; preserve trustworthy usage on output-validation failures; review bounded timeout/output limits against dispatch duration; verify with synthetic failure tests; update affected Markdown and visual projection together. Do not bypass unresolved accounting, erase failed history, mark unknown usage zero without evidence, automatically retry, or make provider requests during repair.
+
+Manual acceptance: snapshot preparation and current Content/Quality assignments are screenshot-evidenced. End-to-end generation failed; successful outputs, human review and persistence remain pending. No new hosted migration is required by this documentation checkpoint. User should leave new snapshot unrun pending diagnosis.
+
+
 ## BZ064 — founder tests and explicit draft pilot controls
 
 Date2026-10-04 PKT. Actor: Sufian Mustafa (founder), ChatGPT Codex (implementation). Founder message at22:44:34 PKT reports all preceding setup/readiness checks passed and authorizes next implementation. Source base `3ce1ce2465d5ca02a59b6e9e6ffd141a72c6f245`. Evidence:174029 new Gemini run passed currentv2/refv2;174126/174142 Coordinator currentrev2; earlier admin video shows test expiry and spending persistence on reload. Other assignment/readiness checks are founder-reported. No unreported unrelated test or migration is marked passed.

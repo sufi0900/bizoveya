@@ -313,3 +313,7 @@ DeleteSite -> DELETE site API -> getSite/owner ->029 locked DB deletion -> exist
 | Prior uncertain/overrun spending | Both connectivity and generation admission block | Evidence-based reconciliation; never blindly retry |
 | Settled successful stage | Resume skips that role | Continue only unclaimed next role |
 | Provider dispatch recorded without result | Role remains held; no second attempt | Operator reviews provider evidence |
+
+## Draft diagnostic repair dependency
+
+Migration038 adds stage diagnostics to the037 admin queue. Admin schema defaults missing stages to an empty array so a code deployment before038 retains compatibility. Diagnostic rendering is read-only; it does not unblock reconciliation, change snapshots or authorize retry. Markdown changes project automatically through the document-room source reader.

@@ -1,5 +1,5 @@
 import {z} from 'zod';
 export const dispatchInputSchema=z.object({id:z.uuid(),reason:z.string().trim().min(10).max(300).refine(s=>!/[\u0000-\u001f]/.test(s)),reviewed:z.literal(true)}).strict();
 export type DispatchInput=z.infer<typeof dispatchInputSchema>;
-export const queueSchema=z.array(z.object({id:z.uuid(),campaignId:z.uuid(),siteId:z.uuid(),title:z.string(),campaignVersion:z.number().int().positive(),status:z.enum(['prepared','running','succeeded','failed','cancelled']),createdAt:z.string(),outputAvailable:z.boolean(),leaseActive:z.boolean(),stale:z.boolean()}));
+export const queueSchema=z.array(z.object({id:z.uuid(),campaignId:z.uuid(),siteId:z.uuid(),title:z.string(),campaignVersion:z.number().int().positive(),status:z.enum(['prepared','running','succeeded','failed','cancelled']),createdAt:z.string(),outputAvailable:z.boolean(),leaseActive:z.boolean(),stale:z.boolean(),stages:z.array(z.object({kind:z.enum(['coordinator','content','quality']),status:z.string(),spendingState:z.string(),errorCode:z.string().nullable(),inputTokens:z.number().nullable(),outputTokens:z.number().nullable()})).default([])}));
 export function generationSetup(env:Record<string,string|undefined>){return {enabled:env.BIZOVEYA_ENABLE_CAMPAIGN_GENERATION==='true',recorderConfigured:!!env.NEXT_PUBLIC_SUPABASE_URL&&!!env.SUPABASE_SERVICE_ROLE_KEY};}
