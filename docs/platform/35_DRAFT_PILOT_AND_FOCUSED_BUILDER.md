@@ -1,5 +1,13 @@
 # Focused builder and Do It With AI Tools draft pilot
 
+## Current visual checkpoint — 1.25 / P04.3.4.1 (2026-10-08 PKT)
+
+Founder confirmed the previous saved-draft/refresh/copy/generated-JSON checks and explicitly authorized proceeding. Record these narrow text-pilot checks as founder-reported passes; do not repeat generation. Other unevidenced access/conflict/mobile/unsaved-export tests and the short-blog quality finding remain open. This authorization permits visual implementation without claiming full P04.3.3 acceptance.
+
+P04.3.4.1 adds private editable two-layout Pinterest graphics and a six-slide LinkedIn carousel, shared scene previews/PNG/PDF exports and owner-reviewed saved visual versions. Additive039 follows038; no existing rows/migrations are rewritten. Member reads, owner saves, source-review checks and optimistic conflicts are enforced. Outputs are private; saving/exporting does not publish or call a provider. No new key, env variable, dependency or deployment setting. Hosted039 installation and founder visual tests remain pending.
+
+Next: follow the four steps in [49 Private visual composition](49_PRIVATE_VISUAL_COMPOSITION_AND_TESTING.md): apply039 once if missing, open the already accepted campaign's Visual drafts, review/save/refresh, download two Pinterest PNGs and the six-page PDF. Do not request another text generation. Remote base7acdbd48 inspected; no AGENTS.md or active lease; old PR2/phase branches remain historical. This block supersedes earlier conflicting current-state/next-step guidance while preserving its history.
+
 ## Current checkpoint — 1.20 / P04.3.3.1
 
 Private campaign draft storage is implemented at `/workspaces/[workspaceId]/sites/[siteId]/campaigns`, with saved campaign URLs ending in `/[campaignId]`. This checkpoint stores manually authored brief/blog/Pinterest/LinkedIn text; it makes no model request and does not publish. Additive migration033 follows032. P04.3.3 remains in progress: bound-agent orchestration, generation reservations, durable execution/usage and output review are the next work on the SAME `phase/p04-3-3-durable-drafts` branch. See [40 Campaign drafts](40_CAMPAIGN_DRAFTS_AND_TESTING.md).

@@ -201,3 +201,8 @@ No1.19ZIP is claimed or created. Delivery numbering continues across ZIP and Git
 GitHub1.19 source commit: `e05aaede9d191ae63f5b687bbd3d57080f18f281`; draft PR https://github.com/sufi0900/bizoveya/pull/1 . Final documentation checkpoint remains on the same branch. No1.19ZIP was created.
 
 | 1.20 / P04.3.3.1 | `GitHub:phase/p04-3-3-durable-drafts` | Campaign storage checkpoint; phase in progress | docs/delivery/P04.3.3 |
+
+
+| Version / phase | Delivery locator | Scope | Acceptance |
+|---|---|---|---|
+| 1.25 / P04.3.4.1 | `GitHub:main P04.3.4.1` | Private versioned visual composer, two Pinterest layouts, six slides, PNG/PDF/JSON; additive039 | Local checks recorded in delivery; hosted/founder pending |

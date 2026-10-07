@@ -1,5 +1,13 @@
 # Bizoveya continuation checkpoint
 
+## Current visual checkpoint — 1.25 / P04.3.4.1 (2026-10-08 PKT)
+
+Founder confirmed the previous saved-draft/refresh/copy/generated-JSON checks and explicitly authorized proceeding. Record these narrow text-pilot checks as founder-reported passes; do not repeat generation. Other unevidenced access/conflict/mobile/unsaved-export tests and the short-blog quality finding remain open. This authorization permits visual implementation without claiming full P04.3.3 acceptance.
+
+P04.3.4.1 adds private editable two-layout Pinterest graphics and a six-slide LinkedIn carousel, shared scene previews/PNG/PDF exports and owner-reviewed saved visual versions. Additive039 follows038; no existing rows/migrations are rewritten. Member reads, owner saves, source-review checks and optimistic conflicts are enforced. Outputs are private; saving/exporting does not publish or call a provider. No new key, env variable, dependency or deployment setting. Hosted039 installation and founder visual tests remain pending.
+
+Next: follow the four steps in [49 Private visual composition](49_PRIVATE_VISUAL_COMPOSITION_AND_TESTING.md): apply039 once if missing, open the already accepted campaign's Visual drafts, review/save/refresh, download two Pinterest PNGs and the six-page PDF. Do not request another text generation. Remote base7acdbd48 inspected; no AGENTS.md or active lease; old PR2/phase branches remain historical. This block supersedes earlier conflicting current-state/next-step guidance while preserving its history.
+
 ## Current delivery verification
 
 337 web tests across59 files passed, including document-room and campaign/export coverage; web typecheck, targeted document-room lint, application-boundary checks and whitespace checks passed. Web production build passed with existing CSS autoprefixer/cache warnings. Built HTML verified guide48, current campaign spotlight, completion/activity records and dashboard projections. Admin/runtime/SQL source is unchanged; the earlier137-admin-test/both-build evidence is retained as historical, not rerun here. Hosted deployment success, browser/phone download, persistence, clipboard, conflicts and account-boundary acceptance remain pending founder checks. No assistant hosted SQL or provider request. Delivery uses a non-force expected-head update from1ca04645; exact delivered commit is available in main history. No active checkpoint lease remains at this handoff.
@@ -118,3 +126,14 @@ Next same phase: authorized founder-owner dispatch from the separate admin host,
 Delivery: verified coherent checkpoints go directly to main, never force-push. Main may auto-deploy under accepted existing settings. Keep exact commit/checks/manual steps in GitHub docs and chat. Inspect branches/PRs/lease before resuming; no active lease was recorded here.
 
 Verified source locator: resolve remote main; this record is updated with the exact source commit after verified delivery. Automated evidence passed:400 unit tests,55 local SQL migration/assertion/upgrade steps, both typechecks/lints/builds and application boundaries; no hosted/browser acceptance inferred.
+
+
+## P04.3.4.1 completed automated verification
+
+- Web: 353 tests across 62 files passed; admin: 137 tests across 14 files passed (490 total).
+- Both application typechecks, targeted ESLint, application boundary checks and whitespace checks passed.
+- Both production builds passed (web 104 static pages; admin 10). Visual API route included. Non-blocking build-cache serialization warnings only.
+- Fresh ephemeral PGlite applied all 39 migrations and passed existing 037 plus new 039 SQL assertions. This is local verification, not hosted SQL installation or actual concurrent requests.
+- Eight shared scenes rendered to their expected PNG dimensions. Independent strict PDF parsing and rasterization confirmed six pages, each 540×675 points, embedding 1080×1350 JPEGs. Browser Canvas is covered by mocks; actual founder downloads remain pending.
+
+No hosted SQL was applied, provider called, deployment setting changed or customer content published. MT145–151 remain pending founder/hosted/browser checks. Earlier founder-confirmed text persistence/copy/generated JSON checks remain recorded as passed; commercial blog depth and unrelated text negatives remain open. No active checkpoint lease at handoff.

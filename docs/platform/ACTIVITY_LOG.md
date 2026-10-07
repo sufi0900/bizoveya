@@ -1,5 +1,13 @@
 # Bizoveya chronological activity and decision log
 
+## Current visual checkpoint — 1.25 / P04.3.4.1 (2026-10-08 PKT)
+
+Founder confirmed the previous saved-draft/refresh/copy/generated-JSON checks and explicitly authorized proceeding. Record these narrow text-pilot checks as founder-reported passes; do not repeat generation. Other unevidenced access/conflict/mobile/unsaved-export tests and the short-blog quality finding remain open. This authorization permits visual implementation without claiming full P04.3.3 acceptance.
+
+P04.3.4.1 adds private editable two-layout Pinterest graphics and a six-slide LinkedIn carousel, shared scene previews/PNG/PDF exports and owner-reviewed saved visual versions. Additive039 follows038; no existing rows/migrations are rewritten. Member reads, owner saves, source-review checks and optimistic conflicts are enforced. Outputs are private; saving/exporting does not publish or call a provider. No new key, env variable, dependency or deployment setting. Hosted039 installation and founder visual tests remain pending.
+
+Next: follow the four steps in [49 Private visual composition](49_PRIVATE_VISUAL_COMPOSITION_AND_TESTING.md): apply039 once if missing, open the already accepted campaign's Visual drafts, review/save/refresh, download two Pinterest PNGs and the six-page PDF. Do not request another text generation. Remote base7acdbd48 inspected; no AGENTS.md or active lease; old PR2/phase branches remain historical. This block supersedes earlier conflicting current-state/next-step guidance while preserving its history.
+
 ## Current founder evidence — 2026-10-07 PKT
 
 P04.3.3 is IN PROGRESS. Founder evidence confirms failed Content run `fb12a480-6923-4d3d-a66a-5777fe347f4a` cost reconciled to USD 0 on free-tier attestation (unknown tokens remain unknown), and unstarted run `29293e34-e773-4ffe-88f1-dc9645dd60c6` safely cancelled by the founder after SQL confirmed `provider_started_at` null (failed / preflight_failed, settled, zero tokens).
@@ -538,3 +546,19 @@ Founder requested the next implementation after manual approval/binding/snapshot
 ### BZ-069 — 2026-10-07 PKT — Live draft result and accepted private review recorded
 
 Founder supplied specific evidence for fb12a480 cost reconciliation,29293e34 guarded unstarted cancellation and80091597 three-stage success. Reviewv1 accepted at23:04:49PKT; full reason in48. Assistant records evidence, updates visual projections and retains pending persistence/export/conflict/access tests and short-blog quality finding. Source based on resolved main1ca04645; no stale branch used, no hosted SQL/model request/publication. Next documented action is existing-output acceptance; P04.3.4 remains gated. This event records evidence received, not invented test execution time.
+
+
+### BZ-070 — 2026-10-08 PKT — Founder confirms text checks and authorizes private visuals
+
+Founder reports saved drafts, refresh/copy/generated JSON checks already completed and directs next phase. Source7acdbd48 matched before editing; no active lease or stale branch used. P04.3.4.1 implements deterministic editable Pinterest/carousel composition, owner-reviewed private versioned storage039 and browser-local PNG/PDF/JSON. No provider request, hosted SQL or publication.49 gives four practical manual steps and field samples. P04.3.3's unrelated checks and short-blog depth remain open; visual hosted acceptance remains pending.
+
+
+## P04.3.4.1 completed automated verification
+
+- Web: 353 tests across 62 files passed; admin: 137 tests across 14 files passed (490 total).
+- Both application typechecks, targeted ESLint, application boundary checks and whitespace checks passed.
+- Both production builds passed (web 104 static pages; admin 10). Visual API route included. Non-blocking build-cache serialization warnings only.
+- Fresh ephemeral PGlite applied all 39 migrations and passed existing 037 plus new 039 SQL assertions. This is local verification, not hosted SQL installation or actual concurrent requests.
+- Eight shared scenes rendered to their expected PNG dimensions. Independent strict PDF parsing and rasterization confirmed six pages, each 540×675 points, embedding 1080×1350 JPEGs. Browser Canvas is covered by mocks; actual founder downloads remain pending.
+
+No hosted SQL was applied, provider called, deployment setting changed or customer content published. MT145–151 remain pending founder/hosted/browser checks. Earlier founder-confirmed text persistence/copy/generated JSON checks remain recorded as passed; commercial blog depth and unrelated text negatives remain open. No active checkpoint lease at handoff.
