@@ -1,5 +1,7 @@
 # Bizoveya continuation checkpoint
 
+Delivered source checkpoint: [`6afaeacbf8e97d3d088a7a31f143a849565b57d8`](https://github.com/sufi0900/bizoveya/commit/6afaeacbf8e97d3d088a7a31f143a849565b57d8) on `main`; verified tree `8e786642af4d5a1c14d93d747736340207b233ea`. Non-force expected-head delivery succeeded on2026-10-07 PKT. No active lease. Next: founder performs the combined45 checks; live generation stays blocked pending verified reconciliation/current execution dependencies. No phase acceptance inferred. This locator-only documentation checkpoint follows the source commit.
+
 Verification (2026-10-07 PKT):337 web unit tests passed across59 files, including23 campaign tests; web typecheck and targeted lint passed; web production build and application-boundary checks passed. The new45 guide rendered in the built document-room HTML. Browser/mobile download, hosted SQL, production deployment and real-provider acceptance are not claimed. Admin source is unchanged.
 
 ## Current checkpoint — P04.3.3.6 / private draft review exports (2026-10-07 PKT)
