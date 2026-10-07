@@ -1,3 +1,4 @@
+import {readFileSync} from 'node:fs';
 import {describe,it,expect,vi} from 'vitest';
 import {starterAgent,agentKinds,type AgentKind} from '@bizoveya/agent-contract';
 import {executeGeneration,type RuntimeDependencies} from './runtime';
@@ -27,3 +28,20 @@ describe('bounded draft runtime',()=>{
 });
 it('rechecks operator access before each stage',async()=>{const h=harness();const beforeStage=vi.fn(async()=>true);await executeGeneration(source,source,{...h.deps,beforeStage});expect(beforeStage).toHaveBeenCalledTimes(3);});
 it('revoked operator access stops before reservation or provider work',async()=>{const h=harness();await expect(executeGeneration(source,source,{...h.deps,beforeStage:async()=>{throw Error('Revoked');}})).rejects.toThrow('Revoked');expect(h.rpc).not.toHaveBeenCalled();expect(h.provider).not.toHaveBeenCalled();});
+
+it('uses the runtime identifier required by migration036 and tags transport separately',async()=>{
+ const h=harness();await executeGeneration(source,source,h.deps);
+ const call=h.rpc.mock.calls.find(c=>c[0]==='bz_record_generation_request');
+ const args=(call as unknown as [string,{p_request:{runtimeVersion:string;transportSchemaVersion:string}}])[1];
+ const migration=readFileSync(new URL('../../../../../supabase/migrations/036_generation_runtime_claims.sql',import.meta.url),'utf8');
+ expect(migration).toContain(`p_request->>'runtimeVersion' is distinct from '${args.p_request.runtimeVersion}'`);
+ expect(args.p_request.transportSchemaVersion).toBe('gemini-compact-v1');
+});
+it('cancels a rejected pre-provider request record without calling the provider',async()=>{
+ const h=harness();h.rpc.mockImplementation(async(name:string)=>({data:name==='bz_claim_campaign_generation_stage'?h.ctx:null,error:name==='bz_record_generation_request'?{message:'bz_invalid_generation'}:null} as never));
+ expect(await executeGeneration(source,source,h.deps)).toEqual({status:'failed',stage:'coordinator'});expect(h.provider).not.toHaveBeenCalled();expect(h.rpc.mock.calls.at(-1)?.[0]).toBe('bz_cancel_unstarted_generation_stage');
+});
+it('preserves ambiguous recorded-start reservations when cancellation is refused',async()=>{
+ const h=harness();h.rpc.mockImplementation(async(name:string)=>({data:name==='bz_claim_campaign_generation_stage'?h.ctx:null,error:['bz_record_generation_request','bz_cancel_unstarted_generation_stage'].includes(name)?{message:'uncertain'}:null} as never));
+ await expect(executeGeneration(source,source,h.deps)).rejects.toThrow('preserve reservation');expect(h.provider).not.toHaveBeenCalled();
+});

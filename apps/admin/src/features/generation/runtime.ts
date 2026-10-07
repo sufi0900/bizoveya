@@ -4,7 +4,7 @@ import {slots} from '../models/contracts';
 import {claimSchema,stagePrompt,validateOutput,type Claim,type ProviderResult} from './contracts';
 import {generateStage} from './provider';
 export type RuntimeDependencies={recorder:Pick<SupabaseClient,'rpc'>;env:Record<string,string|undefined>;provider?:(kind:AgentKind,claim:Claim,env:Record<string,string|undefined>)=>Promise<ProviderResult>;beforeStage?:()=>Promise<unknown>;uuid?:()=>string};
-/** Server module only. No route imports it yet; activation/review wiring is the next checkpoint. */
+/** Server-only runtime, reached through explicit admin authorization. */
 export async function executeGeneration(generationId:string,actorId:string,deps:RuntimeDependencies){
  if(deps.env.BIZOVEYA_ENABLE_CAMPAIGN_GENERATION!=='true')return {status:'disabled' as const};
  const uuid=deps.uuid??(()=>crypto.randomUUID());
@@ -30,8 +30,14 @@ export async function executeGeneration(generationId:string,actorId:string,deps:
    if(saved.error)throw new Error('Failed to record preflight failure');
    return {status:'failed' as const,stage:kind};
   }
-  const started=await deps.recorder.rpc('bz_record_generation_request',{p_stage_id:id,p_claim:claim,p_request:{runtimeVersion:'draft-runtime-v2-ai7.0.127-gemini-compact',instructions:request.instructions,prompt:request.prompt,outputSchema:kind,maxOutputTokens:context.outputLimit}});
-  if(started.error)throw new Error('Could not durably record provider request; no request sent');
+  const started=await deps.recorder.rpc('bz_record_generation_request',{p_stage_id:id,p_claim:claim,p_request:{runtimeVersion:'draft-runtime-v1-ai7.0.127',transportSchemaVersion:'gemini-compact-v1',instructions:request.instructions,prompt:request.prompt,outputSchema:kind,maxOutputTokens:context.outputLimit}});
+  if(started.error){
+   // The provider has not been called. SQL cancels only if its start marker is absent;
+   // an ambiguous RPC response must never erase an already recorded request.
+   const cancelled=await deps.recorder.rpc('bz_cancel_unstarted_generation_stage',{p_stage_id:id,p_claim:claim});
+   if(cancelled.error)throw new Error('Request recording unresolved; preserve reservation and do not retry');
+   return {status:'failed' as const,stage:kind};
+  }
   try{result=await (deps.provider??generateStage)(kind,context,deps.env);}catch{result={output:null,error:'provider_error',inputTokens:null,outputTokens:null};}
   if(!result.error){try{result.output=validateOutput(kind,result.output,context.snapshot);}catch{result={...result,output:null,error:'invalid_output'};}}
   const finish=await deps.recorder.rpc('bz_finish_campaign_generation_stage',{p_stage_id:id,p_claim:claim,p_output:result.output,p_error_code:result.error,p_input_tokens:result.inputTokens,p_output_tokens:result.outputTokens});
