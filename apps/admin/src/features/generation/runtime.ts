@@ -30,7 +30,7 @@ export async function executeGeneration(generationId:string,actorId:string,deps:
    if(saved.error)throw new Error('Failed to record preflight failure');
    return {status:'failed' as const,stage:kind};
   }
-  const started=await deps.recorder.rpc('bz_record_generation_request',{p_stage_id:id,p_claim:claim,p_request:{runtimeVersion:'draft-runtime-v1-ai7.0.127',instructions:request.instructions,prompt:request.prompt,outputSchema:kind,maxOutputTokens:context.outputLimit}});
+  const started=await deps.recorder.rpc('bz_record_generation_request',{p_stage_id:id,p_claim:claim,p_request:{runtimeVersion:'draft-runtime-v2-ai7.0.127-gemini-compact',instructions:request.instructions,prompt:request.prompt,outputSchema:kind,maxOutputTokens:context.outputLimit}});
   if(started.error)throw new Error('Could not durably record provider request; no request sent');
   try{result=await (deps.provider??generateStage)(kind,context,deps.env);}catch{result={output:null,error:'provider_error',inputTokens:null,outputTokens:null};}
   if(!result.error){try{result.output=validateOutput(kind,result.output,context.snapshot);}catch{result={...result,output:null,error:'invalid_output'};}}

@@ -12,6 +12,19 @@ const env={BIZOVEYA_GEMINI_API_KEY:'synthetic-never-sent'};
 function response(text:string,finishReason='STOP'){return new Response(JSON.stringify({candidates:[{content:{role:'model',parts:[{text}]},finishReason}],usageMetadata:{promptTokenCount:100,candidatesTokenCount:200,totalTokenCount:300}}),{status:200,headers:{'Content-Type':'application/json'}});}
 describe('Gemini draft transport (synthetic only)',()=>{
  beforeEach(()=>transport.mockReset());
+ it.each(agentKinds)('validates %s output through the installed compact Gemini adapter',async kind=>{
+ transport.mockResolvedValue(response(JSON.stringify(outputs[kind])));
+ expect(await generateStage(kind,context(),env)).toMatchObject({error:null,output:outputs[kind],inputTokens:100,outputTokens:200});
+ expect(transport).toHaveBeenCalledTimes(1);
+ });
+ it.each(['invalid-uuid','extra-key','empty-title'])('retains canonical validation for %s',async failure=>{
+ const draft=structuredClone(outputs.content);
+ if(failure==='invalid-uuid')draft.blog.citations[0].sourceId='invalid';
+ if(failure==='empty-title')draft.blog.title='';
+ const output=failure==='extra-key'?{...draft,unexpected:'value'}:draft;
+ transport.mockResolvedValue(response(JSON.stringify(output)));
+ expect(await generateStage('content',context(),env)).toMatchObject({error:'structured_output_invalid',output:null,inputTokens:100,outputTokens:200});
+ });
  it('sends content schema and returns all channels with usage',async()=>{
  transport.mockResolvedValue(response(JSON.stringify(outputs.content)));
  const result=await generateStage('content',context(),env);
@@ -20,8 +33,18 @@ describe('Gemini draft transport (synthetic only)',()=>{
  expect(body.generationConfig.responseMimeType).toBe('application/json');
  expect(body.generationConfig.maxOutputTokens).toBe(1500);
  expect(body.generationConfig.responseJsonSchema.properties.schema.enum).toEqual(['campaign-drafts-v1']);
+ expect(JSON.stringify(body.generationConfig.responseJsonSchema)).not.toMatch(/maxLength|minLength|exclusiveMinimum|pattern|format/);
  expect(Object.keys(body.generationConfig.responseJsonSchema.properties)).toEqual(['schema','blog','pinterest','linkedin']);
  expect(transport).toHaveBeenCalledTimes(1);
+ });
+ it('keeps canonical length and citation-shape validation with compact transport',async()=>{
+ transport.mockResolvedValue(response(JSON.stringify({...outputs.content,blog:{...outputs.content.blog,title:'x'.repeat(121)}})));
+ expect(await generateStage('content',context(),env)).toMatchObject({error:'structured_output_invalid',inputTokens:100,outputTokens:200,output:null});
+ expect(transport).toHaveBeenCalledTimes(1);
+ });
+ it('classifies a schema rejection without returning private provider text',async()=>{
+ transport.mockResolvedValue(new Response(JSON.stringify({error:{code:400,status:'INVALID_ARGUMENT',message:'generation_config.response_json_schema is too complex; secret private text'}}),{status:400,headers:{'Content-Type':'application/json'}}));
+ const result=await generateStage('content',context(),env);expect(result.error).toBe('provider_schema_rejected');expect(JSON.stringify(result)).not.toMatch(/secret|private text/);expect(transport).toHaveBeenCalledTimes(1);
  });
  it('retains usage when successful HTTP response has invalid output',async()=>{
  transport.mockResolvedValue(response('{"invalid":true}'));
