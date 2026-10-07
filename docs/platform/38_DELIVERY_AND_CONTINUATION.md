@@ -1,5 +1,13 @@
 # GitHub delivery and scheduled continuation
 
+## Current founder evidence — 2026-10-07 PKT
+
+P04.3.3 is IN PROGRESS. Founder evidence confirms failed Content run `fb12a480-6923-4d3d-a66a-5777fe347f4a` cost reconciled to USD 0 on free-tier attestation (unknown tokens remain unknown), and unstarted run `29293e34-e773-4ffe-88f1-dc9645dd60c6` safely cancelled by the founder after SQL confirmed `provider_started_at` null (failed / preflight_failed, settled, zero tokens).
+
+Live Gemini run `80091597-06eb-4b8e-ae10-6239ae2b2b69`, campaign “Do It With AI Tools — export test-v2”, version2: Coordinator succeeded/settled692 input /668 output, Content1289/716 and Quality1782/321. Founder reports saved Blog/Pinterest/LinkedIn text, fact references, positive QA and no stage errors. Latest review screenshot reportedly confirms Human review saved: reviewv1 accepted at2026-10-07 23:04:49 PKT for private draft use only. Exact reason and evidence limits are recorded in [48 Live draft evidence](48_LIVE_DRAFT_EVIDENCE_AND_REMAINING_GATES.md).
+
+Reload persistence, clipboard/export, stale/negative review, access and other unevidenced tests remain pending. The short blog remains an open commercial-quality finding. No publication or regeneration occurred. Next: complete44/45 acceptance on the existing output, then inspect actual saved blog/brief/limits for quality improvement; no repeat generation is needed. P04.3.4 visuals remain planned until durable text acceptance. No new migration, field, key or deployment setting. No active checkpoint lease was recorded on inspected main `1ca04645c34c13f803a05689d66c26d99d692152`; old PR2/phase branches are historical. This block supersedes earlier next-action/current-state claims below; those retain the evidence available at their original checkpoints.
+
 ## Superseding delivery policy — 2026-10-03
 
 The founder explicitly authorized verified cumulative checkpoints to be delivered directly to `main` to avoid manual preview promotion. Before each write, compare remote main with the cumulative source, preserve ancestry/user work, run relevant checks, and update main only as a non-force fast-forward. A main push may trigger the already configured Vercel production projects; this consequence is accepted. Do not change Vercel settings, run hosted SQL, invoke paid providers, publish customer content or ship failing/unfinished-enabled features. The old branch/PR-only text below is historical where it conflicts.

@@ -1,5 +1,13 @@
 # Completed Bizoveya work only
 
+## Current founder evidence — 2026-10-07 PKT
+
+P04.3.3 is IN PROGRESS. Founder evidence confirms failed Content run `fb12a480-6923-4d3d-a66a-5777fe347f4a` cost reconciled to USD 0 on free-tier attestation (unknown tokens remain unknown), and unstarted run `29293e34-e773-4ffe-88f1-dc9645dd60c6` safely cancelled by the founder after SQL confirmed `provider_started_at` null (failed / preflight_failed, settled, zero tokens).
+
+Live Gemini run `80091597-06eb-4b8e-ae10-6239ae2b2b69`, campaign “Do It With AI Tools — export test-v2”, version2: Coordinator succeeded/settled: 692 input / 668 output; Content succeeded/settled: 1289 input / 716 output; Quality succeeded/settled: 1782 input / 321 output. Founder reports saved Blog/Pinterest/LinkedIn text, fact references, positive QA and no stage errors. Latest review screenshot reportedly confirms Human review saved: reviewv1 accepted at2026-10-07 23:04:49 PKT for private draft use only. Exact reason and evidence limits are recorded in [48 Live draft evidence](48_LIVE_DRAFT_EVIDENCE_AND_REMAINING_GATES.md).
+
+Reload persistence, clipboard/export, stale/negative review, access and other unevidenced tests remain pending. The short blog remains an open commercial-quality finding. No publication or regeneration occurred. Next: complete44/45 acceptance on the existing output, then inspect actual saved blog/brief/limits for quality improvement; no repeat generation is needed. P04.3.4 visuals remain planned until durable text acceptance. No new migration, field, key or deployment setting. No active checkpoint lease was recorded on inspected main `1ca04645c34c13f803a05689d66c26d99d692152`; old PR2/phase branches are historical. This block supersedes earlier next-action/current-state claims below; those retain the evidence available at their original checkpoints.
+
 Verification2026-10-07 PKT:137 admin tests, admin typecheck, targeted runtime lint, both production builds and application boundaries passed. Guide47 rendered in the web document room. No hosted SQL execution, live model request or existing-record recovery performed. No active lease; founder read-only diagnostic is the next action.
 
 ## Runtime/SQL contract regression repair — P04.3.3.8 (2026-10-07 PKT)
@@ -172,3 +180,8 @@ Local verification: 367 unit tests, 45 SQL steps, 119 browser checks, both produ
 | CW-063 | P04.3.2 spending policy, reservation and reconciliation implementation | Migration032,39,49 local SQL steps and392 unit tests; founder acceptance pending |
 
 | CW-067 | P04.3.3.1 private campaign storage and editable drafts | Migration033, saved URLs, version history; model execution remains unimplemented |
+
+
+| Record | Result | Evidence and limits |
+|---|---|---|
+| CW-069 | Complete Gemini private draft run and accepted human review recorded | Founder evidence80091597: three settled stages, reviewv1 accepted23:04:49PKT; persistence/export/access and commercial quality remain pending; see48 |
