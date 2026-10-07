@@ -1,5 +1,12 @@
 # Bizoveya chronological activity and decision log
 
+Verification (2026-10-07 PKT):337 web unit tests passed across59 files, including23 campaign tests; web typecheck and targeted lint passed; web production build and application-boundary checks passed. The new45 guide rendered in the built document-room HTML. Browser/mobile download, hosted SQL, production deployment and real-provider acceptance are not claimed. Admin source is unchanged.
+
+### BZ-20261007 — 2026-10-07T10:55:08+00:00 — Deferred testing and private draft exports
+
+Actor: Sufian Mustafa (founder), ChatGPT Codex (implementation). Founder requests continued implementation and combined later manual testing. Implemented P04.3.3.6 private local draft/review JSON export; no model execution, hosted SQL, reconciliation or publication. Manual acceptance remains pending; failed Content history remains intact. See45. Verification and exact source commit are recorded in the delivery checkpoint.
+
+
 ## Content-stage investigation checkpoint — 2026-10-05 PKT
 
 Founder screenshot at02:20 shows read-only stage diagnostics working: failed run ba2fafcf-050f-41c0-9ff1-a07c6834fa59, Coordinator succeeded/settled (661input,482output), Content failed/unknown with historical provider_or_output_error. Exact historical cause cannot be recovered; not labelled timeout, billing, quota or schema rejection. New prepared snapshot7106d14f-55a3-459f-843d-1e23a4061b27 remains unrun in evidence. Diagnostics visibility is accepted by screenshot; successful generation is not accepted.

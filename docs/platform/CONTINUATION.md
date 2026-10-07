@@ -1,5 +1,11 @@
 # Bizoveya continuation checkpoint
 
+Verification (2026-10-07 PKT):337 web unit tests passed across59 files, including23 campaign tests; web typecheck and targeted lint passed; web production build and application-boundary checks passed. The new45 guide rendered in the built document-room HTML. Browser/mobile download, hosted SQL, production deployment and real-provider acceptance are not claimed. Admin source is unchanged.
+
+## Current checkpoint — P04.3.3.6 / private draft review exports (2026-10-07 PKT)
+
+Founder authorizes continued implementation with previous and new manual checks deferred together. Added browser-local JSON downloads for the displayed editable campaign and completed generated output review packet. Unsaved edits are explicitly labelled; generated packets carry snapshot/campaign version, three text channels, citations, QA and review history. Downloads neither save nor call a provider, reconcile charges, accept a draft or publish. No new route, migration, dependency or API key. P04.3.3 remains IN PROGRESS: historical Content failure/unknown usage and successful live generation acceptance remain unresolved. See [45 Combined draft review and manual tests](45_DRAFT_EXPORTS_AND_COMBINED_TESTS.md). This current block supersedes older current-state guidance without deleting history.
+
 ## Content-stage investigation checkpoint — 2026-10-05 PKT
 
 Founder screenshot at02:20 shows read-only stage diagnostics working: failed run ba2fafcf-050f-41c0-9ff1-a07c6834fa59, Coordinator succeeded/settled (661input,482output), Content failed/unknown with historical provider_or_output_error. Exact historical cause cannot be recovered; not labelled timeout, billing, quota or schema rejection. New prepared snapshot7106d14f-55a3-459f-843d-1e23a4061b27 remains unrun in evidence. Diagnostics visibility is accepted by screenshot; successful generation is not accepted.

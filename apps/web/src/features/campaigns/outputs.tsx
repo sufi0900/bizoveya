@@ -1,16 +1,19 @@
 'use client';
 import React,{useRef,useState} from 'react';
 import {z} from 'zod';
+import {downloadDraft,generatedDownload} from './export';
 import {canAcceptOutput,outputRecordSchema,type OutputRecord} from './output-contracts';
 export function GeneratedDrafts({records,endpoint,canReview}:{records:OutputRecord[];endpoint:string;canReview:boolean}){
  return <section aria-label="Generated drafts"><h2>Generated drafts and human review</h2>{records.length===0?<p>No completed generated drafts yet. Snapshot preparation alone does not generate content.</p>:records.map(record=><Draft key={record.id} initial={record} endpoint={endpoint} canReview={canReview}/>)}</section>;
 }
 function Draft({initial,endpoint,canReview}:{initial:OutputRecord;endpoint:string;canReview:boolean}){
  const [record,setRecord]=useState(initial),[reason,setReason]=useState(''),[busy,setBusy]=useState(false),[message,setMessage]=useState('');const lock=useRef(false);const {content,quality,coordinator}=record.output.stages;
+ function exportOutput(){try{downloadDraft(generatedDownload(record));setMessage('Private generated review packet downloaded. Nothing was published or regenerated.');}catch{setMessage('Download unavailable. Copy the displayed text manually.');}}
  async function copy(text:string){try{await navigator.clipboard.writeText(text);setMessage('Draft copied. Nothing was published.');}catch{setMessage('Clipboard unavailable. Select and copy the displayed text manually.');}}
  async function review(decision:'accepted'|'changes_requested'){if(lock.current)return;lock.current=true;setBusy(true);try{const r=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:record.id,expectedVersion:record.reviews[0]?.version??0,decision,reason})}),data=await r.json();if(!r.ok)throw Error(data.error??'Review failed');const updated=z.array(outputRecordSchema).parse(data).find(x=>x.id===record.id);if(updated)setRecord(updated);setMessage('Human review saved. Nothing was published or regenerated.');setReason('');}catch(e){setMessage(e instanceof Error?e.message:'Review failed. Reload records before retrying.');}finally{lock.current=false;setBusy(false);}}
  const textStyle={whiteSpace:'pre-wrap' as const,overflowWrap:'anywhere' as const};
  return <article style={{marginTop:24,borderTop:'1px solid var(--bz-border, #465063)',paddingTop:18}}><h3>{content.blog.title}</h3><p>Snapshot {record.id} · campaign v{record.campaignVersion}</p><p><strong>{quality.approved?'Quality review passed — human review required':'Quality review requests changes'}</strong></p><p>Latest human decision: {record.reviews[0]?.decision.replaceAll('_',' ')??'Not reviewed'}</p>{quality.issues.map((i,n)=><p key={n}>{i.severity} · {i.channel}: {i.message}</p>)}
+ <button type="button" className="bz-button" onClick={exportOutput}>Download generated review packet (JSON)</button><p><small>Includes all three text channels, citations, QA and human review history. This is private content; sharing the file is your decision.</small></p>
  <details><summary>Coordinator plan</summary><p>{coordinator.topic}</p><p>{coordinator.objective}</p><p>{coordinator.audience}</p></details>
  <details open><summary>Blog draft</summary><h4>{content.blog.title}</h4><p>{content.blog.summary}</p><div style={textStyle}>{content.blog.body}</div><button className="bz-button" onClick={()=>void copy(`${content.blog.title}\n\n${content.blog.summary}\n\n${content.blog.body}`)}>Copy blog</button></details>
  <details><summary>Pinterest text</summary><h4>{content.pinterest.title}</h4><p style={textStyle}>{content.pinterest.description}</p><p>Suggested alt text: {content.pinterest.altText}</p><button className="bz-button" onClick={()=>void copy(`${content.pinterest.title}\n\n${content.pinterest.description}\n\nAlt text: ${content.pinterest.altText}`)}>Copy Pinterest text</button></details>

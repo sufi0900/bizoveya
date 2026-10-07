@@ -1,5 +1,9 @@
 # Dependencies and change-impact register
 
+## Current checkpoint — P04.3.3.6 / private draft review exports (2026-10-07 PKT)
+
+Founder authorizes continued implementation with previous and new manual checks deferred together. Added browser-local JSON downloads for the displayed editable campaign and completed generated output review packet. Unsaved edits are explicitly labelled; generated packets carry snapshot/campaign version, three text channels, citations, QA and review history. Downloads neither save nor call a provider, reconcile charges, accept a draft or publish. No new route, migration, dependency or API key. P04.3.3 remains IN PROGRESS: historical Content failure/unknown usage and successful live generation acceptance remain unresolved. See [45 Combined draft review and manual tests](45_DRAFT_EXPORTS_AND_COMBINED_TESTS.md). This current block supersedes older current-state guidance without deleting history.
+
 ## Dispatch/review impact map — 1.24
 
 | Change | Affected dependencies / action |

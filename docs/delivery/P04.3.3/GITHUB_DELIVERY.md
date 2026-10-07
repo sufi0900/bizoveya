@@ -1,5 +1,14 @@
 # Verified main source — 1.24 / P04.3.3.5
 
+Verification (2026-10-07 PKT):337 web unit tests passed across59 files, including23 campaign tests; web typecheck and targeted lint passed; web production build and application-boundary checks passed. The new45 guide rendered in the built document-room HTML. Browser/mobile download, hosted SQL, production deployment and real-provider acceptance are not claimed. Admin source is unchanged.
+
+## Current checkpoint — P04.3.3.6 / private draft review exports (2026-10-07 PKT)
+
+Founder authorizes continued implementation with previous and new manual checks deferred together. Added browser-local JSON downloads for the displayed editable campaign and completed generated output review packet. Unsaved edits are explicitly labelled; generated packets carry snapshot/campaign version, three text channels, citations, QA and review history. Downloads neither save nor call a provider, reconcile charges, accept a draft or publish. No new route, migration, dependency or API key. P04.3.3 remains IN PROGRESS: historical Content failure/unknown usage and successful live generation acceptance remain unresolved. See [45 Combined draft review and manual tests](45_DRAFT_EXPORTS_AND_COMBINED_TESTS.md). This current block supersedes older current-state guidance without deleting history.
+
+Source parent: `8b397ee8282026e4a016d4c4d8ffc2fd59de29bf` on main. Verified direct-main delivery follows checks. No new branch/PR/ZIP; old PR2 is historical. No active lease recorded. Exact delivered commit is discoverable from main and the following locator record.
+
+
 Source commit:`7dccdd7fd9b1f70dbf85be1aacd555324a3b63ae`. Verified tree:`2d6ab7da0db9e9cd6f39b87a0c4597aa4cfaac33`. Non-force main delivery succeeded. This locator-only documentation commit follows the source checkpoint. No active lease remains; inspect current remote main before resuming. No new PR/branch/ZIP was created.
 
 Completed: disabled-by-default admin founder-owner dispatch, authorization lease/history, per-stage operator recheck, private member-readable saved Blog/Pinterest/LinkedIn output and versioned owner-only human review.436 tests,59 local SQL checks, typechecks/lints/boundaries and both builds passed. No real provider request, hosted SQL, publishing or hosted/browser acceptance. Main may auto-deploy under the already accepted Vercel settings; deployment success was not independently verified.

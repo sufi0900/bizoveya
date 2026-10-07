@@ -1,5 +1,9 @@
 # Combined pending setup and manual tests
 
+## Current checkpoint — P04.3.3.6 / private draft review exports (2026-10-07 PKT)
+
+Founder authorizes continued implementation with previous and new manual checks deferred together. Added browser-local JSON downloads for the displayed editable campaign and completed generated output review packet. Unsaved edits are explicitly labelled; generated packets carry snapshot/campaign version, three text channels, citations, QA and review history. Downloads neither save nor call a provider, reconcile charges, accept a draft or publish. No new route, migration, dependency or API key. P04.3.3 remains IN PROGRESS: historical Content failure/unknown usage and successful live generation acceptance remain unresolved. See [45 Combined draft review and manual tests](45_DRAFT_EXPORTS_AND_COMBINED_TESTS.md). This current block supersedes older current-state guidance without deleting history.
+
 ## Current action — 1.22
 
 Apply only missing034 and then035; never run test SQL on hosted data. Deploy cumulative main to the existing web/admin projects, then perform MT127–132 from42 plus still-pending MT114–126. No new environment variable or input field exists. Campaign generation remains disabled, so these checks must not produce provider usage or a bill.
