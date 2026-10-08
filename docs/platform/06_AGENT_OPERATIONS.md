@@ -1,5 +1,11 @@
 # AI employees, meetings and interruptions
 
+## 2026-10-08 evolution update — planned direction
+
+Extend existing facilitated meetings with announcement broadcast and bounded deliberation. Founder assistant/HR assigns scoped specialists; initial analyst proposes from approved sources. Specialists resolve authorized template inventory, queue QA and escalate to assistant then founder. Agents join meetings only after a safe checkpoint; active writes/provider requests reconcile first. Voice uses identical approval/budget rules. Hiring/custom roles mean evaluated configurations, not self-granted tools. Cartoon movement reflects real tasks. Publishing remains deferred.
+
+See [50 Evolution record](50_EVOLUTION_TEMPLATES_AND_VISUAL_AGENCY.md) and [ADR-0017](decisions/ADR-0017-templates-and-event-driven-agency.md). Older dated contracts remain historical where superseded.
+
 ## Current checkpoint — 1.24 / P04.3.3.5
 
 Explicit founder-owner draft dispatch is implemented on the separate admin deployment at `/admin/generations`, default off. Private campaign outputs now show Blog/Pinterest/LinkedIn text, citations, advisory QA and owner-only versioned human review. Additive037 follows036; no provider request, hosted SQL, publishing or Vercel setting change was made. See [44 Draft pilot and human review](44_DRAFT_PILOT_AND_HUMAN_REVIEW.md). This block supersedes older current-state blocks, which remain historical.

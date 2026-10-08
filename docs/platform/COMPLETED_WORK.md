@@ -209,3 +209,14 @@ Local verification: 367 unit tests, 45 SQL steps, 119 browser checks, both produ
 - Eight shared scenes rendered to their expected PNG dimensions. Independent strict PDF parsing and rasterization confirmed six pages, each 540×675 points, embedding 1080×1350 JPEGs. Browser Canvas is covered by mocks; actual founder downloads remain pending.
 
 No hosted SQL was applied, provider called, deployment setting changed or customer content published. MT145–151 remain pending founder/hosted/browser checks. Earlier founder-confirmed text persistence/copy/generated JSON checks remain recorded as passed; commercial blog depth and unrelated text negatives remain open. No active checkpoint lease at handoff.
+
+| Record | Result | Evidence and limits |
+|---|---|---|
+| CW-071 | Agency evolution discussions, visual-test confirmation and staged template/voice/office roadmap documented | Guide50, ADR0017, affected architecture/requirements/phases/manual/dependencies; MT145–147 founder-reported passed only; future capabilities not implemented |
+
+
+## Documentation checkpoint verification — 2026-10-08
+
+Completed: local Markdown link checks across affected files, unchanged real activity/work/phase projection parsers (BZ071/CW071 and13 grand phases), discovery/title checks for50/ADR0017, application boundaries, whitespace and documentation-only source scope. All882 baseline remote blobs matched before editing. No runtime, migration, package or dependency changes.
+
+Not rerun: full web production build and document-room Vitest suite. The previous session dependency symlinks point to an unavailable cached checkout; Next.js/Vitest modules cannot be resolved. Earlier490-test/both-build evidence remains historical source4f719f78 evidence, not a new test result. Actual deployed document-room rendering remains unverified. No new founder setup, field or feature test is required; an optional deployed documentation read is sufficient. No active lease.

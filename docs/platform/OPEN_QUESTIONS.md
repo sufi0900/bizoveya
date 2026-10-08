@@ -1,5 +1,11 @@
 # Owner decisions and evidence still needed
 
+## 2026-10-08 evolution update — planned direction
+
+Open scoped choices: first catalog/format variants; personal-to-workspace sharing rules; template schema/limits/deletion/export; artwork upload/rights/storage; provider eligibility and per-user credential policy; analyst allowed sources; assistant/QA capacity and retry limits; voice provider/consent/retention; room style/accessibility; custom-agent evaluation; future standing publication policy. These do not block this documentation checkpoint. They are resolved at relevant slice design, with no invented provider access or launch promise.
+
+See [50 Evolution record](50_EVOLUTION_TEMPLATES_AND_VISUAL_AGENCY.md) and [ADR-0017](decisions/ADR-0017-templates-and-event-driven-agency.md). Older dated contracts remain historical where superseded.
+
 ## Historical contract — package1.10 / P02.2.Fix-1
 
 Pending: founder1.10 hosted journey/design acceptance, real concurrent API requests, unchanged/duplicate rename outcomes, reviewed cleanup of old duplicate records, browser Back SPA unsaved handling, and inherited portfolio/admin live regressions. No new logo/domain/provider/pricing decision. Backend agency agents and business publishing remain future work.

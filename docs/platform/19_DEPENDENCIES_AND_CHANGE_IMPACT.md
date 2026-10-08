@@ -1,5 +1,11 @@
 # Dependencies and change-impact register
 
+## 2026-10-08 evolution update — planned direction
+
+P04.3.4.2 depends on current composer/source-review/version compatibility and fit/export evidence. P04.3.4.3 adds creator ownership, private inventory, immutable versions and deletion/export boundaries. Media/AI templates depend on storage/rights/provider eligibility and evaluated safe schema. Assistant precedes durable broadcast; voice and office project the same tasks. Custom-agent activation depends on evaluation/tool permissions. Publishing remains P05/P07-gated. Subscription access is optional; no evidenced commercial client exists. Detailed entry/exit gates and impact matrix in50.
+
+See [50 Evolution record](50_EVOLUTION_TEMPLATES_AND_VISUAL_AGENCY.md) and [ADR-0017](decisions/ADR-0017-templates-and-event-driven-agency.md). Older dated contracts remain historical where superseded.
+
 ## Current visual checkpoint — 1.25 / P04.3.4.1 (2026-10-08 PKT)
 
 Founder confirmed the previous saved-draft/refresh/copy/generated-JSON checks and explicitly authorized proceeding. Record these narrow text-pilot checks as founder-reported passes; do not repeat generation. Other unevidenced access/conflict/mobile/unsaved-export tests and the short-blog quality finding remain open. This authorization permits visual implementation without claiming full P04.3.3 acceptance.

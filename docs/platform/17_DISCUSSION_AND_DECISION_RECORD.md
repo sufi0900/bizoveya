@@ -1,5 +1,11 @@
 # Founder discussion: Muse concern to configurable operations
 
+## Current documentation checkpoint — 2026-10-08 PKT
+
+The founder reports completing the four requested visual setup/save/refresh/PNG/PDF checks and liking the results. Record MT145–147 as founder-reported passes, not independent hosted inspection; exact visual version, exported files and deployment receipts were not supplied. MT148–151 and unrelated text/access/negative/commercial-quality checks remain pending. Do not repeat accepted text generation or the confirmed visual checks.
+
+This delivery records discussions and planned architecture only. Source visual composer is [4f719f78](https://github.com/sufi0900/bizoveya/commit/4f719f78e1364101730d74529bb903dfee04556d); no new feature, SQL or provider integration is implemented here. Read [50 Evolution and agency roadmap](50_EVOLUTION_TEMPLATES_AND_VISUAL_AGENCY.md) and [ADR-0017](decisions/ADR-0017-templates-and-event-driven-agency.md). Next proposed slice is P04.3.4.2 template variety and standalone LinkedIn image; private reusable templates follow. Founder requested documentation before implementation. This block supersedes older conflicting next actions while preserving dated history.
+
 ## Current contract — 1.19 / P04.3.2
 
 This update supersedes conflicting older “current” blocks below; historical records remain unchanged. Admin-only spending controls are at `/admin/spending` and `/api/admin/spending`. Migration032 follows031; never rerun applied migrations. New connectivity tests require reviewed USD pricing and enabled limits. The ledger reserves a conservative estimate before a provider call, settles reported usage, and holds uncertain/overrun charges until evidence-based reconciliation. Customer draft generation and publishing remain disabled. See [39 Spending controls](39_SPENDING_CONTROLS_AND_TESTING.md).
@@ -278,3 +284,7 @@ At22:59 PKT founder reported newly created Supabase files applied and described 
 At23:34 PKT founder highlighted niche-dependent website structures, selected a narrower initial digital-service direction, requested custom listing pages/labels, prioritised agents and changed first pilot to drafts only, including Pinterest visuals and LinkedIn carousels. Answer proposed separate niche/content/design layers, reusable collections/entry renderers, five roles plus shared composer, and approved source knowledge from doitwithai.tools. Publishing/OAuth/CMS-write setup deferred; model runtime still needed. Public retrieval not complete and marketing claims not evidence. No code updated during those discussions.
 
 At23:44:51 PKT founder explicitly approved freelancers/consultants/small digital agencies and authorised next implementation incl existing-site deletion for earlier duplicate cleanup, Studio/template repair and affected documentation. This package implements the P02.5 scope in34 and records future work in35. Founder instructions remain able to revise later drafts; completion requires concrete implementation evidence and separate manual results.
+
+## 2026-10-08 discussion decision trace
+
+Founder evidence → subscription research → template variety → private template generation → founder assistant/HR and analyst → specialist/QA/approval queues → bounded recovery → voice/cartoon rooms → broadcast meetings/cost control → custom/hireable agents → documentation-first instruction. Full ordered record, attribution and open decisions in50. ADR-0017 accepts the staged planning direction; it does not implement or activate these features. Optional ChatGPT subscription integration remains blocked on evidenced hosted commercial authorization and excludes image generation on the checked preview path.

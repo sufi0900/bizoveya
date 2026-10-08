@@ -1,5 +1,11 @@
 # Private visual composition and testing
 
+## Current documentation checkpoint — 2026-10-08 PKT
+
+The founder reports completing the four requested visual setup/save/refresh/PNG/PDF checks and liking the results. Record MT145–147 as founder-reported passes, not independent hosted inspection; exact visual version, exported files and deployment receipts were not supplied. MT148–151 and unrelated text/access/negative/commercial-quality checks remain pending. Do not repeat accepted text generation or the confirmed visual checks.
+
+This delivery records discussions and planned architecture only. Source visual composer is [4f719f78](https://github.com/sufi0900/bizoveya/commit/4f719f78e1364101730d74529bb903dfee04556d); no new feature, SQL or provider integration is implemented here. Read [50 Evolution and agency roadmap](50_EVOLUTION_TEMPLATES_AND_VISUAL_AGENCY.md) and [ADR-0017](decisions/ADR-0017-templates-and-event-driven-agency.md). Next proposed slice is P04.3.4.2 template variety and standalone LinkedIn image; private reusable templates follow. Founder requested documentation before implementation. This block supersedes older conflicting next actions while preserving dated history.
+
 P04.3.4.1 implements two editable Pinterest layouts and a six-slide LinkedIn carousel with private saved versions, PNG downloads and a six-page PDF. It reuses accepted generated text and makes no provider call. Hosted installation and founder visual acceptance remain pending.
 
 ## Founder confirmation and permission to proceed
@@ -79,9 +85,9 @@ History **Use vN as editable copy** loads an earlier composition into the editor
 
 | Case | Status / expected |
 |---|---|
-| MT145 |039 hosted installation and composer visibility pending |
-| MT146 |Owner visual save/refresh/source-text unchanged pending |
-| MT147 |Two Pinterest PNGs and six-page PDF readability/download pending |
+| MT145 | Founder reports four-step setup/composer check passed; migration history not independently inspected |
+| MT146 | Founder-reported four-step save/refresh check passed; exact version/files not supplied |
+| MT147 | Founder-reported two PNGs/six-page PDF opening check passed; files not independently inspected |
 | MT148 |Two visual tabs: save inA, staleB gets conflict; preserve edits/history — hosted/browser pending, local SQL rejection verified |
 | MT149 |Viewer read/export and unrelated tenant denial — hosted accounts pending, API/SQL negative cases locally verified |
 | MT150 |Overflow/invalid color/unchecked review, source review changed, version limit and no-op — local verification; browser/hosted cases pending |

@@ -1,5 +1,11 @@
 # Site modes and external connectors
 
+## 2026-10-08 evolution update — planned direction
+
+Template graphics need no image provider. Future uploaded/AI artwork and voice each require independent storage/auth/capability/cost proof. Optional per-user ChatGPT plan access is not a social connector, access to memories, image-generation engine or automatic hosted-app eligibility. CMS/social writes need explicit account scopes, approved action policy and receipt/readback. No new connector exists here.
+
+See [50 Evolution record](50_EVOLUTION_TEMPLATES_AND_VISUAL_AGENCY.md) and [ADR-0017](decisions/ADR-0017-templates-and-event-driven-agency.md). Older dated contracts remain historical where superseded.
+
 ## Current contract — package1.17 / P04.0
 
 P04.0 adds an admin-only model connectivity room at /admin/model-tests and /api/admin/model-tests. The saved provider/model uses the AI SDK with fixed OpenAI, Nebius Token Factory and Gemini adapters. It sends a fixed synthetic prompt, requests128 output tokens, waits20 seconds, makes no automatic retry/fallback, and stores redacted results with profile/reference versions, actor, reason and timestamps. No customer knowledge or prompt is sent. This is connectivity evidence, not quality evaluation, agent activation or a spending-budget implementation.

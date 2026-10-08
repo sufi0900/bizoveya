@@ -1,5 +1,11 @@
 # Backend and super admin control contract
 
+## 2026-10-08 evolution update — planned direction
+
+Planned backend contracts retain server-enforced tenant/tool/budget/approval rules. Catalog hiring activates a reviewed version; user-created agents configure existing allowed tools only. Founder assistant and HR role cannot grant credentials or publish merely from a meeting. Personal template access is creator-scoped, not admin-visible by default. Event queues need leases/idempotency/checkpoints/receipts; provider-limit or uncertain-cost recovery escalates rather than silently retrying.
+
+See [50 Evolution record](50_EVOLUTION_TEMPLATES_AND_VISUAL_AGENCY.md) and [ADR-0017](decisions/ADR-0017-templates-and-event-driven-agency.md). Older dated contracts remain historical where superseded.
+
 ## Current checkpoint — 1.20 / P04.3.3.1
 
 Private campaign draft storage is implemented at `/workspaces/[workspaceId]/sites/[siteId]/campaigns`, with saved campaign URLs ending in `/[campaignId]`. This checkpoint stores manually authored brief/blog/Pinterest/LinkedIn text; it makes no model request and does not publish. Additive migration033 follows032. P04.3.3 remains in progress: bound-agent orchestration, generation reservations, durable execution/usage and output review are the next work on the SAME `phase/p04-3-3-durable-drafts` branch. See [40 Campaign drafts](40_CAMPAIGN_DRAFTS_AND_TESTING.md).

@@ -1,5 +1,10 @@
 # In-app Bizoveya document room
 
+## 2026-10-08 documentation projection
+
+New guide50 and ADR0017 are discovered by the existing canonical Markdown reader; BZ071/CW071 project through the unchanged activity/work parsers. The roadmap includes a Mermaid workflow diagram. Future private visual office is distinct from this public project document portal and is not implemented. Source version remains1.25.0.
+
+
 ## Current checkpoint — 1.20 / P04.3.3.1
 
 Private campaign draft storage is implemented at `/workspaces/[workspaceId]/sites/[siteId]/campaigns`, with saved campaign URLs ending in `/[campaignId]`. This checkpoint stores manually authored brief/blog/Pinterest/LinkedIn text; it makes no model request and does not publish. Additive migration033 follows032. P04.3.3 remains in progress: bound-agent orchestration, generation reservations, durable execution/usage and output review are the next work on the SAME `phase/p04-3-3-durable-drafts` branch. See [40 Campaign drafts](40_CAMPAIGN_DRAFTS_AND_TESTING.md).

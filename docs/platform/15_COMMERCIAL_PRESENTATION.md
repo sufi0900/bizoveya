@@ -1,5 +1,11 @@
 # Bizoveya presentation content inside the document room
 
+## 2026-10-08 evolution update — planned direction
+
+Position the long-term concept as a proposed founder-led digital agency with private reusable design assets and transparent workflows. Only private text generation and current visual composition are demonstrated. Do not market voice office, autonomous hiring, subscription-backed images, automatic publishing, unlimited credits or guaranteed visual uniqueness as available. Commercial gates include outstanding account/conflict/mobile checks, short-blog depth, fresh-user usability, measured cost and support/privacy policies.
+
+See [50 Evolution record](50_EVOLUTION_TEMPLATES_AND_VISUAL_AGENCY.md) and [ADR-0017](decisions/ADR-0017-templates-and-event-driven-agency.md). Older dated contracts remain historical where superseded.
+
 ## Current contract — package1.17 / P04.0
 
 P04.0 adds an admin-only model connectivity room at /admin/model-tests and /api/admin/model-tests. The saved provider/model uses the AI SDK with fixed OpenAI, Nebius Token Factory and Gemini adapters. It sends a fixed synthetic prompt, requests128 output tokens, waits20 seconds, makes no automatic retry/fallback, and stores redacted results with profile/reference versions, actor, reason and timestamps. No customer knowledge or prompt is sent. This is connectivity evidence, not quality evaluation, agent activation or a spending-budget implementation.

@@ -1,5 +1,11 @@
 # Bizoveya continuation checkpoint
 
+## Current documentation checkpoint — 2026-10-08 PKT
+
+The founder reports completing the four requested visual setup/save/refresh/PNG/PDF checks and liking the results. Record MT145–147 as founder-reported passes, not independent hosted inspection; exact visual version, exported files and deployment receipts were not supplied. MT148–151 and unrelated text/access/negative/commercial-quality checks remain pending. Do not repeat accepted text generation or the confirmed visual checks.
+
+This delivery records discussions and planned architecture only. Source visual composer is [4f719f78](https://github.com/sufi0900/bizoveya/commit/4f719f78e1364101730d74529bb903dfee04556d); no new feature, SQL or provider integration is implemented here. Read [50 Evolution and agency roadmap](50_EVOLUTION_TEMPLATES_AND_VISUAL_AGENCY.md) and [ADR-0017](decisions/ADR-0017-templates-and-event-driven-agency.md). Next proposed slice is P04.3.4.2 template variety and standalone LinkedIn image; private reusable templates follow. Founder requested documentation before implementation. This block supersedes older conflicting next actions while preserving dated history.
+
 ## Current visual checkpoint — 1.25 / P04.3.4.1 (2026-10-08 PKT)
 
 Founder confirmed the previous saved-draft/refresh/copy/generated-JSON checks and explicitly authorized proceeding. Record these narrow text-pilot checks as founder-reported passes; do not repeat generation. Other unevidenced access/conflict/mobile/unsaved-export tests and the short-blog quality finding remain open. This authorization permits visual implementation without claiming full P04.3.3 acceptance.
@@ -137,3 +143,14 @@ Verified source locator: resolve remote main; this record is updated with the ex
 - Eight shared scenes rendered to their expected PNG dimensions. Independent strict PDF parsing and rasterization confirmed six pages, each 540×675 points, embedding 1080×1350 JPEGs. Browser Canvas is covered by mocks; actual founder downloads remain pending.
 
 No hosted SQL was applied, provider called, deployment setting changed or customer content published. MT145–151 remain pending founder/hosted/browser checks. Earlier founder-confirmed text persistence/copy/generated JSON checks remain recorded as passed; commercial blog depth and unrelated text negatives remain open. No active checkpoint lease at handoff.
+
+## Documentation-only handoff — 2026-10-08
+
+Resolved remote main4f719f78e1364101730d74529bb903dfee04556d; tree4a627cd28fa096bcb53c3825bf5137da50ffd305. All882 baseline blobs match. No AGENTS.md or active lease; historical draft PR2/phase branches inspected and untouched. Founder asked to document first; do not start the next implementation inside this checkpoint. Next separate source slice P04.3.4.2 follows50/ADR0017, with pending unrelated gates retained. No new SQL/setup/key, repeat generation, paid request or publication. This record preserves existing migrations/history and uses expected-head non-force main delivery. Exact commit is recorded in GitHub history/chat. No active lease at handoff.
+
+
+## Documentation checkpoint verification — 2026-10-08
+
+Completed: local Markdown link checks across affected files, unchanged real activity/work/phase projection parsers (BZ071/CW071 and13 grand phases), discovery/title checks for50/ADR0017, application boundaries, whitespace and documentation-only source scope. All882 baseline remote blobs matched before editing. No runtime, migration, package or dependency changes.
+
+Not rerun: full web production build and document-room Vitest suite. The previous session dependency symlinks point to an unavailable cached checkout; Next.js/Vitest modules cannot be resolved. Earlier490-test/both-build evidence remains historical source4f719f78 evidence, not a new test result. Actual deployed document-room rendering remains unverified. No new founder setup, field or feature test is required; an optional deployed documentation read is sufficient. No active lease.

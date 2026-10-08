@@ -1,5 +1,11 @@
 # Stack, provider policy and security
 
+## 2026-10-08 evolution update — planned direction
+
+For future template/agency slices: enforce personal ownership independently of workspace membership; constrain renderer nodes/fonts/assets and reject executable template input; protected credential storage and per-user revocation; no credential sharing or automatic paid fallback. Rooms redact secrets/private prompts. Voice and agent configuration cannot bypass server authorization. Test cross-user/template/version boundaries before launch; no new package or security control was installed here.
+
+See [50 Evolution record](50_EVOLUTION_TEMPLATES_AND_VISUAL_AGENCY.md) and [ADR-0017](decisions/ADR-0017-templates-and-event-driven-agency.md). Older dated contracts remain historical where superseded.
+
 ## Current checkpoint — 1.24 / P04.3.3.5
 
 Explicit founder-owner draft dispatch is implemented on the separate admin deployment at `/admin/generations`, default off. Private campaign outputs now show Blog/Pinterest/LinkedIn text, citations, advisory QA and owner-only versioned human review. Additive037 follows036; no provider request, hosted SQL, publishing or Vercel setting change was made. See [44 Draft pilot and human review](44_DRAFT_PILOT_AND_HUMAN_REVIEW.md). This block supersedes older current-state blocks, which remain historical.

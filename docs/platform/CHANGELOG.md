@@ -207,3 +207,7 @@ Added admin-only model assignments, additive031 and audit events; version/freshn
 
 ## 1.20 / P04.3.3.1
 Private campaign draft persistence added; source checkpoint only, no AI execution or publication. Founder Gemini settlement evidence recorded.
+
+## 2026-10-08 — documentation evolution checkpoint
+
+Recorded founder basic visual acceptance, template/private inventory direction, optional subscription research limits, assistant/HR/analyst, custom agents, voice/event-driven rooms and broadcast meetings. Added50/ADR0017 and updated affected contracts/phase gates. Source version remains1.25.0; no runtime feature, SQL or dependency change.

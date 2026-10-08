@@ -1,5 +1,10 @@
 # Agent configuration and readiness
 
+## 2026-10-08 documented evolution
+
+Private custom agents and general catalog hiring are planned configurations over allowed tools, approved knowledge, typed artifacts, evaluated models, budgets and scoped activation. Founder assistant/HR and analyst do not exist as newly activated roles in this checkpoint. Specialists must resolve authorized template inventory, never broaden privileges. See50/ADR0017; existing readiness controls remain.
+
+
 ## Current contract — package1.17 / P04.0
 
 P04.0 adds an admin-only model connectivity room at /admin/model-tests and /api/admin/model-tests. The saved provider/model uses the AI SDK with fixed OpenAI, Nebius Token Factory and Gemini adapters. It sends a fixed synthetic prompt, requests128 output tokens, waits20 seconds, makes no automatic retry/fallback, and stores redacted results with profile/reference versions, actor, reason and timestamps. No customer knowledge or prompt is sent. This is connectivity evidence, not quality evaluation, agent activation or a spending-budget implementation.

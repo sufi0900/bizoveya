@@ -562,3 +562,7 @@ Founder reports saved drafts, refresh/copy/generated JSON checks already complet
 - Eight shared scenes rendered to their expected PNG dimensions. Independent strict PDF parsing and rasterization confirmed six pages, each 540×675 points, embedding 1080×1350 JPEGs. Browser Canvas is covered by mocks; actual founder downloads remain pending.
 
 No hosted SQL was applied, provider called, deployment setting changed or customer content published. MT145–151 remain pending founder/hosted/browser checks. Earlier founder-confirmed text persistence/copy/generated JSON checks remain recorded as passed; commercial blog depth and unrelated text negatives remain open. No active checkpoint lease at handoff.
+
+### BZ-071 — 2026-10-08 PKT — Founder visual confirmation and agency evolution discussions
+
+Founder reports the four visual steps passed and likes the result. Subsequent discussion separates deterministic graphics from generated artwork, asks about Plus access, and proposes private reusable AI templates, hired/custom agents, founder assistant/HR, analyst, voice, truthful cartoon rooms, QA queues, approval/recovery and broadcast meetings. Founder14:58PKT requests all affected documentation before implementation. Guide50 and ADR0017 record attribution, dependency gates and research limits; MT145–147 reported passed, MT148–151 and commercial blog depth remain open. Source main4f719f78/branches/PR2/no lease inspected; no AGENTS present; baseline blobs verified. Documentation only, no new SQL/provider/credentials/publication/feature implementation.

@@ -1,5 +1,10 @@
 # Founder manual testing record
 
+## 2026-10-08 documented evolution
+
+Founder reports all four guide49 visual steps completed. MT145–147 recorded as founder-reported passed; files/version and independent hosted inspection not supplied. MT148–151, unrelated text negatives and short-blog commercial quality remain pending. This supersedes earlier basic visual pending claims only. Do not repeat the successful generation or basic visual checks. Documentation-only checkpoint adds no manual setup or field.
+
+
 ## Current checkpoint — 1.24 / P04.3.3.5
 
 Explicit founder-owner draft dispatch is implemented on the separate admin deployment at `/admin/generations`, default off. Private campaign outputs now show Blog/Pinterest/LinkedIn text, citations, advisory QA and owner-only versioned human review. Additive037 follows036; no provider request, hosted SQL, publishing or Vercel setting change was made. See [44 Draft pilot and human review](44_DRAFT_PILOT_AND_HUMAN_REVIEW.md). This block supersedes older current-state blocks, which remain historical.

@@ -1,5 +1,11 @@
 # Bizoveya user manual — prelaunch working edition
 
+## 2026-10-08 evolution update — planned direction
+
+Current usage: accepted campaign → Visual drafts → review/edit → Save visual drafts → local PNG/PDF export, per49. Founder reports the four requested checks passed; no repeat generation/setup is requested. Shared template picker, personal template creation, standalone LinkedIn image, hired/custom agents, voice meetings and animated rooms are planned and have no usable buttons yet. This documentation checkpoint adds no fields or manual setup. Follow50 for future scope, not operating instructions.
+
+See [50 Evolution record](50_EVOLUTION_TEMPLATES_AND_VISUAL_AGENCY.md) and [ADR-0017](decisions/ADR-0017-templates-and-event-driven-agency.md). Older dated contracts remain historical where superseded.
+
 ## Current visual checkpoint — 1.25 / P04.3.4.1 (2026-10-08 PKT)
 
 Founder confirmed the previous saved-draft/refresh/copy/generated-JSON checks and explicitly authorized proceeding. Record these narrow text-pilot checks as founder-reported passes; do not repeat generation. Other unevidenced access/conflict/mobile/unsaved-export tests and the short-blog quality finding remain open. This authorization permits visual implementation without claiming full P04.3.3 acceptance.

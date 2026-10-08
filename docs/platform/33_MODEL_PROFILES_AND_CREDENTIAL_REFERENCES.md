@@ -1,5 +1,10 @@
 # Model profiles and credential references
 
+## 2026-10-08 documented evolution
+
+Optional per-user ChatGPT subscription access remains a proposed provider route, dependent on actual hosted commercial eligibility, consent, protected token lifecycle/revocation and usage-limit handling. It is not image-generation support or a shared founder credential. No OAuth connection/model binding/key is implemented here. Template rendering needs no provider; image/voice capabilities require separate qualification. See50 for dated official references.
+
+
 ## Current contract — 1.19 / P04.3.2
 
 This update supersedes conflicting older “current” blocks below; historical records remain unchanged. Admin-only spending controls are at `/admin/spending` and `/api/admin/spending`. Migration032 follows031; never rerun applied migrations. New connectivity tests require reviewed USD pricing and enabled limits. The ledger reserves a conservative estimate before a provider call, settles reported usage, and holds uncertain/overrun charges until evidence-based reconciliation. Customer draft generation and publishing remain disabled. See [39 Spending controls](39_SPENDING_CONTROLS_AND_TESTING.md).

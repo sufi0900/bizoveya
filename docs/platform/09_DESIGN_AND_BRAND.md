@@ -1,5 +1,11 @@
 # Design, templates and brand
 
+## 2026-10-08 evolution update — planned direction
+
+Planned campaign visual families: headline, tip, checklist, comparison, quote and editorial/abstract, adapted where suitable to Pinterest, LinkedIn image/carousel. Personal templates and brand values are independent of shared catalog. Preview/export fidelity, overflow, contrast and reduced motion are acceptance criteria. Cartoon agency rooms remain optional future UI. Existing business-site templates are a separate catalog; variety does not prove unique artwork or audience conversion.
+
+See [50 Evolution record](50_EVOLUTION_TEMPLATES_AND_VISUAL_AGENCY.md) and [ADR-0017](decisions/ADR-0017-templates-and-event-driven-agency.md). Older dated contracts remain historical where superseded.
+
 ## Current contract — package1.16 / P02.5
 
 The initial new-website audience is freelancers, consultants and small digital-service agencies. Existing sites remain niche-independent registrations. P02.5 repairs Studio and adds owner-only permanent site-record removal: collapsible workspace navigation (collapsed on Studio entry), bounded independently scrolling panels, whole-card section selection, canvas-local selected-section scrolling, homepage Hero/FAQ placement rules, explicit legacy order repair, 120-character headline/320-character hero introduction with counters, bounded responsive photo frames with fitting/focus, optional shared HTTPS logo, sample-fill with confirmation/Undo, section navigation/mobile menu and focused Professional Practice/Creative Business styling. Shared rendering serves preview and existing snapshot publication. No silent legacy row rewrite or automatic sample save/publish.

@@ -1,5 +1,11 @@
 # System architecture
 
+## 2026-10-08 evolution update — planned direction
+
+Planned layers: authorized command intake → assistant plan → durable scoped specialist tasks → QA → approval → connector execution/readback. Visual office projects the same durable events; voice is another command input. Shared rendering consumes constrained versioned design specs. One broadcast decision fans out without per-agent listening calls. Preserve existing run snapshots, accounting, source review, tenant boundaries and safe-checkpoint semantics; no architecture is implemented by this document.
+
+See [50 Evolution record](50_EVOLUTION_TEMPLATES_AND_VISUAL_AGENCY.md) and [ADR-0017](decisions/ADR-0017-templates-and-event-driven-agency.md). Older dated contracts remain historical where superseded.
+
 ## Current checkpoint — 1.24 / P04.3.3.5
 
 Explicit founder-owner draft dispatch is implemented on the separate admin deployment at `/admin/generations`, default off. Private campaign outputs now show Blog/Pinterest/LinkedIn text, citations, advisory QA and owner-only versioned human review. Additive037 follows036; no provider request, hosted SQL, publishing or Vercel setting change was made. See [44 Draft pilot and human review](44_DRAFT_PILOT_AND_HUMAN_REVIEW.md). This block supersedes older current-state blocks, which remain historical.

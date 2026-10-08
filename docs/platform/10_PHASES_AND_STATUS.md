@@ -1,5 +1,11 @@
 # Implementation phases and status ledger
 
+## Current documentation checkpoint — 2026-10-08 PKT
+
+The founder reports completing the four requested visual setup/save/refresh/PNG/PDF checks and liking the results. Record MT145–147 as founder-reported passes, not independent hosted inspection; exact visual version, exported files and deployment receipts were not supplied. MT148–151 and unrelated text/access/negative/commercial-quality checks remain pending. Do not repeat accepted text generation or the confirmed visual checks.
+
+This delivery records discussions and planned architecture only. Source visual composer is [4f719f78](https://github.com/sufi0900/bizoveya/commit/4f719f78e1364101730d74529bb903dfee04556d); no new feature, SQL or provider integration is implemented here. Read [50 Evolution and agency roadmap](50_EVOLUTION_TEMPLATES_AND_VISUAL_AGENCY.md) and [ADR-0017](decisions/ADR-0017-templates-and-event-driven-agency.md). Next proposed slice is P04.3.4.2 template variety and standalone LinkedIn image; private reusable templates follow. Founder requested documentation before implementation. This block supersedes older conflicting next actions while preserving dated history.
+
 ## Current visual checkpoint — 1.25 / P04.3.4.1 (2026-10-08 PKT)
 
 Founder confirmed the previous saved-draft/refresh/copy/generated-JSON checks and explicitly authorized proceeding. Record these narrow text-pilot checks as founder-reported passes; do not repeat generation. Other unevidenced access/conflict/mobile/unsaved-export tests and the short-blog quality finding remain open. This authorization permits visual implementation without claiming full P04.3.3 acceptance.
@@ -328,6 +334,21 @@ Old P02 source delivery is not full commercial acceptance. Do not mark defects p
 | P04.3.1 Reviewed assignments | [x] implemented | [x] Founder reports MT095–101 passed2026-10-03 |
 | P04.3.2 Spending controls | [x] implemented1.19 | [ ] MT102–109 pending |
 | P04.3.3 Durable text draft workflow | [~] storage, bounded runtime, review and JSON export implemented | [~] live run, accepted review and refresh/copy/generated export founder-confirmed; remaining access/conflict and commercial quality pending; see49 |
-| P04.3.4 Pins/carousel exports | [~] two Pinterest layouts, six-slide carousel, versioned storage and PNG/PDF/JSON export1.25 | [ ]039 hosted setup and MT145–151 pending; see49 |
+| P04.3.4 Pins/carousel exports | [~] two Pinterest layouts, six-slide carousel, versioned storage and PNG/PDF/JSON export1.25 | [~] MT145–147 founder-reported passed; MT148–151 remain pending; see49/50 |
 
 P04.3 remains in progress. These statuses supersede older planned rows; source completion is not whole-phase acceptance.
+
+## Planned evolution substeps — documentation only
+
+| Substep | Status | Scope / dependency |
+|---|---|---|
+| P04.3.4.2 | [ ] planned next | Shared visual templates and standalone LinkedIn image; preserve v1 records/review/fit/export |
+| P04.3.4.3 | [ ] planned | Private reusable template inventory, ownership and immutable versions |
+| P04.3.4.4 | [ ] gated | Media upload, constrained AI design specs and optional qualified artwork provider |
+| P04.6 | [ ] planned | Founder assistant/HR, analyst and checked specialist hiring; durable delegation |
+| P06.1 | [ ] planned | Announcement broadcast / bounded deliberation and safe interrupts |
+| P06.2 | [ ] gated | Voice commands with consent and text/permission parity |
+| P06.3 | [ ] planned | Real-event visual office and meeting projection with task-list fallback |
+| P04.7 | [ ] planned | Private configured custom agents using permitted evaluated tools |
+
+Existing grand P00–P12 remain unchanged in acceptance. P05/P07 publishing and P11 commercial gates still apply. See50 for requirements, sequence and exit evidence. Documentation is completed before any next-slice implementation.
