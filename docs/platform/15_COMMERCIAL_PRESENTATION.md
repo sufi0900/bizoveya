@@ -1,5 +1,10 @@
 # Bizoveya presentation content inside the document room
 
+## 1.26 implemented source update
+
+Shared template selection and standalone LinkedIn image are now source-implemented, pending founder acceptance. Private reusable templates, subscription-backed inference, AI artwork and voice office remain future. No automatic customer publication or unlimited/unique-artwork promise. See [51](51_VISUAL_TEMPLATES_AND_LINKEDIN_IMAGE.md). Earlier dated contracts retain history.
+
+
 ## 2026-10-08 evolution update — planned direction
 
 Position the long-term concept as a proposed founder-led digital agency with private reusable design assets and transparent workflows. Only private text generation and current visual composition are demonstrated. Do not market voice office, autonomous hiring, subscription-backed images, automatic publishing, unlimited credits or guaranteed visual uniqueness as available. Commercial gates include outstanding account/conflict/mobile checks, short-blog depth, fresh-user usability, measured cost and support/privacy policies.

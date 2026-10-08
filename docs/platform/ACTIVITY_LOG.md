@@ -566,3 +566,7 @@ No hosted SQL was applied, provider called, deployment setting changed or custom
 ### BZ-071 — 2026-10-08 PKT — Founder visual confirmation and agency evolution discussions
 
 Founder reports the four visual steps passed and likes the result. Subsequent discussion separates deterministic graphics from generated artwork, asks about Plus access, and proposes private reusable AI templates, hired/custom agents, founder assistant/HR, analyst, voice, truthful cartoon rooms, QA queues, approval/recovery and broadcast meetings. Founder14:58PKT requests all affected documentation before implementation. Guide50 and ADR0017 record attribution, dependency gates and research limits; MT145–147 reported passed, MT148–151 and commercial blog depth remain open. Source main4f719f78/branches/PR2/no lease inspected; no AGENTS present; baseline blobs verified. Documentation only, no new SQL/provider/credentials/publication/feature implementation.
+
+### BZ-072 — 2026-10-08 PKT — Shared visual templates and LinkedIn image implementation
+
+Founder authorized next slice and ongoing documentation. Resolved mainbeec85c5; inspected branches/PR2/no lease/no AGENTS and restored lockfile dependencies. Implemented1.26/P04.3.4.2 four shared designs, explicit v1 editable upgrade, square LinkedIn preview/PNG, strict v2 storage040 preserving prior rows/history. Guide51 supplies four simple checks and all new field samples; MT152–155 pending. No model/hosted SQL/publishing/Vercel settings change; private reusable templates remain later.

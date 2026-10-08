@@ -1,5 +1,12 @@
 # Bizoveya continuation checkpoint
 
+## Current template checkpoint — 1.26 / P04.3.4.2
+
+Shared Classic card, Midnight card, Editorial frame and Bold headline designs are implemented for two Pinterest graphics, the six-slide carousel and a new1080×1080 LinkedIn image. Selection changes design only; it does not regenerate text or call a provider. Existing saved v1 scenes/history stay intact. Owner explicitly adds templates/LinkedIn image, reviews and saves a v2 document as a new visual version. Additive040 after039 extends strict validation while retaining original access/source-review/conflict/no-op/version limits. No existing migration/row/history is rewritten.
+
+Founder earlier MT145–147 remain reported passed. New MT152–155 and older MT148–151/unevidenced negatives/commercial blog depth remain pending. [51 Template selection and testing](51_VISUAL_TEMPLATES_AND_LINKEDIN_IMAGE.md) has four steps and every new field sample. No new key/environment/provider/integration/publishing. Personal reusable templates, AI artwork, voice/office/custom agents remain planned in50. Next: founder template/save/refresh/export checks; then separately scope P04.3.4.3 ownership/version contracts, not automatic implementation. This latest block supersedes older current instructions while preserving discussion history.
+
+
 ## Current documentation checkpoint — 2026-10-08 PKT
 
 The founder reports completing the four requested visual setup/save/refresh/PNG/PDF checks and liking the results. Record MT145–147 as founder-reported passes, not independent hosted inspection; exact visual version, exported files and deployment receipts were not supplied. MT148–151 and unrelated text/access/negative/commercial-quality checks remain pending. Do not repeat accepted text generation or the confirmed visual checks.
@@ -154,3 +161,12 @@ Resolved remote main4f719f78e1364101730d74529bb903dfee04556d; tree4a627cd28fa096
 Completed: local Markdown link checks across affected files, unchanged real activity/work/phase projection parsers (BZ071/CW071 and13 grand phases), discovery/title checks for50/ADR0017, application boundaries, whitespace and documentation-only source scope. All882 baseline remote blobs matched before editing. No runtime, migration, package or dependency changes.
 
 Not rerun: full web production build and document-room Vitest suite. The previous session dependency symlinks point to an unavailable cached checkout; Next.js/Vitest modules cannot be resolved. Earlier490-test/both-build evidence remains historical source4f719f78 evidence, not a new test result. Actual deployed document-room rendering remains unverified. No new founder setup, field or feature test is required; an optional deployed documentation read is sufficient. No active lease.
+
+
+## 1.26 / P04.3.4.2 completed automated verification
+
+359 web tests across63 files and137 admin tests across14 files passed (496 total). Both typechecks, targeted campaign ESLint, application boundaries and whitespace checks passed. Both production builds passed: web107 static pages including51/ADR0017; admin10. Only non-blocking cache serialization warnings observed. No runtime dependency or lockfile change. Previous unavailable dependency cache was restored from existing manifests/locks.
+
+Local ephemeral PGlite applied40 migrations;037/039/040 assertions passed, including039 before and after040 to exercise validator upgrade compatibility (four assertion executions). Local shared-scene render verified9 output scenes plus36 template/format combinations; design sheet visually inspected; strict PDF parser confirmed six540×675-point pages. Mocked Canvas tests cover new square dimensions/provenance. This does not prove browser downloads, real concurrency, Supabase PostgREST or hosted040.
+
+Founder MT152–155 remain pending; earlier MT145–147 founder-reported passed. Other pending negatives/access/mobile and commercial blog depth remain open. No hosted SQL, provider request, paid operation, deployment setting change or customer publication. Exact commit follows expected-head non-force delivery frombeec85c5. No active checkpoint lease at handoff.

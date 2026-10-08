@@ -4,11 +4,21 @@ import {canAcceptOutput,type OutputRecord} from './output-contracts';
 const text=(max:number)=>z.string().trim().min(1).max(max).refine(value=>!/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(value),'Remove hidden control characters.');
 const pin=z.object({title:text(120),body:text(600)}).strict();
 const slide=z.object({title:text(100),body:text(420)}).strict();
-export const visualDocumentSchema=z.object({
+export const visualDocumentV1Schema=z.object({
  schema:z.literal('campaign-visuals-v1'),
  brand:z.object({name:text(60),accent:z.string().regex(/^#[0-9a-fA-F]{6}$/,'Use a six-digit hex color.'),footer:text(100)}).strict(),
  pins:z.tuple([pin,pin]),slides:z.array(slide).length(6),
 }).strict();
+export const visualTemplateIds=['classic','midnight','editorial','headline'] as const;
+export const visualTemplates=[{id:'classic',name:'Classic card'},{id:'midnight',name:'Midnight card'},{id:'editorial',name:'Editorial frame'},{id:'headline',name:'Bold headline'}] as const;
+const templateId=z.enum(visualTemplateIds);
+export const visualDocumentV2Schema=visualDocumentV1Schema.extend({schema:z.literal('campaign-visuals-v2'),templates:z.object({pins:z.tuple([templateId,templateId]),carousel:templateId,linkedin:templateId}).strict(),linkedin:slide}).strict();
+export const visualDocumentSchema=z.discriminatedUnion('schema',[visualDocumentV1Schema,visualDocumentV2Schema]);
+export type VisualDocumentV2=z.infer<typeof visualDocumentV2Schema>;
+export function upgradeVisuals(document:VisualDocument):VisualDocumentV2 {
+ if(document.schema==='campaign-visuals-v2')return document;
+ return {...document,schema:'campaign-visuals-v2',templates:{pins:['classic','midnight'],carousel:'classic',linkedin:'headline'},linkedin:{...document.slides[0]}};
+}
 export type VisualDocument=z.infer<typeof visualDocumentSchema>;
 const revisionSchema=z.object({version:z.number().int().positive(),sourceReviewVersion:z.number().int().positive(),document:visualDocumentSchema,occurredAt:z.string()}).strict();
 export const visualRecordSchema=z.object({generationId:z.uuid(),version:z.number().int().positive(),sourceReviewVersion:z.number().int().positive(),document:visualDocumentSchema,updatedAt:z.string(),revisions:z.array(revisionSchema).max(50)}).strict();

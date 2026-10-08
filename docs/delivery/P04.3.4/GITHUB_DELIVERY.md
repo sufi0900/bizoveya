@@ -1,5 +1,10 @@
 # P04.3.4.1 private visual composition delivery
 
+## Current1.26/P04.3.4.2 source checkpoint
+
+Remote parentbeec85c5aa63adaa7330b98aacbd854de6752bef; unchanged history/migrations retained. Shared templates and standalone LinkedIn image implemented; see51 for setup040 and four checks/all field samples. Exact commit follows verified expected-head non-force main delivery. MT152–155 pending; basic earlier visual tests founder-reported passed only. No active lease, stale branch, hosted SQL/provider/paid request/settings/customer publication. Private reusable templates and visual agency remain later.
+
+
 ## 2026-10-08 documentation handoff
 
 Founder basic visual MT145–147 reported passed; unrelated MT148–151/text negatives and commercial blog depth pending. Documentation-only guide50/ADR0017 records discussions and proposed next template slice; no next feature or provider integration implemented. Latest continuation supersedes historical next steps. No repeat accepted generation or hosted SQL is requested.
@@ -23,3 +28,12 @@ Verified coherent delivery uses an expected-head non-force update to main after 
 - Eight shared scenes rendered to their expected PNG dimensions. Independent strict PDF parsing and rasterization confirmed six pages, each 540×675 points, embedding 1080×1350 JPEGs. Browser Canvas is covered by mocks; actual founder downloads remain pending.
 
 No hosted SQL was applied, provider called, deployment setting changed or customer content published. MT145–151 remain pending founder/hosted/browser checks. Earlier founder-confirmed text persistence/copy/generated JSON checks remain recorded as passed; commercial blog depth and unrelated text negatives remain open. No active checkpoint lease at handoff.
+
+
+## 1.26 / P04.3.4.2 completed automated verification
+
+359 web tests across63 files and137 admin tests across14 files passed (496 total). Both typechecks, targeted campaign ESLint, application boundaries and whitespace checks passed. Both production builds passed: web107 static pages including51/ADR0017; admin10. Only non-blocking cache serialization warnings observed. No runtime dependency or lockfile change. Previous unavailable dependency cache was restored from existing manifests/locks.
+
+Local ephemeral PGlite applied40 migrations;037/039/040 assertions passed, including039 before and after040 to exercise validator upgrade compatibility (four assertion executions). Local shared-scene render verified9 output scenes plus36 template/format combinations; design sheet visually inspected; strict PDF parser confirmed six540×675-point pages. Mocked Canvas tests cover new square dimensions/provenance. This does not prove browser downloads, real concurrency, Supabase PostgREST or hosted040.
+
+Founder MT152–155 remain pending; earlier MT145–147 founder-reported passed. Other pending negatives/access/mobile and commercial blog depth remain open. No hosted SQL, provider request, paid operation, deployment setting change or customer publication. Exact commit follows expected-head non-force delivery frombeec85c5. No active checkpoint lease at handoff.

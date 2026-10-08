@@ -1,5 +1,12 @@
 # Bizoveya user manual — prelaunch working edition
 
+## Current template checkpoint — 1.26 / P04.3.4.2
+
+Shared Classic card, Midnight card, Editorial frame and Bold headline designs are implemented for two Pinterest graphics, the six-slide carousel and a new1080×1080 LinkedIn image. Selection changes design only; it does not regenerate text or call a provider. Existing saved v1 scenes/history stay intact. Owner explicitly adds templates/LinkedIn image, reviews and saves a v2 document as a new visual version. Additive040 after039 extends strict validation while retaining original access/source-review/conflict/no-op/version limits. No existing migration/row/history is rewritten.
+
+Founder earlier MT145–147 remain reported passed. New MT152–155 and older MT148–151/unevidenced negatives/commercial blog depth remain pending. [51 Template selection and testing](51_VISUAL_TEMPLATES_AND_LINKEDIN_IMAGE.md) has four steps and every new field sample. No new key/environment/provider/integration/publishing. Personal reusable templates, AI artwork, voice/office/custom agents remain planned in50. Next: founder template/save/refresh/export checks; then separately scope P04.3.4.3 ownership/version contracts, not automatic implementation. This latest block supersedes older current instructions while preserving discussion history.
+
+
 ## 2026-10-08 evolution update — planned direction
 
 Current usage: accepted campaign → Visual drafts → review/edit → Save visual drafts → local PNG/PDF export, per49. Founder reports the four requested checks passed; no repeat generation/setup is requested. Shared template picker, personal template creation, standalone LinkedIn image, hired/custom agents, voice meetings and animated rooms are planned and have no usable buttons yet. This documentation checkpoint adds no fields or manual setup. Follow50 for future scope, not operating instructions.

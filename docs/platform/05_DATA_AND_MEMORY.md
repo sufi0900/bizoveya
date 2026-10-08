@@ -1,5 +1,10 @@
 # Data, schema and memory
 
+## 1.26 implemented source update
+
+v2 document stores schema, existing brand/pins/slides plus templates {pins[2],carousel,linkedin} and linkedin {title,body}. Existing visual/revision tables store it without rewriting v1 rows. Histories parse both versions. No personal template definition, credential or asset store introduced. See [51](51_VISUAL_TEMPLATES_AND_LINKEDIN_IMAGE.md). Earlier dated contracts retain history.
+
+
 ## 2026-10-08 evolution update — planned direction
 
 Future records: creator-owned template definition/version, authorized-use scope, artifact pinned template/source/brand versions, agent catalog and personal configuration, task/lease/event, meeting transcript/decision/update version/acknowledgement and follow-up tasks. Default personal templates stay private even in shared workspaces. Do not store secrets in prompts/events; approve knowledge/preferences separately. Retention, deletion dependencies and private export need explicit schema design before implementation.

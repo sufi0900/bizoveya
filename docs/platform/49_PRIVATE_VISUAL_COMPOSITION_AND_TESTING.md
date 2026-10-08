@@ -1,5 +1,12 @@
 # Private visual composition and testing
 
+## Current template checkpoint — 1.26 / P04.3.4.2
+
+Shared Classic card, Midnight card, Editorial frame and Bold headline designs are implemented for two Pinterest graphics, the six-slide carousel and a new1080×1080 LinkedIn image. Selection changes design only; it does not regenerate text or call a provider. Existing saved v1 scenes/history stay intact. Owner explicitly adds templates/LinkedIn image, reviews and saves a v2 document as a new visual version. Additive040 after039 extends strict validation while retaining original access/source-review/conflict/no-op/version limits. No existing migration/row/history is rewritten.
+
+Founder earlier MT145–147 remain reported passed. New MT152–155 and older MT148–151/unevidenced negatives/commercial blog depth remain pending. [51 Template selection and testing](51_VISUAL_TEMPLATES_AND_LINKEDIN_IMAGE.md) has four steps and every new field sample. No new key/environment/provider/integration/publishing. Personal reusable templates, AI artwork, voice/office/custom agents remain planned in50. Next: founder template/save/refresh/export checks; then separately scope P04.3.4.3 ownership/version contracts, not automatic implementation. This latest block supersedes older current instructions while preserving discussion history.
+
+
 ## Current documentation checkpoint — 2026-10-08 PKT
 
 The founder reports completing the four requested visual setup/save/refresh/PNG/PDF checks and liking the results. Record MT145–147 as founder-reported passes, not independent hosted inspection; exact visual version, exported files and deployment receipts were not supplied. MT148–151 and unrelated text/access/negative/commercial-quality checks remain pending. Do not repeat accepted text generation or the confirmed visual checks.

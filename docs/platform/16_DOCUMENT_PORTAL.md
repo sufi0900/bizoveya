@@ -1,5 +1,10 @@
 # In-app Bizoveya document room
 
+## 1.26 implemented source update
+
+Guide51 and latest BZ072/CW072 are canonical Markdown discovered by the main document room. Latest phase/status and release tables project1.26; future private office remains distinct. Built projection verification is recorded in continuation. See [51](51_VISUAL_TEMPLATES_AND_LINKEDIN_IMAGE.md). Earlier dated contracts retain history.
+
+
 ## 2026-10-08 documentation projection
 
 New guide50 and ADR0017 are discovered by the existing canonical Markdown reader; BZ071/CW071 project through the unchanged activity/work parsers. The roadmap includes a Mermaid workflow diagram. Future private visual office is distinct from this public project document portal and is not implemented. Source version remains1.25.0.

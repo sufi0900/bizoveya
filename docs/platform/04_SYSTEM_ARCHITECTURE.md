@@ -1,5 +1,10 @@
 # System architecture
 
+## 1.26 implemented source update
+
+Current composer reads v1/v2 documents. v2 pins per-output template IDs and standalone text; shared scene powers preview/export.040 validates exact shape/IDs via preserved v1 helper and original validator identity. Existing run/ownership/review/version locks remain. This is fixed shared catalog selection, not generated arbitrary designs. See [51](51_VISUAL_TEMPLATES_AND_LINKEDIN_IMAGE.md). Earlier dated contracts retain history.
+
+
 ## 2026-10-08 evolution update — planned direction
 
 Planned layers: authorized command intake → assistant plan → durable scoped specialist tasks → QA → approval → connector execution/readback. Visual office projects the same durable events; voice is another command input. Shared rendering consumes constrained versioned design specs. One broadcast decision fans out without per-agent listening calls. Preserve existing run snapshots, accounting, source review, tenant boundaries and safe-checkpoint semantics; no architecture is implemented by this document.

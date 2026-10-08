@@ -1,5 +1,10 @@
 # Requirements register
 
+## 1.26 implemented source update
+
+P04.3.4.2 implements four shared campaign visual designs and a square LinkedIn image, preserving v1 outputs and original text. New requirements are source-delivered, founder MT152–155 pending; private template inventory remains planned. See [51](51_VISUAL_TEMPLATES_AND_LINKEDIN_IMAGE.md). Earlier dated contracts retain history.
+
+
 ## 2026-10-08 evolution update — planned direction
 
 Planned requirements: shared visual catalog; private creator-owned reusable templates; immutable template/artifact versions; standalone LinkedIn image; validated AI design specifications; scoped agent inventory; assistant delegation; broadcast/deliberative meetings; voice/text parity; truthful cartoon-room states; safe pauses, QA/approval separation and bounded escalation. Trace acceptance per slice in50; none are implemented by this documentation update.

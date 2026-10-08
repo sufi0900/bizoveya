@@ -211,3 +211,7 @@ Private campaign draft persistence added; source checkpoint only, no AI executio
 ## 2026-10-08 — documentation evolution checkpoint
 
 Recorded founder basic visual acceptance, template/private inventory direction, optional subscription research limits, assistant/HR/analyst, custom agents, voice/event-driven rooms and broadcast meetings. Added50/ADR0017 and updated affected contracts/phase gates. Source version remains1.25.0; no runtime feature, SQL or dependency change.
+
+## 1.26 / P04.3.4.2
+
+Four shared visual templates across Pinterest/carousel/LinkedIn square. Explicit v1 upgrade/edit/save, retained history, new square PNG. Additive040 strict validation; no provider or publishing. Updated affected docs/activity/phases/manual/testing; guide51.

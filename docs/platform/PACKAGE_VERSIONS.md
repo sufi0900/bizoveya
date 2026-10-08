@@ -206,3 +206,5 @@ GitHub1.19 source commit: `e05aaede9d191ae63f5b687bbd3d57080f18f281`; draft PR h
 | Version / phase | Delivery locator | Scope | Acceptance |
 |---|---|---|---|
 | 1.25 / P04.3.4.1 | `GitHub:main P04.3.4.1` | Private versioned visual composer, two Pinterest layouts, six slides, PNG/PDF/JSON; additive039 | Local checks recorded in delivery; hosted/founder pending |
+
+| 1.26 / P04.3.4.2 | `GitHub:main P04.3.4.2` | Shared visual templates and LinkedIn square | Verification recorded in delivery; founder MT152–155 pending |

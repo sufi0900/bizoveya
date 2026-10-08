@@ -220,3 +220,16 @@ No hosted SQL was applied, provider called, deployment setting changed or custom
 Completed: local Markdown link checks across affected files, unchanged real activity/work/phase projection parsers (BZ071/CW071 and13 grand phases), discovery/title checks for50/ADR0017, application boundaries, whitespace and documentation-only source scope. All882 baseline remote blobs matched before editing. No runtime, migration, package or dependency changes.
 
 Not rerun: full web production build and document-room Vitest suite. The previous session dependency symlinks point to an unavailable cached checkout; Next.js/Vitest modules cannot be resolved. Earlier490-test/both-build evidence remains historical source4f719f78 evidence, not a new test result. Actual deployed document-room rendering remains unverified. No new founder setup, field or feature test is required; an optional deployed documentation read is sufficient. No active lease.
+
+| Record | Result | Evidence and limits |
+|---|---|---|
+| CW-072 | Four shared visual templates, v1-compatible saved v2 compositions and standalone LinkedIn image |1.26/P04.3.4.2; additive040; source verification in delivery; MT152–155 hosted/browser pending; no provider/publication |
+
+
+## 1.26 / P04.3.4.2 completed automated verification
+
+359 web tests across63 files and137 admin tests across14 files passed (496 total). Both typechecks, targeted campaign ESLint, application boundaries and whitespace checks passed. Both production builds passed: web107 static pages including51/ADR0017; admin10. Only non-blocking cache serialization warnings observed. No runtime dependency or lockfile change. Previous unavailable dependency cache was restored from existing manifests/locks.
+
+Local ephemeral PGlite applied40 migrations;037/039/040 assertions passed, including039 before and after040 to exercise validator upgrade compatibility (four assertion executions). Local shared-scene render verified9 output scenes plus36 template/format combinations; design sheet visually inspected; strict PDF parser confirmed six540×675-point pages. Mocked Canvas tests cover new square dimensions/provenance. This does not prove browser downloads, real concurrency, Supabase PostgREST or hosted040.
+
+Founder MT152–155 remain pending; earlier MT145–147 founder-reported passed. Other pending negatives/access/mobile and commercial blog depth remain open. No hosted SQL, provider request, paid operation, deployment setting change or customer publication. Exact commit follows expected-head non-force delivery frombeec85c5. No active checkpoint lease at handoff.

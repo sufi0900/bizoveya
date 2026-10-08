@@ -1,5 +1,10 @@
 # Verification, manual acceptance and release evidence
 
+## 1.26 implemented source update
+
+1.26 verification adds v1/v2 compatibility, template allowlist/word preservation, square dimensions/overflow, real local raster rendering of all template formats and SQL save/history/no-op/access/source-review cases. Actual browser/export/040 hosted results are MT152–155 pending; final executed check results are in continuation/delivery. See [51](51_VISUAL_TEMPLATES_AND_LINKEDIN_IMAGE.md). Earlier dated contracts retain history.
+
+
 ## 2026-10-08 evolution update — planned direction
 
 Future verification must distinguish definition/artifact version preservation, cross-user personal-template denial, shared catalog access, source-review/fit/export fidelity, replay/reconnect office truth, safe meeting interrupts, voice/text authorization parity and idempotent connector recovery. Basic visual MT145–147 are now founder-reported passes; MT148–151 remain pending. Previous490 tests/both builds belong to4f719f78. Documentation checks for this checkpoint are reported separately.

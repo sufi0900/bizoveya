@@ -1,5 +1,12 @@
 # Implementation phases and status ledger
 
+## Current template checkpoint — 1.26 / P04.3.4.2
+
+Shared Classic card, Midnight card, Editorial frame and Bold headline designs are implemented for two Pinterest graphics, the six-slide carousel and a new1080×1080 LinkedIn image. Selection changes design only; it does not regenerate text or call a provider. Existing saved v1 scenes/history stay intact. Owner explicitly adds templates/LinkedIn image, reviews and saves a v2 document as a new visual version. Additive040 after039 extends strict validation while retaining original access/source-review/conflict/no-op/version limits. No existing migration/row/history is rewritten.
+
+Founder earlier MT145–147 remain reported passed. New MT152–155 and older MT148–151/unevidenced negatives/commercial blog depth remain pending. [51 Template selection and testing](51_VISUAL_TEMPLATES_AND_LINKEDIN_IMAGE.md) has four steps and every new field sample. No new key/environment/provider/integration/publishing. Personal reusable templates, AI artwork, voice/office/custom agents remain planned in50. Next: founder template/save/refresh/export checks; then separately scope P04.3.4.3 ownership/version contracts, not automatic implementation. This latest block supersedes older current instructions while preserving discussion history.
+
+
 ## Current documentation checkpoint — 2026-10-08 PKT
 
 The founder reports completing the four requested visual setup/save/refresh/PNG/PDF checks and liking the results. Record MT145–147 as founder-reported passes, not independent hosted inspection; exact visual version, exported files and deployment receipts were not supplied. MT148–151 and unrelated text/access/negative/commercial-quality checks remain pending. Do not repeat accepted text generation or the confirmed visual checks.
@@ -334,7 +341,7 @@ Old P02 source delivery is not full commercial acceptance. Do not mark defects p
 | P04.3.1 Reviewed assignments | [x] implemented | [x] Founder reports MT095–101 passed2026-10-03 |
 | P04.3.2 Spending controls | [x] implemented1.19 | [ ] MT102–109 pending |
 | P04.3.3 Durable text draft workflow | [~] storage, bounded runtime, review and JSON export implemented | [~] live run, accepted review and refresh/copy/generated export founder-confirmed; remaining access/conflict and commercial quality pending; see49 |
-| P04.3.4 Pins/carousel exports | [~] two Pinterest layouts, six-slide carousel, versioned storage and PNG/PDF/JSON export1.25 | [~] MT145–147 founder-reported passed; MT148–151 remain pending; see49/50 |
+| P04.3.4 Pins/carousel exports | [~] four shared templates, Pinterest/carousel/LinkedIn square, versioned storage and PNG/PDF/JSON export1.26 | [~] MT145–147 founder-reported passed; MT148–151 and new MT152–155 remain pending; see51 |
 
 P04.3 remains in progress. These statuses supersede older planned rows; source completion is not whole-phase acceptance.
 
@@ -342,7 +349,7 @@ P04.3 remains in progress. These statuses supersede older planned rows; source c
 
 | Substep | Status | Scope / dependency |
 |---|---|---|
-| P04.3.4.2 | [ ] planned next | Shared visual templates and standalone LinkedIn image; preserve v1 records/review/fit/export |
+| P04.3.4.2 | [~] source implemented1.26 | Four shared designs and LinkedIn square; MT152–155 pending; preserve v1 records/review/fit/export |
 | P04.3.4.3 | [ ] planned | Private reusable template inventory, ownership and immutable versions |
 | P04.3.4.4 | [ ] gated | Media upload, constrained AI design specs and optional qualified artwork provider |
 | P04.6 | [ ] planned | Founder assistant/HR, analyst and checked specialist hiring; durable delegation |

@@ -1,5 +1,12 @@
 # Evolution record: templates, voice and the visual digital agency
 
+## Current template checkpoint — 1.26 / P04.3.4.2
+
+Shared Classic card, Midnight card, Editorial frame and Bold headline designs are implemented for two Pinterest graphics, the six-slide carousel and a new1080×1080 LinkedIn image. Selection changes design only; it does not regenerate text or call a provider. Existing saved v1 scenes/history stay intact. Owner explicitly adds templates/LinkedIn image, reviews and saves a v2 document as a new visual version. Additive040 after039 extends strict validation while retaining original access/source-review/conflict/no-op/version limits. No existing migration/row/history is rewritten.
+
+Founder earlier MT145–147 remain reported passed. New MT152–155 and older MT148–151/unevidenced negatives/commercial blog depth remain pending. [51 Template selection and testing](51_VISUAL_TEMPLATES_AND_LINKEDIN_IMAGE.md) has four steps and every new field sample. No new key/environment/provider/integration/publishing. Personal reusable templates, AI artwork, voice/office/custom agents remain planned in50. Next: founder template/save/refresh/export checks; then separately scope P04.3.4.3 ownership/version contracts, not automatic implementation. This latest block supersedes older current instructions while preserving discussion history.
+
+
 Documentation checkpoint: 2026-10-08 PKT. Founder ideas and assistant recommendations are distinguished below. This is a design/roadmap record, not a feature release, performance claim or permission to publish. Implementation remains unchanged from main 4f719f78.
 
 ## Discussion-by-discussion trace
