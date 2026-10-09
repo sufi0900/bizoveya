@@ -1,5 +1,10 @@
 # Stack, provider policy and security
 
+## Optional ChatGPT reasoning — 2026-10-09 UTC
+
+See [52 ChatGPT plan reasoning](52_CHATGPT_PLAN_REASONING.md). Hosted commercial access is blocked pending an approved registration; per-user OAuth, consent, protected tokens, revocation, usage limits, transport compatibility and denial tests precede activation. No new setup or live test required by this documentation delivery; MT152–155 and unrelated founder checks remain pending. Never paste ChatGPT passwords/cookies/tokens or share the founder subscription with customers.
+
+
 ## 2026-10-08 evolution update — planned direction
 
 For future template/agency slices: enforce personal ownership independently of workspace membership; constrain renderer nodes/fonts/assets and reject executable template input; protected credential storage and per-user revocation; no credential sharing or automatic paid fallback. Rooms redact secrets/private prompts. Voice and agent configuration cannot bypass server authorization. Test cross-user/template/version boundaries before launch; no new package or security control was installed here.

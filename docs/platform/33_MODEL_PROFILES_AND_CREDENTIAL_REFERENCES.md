@@ -1,5 +1,10 @@
 # Model profiles and credential references
 
+## ChatGPT reasoning research checkpoint — 2026-10-09 UTC
+
+Founder requests a selectable personal Plus-backed reasoning/text option. Official Sign in with ChatGPT supports eligible plan usage, but hosted Bizoveya needs commercial access; no approved client is evidenced. Recorded as planned/blocked, not a working provider. Separate per-user OAuth, account-specific models, streaming transport and subscription accounting are prerequisites; current platform-key adapter is not interchangeable. See [52 ChatGPT plan reasoning](52_CHATGPT_PLAN_REASONING.md) for sources, ordered scope and four simple founder steps. No new field, key, SQL or live test now. Source remains1.26; MT152–155 and unrelated pending tests remain pending; no accepted generation repeated. This is a documentation checkpoint, not phase completion.
+
+
 ## 2026-10-08 documented evolution
 
 Optional per-user ChatGPT subscription access remains a proposed provider route, dependent on actual hosted commercial eligibility, consent, protected token lifecycle/revocation and usage-limit handling. It is not image-generation support or a shared founder credential. No OAuth connection/model binding/key is implemented here. Template rendering needs no provider; image/voice capabilities require separate qualification. See50 for dated official references.

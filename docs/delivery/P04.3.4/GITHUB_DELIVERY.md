@@ -1,5 +1,10 @@
 # P04.3.4.1 private visual composition delivery
 
+## ChatGPT reasoning research checkpoint — 2026-10-09 UTC
+
+Founder requests a selectable personal Plus-backed reasoning/text option. Official Sign in with ChatGPT supports eligible plan usage, but hosted Bizoveya needs commercial access; no approved client is evidenced. Recorded as planned/blocked, not a working provider. Separate per-user OAuth, account-specific models, streaming transport and subscription accounting are prerequisites; current platform-key adapter is not interchangeable. See [52 ChatGPT plan reasoning](../../platform/52_CHATGPT_PLAN_REASONING.md) for sources, ordered scope and four simple founder steps. No new field, key, SQL or live test now. Source remains1.26; MT152–155 and unrelated pending tests remain pending; no accepted generation repeated. This is a documentation checkpoint, not phase completion.
+
+
 ## Current1.26/P04.3.4.2 source checkpoint
 
 Remote parentbeec85c5aa63adaa7330b98aacbd854de6752bef; unchanged history/migrations retained. Shared templates and standalone LinkedIn image implemented; see51 for setup040 and four checks/all field samples. Exact commit follows verified expected-head non-force main delivery. MT152–155 pending; basic earlier visual tests founder-reported passed only. No active lease, stale branch, hosted SQL/provider/paid request/settings/customer publication. Private reusable templates and visual agency remain later.
@@ -37,3 +42,5 @@ No hosted SQL was applied, provider called, deployment setting changed or custom
 Local ephemeral PGlite applied40 migrations;037/039/040 assertions passed, including039 before and after040 to exercise validator upgrade compatibility (four assertion executions). Local shared-scene render verified9 output scenes plus36 template/format combinations; design sheet visually inspected; strict PDF parser confirmed six540×675-point pages. Mocked Canvas tests cover new square dimensions/provenance. This does not prove browser downloads, real concurrency, Supabase PostgREST or hosted040.
 
 Founder MT152–155 remain pending; earlier MT145–147 founder-reported passed. Other pending negatives/access/mobile and commercial blog depth remain open. No hosted SQL, provider request, paid operation, deployment setting change or customer publication. Exact commit follows expected-head non-force delivery frombeec85c5. No active checkpoint lease at handoff.
+
+Verification for BZ-073/CW-073: 10 document-room tests passed, affected Markdown links/discovery and whitespace passed, web production build passed and guide52 HTML was generated. Runtime/admin/SQL tests not rerun for this documentation-only change; earlier496-test evidence remains historical. Hosted OAuth/inference and founder document-room read remain pending. No active checkpoint lease.

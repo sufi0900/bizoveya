@@ -233,3 +233,7 @@ Not rerun: full web production build and document-room Vitest suite. The previou
 Local ephemeral PGlite applied40 migrations;037/039/040 assertions passed, including039 before and after040 to exercise validator upgrade compatibility (four assertion executions). Local shared-scene render verified9 output scenes plus36 template/format combinations; design sheet visually inspected; strict PDF parser confirmed six540×675-point pages. Mocked Canvas tests cover new square dimensions/provenance. This does not prove browser downloads, real concurrency, Supabase PostgREST or hosted040.
 
 Founder MT152–155 remain pending; earlier MT145–147 founder-reported passed. Other pending negatives/access/mobile and commercial blog depth remain open. No hosted SQL, provider request, paid operation, deployment setting change or customer publication. Exact commit follows expected-head non-force delivery frombeec85c5. No active checkpoint lease at handoff.
+
+| CW-073 | Official Plus reasoning research and documented integration scope | Guide52; hosted commercial registration blocked, runtime integration and founder checks pending; no provider call |
+
+Verification for BZ-073/CW-073: 10 document-room tests passed, affected Markdown links/discovery and whitespace passed, web production build passed and guide52 HTML was generated. Runtime/admin/SQL tests not rerun for this documentation-only change; earlier496-test evidence remains historical. Hosted OAuth/inference and founder document-room read remain pending. No active checkpoint lease.

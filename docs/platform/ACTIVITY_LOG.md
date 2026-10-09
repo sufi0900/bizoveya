@@ -570,3 +570,9 @@ Founder reports the four visual steps passed and likes the result. Subsequent di
 ### BZ-072 — 2026-10-08 PKT — Shared visual templates and LinkedIn image implementation
 
 Founder authorized next slice and ongoing documentation. Resolved mainbeec85c5; inspected branches/PR2/no lease/no AGENTS and restored lockfile dependencies. Implemented1.26/P04.3.4.2 four shared designs, explicit v1 editable upgrade, square LinkedIn preview/PNG, strict v2 storage040 preserving prior rows/history. Guide51 supplies four simple checks and all new field samples; MT152–155 pending. No model/hosted SQL/publishing/Vercel settings change; private reusable templates remain later.
+
+### BZ-073 — 2026-10-09 UTC — Plus reasoning research and access gate
+
+Founder requests subscription-backed reasoning as an optional provider. Rechecked official SIWC/local/commercial/model/preview/user docs; inspected current maina64ba9ff, historical branches/PR2, continuation/dependencies/runtime and all889 baseline blobs; no AGENTS or active lease. Guide52 records supported reasoning path, blocked commercial registration, per-user OAuth/streaming/accounting plan and simple founder steps. Documentation only; no runtime/provider/SQL/settings/publication change and no phase acceptance inferred.
+
+Verification for BZ-073/CW-073: 10 document-room tests passed, affected Markdown links/discovery and whitespace passed, web production build passed and guide52 HTML was generated. Runtime/admin/SQL tests not rerun for this documentation-only change; earlier496-test evidence remains historical. Hosted OAuth/inference and founder document-room read remain pending. No active checkpoint lease.

@@ -1,5 +1,10 @@
 # Combined pending setup and manual tests
 
+## Optional ChatGPT reasoning — 2026-10-09 UTC
+
+See [52 ChatGPT plan reasoning](52_CHATGPT_PLAN_REASONING.md). Hosted commercial access is blocked pending an approved registration; per-user OAuth, consent, protected tokens, revocation, usage limits, transport compatibility and denial tests precede activation. No new setup or live test required by this documentation delivery; MT152–155 and unrelated founder checks remain pending. Never paste ChatGPT passwords/cookies/tokens or share the founder subscription with customers.
+
+
 ## Current template checkpoint — 1.26 / P04.3.4.2
 
 Shared Classic card, Midnight card, Editorial frame and Bold headline designs are implemented for two Pinterest graphics, the six-slide carousel and a new1080×1080 LinkedIn image. Selection changes design only; it does not regenerate text or call a provider. Existing saved v1 scenes/history stay intact. Owner explicitly adds templates/LinkedIn image, reviews and saves a v2 document as a new visual version. Additive040 after039 extends strict validation while retaining original access/source-review/conflict/no-op/version limits. No existing migration/row/history is rewritten.
