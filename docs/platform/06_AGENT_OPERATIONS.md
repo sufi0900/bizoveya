@@ -1,5 +1,10 @@
 # AI employees, meetings and interruptions
 
+## External handoff discussion — 2026-10-10 PKT
+
+Founder requests future ChatGPT-created images/documents sent through a Bizoveya plugin into a private inbox, assistant routing, specialist/QA tasks and permission-gated publication; also relevant-channel signals after verified blog/site updates. See [53 External handoff and change signals](53_EXTERNAL_HANDOFF_AND_CHANGE_SIGNALS.md). Intake is proposed as a durable service; broad knowledge is authorization-scoped. Receiving ChatGPT artifacts is separate from subscription inference. Connector transfer capability remains unqualified. Latest documentation needs no feature test; template MT152–155 remain pending. Next P04.3.4.3 can proceed with ownership/version design, but no new runtime/SQL/connector or publication is implemented by this planning checkpoint.
+
+
 ## 2026-10-08 evolution update — planned direction
 
 Extend existing facilitated meetings with announcement broadcast and bounded deliberation. Founder assistant/HR assigns scoped specialists; initial analyst proposes from approved sources. Specialists resolve authorized template inventory, queue QA and escalate to assistant then founder. Agents join meetings only after a safe checkpoint; active writes/provider requests reconcile first. Voice uses identical approval/budget rules. Hiring/custom roles mean evaluated configurations, not self-granted tools. Cartoon movement reflects real tasks. Publishing remains deferred.

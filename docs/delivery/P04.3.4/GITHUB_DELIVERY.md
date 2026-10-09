@@ -44,3 +44,9 @@ Local ephemeral PGlite applied40 migrations;037/039/040 assertions passed, inclu
 Founder MT152–155 remain pending; earlier MT145–147 founder-reported passed. Other pending negatives/access/mobile and commercial blog depth remain open. No hosted SQL, provider request, paid operation, deployment setting change or customer publication. Exact commit follows expected-head non-force delivery frombeec85c5. No active checkpoint lease at handoff.
 
 Verification for BZ-073/CW-073: 10 document-room tests passed, affected Markdown links/discovery and whitespace passed, web production build passed and guide52 HTML was generated. Runtime/admin/SQL tests not rerun for this documentation-only change; earlier496-test evidence remains historical. Hosted OAuth/inference and founder document-room read remain pending. No active checkpoint lease.
+
+## 2026-10-10 PKT external handoff planning checkpoint
+
+Parent57969caa; [guide53](../../platform/53_EXTERNAL_HANDOFF_AND_CHANGE_SIGNALS.md) records external artifact intake, assistant routing and relevant-channel updates. No new feature/SQL/provider/publication. Template MT152–155 remain pending; independent private-template design scoped only.
+
+BZ-074/CW-074 verification: 10 document-room projection tests, affected Markdown links/title/discovery and whitespace checks passed. Documentation only; full production build/runtime/SQL tests not rerun. Deployed guide view and all proposed connector/intake/routing/broadcast features remain unverified. No active lease.

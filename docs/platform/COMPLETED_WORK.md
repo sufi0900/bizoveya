@@ -237,3 +237,7 @@ Founder MT152–155 remain pending; earlier MT145–147 founder-reported passed.
 | CW-073 | Official Plus reasoning research and documented integration scope | Guide52; hosted commercial registration blocked, runtime integration and founder checks pending; no provider call |
 
 Verification for BZ-073/CW-073: 10 document-room tests passed, affected Markdown links/discovery and whitespace passed, web production build passed and guide52 HTML was generated. Runtime/admin/SQL tests not rerun for this documentation-only change; earlier496-test evidence remains historical. Hosted OAuth/inference and founder document-room read remain pending. No active checkpoint lease.
+
+| CW-074 | External intake and relevant-channel signal design recorded | Guide53; next private-template contracts scoped; connector/runtime/tests and MT152–155 remain pending |
+
+BZ-074/CW-074 verification: 10 document-room projection tests, affected Markdown links/title/discovery and whitespace checks passed. Documentation only; full production build/runtime/SQL tests not rerun. Deployed guide view and all proposed connector/intake/routing/broadcast features remain unverified. No active lease.
