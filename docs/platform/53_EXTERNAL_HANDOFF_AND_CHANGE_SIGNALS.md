@@ -1,5 +1,10 @@
 # External content handoff and change signals
 
+## Private-template contract checkpoint — P04.3.4.3a / 2026-10-10 PKT
+
+Implemented creator-owned strict design recipes, contiguous immutable versions, expected-version edits/archive and fit-checked version-pinned application helpers. See [54 Contract foundation](54_PRIVATE_TEMPLATE_CONTRACT_FOUNDATION.md). Source/package remains1.26.0; no new inventory UI/API/storage/migration is activated, and this is not P04.3.4.3 completion. Next: separately implement creator-private SQL/storage and immutable artifact references, then reviewed inventory UI. MT152–155 and unrelated pending checks remain open; no new manual test/field/setup now. Founder authorized four-hour continuation attempts without a response; scheduled task created with first run08:07:59PKT, always subject to current dependencies/leases. No hosted SQL/provider/settings/publication.
+
+
 Planning checkpoint: 2026-10-10 PKT. Founder discussion; no connector, receiving service, autonomous routing or publication implemented.
 
 ## Founder direction

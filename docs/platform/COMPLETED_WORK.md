@@ -241,3 +241,7 @@ Verification for BZ-073/CW-073: 10 document-room tests passed, affected Markdown
 | CW-074 | External intake and relevant-channel signal design recorded | Guide53; next private-template contracts scoped; connector/runtime/tests and MT152–155 remain pending |
 
 BZ-074/CW-074 verification: 10 document-room projection tests, affected Markdown links/title/discovery and whitespace checks passed. Documentation only; full production build/runtime/SQL tests not rerun. Deployed guide view and all proposed connector/intake/routing/broadcast features remain unverified. No active lease.
+
+| CW-075 | Private reusable-template contract foundation | P04.3.4.3a strict recipes, creator/version helpers and pinned draft application; storage/UI/hosted acceptance pending; continuation task created |
+
+P04.3.4.3a automated verification:366 web tests across64 files passed (seven new contract tests); web typecheck, targeted lint, application boundaries, Markdown links/discovery and whitespace passed. Web production build passed (110 static pages); guide54 HTML generated. Admin/SQL unchanged and their tests/build were not rerun; earlier137 admin tests are historical evidence. No hosted privacy/concurrency/UI/provider acceptance claimed; MT152–155 remain pending.
