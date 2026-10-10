@@ -1,5 +1,9 @@
 # Combined pending setup and manual tests
 
+## P04.3.4.3c pending items preserved
+
+No visible field/manual test is added. Hosted041 remains pending if absent; do not run it solely for this hidden checkpoint. MT152–155, real session/PostgREST/concurrency and unrelated checks remain open. See [56](56_PRIVATE_TEMPLATE_SERVER_ACCESS.md).
+
 ## Private-template storage checkpoint — P04.3.4.3b / 2026-10-10 PKT
 
 Additive041 implements creator-private recipe/history storage, checked authenticated inventory/save/archive RPCs, immutable versions and bounded32-record/50-version admission. Local41-migration/five-assertion verification passed; no hosted SQL applied or UI/campaign references activated. See [55 Storage foundation](55_PRIVATE_TEMPLATE_STORAGE.md) for access/deletion policy and optional one-time setup. Next: server integration and copied immutable artifact references before inventory UI. Source/package remains1.26.0; P04.3.4.3 and MT152–155 remain pending/in progress as applicable. No provider/settings/publication or repeat generation.

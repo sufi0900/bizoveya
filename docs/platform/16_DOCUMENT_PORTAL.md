@@ -1,5 +1,9 @@
 # In-app Bizoveya document room
 
+## 2026-10-10 projection update
+
+Guide56 and P04.3.4.3c status blocks are discovered by the canonical Markdown reader; no portal code changes. The public projection contains implementation boundaries, not private template data.
+
 ## 1.26 implemented source update
 
 Guide51 and latest BZ072/CW072 are canonical Markdown discovered by the main document room. Latest phase/status and release tables project1.26; future private office remains distinct. Built projection verification is recorded in continuation. See [51](51_VISUAL_TEMPLATES_AND_LINKEDIN_IMAGE.md). Earlier dated contracts retain history.

@@ -1,5 +1,9 @@
 # System architecture
 
+## P04.3.4.3c server access
+
+Authenticated no-store workspace routes now project migration041's creator-only inventory through strict contracts. Membership supplies route context but never transfers creator ownership. No UI/reference is active; copied immutable artifact references are next. See [56](56_PRIVATE_TEMPLATE_SERVER_ACCESS.md).
+
 ## Private-template storage checkpoint — P04.3.4.3b / 2026-10-10 PKT
 
 Additive041 implements creator-private recipe/history storage, checked authenticated inventory/save/archive RPCs, immutable versions and bounded32-record/50-version admission. Local41-migration/five-assertion verification passed; no hosted SQL applied or UI/campaign references activated. See [55 Storage foundation](55_PRIVATE_TEMPLATE_STORAGE.md) for access/deletion policy and optional one-time setup. Next: server integration and copied immutable artifact references before inventory UI. Source/package remains1.26.0; P04.3.4.3 and MT152–155 remain pending/in progress as applicable. No provider/settings/publication or repeat generation.

@@ -36,6 +36,10 @@ No new UI fields, credentials or generation are introduced. You can defer instal
 1. Optional setup now: if001–040 are already applied and041 is missing, open `supabase/migrations/041_private_template_storage.sql`, copy the complete file to Supabase SQL Editor and run once. Expected: success with existing drafts/visual history unchanged. Do not run assertion fixtures or rerun old migrations. The assistant has not done this.
 2. If setup is deferred, no action is needed for this storage-only checkpoint. Existing template MT152–155 save/refresh/export checks stay pending and can be combined with a later inventory delivery. No new field sample is applicable.
 
+## Server-access follow-up
+
+P04.3.4.3c implements the authenticated boundary in [56](56_PRIVATE_TEMPLATE_SERVER_ACCESS.md), retaining creator-only SQL authority and adding no interface. Copied immutable campaign references remain next.
+
 ## Next slice
 
-Add server-checked inventory access and immutable campaign application references before activating the template interface. Tests must cover exact SQL-to-application contracts, current creator authorization, same-workspace foreign denial, archived/unavailable pinned references, source-review/conflicts and legacy visual preservation. UI/manual acceptance follows that integration. Guide54 contract foundation and guide51 pending template tests remain authoritative for their respective scopes.
+Add immutable campaign application references before activating the template interface. Tests must cover archived/unavailable references, source-review/conflicts and legacy visual preservation. UI/manual acceptance follows. Guides54/56 and guide51 pending tests remain authoritative.

@@ -1,5 +1,9 @@
 # Living documentation changelog
 
+## P04.3.4.3c
+
+Added authenticated creator-private inventory/detail/save/archive routes and adapter, strict inventory/mutation schemas, safe error mapping, regression tests and guide56. No migration/package/UI/provider/publication change.
+
 ## Current checkpoint — 1.24 / P04.3.3.5
 
 Explicit founder-owner draft dispatch is implemented on the separate admin deployment at `/admin/generations`, default off. Private campaign outputs now show Blog/Pinterest/LinkedIn text, citations, advisory QA and owner-only versioned human review. Additive037 follows036; no provider request, hosted SQL, publishing or Vercel setting change was made. See [44 Draft pilot and human review](44_DRAFT_PILOT_AND_HUMAN_REVIEW.md). This block supersedes older current-state blocks, which remain historical.

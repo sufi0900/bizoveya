@@ -1,0 +1,19 @@
+import {beforeEach,describe,it,expect,vi} from 'vitest';
+import type {SupabaseClient} from '@supabase/supabase-js';
+vi.mock('../workspaces/store',async original=>({...await original<typeof import('../workspaces/store')>(),getSite:vi.fn()}));
+import {getSite} from '../workspaces/store';
+import {archiveStoredPrivateTemplate,listPrivateTemplates,loadPrivateTemplate,savePrivateTemplate} from './private-template-store';
+import {recipeFromVisuals} from './private-template-contracts';
+import {starterVisuals,upgradeVisuals} from './visual-contracts';
+import {visualSource} from './visuals.fixture';
+const actor='11111111-1111-4111-8111-111111111111',templateId='22222222-2222-4222-8222-222222222222';
+const recipe=recipeFromVisuals(upgradeVisuals(starterVisuals(visualSource(),'Bizoveya')),'Founder notes');
+const record={templateId,creatorId:actor,archived:false,versions:[{templateId,creatorId:actor,version:1,recipe,createdAt:'2026-10-10T07:00:00.000000Z'}]};
+beforeEach(()=>vi.mocked(getSite).mockResolvedValue({workspace:{role:'editor'},site:{id:actor}} as never));
+function fixture(data:unknown=null,error:unknown=null){const rpc=vi.fn(async()=>({data,error}));return {rpc,db:{rpc} as unknown as SupabaseClient};}
+describe('private template server storage',()=>{
+ it('checks current workspace membership before listing creator-only inventory',async()=>{const f=fixture([{templateId,version:1,archived:false,name:'Founder notes'}]);expect(await listPrivateTemplates(f.db,actor,actor,actor)).toHaveLength(1);expect(getSite).toHaveBeenCalledWith(f.db,actor,actor,actor);expect(f.rpc).toHaveBeenCalledWith('bz_private_templates',{p_include_archived:false});});
+ it('does not expose another creator or missing template through detail lookup',async()=>{const f=fixture(null);await expect(loadPrivateTemplate(f.db,actor,actor,actor,templateId)).rejects.toMatchObject({status:404});const denied=fixture(null,{message:'bz_template_unavailable'});await expect(loadPrivateTemplate(denied.db,actor,actor,actor,templateId)).rejects.toMatchObject({status:404});});
+ it('pins identity and expected version in save and archive RPCs',async()=>{const saved=fixture(record);expect(await savePrivateTemplate(saved.db,actor,actor,actor,{templateId,expectedVersion:0,recipe})).toEqual(record);expect(saved.rpc).toHaveBeenCalledWith('bz_save_private_template',{p_template_id:templateId,p_expected_version:0,p_recipe:recipe});const archived=fixture({...record,archived:true});await archiveStoredPrivateTemplate(archived.db,actor,actor,actor,templateId,{expectedVersion:1});expect(archived.rpc).toHaveBeenCalledWith('bz_archive_private_template',{p_template_id:templateId,p_expected_version:1});});
+ it('keeps migration, conflict and quota failures distinct and actionable',async()=>{await expect(listPrivateTemplates(fixture(null,{code:'PGRST202'}).db,actor,actor,actor)).rejects.toMatchObject({status:503});await expect(savePrivateTemplate(fixture(null,{message:'bz_template_conflict'}).db,actor,actor,actor,{templateId,expectedVersion:0,recipe})).rejects.toMatchObject({status:409});await expect(savePrivateTemplate(fixture(null,{message:'bz_template_limit'}).db,actor,actor,actor,{templateId,expectedVersion:0,recipe})).rejects.toMatchObject({status:409});});
+});

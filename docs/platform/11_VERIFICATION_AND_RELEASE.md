@@ -1,5 +1,9 @@
 # Verification, manual acceptance and release evidence
 
+## P04.3.4.3c verification
+
+371 web tests across 66 files, web typecheck and lint passed. New coverage checks membership before RPC, safe unavailable detail, exact expected-version arguments and distinct setup/conflict/quota failures; real migration041 SQL/application integration remains included. Hosted041, cookies/PostgREST/concurrency, deployment and UI acceptance are not proven. See [56](56_PRIVATE_TEMPLATE_SERVER_ACCESS.md).
+
 ## 1.26 implemented source update
 
 1.26 verification adds v1/v2 compatibility, template allowlist/word preservation, square dimensions/overflow, real local raster rendering of all template formats and SQL save/history/no-op/access/source-review cases. Actual browser/export/040 hosted results are MT152–155 pending; final executed check results are in continuation/delivery. See [51](51_VISUAL_TEMPLATES_AND_LINKEDIN_IMAGE.md). Earlier dated contracts retain history.

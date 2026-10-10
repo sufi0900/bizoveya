@@ -1,5 +1,9 @@
 # Bizoveya continuation checkpoint
 
+## Private-template server access — P04.3.4.3c / 2026-10-10 PKT
+
+Authenticated no-store routes now list/load/save/archive only the current session creator's migration041 inventory after site-membership checks. Strict parsing and actionable unavailable/conflict/quota/setup failures are covered by 371 passing web tests; typecheck and lint pass. No UI, hosted SQL, provider call, publication or repeat generation. See [56](56_PRIVATE_TEMPLATE_SERVER_ACCESS.md). Next: copied immutable campaign artifact references, then UI. MT152–155 and unrelated tests remain pending. Source remains 1.26.0.
+
 ## Private-template storage checkpoint — P04.3.4.3b / 2026-10-10 PKT
 
 Additive041 implements creator-private recipe/history storage, checked authenticated inventory/save/archive RPCs, immutable versions and bounded32-record/50-version admission. Local41-migration/five-assertion verification passed; no hosted SQL applied or UI/campaign references activated. See [55 Storage foundation](55_PRIVATE_TEMPLATE_STORAGE.md) for access/deletion policy and optional one-time setup. Next: server integration and copied immutable artifact references before inventory UI. Source/package remains1.26.0; P04.3.4.3 and MT152–155 remain pending/in progress as applicable. No provider/settings/publication or repeat generation.

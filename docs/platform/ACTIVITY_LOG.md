@@ -1,5 +1,9 @@
 # Bizoveya chronological activity and decision log
 
+## 2026-10-10 PKT — P04.3.4.3c
+
+Connected migration041 list/detail/save/archive to authenticated no-store routes with strict parsing and safe errors. 371 web tests, typecheck and lint pass. No UI, hosted SQL, generation/provider call, publishing or settings change. Immutable copied campaign references are next. See [56](56_PRIVATE_TEMPLATE_SERVER_ACCESS.md).
+
 ## Current visual checkpoint — 1.25 / P04.3.4.1 (2026-10-08 PKT)
 
 Founder confirmed the previous saved-draft/refresh/copy/generated-JSON checks and explicitly authorized proceeding. Record these narrow text-pilot checks as founder-reported passes; do not repeat generation. Other unevidenced access/conflict/mobile/unsaved-export tests and the short-blog quality finding remain open. This authorization permits visual implementation without claiming full P04.3.3 acceptance.
