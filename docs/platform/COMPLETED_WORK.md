@@ -245,3 +245,9 @@ BZ-074/CW-074 verification: 10 document-room projection tests, affected Markdown
 | CW-075 | Private reusable-template contract foundation | P04.3.4.3a strict recipes, creator/version helpers and pinned draft application; storage/UI/hosted acceptance pending; continuation task created |
 
 P04.3.4.3a automated verification:366 web tests across64 files passed (seven new contract tests); web typecheck, targeted lint, application boundaries, Markdown links/discovery and whitespace passed. Web production build passed (110 static pages); guide54 HTML generated. Admin/SQL unchanged and their tests/build were not rerun; earlier137 admin tests are historical evidence. No hosted privacy/concurrency/UI/provider acceptance claimed; MT152–155 remain pending.
+
+| CW-076 | Creator-private template database foundation | P04.3.4.3b/additive041; local privacy/history/quota/deletion assertions passed; hosted installation, server/UI/artifact integration and manual acceptance pending |
+
+P04.3.4.3b automated verification:41 ephemeral PGlite migrations/five assertion executions passed, including041 privacy/history/quota/archive/deletion and existing037/039/040 checks. All367 web tests across65 files passed, including actual SQL-to-TypeScript record/pinned-application integration. Targeted new-test lint, application boundaries, Markdown links/discovery and whitespace passed. Web production build passed; guide55 HTML generated. Full admin and unrelated SQL suites were not rerun; older137 admin tests remain historical. Hosted041, real concurrency, PostgREST/UI and MT152–155 remain pending. No active lease.
+
+Final verification: web production rebuild and guide55 HTML inspection passed. Web typecheck passed after the build completed; an earlier overlapping check saw Next-generated files being replaced and was rerun sequentially. No source type error or hosted acceptance inferred.

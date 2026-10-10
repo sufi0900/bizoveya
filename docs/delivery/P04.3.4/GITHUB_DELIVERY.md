@@ -56,3 +56,11 @@ BZ-074/CW-074 verification: 10 document-room projection tests, affected Markdown
 Parent260bfbf15d4ef840f4b4919897345b84e71ba758. [Guide54](../../platform/54_PRIVATE_TEMPLATE_CONTRACT_FOUNDATION.md) describes implemented pure contracts and next storage/UI dependencies. No schema/API/UI activation, SQL, provider request, paid call, settings or publication. Package version remains1.26.0; MT152–155 pending. Scheduled continuation created per founder instruction; no active lease at handoff.
 
 P04.3.4.3a automated verification:366 web tests across64 files passed (seven new contract tests); web typecheck, targeted lint, application boundaries, Markdown links/discovery and whitespace passed. Web production build passed (110 static pages); guide54 HTML generated. Admin/SQL unchanged and their tests/build were not rerun; earlier137 admin tests are historical evidence. No hosted privacy/concurrency/UI/provider acceptance claimed; MT152–155 remain pending.
+
+## P04.3.4.3b storage foundation — 2026-10-10 PKT
+
+Parent e0cd95810171212bd6cd1b789e2cc7881a92e892; additive041 and local assertions, original001–040/history/source preserved. [Guide55](../../platform/55_PRIVATE_TEMPLATE_STORAGE.md) documents scope, optional operator installation and limitations. No hosted SQL/UI/reference/provider/settings/publication activation; MT152–155 pending. Source/package remains1.26.0; no active lease at handoff.
+
+P04.3.4.3b automated verification:41 ephemeral PGlite migrations/five assertion executions passed, including041 privacy/history/quota/archive/deletion and existing037/039/040 checks. All367 web tests across65 files passed, including actual SQL-to-TypeScript record/pinned-application integration. Targeted new-test lint, application boundaries, Markdown links/discovery and whitespace passed. Web production build passed; guide55 HTML generated. Full admin and unrelated SQL suites were not rerun; older137 admin tests remain historical. Hosted041, real concurrency, PostgREST/UI and MT152–155 remain pending. No active lease.
+
+Final verification: web production rebuild and guide55 HTML inspection passed. Web typecheck passed after the build completed; an earlier overlapping check saw Next-generated files being replaced and was rerun sequentially. No source type error or hosted acceptance inferred.

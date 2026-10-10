@@ -1,5 +1,10 @@
 # Evolution record: templates, voice and the visual digital agency
 
+## Private-template storage checkpoint — P04.3.4.3b / 2026-10-10 PKT
+
+Additive041 implements creator-private recipe/history storage, checked authenticated inventory/save/archive RPCs, immutable versions and bounded32-record/50-version admission. Local41-migration/five-assertion verification passed; no hosted SQL applied or UI/campaign references activated. See [55 Storage foundation](55_PRIVATE_TEMPLATE_STORAGE.md) for access/deletion policy and optional one-time setup. Next: server integration and copied immutable artifact references before inventory UI. Source/package remains1.26.0; P04.3.4.3 and MT152–155 remain pending/in progress as applicable. No provider/settings/publication or repeat generation.
+
+
 ## Private-template contract checkpoint — P04.3.4.3a / 2026-10-10 PKT
 
 Implemented creator-owned strict design recipes, contiguous immutable versions, expected-version edits/archive and fit-checked version-pinned application helpers. See [54 Contract foundation](54_PRIVATE_TEMPLATE_CONTRACT_FOUNDATION.md). Source/package remains1.26.0; no new inventory UI/API/storage/migration is activated, and this is not P04.3.4.3 completion. Next: separately implement creator-private SQL/storage and immutable artifact references, then reviewed inventory UI. MT152–155 and unrelated pending checks remain open; no new manual test/field/setup now. Founder authorized four-hour continuation attempts without a response; scheduled task created with first run08:07:59PKT, always subject to current dependencies/leases. No hosted SQL/provider/settings/publication.
