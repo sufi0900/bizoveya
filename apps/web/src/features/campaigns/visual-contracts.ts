@@ -13,10 +13,12 @@ export const visualTemplateIds=['classic','midnight','editorial','headline'] as 
 export const visualTemplates=[{id:'classic',name:'Classic card'},{id:'midnight',name:'Midnight card'},{id:'editorial',name:'Editorial frame'},{id:'headline',name:'Bold headline'}] as const;
 const templateId=z.enum(visualTemplateIds);
 export const visualDocumentV2Schema=visualDocumentV1Schema.extend({schema:z.literal('campaign-visuals-v2'),templates:z.object({pins:z.tuple([templateId,templateId]),carousel:templateId,linkedin:templateId}).strict(),linkedin:slide}).strict();
-export const visualDocumentSchema=z.discriminatedUnion('schema',[visualDocumentV1Schema,visualDocumentV2Schema]);
+export const visualDocumentV3Schema=visualDocumentV2Schema.extend({schema:z.literal('campaign-visuals-v3'),templateReference:z.object({templateId:z.uuid(),version:z.number().int().min(1).max(50),renderer:z.literal('campaign-scenes-v2')}).strict(),templateRecipe:z.object({schema:z.literal('private-template-recipe-v1'),renderer:z.literal('campaign-scenes-v2'),name:text(80),brand:visualDocumentV2Schema.shape.brand,templates:visualDocumentV2Schema.shape.templates}).strict()}).strict();
+export const visualDocumentSchema=z.discriminatedUnion('schema',[visualDocumentV1Schema,visualDocumentV2Schema,visualDocumentV3Schema]);
 export type VisualDocumentV2=z.infer<typeof visualDocumentV2Schema>;
 export function upgradeVisuals(document:VisualDocument):VisualDocumentV2 {
  if(document.schema==='campaign-visuals-v2')return document;
+ if(document.schema==='campaign-visuals-v3')return {schema:'campaign-visuals-v2',brand:document.brand,pins:document.pins,slides:document.slides,templates:document.templates,linkedin:document.linkedin};
  return {...document,schema:'campaign-visuals-v2',templates:{pins:['classic','midnight'],carousel:'classic',linkedin:'headline'},linkedin:{...document.slides[0]}};
 }
 export type VisualDocument=z.infer<typeof visualDocumentSchema>;

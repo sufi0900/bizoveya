@@ -1,5 +1,5 @@
 import {z} from 'zod';
-import {upgradeVisuals,visualDocumentV2Schema,type VisualDocument} from './visual-contracts';
+import {upgradeVisuals,visualDocumentV2Schema,visualDocumentV3Schema,type VisualDocument} from './visual-contracts';
 import {visualProblems} from './visual-layout';
 
 // A reusable design contains no campaign wording, source IDs, URLs or executable nodes.
@@ -39,6 +39,7 @@ export const savePrivateTemplateSchema=z.object({
  templateId:z.uuid(),expectedVersion:z.number().int().min(0).max(49),recipe:privateTemplateRecipeSchema,
 }).strict();
 export const archivePrivateTemplateSchema=z.object({expectedVersion:z.number().int().min(1).max(50)}).strict();
+export const applyPrivateTemplateSchema=z.object({generationId:z.uuid(),expectedVersion:z.number().int().nonnegative(),sourceReviewVersion:z.number().int().positive(),templateVersion:z.number().int().min(1).max(50),reviewed:z.literal(true),document:visualDocumentV2Schema}).strict();
 
 export class PrivateTemplateError extends Error {
  constructor(public readonly reason:'unavailable'|'conflict'|'limit'|'overflow') {super(`Private template ${reason}.`);}
@@ -74,7 +75,7 @@ export function applyPrivateTemplate(raw:unknown,actorId:string,rawReference:unk
  if(record.archived||reference.templateId!==record.templateId)throw new PrivateTemplateError('unavailable');
  const revision=record.versions[reference.version-1];
  if(!revision)throw new PrivateTemplateError('unavailable');
- const next=visualDocumentV2Schema.parse({...upgradeVisuals(document),brand:revision.recipe.brand,templates:revision.recipe.templates});
+ const next=visualDocumentV3Schema.parse({...upgradeVisuals(document),schema:'campaign-visuals-v3',brand:revision.recipe.brand,templates:revision.recipe.templates,templateReference:reference,templateRecipe:revision.recipe});
  if(visualProblems(next).length)throw new PrivateTemplateError('overflow');
  return {document:next,templateReference:reference};
 }

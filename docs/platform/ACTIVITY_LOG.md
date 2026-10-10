@@ -1,5 +1,9 @@
 # Bizoveya chronological activity and decision log
 
+## 2026-10-10 PKT — P04.3.4.3d
+
+Added migration042, visual v3 copied provenance, atomic owner/creator/source/conflict-checked application route and anti-forgery save boundary. 42 migrations/six SQL assertions, 372 web tests, typecheck and lint pass. No UI, hosted SQL, provider/publishing/settings action. See [57](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md).
+
 ## 2026-10-10 PKT — P04.3.4.3c
 
 Connected migration041 list/detail/save/archive to authenticated no-store routes with strict parsing and safe errors. 371 web tests, typecheck and lint pass. No UI, hosted SQL, generation/provider call, publishing or settings change. Immutable copied campaign references are next. See [56](56_PRIVATE_TEMPLATE_SERVER_ACCESS.md).

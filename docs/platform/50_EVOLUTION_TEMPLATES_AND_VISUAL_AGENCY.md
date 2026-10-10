@@ -1,5 +1,9 @@
 # Evolution record: templates, voice and the visual digital agency
 
+## P04.3.4.3d immutable provenance
+
+Personal template application now produces a self-contained, version-pinned private visual artifact without coupling retention to inventory. The reviewed inventory/apply interface is next. See [57](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md).
+
 ## P04.3.4.3c server access
 
 Creator-private storage now has authenticated server routes without UI activation or workspace sharing. Immutable copied campaign artifact references remain next. See [56](56_PRIVATE_TEMPLATE_SERVER_ACCESS.md).

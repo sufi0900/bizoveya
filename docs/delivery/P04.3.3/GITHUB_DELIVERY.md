@@ -1,5 +1,9 @@
 # Verified main delivery — P04.3.3 founder evidence checkpoint
 
+## 2026-10-10 provenance successor note
+
+P04.3.4.3d adds immutable copied template provenance; it does not change or broaden P04.3.3 evidence. See [guide57](../../platform/57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md). No hosted SQL, provider call, repeat generation, publication or deployment-setting change.
+
 ## 2026-10-10 successor note
 
 P04.3.4.3c adds creator-private template server access on migration041; it does not change P04.3.3 evidence or infer pending draft tests. See [guide56](../../platform/56_PRIVATE_TEMPLATE_SERVER_ACCESS.md). No hosted SQL, provider call, repeat generation, publication or deployment-setting change.

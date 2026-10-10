@@ -1,5 +1,9 @@
 # In-app Bizoveya document room
 
+## P04.3.4.3d projection
+
+Guide57 and current provenance status blocks are discovered by the canonical Markdown reader without portal code changes. No private template recipe/customer content is embedded in public documentation.
+
 ## 2026-10-10 projection update
 
 Guide56 and P04.3.4.3c status blocks are discovered by the canonical Markdown reader; no portal code changes. The public projection contains implementation boundaries, not private template data.

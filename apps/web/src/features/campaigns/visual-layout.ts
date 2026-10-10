@@ -23,7 +23,7 @@ function block(id:string,text:string,x:number,y:number,size:number,width:number,
 function classicScene(document:VisualDocument,target:VisualTarget):VisualScene {
  const accent=document.brand.accent;
  if(target.kind==='linkedin'){
-  if(document.schema!=='campaign-visuals-v2')throw Error('Add the LinkedIn image before exporting it.');
+  if(document.schema==='campaign-visuals-v1')throw Error('Add the LinkedIn image before exporting it.');
   const title=block('title',document.linkedin.title,100,260,52,880,4,68,'#101A34',700);
   const bodyY=260+(Math.max(1,Math.min(title.lines.length,4))-1)*68+90;
   return {width:1080,height:1080,title:'LinkedIn post image',shapes:[{x:0,y:0,width:1080,height:1080,fill:'#F4F6FF'},{x:0,y:0,width:1080,height:24,fill:accent},{x:64,y:180,width:952,height:744,fill:'#FFFFFF',radius:32}],blocks:[block('brand',document.brand.name,84,100,30,912,2,42,'#101A34',700),title,block('body',document.linkedin.body,100,bodyY,34,880,9,44,'#34415D'),block('footer',document.brand.footer,84,1000,24,912,2,32,'#34415D')]};
@@ -66,7 +66,7 @@ export function visualScene(document:VisualDocument,target:VisualTarget):VisualS
  return scene;
 }
 export function visualProblems(document:VisualDocument):string[]{
- const targets:VisualTarget[]=[{kind:'pin',index:0},{kind:'pin',index:1},...Array.from({length:6},(_,index)=>({kind:'slide' as const,index})),...(document.schema==='campaign-visuals-v2'?[{kind:'linkedin' as const,index:0 as const}]:[])];
+ const targets:VisualTarget[]=[{kind:'pin',index:0},{kind:'pin',index:1},...Array.from({length:6},(_,index)=>({kind:'slide' as const,index})),...(document.schema!=='campaign-visuals-v1'?[{kind:'linkedin' as const,index:0 as const}]:[])];
  return targets.flatMap(target=>{const scene=visualScene(document,target);return scene.blocks.filter(b=>b.overflow||!b.text.trim()).map(b=>`${scene.title}: shorten or complete ${b.id} text so it fits.`);});
 }
 const xml=(value:string)=>value.replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[char]!));

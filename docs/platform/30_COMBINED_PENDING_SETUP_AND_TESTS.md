@@ -1,5 +1,9 @@
 # Combined pending setup and manual tests
 
+## P04.3.4.3d pending items
+
+No visible manual test is added. Hosted042 after041 may be deferred until the UI delivery. MT152–155, real PostgREST/concurrency, inventory UI and unrelated checks remain pending; no pass is inferred. See [57](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md).
+
 ## P04.3.4.3c pending items preserved
 
 No visible field/manual test is added. Hosted041 remains pending if absent; do not run it solely for this hidden checkpoint. MT152–155, real session/PostgREST/concurrency and unrelated checks remain open. See [56](56_PRIVATE_TEMPLATE_SERVER_ACCESS.md).

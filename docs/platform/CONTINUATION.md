@@ -1,5 +1,9 @@
 # Bizoveya continuation checkpoint
 
+## Immutable template provenance — P04.3.4.3d / 2026-10-10 PKT
+
+Additive042 atomically copies a selected creator-owned recipe and pinned ID/version/renderer into strict visual v3 while preserving campaign words and legacy v1/v2 history. Ordinary saves cannot forge/rewrite provenance; archived/foreign choices are denied, saved copies survive archive/deletion. 42 migrations/six SQL assertions, 372 web tests, typecheck and lint pass. No UI, hosted SQL, provider/publication or repeat generation. See [57](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md). Next: reviewed inventory/apply UI. MT152–155 and unrelated tests remain pending; source remains 1.26.0.
+
 ## Private-template server access — P04.3.4.3c / 2026-10-10 PKT
 
 Authenticated no-store routes now list/load/save/archive only the current session creator's migration041 inventory after site-membership checks. Strict parsing and actionable unavailable/conflict/quota/setup failures are covered by 371 passing web tests; typecheck and lint pass. No UI, hosted SQL, provider call, publication or repeat generation. See [56](56_PRIVATE_TEMPLATE_SERVER_ACCESS.md). Next: copied immutable campaign artifact references, then UI. MT152–155 and unrelated tests remain pending. Source remains 1.26.0.

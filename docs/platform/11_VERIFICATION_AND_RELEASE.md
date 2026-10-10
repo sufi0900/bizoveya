@@ -1,5 +1,9 @@
 # Verification, manual acceptance and release evidence
 
+## P04.3.4.3d verification
+
+42 local migrations and six SQL assertions pass, including atomic old-version application, content/history preservation, forgery/foreign/archive denial and saved-copy retention. 372 web tests across66 files, typecheck and lint pass. Hosted042, real concurrency/PostgREST, deployment, UI and founder acceptance remain unproven. See [57](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md).
+
 ## P04.3.4.3c verification
 
 371 web tests across 66 files, web typecheck and lint passed. New coverage checks membership before RPC, safe unavailable detail, exact expected-version arguments and distinct setup/conflict/quota failures; real migration041 SQL/application integration remains included. Hosted041, cookies/PostgREST/concurrency, deployment and UI acceptance are not proven. See [56](56_PRIVATE_TEMPLATE_SERVER_ACCESS.md).

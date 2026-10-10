@@ -1,5 +1,9 @@
 # Bizoveya user manual — prelaunch working edition
 
+## P04.3.4.3d — no visible action
+
+Template application can now preserve immutable provenance safely, but no inventory/apply controls are exposed. There is no new field or sample text, and no generation should be repeated. Existing visuals remain compatible. See [57](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md).
+
 ## P04.3.4.3c — no visible action
 
 The server can safely access only the signed-in creator's personal templates, but no inventory controls are exposed. There is no new field/sample text and no generation should be repeated. Existing visuals are unchanged. See [56](56_PRIVATE_TEMPLATE_SERVER_ACCESS.md).

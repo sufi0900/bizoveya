@@ -22,3 +22,5 @@ This does not prove hosted041, real cookies/PostgREST/concurrency, deployment, i
 ## Next dependency-safe slice
 
 Add copied immutable template references to campaign visual artifacts. Preserve the applied recipe plus `{templateId, version, renderer}`, legacy v1/v2 visuals, accepted source-review and optimistic conflicts. Deny unavailable choices before application, while saved artifacts survive later archive/account deletion without an FK cascade. Only then activate the inventory interface.
+
+Implemented by P04.3.4.3d in [57 Immutable visual provenance](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md). The remaining next slice is the reviewed inventory/apply interface and focused founder acceptance.

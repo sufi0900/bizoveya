@@ -1,5 +1,9 @@
 # Founder manual testing record
 
+## P04.3.4.3d — no new founder test
+
+This is a headless provenance checkpoint. No field/sample text or generation is required. Hosted041/042, MT152–155, future inventory UI acceptance and unrelated unevidenced checks remain pending. See [57](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md).
+
 ## P04.3.4.3c — no new founder test
 
 No visible inventory exists, so there is no new field/sample or generation. Hosted041, MT152–155 and all unrelated unevidenced checks remain pending; no pass is inferred. See [56](56_PRIVATE_TEMPLATE_SERVER_ACCESS.md).

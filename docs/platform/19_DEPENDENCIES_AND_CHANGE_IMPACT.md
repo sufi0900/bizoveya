@@ -1,5 +1,9 @@
 # Dependencies and change-impact register
 
+## P04.3.4.3d dependency update
+
+Additive042 requires041 and existing visual/review storage. It adds no package, key or environment setting. Inventory UI is now dependency-permitted but still requires implementation and hosted/founder acceptance. Existing v1/v2 data is preserved. See [57](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md).
+
 ## P04.3.4.3c dependency update
 
 Server access uses existing session/workspace helpers and additive041. No dependency, environment variable or migration is added. UI remains blocked on copied immutable artifact references with source-review/conflict/legacy preservation. Hosted041 and MT152–155 remain pending. See [56](56_PRIVATE_TEMPLATE_SERVER_ACCESS.md).

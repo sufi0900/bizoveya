@@ -1,5 +1,9 @@
 # Living documentation changelog
 
+## P04.3.4.3d
+
+Added additive042, strict visual v3 provenance, atomic private-template application RPC/route, legacy renderer compatibility, anti-forgery controls, SQL/application tests and guide57. No UI/package/provider/publication change.
+
 ## P04.3.4.3c
 
 Added authenticated creator-private inventory/detail/save/archive routes and adapter, strict inventory/mutation schemas, safe error mapping, regression tests and guide56. No migration/package/UI/provider/publication change.

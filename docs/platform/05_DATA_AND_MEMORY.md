@@ -1,5 +1,9 @@
 # Data, schema and memory
 
+## P04.3.4.3d visual provenance
+
+Migration042 adds no table: it extends strict visual validation to v3 and adds an atomic checked apply RPC. Visual v3 copies the immutable recipe and pinned reference into existing version/revision JSON. Legacy rows remain unchanged; no FK couples artifact retention to personal inventory. See [57](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md).
+
 ## Private-template storage checkpoint — P04.3.4.3b / 2026-10-10 PKT
 
 Additive041 implements creator-private recipe/history storage, checked authenticated inventory/save/archive RPCs, immutable versions and bounded32-record/50-version admission. Local41-migration/five-assertion verification passed; no hosted SQL applied or UI/campaign references activated. See [55 Storage foundation](55_PRIVATE_TEMPLATE_STORAGE.md) for access/deletion policy and optional one-time setup. Next: server integration and copied immutable artifact references before inventory UI. Source/package remains1.26.0; P04.3.4.3 and MT152–155 remain pending/in progress as applicable. No provider/settings/publication or repeat generation.

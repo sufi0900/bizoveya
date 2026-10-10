@@ -1,5 +1,9 @@
 # Stack, provider policy and security
 
+## P04.3.4.3d provenance security
+
+Only the authenticated apply RPC may introduce template provenance. It derives creator identity from `auth.uid()`, locks selection, denies foreign/archive state and atomically reuses owner/source-review/conflict gates. Generic saves may preserve but cannot forge or rewrite provenance; the internal writer has no authenticated execute grant. See [57](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md).
+
 ## P04.3.4.3c server boundary
 
 Existing server-session, same-origin JSON, UUID/site checks and migration041 `auth.uid()` authority protect inventory/detail/save/archive. Creator ID is not input; workspace roles cannot expose another creator's templates. Responses are private/no-store. Hosted session/PostgREST/concurrency proof remains pending. See [56](56_PRIVATE_TEMPLATE_SERVER_ACCESS.md).

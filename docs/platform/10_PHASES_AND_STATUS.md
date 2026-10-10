@@ -1,5 +1,9 @@
 # Implementation phases and status ledger
 
+## P04.3.4.3d — provenance delivered; parent in progress
+
+Immutable copied template provenance is implemented with additive042 and authenticated application wiring. Automated checks pass; no UI or founder acceptance. The next slice may activate the creator-private inventory/apply interface. See [57](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md).
+
 ## P04.3.4.3c — delivered slice; phase in progress
 
 Creator-private storage is connected to authenticated application routes and strict parsing. No UI or campaign reference is active. Next: copied immutable artifact references, then UI/manual acceptance. 371 web tests, typecheck and lint passed; hosted/founder checks remain pending. See [56](56_PRIVATE_TEMPLATE_SERVER_ACCESS.md).

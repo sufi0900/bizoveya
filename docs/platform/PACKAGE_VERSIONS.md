@@ -1,5 +1,9 @@
 # Bizoveya ZIP and sub-implementation register
 
+## P04.3.4.3d / source 1.26.0
+
+Additive042 provenance checkpoint; no package/dependency bump, ZIP, key or environment field. Automated SQL/web/type/lint checks pass; hosted/manual evidence remains pending. See [57](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md).
+
 ## P04.3.4.3c / source 1.26.0
 
 Server-access checkpoint only: no package/dependency bump, migration, ZIP or environment field. 371 web tests, typecheck and lint pass; hosted/manual evidence remains pending. See [56](56_PRIVATE_TEMPLATE_SERVER_ACCESS.md).

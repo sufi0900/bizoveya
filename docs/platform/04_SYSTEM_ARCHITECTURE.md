@@ -1,5 +1,9 @@
 # System architecture
 
+## P04.3.4.3d immutable artifact provenance
+
+One atomic RPC now locks creator inventory, copies the selected recipe and pins identity/version/renderer into visual v3 before the existing accepted-source/conflict save. Saved artifacts have no inventory FK and survive archive/deletion. UI remains inactive. See [57](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md).
+
 ## P04.3.4.3c server access
 
 Authenticated no-store workspace routes now project migration041's creator-only inventory through strict contracts. Membership supplies route context but never transfers creator ownership. No UI/reference is active; copied immutable artifact references are next. See [56](56_PRIVATE_TEMPLATE_SERVER_ACCESS.md).

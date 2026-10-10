@@ -1,5 +1,9 @@
 # Completed Bizoveya work only
 
+## P04.3.4.3d completed slice
+
+Immutable copied template provenance in private campaign visuals is implemented and locally verified. P04.3.4.3 remains incomplete pending inventory UI and founder acceptance. See [57](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md).
+
 ## P04.3.4.3c completed slice
 
 Authenticated server access for the current creator's migration041 inventory is implemented and locally verified. The parent phase remains incomplete: immutable campaign references and UI/manual acceptance remain. See [56](56_PRIVATE_TEMPLATE_SERVER_ACCESS.md).
