@@ -1,5 +1,9 @@
 # Verification, manual acceptance and release evidence
 
+## Private-template interface — P04.3.4.3e / 2026-10-10 PKT
+
+Founder authorizes sequential implementation with manual testing deferred. Creator-private inventory/create/revise/version preview/archive controls now appear in accepted campaign Visual drafts; explicit reviewed save applies through the atomic042 boundary. SQL/app quota is aligned to32. No new migration/provider/publishing action. See [58 Interface and four combined tests](58_PRIVATE_TEMPLATE_INTERFACE_AND_TESTS.md). MT156–159, MT152–155 and unrelated tests remain pending; parent acceptance is unchanged. Six later evolution groups remain, plus broader connector/commercial work; activation proceeds only when dependencies permit.
+
 ## P04.3.4.3d verification
 
 42 local migrations and six SQL assertions pass, including atomic old-version application, content/history preservation, forgery/foreign/archive denial and saved-copy retention. 372 web tests across66 files, typecheck and lint pass. Hosted042, real concurrency/PostgREST, deployment, UI and founder acceptance remain unproven. See [57](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md).

@@ -1,0 +1,24 @@
+# Private reusable template interface and combined tests
+
+P04.3.4.3e — 2026-10-10 PKT. Founder authorizes sequential implementation with all manual testing deferred until later today. This checkpoint exposes the previously implemented private inventory/version/archive/application boundaries in the existing accepted campaign's Visual drafts. No new migration, provider, credential or publishing action.
+
+## Implemented behavior
+
+Owners can open My private reusable templates, load only their authenticated creator inventory, save the current brand/layout as a new template, revise it into immutable versions, inspect/select old versions, preview a selection and archive with confirmation. Template definitions contain design only; campaign words remain in visuals. Archive keeps history and saved visuals. The inventory limit is aligned to migration041's32 entries including archived entries; the prior20-entry parser/error mismatch is corrected.
+
+Preview changes only the local working copy and clears visual review. A new reference is persisted through the atomic apply RPC only after explicit review and Save visual drafts. Later edits with unchanged provenance use ordinary visual save. Changed brand/layout before first application detaches the unsaved selection, so the save cannot silently replace the edited design. Source-review/conflict gates remain enforced. Viewers do not receive inventory controls. Definitions are creator-private even though an applied campaign artifact is readable by its authorized workspace members.
+
+## Four founder steps, deferred
+
+1. Setup once: if040 is installed, apply missing041_private_template_storage.sql then042_private_template_visual_provenance.sql in Supabase SQL Editor, each complete file once. If041 is already installed, run only042. Never run assertion fixtures or rerun installed migrations. Expected: successful installation and existing drafts/history retained. No new secret or environment variable.
+2. Open the existing accepted campaign → Visual drafts → My private reusable templates → Load or refresh my templates. New field Template name: `Do It With AI Tools — reusable blue cards`. Use Save current design as new private template. Expected: your private template v1; existing campaign wording is not stored in its recipe. Private template selection: choose that named entry. Template version selection: choose `v1`.
+3. Choose Preview selected template, inspect every visual, check the existing visual-review checkbox, then Save visual drafts. Reload and download the visual JSON/PNG/PDF. Expected: a saved visual v3 document with templateReference.version1 and copied recipe, unchanged campaign wording and working exports. Change the current accent to `#5271FF` if desired and use Save current design as next template version; select `v1` again to verify old design remains available. Existing brand/text fields are covered by guides49/51.
+4. New confirmation checkbox: `Archive this template; keep its history and saved visuals.` Check it and use Archive private template. Expected: Archived in inventory, preview disabled for new application; reloaded saved campaign visuals and their exports remain available. A second user's inventory must not show your definition. Real concurrent-session stale writes must conflict rather than overwrite. These account/concurrency checks remain pending until actually evidenced.
+
+Record MT156 inventory/create/version, MT157 reviewed apply/refresh/export, MT158 archive/saved retention and MT159 cross-user/concurrency as pending. MT152–155 and earlier unevidenced tests also remain pending. No accepted generation needs repeating.
+
+## Automated evidence and roadmap boundary
+
+376 web tests across67 files, including apply-vs-save routing, provenance preservation and32-record quota checks, pass. Web typecheck, lint, production build, guide58 HTML discovery, app boundaries and whitespace checks pass. The real42-migration/six-assertion SQL harness is exercised by the integration test. Admin source is unchanged and its checks were not rerun. Browser interaction, hosted SQL installation, real concurrency, deployment and founder acceptance are separate pending evidence; local tests do not accept the parent phase.
+
+The current evolution list has seven feature groups including private templates; after this interface source slice, six later groups remain: media/qualified AI visuals, assistant/hiring/delegation, meetings, voice, visual office and custom agents. This is not the count of all remaining grand project phases. P05/P07 connector execution and P11 commercial acceptance also remain. These later groups are plans, not a fixed number of implementation commits. Provider qualification, scoped connector grants and acceptance-dependent activation remain gated. Sequential source work may proceed where dependencies permit; deferred testing never implies a pass.

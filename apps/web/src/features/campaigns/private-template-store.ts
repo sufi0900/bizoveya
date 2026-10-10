@@ -8,7 +8,7 @@ function check(error:{code?:string;message?:string}|null){
  if(['42P01','42703','PGRST202','PGRST205'].includes(error?.code??''))throw new WorkspaceError(503,'Private template storage needs migration 041 after 040. Existing campaign visuals are unchanged.');
  if(error?.message==='bz_template_unavailable')throw new WorkspaceError(404,'This private template is unavailable.');
  if(error?.message==='bz_template_conflict')throw new WorkspaceError(409,'This private template changed in another session. Reload before saving.');
- if(error?.message==='bz_template_limit')throw new WorkspaceError(409,'This private pilot supports 20 templates and 50 versions per template.');
+ if(error?.message==='bz_template_limit')throw new WorkspaceError(409,'This private pilot supports 32 templates including archived templates and 50 versions per template.');
  if(error?.message==='bz_visual_source_unaccepted')throw new WorkspaceError(409,'The source review changed or is not accepted. Reload the campaign before applying the template.');
  if(error?.message==='bz_visual_limit')throw new WorkspaceError(409,'This private pilot supports 50 saved visual versions per generated result.');
  if(error?.message==='bz_invalid_template')throw new WorkspaceError(400,'Check the private template name and design fields.');

@@ -1,5 +1,9 @@
 # Bizoveya chronological activity and decision log
 
+### BZ-077 — 2026-10-10 PKT — Private-template interface and deferred testing
+
+Founder requests all remaining permitted source phases in sequence, testing later today. Resolved maincae5827; inspected historical branches/PR2/no repository AGENTS or active lease. Implemented P04.3.4.3e inventory/create/revise/old-version preview/archive and explicit reviewed atomic application. Corrected20-vs32 quota mismatch. Guide58 provides four combined founder steps and every new field sample. 376 web tests, typecheck and lint passed; MT156–159 and all prior unanswered tests remain pending. No hosted SQL/provider/settings/publication action.
+
 ## 2026-10-10 PKT — P04.3.4.3d
 
 Added migration042, visual v3 copied provenance, atomic owner/creator/source/conflict-checked application route and anti-forgery save boundary. 42 migrations/six SQL assertions, 372 web tests, typecheck and lint pass. No UI, hosted SQL, provider/publishing/settings action. See [57](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md).

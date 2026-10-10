@@ -1,5 +1,9 @@
 # Bizoveya continuation checkpoint
 
+## Private-template interface — P04.3.4.3e / 2026-10-10 PKT
+
+Founder authorizes sequential implementation with manual testing deferred. Creator-private inventory/create/revise/version preview/archive controls now appear in accepted campaign Visual drafts; explicit reviewed save applies through the atomic042 boundary. SQL/app quota is aligned to32. No new migration/provider/publishing action. See [58 Interface and four combined tests](58_PRIVATE_TEMPLATE_INTERFACE_AND_TESTS.md). MT156–159, MT152–155 and unrelated tests remain pending; parent acceptance is unchanged. Six later evolution groups remain, plus broader connector/commercial work; activation proceeds only when dependencies permit.
+
 ## Immutable template provenance — P04.3.4.3d / 2026-10-10 PKT
 
 Additive042 atomically copies a selected creator-owned recipe and pinned ID/version/renderer into strict visual v3 while preserving campaign words and legacy v1/v2 history. Ordinary saves cannot forge/rewrite provenance; archived/foreign choices are denied, saved copies survive archive/deletion. 42 migrations/six SQL assertions, 372 web tests, typecheck and lint pass. No UI, hosted SQL, provider/publication or repeat generation. See [57](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md). Next: reviewed inventory/apply UI. MT152–155 and unrelated tests remain pending; source remains 1.26.0.

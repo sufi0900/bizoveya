@@ -1,5 +1,9 @@
 # Implementation phases and status ledger
 
+## Private-template interface — P04.3.4.3e / 2026-10-10 PKT
+
+Founder authorizes sequential implementation with manual testing deferred. Creator-private inventory/create/revise/version preview/archive controls now appear in accepted campaign Visual drafts; explicit reviewed save applies through the atomic042 boundary. SQL/app quota is aligned to32. No new migration/provider/publishing action. See [58 Interface and four combined tests](58_PRIVATE_TEMPLATE_INTERFACE_AND_TESTS.md). MT156–159, MT152–155 and unrelated tests remain pending; parent acceptance is unchanged. Six later evolution groups remain, plus broader connector/commercial work; activation proceeds only when dependencies permit.
+
 ## P04.3.4.3d — provenance delivered; parent in progress
 
 Immutable copied template provenance is implemented with additive042 and authenticated application wiring. Automated checks pass; no UI or founder acceptance. The next slice may activate the creator-private inventory/apply interface. See [57](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md).

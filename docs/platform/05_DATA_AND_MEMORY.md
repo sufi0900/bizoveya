@@ -1,5 +1,9 @@
 # Data, schema and memory
 
+## Private-template interface — P04.3.4.3e / 2026-10-10 PKT
+
+Founder authorizes sequential implementation with manual testing deferred. Creator-private inventory/create/revise/version preview/archive controls now appear in accepted campaign Visual drafts; explicit reviewed save applies through the atomic042 boundary. SQL/app quota is aligned to32. No new migration/provider/publishing action. See [58 Interface and four combined tests](58_PRIVATE_TEMPLATE_INTERFACE_AND_TESTS.md). MT156–159, MT152–155 and unrelated tests remain pending; parent acceptance is unchanged. Six later evolution groups remain, plus broader connector/commercial work; activation proceeds only when dependencies permit.
+
 ## P04.3.4.3d visual provenance
 
 Migration042 adds no table: it extends strict visual validation to v3 and adds an atomic checked apply RPC. Visual v3 copies the immutable recipe and pinned reference into existing version/revision JSON. Legacy rows remain unchanged; no FK couples artifact retention to personal inventory. See [57](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md).

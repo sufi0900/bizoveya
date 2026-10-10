@@ -1,5 +1,9 @@
 # Living documentation changelog
 
+## P04.3.4.3e
+
+Added private-template controls to the accepted campaign visual composer, reviewed atomic application routing, quota repair, four regression tests and guide58. Founder testing deferred; roadmap count is scoped to evolution groups rather than all grand phases.
+
 ## P04.3.4.3d
 
 Added additive042, strict visual v3 provenance, atomic private-template application RPC/route, legacy renderer compatibility, anti-forgery controls, SQL/application tests and guide57. No UI/package/provider/publication change.

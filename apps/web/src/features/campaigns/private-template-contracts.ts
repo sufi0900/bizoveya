@@ -34,7 +34,7 @@ export type PrivateTemplateRecord=z.infer<typeof privateTemplateRecordSchema>;
 export const privateTemplateSummarySchema=z.object({
  templateId:z.uuid(),version:z.number().int().min(1).max(50),archived:z.boolean(),name,
 }).strict();
-export const privateTemplateInventorySchema=z.array(privateTemplateSummarySchema).max(20);
+export const privateTemplateInventorySchema=z.array(privateTemplateSummarySchema).max(32);
 export const savePrivateTemplateSchema=z.object({
  templateId:z.uuid(),expectedVersion:z.number().int().min(0).max(49),recipe:privateTemplateRecipeSchema,
 }).strict();

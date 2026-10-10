@@ -1,5 +1,9 @@
 # Combined pending setup and manual tests
 
+## Private-template interface — P04.3.4.3e / 2026-10-10 PKT
+
+Founder authorizes sequential implementation with manual testing deferred. Creator-private inventory/create/revise/version preview/archive controls now appear in accepted campaign Visual drafts; explicit reviewed save applies through the atomic042 boundary. SQL/app quota is aligned to32. No new migration/provider/publishing action. See [58 Interface and four combined tests](58_PRIVATE_TEMPLATE_INTERFACE_AND_TESTS.md). MT156–159, MT152–155 and unrelated tests remain pending; parent acceptance is unchanged. Six later evolution groups remain, plus broader connector/commercial work; activation proceeds only when dependencies permit.
+
 ## P04.3.4.3d pending items
 
 No visible manual test is added. Hosted042 after041 may be deferred until the UI delivery. MT152–155, real PostgREST/concurrency, inventory UI and unrelated checks remain pending; no pass is inferred. See [57](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md).

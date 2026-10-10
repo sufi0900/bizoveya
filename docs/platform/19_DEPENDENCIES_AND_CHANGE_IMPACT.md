@@ -1,5 +1,9 @@
 # Dependencies and change-impact register
 
+## Private-template interface — P04.3.4.3e / 2026-10-10 PKT
+
+Founder authorizes sequential implementation with manual testing deferred. Creator-private inventory/create/revise/version preview/archive controls now appear in accepted campaign Visual drafts; explicit reviewed save applies through the atomic042 boundary. SQL/app quota is aligned to32. No new migration/provider/publishing action. See [58 Interface and four combined tests](58_PRIVATE_TEMPLATE_INTERFACE_AND_TESTS.md). MT156–159, MT152–155 and unrelated tests remain pending; parent acceptance is unchanged. Six later evolution groups remain, plus broader connector/commercial work; activation proceeds only when dependencies permit.
+
 ## P04.3.4.3d dependency update
 
 Additive042 requires041 and existing visual/review storage. It adds no package, key or environment setting. Inventory UI is now dependency-permitted but still requires implementation and hosted/founder acceptance. Existing v1/v2 data is preserved. See [57](57_IMMUTABLE_TEMPLATE_VISUAL_PROVENANCE.md).
