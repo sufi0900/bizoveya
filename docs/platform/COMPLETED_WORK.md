@@ -1,5 +1,9 @@
 # Completed Bizoveya work only
 
+### CW-079 — 2026-10-11 PKT — Private media storage source
+
+Implemented the fail-closed metadata/bucket/server-access slice. Byte sanitization, object lifecycle, UI/rendering and parent acceptance remain incomplete. See [60](60_PRIVATE_MEDIA_STORAGE_AND_SERVER_ACCESS.md).
+
 ### CW-078 — 2026-10-10 PKT — Private media metadata source foundation
 
 Pure private-media admission/version/review/reference helpers and synthetic denial tests implemented. Storage, uploads, rendering and parent acceptance are incomplete. See [59](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).

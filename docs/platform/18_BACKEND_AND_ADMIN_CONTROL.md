@@ -1,5 +1,9 @@
 # Backend and super admin control contract
 
+## Private media server boundary — P04.3.4.4b
+
+Customer routes provide only authenticated metadata inventory/detail and owner review/archive. Service-role sanitized admission is not exposed as a web route. No admin media browser or public object access is added. See [60](60_PRIVATE_MEDIA_STORAGE_AND_SERVER_ACCESS.md).
+
 ## Private media foundation — P04.3.4.4a
 
 Pure media contracts are not authenticated endpoints. Private storage/server integration must derive the current actor and verify membership independently, calculate sanitized-byte metadata and enforce optimistic revisions/quotas. No administrative media browser is introduced. See [59](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).

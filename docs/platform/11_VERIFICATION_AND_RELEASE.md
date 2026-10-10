@@ -1,5 +1,11 @@
 # Verification, manual acceptance and release evidence
 
+## P04.3.4.4b verification boundary
+
+Local SQL and application automation covers the private-media storage/access contract. It does not prove Supabase Storage byte handling, sanitization, signed downloads, true concurrency, deployment or founder acceptance. Exact totals are recorded in guide60 after delivery.
+
+Verified: 43 migrations/seven SQL assertion scripts; 392 web tests across69 files; web typecheck, lint, production build, boundaries, whitespace, guide60 built HTML and335 affected Markdown links. Admin was unchanged/not rerun. Manual/hosted evidence remains pending.
+
 ## Private media foundation — P04.3.4.4a
 
 387 web tests across68 files passed, including11 media contract tests and the existing real SQL integration harness. Hosted upload/storage/rendering/concurrency and all unanswered founder checks remain pending. Other delivery checks are recorded in guide59. See [59](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).

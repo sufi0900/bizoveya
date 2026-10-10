@@ -1,5 +1,9 @@
 # Evolution record: templates, voice and the visual digital agency
 
+## P04.3.4.4b storage boundary
+
+Private metadata/history and fail-closed service admission are implemented. A real sanitizer/object lifecycle and visible owner workflow still precede visual media references or optional AI artwork. Six later evolution groups remain unfinished. See [60](60_PRIVATE_MEDIA_STORAGE_AND_SERVER_ACCESS.md).
+
 ## Private media foundation — P04.3.4.4a / 2026-10-10 PKT
 
 The next evolution group begins with pure private-media contracts. Storage/upload/rendering precede optional qualified AI. Six later evolution groups are still unfinished; no full-roadmap completion is claimed. See [59 Private media foundation](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).

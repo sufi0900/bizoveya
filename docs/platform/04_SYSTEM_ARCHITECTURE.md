@@ -1,5 +1,9 @@
 # System architecture
 
+## Private media storage boundary — P04.3.4.4b
+
+The browser has no direct campaign-media bucket policy. A future trusted sanitizer writes immutable bytes, then service-only admission records the exact creator/workspace/site/version/hash object path. Authenticated routes return descriptors/reviews but never the storage path. Rendering is a later versioned artifact boundary. See [60](60_PRIVATE_MEDIA_STORAGE_AND_SERVER_ACCESS.md).
+
 ## Private media foundation — P04.3.4.4a / 2026-10-10 PKT
 
 Media descriptors and accepted version/hash references are separate from template recipes and campaign words. Metadata copies are self-contained; actual bytes require private retained storage before rendering. Media review never supplies campaign acceptance or publication authority. See [59 Private media foundation](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).

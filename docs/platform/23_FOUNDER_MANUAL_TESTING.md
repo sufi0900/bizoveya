@@ -1,5 +1,9 @@
 # Founder manual testing record
 
+## P04.3.4.4b — no new founder test
+
+Storage/server access is headless and upload remains disabled. Do not install043 only to test an unavailable interface. MT152–159 and all unrelated unanswered checks remain pending. See [60](60_PRIVATE_MEDIA_STORAGE_AND_SERVER_ACCESS.md).
+
 ## Private media foundation — P04.3.4.4a / 2026-10-10 PKT
 
 No media founder test is added yet. MT152–159 and older unanswered tests remain pending; synthetic contract checks do not mark them passed. No successful generation needs repeating. See [59 Private media foundation](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).

@@ -1,5 +1,9 @@
 # Combined pending setup and manual tests
 
+## Private media storage — P04.3.4.4b pending items
+
+No manual step is added. Hosted043, real Storage bytes/sanitization/downloads/concurrency, visible upload/review/rendering and founder acceptance remain pending. Existing MT152–159 and unrelated checks remain open. See [60](60_PRIVATE_MEDIA_STORAGE_AND_SERVER_ACCESS.md).
+
 ## Private media foundation — P04.3.4.4a / 2026-10-10 PKT
 
 No new setup or manual step is required now. Private media storage/upload/rendering and browser/hosted/concurrency acceptance remain unimplemented or unverified. MT152–159 and all unrelated unanswered cases remain pending. See [59 Private media foundation](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).

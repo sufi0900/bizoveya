@@ -1,5 +1,9 @@
 # Stack, provider policy and security
 
+## Private media storage — P04.3.4.4b
+
+The bucket is private with no browser object policy. Only service role can record an exact sanitized-object path; authenticated users receive creator-scoped metadata and owner-only review/archive. Upload/signed-download endpoints remain absent until real bytes are decoded/re-encoded/hashed. See [60](60_PRIVATE_MEDIA_STORAGE_AND_SERVER_ACCESS.md).
+
 ## Private media foundation — P04.3.4.4a / 2026-10-10 PKT
 
 Strict metadata helpers reject URLs/executable fields, unsupported formats and excess image limits; they do not decode files or establish server authorization. Future storage must independently derive scope, sanitize/hash bytes and enforce RLS/private downloads. No upload boundary is active. See [59 Private media foundation](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).

@@ -1,5 +1,9 @@
 # Living documentation changelog
 
+## P04.3.4.4b
+
+Added migration043 private-media storage/admission, authenticated read/review/archive server access, SQL/application tests and guide60. No upload activation, dependency/provider/publication change or hosted migration.
+
 ## P04.3.4.4a
 
 Added private-media metadata/version/review/reference contracts and focused synthetic tests. Updated affected canonical records and guide59; no runtime upload/storage/renderer activation, migration, dependency or provider change.

@@ -1,5 +1,9 @@
 # In-app Bizoveya document room
 
+## Private media storage projection
+
+Guide60 and current P04.3.4.4b status are discovered from canonical Markdown. No private descriptor, rights evidence, object path or customer content is embedded in project documentation.
+
 ## Private media foundation — P04.3.4.4a / 2026-10-10 PKT
 
 Guide59 and current media foundation status project from canonical Markdown into the document room. This is a public project-status projection, not a private uploaded-media inventory. See [59 Private media foundation](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).

@@ -1,5 +1,9 @@
 # Bizoveya user manual — prelaunch working edition
 
+## Private media storage — no visible action
+
+The private storage boundary exists in source, but there is no upload field or media selector yet. Continue using existing visual drafts and templates. No new setup/sample text is required. See [60](60_PRIVATE_MEDIA_STORAGE_AND_SERVER_ACCESS.md).
+
 ## Private media foundation — P04.3.4.4a / 2026-10-10 PKT
 
 No new visible field, button, manual test or setup for this hidden foundation. Continue using existing private visuals; template acceptance is still pending. Upload controls and copy/paste samples will arrive with a later implemented interface. See [59 Private media foundation](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).

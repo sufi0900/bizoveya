@@ -1,5 +1,11 @@
 # Bizoveya continuation checkpoint
 
+## Private media storage — P04.3.4.4b / 2026-10-11 PKT
+
+Additive043 defines a private no-browser-policy bucket, creator/site/workspace metadata and service-only sanitized-byte admission record, with authenticated creator reads and owner review/archive routes. No byte sanitizer/upload/download UI or rendering is enabled. See [60](60_PRIVATE_MEDIA_STORAGE_AND_SERVER_ACCESS.md). Next: bounded server sanitizer and object lifecycle. All founder tests remain pending; do not apply043 solely for this hidden checkpoint.
+
+Automated evidence: 43 migrations/seven SQL scripts, 392 web tests/69 files, typecheck, lint, production build, boundaries, whitespace, guide60 HTML and affected Markdown links passed. Hosted/Storage/browser/manual evidence remains pending.
+
 ## Private media foundation — P04.3.4.4a / 2026-10-10 PKT
 
 Next permitted slice is P04.3.4.4b private byte storage/server admission, before upload UI and versioned renderer integration. Latest remote base9798a249; historical branches/PR2 inspected; no repository AGENTS or active checkpoint lease. Source remains1.26.0. No hosted operation or generation. See [59 Private media foundation](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).

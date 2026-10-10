@@ -1,5 +1,7 @@
 # Bizoveya platform documentation — start here
 
+Latest headless media checkpoint: [60 Private media storage and server access](60_PRIVATE_MEDIA_STORAGE_AND_SERVER_ACCESS.md). It does not activate uploads or rendering.
+
 ## Private media foundation — P04.3.4.4a / 2026-10-10 PKT
 
 Read [59 Private media foundation](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md) for the latest headless source slice and storage prerequisites. Manual acceptance remains separate. See [59 Private media foundation](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).

@@ -1,5 +1,9 @@
 # Data, schema and memory
 
+## Private media storage — P04.3.4.4b
+
+Migration043 stores creator/site/workspace metadata, immutable descriptor versions and immutable owner decisions. Archive retains history; actual referenced-byte retention/purge and failed-object cleanup require the next server lifecycle slice. See [60](60_PRIVATE_MEDIA_STORAGE_AND_SERVER_ACCESS.md).
+
 ## Private media foundation — P04.3.4.4a / 2026-10-10 PKT
 
 Creator/workspace/site-scoped media versions retain rights attestation, descriptor and immutable review decision. Shared inventory revision protects edits/review/archive. Metadata references pin hash/version; byte retention and deletion policy still need implementation. See [59 Private media foundation](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).

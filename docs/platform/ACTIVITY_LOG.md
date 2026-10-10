@@ -1,7 +1,10 @@
-Warning: truncated output (original token count: 24266)
-Total output lines: 619
-
 # Bizoveya chronological activity and decision log
+
+### BZ-079 — 2026-10-11 PKT — Private media storage boundary
+
+Resolved mainf124601; inspected historical branches/PR2/no repository AGENTS/no active lease. Added043 private bucket/metadata, service-only sanitized-byte admission record and authenticated creator read/owner review/archive routes. Added local SQL/application denial/conflict tests plus guide60. No sanitizer, upload/download UI, renderer, hosted SQL, provider, settings or publication action. All founder tests remain pending.
+
+BZ-079 verification: 43 migrations/seven SQL scripts and392 web tests/69 files passed; typecheck, lint, production build, boundaries, whitespace, guide60 HTML and affected Markdown links passed. Hosted Storage, byte sanitizer, concurrency, browser/deployment and founder acceptance remain pending.
 
 ### BZ-078 — 2026-10-10 PKT — Private media contract foundation
 
@@ -217,7 +220,159 @@ The founder approved one branch/PR per phase and six-hour continuation. GitHub r
 ### BZ-007 — 2026-09-29, package creation time in external handoff PKT — Manual, rubric and visual presentation
 
 - **Actors:** Sufian Mustafa proposed a living customer/officer manual, operating rubric, commercial visual presentation and navigable Sites document experience. ChatGPT Codex assistant authored P00.5 artifacts; exact underlying model/version is not independently verified.
-- **Action:** Added `13_USER_MANUAL.md` (planned versus verified labels and future step-by-step update contract), `14_OPERATING_RUBRIC.md` (internal gates, not legal terms), `15_COMMERCIAL_PRESENTATION.md` and an inspected six-page `docs/presentation/Bizoveya_Commercial_Vision_0.5.pdf`. Added `16_DOCUMENT_PORTAL.md…6266 tokens truncated… identity not independently exposed. Location: revision-1.8/bizoveya-platform, delivery/P02.1. Local evidence:271 unit tests (241web/30admin), both production builds with type/lint, frozen lock installation,001–021 SQL plus four assertion scripts and legacy upgrade preservation,31 actual local browser checks, eight browser screenshots and no page errors. Real hosted saved-draft/Auth/MFA/tenant acceptance remains pending. Fixed accent label accessibility and legacy portfolio-entry links during browser review. Prior run timing/selector failures were resolved; final report records actual passing steps. Preserved founder1.7 Ready screenshots separately. Final archive: Bizoveya_1.8_Business-Entry-and-Draft-Builder.zip; creation time and checksum in external metadata. No hosted deployment or SQL by assistant.
+- **Action:** Added `13_USER_MANUAL.md` (planned versus verified labels and future step-by-step update contract), `14_OPERATING_RUBRIC.md` (internal gates, not legal terms), `15_COMMERCIAL_PRESENTATION.md` and an inspected six-page `docs/presentation/Bizoveya_Commercial_Vision_0.5.pdf`. Added `16_DOCUMENT_PORTAL.md` describing a Markdown-derived Sites projection, visibility/access split, print pagination and source synchronization. No Sites URL was published.
+- **Evidence:** `Bizoveya_0.5_Manual-Rubric-Presentation.zip`; full ZIP and PDF integrity/render checks and SHA-256 in external handoff. `PACKAGE_VERSIONS.md` row 0.5; completed-work row CW-007; phase substep P00.5. The full user manual remains prelaunch because no Bizoveya customer feature has been accepted.
+- **Limit:** Application source, SQL and package metadata unchanged. A legal terms/privacy policy and real screenshots are not claimed. The P00 grand phase remains open for baseline verification.
+
+### BZ-008 — 2026-09-29, P01.0 package time in external handoff PKT — Owner correction and in-app document room
+
+- **Actors:** Sufian Mustafa clarified that the visual documentation must be a public room in the existing Bizoveya website ZIP, with all new platform Markdown represented there; ChatGPT Codex assistant implemented it. Exact underlying model/version is not independently verified.
+- **Decision/reversal:** The 0.5 standalone PDF and separate ChatGPT Sites projection were superseded. The PDF was removed from the new ZIP. The visual room is implemented at `/bizoveya/docs` with per-document slugs, using `docs/platform/*.md` and `docs/platform/decisions/*.md` as source. `docs/history/` remains in the ZIP but is not listed in the room.
+- **Code/location:** `src/features/document-room/` and `src/app/bizoveya/docs/` contain loading, Markdown/diagram rendering, searchable overview, individual views and scoped responsive styles; `package.json` and lockfile add Mermaid. Updated all affected living docs, phase and completion registers. No SQL change.
+- **Package/evidence:** `Bizoveya_1.0_In-App-Document-Room.zip`; exact creation time, SHA-256 and checks in external delivery handoff because its own hash cannot be embedded in itself. P01.0 remains `[~]` pending real browser/deployed preview acceptance.
+
+### BZ-009 — 2026-09-29, package time in external handoff PKT — Visual document dashboard
+
+- **Actors/instruction:** Sufian Mustafa requested a visually appealing Next.js dashboard instead of a Wikipedia-like long-text presentation, including analytics-style tracking and dark mode. ChatGPT Codex assistant implemented P01.1; exact underlying model/version not independently verified.
+- **Change:** `src/app/bizoveya/docs/page.tsx`, `[slug]/page.tsx` and `document-room.css` now show an overview dashboard and visual document detail. `src/features/document-room/insights.ts` parses canonical Markdown; `visuals.tsx` renders phase, completed work, activity and version displays; `theme-switch.tsx` remembers light/dark preference. Explorer gains icon cards; Mermaid adapts to theme. Original Markdown remains the complete readable source.
+- **Evidence/status:** `Bizoveya_1.1_Visual-Document-Dashboard.zip`; exact ZIP time, hash and automated command results in delivery handoff. Source/checks do not establish a live browser or deployed result. P01.1 stays `[~]` pending mobile/theme/search/navigation and owner visual review. P01.2 workspace shell is still pending. No migration or external application write.
+
+### BZ-010 — 2026-09-29, exact time unknown PKT — Feature development paused for Muse competition research
+
+- **Actors:** Sufian Mustafa, founder/product owner; ChatGPT Codex assistant, exact underlying model/version not independently verified.
+- **Action/decision:** Founder paused feature development after 1.1 and asked whether general social/business automation agents threaten Bizoveya, Buffer-like products and customer demand. Assistant acknowledged category overlap and recommended outcome/demand validation without promising immunity or revenue.
+- **Evidence/location:** Visible conversation, summarized with evidence limits in `17_DISCUSSION_AND_DECISION_RECORD.md` (D01); downstream planning contract `18_BACKEND_AND_ADMIN_CONTROL.md`, ADR-0002. Time is message metadata to the minute where given, otherwise explicitly unknown. This entry was reconstructed during P01.2, not a contemporaneous commit.
+- **Status:** Research/planning only; no application change, external account action, model deployment, SQL or phase acceptance during the discussion. Earlier concerns are clarified, not declared emotionally or commercially resolved.
+
+### BZ-011 — 2026-09-29 to 2026-09-30, exact time unknown PKT — Muse backend and model eligibility clarified
+
+- **Actors:** Sufian Mustafa, founder/product owner; ChatGPT Codex assistant, exact underlying model/version not independently verified.
+- **Action/decision:** Founder explored using Muse as a ready-made backend, avoiding browser/integration code. Assistant separated personal agent, model API, connector direction and managed runtime. No inherited accounts or complete delegation API assumed; Spark hosted-API Pakistan eligibility is blocked under the researched policy; self-hosted weights require separate license/hardware review.
+- **Evidence/location:** Visible conversation, summarized with evidence limits in `17_DISCUSSION_AND_DECISION_RECORD.md` (D02–D03); downstream planning contract `18_BACKEND_AND_ADMIN_CONTROL.md`, ADR-0002. Time is message metadata to the minute where given, otherwise explicitly unknown. This entry was reconstructed during P01.2, not a contemporaneous commit.
+- **Status:** Research/planning only; no application change, external account action, model deployment, SQL or phase acceptance during the discussion. Earlier concerns are clarified, not declared emotionally or commercially resolved.
+
+### BZ-012 — 2026-09-30 00:39 PKT — Agent model key and instruction correction
+
+- **Actors:** Sufian Mustafa, founder/product owner; ChatGPT Codex assistant, exact underlying model/version not independently verified.
+- **Action/decision:** Founder challenged the claimed Muse-specific ease of instructions and understood per-agent model routing. Assistant corrected the overstatement: flexible tool planning is general; agent/model/key/runtime are distinct; a key per agent is not required; deterministic controls and task-based model evaluation remain necessary.
+- **Evidence/location:** Visible conversation, summarized with evidence limits in `17_DISCUSSION_AND_DECISION_RECORD.md` (D04); downstream planning contract `18_BACKEND_AND_ADMIN_CONTROL.md`, ADR-0002. Time is message metadata to the minute where given, otherwise explicitly unknown. This entry was reconstructed during P01.2, not a contemporaneous commit.
+- **Status:** Research/planning only; no application change, external account action, model deployment, SQL or phase acceptance during the discussion. Earlier concerns are clarified, not declared emotionally or commercially resolved.
+
+### BZ-013 — 2026-09-30 00:56 PKT — SDK versus hosted agents and integration explained
+
+- **Actors:** Sufian Mustafa, founder/product owner; ChatGPT Codex assistant, exact underlying model/version not independently verified.
+- **Action/decision:** Founder supplied the OpenAI Platform screenshot and asked whether agents must be created there/uploaded, paid OpenAI forced, and how specialists connect. Assistant recommended application-run SDK/config with compatible provider adapters; final SDK not selected. Coordinator retains responsibility; managed runtime remains optional. Screenshot not republished due account context; no deployed agent proof.
+- **Evidence/location:** Visible conversation, summarized with evidence limits in `17_DISCUSSION_AND_DECISION_RECORD.md` (D05–D06); downstream planning contract `18_BACKEND_AND_ADMIN_CONTROL.md`, ADR-0002. Time is message metadata to the minute where given, otherwise explicitly unknown. This entry was reconstructed during P01.2, not a contemporaneous commit.
+- **Status:** Research/planning only; no application change, external account action, model deployment, SQL or phase acceptance during the discussion. Earlier concerns are clarified, not declared emotionally or commercially resolved.
+
+### BZ-014 — 2026-09-30 15:28 PKT — Super admin planning direction added
+
+- **Actors:** Sufian Mustafa, founder/product owner; ChatGPT Codex assistant, exact underlying model/version not independently verified.
+- **Action/decision:** Founder requested editable agent defaults, QA rules, client instructions, templates, users and operations. Assistant proposed protected versioned configuration, tests before activation, run snapshots/rollback, server permissions, MFA, secret boundaries and operational visibility. QA agent judgment complements deterministic validators; no zero-error guarantee. A focused real workflow matters more than settings alone for hackathon.
+- **Evidence/location:** Visible conversation, summarized with evidence limits in `17_DISCUSSION_AND_DECISION_RECORD.md` (D07); downstream planning contract `18_BACKEND_AND_ADMIN_CONTROL.md`, ADR-0002. Time is message metadata to the minute where given, otherwise explicitly unknown. This entry was reconstructed during P01.2, not a contemporaneous commit.
+- **Status:** Research/planning only; no application change, external account action, model deployment, SQL or phase acceptance during the discussion. Earlier concerns are clarified, not declared emotionally or commercially resolved.
+
+### BZ-015 — 2026-09-30 16:01 PKT — Founder directs full discussion and document synchronization
+
+- **Actors:** Sufian Mustafa, founder/product owner; ChatGPT Codex assistant, exact underlying model/version not independently verified.
+- **Action/decision:** Founder authorized detailed recording of the pause/research/questions/answers/corrections and all affected architecture, workflow, phase, backend and credential-room docs plus visual projection and a new ZIP. This authorizes documentation changes; agent/admin code remains planned.
+- **Evidence/location:** Visible conversation, summarized with evidence limits in `17_DISCUSSION_AND_DECISION_RECORD.md` (D08); downstream planning contract `18_BACKEND_AND_ADMIN_CONTROL.md`, ADR-0002. Time is message metadata to the minute where given, otherwise explicitly unknown. This entry was reconstructed during P01.2, not a contemporaneous commit.
+- **Status:** Research/planning only; no application change, external account action, model deployment, SQL or phase acceptance during the discussion. Earlier concerns are clarified, not declared emotionally or commercially resolved.
+
+### BZ-016 — 2026-09-30, package time recorded in delivery evidence PKT — Discussion and backend planning synchronized
+
+- **Actors/instruction:** Sufian Mustafa requested the full flashback/update; ChatGPT Codex assistant authored Bizoveya 1.2 / P01.2. Exact underlying model/version not independently verified.
+- **Baseline:** Latest owner-uploaded `Bizoveya_1.1_Visual-Document-Dashboard(1).zip` has the same 811,080 bytes and SHA-256 `75460c21f63fd2ce74201bdb6e1824a9a56b13f435273cf60426c979c8a44cae` as 1.1. Library ID `libfile_5d8039a01e6881918bc09cbf3d25694a`; reupload does not create another produced version. Inspected all 24 current Markdown files, archive inventory and document-room source relevant to projection. Current Git/deployment/live migrations still unverified.
+- **Changes:** New discussion record, backend/admin contract and ADR-0002; all 23 existing top-level platform Markdown updated plus README introduction. Original ADR-0001 and archived history preserved. All application source, assets, dependency/lock/config files and SQL remain byte-identical to 1.1. Complete file inventory is in CHANGELOG.
+- **Decision/sequence:** Application-run SDK/adapter direction, protected versioned agent/default rules, client-scoped settings, secret references/rotation, QA plus validators, admin metrics/control and hackathon proof. P01.2 is documentation synchronization; undelivered workspace shell moves explicitly to P01.3, with P01.4 admin shell planned. P00.6 baseline remains pending; no old delivered number changed.
+- **Package:** `Bizoveya_1.2_Discussion-and-Backend-Plan.zip`; exact output hash/time in external handoff. Narrow documentary completion only; no new working admin/agent/vault/API/migration or live deployment. Browser acceptance remains open. Validation evidence is in `11_VERIFICATION_AND_RELEASE.md` and package verification report.
+
+### BZ-017 — Exact founder proposal time unavailable — Transition and dependency proposal
+
+- **Actor:** Sufian Mustafa, founder/product owner. **Evidence:** Visible conversation; D09 in document 17. Reconstructed for package 1.3; no invented historical timestamp.
+- **Question/decision:** Asked for first transition phase, route skeletons/backend URLs and frontend/backend order; requested dependencies including new templates affecting voice agents and new agents affecting other tools. Assistant proposed an additive vertical slice, route-state inventory and explicit transitive impact register.
+- **Limit:** Planning discussion; no routes, APIs, agents or SQL implemented.
+
+### BZ-018 — Exact authorization message time unavailable — Proceed with preparation
+
+- **Actors:** Sufian Mustafa authorized with “ok proceed >”; ChatGPT Codex assistant, exact model/version not independently verified.
+- **Scope:** Carry out the preceding documentary dependency/transition preparation before feature code. D10 records scope; latest owner instruction remains authoritative.
+- **Evidence:** Visible user instruction and opening task commentary; no external side effects or feature acceptance.
+
+### BZ-019 — 2026-10-01T00:15:47+05:00 PKT — Transition and dependency documentation delivery
+
+- **Actor:** ChatGPT Codex assistant for founder Sufian Mustafa; exact model/version not independently verified. **Source:** `Bizoveya_1.2_Discussion-and-Backend-Plan.zip`; checksum verified against baseline in delivery report. Timestamp records documentation assembly; exact archive creation timestamp is in external handoff.
+- **Changes/location:** New `docs/platform/19_DEPENDENCIES_AND_CHANGE_IMPACT.md`, `20_ROUTE_AND_TRANSITION_REGISTER.md`, `decisions/ADR-0003-transition-and-dependency-traceability.md`; all affected canonical specs, handoff, progress/version/discussion records and README synchronized. Observed route IDs and future URL contracts distinguished from implementation.
+- **Decision:** Preserve inherited app/public URLs; membership/site vertical slice first; shared template catalog and typed agent artifacts; no standalone dependency AI. Keep feature work IDs stable across multiple delivery ordinals. P01.3-Plan documentary gate only is checked; workspace/admin code and grand phases remain pending.
+- **Package/evidence:** `Bizoveya_1.3_Dependencies-and-Transition-Plan.zip`; CW-011; full changed-path/hash and build/projection evidence in `docs/delivery/P01.3_VERIFICATION.json`. Application, dependencies, SQL, assets and archived history preserved byte-for-byte. No deployment or browser acceptance asserted.
+
+### BZ-020 — 2026-10-01 00:30:48 PKT — Founder authorizes first practical implementation
+
+- **Actor:** Sufian Mustafa, founder/product owner. **Evidence:** Current visible instruction “ok i think we are ready for the first implementation phase >”; timestamp supplied by current user-time context, not inferred from filesystem.
+- **Scope:** Existing app transition, workspace/site persistence and permission-scoped UI/APIs, preserving portfolio features and updating all affected documents. Local development/testing and migration drafting are authorized; no production DB apply or external publish performed.
+- **Work item:** Stable P01.3; prior package 1.3 preparation remains recorded. P01.4 platform admin stays planned.
+
+### BZ-021 — 2026-10-01T01:21:51+05:00 PKT — Workspace and site foundation source delivery
+
+- **Actors:** ChatGPT Codex assistant for Sufian Mustafa; exact underlying model/version not independently verified. Timestamp is observed execution/assembly clock, not the founder message time.
+- **Baseline:** `Bizoveya_1.3_Dependencies-and-Transition-Plan.zip`; exact checksum and comparison in verification. Inspected all 30 canonical Markdown sources plus auth, project APIs/policies, migrations, navigation and test/build setup. No current Git/remote deployment/applied migration ledger verified.
+- **Changes/location:** Six workspace pages; four protected workspace API files; domain schemas, role/entity persistence layer, strict session/body/origin/error boundary, responsive dark/light UI/forms and empty/loading/error states. Additive SQL 018 + staging rollback assertions. Existing portfolio list/start gain entry links; root applicationName and package metadata become Bizoveya; robots excludes private routes. Old project command/voice/public API and migrations 001–017 preserved. Canonical docs/route impact/manual/progress/package records synchronized; no duplicate visual text source.
+- **Evidence:** 42 files / 214 local tests (including existing regressions); type/lint/build/static projection/ZIP results and exact paths/hashes in `docs/delivery/P01.4_VERIFICATION.json`. Supabase calls are mocked in local auth/store tests. A test-global JSX setup and an invalid metric prop were corrected before final checks.
+- **Limits/manual gates:** Migration not remotely applied; staging SQL not run; no local PostgreSQL/browser executable; owner must verify persistence/RLS/auth/viewport/theme and legacy live behavior. No external URL fetch/write, model invocation, live admin/secret room, business builder, automatic founder-site records or deployment. P01.3 source is `[~]`, not accepted; grand phases remain open.
+- **Package:** `Bizoveya_1.4_Workspace-and-Site-Foundation.zip`; exact creation time/SHA in external handoff. CW-012 records only delivered implementation, with these limits. Work ID P01.3 stays stable across ZIP ordinal 1.4.
+
+### BZ-022 — Founder message timestamp unavailable — Continue practical Phase 1
+
+- **Actor:** Sufian Mustafa, founder/product owner; visible instruction “plz continue >”.
+- **Scope:** Continue authorized implementation from package 1.4. Assistant selected the already planned P01.4 admin identity/MFA/control shell while keeping P01.3 live acceptance pending. No production deployment or operator account grant authorized/performed by this local delivery.
+- **Evidence:** Visible conversation and D12; timestamp not inferred from filesystem.
+
+### BZ-023 — 2026-10-01T02:23:25+05:00 PKT — Admin identity and control shell source delivery
+
+- **Actor:** ChatGPT Codex assistant for Sufian Mustafa; exact underlying model/version not independently verified. Time is observed execution/assembly clock, not founder-message time. Location: repository-relative paths below.
+- **Baseline:** `Bizoveya_1.4_Workspace-and-Site-Foundation.zip`, SHA-256 `a8c58502682f1481e5d116b170cc36ab97ce13d99a6a577e210acc41d6e3cc02`; restored exact bytes before changes. Current Git/deployed state and remote SQL ledger remain unverified.
+- **Changes:** `src/features/admin/`, `src/app/admin/`, two `/api/admin/` handlers; private grant/audit migration 019, operator SQL template and staging assertions; one new canonical runbook 21; affected specs/manual/routes/impact/progress/visual source synchronized. Application metadata1.5.0, dependencies/lockfile and all inherited source/migrations preserved.
+- **Evidence:** 45 test files / 242 passing tests at local test stage; exact final checks and path/hash inventory in `docs/delivery/P01.5_VERIFICATION.json`. Tests mock Supabase. Early test typing and local ESLint plugin-resolution issues were corrected; no new dependency installed.
+- **Limits:** No real DB/MFA/browser/recovery acceptance, remote account grant, key storage, agent/template editor or deployment. P01.4 source `[~]`; P01.3 live gates still pending; grand phases unchanged.
+- **Package:** `Bizoveya_1.5_Admin-Identity-and-Control-Shell.zip`; work item P01.4, delivery ordinal1.5. Exact final archive time/hash are external to the ZIP; CW-013 records delivered source work only.
+
+### BZ-024 — 2026-10-01T13:18:30+05:00 PKT — Founder requests continuation
+
+- **Actor:** Sufian Mustafa, founder/product owner. Visible instruction “Continue plz”; exact timestamp from supplied user-time context.
+- **Scope:** Continue authorized practical implementation. Assistant selected remaining Phase1 verification/hardening rather than assuming live gates had passed. Source baseline1.5 is restored from its exact archived bytes.
+
+### BZ-025 — 2026-10-01T13:37:23+05:00 PKT — Phase1 verification and hardening delivery
+
+- **Actor:** ChatGPT Codex assistant for Sufian Mustafa; exact underlying model/version not independently verified. Timestamp is observed assembly clock. Baseline `Bizoveya_1.5_Admin-Identity-and-Control-Shell.zip`, SHA-256 `99197dedea6d487354b435a181738d4703cdbfcda24551073fcba03b4c8bc5a8`.
+- **Findings:** Existing018/019 SQL assertions passed in isolated PostgreSQL WASM. New soft-deletion recovery regression failed against019 with `bz_user_not_found`. Actual browser showed stale release1.1/24-document labels despite newer sources.
+- **Repairs/locations:** Additive migration020 and recovery assertion; `src/features/document-room/insights.ts`, visuals and docs overview/detail pages; two new unit-test files. `tools/phase1-verification/` supplies isolated SQL/browser runners with their own lockfile. New canonical guide22 and all affected specs/manual/status/impact records updated; public visual source remains shared.
+- **Evidence:**250 tests/47 files; executed SQL, upgrade preservation, real local browser reports/screenshots and final type/lint/build/archive inventory in `docs/delivery/P01.6_VERIFICATION.json`. Initial browser tool/download issues and a CSS-text assertion correction are recorded. No fake authenticated-browser result is claimed.
+- **Limits:** No remote migration/deploy/account grant, live Supabase Auth/TOTP/PostgREST, concurrent DB transactions or owner acceptance. Existing001–019 migrations/root dependency ranges/lockfile and historical archives preserved. P01.3/P01.4 stay `[~]`, all grand phases unaccepted.
+- **Package:** `Bizoveya_1.6_Phase1-Verification-and-Hardening.zip`; CW-014; exact archive timestamp/hash external. Work P01.4.Fix-1/P01.1.Fix-1 and bounded verification; no new commercial feature scope.
+
+### BZ-026 — founder test report and separation direction
+
+Report at2026-10-01T21:43:55+05:00: Sufian Mustafa reported route/site-registration passes; admin login not tested. Follow-up clarification at2026-10-01T22:17:02+05:00 authorized source separation and docs in cumulative ZIP. Exact test execution time and environment identifiers unknown. Evidence: conversation,23 manual record.
+
+### BZ-027 — source assembly
+
+Recorded at2026-10-01T22:23:53+05:00; actor: ChatGPT Codex assistant (exact model ID not independently exposed). Workspace: revision-1.7/bizoveya-platform. Moved admin routes/APIs to separate app, preserved inherited SQL/history, added host-only distinct cookie configuration/login/refresh, updated docs and checks. No hosted deploy, DNS, real credentials or database mutations. Verification outcomes and exact archive identity in docs/delivery/P01.7_VERIFICATION.json and external metadata; this timestamp is assembly, not ZIP creation.
+
+P01.7 final checks:252 unit tests, both production builds/type/lint, frozen workspace lock validation,18 real local two-app browser checks, no page errors,35 current docs/local links, unchanged001–020 SQL/history. Three final screenshots in docs/delivery/P01.7. Actual hosted Auth/MFA and domains pending. Archive name Bizoveya_1.7_Separate-Admin-Application.zip.
+
+
+### BZ-028 — 2026-10-01T23:25:56+05:00 — founder deployment evidence and implementation authorization
+
+Actor: Sufian Mustafa. Location: conversation; Vercel projects bizoveya-web and bizoveya-admin. Earlier report at23:23:19PKT includes screenshots showing both Ready/Production. Founder requested next practical implementation while independently testing. This is not a report that Auth/MFA, tenant isolation or all tests passed.
+
+### BZ-029 — 2026-10-01T23:40:08.253+05:00 — P02.1 source and local verification activity
+
+Actor: ChatGPT Codex assistant; exact model identity not independently exposed. Location: revision-1.8/bizoveya-platform. Timestamp is the local SQL verification interval (report started18:40:08UTC), not archive creation. Added marketing homepage, preserved former root at/portfolio, business template catalog/demo/editor, scoped draft API/store/schema, migration021 and tests. Updated affected specs/manual/dependencies/phase/records; all canonical content remains in the main visual document room. Fixed a stale native-business planning-only test expectation and test JSX import during verification. No remote SQL, hosted deployment, private keys or DNS changes by assistant. Verification and exact ZIP identity are recorded in delivery/P02.1 and external metadata.
+
+
+### BZ-030 — 2026-10-01T23:54:46+05:00 — P02.1 verification and cumulative delivery preparation
+
+Actor: ChatGPT Codex assistant; exact model identity not independently exposed. Location: revision-1.8/bizoveya-platform, delivery/P02.1. Local evidence:271 unit tests (241web/30admin), both production builds with type/lint, frozen lock installation,001–021 SQL plus four assertion scripts and legacy upgrade preservation,31 actual local browser checks, eight browser screenshots and no page errors. Real hosted saved-draft/Auth/MFA/tenant acceptance remains pending. Fixed accent label accessibility and legacy portfolio-entry links during browser review. Prior run timing/selector failures were resolved; final report records actual passing steps. Preserved founder1.7 Ready screenshots separately. Final archive: Bizoveya_1.8_Business-Entry-and-Draft-Builder.zip; creation time and checksum in external metadata. No hosted deployment or SQL by assistant.
 
 
 ### BZ-031 — 2026-10-02 00:16:40 PKT — Founder baseline report and research request

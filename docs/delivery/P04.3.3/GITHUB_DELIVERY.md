@@ -1,5 +1,9 @@
 # Verified main delivery — P04.3.3 founder evidence checkpoint
 
+## P04.3.4.4b successor storage note
+
+Additive043 and headless private-media server access do not change P04.3.3 evidence. See [60](../../platform/60_PRIVATE_MEDIA_STORAGE_AND_SERVER_ACCESS.md). No hosted SQL/provider/settings/publication or repeat generation.
+
 ## P04.3.4.4a successor foundation
 
 Private-media metadata/ownership/version/review/reference contracts follow main9798a249. See [59](../../platform/59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md). No change to prior pilot evidence; hosted/manual acceptance remains pending. No hosted SQL/provider/settings/publication or generation.

@@ -1,5 +1,9 @@
 # Dependencies and change-impact register
 
+## Private media storage — P04.3.4.4b
+
+Additive043 follows042 and adds no package, key or environment variable. Its service-only admission RPC is unusable until a trusted bounded sanitizer and object lifecycle exist. Existing visuals/templates/migrations are preserved. Hosted043 is not requested for the hidden slice. See [60](60_PRIVATE_MEDIA_STORAGE_AND_SERVER_ACCESS.md).
+
 ## Private media foundation — P04.3.4.4a / 2026-10-10 PKT
 
 No new package, key, SQL or environment variable. Storage must enforce creator/site membership, sanitized-byte verification, atomic aggregate quotas, revision locks, retained referenced bytes and authenticated downloads before media activation. Optional AI remains provider-gated. See [59 Private media foundation](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).

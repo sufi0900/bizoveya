@@ -27,6 +27,10 @@ export const privateMediaRecordSchema = z.object({
   });
 });
 export type PrivateMediaRecord = z.infer<typeof privateMediaRecordSchema>;
+export const privateMediaSummarySchema = z.object({ mediaId: z.uuid(), revision: z.number().int().positive(), version: z.number().int().min(1).max(PRIVATE_MEDIA_LIMITS.maxVersions), archived: z.boolean(), descriptor: privateMediaDescriptorSchema, reviewDecision: z.enum(['accepted', 'rejected']).nullable() }).strict();
+export const privateMediaInventorySchema = z.array(privateMediaSummarySchema).max(32);
+export const reviewPrivateMediaInputSchema = z.object({ expectedRevision: z.number().int().positive(), version: z.number().int().min(1).max(PRIVATE_MEDIA_LIMITS.maxVersions), decision: z.enum(['accepted', 'rejected']), reason: note }).strict();
+export const archivePrivateMediaInputSchema = z.object({ expectedRevision: z.number().int().positive() }).strict();
 export type PrivateMediaScope = { actorId: string; workspaceId: string; siteId: string };
 export const privateMediaReferenceSchema = z.object({ mediaId: z.uuid(), version: z.number().int().min(1).max(PRIVATE_MEDIA_LIMITS.maxVersions), sha256: z.string().regex(/^[a-f0-9]{64}$/) }).strict();
 export class PrivateMediaError extends Error {

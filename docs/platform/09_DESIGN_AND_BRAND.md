@@ -1,5 +1,9 @@
 # Design, templates and brand
 
+## Private media storage — P04.3.4.4b
+
+Storage/version/review source exists without a media selector or renderer. Existing v1/v2/v3 visuals, templates and PNG/PDF exports remain unchanged. Visual media references require a later compatible schema. See [60](60_PRIVATE_MEDIA_STORAGE_AND_SERVER_ACCESS.md).
+
 ## Private media foundation — P04.3.4.4a / 2026-10-10 PKT
 
 PNG/JPEG upload descriptors are defined with bounded size/dimensions and alternative text; no upload or image rendering is enabled. Existing templates/visuals/exports stay unchanged. A future visual schema must preserve old saved documents. See [59 Private media foundation](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).

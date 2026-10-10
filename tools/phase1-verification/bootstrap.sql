@@ -12,8 +12,9 @@ $$;
 create function auth.jwt() returns jsonb language sql stable as $$
   select coalesce(nullif(current_setting('request.jwt.claims',true),'')::jsonb,'{}'::jsonb);
 $$;
+create function auth.role() returns text language sql stable as $$select coalesce(nullif(current_setting('request.jwt.claim.role',true),''),(nullif(current_setting('request.jwt.claims',true),'')::jsonb->>'role'))$$;
 grant usage on schema auth, public to anon, authenticated, service_role;
-grant execute on function auth.uid(),auth.jwt() to anon, authenticated, service_role;
+grant execute on function auth.uid(),auth.jwt(),auth.role() to anon, authenticated, service_role;
 -- Reproduce Supabase-style public-object grants so migration revocations are tested.
 alter default privileges in schema public grant all on tables to anon, authenticated, service_role;
 alter default privileges in schema public grant all on sequences to anon, authenticated, service_role;

@@ -1,5 +1,9 @@
 # Implementation phases and status ledger
 
+## P04.3.4.4b — storage boundary delivered; parent in progress
+
+Migration043 and authenticated private-media read/review/archive server access are implemented. Actual byte sanitization/upload/download, visible UI, visual integration, optional AI and founder acceptance remain incomplete. See [60](60_PRIVATE_MEDIA_STORAGE_AND_SERVER_ACCESS.md).
+
 ## Private media foundation — P04.3.4.4a / 2026-10-10 PKT
 
 P04.3.4.4 is in progress: metadata/ownership/review foundation implemented; uploads, byte storage, rendering, optional AI and acceptance are incomplete. P04.3.4.3 source interface is delivered but manual acceptance remains pending; no grand phase is marked complete. See [59 Private media foundation](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).
