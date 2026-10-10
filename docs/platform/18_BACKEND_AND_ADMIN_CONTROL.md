@@ -1,5 +1,10 @@
 # Backend and super admin control contract
 
+## Private media foundation — P04.3.4.4a
+
+Pure media contracts are not authenticated endpoints. Private storage/server integration must derive the current actor and verify membership independently, calculate sanitized-byte metadata and enforce optimistic revisions/quotas. No administrative media browser is introduced. See [59](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).
+
+
 ## 2026-10-08 evolution update — planned direction
 
 Planned backend contracts retain server-enforced tenant/tool/budget/approval rules. Catalog hiring activates a reviewed version; user-created agents configure existing allowed tools only. Founder assistant and HR role cannot grant credentials or publish merely from a meeting. Personal template access is creator-scoped, not admin-visible by default. Event queues need leases/idempotency/checkpoints/receipts; provider-limit or uncertain-cost recovery escalates rather than silently retrying.

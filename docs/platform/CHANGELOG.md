@@ -1,5 +1,10 @@
 # Living documentation changelog
 
+## P04.3.4.4a
+
+Added private-media metadata/version/review/reference contracts and focused synthetic tests. Updated affected canonical records and guide59; no runtime upload/storage/renderer activation, migration, dependency or provider change.
+
+
 ## P04.3.4.3e
 
 Added private-template controls to the accepted campaign visual composer, reviewed atomic application routing, quota repair, four regression tests and guide58. Founder testing deferred; roadmap count is scoped to evolution groups rather than all grand phases.

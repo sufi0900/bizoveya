@@ -1,5 +1,10 @@
 # Bizoveya continuation checkpoint
 
+## Private media foundation — P04.3.4.4a / 2026-10-10 PKT
+
+Next permitted slice is P04.3.4.4b private byte storage/server admission, before upload UI and versioned renderer integration. Latest remote base9798a249; historical branches/PR2 inspected; no repository AGENTS or active checkpoint lease. Source remains1.26.0. No hosted operation or generation. See [59 Private media foundation](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).
+
+
 ## Private-template interface — P04.3.4.3e / 2026-10-10 PKT
 
 Founder authorizes sequential implementation with manual testing deferred. Creator-private inventory/create/revise/version preview/archive controls now appear in accepted campaign Visual drafts; explicit reviewed save applies through the atomic042 boundary. SQL/app quota is aligned to32. No new migration/provider/publishing action. See [58 Interface and four combined tests](58_PRIVATE_TEMPLATE_INTERFACE_AND_TESTS.md). MT156–159, MT152–155 and unrelated tests remain pending; parent acceptance is unchanged. Six later evolution groups remain, plus broader connector/commercial work; activation proceeds only when dependencies permit.
@@ -202,3 +207,7 @@ Not rerun: full web production build and document-room Vitest suite. The previou
 Local ephemeral PGlite applied40 migrations;037/039/040 assertions passed, including039 before and after040 to exercise validator upgrade compatibility (four assertion executions). Local shared-scene render verified9 output scenes plus36 template/format combinations; design sheet visually inspected; strict PDF parser confirmed six540×675-point pages. Mocked Canvas tests cover new square dimensions/provenance. This does not prove browser downloads, real concurrency, Supabase PostgREST or hosted040.
 
 Founder MT152–155 remain pending; earlier MT145–147 founder-reported passed. Other pending negatives/access/mobile and commercial blog depth remain open. No hosted SQL, provider request, paid operation, deployment setting change or customer publication. Exact commit follows expected-head non-force delivery frombeec85c5. No active checkpoint lease at handoff.
+
+## P04.3.4.4a delivery verification
+
+387 web tests across68 files passed (11 new media tests); web typecheck, full lint, production build, application boundaries and whitespace checks passed. Guide59 built HTML/title/phase and345 local Markdown links verified. Existing42-migration SQL harness ran through web integration tests; no migration changed or hosted SQL ran. Admin checks were not rerun. Initial simultaneous build/typecheck raced generated files; typecheck passed when rerun after build. Hosted storage, actual byte sanitization, browser media rendering, deployment and founder acceptance remain unverified.

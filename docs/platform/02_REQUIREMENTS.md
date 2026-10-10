@@ -1,5 +1,10 @@
 # Requirements register
 
+## Private media foundation — P04.3.4.4a
+
+The private media foundation now models creator/site/workspace scope, rights attestation and version-specific acceptance. User uploads, trusted byte checks, private storage and rendering are still required before the product can use media. See [59](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).
+
+
 ## External handoff discussion — 2026-10-10 PKT
 
 Founder requests future ChatGPT-created images/documents sent through a Bizoveya plugin into a private inbox, assistant routing, specialist/QA tasks and permission-gated publication; also relevant-channel signals after verified blog/site updates. See [53 External handoff and change signals](53_EXTERNAL_HANDOFF_AND_CHANGE_SIGNALS.md). Intake is proposed as a durable service; broad knowledge is authorization-scoped. Receiving ChatGPT artifacts is separate from subscription inference. Connector transfer capability remains unqualified. Latest documentation needs no feature test; template MT152–155 remain pending. Next P04.3.4.3 can proceed with ownership/version design, but no new runtime/SQL/connector or publication is implemented by this planning checkpoint.

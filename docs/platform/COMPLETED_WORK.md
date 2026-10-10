@@ -1,5 +1,10 @@
 # Completed Bizoveya work only
 
+### CW-078 — 2026-10-10 PKT — Private media metadata source foundation
+
+Pure private-media admission/version/review/reference helpers and synthetic denial tests implemented. Storage, uploads, rendering and parent acceptance are incomplete. See [59](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).
+
+
 ### CW-077 — 2026-10-10 PKT — Private-template interface source
 
 Implemented creator-private design inventory, immutable version choices, reviewed preview/application and confirmed archive. Corrected quota contract to32. Parent/manual acceptance remains pending. See [58](58_PRIVATE_TEMPLATE_INTERFACE_AND_TESTS.md).

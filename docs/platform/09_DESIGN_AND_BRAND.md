@@ -1,5 +1,10 @@
 # Design, templates and brand
 
+## Private media foundation — P04.3.4.4a / 2026-10-10 PKT
+
+PNG/JPEG upload descriptors are defined with bounded size/dimensions and alternative text; no upload or image rendering is enabled. Existing templates/visuals/exports stay unchanged. A future visual schema must preserve old saved documents. See [59 Private media foundation](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).
+
+
 ## Current template checkpoint — 1.26 / P04.3.4.2
 
 Shared Classic card, Midnight card, Editorial frame and Bold headline designs are implemented for two Pinterest graphics, the six-slide carousel and a new1080×1080 LinkedIn image. Selection changes design only; it does not regenerate text or call a provider. Existing saved v1 scenes/history stay intact. Owner explicitly adds templates/LinkedIn image, reviews and saves a v2 document as a new visual version. Additive040 after039 extends strict validation while retaining original access/source-review/conflict/no-op/version limits. No existing migration/row/history is rewritten.

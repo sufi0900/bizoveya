@@ -1,5 +1,10 @@
 # System architecture
 
+## Private media foundation — P04.3.4.4a / 2026-10-10 PKT
+
+Media descriptors and accepted version/hash references are separate from template recipes and campaign words. Metadata copies are self-contained; actual bytes require private retained storage before rendering. Media review never supplies campaign acceptance or publication authority. See [59 Private media foundation](59_PRIVATE_MEDIA_CONTRACT_FOUNDATION.md).
+
+
 ## Private-template interface — P04.3.4.3e / 2026-10-10 PKT
 
 Founder authorizes sequential implementation with manual testing deferred. Creator-private inventory/create/revise/version preview/archive controls now appear in accepted campaign Visual drafts; explicit reviewed save applies through the atomic042 boundary. SQL/app quota is aligned to32. No new migration/provider/publishing action. See [58 Interface and four combined tests](58_PRIVATE_TEMPLATE_INTERFACE_AND_TESTS.md). MT156–159, MT152–155 and unrelated tests remain pending; parent acceptance is unchanged. Six later evolution groups remain, plus broader connector/commercial work; activation proceeds only when dependencies permit.
