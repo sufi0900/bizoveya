@@ -1,5 +1,9 @@
 # Verified main delivery — P04.3.3 founder evidence checkpoint
 
+## Private image lifecycle successor
+
+P04.3.4.4c adds046 and the private image interface after mainb9d5e626. Source/activation/first-four completion remain distinct. Group5 stays on hold until groups1–4 implementation exits; founder tests remain pending. See [62 current scope and four deferred steps](../../platform/62_PRIVATE_MEDIA_UPLOADS_AND_PHASE_FIVE_GATE.md). No hosted SQL/provider/settings/publication or repeated generation. Direct-main delivery remains non-force and expected-head guarded.
+
 ## Grouped first-four successor
 
 Additive044/045 media hardening and private agency planning preserve prior P04.3.3 evidence and history. Groups1–4 remain unfinished; founder acceptance is deferred, not passed. See [61 scope and four deferred checks](../../platform/61_GROUPED_AGENCY_FOUNDATION_AND_TESTS.md). Direct main delivery uses current remote expected-head, never local synthetic history or force. No hosted SQL/provider/settings/publication action.

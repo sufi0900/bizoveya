@@ -1,5 +1,9 @@
 # Grouped delivery: media, founder desk, meetings and voice
 
+## Private image lifecycle and phase-five gate — 2026-10-11 PKT
+
+Founder explicitly requires full first-four implementation before office visualization. Group5 is ON HOLD; routine founder tests stay deferred and never count as passes. P04.3.4.4c now adds migration046 tracked immutable uploads, authenticated hash-checked byte retrieval, guarded orphan recovery/operator maintenance and creator-private upload/preview/download/review/archive UI. Activation requires missing hosted046 and a server-only media key configured by the operator; the assistant has applied neither. Existing drafts/templates/history remain intact. Group1 renderer/optional AI and groups2–4 workers/meetings/voice remain unfinished. See [62 Current scope, setup and four deferred checks](62_PRIVATE_MEDIA_UPLOADS_AND_PHASE_FIVE_GATE.md). MT164–167 plus all unrelated unanswered tests remain pending.
+
 ## Founder instruction and exact scope
 
 The founder requests groups 1–4 together, followed by group 5 (visual office) after further design discussion and group 6 (private custom agents). Routine founder acceptance is deferred to one later test session. This changes delivery grouping; it does not establish test passes, authorize hosted SQL, paid calls, deployment settings or customer publication. The independent PC assistant project is a future integration, not imported here.

@@ -1,5 +1,9 @@
 # Bizoveya continuation checkpoint
 
+## Private image lifecycle and phase-five gate — 2026-10-11 PKT
+
+Founder explicitly requires full first-four implementation before office visualization. Group5 is ON HOLD; routine founder tests stay deferred and never count as passes. P04.3.4.4c now adds migration046 tracked immutable uploads, authenticated hash-checked byte retrieval, guarded orphan recovery/operator maintenance and creator-private upload/preview/download/review/archive UI. Activation requires missing hosted046 and a server-only media key configured by the operator; the assistant has applied neither. Existing drafts/templates/history remain intact. Group1 renderer/optional AI and groups2–4 workers/meetings/voice remain unfinished. See [62 Current scope, setup and four deferred checks](62_PRIVATE_MEDIA_UPLOADS_AND_PHASE_FIVE_GATE.md). MT164–167 plus all unrelated unanswered tests remain pending.
+
 ## Grouped first-four foundation — current source checkpoint
 
 Verified source: 402 web tests/72 files, 45 migrations/nine local SQL assertion executions, typecheck, lint, production build and boundaries. Work/activity visual projections now reflect current numeric record order. Remote base4ea33a76014b7934022001f21738da74f3b481c6; delivered successor is identifiable in main history. No active worker lease is retained at handoff.

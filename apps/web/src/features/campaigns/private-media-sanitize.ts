@@ -10,7 +10,7 @@ export async function sanitizePrivateMedia(input: Uint8Array, attestation: Media
   const metadata = await source.metadata();
   if (!['png', 'jpeg'].includes(metadata.format ?? '') || (metadata.pages ?? 1) !== 1 || !metadata.width || !metadata.height || metadata.width > PRIVATE_MEDIA_LIMITS.maxSide || metadata.height > PRIVATE_MEDIA_LIMITS.maxSide) throw new Error('Use a single PNG or JPEG within 4096 pixels per side.');
   const format = metadata.format === 'png' ? 'png' : 'jpeg';
-  const pipeline = source.rotate().toColourspace('srgb');
+  const pipeline = source.rotate().toColourspace('srgb').timeout({ seconds: 10 });
   // New encoding strips EXIF, ICC, comments and other supplied metadata. Preserve PNG alpha.
   const { data, info } = await (format === 'png' ? pipeline.png({ compressionLevel: 9 }) : pipeline.jpeg({ quality: 90 })).toBuffer({ resolveWithObject: true });
   const descriptor = privateMediaDescriptorSchema.parse({ schema: 'private-media-descriptor-v1', mime: format === 'png' ? 'image/png' : 'image/jpeg', bytes: data.byteLength, width: info.width, height: info.height, sha256: createHash('sha256').update(data).digest('hex'), origin: 'user-upload', ...attestation });

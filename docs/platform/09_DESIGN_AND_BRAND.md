@@ -1,5 +1,9 @@
 # Design, templates and brand
 
+## Private image lifecycle and phase-five gate — 2026-10-11 PKT
+
+Founder explicitly requires full first-four implementation before office visualization. Group5 is ON HOLD; routine founder tests stay deferred and never count as passes. P04.3.4.4c now adds migration046 tracked immutable uploads, authenticated hash-checked byte retrieval, guarded orphan recovery/operator maintenance and creator-private upload/preview/download/review/archive UI. Activation requires missing hosted046 and a server-only media key configured by the operator; the assistant has applied neither. Existing drafts/templates/history remain intact. Group1 renderer/optional AI and groups2–4 workers/meetings/voice remain unfinished. See [62 Current scope, setup and four deferred checks](62_PRIVATE_MEDIA_UPLOADS_AND_PHASE_FIVE_GATE.md). MT164–167 plus all unrelated unanswered tests remain pending.
+
 ## Private media storage — P04.3.4.4b
 
 Storage/version/review source exists without a media selector or renderer. Existing v1/v2/v3 visuals, templates and PNG/PDF exports remain unchanged. Visual media references require a later compatible schema. See [60](60_PRIVATE_MEDIA_STORAGE_AND_SERVER_ACCESS.md).

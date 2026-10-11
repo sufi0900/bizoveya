@@ -1,5 +1,13 @@
 # Bizoveya chronological activity and decision log
 
+### BZ-081 — 2026-10-11 PKT — Private image lifecycle and office gate
+
+Final evidence:411 web tests/73 files;46 local migrations/10 SQL assertion executions; typecheck, lint, production build, boundaries, whitespace and420 affected Markdown links. Guide62/current work/activity/pending checks project into built document HTML. Pre-decode36-attempt and12-admission hour windows are separate and cleanup cannot reset admission. No hosted/manual/Storage concurrency or deployment acceptance claimed.
+
+Founder explicitly requires full first-four implementation before office visualization. Group5 is ON HOLD; routine founder tests stay deferred and never count as passes. P04.3.4.4c now adds migration046 tracked immutable uploads, authenticated hash-checked byte retrieval, guarded orphan recovery/operator maintenance and creator-private upload/preview/download/review/archive UI. Activation requires missing hosted046 and a server-only media key configured by the operator; the assistant has applied neither. Existing drafts/templates/history remain intact. Group1 renderer/optional AI and groups2–4 workers/meetings/voice remain unfinished. See [62 Current scope, setup and four deferred checks](62_PRIVATE_MEDIA_UPLOADS_AND_PHASE_FIVE_GATE.md). MT164–167 plus all unrelated unanswered tests remain pending.
+
+Resolved latest mainb9d5e626; inspected historical branches/PR2, no AGENTS and no active checkpoint lease. Source verification:411 web tests/73 files,46 local migrations/10 SQL assertion executions, web typecheck/lint/boundaries passed. No hosted Storage/provider/settings/publication request or repeated generation; admin unchanged.
+
 ### BZ-080 — 2026-10-10 UTC — Grouped scope, media repair and agency planning
 
 Automated verification: 402 web tests/72 files, 45 migrations/nine local SQL assertion executions, typecheck, lint, production build and application boundaries passed. The failed initial build used stale generated export files; a reversible move of that generated folder and rebuild succeeded. Work/activity visual projections now order numeric record IDs correctly even with prepended checkpoints. Hosted setup, Vercel/browser/manual acceptance remains pending; admin source unchanged and not rerun.
