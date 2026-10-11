@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { loadAgency } from '@/features/agents/agency-store';
+import { RosterPanel } from '@/features/agents/roster-panel';
 import { OnboardingPanel } from '@/features/agents/onboarding-panel';
 import { AgencyRoom } from '@/features/agents/agency-room';
 import { loadWorkspacePage } from '@/features/workspaces/page-data';
@@ -15,6 +16,7 @@ export default async function Page({ params }: { params: Promise<{ workspaceId: 
   return <WorkspaceFrame email={state.email} workspace={value.workspace}>
     <WorkspaceHeading eyebrow="PRIVATE PLANNING" title={`${value.site.name} · Agency planning`} description="Save founder requests, meeting agendas and decisions; hand off a reviewed request to one private campaign. Generation remains separately gated; live voice is not enabled." action={<Link className="bz-button" href={`/workspaces/${workspaceId}/sites/${siteId}/agents`}>Agent readiness</Link>} />
     <OnboardingPanel owner={value.workspace.role === 'owner'} endpoint={`/api/workspaces/${workspaceId}/sites/${siteId}/agency/onboarding`} sitePath={`/workspaces/${workspaceId}/sites/${siteId}`} />
+    <RosterPanel owner={value.workspace.role === 'owner'} endpoint={`/api/workspaces/${workspaceId}/sites/${siteId}/agency/team`} />
     <AgencyRoom initial={value.records} owner={value.workspace.role === 'owner'} endpoint={`/api/workspaces/${workspaceId}/sites/${siteId}/agency`} />
   </WorkspaceFrame>;
 }

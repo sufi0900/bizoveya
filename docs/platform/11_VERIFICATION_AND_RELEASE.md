@@ -1,5 +1,11 @@
 # Verification, manual acceptance and release evidence
 
+Automated checkpoint: 445 web tests/78 files and137 admin tests/14 files passed;50 local migrations/14 SQL assertion executions, both typechecks, web lint and boundaries passed. Both production builds/projections are verified at delivery. Hosted/browser/real concurrency and MT184–187 remain pending; no provider request.
+
+## Site team activation and safe checkpoint pause — 2026-10-11 PKT
+
+Group2 now has owner-reviewed site-specific Coordinator/Content/Quality selections, enable/pause controls and immutable history through additive050. Preparation/authorization/new reservation/provider-start boundaries enforce pinned roster versions; started work can still settle. Onboarding respects the selected/paused team. All founder acceptance stays pending until before public reveal; coding continues independently within real dependencies. Assistant dispatch/recovery, meetings, optional AI and live voice remain unfinished; office ON HOLD. See [67 contract and four deferred checks](67_SITE_TEAM_ACTIVATION_AND_SAFE_PAUSE.md). MT184–187 and prior unanswered tests remain pending. No hosted SQL/provider/settings/publication or regeneration; no active checkpoint lease remains at handoff.
+
 Automated checkpoint: 438 web tests/77 files,49 local migrations/13 SQL assertion executions, web typecheck/lint and application boundaries passed. Production build/projections are verified at delivery. Admin/runtime source is unchanged and its historical checks are not claimed as rerun. Hosted/browser/real concurrency and MT180–183 remain pending.
 
 ## Approved-context onboarding assessment — 2026-10-11 PKT

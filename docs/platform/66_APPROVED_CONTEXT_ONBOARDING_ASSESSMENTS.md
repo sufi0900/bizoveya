@@ -1,5 +1,7 @@
 # Approved-context onboarding assessments
 
+Migration050 successor: onboarding now reports site team version/pause state and scopes qualified counts to selected pins for configured sites. Paused teams are blocked independently of model qualification. Original reviews/default unconfigured v0 hashes remain unchanged. See [67](67_SITE_TEAM_ACTIVATION_AND_SAFE_PAUSE.md).
+
 Automated checkpoint: 438 web tests/77 files,49 local migrations/13 SQL assertion executions, web typecheck/lint and application boundaries passed. Production build/projections are verified at delivery. Admin/runtime source is unchanged and its historical checks are not claimed as rerun. Hosted/browser/real concurrency and MT180–183 remain pending.
 
 ## Source checkpoint — 2026-10-11 PKT

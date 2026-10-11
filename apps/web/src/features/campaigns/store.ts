@@ -6,6 +6,8 @@ import { campaignRecordSchema, generationSummarySchema, type prepareGenerationSc
 import {outputRecordSchema} from "./output-contracts";
 function check(error:{code?:string;message?:string}|null){
  if (["42P01","PGRST202","PGRST205"].includes(error?.code??"")) throw new WorkspaceError(503,"Campaign outputs and review need migration 037 after036. Ask the operator to complete setup.");
+ if(error?.message==="bz_site_roster_paused") throw new WorkspaceError(409,"The owner has paused this site team. No new generation can be prepared.");
+ if(error?.message==="bz_site_roster_changed") throw new WorkspaceError(409,"The site team changed. Review the current team and prepare a new snapshot only when needed.");
  if(error?.message==="bz_campaign_limit") throw new WorkspaceError(400,"This pilot supports 50 campaigns per site and 100 revisions per campaign.");
  if(error?.message==="bz_generation_not_ready") throw new WorkspaceError(409,"Generation is not ready. Approve one coordinator, content and quality agent; bind each to a current checked model; then review current spending policies and approved site knowledge.");
  if(error?.message==="bz_conflict") throw new WorkspaceError(409,"The campaign or review changed. Reload before continuing.");

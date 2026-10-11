@@ -1,0 +1,29 @@
+'use client';
+import React, {useEffect,useRef,useState} from 'react';
+import {rosterKinds,rosterRecordSchema,rosterReviewSchema,type SiteRoster} from './roster-contracts';
+export function RosterPanel({owner,endpoint}:{owner:boolean;endpoint:string}){
+ const [record,setRecord]=useState<SiteRoster|null>(null),[selected,setSelected]=useState<Record<string,string>>({}),[reason,setReason]=useState(''),[reviewed,setReviewed]=useState(false),[busy,setBusy]=useState(false),[message,setMessage]=useState('');const lock=useRef(false);
+ const saved=Object.fromEntries((record?.document?.agents??[]).map(a=>[a.kind,`${a.agentId}:${a.agentVersion}`]));
+ const dirty=Boolean(reason.trim())||Boolean(record&&rosterKinds.some(k=>(selected[k]??'')!==(saved[k]??'')));
+ useEffect(()=>{if(!dirty)return;const unload=(e:BeforeUnloadEvent)=>e.preventDefault();const leave=(e:Event)=>{if(!window.confirm('Discard unsaved site team choices or reason?'))e.preventDefault();};const link=(e:MouseEvent)=>{if((e.target as HTMLElement).closest('a[href]'))leave(e);};window.addEventListener('beforeunload',unload);window.addEventListener('bizoveya:before-signout',leave);document.addEventListener('click',link,true);return()=>{window.removeEventListener('beforeunload',unload);window.removeEventListener('bizoveya:before-signout',leave);document.removeEventListener('click',link,true);};},[dirty]);
+ async function run(action:'load'|'enable'|'pause'){
+  if(lock.current||action!=='load'&&(!owner||!record))return;
+  if(action==='load'&&dirty&&!window.confirm('Reload and discard unsaved site team changes?'))return;
+  const agents=rosterKinds.flatMap(kind=>{const value=selected[kind];if(!value)return[];const [agentId,agentVersion]=value.split(':');return[{kind,agentId,agentVersion:Number(agentVersion)}];});
+  const parsed=action==='load'?null:rosterReviewSchema.safeParse({document:action==='pause'?{enabled:false,agents:record?.document?.agents??[]}:{enabled:true,agents},expectedVersion:record?.version??0,reason,reviewed});
+  if(action!=='load'&&!parsed?.success){setMessage('Select one current agent per role to enable, enter a reason and confirm. Pausing retains the saved choices.');return;}
+  lock.current=true;setBusy(true);setMessage('');
+  try{
+   const r=await fetch(endpoint,action==='load'?{cache:'no-store'}:{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(parsed!.data)});const data=await r.json();if(!r.ok)throw new Error(data.error??'Site team unavailable.');
+   const next=rosterRecordSchema.parse(data);setRecord(next);setSelected(Object.fromEntries((next.document?.agents??[]).map(a=>[a.kind,`${a.agentId}:${a.agentVersion}`])));setReason('');setReviewed(false);setMessage(action==='load'?'Current team loaded. No generation started.':action==='pause'?'New work paused. Already started provider calls can finish and reconcile. No existing output was changed.':'Reviewed site team enabled. Prepare work separately; no provider call or spending reservation was made.');
+  }catch(e){setMessage(e instanceof Error?e.message:'Site team unavailable.');}finally{lock.current=false;setBusy(false);}
+ }
+ return <section className="bz-card"><h2>Site team activation</h2><p>Select the existing Coordinator, Content specialist and Quality reviewer for this site. Pinterest and LinkedIn remain channels of the Content role. Enabling does not start work or authorize publication.</p><button className="bz-button" disabled={busy} onClick={()=>void run('load')}>{record?'Reload site team':'Load site team'}</button><p role="status" aria-live="polite">{message}</p>{record?<>
+  <p>Team v{record.version} · {record.document?(record.document.enabled?'Enabled; current qualification is rechecked for each new stage':'Paused for new work'):'Not configured; existing legacy draft controls still apply'}.</p><p>The first configuration and every changed team revision invalidate older queued snapshots. Already accepted drafts remain intact. A pause blocks new preparation, authorization, reservations and provider-start records; it cannot undo a provider call already marked started.</p>
+  <fieldset disabled={busy||!owner}><legend>{owner?'Review scoped team choices':'Read-only site team'}</legend>{rosterKinds.map(kind=>{
+   const options=record.catalog.filter(a=>a.kind===kind);const current=record.document?.agents.find(a=>a.kind===kind);const old=current&&!options.some(a=>a.id===current.agentId&&a.version===current.agentVersion)?current:null;
+   return <label key={kind}>{kind}<select value={selected[kind]??''} onChange={e=>{setSelected(previous=>({...previous,[kind]:e.target.value}));setReviewed(false);}}><option value="">Select an approved version</option>{old?<option value={`${old.agentId}:${old.agentVersion}`}>Saved version v{old.agentVersion} · currently unavailable for enabling</option>:null}{options.map(a=><option key={`${a.id}:${a.version}`} value={`${a.id}:${a.version}`}>{a.name} · v{a.version}</option>)}</select></label>;
+  })}<label>Team change reason<textarea maxLength={500} value={reason} onChange={e=>{setReason(e.target.value);setReviewed(false);}}/></label><label><input type="checkbox" checked={reviewed} onChange={e=>setReviewed(e.target.checked)}/>I reviewed the site team and queued-work impact. Apply only the selected enable or pause action; do not start generation.</label><button className="bz-button" disabled={!reviewed||!reason.trim()} onClick={()=>void run('enable')}>Enable selected team</button><button className="bz-button" disabled={!reviewed||!reason.trim()} onClick={()=>void run('pause')}>Pause saved team</button><p>Pause retains the saved roster and ignores unsaved dropdown choices, so expired qualifications cannot prevent stopping new work.</p></fieldset>
+  <details><summary>Immutable team history ({record.history.length})</summary><pre style={{whiteSpace:'pre-wrap',overflowWrap:'anywhere'}}>{JSON.stringify(record.history,null,2)}</pre></details>
+ </>:null}</section>;
+}
