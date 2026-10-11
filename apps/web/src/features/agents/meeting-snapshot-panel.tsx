@@ -44,6 +44,7 @@ export function MeetingSnapshotPanel({ record, owner, endpoint, busy, lock, onBu
   }
   if (!record.meetingDeliberation) return null;
   return <section aria-label="Meeting execution snapshot">
+    {record.meetingExecutionConsents.length > 0 && <><p>Execution consent: {record.meetingExecutionConsents[0].state} · expires {record.meetingExecutionConsents[0].expiresAt}. Consent status is as of the last refresh; active consent does not mean an AI turn started. Independent budget admission and a qualified worker remain required.</p><details><summary>Execution consent and revocation history</summary><pre style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' }}>{JSON.stringify(record.meetingExecutionConsents, null, 2)}</pre></details></>}
     {saved ? <><p>Execution snapshot: prepared · {saved.summary.turns.length} pinned turns · estimated ceiling ${(saved.summary.estimatedCeilingMicros / 1000000).toFixed(6)}. This saved snapshot grants no execution authority; current dependencies must be rechecked before a future worker runs.</p><details><summary>Immutable qualified snapshot review</summary><pre style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' }}>{JSON.stringify(saved, null, 2)}</pre></details></> : <>
       <p>Prepare a qualified execution snapshot from a ready schedule. This starts no AI turn, spending reservation or publication.</p>
       {available && <fieldset disabled={busy}><legend>Review qualified meeting snapshot</legend><button className="bz-button" onClick={() => void loadReview()}>Load current snapshot review</button>

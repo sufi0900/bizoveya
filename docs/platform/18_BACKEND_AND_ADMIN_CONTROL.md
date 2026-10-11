@@ -1,5 +1,9 @@
 # Backend and super admin control contract
 
+## BZ-097 — Founder-admin meeting execution consent
+
+The separate admin app adds `/admin/deliberations` and private no-store `/api/admin/deliberations` GET/POST. Migration061 independently requires current platform-admin membership, MFA aal2, original snapshot founder identity and current workspace ownership. Latest50 own snapshots only; unrelated admins receive no queue. Fresh grant recomputes060 qualification/context fingerprint; exact retries cannot extend fixed15-minute expiry. Revocation remains available after pause/expiry/quota. Private records/helpers are inaccessible directly, including to service_role. No service key, environment flag, provider, worker or reservation is introduced. MT220–223/hosted/browser acceptance remains pending. See [78](78_MEETING_EXECUTION_CONSENT.md).
+
 ## Private image lifecycle and phase-five gate — 2026-10-11 PKT
 
 Founder explicitly requires full first-four implementation before office visualization. Group5 is ON HOLD; routine founder tests stay deferred and never count as passes. P04.3.4.4c now adds migration046 tracked immutable uploads, authenticated hash-checked byte retrieval, guarded orphan recovery/operator maintenance and creator-private upload/preview/download/review/archive UI. Activation requires missing hosted046 and a server-only media key configured by the operator; the assistant has applied neither. Existing drafts/templates/history remain intact. Group1 renderer/optional AI and groups2–4 workers/meetings/voice remain unfinished. See [62 Current scope, setup and four deferred checks](62_PRIVATE_MEDIA_UPLOADS_AND_PHASE_FIVE_GATE.md). MT164–167 plus all unrelated unanswered tests remain pending.

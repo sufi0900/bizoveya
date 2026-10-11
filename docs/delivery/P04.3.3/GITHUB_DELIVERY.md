@@ -1,5 +1,11 @@
 # Verified main delivery — P04.3.3 founder evidence checkpoint
 
+Automated BZ-097/CW-097 verification: 480 web tests/80 files, 164 admin tests/18 files, 61 ephemeral local migrations/25 SQL assertion executions, both standalone typechecks/lints, both production builds, application boundaries and 644 affected local Markdown links passed. SQL fixtures use simulated auth and synthetic qualification; hosted/PostgREST/browser/mobile/true concurrency and all founder acceptance remain pending. No hosted SQL/provider request or generation. Guide78 and BZ-097/CW-097/MT220–223 visual projections are checked in the final build.
+
+## BZ-097/CW-097 consent source delivery — 2026-10-12 PKT
+
+Resolved base `fec12866b356faf4a1d0f94491d19458e60023ba`. Additive061, separate founder-admin consent room/API and read-only Founder desk history implement fixed15-minute reviewed consent with revocation, exact retry and current authorization/qualification guards. This does not execute AI or reserve spending. See [guide78 and four deferred steps](../../platform/78_MEETING_EXECUTION_CONSENT.md). MT220–223 and all earlier founder acceptance remain pending; first-four groups are unfinished. No hosted SQL, provider request, deployment settings, external messages, publication or regeneration. Next: independent shared-budget meeting-turn accounting and bounded execution.
+
 Automated BZ-096/CW-096 verification:479 web tests/79 files,157 admin tests/17 files,60 ephemeral local migrations/24 SQL assertion executions, web typecheck/lint, both production builds with type/lint validation, boundaries, whitespace and585 local Markdown links passed. Guide77 and BZ-096/CW-096/MT216–219 visual projections are verified before delivery. Hosted/PostgREST/browser/mobile/true concurrency and all founder acceptance stay pending. No hosted SQL/provider request; admin standalone typecheck/lint not separately rerun.
 
 ## Current continuation — qualified meeting snapshots (2026-10-11 PKT)

@@ -1,5 +1,9 @@
 # Stack, provider policy and security
 
+## BZ-097 — Expiring meeting consent boundary
+
+Migration061 separates reviewed founder-admin consent from immutable preparation and future billable admission. Original founder/current owner/MFA admin authorization is enforced in SQL as well as the strict same-origin admin API; revocation remains usable after qualification expiry. Fixed15-minute grant identities, immutable events, retry conflict handling and private ACLs preserve auditability. Sanitized member history is read-only. No provider credential, deployment setting or paid request changed; current consent, shared accounting and provider-start qualification must still be independently enforced by the future worker. See [78](78_MEETING_EXECUTION_CONSENT.md). Founder/hosted/concurrency tests remain pending.
+
 ## Site team activation and safe checkpoint pause — 2026-10-11 PKT
 
 Group2 now has owner-reviewed site-specific Coordinator/Content/Quality selections, enable/pause controls and immutable history through additive050. Preparation/authorization/new reservation/provider-start boundaries enforce pinned roster versions; started work can still settle. Onboarding respects the selected/paused team. All founder acceptance stays pending until before public reveal; coding continues independently within real dependencies. Assistant dispatch/recovery, meetings, optional AI and live voice remain unfinished; office ON HOLD. See [67 contract and four deferred checks](67_SITE_TEAM_ACTIVATION_AND_SAFE_PAUSE.md). MT184–187 and prior unanswered tests remain pending. No hosted SQL/provider/settings/publication or regeneration; no active checkpoint lease remains at handoff.

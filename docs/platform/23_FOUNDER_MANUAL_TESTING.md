@@ -1,5 +1,17 @@
 # Founder manual testing record
 
+## Expiring founder-admin meeting consent — 2026-10-12 PKT
+
+| Test | Scope | Status |
+|---|---|---|
+| MT220 | Missing061 setup after060; preserved accepted drafts/reviews/media/meetings/history | Pending founder/operator |
+| MT221 | Same founder/current owner/MFA admin; reviewed context/reason; fixed15-minute consent and no spending/AI | Pending founder |
+| MT222 | Reload/expiry identity, read-only member projection, unrelated admin and MFA guards | Pending founder/hosted |
+| MT223 | Reviewed revocation after pause/expiry/quota, intact snapshot, stale qualification/retry/concurrency | Pending founder/hosted |
+
+BZ-097/CW-097 adds061 expiring revocable consent for060 qualified meeting snapshots. The original snapshot founder must remain a workspace owner and MFA-verified platform admin; fresh consent rechecks exact qualification/context/versions. Fixed15-minute expiry, immutable consent/revocation events, exact retries and25-record cap preserve history; revocation remains available after pause/expiry. Separate admin controls and read-only Founder desk projection create no reservation, AI turn or provider call. MT220–223 and all earlier unanswered tests remain pending. Next: independent shared-budget meeting-turn accounting, then bounded execution/results. First-four groups remain incomplete, live voice unfinished, office visualization ON HOLD and custom agents out of scope. See [78](78_MEETING_EXECUTION_CONSENT.md).
+
+
 ## Qualified meeting snapshot preparation — MT216–219
 
 | Test | Scope | Status |
