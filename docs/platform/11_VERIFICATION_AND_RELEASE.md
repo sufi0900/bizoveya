@@ -1,5 +1,7 @@
 # Verification, manual acceptance and release evidence
 
+BZ-092/CW-092 automated evidence: 465 web tests across78 files,56 ephemeral migrations/20 SQL assertion scripts, web typecheck/lint, both production builds and application boundaries passed. Admin tests were not rerun. Hosted056, PostgREST, real-worker receipts, browser/mobile, concurrency and founder MT204–207 remain pending; therefore neither Group3 nor the first-four effort is accepted. See [73](73_BOUNDED_DELIBERATION_PLANS.md).
+
 Automated verification for BZ-091/CW-091: 461 web tests/78 files and 55 ephemeral local migrations/19 SQL assertion executions passed; web production build (including type/lint checks), application boundaries, whitespace and 426 affected local Markdown links passed. Guide72 is projected in the document room. Admin source/tests/build are unchanged and were not rerun; prior evidence is historical. Hosted SQL, actual workers, browser/mobile, concurrency and founder acceptance remain pending. No active checkpoint lease retained at delivery.
 
 

@@ -1,5 +1,7 @@
 # AI employees, meetings and interruptions
 
+Deliberation planning now requires every exact version-pinned invitation receipt to be acknowledged and the enabled roster to remain unchanged. Additive056 stores immutable ordered turns and founder-reviewed token/cost ceilings. `planned` never means attended, reasoned, executed or spent. Any later scheduler must reacquire authority and enforce every saved bound. See [73](73_BOUNDED_DELIBERATION_PLANS.md).
+
 ## Meeting receipt admission repair — 2026-10-11 PKT
 
 Additive 055 rejects omitted worker identity and rechecks owner membership, unchanged meeting and enabled pinned team before new delivery claims. Already claimed packets can still record truthful completion after pause/cancellation; completion grants no new execution authority. Null identity, stale/paused/revoked/cancelled admission, expiry recovery, retry and ACL regressions are covered locally. This repairs prerequisites for the next bounded deliberation-plan slice; first-four groups remain unfinished, office visualization ON HOLD and custom agents out of scope. All founder tests, including MT200–203, remain pending. No new UI field, provider call, hosted SQL, settings, messages, publication or repeated generation. Base main `0aee385a9ffa402809b28124225af7f523b1e6e6`; historical branches/PR2 inspected, no AGENTS or active lease. See [72 receipt repair](72_MEETING_RECEIPT_ADMISSION_HARDENING.md).

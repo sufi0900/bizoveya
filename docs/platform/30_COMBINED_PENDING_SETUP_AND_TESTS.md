@@ -1,5 +1,7 @@
 # Combined pending setup and manual tests
 
+Current pending addition: apply missing056 only after055, then complete MT204–207 in [73](73_BOUNDED_DELIBERATION_PLANS.md) with actual authorized worker receipts. Samples: rounds `1`, input `1200`, output `600`, future cost ceiling `5` cents. All remain pending; local automated coverage is not founder acceptance and no successful generation should be repeated.
+
 ## Site team activation and safe checkpoint pause — 2026-10-11 PKT
 
 Group2 now has owner-reviewed site-specific Coordinator/Content/Quality selections, enable/pause controls and immutable history through additive050. Preparation/authorization/new reservation/provider-start boundaries enforce pinned roster versions; started work can still settle. Onboarding respects the selected/paused team. All founder acceptance stays pending until before public reveal; coding continues independently within real dependencies. Assistant dispatch/recovery, meetings, optional AI and live voice remain unfinished; office ON HOLD. See [67 contract and four deferred checks](67_SITE_TEAM_ACTIVATION_AND_SAFE_PAUSE.md). MT184–187 and prior unanswered tests remain pending. No hosted SQL/provider/settings/publication or regeneration; no active checkpoint lease remains at handoff.

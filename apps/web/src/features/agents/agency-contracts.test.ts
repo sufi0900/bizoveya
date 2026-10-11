@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { agencyCommandSchema, agencyHandoffSchema, meetingDistributionSchema, meetingInvitationSchema, delegationProposal, voiceEntryState } from './agency-contracts';
+import { agencyCommandSchema, agencyHandoffSchema, meetingDeliberationSchema, meetingDistributionSchema, meetingInvitationSchema, delegationProposal, voiceEntryState } from './agency-contracts';
 const request = { action: 'request' as const, id: '00000000-0000-4000-8000-000000000001', instruction: 'Prepare private drafts from approved facts.', channels: ['pinterest'] as const, reviewed: true as const, inputMode: 'text' as const };
 describe('agency planning admission', () => {
   it('requires explicit confirmation and rejects duplicate channels, controls and injected execution flags', () => {
@@ -27,6 +27,12 @@ it('requires an exact reviewed meeting invitation version without execution fiel
  const input={id:request.id,expectedVersion:3,reviewed:true};
  expect(meetingInvitationSchema.safeParse(input).success).toBe(true);
  for(const invalid of [{...input,reviewed:false},{...input,expectedVersion:100},{...input,execute:true}]) expect(meetingInvitationSchema.safeParse(invalid).success).toBe(false);
+});
+
+it('admits only reviewed bounded deliberation limits with an independent retry identity', () => {
+ const input={id:request.id,planId:'00000000-0000-4000-8000-000000000002',expectedVersion:4,rounds:1,maxInputTokensPerTurn:1200,maxOutputTokensPerTurn:600,maxTotalCostCents:5,reviewed:true};
+ expect(meetingDeliberationSchema.safeParse(input).success).toBe(true);
+ for(const invalid of [{...input,planId:input.id},{...input,reviewed:false},{...input,rounds:3},{...input,maxInputTokensPerTurn:2001},{...input,maxOutputTokensPerTurn:127},{...input,maxTotalCostCents:26},{...input,execute:true}]) expect(meetingDeliberationSchema.safeParse(invalid).success).toBe(false);
 });
 
 it('rejects unreviewed, injected or oversized campaign handoffs', () => {

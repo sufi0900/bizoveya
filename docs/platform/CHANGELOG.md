@@ -1,5 +1,9 @@
 # Living documentation changelog
 
+## 2026-10-11 — Bounded deliberation plans
+
+Additive056 and the founder desk now create immutable, exact-version deliberation plans from fully acknowledged pinned packets. One/two rounds, per-turn input/output limits and a 1–25 cent future execution ceiling are explicit. Planning performs no AI call, reservation, spend, participation or output. See [73](73_BOUNDED_DELIBERATION_PLANS.md). BZ-092/CW-092 are source-complete; MT204–207 and all earlier founder tests remain pending. Next is safe scheduling/admission and pause/resume; first-four groups remain unfinished.
+
 ## Meeting receipt admission repair — 2026-10-11 PKT
 
 Additive 055 rejects omitted worker identity and rechecks owner membership, unchanged meeting and enabled pinned team before new delivery claims. Already claimed packets can still record truthful completion after pause/cancellation; completion grants no new execution authority. Null identity, stale/paused/revoked/cancelled admission, expiry recovery, retry and ACL regressions are covered locally. This repairs prerequisites for the next bounded deliberation-plan slice; first-four groups remain unfinished, office visualization ON HOLD and custom agents out of scope. All founder tests, including MT200–203, remain pending. No new UI field, provider call, hosted SQL, settings, messages, publication or repeated generation. Base main `0aee385a9ffa402809b28124225af7f523b1e6e6`; historical branches/PR2 inspected, no AGENTS or active lease. See [72 receipt repair](72_MEETING_RECEIPT_ADMISSION_HARDENING.md).

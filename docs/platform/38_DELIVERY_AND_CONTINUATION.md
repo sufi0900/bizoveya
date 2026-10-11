@@ -1,5 +1,7 @@
 # GitHub delivery and scheduled continuation
 
+Current source adds acknowledgement-gated bounded deliberation plans through migration056 and the owner founder desk. Exact roster/agent pins, rounds, token limits and future cost ceiling are immutable and privately projected; planning starts no model, reservation, spend or participant output. BZ-092/CW-092 verified locally; MT204–207 pending. Next: safe scheduling/admission and pause/resume. First-four groups remain unfinished. See [73](73_BOUNDED_DELIBERATION_PLANS.md).
+
 ## Meeting receipt admission repair — 2026-10-11 PKT
 
 Additive 055 rejects omitted worker identity and rechecks owner membership, unchanged meeting and enabled pinned team before new delivery claims. Already claimed packets can still record truthful completion after pause/cancellation; completion grants no new execution authority. Null identity, stale/paused/revoked/cancelled admission, expiry recovery, retry and ACL regressions are covered locally. This repairs prerequisites for the next bounded deliberation-plan slice; first-four groups remain unfinished, office visualization ON HOLD and custom agents out of scope. All founder tests, including MT200–203, remain pending. No new UI field, provider call, hosted SQL, settings, messages, publication or repeated generation. Base main `0aee385a9ffa402809b28124225af7f523b1e6e6`; historical branches/PR2 inspected, no AGENTS or active lease. See [72 receipt repair](72_MEETING_RECEIPT_ADMISSION_HARDENING.md).

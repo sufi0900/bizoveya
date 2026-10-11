@@ -29,6 +29,21 @@ describe('meeting decision distribution presentation',()=>{
   expect(html).toContain('content · acknowledged');expect(html).toContain('not attendance, understanding or task completion');expect(html).not.toContain('No agent attendance or acknowledgement recorded');expect(html).not.toContain('Prepare participant invitations');
  });
 });
+describe('bounded deliberation presentation',()=>{
+ it('offers limits only after every pinned participant acknowledged and labels a saved plan as non-execution',()=>{
+  const requestId='22222222-2222-4222-8222-222222222222';
+  const document={action:'meeting',id,agenda:'Compare safe private options.',mode:'deliberation',participants:['content'],reviewed:true,inputMode:'text'};
+  const meetingDistribution={meetingId:id,requestId,sourceVersion:2,agenda:document,decision:'Prepare options only.',instruction:'Use approved context.',command:{action:'request',id:requestId,instruction:'Use approved context.',channels:['blog'],reviewed:true,inputMode:'text'},actorId:id,createdAt:'now'};
+  const meetingInvitations={meetingId:id,requestId,sourceVersion:3,rosterVersion:2,actorId:id,createdAt:'now',participants:[{role:'content',agentId:requestId,agentVersion:5,state:'acknowledged',claimExpiresAt:'later',respondedAt:'now',note:'Packet received.'}]};
+  const ready=agencyRecordSchema.parse({...base,kind:'meeting',version:4,status:'decision-recorded',document,meetingDistribution,meetingInvitations});
+  const html=renderToStaticMarkup(createElement(AgencyRoom,{initial:[ready],owner:true,endpoint}));
+  expect(html).toContain('Prepare bounded deliberation plan');expect(html).toContain('Future execution cost ceiling');expect(html).toContain('makes no model call');
+  const plan={id:requestId,meetingId:id,requestId,sourceVersion:4,rosterVersion:2,rounds:1,maxInputTokensPerTurn:1200,maxOutputTokensPerTurn:600,maxTotalCostCents:5,actorId:id,createdAt:'now',turns:[{ordinal:1,round:1,role:'content',agentId:requestId,agentVersion:5,purpose:'Propose an approved-context draft direction.',state:'planned'}]};
+  const saved=agencyRecordSchema.parse({...ready,version:5,meetingDeliberation:plan});
+  const projected=renderToStaticMarkup(createElement(AgencyRoom,{initial:[saved],owner:false,endpoint}));
+  expect(projected).toContain('1 planned turns');expect(projected).toContain('$0.05');expect(projected).toContain('Planned is not participation or execution');expect(projected).not.toContain('Prepare bounded deliberation plan');
+ });
+});
 describe('saved campaign handoff presentation',()=>{
  it('links to the saved campaign and displays immutable source lineage for a read-only member',()=>{
   const record=agencyRecordSchema.parse({...base,handoff:{campaignId:id,sourceVersion:1,title:'Private',document:{title:'Private',brief:'Approved',blog:'',pinterest:'',linkedin:''},actorId:id,createdAt:'now'}});

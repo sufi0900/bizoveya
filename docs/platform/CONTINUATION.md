@@ -1,5 +1,11 @@
 # Bizoveya continuation checkpoint
 
+## Bounded deliberation plans — 2026-10-11 PKT
+
+Group 3 now saves an immutable owner-reviewed deliberation plan only after every pinned participant acknowledged its packet. Additive056 pins exact meeting/request/roster/agent versions plus one or two rounds, per-turn token bounds and a future execution ceiling; deterministic planning makes no model call, reservation, spending, participation claim or output. BZ-092/CW-092 source and local verification are complete; MT204–207 and all earlier unanswered founder tests remain pending. First-four groups remain unfinished, live voice remains unfinished, office visualization stays ON HOLD and custom agents remain out of scope. Next: safe deliberation scheduling/admission and pause/resume that enforces the saved limits. See [73](73_BOUNDED_DELIBERATION_PLANS.md).
+
+Automated evidence: 465 web tests/78 files, 56 local migrations/20 SQL assertion scripts, web typecheck/lint, both builds and boundaries passed. Admin tests were not rerun. No hosted SQL, real worker, browser/mobile, provider call, settings change, message, publication or repeated generation; no active lease retained.
+
 Automated verification for BZ-091/CW-091: 461 web tests/78 files and 55 ephemeral local migrations/19 SQL assertion executions passed; web production build (including type/lint checks), application boundaries, whitespace and 426 affected local Markdown links passed. Guide72 is projected in the document room. Admin source/tests/build are unchanged and were not rerun; prior evidence is historical. Hosted SQL, actual workers, browser/mobile, concurrency and founder acceptance remain pending. No active checkpoint lease retained at delivery.
 
 

@@ -1,6 +1,6 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { checkDatabaseError, getSite, WorkspaceError } from '@/features/workspaces/store';
-import { agencyGenerationSchema, agencyHandoffSchema, agencyInventorySchema, agencyRecordSchema, meetingDistributionSchema, meetingDistributionResultSchema, meetingInvitationSchema, type AgencyCommand } from './agency-contracts';
+import { agencyGenerationSchema, agencyHandoffSchema, agencyInventorySchema, agencyRecordSchema, meetingDeliberationSchema, meetingDistributionSchema, meetingDistributionResultSchema, meetingInvitationSchema, type AgencyCommand } from './agency-contracts';
 import type { z } from 'zod';
 function check(error: { code?: string; message?: string } | null) {
   if (['42P01', '42703', 'PGRST202', 'PGRST205'].includes(error?.code ?? '')) throw new WorkspaceError(503, 'Agency planning needs migration 045 after 044. Existing campaigns are unchanged.');
@@ -45,6 +45,19 @@ export async function inviteMeetingParticipants(db: SupabaseClient, userId: stri
   if (result.error?.message === 'bz_meeting_distribution_required') throw new WorkspaceError(409, 'Distribute the reviewed meeting decision before preparing invitations.');
   if (result.error?.message === 'bz_site_roster_paused') throw new WorkspaceError(409, 'Enable the reviewed site team before preparing invitations.');
   if (result.error?.message === 'bz_site_roster_changed') throw new WorkspaceError(409, 'The requested participant roles are not pinned to the current site team. Review the team first.');
+  check(result.error);
+  return agencyRecordSchema.parse(result.data);
+}
+export async function prepareMeetingDeliberation(db: SupabaseClient, userId: string, wid: string, sid: string, input: z.infer<typeof meetingDeliberationSchema>) {
+  const context = await getSite(db, userId, wid, sid);
+  if (context.workspace.role !== 'owner') throw new WorkspaceError(403, 'Only the workspace owner can prepare a deliberation plan.');
+  const result = await db.rpc('bz_prepare_meeting_deliberation', { p_workspace_id: wid, p_site_id: sid, p_input: meetingDeliberationSchema.parse(input) });
+  if (['42P01', '42703', 'PGRST202', 'PGRST205'].includes(result.error?.code ?? '')) throw new WorkspaceError(503, 'Deliberation planning needs migration 056 after 055. No model call or spending was started.');
+  if (result.error?.message === 'bz_invalid_deliberation_plan') throw new WorkspaceError(400, 'Review the exact meeting version and bounded turn, token and cost limits.');
+  if (result.error?.message === 'bz_deliberation_required') throw new WorkspaceError(409, 'Only a decision-recorded deliberation meeting can receive a plan.');
+  if (result.error?.message === 'bz_meeting_receipts_required') throw new WorkspaceError(409, 'Every pinned participant must acknowledge the current invitation before planning.');
+  if (result.error?.message === 'bz_site_roster_paused') throw new WorkspaceError(409, 'The site team is paused. No deliberation plan was created.');
+  if (result.error?.message === 'bz_site_roster_changed') throw new WorkspaceError(409, 'The pinned participant roster changed. Review the current site team first.');
   check(result.error);
   return agencyRecordSchema.parse(result.data);
 }
