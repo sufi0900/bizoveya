@@ -1,5 +1,13 @@
 # Completed Bizoveya work only
 
+### CW-083 — Versioned retained campaign image draft source
+
+| Record | Delivered source | Evidence and limits |
+|---|---|---|
+| CW-083 | Atomic reviewed site-shared image saves/history, retained bytes and member-safe reload/export | 426 web tests;47 local migrations/11 assertions; hosted/browser acceptance and optional AI/assistant/meetings/voice unfinished |
+
+See [64](64_RETAINED_CAMPAIGN_IMAGE_DRAFTS.md). Office remains on hold; founder tests are deferred.
+
 ### CW-082 — Reviewed media working-copy rendering and exports
 
 | Record | Delivered source | Evidence and limits |

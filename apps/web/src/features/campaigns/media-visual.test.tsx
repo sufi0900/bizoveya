@@ -66,7 +66,7 @@ describe('reviewed media working-copy contracts and real SVG rasterization',()=>
   await expect(mediaVisualPdf(value,[])).rejects.toThrow('verified');
   value.document.slides[0].body='W'.repeat(420);await expect(mediaVisualPng(value,{kind:'slide',index:0},[f.image])).rejects.toThrow('shorten');
   const html=renderToStaticMarkup(<MediaVisualPanel document={document().document} endpoint="/api/workspaces/w/sites/s/campaigns/media" disabled={false}/>);
-  expect(html).toContain('private working-copy exports');expect(html).toContain('Durable image attachments are still being implemented');expect(html).toContain('Accepted image version');expect(html).toContain('Image target');
+  expect(html).toContain('saved drafts and private exports');expect(html).toContain('your other library images stay creator-private');expect(html).toContain('Accepted image version');expect(html).toContain('Image target');
  });
  it('exports all six image-bearing scenes through the same SVG path and cleans up object URLs',async()=>{
   const f=await fixture();let value=document();for(let index=1;index<=6;index++)value=attachReviewedMedia(value,`slide-${index}` as 'slide-1',f.record,scope,f.reference);

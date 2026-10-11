@@ -1,0 +1,10 @@
+import {z} from 'zod';
+import {workspaceApi,workspaceJson,readInput} from '@/features/workspaces/api';
+import {WorkspaceError} from '@/features/workspaces/store';
+import {createMediaServiceClient} from '@/lib/supabase/media-service';
+import {saveCampaignImageSchema} from '@/features/campaigns/media-visual-contracts';
+import {loadCampaignImages,saveCampaignImages} from '@/features/campaigns/campaign-image-store';
+export const runtime='nodejs';
+type Context={params:Promise<{workspaceId:string;siteId:string}>};
+export const GET=(r:Request,c:Context)=>workspaceApi(async({db,userId})=>{const p=await c.params,id=z.uuid().safeParse(new URL(r.url).searchParams.get('id'));if(!id.success)throw new WorkspaceError(400,'Choose a generated result.');return workspaceJson(await loadCampaignImages(db,userId,p.workspaceId,p.siteId,id.data));});
+export const POST=(r:Request,c:Context)=>workspaceApi(async({db,userId})=>{const p=await c.params;return workspaceJson(await saveCampaignImages(db,createMediaServiceClient(),userId,p.workspaceId,p.siteId,await readInput(r,saveCampaignImageSchema,48000)));});

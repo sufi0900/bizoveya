@@ -1,5 +1,9 @@
 # Reviewed image composition and private exports
 
+## Retained campaign image drafts — 2026-10-11 PKT
+
+P04.3.4.4e adds migration047 atomic image-draft saves/history, exact saved-base/current-review guards, explicit private sharing to current site members, retained immutable objects and guarded cleanup. The interface reloads images after refresh and previews historical image/text snapshots; existing v1/v2/v3 text/template saves remain intact. Deterministic media persistence is implemented in source; optional AI, assistant workers, agent meetings and live voice remain unfinished. Office stays ON HOLD. See [64 current contract and four deferred checks](64_RETAINED_CAMPAIGN_IMAGE_DRAFTS.md). MT172–175 and all unrelated unanswered tests remain pending. Hosted047 and existing media-key activation are deferred; no assistant hosted SQL/provider/settings/publication or regeneration.
+
 ## Founder direction and current scope — 2026-10-11 PKT
 
 The founder asks to complete the first four groups as quickly as possible. Continue verified source work while routine founder acceptance is deferred; do not invent passes. The office remains on hold until media, assistant/delegation, meetings and voice implementation exits are complete. The earlier8–12-turn estimate is an estimate of remaining source work, not a delivery guarantee or evidence that providers are activated.

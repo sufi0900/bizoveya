@@ -1,5 +1,11 @@
 # Bizoveya chronological activity and decision log
 
+### BZ-083 — 2026-10-11 PKT — Retained campaign image drafts
+
+Resolved main dea48b0509910de9f4680bc22255fb7803595a82; historical branches/PR2 and absent AGENTS/active lease inspected. Continued founder-authorized first-four work. Added047 separate atomic image snapshots, exact base/source guards, explicit site-member sharing, immutable retained bytes, cleanup protections, authenticated server paths and owner/member reload/save/history UI. Existing source-review account deletion restriction is preserved; isolated cascade fixture is not a production deletion workflow. Groups1–4 remain unfinished and office on hold. No hosted SQL/provider/settings/publication, paid request or repeat generation.
+
+426 web tests/75 files and47 local migrations/11 assertions passed, including atomic retained-byte quota and cleanup/cascade coverage. Typecheck/lint, production build, boundaries, whitespace and455 local Markdown links passed. Final source/document projection verification is checked again before expected-head delivery; no active lease is retained. MT172–175 and prior unanswered founder tests remain pending. See [64](64_RETAINED_CAMPAIGN_IMAGE_DRAFTS.md).
+
 ### BZ-082 — 2026-10-11 PKT — Reviewed image composition and private exports
 
 Resolved remote main9852e87bb24bd5c910bd0777a60772e5e5fb8406; inspected historical branches/PR2, absent repository AGENTS and no active lease. Founder requests expedited first-four implementation. Added strict bounded working-copy attachments, accepted version selection, actual-byte hash/magic/size verification, safe embedded-raster shared preview/PNG/PDF and reviewed owner controls. Campaign image persistence/shared retention remains next; groups1–4 unfinished and office on hold. No new SQL/key/provider/hosted/settings/publication or regeneration.

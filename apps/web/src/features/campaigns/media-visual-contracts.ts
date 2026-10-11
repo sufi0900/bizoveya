@@ -17,6 +17,10 @@ export const mediaVisualDocumentSchema=z.object({schema:z.literal('campaign-medi
  if(images.size>3)ctx.addIssue({code:'custom',message:'Use at most three distinct images per working copy.',path:['attachments']});
 });
 export type MediaVisualDocument=z.infer<typeof mediaVisualDocumentSchema>;
+const revision=z.object({version:z.number().int().min(1).max(50),baseVisualVersion:z.number().int().min(1).max(50),sourceReviewVersion:z.number().int().positive(),document:mediaVisualDocumentSchema,occurredAt:z.string()}).strict();
+export const campaignImageRecordSchema=z.object({generationId:z.uuid(),version:z.number().int().min(1).max(50),baseVisualVersion:z.number().int().min(1).max(50),sourceReviewVersion:z.number().int().positive(),document:mediaVisualDocumentSchema,updatedAt:z.string(),revisions:z.array(revision).max(50)}).strict();
+export type CampaignImageRecord=z.infer<typeof campaignImageRecordSchema>;
+export const saveCampaignImageSchema=z.object({generationId:z.uuid(),expectedVersion:z.number().int().min(0).max(50),baseVisualVersion:z.number().int().min(1).max(50),sourceReviewVersion:z.number().int().positive(),document:mediaVisualDocumentSchema,reviewed:z.literal(true),shareReviewed:z.literal(true)}).strict();
 export function mediaTargetKey(target:VisualTarget):MediaVisualTarget {
  const key=`${target.kind}-${target.index+1}`;
  return z.enum(mediaVisualTargets).parse(key);

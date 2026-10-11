@@ -1,5 +1,18 @@
 # Founder manual testing record
 
+## Retained campaign image drafts — 2026-10-11 PKT
+
+P04.3.4.4e adds migration047 atomic image-draft saves/history, exact saved-base/current-review guards, explicit private sharing to current site members, retained immutable objects and guarded cleanup. The interface reloads images after refresh and previews historical image/text snapshots; existing v1/v2/v3 text/template saves remain intact. Deterministic media persistence is implemented in source; optional AI, assistant workers, agent meetings and live voice remain unfinished. Office stays ON HOLD. See [64 current contract and four deferred checks](64_RETAINED_CAMPAIGN_IMAGE_DRAFTS.md). MT172–175 and all unrelated unanswered tests remain pending. Hosted047 and existing media-key activation are deferred; no assistant hosted SQL/provider/settings/publication or regeneration.
+
+| Test | Scope | Status |
+|---|---|---|
+| MT172 | Missing047 and retained prior campaign/image setup | Pending founder/operator |
+| MT173 | Explicit reviewed/share save and refresh persistence | Pending founder |
+| MT174 | Saved PNG/PDF and immutable image/base history | Pending founder |
+| MT175 | Member/private access, conflicts, archive and cleanup retention | Pending founder |
+
+MT171 refresh-loss expectation is superseded by persisted saves; remaining unevidenced checks stay pending.
+
 ## Reviewed image composition — 2026-10-11 PKT
 
 P04.3.4.4d adds accepted creator-private image selection, hash-verified shared preview/PNG/PDF rendering and owner-reviewed local working-copy exports. Original campaign v1/v2/v3 saves/history remain intact; image attachments are not persisted yet. No new migration/key/provider or hosted change. Founder requests continued first-four work as quickly as possible, with routine manual acceptance deferred. Durable shared image copies, optional AI, actual assistant workers, agent meetings and live voice remain unfinished; office visualization remains ON HOLD. See [63 current contract and four deferred checks](63_REVIEWED_MEDIA_COMPOSITION_AND_EXPORTS.md). MT168–171 and all prior unanswered tests remain pending.

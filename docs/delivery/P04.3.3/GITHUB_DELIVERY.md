@@ -1,5 +1,9 @@
 # Verified main delivery — P04.3.3 founder evidence checkpoint
 
+## Retained image draft successor
+
+P04.3.4.4e follows main dea48b05: additive047, explicit private site-member sharing, atomic retained image/base snapshots and guarded reload/export/history. Base visuals and accepted text remain intact. Hosted047/key/browser acceptance is pending; groups1–4 unfinished and office on hold. See [64](../../platform/64_RETAINED_CAMPAIGN_IMAGE_DRAFTS.md). Verified delivery remains non-force expected-head; no hosted SQL/provider/settings/publication or regeneration.
+
 ## Reviewed media composition successor
 
 P04.3.4.4d follows main9852e87b with hash-verified owner working-copy previews/PNG/PDF. Existing saved visual contracts remain intact; campaign image persistence is next. Groups1–4 remain unfinished; office on hold and tests deferred. See [63](../../platform/63_REVIEWED_MEDIA_COMPOSITION_AND_EXPORTS.md). Delivery is verified non-force expected-head; no hosted SQL/settings/provider/publication or regeneration.
