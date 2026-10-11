@@ -1,11 +1,18 @@
 import {createClient,type SupabaseClient} from '@supabase/supabase-js';
 import {AdminError,requireAdmin} from '../admin/access';
 import {executeGeneration,type RuntimeDependencies} from './runtime';
-import {generationSetup,queueSchema,type DispatchInput} from './dispatch-contracts';
+import {generationSetup,queueSchema,recoveryResultSchema,type DispatchInput,type RecoveryInput} from './dispatch-contracts';
 function check(error:{code?:string;message?:string}|null){if(!error)return;
- const messages:Record<string,string>={bz_generation_busy:'A run is already active. Refresh its status; do not send another request.',bz_generation_stale:'This snapshot uses old settings. Prepare a new snapshot after reviewing current assignments and knowledge.',bz_generation_finished:'This run is finished or stopped. Inspect its recorded result before preparing another run.',bz_forbidden:'Only the original requesting workspace owner can run this pilot.',bz_conflict:'The run changed. Refresh before continuing.'};
- if(['PGRST202','42P01'].includes(error.code??''))throw new AdminError(503,'SETUP_REQUIRED','Apply migration 037 after036.');
+ const messages:Record<string,string>={bz_generation_busy:'A run is already active. Refresh its status; do not send another request.',bz_generation_stale:'This snapshot uses old settings. Prepare a new snapshot after reviewing current assignments and knowledge.',bz_generation_finished:'This run is finished or stopped. Inspect its recorded result before preparing another run.',bz_agency_execution_blocked:'This assistant task requires recovery or has already reached a terminal state. Inspect it before another dispatch.',bz_agency_execution_unavailable:'This run has no tracked assistant task.',bz_agency_execution_limit:'This assistant task reached its bounded event limit.',bz_forbidden:'Only the original requesting workspace owner can run this pilot.',bz_conflict:'The run or assistant task changed. Refresh before continuing.'};
+ if(['PGRST202','42P01'].includes(error.code??''))throw new AdminError(503,'SETUP_REQUIRED','Apply the missing generation migrations in order through 052.');
  throw new AdminError(error.code==='42501'?403:409,'RUN_BLOCKED',messages[error.message??'']??'Run storage or prerequisites are unavailable. Refresh and review setup.');
+}
+
+export async function reconcileGeneration(db:SupabaseClient,input:RecoveryInput){
+ await requireAdmin(db);
+ const result=await db.rpc('bz_admin_reconcile_agency_execution',{p_id:input.id,p_expected_task_version:input.expectedTaskVersion,p_reason:input.reason,p_reviewed:input.reviewed});
+ check(result.error);
+ return {result:recoveryResultSchema.parse(result.data),runs:(await loadGenerationRoom(db)).runs};
 }
 export async function loadGenerationRoom(db:SupabaseClient){const r=await db.rpc('bz_admin_generation_queue');check(r.error);return {runs:queueSchema.parse(r.data),setup:generationSetup(process.env)};}
 export async function dispatchGeneration(db:SupabaseClient,actorId:string,input:DispatchInput,deps?:{env:Record<string,string|undefined>;recorder:SupabaseClient;execute:typeof executeGeneration}){

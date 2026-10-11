@@ -1,5 +1,11 @@
 # Bizoveya chronological activity and decision log
 
+Automated checkpoint: 451 web tests/78 files, 145 admin tests/14 files and 52 local migrations/16 SQL assertion executions passed. Both typechecks, both lints, both production builds and application boundaries passed. Hosted/browser/real concurrency and MT192–195 remain pending. No provider request or hosted operation.
+
+### BZ-088 — 2026-10-11 PKT — Durable assistant execution and recovery
+
+Extended reviewed request/run lineage with additive 052 task/event state, task-aware admin authorization and completion, site-member status projection and explicit owner-admin/MFA recovery. Expired work is classified from stored lease, provider-start and spending evidence; uncertain work cannot be retried. No provider, hosted SQL, setting, publication or accepted generation was touched. Group 3 meetings/task distribution and Group 4 live voice remain unfinished; office visualization remains on hold. See [69](69_DURABLE_ASSISTANT_EXECUTION_AND_RECOVERY.md).
+
 Automated checkpoint:450 web tests/78 files,137 admin tests/14 files,51 local migrations/15 SQL assertion executions, both typechecks, web lint, targeted admin generation lint, boundaries, whitespace and264 affected local Markdown links passed. Both production builds passed; final web/document projection is verified before delivery. Hosted/browser/concurrency and MT188–191 remain pending. No provider request or hosted operation.
 
 ### BZ-087 — 2026-10-11 PKT — Durable request generation preparation

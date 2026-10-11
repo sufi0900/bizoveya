@@ -33,4 +33,9 @@ describe('linked generation presentation',()=>{
   const html=renderToStaticMarkup(createElement(AgencyRoom,{initial:[record],owner:false,endpoint}));
   expect(html).toContain('failed');expect(html).toContain('Cancelling this proposal does not cancel this run');expect(html).not.toContain('Prepare linked generation snapshot');
  });
+ it('projects the durable assistant task and expired-dispatch warning without execution controls',()=>{
+  const record=agencyRecordSchema.parse({...base,handoff,execution:{sourceVersion:2,actorId:id,createdAt:'now',run:{id,campaignId:id,campaignVersion:1,status:'running',createdAt:'now',startedAt:'then',finishedAt:null,stageCount:3,outputAvailable:false}},executionTask:{recordId:id,runId:id,version:2,state:'recovery_required',lastReason:'Provider reconciliation is required.',createdAt:'now',updatedAt:'now',leaseActive:false,leaseExpired:true,events:[]}});
+  const html=renderToStaticMarkup(createElement(AgencyRoom,{initial:[record],owner:false,endpoint}));
+  expect(html).toContain('Assistant task: recovery_required');expect(html).toContain('expired dispatch requires admin inspection');expect(html).toContain('Provider reconciliation is required.');expect(html).not.toContain('Reconcile interrupted task');
+ });
 });

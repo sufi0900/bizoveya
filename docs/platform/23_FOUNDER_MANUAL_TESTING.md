@@ -1,5 +1,18 @@
 # Founder manual testing record
 
+Automated checkpoint: 451 web tests/78 files, 145 admin tests/14 files and 52 local migrations/16 SQL assertion executions passed. Both typechecks, both lints, both production builds and application boundaries passed. Hosted/browser/real concurrency and MT192–195 remain pending. No provider request or hosted operation.
+
+## Durable assistant execution and recovery — 2026-10-11 PKT
+
+| Test | Scope | Status |
+|---|---|---|
+| MT192 | Missing 052 setup and preservation of accepted drafts/media/history | Pending founder/operator |
+| MT193 | Owner/member/admin task projection and authorization/role guards | Pending founder |
+| MT194 | Conditional expired safe-resume or zero-cost unstarted cancellation | Pending founder |
+| MT195 | Provider-start/unknown-spending block and stale-version conflict | Pending founder |
+
+Use the four steps and exact Recovery review reason in [69](69_DURABLE_ASSISTANT_EXECUTION_AND_RECOVERY.md). These checks are deferred until before public reveal and are not inferred from automated coverage. Do not create uncertain production evidence or repeat the accepted successful generation merely to run them.
+
 Automated checkpoint:450 web tests/78 files,137 admin tests/14 files,51 local migrations/15 SQL assertion executions, both typechecks, web lint, targeted admin generation lint, boundaries, whitespace and264 affected local Markdown links passed. Both production builds passed; final web/document projection is verified before delivery. Hosted/browser/concurrency and MT188–191 remain pending. No provider request or hosted operation.
 
 ## Reviewed request generation preparation — 2026-10-11 PKT

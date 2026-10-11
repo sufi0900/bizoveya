@@ -1,5 +1,15 @@
 # Completed Bizoveya work only
 
+Automated checkpoint: 451 web tests/78 files, 145 admin tests/14 files and 52 local migrations/16 SQL assertion executions passed. Both typechecks, both lints, both production builds and application boundaries passed. Hosted/browser/real concurrency and MT192–195 remain pending. No provider request or hosted operation.
+
+### CW-088 — Durable assistant execution and explicit recovery source
+
+| Record | Implemented slice | Limits |
+|---|---|---|
+| CW-088 | Versioned request execution tasks/events, runtime state synchronization, member/admin projection and evidence-based expired-dispatch reconciliation | No autonomous scheduler, meeting distribution, live voice, hosted migration or founder acceptance; first-four groups unfinished |
+
+See [69](69_DURABLE_ASSISTANT_EXECUTION_AND_RECOVERY.md). Recovery makes no provider call and blocks uncertain retry.
+
 Automated checkpoint:450 web tests/78 files,137 admin tests/14 files,51 local migrations/15 SQL assertion executions, both typechecks, web lint, targeted admin generation lint, boundaries, whitespace and264 affected local Markdown links passed. Both production builds passed; final web/document projection is verified before delivery. Hosted/browser/concurrency and MT188–191 remain pending. No provider request or hosted operation.
 
 ### CW-087 — Reviewed request generation preparation

@@ -11,6 +11,7 @@ export const agencyCommandSchema = z.discriminatedUnion('action', [
 export type AgencyCommand = z.infer<typeof agencyCommandSchema>;
 export const agencyHandoffSchema = z.object({ id: z.uuid(), campaignId: z.uuid(), expectedVersion: z.number().int().min(1).max(100), title: text(120).refine(value => !/[\u0000-\u001f]/.test(value)), reviewed: z.literal(true) }).strict();
 export const agencyGenerationSchema = z.object({ id: z.uuid(), runId: z.uuid(), expectedVersion: z.number().int().min(1).max(100), expectedCampaignVersion: z.number().int().min(1).max(100), reviewed: z.literal(true) }).strict();
+const executionTaskStateSchema = z.enum(['awaiting_authorization', 'running', 'awaiting_human_review', 'failed', 'recovery_required', 'cancelled']);
 export const agencyRecordSchema = z.object({
   id: z.uuid(), kind: z.enum(['request', 'meeting']), version: z.number().int().positive(),
   status: z.enum(['proposed', 'decision-recorded', 'deferred', 'cancelled']),
@@ -18,6 +19,7 @@ export const agencyRecordSchema = z.object({
   createdAt: z.string(), events: z.array(z.object({ version: z.number().int().positive(), action: z.string(), reason: z.string().nullable(), actorId: z.uuid(), createdAt: z.string() }).strict()),
   executionPreparation: z.object({ campaignVersion: z.number().int().min(1).max(100), campaignTitle: text(120) }).strict().nullable().default(null),
   execution: z.object({ sourceVersion: z.number().int().min(1).max(100), actorId: z.uuid(), createdAt: z.string(), run: generationSummarySchema }).strict().nullable().default(null),
+  executionTask: z.object({ recordId: z.uuid(), runId: z.uuid(), version: z.number().int().min(1).max(100), state: executionTaskStateSchema, lastReason: z.string(), createdAt: z.string(), updatedAt: z.string(), leaseActive: z.boolean(), leaseExpired: z.boolean(), events: z.array(z.object({ version: z.number().int().min(1).max(100), action: z.string(), state: executionTaskStateSchema, reason: z.string(), actorId: z.uuid().nullable(), createdAt: z.string() }).strict()).max(100) }).strict().nullable().default(null),
   handoff: z.object({ campaignId: z.uuid(), sourceVersion: z.number().int().positive(), title: text(120), document: campaignDocumentSchema, actorId: z.uuid(), createdAt: z.string() }).strict().nullable().default(null),
 }).strict();
 export const agencyInventorySchema = z.array(agencyRecordSchema).max(64);
