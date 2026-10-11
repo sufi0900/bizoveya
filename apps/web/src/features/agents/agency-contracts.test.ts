@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { agencyCommandSchema, agencyHandoffSchema, meetingDeliberationSchema, meetingDistributionSchema, meetingInvitationSchema, delegationProposal, voiceEntryState } from './agency-contracts';
+import { agencyCommandSchema, agencyHandoffSchema, meetingDeliberationSchema, meetingScheduleSchema, meetingDistributionSchema, meetingInvitationSchema, delegationProposal, voiceEntryState } from './agency-contracts';
 const request = { action: 'request' as const, id: '00000000-0000-4000-8000-000000000001', instruction: 'Prepare private drafts from approved facts.', channels: ['pinterest'] as const, reviewed: true as const, inputMode: 'text' as const };
 describe('agency planning admission', () => {
   it('requires explicit confirmation and rejects duplicate channels, controls and injected execution flags', () => {
@@ -39,4 +39,10 @@ it('rejects unreviewed, injected or oversized campaign handoffs', () => {
  const input={id:request.id,campaignId:request.id,expectedVersion:1,title:'Private request handoff',reviewed:true};
  expect(agencyHandoffSchema.safeParse(input).success).toBe(true);
  for(const invalid of [{...input,reviewed:false},{...input,execute:true},{...input,title:'x'.repeat(121)},{...input,title:'bad\nline'},{...input,expectedVersion:0}]) expect(agencyHandoffSchema.safeParse(invalid).success).toBe(false);
+});
+
+it('requires intent-only review and strict scheduling identities, bounds and reasons',()=>{
+ const input={id:request.id,planId:'00000000-0000-4000-8000-000000000002',operationId:'00000000-0000-4000-8000-000000000003',expectedMeetingVersion:5,expectedVersion:0,action:'queue',reason:'Queue bounded private scheduling intent.',reviewed:true,intentOnly:true};
+ expect(meetingScheduleSchema.safeParse(input).success).toBe(true);
+ for(const invalid of [{...input,id:null},{...input,planId:input.id},{...input,operationId:null},{...input,expectedVersion:100},{...input,expectedMeetingVersion:0},{...input,reviewed:false},{...input,intentOnly:false},{...input,action:'execute'},{...input,reason:'short'},{...input,reason:'x'.repeat(301)},{...input,reason:'Reviewed\nprivate intent.'},{...input,execute:true}]) expect(meetingScheduleSchema.safeParse(invalid).success).toBe(false);
 });

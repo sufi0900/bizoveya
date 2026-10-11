@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 import type { SupabaseClient } from '@supabase/supabase-js';
 vi.mock('../workspaces/store', async original => ({ ...await original<typeof import('../workspaces/store')>(), getSite: vi.fn() }));
 import { getSite } from '../workspaces/store';
-import { commandAgency, handoffAgency, loadAgency, prepareAgencyGeneration, distributeMeetingRequest, inviteMeetingParticipants, prepareMeetingDeliberation } from './agency-store';
+import { commandAgency, handoffAgency, loadAgency, prepareAgencyGeneration, distributeMeetingRequest, inviteMeetingParticipants, prepareMeetingDeliberation, controlMeetingSchedule } from './agency-store';
 const actor = '11111111-1111-4111-8111-111111111111', wid = '22222222-2222-4222-8222-222222222222', sid = '33333333-3333-4333-8333-333333333333';
 const command = { action: 'request' as const, id: actor, instruction: 'Prepare private drafts.', channels: ['blog' as const], reviewed: true as const, inputMode: 'text' as const };
 function fixture(data: unknown = [], error: unknown = null) { const rpc = vi.fn(async () => ({ data, error })); return { rpc, db: { rpc } as unknown as SupabaseClient }; }
@@ -94,5 +94,21 @@ describe('request generation preparation', () => {
   const ok=fixture(record); expect((await prepareAgencyGeneration(ok.db,actor,wid,sid,input)).execution?.run.status).toBe('prepared');
   expect(ok.rpc).toHaveBeenCalledWith('bz_prepare_agency_generation',{p_workspace_id:wid,p_site_id:sid,p_input:input});
   await expect(prepareAgencyGeneration(fixture({...record,execution:{...record.execution,run:{...record.execution.run,status:'invented'}}}).db,actor,wid,sid,input)).rejects.toThrow();
+ });
+});
+
+describe('reviewed scheduling controls',()=>{
+ const input={id:actor,planId:wid,operationId:sid,expectedMeetingVersion:5,expectedVersion:0,action:'queue' as const,reason:'Queue bounded private scheduling intent.',reviewed:true as const,intentOnly:true as const};
+ it('denies editor/viewer and unreviewed commands before RPC',async()=>{
+  for(const role of ['editor','viewer']) {vi.mocked(getSite).mockResolvedValue({workspace:{role}} as never);const f=fixture();await expect(controlMeetingSchedule(f.db,actor,wid,sid,input)).rejects.toMatchObject({status:403});expect(f.rpc).not.toHaveBeenCalled();}
+  vi.mocked(getSite).mockResolvedValue({workspace:{role:'owner'}} as never);const f=fixture();await expect(controlMeetingSchedule(f.db,actor,wid,sid,{...input,intentOnly:false} as never)).rejects.toThrow();expect(f.rpc).not.toHaveBeenCalled();
+ });
+ it('maps missing migration, invalid transition, stale meeting and roster failures without retry',async()=>{
+  for(const [error,status] of [[{code:'PGRST202'},503],[{message:'bz_invalid_meeting_schedule'},400],[{message:'bz_deliberation_plan_required'},409],[{message:'bz_meeting_schedule_transition'},409],[{message:'bz_deliberation_required'},409],[{message:'bz_meeting_receipts_required'},409],[{message:'bz_site_roster_paused'},409],[{message:'bz_site_roster_changed'},409],[{message:'bz_conflict'},409]] as const) {const f=fixture(null,error);await expect(controlMeetingSchedule(f.db,actor,wid,sid,input)).rejects.toMatchObject({status});expect(f.rpc).toHaveBeenCalledTimes(1);}
+ });
+ it('passes pinned versions and validates durable current state and event history',async()=>{
+  const record={id:actor,kind:'meeting',version:5,status:'decision-recorded',document:{},snapshot:{},createdAt:'now',events:[],meetingSchedule:{planId:wid,version:1,state:'ready',actorId:actor,createdAt:'now',updatedAt:'now',events:[{version:1,action:'queue',state:'ready',reason:input.reason,actorId:actor,createdAt:'now'}]}};
+  const f=fixture(record);expect((await controlMeetingSchedule(f.db,actor,wid,sid,input)).meetingSchedule?.state).toBe('ready');expect(f.rpc).toHaveBeenCalledWith('bz_control_meeting_schedule',{p_workspace_id:wid,p_site_id:sid,p_input:input});
+  await expect(controlMeetingSchedule(fixture({...record,meetingSchedule:{...record.meetingSchedule,state:'running'}}).db,actor,wid,sid,input)).rejects.toThrow();
  });
 });

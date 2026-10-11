@@ -1,5 +1,13 @@
 # Completed Bizoveya work only
 
+### CW-094 — Reviewed deliberation scheduling intent
+
+| Record | Completed source | Remaining evidence |
+|---|---|---|
+| CW-094 | Additive058 queue/pause/resume/cancel intent, owner-reviewed API/UI, exact retries, guarded state/version/roster checks and immutable history | Hosted installation, real worker/executor, provider qualification, concurrency and MT208–211 pending; no entire group completion |
+
+See [75](75_DELIBERATION_SCHEDULING_INTENT.md). No provider request or spending; ready intent is not runnable execution.
+
 Automated BZ-093/CW-093 verification:465 web tests/78 files,57 local migrations/21 SQL assertion executions, web production build with type/lint validation, boundaries, whitespace and482 local Markdown links passed. The identity regression fails against056 alone and passes with057. Admin source/tests/build are unchanged and not rerun. Guide74 and BZ-093/CW-093 render in the document room. Hosted/PostgREST/worker/concurrency/founder acceptance remains pending; no active lease retained.
 
 | Record | Completed source | Remaining evidence |

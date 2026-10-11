@@ -77,3 +77,19 @@ describe('linked generation presentation',()=>{
   expect(html).toContain('Assistant task: recovery_required');expect(html).toContain('expired dispatch requires admin inspection');expect(html).toContain('Provider reconciliation is required.');expect(html).not.toContain('Reconcile interrupted task');
  });
 });
+
+describe('deliberation scheduling intent presentation',()=>{
+ const planId='22222222-2222-4222-8222-222222222222';
+ const plan={id:planId,meetingId:id,requestId:planId,sourceVersion:4,rosterVersion:1,rounds:1,maxInputTokensPerTurn:1200,maxOutputTokensPerTurn:600,maxTotalCostCents:5,actorId:id,createdAt:'now',turns:[{ordinal:1,round:1,role:'content',agentId:planId,agentVersion:1,purpose:'Prepare private options.',state:'planned'}]};
+ const record={...base,kind:'meeting',status:'decision-recorded',version:5,meetingDeliberation:plan};
+ const schedule={planId,version:1,state:'ready',actorId:id,createdAt:'now',updatedAt:'now',events:[{version:1,action:'queue',state:'ready',reason:'Queue private bounded scheduling intent.',actorId:id,createdAt:'now'}]};
+ const render=(data:unknown,owner=true)=>renderToStaticMarkup(createElement(AgencyRoom,{initial:[agencyRecordSchema.parse(data)],owner,endpoint}));
+ it('requires a saved plan and explicit reason/version review without claiming execution',()=>{
+  expect(render(base)).not.toContain('Scheduling review reason');const html=render(record);
+  expect(html).toContain('Scheduling review reason');expect(html).toContain('schedule v0');expect(html).toContain('Ready does not mean running');expect(html).toContain('qualified bounded turn executor');
+ });
+ it('projects persisted history for viewers and removes controls after terminal cancellation',()=>{
+  const html=render({...record,meetingSchedule:schedule},false);expect(html).toContain('ready · v1');expect(html).toContain('Scheduling event history');expect(html).toContain('<fieldset disabled=""');
+  expect(render({...record,meetingSchedule:{...schedule,state:'cancelled'}})).not.toContain('Save scheduling intent');
+ });
+});

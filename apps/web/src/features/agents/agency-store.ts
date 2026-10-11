@@ -1,6 +1,6 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { checkDatabaseError, getSite, WorkspaceError } from '@/features/workspaces/store';
-import { agencyGenerationSchema, agencyHandoffSchema, agencyInventorySchema, agencyRecordSchema, meetingDeliberationSchema, meetingDistributionSchema, meetingDistributionResultSchema, meetingInvitationSchema, type AgencyCommand } from './agency-contracts';
+import { agencyGenerationSchema, agencyHandoffSchema, agencyInventorySchema, agencyRecordSchema, meetingDeliberationSchema, meetingScheduleSchema, meetingDistributionSchema, meetingDistributionResultSchema, meetingInvitationSchema, type AgencyCommand } from './agency-contracts';
 import type { z } from 'zod';
 function check(error: { code?: string; message?: string } | null) {
   if (['42P01', '42703', 'PGRST202', 'PGRST205'].includes(error?.code ?? '')) throw new WorkspaceError(503, 'Agency planning needs migration 045 after 044. Existing campaigns are unchanged.');
@@ -78,6 +78,22 @@ export async function prepareAgencyGeneration(db: SupabaseClient, userId: string
   if (result.error?.message === 'bz_site_roster_paused') throw new WorkspaceError(409, 'The site team is paused. No generation snapshot was created.');
   if (result.error?.message === 'bz_generation_not_ready') throw new WorkspaceError(409, 'Current approved knowledge, role bindings, connectivity and spending qualification are required. No generation snapshot was created.');
   if (result.error?.message === 'bz_generation_limit') throw new WorkspaceError(409, 'This campaign already has the maximum 25 generation snapshots.');
+  check(result.error);
+  return agencyRecordSchema.parse(result.data);
+}
+
+export async function controlMeetingSchedule(db: SupabaseClient, userId: string, wid: string, sid: string, input: z.infer<typeof meetingScheduleSchema>) {
+  const context = await getSite(db, userId, wid, sid);
+  if (context.workspace.role !== 'owner') throw new WorkspaceError(403, 'Only the workspace owner can control deliberation scheduling intent.');
+  const result = await db.rpc('bz_control_meeting_schedule', { p_workspace_id: wid, p_site_id: sid, p_input: meetingScheduleSchema.parse(input) });
+  if (['42P01', '42703', 'PGRST202', 'PGRST205'].includes(result.error?.code ?? '')) throw new WorkspaceError(503, 'Scheduling controls need migration 058 after 057. No execution or spending was started.');
+  if (result.error?.message === 'bz_invalid_meeting_schedule') throw new WorkspaceError(400, 'Review the scheduling reason, versions and intent-only confirmation.');
+  if (result.error?.message === 'bz_deliberation_plan_required') throw new WorkspaceError(409, 'Prepare the acknowledged bounded deliberation plan first.');
+  if (result.error?.message === 'bz_meeting_schedule_transition') throw new WorkspaceError(409, 'This scheduling state cannot accept that action. Reload the meeting.');
+  if (result.error?.message === 'bz_deliberation_required') throw new WorkspaceError(409, 'The meeting changed or was cancelled. No scheduling intent was admitted.');
+  if (result.error?.message === 'bz_meeting_receipts_required') throw new WorkspaceError(409, 'Every pinned participant must acknowledge the invitation first.');
+  if (result.error?.message === 'bz_site_roster_paused') throw new WorkspaceError(409, 'Enable the pinned site team before queuing or resuming.');
+  if (result.error?.message === 'bz_site_roster_changed') throw new WorkspaceError(409, 'The pinned team changed. This plan cannot be queued or resumed.');
   check(result.error);
   return agencyRecordSchema.parse(result.data);
 }

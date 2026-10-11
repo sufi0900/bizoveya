@@ -1,5 +1,9 @@
 # Verified main delivery — P04.3.3 founder evidence checkpoint
 
+## 2026-10-11 scheduling-intent successor
+
+BZ-094/CW-094 adds058 and reviewed queue/pause/resume/cancel intent with guarded retries, current-team admission and immutable history. Base main022049b561e6a30b4fb06b83b36e8bd49f6a300e; verified expected-head non-force delivery only. Actual AI turn execution and first-four completion remain unfinished; MT208–211 pending. No hosted SQL/provider/settings/publication or regeneration. See [75](../../platform/75_DELIBERATION_SCHEDULING_INTENT.md).
+
 ## 2026-10-11 deliberation admission successor
 
 Additive057 repairs bounded plan identity handling and verifies stale/roster/cancellation guards directly in local SQL. Existing migrations/history retained; local screenshot excluded. Base9c659d97882385359cb7a0390ee1280d6d342fc1; non-force expected-head main delivery only. No hosted SQL, provider call or acceptance inferred. See [74](../../platform/74_DELIBERATION_ADMISSION_REPAIR.md).

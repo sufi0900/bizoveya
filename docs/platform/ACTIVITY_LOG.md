@@ -1,5 +1,11 @@
 # Bizoveya chronological activity and decision log
 
+Automated BZ-094/CW-094 verification:471 web tests/78 files,58 ephemeral local migrations/22 SQL assertion executions, web production build with type/lint validation, web lint, boundaries and whitespace passed. Guide75 and current activity/work/pending-test visual projections are verified at final build. Admin source/tests/build are unchanged and not rerun. Hosted/PostgREST/worker/true concurrency/browser/founder acceptance remains pending; no active lease retained.
+
+### BZ-094 — 2026-10-11 PKT — Reviewed deliberation scheduling intent
+
+Resolved main `022049b561e6a30b4fb06b83b36e8bd49f6a300e`; inspected historical branches/open draft PR2, no repository AGENTS or active lease. Worked in an isolated current-main worktree, preserving the existing dirty homepage screenshot. Delivered additive058, owner-only intent controls, exact retry/version/roster guards, persistent projection, immutable history and safety-slot protection. Scheduling is not execution; no provider/hosted/settings/publication/message or repeated generation. MT208–211 remain pending, first-four groups incomplete. Next: qualified bounded turn admission and execution receipts. See [75](75_DELIBERATION_SCHEDULING_INTENT.md).
+
 Automated BZ-093/CW-093 verification:465 web tests/78 files,57 local migrations/21 SQL assertion executions, web production build with type/lint validation, boundaries, whitespace and482 local Markdown links passed. The identity regression fails against056 alone and passes with057. Admin source/tests/build are unchanged and not rerun. Guide74 and BZ-093/CW-093 render in the document room. Hosted/PostgREST/worker/concurrency/founder acceptance remains pending; no active lease retained.
 
 ### BZ-093 — 2026-10-11 PKT — Deliberation admission repair
