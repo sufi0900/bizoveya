@@ -1,5 +1,11 @@
 # Bizoveya chronological activity and decision log
 
+Automated evidence: 461 web tests across 78 files, 54 ephemeral local migrations/18 SQL assertion executions, web typecheck/lint, both production builds and application boundaries passed. Documentation projects BZ-090/CW-090/MT200–203 and guide71. Admin source is unchanged; its earlier 145 tests are historical, not claimed as rerun. Hosted/browser/mobile/real worker/concurrency and all founder acceptance remain pending. No active checkpoint lease is retained at handoff.
+
+### BZ-090 — 2026-10-11 PKT — Versioned meeting invitations and explicit receipts
+
+Resolved main `fc8fb52`, inspected historical branches/PR2 and absent repository AGENTS/active lease. Delivered additive 054 private invitation batches, role/roster/agent version pins, service-only claim/finish leases, immutable receipt events, strict owner preparation path and honest member projection. No provider, hosted SQL, settings, external message, publication, accepted generation or knowledge was touched. Bounded deliberation, safe scheduling and live voice remain unfinished; office visualization remains on hold. See [71](71_VERSIONED_MEETING_INVITATIONS_AND_RECEIPTS.md). MT200–203 and earlier unanswered founder tests remain pending.
+
 Automated evidence: 457 web tests across 78 files, 53 ephemeral local migrations/17 SQL assertion executions, web typecheck/lint, both production builds and application boundaries passed. Documentation projects BZ-089/CW-089/MT196–199 and guide70. Admin source is unchanged; its earlier 145 tests are historical, not claimed as rerun. Hosted/browser/mobile/real concurrency and all founder acceptance remain pending. No active checkpoint lease is retained at handoff.
 
 ### BZ-089 — 2026-10-11 PKT — Reviewed meeting task distribution

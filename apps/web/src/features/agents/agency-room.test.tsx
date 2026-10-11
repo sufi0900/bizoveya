@@ -19,6 +19,15 @@ describe('meeting decision distribution presentation',()=>{
   const html=renderToStaticMarkup(createElement(AgencyRoom,{initial:[record],owner:false,endpoint}));
   expect(html).toContain('Reviewed meeting v2 linked to private request');expect(html).toContain(requestId);expect(html).toContain('No agent attendance or acknowledgement is inferred');expect(html).not.toContain('Create request from decision');
  });
+ it('offers reviewed invitations after distribution and projects only recorded receipt states',()=>{
+  const requestId='22222222-2222-4222-8222-222222222222';
+  const lineage={meetingId:id,requestId,sourceVersion:2,agenda:meeting.document,decision:'Private drafts only.',instruction:'Approved private drafts.',command:{action:'request',id:requestId,instruction:'Approved private drafts.',channels:['blog'],reviewed:true,inputMode:'text'},actorId:id,createdAt:'now'};
+  const prepared=agencyRecordSchema.parse({...meeting,version:3,meetingDistribution:lineage});
+  expect(renderToStaticMarkup(createElement(AgencyRoom,{initial:[prepared],owner:true,endpoint}))).toContain('Prepare participant invitations');
+  const invited=agencyRecordSchema.parse({...prepared,version:4,meetingInvitations:{meetingId:id,requestId,sourceVersion:3,rosterVersion:2,actorId:id,createdAt:'now',participants:[{role:'content',agentId:requestId,agentVersion:5,state:'acknowledged',claimExpiresAt:'later',respondedAt:'now',note:'Packet received.'}]}});
+  const html=renderToStaticMarkup(createElement(AgencyRoom,{initial:[invited],owner:false,endpoint}));
+  expect(html).toContain('content · acknowledged');expect(html).toContain('not attendance, understanding or task completion');expect(html).not.toContain('Prepare participant invitations');
+ });
 });
 describe('saved campaign handoff presentation',()=>{
  it('links to the saved campaign and displays immutable source lineage for a read-only member',()=>{

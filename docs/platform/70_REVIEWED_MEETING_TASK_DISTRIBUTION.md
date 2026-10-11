@@ -1,5 +1,7 @@
 # Reviewed meeting task distribution
 
+Successor checkpoint: [71 Versioned meeting invitations and explicit receipts](71_VERSIONED_MEETING_INVITATIONS_AND_RECEIPTS.md) implements the next source slice. The distribution contract below remains authoritative for 053; its former next-action sentence is historical. MT196–199 remain pending.
+
 ## Implemented slice and boundaries
 
 Group 3 now connects a saved founder meeting decision to one durable private content request. Additive migration `053_meeting_request_distribution.sql` preserves 001–052, existing agency records, accepted output `80091597-06eb-4b8e-ae10-6239ae2b2b69`, media, reviews and history. The owner records the meeting decision first, then reviews a task instruction and one to three channels. Both announcement and deliberation agendas use the same explicit founder decision boundary; no specialist deliberation or attendance is claimed.

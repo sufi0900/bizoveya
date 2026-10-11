@@ -1,6 +1,6 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { checkDatabaseError, getSite, WorkspaceError } from '@/features/workspaces/store';
-import { agencyGenerationSchema, agencyHandoffSchema, agencyInventorySchema, agencyRecordSchema, meetingDistributionSchema, meetingDistributionResultSchema, type AgencyCommand } from './agency-contracts';
+import { agencyGenerationSchema, agencyHandoffSchema, agencyInventorySchema, agencyRecordSchema, meetingDistributionSchema, meetingDistributionResultSchema, meetingInvitationSchema, type AgencyCommand } from './agency-contracts';
 import type { z } from 'zod';
 function check(error: { code?: string; message?: string } | null) {
   if (['42P01', '42703', 'PGRST202', 'PGRST205'].includes(error?.code ?? '')) throw new WorkspaceError(503, 'Agency planning needs migration 045 after 044. Existing campaigns are unchanged.');
@@ -35,6 +35,18 @@ export async function distributeMeetingRequest(db: SupabaseClient, userId: strin
   if (result.error?.message === 'bz_meeting_decision_required') throw new WorkspaceError(409, 'Record a founder decision on this meeting before distributing a request.');
   check(result.error);
   return meetingDistributionResultSchema.parse(result.data);
+}
+export async function inviteMeetingParticipants(db: SupabaseClient, userId: string, wid: string, sid: string, input: z.infer<typeof meetingInvitationSchema>) {
+  const context = await getSite(db, userId, wid, sid);
+  if (context.workspace.role !== 'owner') throw new WorkspaceError(403, 'Only the workspace owner can prepare participant invitations.');
+  const result = await db.rpc('bz_invite_meeting_participants', { p_workspace_id: wid, p_site_id: sid, p_input: meetingInvitationSchema.parse(input) });
+  if (['42P01', '42703', 'PGRST202', 'PGRST205'].includes(result.error?.code ?? '')) throw new WorkspaceError(503, 'Participant invitations need migration 054 after 053. The meeting and request remain saved.');
+  if (result.error?.message === 'bz_invalid_meeting_invitation') throw new WorkspaceError(400, 'Review the exact meeting version and invitation confirmation.');
+  if (result.error?.message === 'bz_meeting_distribution_required') throw new WorkspaceError(409, 'Distribute the reviewed meeting decision before preparing invitations.');
+  if (result.error?.message === 'bz_site_roster_paused') throw new WorkspaceError(409, 'Enable the reviewed site team before preparing invitations.');
+  if (result.error?.message === 'bz_site_roster_changed') throw new WorkspaceError(409, 'The requested participant roles are not pinned to the current site team. Review the team first.');
+  check(result.error);
+  return agencyRecordSchema.parse(result.data);
 }
 export async function commandAgency(db: SupabaseClient, userId: string, wid: string, sid: string, command: AgencyCommand) {
   const context = await getSite(db, userId, wid, sid);

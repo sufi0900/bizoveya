@@ -1,5 +1,15 @@
 # Completed Bizoveya work only
 
+Automated evidence: 461 web tests across 78 files, 54 ephemeral local migrations/18 SQL assertion executions, web typecheck/lint, both production builds and application boundaries passed. Documentation projects BZ-090/CW-090/MT200–203 and guide71. Admin source is unchanged; its earlier 145 tests are historical, not claimed as rerun. Hosted/browser/mobile/real worker/concurrency and all founder acceptance remain pending. No active checkpoint lease is retained at handoff.
+
+### CW-090 — Versioned meeting invitation and receipt source
+
+| Record | Implemented slice | Limits |
+|---|---|---|
+| CW-090 | Owner-reviewed invitation packets pinned to roster/agent versions; service-only delivery leases and explicit acknowledged/declined receipts; immutable history and member projection | No attendance, understanding, reasoning, task completion, provider execution, hosted migration or founder acceptance; first-four groups unfinished |
+
+See [71](71_VERSIONED_MEETING_INVITATIONS_AND_RECEIPTS.md). Receipt states are delivery evidence only.
+
 Automated evidence: 457 web tests across 78 files, 53 ephemeral local migrations/17 SQL assertion executions, web typecheck/lint, both production builds and application boundaries passed. Documentation projects BZ-089/CW-089/MT196–199 and guide70. Admin source is unchanged; its earlier 145 tests are historical, not claimed as rerun. Hosted/browser/mobile/real concurrency and all founder acceptance remain pending. No active checkpoint lease is retained at handoff.
 
 ### CW-089 — Reviewed meeting decision-to-request source

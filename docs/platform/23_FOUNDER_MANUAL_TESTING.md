@@ -1,5 +1,18 @@
 # Founder manual testing record
 
+Automated evidence: 461 web tests across 78 files, 54 ephemeral local migrations/18 SQL assertion executions, web typecheck/lint, both production builds and application boundaries passed. Documentation projects BZ-090/CW-090/MT200–203 and guide71. Admin source is unchanged; its earlier 145 tests are historical, not claimed as rerun. Hosted/browser/mobile/real worker/concurrency and all founder acceptance remain pending. No active checkpoint lease is retained at handoff.
+
+## Versioned meeting invitations and explicit receipts — MT200–203
+
+| Test | Scope | Status |
+|---|---|---|
+| MT200 | Missing 054 setup and existing draft/review/media/meeting preservation | Pending founder/operator |
+| MT201 | Disposable meeting, reviewed distribution and enabled-team dependency | Pending founder |
+| MT202 | One invitation batch, exact requested roles and refresh persistence | Pending founder |
+| MT203 | Viewer denial plus later real-worker receipt and true-concurrency evidence | Pending founder/worker deployment |
+
+Follow [71 four simple checks and field samples](71_VERSIONED_MEETING_INVITATIONS_AND_RECEIPTS.md). No founder or real-worker pass is inferred from automated coverage; do not manually invoke worker RPCs in production and do not repeat the accepted generation.
+
 Automated evidence: 457 web tests across 78 files, 53 ephemeral local migrations/17 SQL assertion executions, web typecheck/lint, both production builds and application boundaries passed. Documentation projects BZ-089/CW-089/MT196–199 and guide70. Admin source is unchanged; its earlier 145 tests are historical, not claimed as rerun. Hosted/browser/mobile/real concurrency and all founder acceptance remain pending. No active checkpoint lease is retained at handoff.
 
 ## Reviewed meeting task distribution — MT196–199

@@ -1,5 +1,9 @@
 # Bizoveya platform documentation — start here
 
+## Versioned meeting invitations and explicit receipts — 2026-10-11 PKT
+
+Group 3 now prepares owner-reviewed participant packets pinned to current enabled site-team agent versions after a reviewed meeting decision is distributed. Additive 054 records private invited/claimed/acknowledged/declined delivery states and immutable receipt events; it does not claim attendance, understanding, reasoning or task completion. Bounded deliberation, safe scheduling and live voice remain unfinished, so the first four groups are not complete. Office visualization remains ON HOLD and custom agents remain out of scope. See [71 contract and four deferred checks](71_VERSIONED_MEETING_INVITATIONS_AND_RECEIPTS.md). MT200–203 and earlier unanswered founder tests remain pending; no hosted SQL, provider call, setting, external message, publication or repeated generation.
+
 ## Site team activation and safe checkpoint pause — 2026-10-11 PKT
 
 Group2 now has owner-reviewed site-specific Coordinator/Content/Quality selections, enable/pause controls and immutable history through additive050. Preparation/authorization/new reservation/provider-start boundaries enforce pinned roster versions; started work can still settle. Onboarding respects the selected/paused team. All founder acceptance stays pending until before public reveal; coding continues independently within real dependencies. Assistant dispatch/recovery, meetings, optional AI and live voice remain unfinished; office ON HOLD. See [67 contract and four deferred checks](67_SITE_TEAM_ACTIVATION_AND_SAFE_PAUSE.md). MT184–187 and prior unanswered tests remain pending. No hosted SQL/provider/settings/publication or regeneration; no active checkpoint lease remains at handoff.
