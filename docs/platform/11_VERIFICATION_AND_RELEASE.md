@@ -1,5 +1,12 @@
 # Verification, manual acceptance and release evidence
 
+Automated BZ-098/CW-098 verification: 164 admin tests/18 files, 62 ephemeral local migrations/26 SQL assertion executions, admin standalone typecheck/lint, both production builds, application boundaries, whitespace, 664 affected local Markdown links and guide/activity/work/pending-test visual projections passed. Web application source is unchanged and its 480-test prior result is historical, not rerun. Hosted/PostgREST/browser/mobile/true concurrency, real worker/provider billing and all founder acceptance remain pending. No hosted SQL, provider request or generation.
+
+## Shared meeting-turn accounting — 2026-10-12 PKT
+
+BZ-098/CW-098 adds062 independent meeting-turn reservations, provider-start markers, truthful settlement/reconciliation and shared UTC daily-budget enforcement across connectivity, campaign and meeting ledgers. Exact snapshot/consent/turn/current-dependency guards and ordered idempotent admission are implemented; safe pre-provider cancellation records zero, while unknown/overrun usage blocks fresh work. Admin spending projects sanitized meeting rows. No worker or provider call is connected. MT224–227 and every earlier unanswered test remain pending. Next: one-attempt bounded meeting worker and immutable private request/result receipts. First-four groups remain incomplete, live voice unfinished, office visualization ON HOLD, custom agents out of scope. See [79](79_SHARED_MEETING_TURN_ACCOUNTING.md).
+
+
 Automated BZ-097/CW-097 verification: 480 web tests/80 files, 164 admin tests/18 files, 61 ephemeral local migrations/25 SQL assertion executions, both standalone typechecks/lints, both production builds, application boundaries and 644 affected local Markdown links passed. SQL fixtures use simulated auth and synthetic qualification; hosted/PostgREST/browser/mobile/true concurrency and all founder acceptance remain pending. No hosted SQL/provider request or generation. Guide78 and BZ-097/CW-097/MT220–223 visual projections are checked in the final build.
 
 ## Expiring founder-admin meeting consent — 2026-10-12 PKT

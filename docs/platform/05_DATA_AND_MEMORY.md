@@ -1,5 +1,12 @@
 # Data, schema and memory
 
+## Shared meeting-turn accounting — 2026-10-12 PKT
+
+Additive062 stores private meeting_turn_runs and immutable spending events, cascading from snapshot/site deletion. It contains accounting identity, captured pricing, token bounds/counts and provider-start time—no prompt/output/discussion. Admin projection exposes only sanitized snapshot/ordinal accounting metadata.
+
+BZ-098/CW-098 adds062 independent meeting-turn reservations, provider-start markers, truthful settlement/reconciliation and shared UTC daily-budget enforcement across connectivity, campaign and meeting ledgers. Exact snapshot/consent/turn/current-dependency guards and ordered idempotent admission are implemented; safe pre-provider cancellation records zero, while unknown/overrun usage blocks fresh work. Admin spending projects sanitized meeting rows. No worker or provider call is connected. MT224–227 and every earlier unanswered test remain pending. Next: one-attempt bounded meeting worker and immutable private request/result receipts. First-four groups remain incomplete, live voice unfinished, office visualization ON HOLD, custom agents out of scope. See [79](79_SHARED_MEETING_TURN_ACCOUNTING.md).
+
+
 ## Expiring founder-admin meeting consent — 2026-10-12 PKT
 
 Additive061 creates private RLS-protected meeting_execution_consents and immutable event records. Fixed creation/expiry and original command are immutable; one terminal revocation is allowed. Snapshot/site cascade preserves existing migrations001–060 and history. Sanitized agency JSON gains meetingExecutionConsents, defaulting to[] before061; no direct caller grants.

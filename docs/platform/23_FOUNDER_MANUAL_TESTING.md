@@ -1,5 +1,17 @@
 # Founder manual testing record
 
+## Shared meeting-turn accounting — 2026-10-12 PKT
+
+| Test | Scope | Status |
+|---|---|---|
+| MT224 | Missing062 setup and preservation of drafts/media/meetings/snapshots/consent/spending | Pending founder/operator |
+| MT225 | Future worker creates one ordered reservation per disposable turn; retry/reload no duplicate | Pending founder/future worker |
+| MT226 | Genuine pre-provider cancellation versus truthful started usage settlement | Pending founder/provider evidence |
+| MT227 | Evidence-based unknown/overrun reconciliation and shared daily-limit behavior | Pending founder/hosted |
+
+BZ-098/CW-098 adds062 independent meeting-turn reservations, provider-start markers, truthful settlement/reconciliation and shared UTC daily-budget enforcement across connectivity, campaign and meeting ledgers. Exact snapshot/consent/turn/current-dependency guards and ordered idempotent admission are implemented; safe pre-provider cancellation records zero, while unknown/overrun usage blocks fresh work. Admin spending projects sanitized meeting rows. No worker or provider call is connected. MT224–227 and every earlier unanswered test remain pending. Next: one-attempt bounded meeting worker and immutable private request/result receipts. First-four groups remain incomplete, live voice unfinished, office visualization ON HOLD, custom agents out of scope. See [79](79_SHARED_MEETING_TURN_ACCOUNTING.md).
+
+
 ## Expiring founder-admin meeting consent — 2026-10-12 PKT
 
 | Test | Scope | Status |

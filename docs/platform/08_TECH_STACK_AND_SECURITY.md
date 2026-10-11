@@ -1,5 +1,10 @@
 # Stack, provider policy and security
 
+## Shared meeting-turn accounting — 2026-10-12 PKT
+
+BZ-098/CW-098 adds062 independent meeting-turn reservations, provider-start markers, truthful settlement/reconciliation and shared UTC daily-budget enforcement across connectivity, campaign and meeting ledgers. Exact snapshot/consent/turn/current-dependency guards and ordered idempotent admission are implemented; safe pre-provider cancellation records zero, while unknown/overrun usage blocks fresh work. Admin spending projects sanitized meeting rows. No worker or provider call is connected. MT224–227 and every earlier unanswered test remain pending. Next: one-attempt bounded meeting worker and immutable private request/result receipts. First-four groups remain incomplete, live voice unfinished, office visualization ON HOLD, custom agents out of scope. See [79](79_SHARED_MEETING_TURN_ACCOUNTING.md).
+
+
 ## BZ-097 — Expiring meeting consent boundary
 
 Migration061 separates reviewed founder-admin consent from immutable preparation and future billable admission. Original founder/current owner/MFA admin authorization is enforced in SQL as well as the strict same-origin admin API; revocation remains usable after qualification expiry. Fixed15-minute grant identities, immutable events, retry conflict handling and private ACLs preserve auditability. Sanitized member history is read-only. No provider credential, deployment setting or paid request changed; current consent, shared accounting and provider-start qualification must still be independently enforced by the future worker. See [78](78_MEETING_EXECUTION_CONSENT.md). Founder/hosted/concurrency tests remain pending.

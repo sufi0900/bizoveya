@@ -1,5 +1,12 @@
 # System architecture
 
+## Shared meeting-turn accounting — 2026-10-12 PKT
+
+Accounting is now a separate prerequisite between consent and the future meeting worker. One global lock serializes all three ledgers. Reservation and settlement endpoints are service-only; admin can view/reconcile evidence, while members receive no new execution controls.
+
+BZ-098/CW-098 adds062 independent meeting-turn reservations, provider-start markers, truthful settlement/reconciliation and shared UTC daily-budget enforcement across connectivity, campaign and meeting ledgers. Exact snapshot/consent/turn/current-dependency guards and ordered idempotent admission are implemented; safe pre-provider cancellation records zero, while unknown/overrun usage blocks fresh work. Admin spending projects sanitized meeting rows. No worker or provider call is connected. MT224–227 and every earlier unanswered test remain pending. Next: one-attempt bounded meeting worker and immutable private request/result receipts. First-four groups remain incomplete, live voice unfinished, office visualization ON HOLD, custom agents out of scope. See [79](79_SHARED_MEETING_TURN_ACCOUNTING.md).
+
+
 ## Expiring founder-admin meeting consent — 2026-10-12 PKT
 
 The separate admin boundary owns authenticated consent review/save/revoke; the customer Founder desk exposes sanitized history read-only. Consent persists separately from prepared snapshot, schedule, packet receipts and future spending/worker records. No execution dispatch is connected.

@@ -1,5 +1,12 @@
 # Dependencies and change-impact register
 
+## Shared meeting-turn accounting — 2026-10-12 PKT
+
+062 depends on060 immutable snapshots,061 active consent, current owner/admin authorization,054–059 plan/schedule/receipts, current agent/model/connectivity/pricing and032/035 accounting. It wraps current admission functions so meeting charges participate in old daily gates. The next worker must call reserve → record provenance → marker → provider → settle exactly once.
+
+BZ-098/CW-098 adds062 independent meeting-turn reservations, provider-start markers, truthful settlement/reconciliation and shared UTC daily-budget enforcement across connectivity, campaign and meeting ledgers. Exact snapshot/consent/turn/current-dependency guards and ordered idempotent admission are implemented; safe pre-provider cancellation records zero, while unknown/overrun usage blocks fresh work. Admin spending projects sanitized meeting rows. No worker or provider call is connected. MT224–227 and every earlier unanswered test remain pending. Next: one-attempt bounded meeting worker and immutable private request/result receipts. First-four groups remain incomplete, live voice unfinished, office visualization ON HOLD, custom agents out of scope. See [79](79_SHARED_MEETING_TURN_ACCOUNTING.md).
+
+
 ## Expiring founder-admin meeting consent — 2026-10-12 PKT
 
 061 depends on060's immutable qualified snapshot/candidate and054–059 acknowledged ready plan, current owner/admin/MFA and checked model/connectivity/pricing. No hosted SQL was applied. Routine founder tests are deferred; real reservation, shared-budget and provider-start dependencies remain mandatory. Consent expiry/revocation must block fresh billable work without blocking actual started-usage recording.

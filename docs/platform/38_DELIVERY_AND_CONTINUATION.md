@@ -1,5 +1,12 @@
 # GitHub delivery and scheduled continuation
 
+## Shared meeting-turn accounting — 2026-10-12 PKT
+
+Deliver from expected main `26ebd3b` by non-force update. This source accounting checkpoint is not hosted readiness or first-four completion. Do not infer Vercel/Supabase/manual acceptance.
+
+BZ-098/CW-098 adds062 independent meeting-turn reservations, provider-start markers, truthful settlement/reconciliation and shared UTC daily-budget enforcement across connectivity, campaign and meeting ledgers. Exact snapshot/consent/turn/current-dependency guards and ordered idempotent admission are implemented; safe pre-provider cancellation records zero, while unknown/overrun usage blocks fresh work. Admin spending projects sanitized meeting rows. No worker or provider call is connected. MT224–227 and every earlier unanswered test remain pending. Next: one-attempt bounded meeting worker and immutable private request/result receipts. First-four groups remain incomplete, live voice unfinished, office visualization ON HOLD, custom agents out of scope. See [79](79_SHARED_MEETING_TURN_ACCOUNTING.md).
+
+
 ## Expiring founder-admin meeting consent — 2026-10-12 PKT
 
 Delivery is an expected-head non-force main update from resolved fec12866, preserving historical branches and user changes. Consent source delivery does not establish hosted readiness. Do not advance office/custom-agent scope or mark routine deferred founder acceptance passed.

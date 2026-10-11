@@ -1,5 +1,12 @@
 # AI employees, meetings and interruptions
 
+## Shared meeting-turn accounting — 2026-10-12 PKT
+
+Prepared + ready + consent still does not mean running. Each future ordered turn needs fresh current dependency checks and an independent reservation. Pause/revocation blocks new provider starts; already-started actual usage remains settleable. No reasoning/result exists in this slice.
+
+BZ-098/CW-098 adds062 independent meeting-turn reservations, provider-start markers, truthful settlement/reconciliation and shared UTC daily-budget enforcement across connectivity, campaign and meeting ledgers. Exact snapshot/consent/turn/current-dependency guards and ordered idempotent admission are implemented; safe pre-provider cancellation records zero, while unknown/overrun usage blocks fresh work. Admin spending projects sanitized meeting rows. No worker or provider call is connected. MT224–227 and every earlier unanswered test remain pending. Next: one-attempt bounded meeting worker and immutable private request/result receipts. First-four groups remain incomplete, live voice unfinished, office visualization ON HOLD, custom agents out of scope. See [79](79_SHARED_MEETING_TURN_ACCOUNTING.md).
+
+
 ## Expiring founder-admin meeting consent — 2026-10-12 PKT
 
 A ready plan plus prepared snapshot now supports explicit expiring founder consent. None of these states means attendance, reasoning, running, delegation completion or publishing. Revocation prevents future authority; actual work admission/usage remains a later separately guarded implementation.

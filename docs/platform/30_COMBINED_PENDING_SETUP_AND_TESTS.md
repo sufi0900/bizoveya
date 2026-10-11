@@ -1,5 +1,12 @@
 # Combined pending setup and manual tests
 
+## Shared meeting-turn accounting — 2026-10-12 PKT
+
+Combined setup now extends only through missing migration062, in order, with no new key or flag. MT224–227 are deferred with earlier tests. The worker-dependent checks cannot honestly pass until the next source slice exists; no service RPC should be called manually.
+
+BZ-098/CW-098 adds062 independent meeting-turn reservations, provider-start markers, truthful settlement/reconciliation and shared UTC daily-budget enforcement across connectivity, campaign and meeting ledgers. Exact snapshot/consent/turn/current-dependency guards and ordered idempotent admission are implemented; safe pre-provider cancellation records zero, while unknown/overrun usage blocks fresh work. Admin spending projects sanitized meeting rows. No worker or provider call is connected. MT224–227 and every earlier unanswered test remain pending. Next: one-attempt bounded meeting worker and immutable private request/result receipts. First-four groups remain incomplete, live voice unfinished, office visualization ON HOLD, custom agents out of scope. See [79](79_SHARED_MEETING_TURN_ACCOUNTING.md).
+
+
 ## Expiring founder-admin meeting consent — 2026-10-12 PKT
 
 Combined setup now includes only missing migrations through061, in order. No new provider credential/flag. MT220–223 can be tested later with prior pending checks; exact reason samples and both confirmation labels are in guide78. No pending test was promoted to passed.

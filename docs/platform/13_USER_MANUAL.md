@@ -1,5 +1,12 @@
 # Bizoveya user manual — prelaunch working edition
 
+## Shared meeting-turn accounting — 2026-10-12 PKT
+
+Spending controls now labels future meeting-turn rows by snapshot and ordinal and combines them with connectivity/campaign charges. The meeting worker is not connected. Later reconciliation uses the existing amount field and sample reason `Reviewed provider billing for this disposable meeting turn.` Only use real provider evidence; follow guide79.
+
+BZ-098/CW-098 adds062 independent meeting-turn reservations, provider-start markers, truthful settlement/reconciliation and shared UTC daily-budget enforcement across connectivity, campaign and meeting ledgers. Exact snapshot/consent/turn/current-dependency guards and ordered idempotent admission are implemented; safe pre-provider cancellation records zero, while unknown/overrun usage blocks fresh work. Admin spending projects sanitized meeting rows. No worker or provider call is connected. MT224–227 and every earlier unanswered test remain pending. Next: one-attempt bounded meeting worker and immutable private request/result receipts. First-four groups remain incomplete, live voice unfinished, office visualization ON HOLD, custom agents out of scope. See [79](79_SHARED_MEETING_TURN_ACCOUNTING.md).
+
+
 ## Expiring founder-admin meeting consent — 2026-10-12 PKT
 
 Later open the separate admin app's Meeting execution consent room as the snapshot founder/current owner with MFA. Consent reason sample: `Consent to bounded private deliberation only.` Revocation reason sample: `Withdraw this private meeting execution consent.` Both actions need their explicit review checkbox. Active is time-limited consent only; refresh for current status. Follow the four deferred steps in guide78.

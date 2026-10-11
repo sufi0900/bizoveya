@@ -1,5 +1,11 @@
 # P04.3.4.1 private visual composition delivery
 
+Automated BZ-098/CW-098 verification: 164 admin tests/18 files, 62 ephemeral local migrations/26 SQL assertion executions, admin standalone typecheck/lint, both production builds, application boundaries, whitespace, 664 affected local Markdown links and guide/activity/work/pending-test visual projections passed. Web application source is unchanged and its 480-test prior result is historical, not rerun. Hosted/PostgREST/browser/mobile/true concurrency, real worker/provider billing and all founder acceptance remain pending. No hosted SQL, provider request or generation.
+
+## BZ-098/CW-098 accounting source delivery — 2026-10-12 PKT
+
+Resolved base `26ebd3b87d481e64c6447861a5427e1870ba4f03`. Additive062 and the admin spending projection implement independent shared-budget meeting-turn accounting only. No worker/provider/hosted operation. MT224–227 and all earlier founder tests remain pending; first-four groups are unfinished. See [guide79](../../platform/79_SHARED_MEETING_TURN_ACCOUNTING.md).
+
 Automated BZ-097/CW-097 verification: 480 web tests/80 files, 164 admin tests/18 files, 61 ephemeral local migrations/25 SQL assertion executions, both standalone typechecks/lints, both production builds, application boundaries and 644 affected local Markdown links passed. SQL fixtures use simulated auth and synthetic qualification; hosted/PostgREST/browser/mobile/true concurrency and all founder acceptance remain pending. No hosted SQL/provider request or generation. Guide78 and BZ-097/CW-097/MT220–223 visual projections are checked in the final build.
 
 ## BZ-097/CW-097 consent source delivery — 2026-10-12 PKT

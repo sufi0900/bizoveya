@@ -1,5 +1,12 @@
 # Backend and super admin control contract
 
+## Shared meeting-turn accounting — 2026-10-12 PKT
+
+Migration062 service-only accounting APIs reserve, mark provider start, cancel unstarted and settle future turns. Authenticated admins only view/reconcile via existing spending controls. Private tables/helpers remain denied, including direct service-role table access; the application has no connected meeting worker.
+
+BZ-098/CW-098 adds062 independent meeting-turn reservations, provider-start markers, truthful settlement/reconciliation and shared UTC daily-budget enforcement across connectivity, campaign and meeting ledgers. Exact snapshot/consent/turn/current-dependency guards and ordered idempotent admission are implemented; safe pre-provider cancellation records zero, while unknown/overrun usage blocks fresh work. Admin spending projects sanitized meeting rows. No worker or provider call is connected. MT224–227 and every earlier unanswered test remain pending. Next: one-attempt bounded meeting worker and immutable private request/result receipts. First-four groups remain incomplete, live voice unfinished, office visualization ON HOLD, custom agents out of scope. See [79](79_SHARED_MEETING_TURN_ACCOUNTING.md).
+
+
 ## BZ-097 — Founder-admin meeting execution consent
 
 The separate admin app adds `/admin/deliberations` and private no-store `/api/admin/deliberations` GET/POST. Migration061 independently requires current platform-admin membership, MFA aal2, original snapshot founder identity and current workspace ownership. Latest50 own snapshots only; unrelated admins receive no queue. Fresh grant recomputes060 qualification/context fingerprint; exact retries cannot extend fixed15-minute expiry. Revocation remains available after pause/expiry/quota. Private records/helpers are inaccessible directly, including to service_role. No service key, environment flag, provider, worker or reservation is introduced. MT220–223/hosted/browser acceptance remains pending. See [78](78_MEETING_EXECUTION_CONSENT.md).
