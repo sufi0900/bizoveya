@@ -1,5 +1,11 @@
 # Bizoveya continuation checkpoint
 
+Automated checkpoint: 432 web tests across76 files, all48 local migrations/12 SQL assertion executions, web typecheck/lint, boundaries and476 affected local Markdown links passed. Production build/projection verification is recorded at delivery. Admin/runtime source is unchanged; no admin checks are claimed as rerun. Hosted/browser/concurrency and MT176–179 remain pending.
+
+## Reviewed founder request handoffs — 2026-10-11 PKT
+
+Group2 now connects owner-reviewed saved requests to one private campaign through additive048, version guards, immutable original brief/lineage and retry-safe quota-protected creation. Opening the linked campaign uses the existing draft runtime separately; this action starts no generation/provider/spending or publication. Analyst/onboarding/hiring, assistant dispatch, meetings, optional AI and live voice remain unfinished; office stays ON HOLD. See [65 contract and four deferred checks](65_REVIEWED_REQUEST_CAMPAIGN_HANDOFFS.md). MT176–179 and all prior unanswered tests remain pending; no hosted migration/settings/credential/provider operation or repeat generation. No active checkpoint lease remains at handoff.
+
 ## Retained campaign image drafts — 2026-10-11 PKT
 
 P04.3.4.4e adds migration047 atomic image-draft saves/history, exact saved-base/current-review guards, explicit private sharing to current site members, retained immutable objects and guarded cleanup. The interface reloads images after refresh and previews historical image/text snapshots; existing v1/v2/v3 text/template saves remain intact. Deterministic media persistence is implemented in source; optional AI, assistant workers, agent meetings and live voice remain unfinished. Office stays ON HOLD. See [64 current contract and four deferred checks](64_RETAINED_CAMPAIGN_IMAGE_DRAFTS.md). MT172–175 and all unrelated unanswered tests remain pending. Hosted047 and existing media-key activation are deferred; no assistant hosted SQL/provider/settings/publication or regeneration.

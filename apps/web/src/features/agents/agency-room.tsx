@@ -1,6 +1,7 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
-import { agencyCommandSchema, agencyRecordSchema, channels, delegationProposal, voiceEntryState, type AgencyRecord } from './agency-contracts';
+import React, { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
+import { agencyCommandSchema, agencyHandoffSchema, agencyRecordSchema, channels, delegationProposal, voiceEntryState, type AgencyRecord } from './agency-contracts';
 
 export function AgencyRoom({ initial, owner, endpoint }: { initial: AgencyRecord[]; owner: boolean; endpoint: string }) {
   const [records, setRecords] = useState(initial);
@@ -13,11 +14,14 @@ export function AgencyRoom({ initial, owner, endpoint }: { initial: AgencyRecord
   const [confirmed, setConfirmed] = useState(false);
   const [reason, setReason] = useState('');
   const [decisionConfirmed, setDecisionConfirmed] = useState(false);
+  const [title, setTitle] = useState('');
+  const [handoffConfirmed, setHandoffConfirmed] = useState(false);
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState('');
   const lock = useRef(false);
   const attempt = useRef<{ body: string; id: string } | null>(null);
-  const dirty = Boolean(body.trim() || reason.trim());
+  const handoffAttempts = useRef(new Map<string, { key: string; campaignId: string }>());
+  const dirty = Boolean(body.trim() || reason.trim() || title.trim());
   useEffect(() => {
     if (!dirty) return;
     const unload = (event: BeforeUnloadEvent) => event.preventDefault();
@@ -27,6 +31,24 @@ export function AgencyRoom({ initial, owner, endpoint }: { initial: AgencyRecord
     return () => { window.removeEventListener('beforeunload', unload); window.removeEventListener('bizoveya:before-signout', leave); document.removeEventListener('click', link, true); };
   }, [dirty]);
   function change() { setConfirmed(false); }
+  async function handoff(record: AgencyRecord) {
+    if (lock.current || !owner || record.handoff) return;
+    const key = JSON.stringify({ title: title.trim(), version: record.version });
+    let attempt = handoffAttempts.current.get(record.id);
+    if (attempt?.key !== key) { attempt = { key, campaignId: crypto.randomUUID() }; handoffAttempts.current.set(record.id, attempt); }
+    const parsed = agencyHandoffSchema.safeParse({ id: record.id, campaignId: attempt.campaignId, expectedVersion: record.version, title, reviewed: handoffConfirmed });
+    if (!parsed.success) { setMessage('Enter a campaign title and confirm the private handoff.'); return; }
+    lock.current = true; setBusy(true); setMessage('');
+    try {
+      const response = await fetch(`${endpoint}/handoff`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(parsed.data) });
+      const data = await response.json(); if (!response.ok) throw new Error(data.error ?? 'Handoff failed.');
+      const saved = agencyRecordSchema.parse(data);
+      setRecords(previous => previous.map(item => item.id === saved.id ? saved : item));
+      setTitle(''); setHandoffConfirmed(false); handoffAttempts.current.delete(record.id);
+      setMessage('Private campaign saved. Open it to review the brief. Generation requires a separate readiness and spending check; no provider call was made.');
+    } catch (error) { setMessage(error instanceof Error ? error.message : 'Handoff failed.'); }
+    finally { lock.current = false; setBusy(false); }
+  }
   async function save(record?: AgencyRecord, action?: 'accept-decision' | 'defer' | 'cancel') {
     if (lock.current || !owner) return;
     const draft = kind === 'request' ? { action: kind, instruction: body, channels: selectedChannels, reviewed: confirmed, inputMode } : { action: kind, agenda: body, participants: roles, mode, reviewed: confirmed, inputMode };
@@ -61,6 +83,11 @@ export function AgencyRoom({ initial, owner, endpoint }: { initial: AgencyRecord
       </fieldset><p role="status" aria-live="polite">{message}</p>
     </div>
     <div className="bz-card"><h2>Saved proposals and decisions</h2><p>Snapshots preserve the authorized catalog, approved sources and preferences at creation. They do not automatically become current knowledge or grant execution permission. Future execution must recheck current approvals and budget.</p>
+      <fieldset disabled={busy || !owner}><legend>Prepare a campaign from a saved request</legend>
+        <p>The current draft runtime produces all three channels. Your selections identify the requested focus. Preparing a campaign does not run agents. Deferring or cancelling a proposal later does not cancel its linked campaign or generation.</p>
+        <label>Campaign title<input maxLength={120} value={title} onChange={event => { setTitle(event.target.value); setHandoffConfirmed(false); }} /></label>
+        <label><input type="checkbox" checked={handoffConfirmed} onChange={event => setHandoffConfirmed(event.target.checked)} />I reviewed the selected saved request and title. Create one private campaign without starting generation.</label>
+      </fieldset>
       <fieldset disabled={busy || !owner}><legend>Founder decision</legend><label>Decision reason<textarea maxLength={500} value={reason} onChange={event => { setReason(event.target.value); setDecisionConfirmed(false); }} /></label><label><input type="checkbox" checked={decisionConfirmed} onChange={event => setDecisionConfirmed(event.target.checked)} />I confirm this decision applies only to the selected saved proposal.</label></fieldset>
       {!records.length ? <p>No saved proposals yet.</p> : records.map(record => {
         const command = agencyCommandSchema.safeParse(record.document);
@@ -69,6 +96,7 @@ export function AgencyRoom({ initial, owner, endpoint }: { initial: AgencyRecord
           <p>Input source: {record.document.inputMode === 'corrected-transcript' ? 'Pasted and corrected transcript' : 'Typed text'}{record.kind === 'meeting' ? ` · ${record.document.mode === 'deliberation' ? 'Deliberation agenda' : 'Announcement'}` : ''}</p>
           {tasks.length ? <ul>{tasks.map(task => <li key={task.channel}>{task.channel}: {task.role} · proposed · execution prerequisites pending</li>)}</ul> : <p>Requested roles: {Array.isArray(record.document.participants) ? record.document.participants.join(', ') : ''}. No agent attendance or acknowledgement recorded.</p>}
           <details><summary>Saved context and event history</summary><pre style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' }}>{JSON.stringify({ snapshot: record.snapshot, events: record.events }, null, 2)}</pre></details>
+          {record.handoff ? <div><p>Campaign prepared from request v{record.handoff.sourceVersion}. No generation was started by this handoff.</p><Link className="bz-button" href={`${endpoint.replace(/^\/api/, '').replace(/\/agency$/, '/campaigns')}/${record.handoff.campaignId}`}>Open linked campaign</Link><details><summary>Original campaign handoff</summary><pre style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' }}>{JSON.stringify(record.handoff, null, 2)}</pre></details></div> : record.kind === 'request' && record.status === 'proposed' ? <button className="bz-button" disabled={busy || !owner || !handoffConfirmed || !title.trim()} onClick={() => void handoff(record)}>Prepare campaign from this request</button> : null}
           <fieldset disabled={busy || !owner || !decisionConfirmed || !reason.trim() || record.status === 'cancelled'}><legend>Update this proposal</legend>{record.kind === 'meeting' ? <button className="bz-button" onClick={() => void save(record, 'accept-decision')}>Record founder decision</button> : null}<button className="bz-button" onClick={() => void save(record, 'defer')}>Defer proposal</button><button className="bz-button" onClick={() => void save(record, 'cancel')}>Cancel proposal</button></fieldset>
         </article>;
       })}

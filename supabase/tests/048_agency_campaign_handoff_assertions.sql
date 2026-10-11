@@ -1,0 +1,55 @@
+begin;
+create temporary table af(actor uuid,other_actor uuid,wid uuid,sid uuid,other_site uuid,id uuid,command jsonb);
+insert into af values(gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),null);
+update af set command=jsonb_build_object('action','request','id',id,'instruction','Discuss the new tool page using approved facts.','channels',jsonb_build_array('pinterest'),'reviewed',true,'inputMode','corrected-transcript');
+insert into auth.users(id) select actor from af union all select other_actor from af;
+insert into public.bizoveya_workspaces(id,owner_id,name) select wid,actor,'Agency fixture' from af;
+insert into public.bizoveya_memberships(workspace_id,user_id,role) select wid,actor,'owner' from af union all select wid,other_actor,'viewer' from af;
+insert into public.bizoveya_sites(id,workspace_id,name,mode,kind,status,created_by) select sid,wid,'Agency A','native_business','business','active',actor from af union all select other_site,wid,'Agency B','native_business','business','active',actor from af;
+create function pg_temp.expect_agency(q text,n text) returns void language plpgsql as $$begin begin execute q;exception when others then if strpos(sqlerrm,n)>0 then return;end if;raise;end;raise exception 'Expected %',n;end;$$;
+do $$begin execute format('grant usage on schema %I to authenticated',(select nspname from pg_namespace where oid=pg_my_temp_schema()));end;$$;grant all on af to authenticated;
+set local role authenticated;select set_config('request.jwt.claim.sub',(select actor::text from af),true);
+select public.bz_agency_command(wid,sid,command) from af;
+create temporary table hi as select jsonb_build_object('id',id,'campaignId',gen_random_uuid(),'expectedVersion',1,'title','Private handoff test','reviewed',true) as input from af;
+grant all on hi to authenticated;
+select pg_temp.expect_agency(format('select public.bz_handoff_agency_campaign(%L,%L,%L::jsonb)',wid,sid,jsonb_set(input,'{reviewed}','false')),'bz_invalid_agency_handoff') from af,hi;
+select pg_temp.expect_agency(format('select public.bz_handoff_agency_campaign(%L,%L,%L::jsonb)',wid,other_site,input),'bz_agency_unavailable') from af,hi;
+select public.bz_handoff_agency_campaign(wid,sid,input) from af,hi;
+select public.bz_handoff_agency_campaign(wid,sid,input) from af,hi;
+do $$declare r jsonb;begin select public.bz_agency_inventory(wid,sid) into r from af;if r#>>'{0,version}'<>'2' or r#>>'{0,handoff,sourceVersion}'<>'1' or jsonb_array_length(r#>'{0,events}')<>2 then raise exception 'Idempotent handoff failed';end if;end;$$;
+select pg_temp.expect_agency(format('select public.bz_handoff_agency_campaign(%L,%L,%L::jsonb)',wid,sid,jsonb_set(input,'{title}','"Different title"')),'bz_conflict') from af,hi;
+select public.bz_agency_command(wid,sid,jsonb_build_object('action','cancel','id',id,'expectedVersion',2,'reason','Cancel proposal only.','reviewed',true)) from af;
+-- Exact lost-response retry returns retained lineage even after a subsequent founder decision.
+select public.bz_handoff_agency_campaign(wid,sid,input) from af,hi;
+-- A second request cannot overwrite the linked campaign; stale/deferred requests cannot prepare work.
+create temporary table second_request as select gen_random_uuid() as id from af;
+grant all on second_request to authenticated;
+select public.bz_agency_command(wid,sid,jsonb_set(command,'{id}',to_jsonb(second_request.id))) from af,second_request;
+select pg_temp.expect_agency(format('select public.bz_handoff_agency_campaign(%L,%L,%L::jsonb)',wid,sid,jsonb_set(input,'{id}',to_jsonb(second_request.id))),'bz_conflict') from af,hi,second_request;
+select pg_temp.expect_agency(format('select public.bz_handoff_agency_campaign(%L,%L,%L::jsonb)',wid,sid,jsonb_set(jsonb_set(jsonb_set(input,'{id}',to_jsonb(second_request.id)),'{campaignId}',to_jsonb(gen_random_uuid())),'{expectedVersion}','2')),'bz_conflict') from af,hi,second_request;
+select public.bz_agency_command(wid,sid,jsonb_build_object('action','defer','id',second_request.id,'expectedVersion',1,'reason','Wait for current knowledge.','reviewed',true)) from af,second_request;
+select pg_temp.expect_agency(format('select public.bz_handoff_agency_campaign(%L,%L,%L::jsonb)',wid,sid,jsonb_set(jsonb_set(jsonb_set(input,'{id}',to_jsonb(second_request.id)),'{campaignId}',to_jsonb(gen_random_uuid())),'{expectedVersion}','2')),'bz_conflict') from af,hi,second_request;
+select pg_temp.expect_agency(format('select public.bz_handoff_agency_campaign(%L,%L,%L::jsonb)',wid,sid,input||'{"execute":true}'::jsonb),'bz_invalid_agency_handoff') from af,hi;
+select set_config('request.jwt.claim.sub',(select other_actor::text from af),true);
+select public.bz_agency_inventory(wid,sid) from af;
+select pg_temp.expect_agency(format('select public.bz_handoff_agency_campaign(%L,%L,%L::jsonb)',wid,sid,input),'bz_forbidden') from af,hi;
+select pg_temp.expect_agency('select * from bizoveya_private.agency_campaign_handoffs','permission denied');
+reset role;
+do $$begin
+ if (select count(*) from public.bizoveya_campaigns where site_id=(select sid from af))<>1 or (select count(*) from public.bizoveya_campaign_revisions where site_id=(select sid from af))<>1 then raise exception 'Duplicate campaign created';end if;
+ if exists(select 1 from bizoveya_private.generation_runs where site_id=(select sid from af)) then raise exception 'Unexpected generation';end if;
+ if (select document->>'brief' from public.bizoveya_campaigns where site_id=(select sid from af)) not like 'Discuss the new tool page using approved facts.%Requested channel focus: pinterest.%' then raise exception 'Request text lost';end if;
+end;$$;
+select pg_temp.expect_agency('update bizoveya_private.agency_campaign_handoffs set title=''Forged''','bz_immutable_agency_handoff');
+-- Campaign quota rejection rolls back both the new campaign and agency event/lineage.
+insert into public.bizoveya_campaigns(id,site_id,document,version,updated_by) select gen_random_uuid(),sid,jsonb_build_object('title','Quota fixture','brief','Private','blog','','pinterest','','linkedin',''),1,actor from af cross join generate_series(1,49);
+set local role authenticated;select set_config('request.jwt.claim.sub',(select actor::text from af),true);
+create temporary table quota_request as select gen_random_uuid() as id,gen_random_uuid() as campaign_id from af;
+grant all on quota_request to authenticated;
+select public.bz_agency_command(wid,sid,jsonb_set(command,'{id}',to_jsonb(quota_request.id))) from af,quota_request;
+select pg_temp.expect_agency(format('select public.bz_handoff_agency_campaign(%L,%L,%L::jsonb)',wid,sid,jsonb_set(jsonb_set(input,'{id}',to_jsonb(quota_request.id)),'{campaignId}',to_jsonb(quota_request.campaign_id))),'bz_campaign_limit') from af,hi,quota_request;
+reset role;
+do $$begin if exists(select 1 from public.bizoveya_campaigns where id=(select campaign_id from quota_request)) or exists(select 1 from bizoveya_private.agency_campaign_handoffs where record_id=(select id from quota_request)) or (select version from bizoveya_private.agency_records where id=(select id from quota_request))<>1 then raise exception 'Quota handoff not atomic';end if;end;$$;
+delete from public.bizoveya_sites where id=(select sid from af);
+do $$begin if exists(select 1 from bizoveya_private.agency_campaign_handoffs where record_id=(select id from af)) then raise exception 'Handoff cascade failed';end if;end;$$;
+rollback;

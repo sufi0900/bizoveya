@@ -1,5 +1,17 @@
 # Bizoveya chronological activity and decision log
 
+Automated checkpoint: 432 web tests across76 files, all48 local migrations/12 SQL assertion executions, web typecheck/lint, boundaries and476 affected local Markdown links passed. Production build/projection verification is recorded at delivery. Admin/runtime source is unchanged; no admin checks are claimed as rerun. Hosted/browser/concurrency and MT176–179 remain pending.
+
+### BZ-084 — 2026-10-11 PKT — Reviewed request campaign handoff
+
+| Record | Delivered source | Evidence and limits |
+|---|---|---|
+| BZ-084 | Owner-reviewed request to one saved private campaign, immutable lineage and retry protection | Automated SQL/app checks; hosted/browser acceptance pending; first-four groups unfinished |
+
+## Reviewed founder request handoffs — 2026-10-11 PKT
+
+Group2 now connects owner-reviewed saved requests to one private campaign through additive048, version guards, immutable original brief/lineage and retry-safe quota-protected creation. Opening the linked campaign uses the existing draft runtime separately; this action starts no generation/provider/spending or publication. Analyst/onboarding/hiring, assistant dispatch, meetings, optional AI and live voice remain unfinished; office stays ON HOLD. See [65 contract and four deferred checks](65_REVIEWED_REQUEST_CAMPAIGN_HANDOFFS.md). MT176–179 and all prior unanswered tests remain pending; no hosted migration/settings/credential/provider operation or repeat generation. No active checkpoint lease remains at handoff.
+
 ### BZ-083 — 2026-10-11 PKT — Retained campaign image drafts
 
 Resolved main dea48b0509910de9f4680bc22255fb7803595a82; historical branches/PR2 and absent AGENTS/active lease inspected. Continued founder-authorized first-four work. Added047 separate atomic image snapshots, exact base/source guards, explicit site-member sharing, immutable retained bytes, cleanup protections, authenticated server paths and owner/member reload/save/history UI. Existing source-review account deletion restriction is preserved; isolated cascade fixture is not a production deletion workflow. Groups1–4 remain unfinished and office on hold. No hosted SQL/provider/settings/publication, paid request or repeat generation.

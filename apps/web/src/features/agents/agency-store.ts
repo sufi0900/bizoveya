@@ -1,6 +1,7 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { checkDatabaseError, getSite, WorkspaceError } from '@/features/workspaces/store';
-import { agencyInventorySchema, agencyRecordSchema, type AgencyCommand } from './agency-contracts';
+import { agencyHandoffSchema, agencyInventorySchema, agencyRecordSchema, type AgencyCommand } from './agency-contracts';
+import type { z } from 'zod';
 function check(error: { code?: string; message?: string } | null) {
   if (['42P01', '42703', 'PGRST202', 'PGRST205'].includes(error?.code ?? '')) throw new WorkspaceError(503, 'Agency planning needs migration 045 after 044. Existing campaigns are unchanged.');
   if (error?.message === 'bz_conflict') throw new WorkspaceError(409, 'This proposal changed. Reload before continuing.');
@@ -8,7 +9,17 @@ function check(error: { code?: string; message?: string } | null) {
   if (error?.message === 'bz_invalid_agency_command') throw new WorkspaceError(400, 'Check the proposal fields and confirmation.');
   if (error?.message === 'bz_agency_limit') throw new WorkspaceError(409, 'The pilot supports 64 proposals per site and 100 events per proposal.');
   if (error?.message === 'bz_agency_snapshot_limit') throw new WorkspaceError(409, 'Approved context exceeds the pilot snapshot limit.');
+  if (error?.message === 'bz_invalid_agency_handoff') throw new WorkspaceError(400, 'Check the campaign title and handoff confirmation.');
+  if (error?.message === 'bz_campaign_limit') throw new WorkspaceError(409, 'This site already has the maximum 50 campaigns.');
   checkDatabaseError(error);
+}
+export async function handoffAgency(db: SupabaseClient, userId: string, wid: string, sid: string, input: z.infer<typeof agencyHandoffSchema>) {
+  const context = await getSite(db, userId, wid, sid);
+  if (context.workspace.role !== 'owner') throw new WorkspaceError(403, 'Only the workspace owner can prepare a campaign from a founder request.');
+  const result = await db.rpc('bz_handoff_agency_campaign', { p_workspace_id: wid, p_site_id: sid, p_input: agencyHandoffSchema.parse(input) });
+  if (['42P01', '42703', 'PGRST202', 'PGRST205'].includes(result.error?.code ?? '')) throw new WorkspaceError(503, 'Campaign handoffs need migration 048 after 047. The request remains saved; no campaign or generation was started.');
+  check(result.error);
+  return agencyRecordSchema.parse(result.data);
 }
 export async function loadAgency(db: SupabaseClient, userId: string, wid: string, sid: string) {
   const context = await getSite(db, userId, wid, sid);

@@ -1,5 +1,11 @@
 # Verified main delivery — P04.3.3 founder evidence checkpoint
 
+Automated checkpoint: 432 web tests across76 files, all48 local migrations/12 SQL assertion executions, web typecheck/lint, boundaries and476 affected local Markdown links passed. Production build/projection verification is recorded at delivery. Admin/runtime source is unchanged; no admin checks are claimed as rerun. Hosted/browser/concurrency and MT176–179 remain pending.
+
+## Reviewed founder request handoffs — 2026-10-11 PKT
+
+Group2 now connects owner-reviewed saved requests to one private campaign through additive048, version guards, immutable original brief/lineage and retry-safe quota-protected creation. Opening the linked campaign uses the existing draft runtime separately; this action starts no generation/provider/spending or publication. Analyst/onboarding/hiring, assistant dispatch, meetings, optional AI and live voice remain unfinished; office stays ON HOLD. See [65 contract and four deferred checks](../../platform/65_REVIEWED_REQUEST_CAMPAIGN_HANDOFFS.md). MT176–179 and all prior unanswered tests remain pending; no hosted migration/settings/credential/provider operation or repeat generation. No active checkpoint lease remains at handoff.
+
 ## Retained image draft successor
 
 P04.3.4.4e follows main dea48b05: additive047, explicit private site-member sharing, atomic retained image/base snapshots and guarded reload/export/history. Base visuals and accepted text remain intact. Hosted047/key/browser acceptance is pending; groups1–4 unfinished and office on hold. See [64](../../platform/64_RETAINED_CAMPAIGN_IMAGE_DRAFTS.md). Verified delivery remains non-force expected-head; no hosted SQL/provider/settings/publication or regeneration.

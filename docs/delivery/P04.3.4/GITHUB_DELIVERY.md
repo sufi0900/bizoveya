@@ -1,5 +1,9 @@
 # P04.3.4.1 private visual composition delivery
 
+## Reviewed founder request handoffs — 2026-10-11 PKT
+
+Group2 now connects owner-reviewed saved requests to one private campaign through additive048, version guards, immutable original brief/lineage and retry-safe quota-protected creation. Opening the linked campaign uses the existing draft runtime separately; this action starts no generation/provider/spending or publication. Analyst/onboarding/hiring, assistant dispatch, meetings, optional AI and live voice remain unfinished; office stays ON HOLD. See [65 contract and four deferred checks](../../platform/65_REVIEWED_REQUEST_CAMPAIGN_HANDOFFS.md). MT176–179 and all prior unanswered tests remain pending; no hosted migration/settings/credential/provider operation or repeat generation. No active checkpoint lease remains at handoff.
+
 ## ChatGPT reasoning research checkpoint — 2026-10-09 UTC
 
 Founder requests a selectable personal Plus-backed reasoning/text option. Official Sign in with ChatGPT supports eligible plan usage, but hosted Bizoveya needs commercial access; no approved client is evidenced. Recorded as planned/blocked, not a working provider. Separate per-user OAuth, account-specific models, streaming transport and subscription accounting are prerequisites; current platform-key adapter is not interchangeable. See [52 ChatGPT plan reasoning](../../platform/52_CHATGPT_PLAN_REASONING.md) for sources, ordered scope and four simple founder steps. No new field, key, SQL or live test now. Source remains1.26; MT152–155 and unrelated pending tests remain pending; no accepted generation repeated. This is a documentation checkpoint, not phase completion.

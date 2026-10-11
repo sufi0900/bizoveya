@@ -1,5 +1,17 @@
 # Completed Bizoveya work only
 
+Automated checkpoint: 432 web tests across76 files, all48 local migrations/12 SQL assertion executions, web typecheck/lint, boundaries and476 affected local Markdown links passed. Production build/projection verification is recorded at delivery. Admin/runtime source is unchanged; no admin checks are claimed as rerun. Hosted/browser/concurrency and MT176–179 remain pending.
+
+### CW-084 — Reviewed request campaign handoff source
+
+| Record | Delivered source | Evidence and limits |
+|---|---|---|
+| CW-084 | Owner-reviewed request to one saved private campaign, immutable lineage and retry protection | Automated SQL/app checks; hosted/browser acceptance pending; first-four groups unfinished |
+
+## Reviewed founder request handoffs — 2026-10-11 PKT
+
+Group2 now connects owner-reviewed saved requests to one private campaign through additive048, version guards, immutable original brief/lineage and retry-safe quota-protected creation. Opening the linked campaign uses the existing draft runtime separately; this action starts no generation/provider/spending or publication. Analyst/onboarding/hiring, assistant dispatch, meetings, optional AI and live voice remain unfinished; office stays ON HOLD. See [65 contract and four deferred checks](65_REVIEWED_REQUEST_CAMPAIGN_HANDOFFS.md). MT176–179 and all prior unanswered tests remain pending; no hosted migration/settings/credential/provider operation or repeat generation. No active checkpoint lease remains at handoff.
+
 ### CW-083 — Versioned retained campaign image draft source
 
 | Record | Delivered source | Evidence and limits |

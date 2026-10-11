@@ -1,5 +1,9 @@
 # Living documentation changelog
 
+## Reviewed request campaign handoff — 2026-10-11 PKT
+
+Additive048 saves one owner-reviewed private campaign per founder request, with immutable lineage, exact-version guards and retry protection. No automatic generation, provider call or publication. First-four completion and founder acceptance remain in progress; office on hold. See [65](65_REVIEWED_REQUEST_CAMPAIGN_HANDOFFS.md).
+
 ## Retained campaign image drafts — 2026-10-11 PKT
 
 P04.3.4.4e adds migration047 atomic image-draft saves/history, exact saved-base/current-review guards, explicit private sharing to current site members, retained immutable objects and guarded cleanup. The interface reloads images after refresh and previews historical image/text snapshots; existing v1/v2/v3 text/template saves remain intact. Deterministic media persistence is implemented in source; optional AI, assistant workers, agent meetings and live voice remain unfinished. Office stays ON HOLD. See [64 current contract and four deferred checks](64_RETAINED_CAMPAIGN_IMAGE_DRAFTS.md). MT172–175 and all unrelated unanswered tests remain pending. Hosted047 and existing media-key activation are deferred; no assistant hosted SQL/provider/settings/publication or regeneration.

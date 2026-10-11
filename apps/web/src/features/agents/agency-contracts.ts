@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { campaignDocumentSchema } from '../campaigns/contracts';
 const text = (max: number) => z.string().trim().min(1).max(max).refine(value => !/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(value));
 export const channels = ['blog', 'pinterest', 'linkedin'] as const;
 const participants = z.array(z.enum(['coordinator', 'content', 'quality'])).min(1).max(3).refine(values => new Set(values).size === values.length);
@@ -8,11 +9,13 @@ export const agencyCommandSchema = z.discriminatedUnion('action', [
   z.object({ action: z.enum(['accept-decision', 'defer', 'cancel']), id: z.uuid(), expectedVersion: z.number().int().positive(), reason: text(500), reviewed: z.literal(true) }).strict(),
 ]);
 export type AgencyCommand = z.infer<typeof agencyCommandSchema>;
+export const agencyHandoffSchema = z.object({ id: z.uuid(), campaignId: z.uuid(), expectedVersion: z.number().int().min(1).max(100), title: text(120).refine(value => !/[\u0000-\u001f]/.test(value)), reviewed: z.literal(true) }).strict();
 export const agencyRecordSchema = z.object({
   id: z.uuid(), kind: z.enum(['request', 'meeting']), version: z.number().int().positive(),
   status: z.enum(['proposed', 'decision-recorded', 'deferred', 'cancelled']),
   document: z.record(z.string(), z.unknown()), snapshot: z.record(z.string(), z.unknown()),
   createdAt: z.string(), events: z.array(z.object({ version: z.number().int().positive(), action: z.string(), reason: z.string().nullable(), actorId: z.uuid(), createdAt: z.string() }).strict()),
+  handoff: z.object({ campaignId: z.uuid(), sourceVersion: z.number().int().positive(), title: text(120), document: campaignDocumentSchema, actorId: z.uuid(), createdAt: z.string() }).strict().nullable().default(null),
 }).strict();
 export const agencyInventorySchema = z.array(agencyRecordSchema).max(64);
 export type AgencyRecord = z.infer<typeof agencyRecordSchema>;
