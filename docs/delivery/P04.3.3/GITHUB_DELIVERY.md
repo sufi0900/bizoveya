@@ -1,5 +1,9 @@
 # Verified main delivery — P04.3.3 founder evidence checkpoint
 
+## 2026-10-11 deliberation admission successor
+
+Additive057 repairs bounded plan identity handling and verifies stale/roster/cancellation guards directly in local SQL. Existing migrations/history retained; local screenshot excluded. Base9c659d97882385359cb7a0390ee1280d6d342fc1; non-force expected-head main delivery only. No hosted SQL, provider call or acceptance inferred. See [74](../../platform/74_DELIBERATION_ADMISSION_REPAIR.md).
+
 ## 2026-10-11 bounded deliberation successor
 
 Additive056 and founder-desk source record immutable, acknowledgement-gated deliberation plans with explicit turn/token/future-cost bounds and no model/provider/spending activity. BZ-092/CW-092 automated checks pass; MT204–207 and earlier founder tests remain pending. First-four groups are not complete. See [guide73](../../platform/73_BOUNDED_DELIBERATION_PLANS.md). Direct non-force main delivery follows the authorized expected-head policy; no hosted SQL, provider call, settings change, publication or repeated generation.

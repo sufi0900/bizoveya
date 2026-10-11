@@ -1,5 +1,11 @@
 # Bizoveya chronological activity and decision log
 
+Automated BZ-093/CW-093 verification:465 web tests/78 files,57 local migrations/21 SQL assertion executions, web production build with type/lint validation, boundaries, whitespace and482 local Markdown links passed. The identity regression fails against056 alone and passes with057. Admin source/tests/build are unchanged and not rerun. Guide74 and BZ-093/CW-093 render in the document room. Hosted/PostgREST/worker/concurrency/founder acceptance remains pending; no active lease retained.
+
+### BZ-093 — 2026-10-11 PKT — Deliberation admission repair
+
+Resolved remote main9c659d9, inspected historical branches/open PR2 and no active checkpoint lease or repository AGENTS. Preserved the local homepage screenshot change. Added057 explicit identity rejection and expanded SQL admission regressions; no hosted/provider/settings/message/publication operation. First-four groups remain unfinished and all founder tests pending. See [74](74_DELIBERATION_ADMISSION_REPAIR.md).
+
 ### BZ-092 — 2026-10-11 PKT — Bounded deliberation plan source
 
 Resolved main `18e8934`, inspected historical branches/pull refs and absent repository AGENTS/active lease. Delivered additive056 immutable plans/turns, exact acknowledgement and current-roster gates, owner-reviewed limits, private member projection and honest no-execution UI. Automated: 465 web tests/78 files, 56 migrations/20 SQL assertions, web type/lint, both builds and boundaries. MT204–207 and earlier founder tests remain pending. No hosted/provider/settings/message/publication operation. See [73](73_BOUNDED_DELIBERATION_PLANS.md).

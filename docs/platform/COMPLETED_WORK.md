@@ -1,5 +1,13 @@
 # Completed Bizoveya work only
 
+Automated BZ-093/CW-093 verification:465 web tests/78 files,57 local migrations/21 SQL assertion executions, web production build with type/lint validation, boundaries, whitespace and482 local Markdown links passed. The identity regression fails against056 alone and passes with057. Admin source/tests/build are unchanged and not rerun. Guide74 and BZ-093/CW-093 render in the document room. Hosted/PostgREST/worker/concurrency/founder acceptance remains pending; no active lease retained.
+
+| Record | Completed source | Remaining evidence |
+|---|---|---|
+| CW-093 | Additive057 deliberate identity errors and expanded SQL admission/ACL regressions | Hosted installation, MT204–207, actual workers and scheduling/execution remain pending; no group completion |
+
+See [74](74_DELIBERATION_ADMISSION_REPAIR.md).
+
 ### CW-092 — Bounded deliberation planning source
 
 | Record | Completed source | Remaining evidence |

@@ -1,5 +1,9 @@
 # Combined pending setup and manual tests
 
+## Deliberation identity admission repair — 2026-10-11 PKT
+
+Additive057 explicitly rejects null/non-string/invalid meeting and plan identities before delegating to the owner-only bounded planner. The previous implementation is private with no caller grants. Expanded local SQL regressions cover identity/limit nulls, stale version, paused/changed roster, cancelled meeting, retry, immutable turns, ACLs and zero generation/spending. This is a prerequisite repair, not scheduling or first-four completion. MT204–207 and all earlier founder tests remain pending. Next remains safe deliberation scheduling/admission and pause/resume. See [74](74_DELIBERATION_ADMISSION_REPAIR.md).
+
 Current pending addition: apply missing056 only after055, then complete MT204–207 in [73](73_BOUNDED_DELIBERATION_PLANS.md) with actual authorized worker receipts. Samples: rounds `1`, input `1200`, output `600`, future cost ceiling `5` cents. All remain pending; local automated coverage is not founder acceptance and no successful generation should be repeated.
 
 ## Site team activation and safe checkpoint pause — 2026-10-11 PKT

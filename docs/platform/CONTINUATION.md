@@ -1,5 +1,11 @@
 # Bizoveya continuation checkpoint
 
+Automated BZ-093/CW-093 verification:465 web tests/78 files,57 local migrations/21 SQL assertion executions, web production build with type/lint validation, boundaries, whitespace and482 local Markdown links passed. The identity regression fails against056 alone and passes with057. Admin source/tests/build are unchanged and not rerun. Guide74 and BZ-093/CW-093 render in the document room. Hosted/PostgREST/worker/concurrency/founder acceptance remains pending; no active lease retained.
+
+## Deliberation identity admission repair — 2026-10-11 PKT
+
+Additive057 explicitly rejects null/non-string/invalid meeting and plan identities before delegating to the owner-only bounded planner. The previous implementation is private with no caller grants. Expanded local SQL regressions cover identity/limit nulls, stale version, paused/changed roster, cancelled meeting, retry, immutable turns, ACLs and zero generation/spending. This is a prerequisite repair, not scheduling or first-four completion. MT204–207 and all earlier founder tests remain pending. Next remains safe deliberation scheduling/admission and pause/resume. See [74](74_DELIBERATION_ADMISSION_REPAIR.md).
+
 ## Bounded deliberation plans — 2026-10-11 PKT
 
 Group 3 now saves an immutable owner-reviewed deliberation plan only after every pinned participant acknowledged its packet. Additive056 pins exact meeting/request/roster/agent versions plus one or two rounds, per-turn token bounds and a future execution ceiling; deterministic planning makes no model call, reservation, spending, participation claim or output. BZ-092/CW-092 source and local verification are complete; MT204–207 and all earlier unanswered founder tests remain pending. First-four groups remain unfinished, live voice remains unfinished, office visualization stays ON HOLD and custom agents remain out of scope. Next: safe deliberation scheduling/admission and pause/resume that enforces the saved limits. See [73](73_BOUNDED_DELIBERATION_PLANS.md).

@@ -1,5 +1,9 @@
 # Founder manual testing record
 
+## Deliberation identity admission repair — 2026-10-11 PKT
+
+Additive057 explicitly rejects null/non-string/invalid meeting and plan identities before delegating to the owner-only bounded planner. The previous implementation is private with no caller grants. Expanded local SQL regressions cover identity/limit nulls, stale version, paused/changed roster, cancelled meeting, retry, immutable turns, ACLs and zero generation/spending. This is a prerequisite repair, not scheduling or first-four completion. MT204–207 and all earlier founder tests remain pending. Next remains safe deliberation scheduling/admission and pause/resume. See [74](74_DELIBERATION_ADMISSION_REPAIR.md).
+
 ## Bounded deliberation plans — MT204–207
 
 | Test | Scope | Status |

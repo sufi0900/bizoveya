@@ -1,5 +1,11 @@
 # Verification, manual acceptance and release evidence
 
+Automated BZ-093/CW-093 verification:465 web tests/78 files,57 local migrations/21 SQL assertion executions, web production build with type/lint validation, boundaries, whitespace and482 local Markdown links passed. The identity regression fails against056 alone and passes with057. Admin source/tests/build are unchanged and not rerun. Guide74 and BZ-093/CW-093 render in the document room. Hosted/PostgREST/worker/concurrency/founder acceptance remains pending; no active lease retained.
+
+## Deliberation identity admission repair — 2026-10-11 PKT
+
+Additive057 explicitly rejects null/non-string/invalid meeting and plan identities before delegating to the owner-only bounded planner. The previous implementation is private with no caller grants. Expanded local SQL regressions cover identity/limit nulls, stale version, paused/changed roster, cancelled meeting, retry, immutable turns, ACLs and zero generation/spending. This is a prerequisite repair, not scheduling or first-four completion. MT204–207 and all earlier founder tests remain pending. Next remains safe deliberation scheduling/admission and pause/resume. See [74](74_DELIBERATION_ADMISSION_REPAIR.md).
+
 BZ-092/CW-092 automated evidence: 465 web tests across78 files,56 ephemeral migrations/20 SQL assertion scripts, web typecheck/lint, both production builds and application boundaries passed. Admin tests were not rerun. Hosted056, PostgREST, real-worker receipts, browser/mobile, concurrency and founder MT204–207 remain pending; therefore neither Group3 nor the first-four effort is accepted. See [73](73_BOUNDED_DELIBERATION_PLANS.md).
 
 Automated verification for BZ-091/CW-091: 461 web tests/78 files and 55 ephemeral local migrations/19 SQL assertion executions passed; web production build (including type/lint checks), application boundaries, whitespace and 426 affected local Markdown links passed. Guide72 is projected in the document room. Admin source/tests/build are unchanged and were not rerun; prior evidence is historical. Hosted SQL, actual workers, browser/mobile, concurrency and founder acceptance remain pending. No active checkpoint lease retained at delivery.

@@ -1,5 +1,9 @@
 # GitHub delivery and scheduled continuation
 
+## Deliberation identity admission repair — 2026-10-11 PKT
+
+Additive057 explicitly rejects null/non-string/invalid meeting and plan identities before delegating to the owner-only bounded planner. The previous implementation is private with no caller grants. Expanded local SQL regressions cover identity/limit nulls, stale version, paused/changed roster, cancelled meeting, retry, immutable turns, ACLs and zero generation/spending. This is a prerequisite repair, not scheduling or first-four completion. MT204–207 and all earlier founder tests remain pending. Next remains safe deliberation scheduling/admission and pause/resume. See [74](74_DELIBERATION_ADMISSION_REPAIR.md).
+
 Current source adds acknowledgement-gated bounded deliberation plans through migration056 and the owner founder desk. Exact roster/agent pins, rounds, token limits and future cost ceiling are immutable and privately projected; planning starts no model, reservation, spend or participant output. BZ-092/CW-092 verified locally; MT204–207 pending. Next: safe scheduling/admission and pause/resume. First-four groups remain unfinished. See [73](73_BOUNDED_DELIBERATION_PLANS.md).
 
 ## Meeting receipt admission repair — 2026-10-11 PKT

@@ -1,5 +1,9 @@
 # Bizoveya user manual — prelaunch working edition
 
+## Deliberation identity admission repair — 2026-10-11 PKT
+
+Additive057 explicitly rejects null/non-string/invalid meeting and plan identities before delegating to the owner-only bounded planner. The previous implementation is private with no caller grants. Expanded local SQL regressions cover identity/limit nulls, stale version, paused/changed roster, cancelled meeting, retry, immutable turns, ACLs and zero generation/spending. This is a prerequisite repair, not scheduling or first-four completion. MT204–207 and all earlier founder tests remain pending. Next remains safe deliberation scheduling/admission and pause/resume. See [74](74_DELIBERATION_ADMISSION_REPAIR.md).
+
 After every requested participant on a **deliberation** meeting shows `acknowledged`, owners can open **Prepare bounded deliberation plan**. Review the displayed meeting version and enter rounds `1`, input tokens `1200`, output tokens `600`, and future execution cost ceiling `5` US cents as safe test samples. Saving records planned turns only: it does not run agents, reserve/spend money or create results. Hosted056 and founder MT204–207 remain pending; see [73](73_BOUNDED_DELIBERATION_PLANS.md).
 
 ## Meeting receipt admission repair — 2026-10-11 PKT
