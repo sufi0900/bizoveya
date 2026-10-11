@@ -1,5 +1,11 @@
 # Bizoveya chronological activity and decision log
 
+### BZ-082 — 2026-10-11 PKT — Reviewed image composition and private exports
+
+Resolved remote main9852e87bb24bd5c910bd0777a60772e5e5fb8406; inspected historical branches/PR2, absent repository AGENTS and no active lease. Founder requests expedited first-four implementation. Added strict bounded working-copy attachments, accepted version selection, actual-byte hash/magic/size verification, safe embedded-raster shared preview/PNG/PDF and reviewed owner controls. Campaign image persistence/shared retention remains next; groups1–4 unfinished and office on hold. No new SQL/key/provider/hosted/settings/publication or regeneration.
+
+418 web tests/74 files, typecheck and lint passed. Production build, boundaries, whitespace and46-migration/10-assertion local SQL checks passed. No active lease is retained at delivery. MT168–171 and prior unanswered founder checks remain pending. See [63](63_REVIEWED_MEDIA_COMPOSITION_AND_EXPORTS.md).
+
 ### BZ-081 — 2026-10-11 PKT — Private image lifecycle and office gate
 
 Final evidence:411 web tests/73 files;46 local migrations/10 SQL assertion executions; typecheck, lint, production build, boundaries, whitespace and420 affected Markdown links. Guide62/current work/activity/pending checks project into built document HTML. Pre-decode36-attempt and12-admission hour windows are separate and cleanup cannot reset admission. No hosted/manual/Storage concurrency or deployment acceptance claimed.

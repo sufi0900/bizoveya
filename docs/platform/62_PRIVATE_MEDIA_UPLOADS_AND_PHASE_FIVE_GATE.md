@@ -1,5 +1,9 @@
 # Private image library and the first-four completion gate
 
+## Reviewed image composition — 2026-10-11 PKT
+
+P04.3.4.4d adds accepted creator-private image selection, hash-verified shared preview/PNG/PDF rendering and owner-reviewed local working-copy exports. Original campaign v1/v2/v3 saves/history remain intact; image attachments are not persisted yet. No new migration/key/provider or hosted change. Founder requests continued first-four work as quickly as possible, with routine manual acceptance deferred. Durable shared image copies, optional AI, actual assistant workers, agent meetings and live voice remain unfinished; office visualization remains ON HOLD. See [63 current contract and four deferred checks](63_REVIEWED_MEDIA_COMPOSITION_AND_EXPORTS.md). MT168–171 and all prior unanswered tests remain pending.
+
 ## Founder direction — 2026-10-11 PKT
 
 The founder explicitly requires the first four evolution groups to be fully implemented before starting group5, the office visualization. This supersedes any automatic next-phase advancement suggestion. Manual acceptance may remain deferred, but it must not be invented or used as evidence of implementation. Group6 custom agents remains a separate later delivery. A source substep does not complete its group.

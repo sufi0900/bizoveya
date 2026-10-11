@@ -1,5 +1,13 @@
 # Completed Bizoveya work only
 
+### CW-082 — Reviewed media working-copy rendering and exports
+
+| Record | Delivered source | Evidence and limits |
+|---|---|---|
+| CW-082 | Accepted creator-private image targets with verified shared preview/PNG/six-page PDF | 418 web tests; real raster fixtures; browser/hosted acceptance pending; campaign image persistence and groups1–4 unfinished |
+
+See [63 current slice](63_REVIEWED_MEDIA_COMPOSITION_AND_EXPORTS.md). Founder acceptance remains deferred, office remains on hold.
+
 ### CW-081 — Private image lifecycle source; first-four groups still unfinished
 
 Founder explicitly requires full first-four implementation before office visualization. Group5 is ON HOLD; routine founder tests stay deferred and never count as passes. P04.3.4.4c now adds migration046 tracked immutable uploads, authenticated hash-checked byte retrieval, guarded orphan recovery/operator maintenance and creator-private upload/preview/download/review/archive UI. Activation requires missing hosted046 and a server-only media key configured by the operator; the assistant has applied neither. Existing drafts/templates/history remain intact. Group1 renderer/optional AI and groups2–4 workers/meetings/voice remain unfinished. See [62 Current scope, setup and four deferred checks](62_PRIVATE_MEDIA_UPLOADS_AND_PHASE_FIVE_GATE.md). MT164–167 plus all unrelated unanswered tests remain pending.

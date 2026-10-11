@@ -1,5 +1,9 @@
 # Verified main delivery — P04.3.3 founder evidence checkpoint
 
+## Reviewed media composition successor
+
+P04.3.4.4d follows main9852e87b with hash-verified owner working-copy previews/PNG/PDF. Existing saved visual contracts remain intact; campaign image persistence is next. Groups1–4 remain unfinished; office on hold and tests deferred. See [63](../../platform/63_REVIEWED_MEDIA_COMPOSITION_AND_EXPORTS.md). Delivery is verified non-force expected-head; no hosted SQL/settings/provider/publication or regeneration.
+
 ## Private image lifecycle successor
 
 P04.3.4.4c adds046 and the private image interface after mainb9d5e626. Source/activation/first-four completion remain distinct. Group5 stays on hold until groups1–4 implementation exits; founder tests remain pending. See [62 current scope and four deferred steps](../../platform/62_PRIVATE_MEDIA_UPLOADS_AND_PHASE_FIVE_GATE.md). No hosted SQL/provider/settings/publication or repeated generation. Direct-main delivery remains non-force and expected-head guarded.
