@@ -1,5 +1,9 @@
 # Living documentation changelog
 
+## Approved-context onboarding assessment — 2026-10-11 PKT
+
+Group2 adds deterministic approved-fact/preference/role-qualification assessment and owner-reviewed immutable snapshots through additive049. Exact qualification/context fingerprints reject stale reviews; retries,50-review quota and member access are guarded. This makes no analyst AI request, scraping, hiring, execution or spending reservation. Role activation/assistant workers, actual meetings, optional AI and live voice remain unfinished; office ON HOLD. See [66 assessment contract and four deferred checks](66_APPROVED_CONTEXT_ONBOARDING_ASSESSMENTS.md). MT180–183 and all prior unanswered tests stay pending. No hosted SQL/provider/settings/publication or accepted generation repeated; no active checkpoint lease remains at handoff.
+
 ## Reviewed request campaign handoff — 2026-10-11 PKT
 
 Additive048 saves one owner-reviewed private campaign per founder request, with immutable lineage, exact-version guards and retry protection. No automatic generation, provider call or publication. First-four completion and founder acceptance remain in progress; office on hold. See [65](65_REVIEWED_REQUEST_CAMPAIGN_HANDOFFS.md).

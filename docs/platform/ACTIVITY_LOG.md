@@ -1,5 +1,17 @@
 # Bizoveya chronological activity and decision log
 
+Automated checkpoint: 438 web tests/77 files,49 local migrations/13 SQL assertion executions, web typecheck/lint and application boundaries passed. Production build/projections are verified at delivery. Admin/runtime source is unchanged and its historical checks are not claimed as rerun. Hosted/browser/real concurrency and MT180–183 remain pending.
+
+### BZ-085 — 2026-10-11 PKT — Approved-context onboarding assessment
+
+| Record | Delivered source | Evidence and limits |
+|---|---|---|
+| BZ-085 | Grounded qualification assessment, stale guards and immutable reviewed snapshots | Automated SQL/app checks; hosted/browser acceptance pending; first-four groups unfinished |
+
+## Approved-context onboarding assessment — 2026-10-11 PKT
+
+Group2 adds deterministic approved-fact/preference/role-qualification assessment and owner-reviewed immutable snapshots through additive049. Exact qualification/context fingerprints reject stale reviews; retries,50-review quota and member access are guarded. This makes no analyst AI request, scraping, hiring, execution or spending reservation. Role activation/assistant workers, actual meetings, optional AI and live voice remain unfinished; office ON HOLD. See [66 assessment contract and four deferred checks](66_APPROVED_CONTEXT_ONBOARDING_ASSESSMENTS.md). MT180–183 and all prior unanswered tests stay pending. No hosted SQL/provider/settings/publication or accepted generation repeated; no active checkpoint lease remains at handoff.
+
 Automated checkpoint: 432 web tests across76 files, all48 local migrations/12 SQL assertion executions, web typecheck/lint, boundaries and476 affected local Markdown links passed. Production build/projection verification is recorded at delivery. Admin/runtime source is unchanged; no admin checks are claimed as rerun. Hosted/browser/concurrency and MT176–179 remain pending.
 
 ### BZ-084 — 2026-10-11 PKT — Reviewed request campaign handoff
