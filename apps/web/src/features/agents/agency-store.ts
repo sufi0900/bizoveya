@@ -1,6 +1,6 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { checkDatabaseError, getSite, WorkspaceError } from '@/features/workspaces/store';
-import { agencyHandoffSchema, agencyInventorySchema, agencyRecordSchema, type AgencyCommand } from './agency-contracts';
+import { agencyGenerationSchema, agencyHandoffSchema, agencyInventorySchema, agencyRecordSchema, type AgencyCommand } from './agency-contracts';
 import type { z } from 'zod';
 function check(error: { code?: string; message?: string } | null) {
   if (['42P01', '42703', 'PGRST202', 'PGRST205'].includes(error?.code ?? '')) throw new WorkspaceError(503, 'Agency planning needs migration 045 after 044. Existing campaigns are unchanged.');
@@ -30,5 +30,19 @@ export async function commandAgency(db: SupabaseClient, userId: string, wid: str
   const context = await getSite(db, userId, wid, sid);
   if (context.workspace.role !== 'owner') throw new WorkspaceError(403, 'Only the workspace owner can save agency proposals and decisions.');
   const result = await db.rpc('bz_agency_command', { p_workspace_id: wid, p_site_id: sid, p_command: command }); check(result.error);
+  return agencyRecordSchema.parse(result.data);
+}
+
+export async function prepareAgencyGeneration(db: SupabaseClient, userId: string, wid: string, sid: string, input: z.infer<typeof agencyGenerationSchema>) {
+  const context = await getSite(db, userId, wid, sid);
+  if (context.workspace.role !== 'owner') throw new WorkspaceError(403, 'Only the workspace owner can prepare a request generation snapshot.');
+  const result = await db.rpc('bz_prepare_agency_generation', { p_workspace_id: wid, p_site_id: sid, p_input: agencyGenerationSchema.parse(input) });
+  if (['42P01', '42703', 'PGRST202', 'PGRST205'].includes(result.error?.code ?? '')) throw new WorkspaceError(503, 'Request generation preparation needs migration 051 after 050. No provider call was started.');
+  if (result.error?.message === 'bz_invalid_agency_generation') throw new WorkspaceError(400, 'Review the exact request and campaign versions and confirm preparation.');
+  if (result.error?.message === 'bz_agency_campaign_required') throw new WorkspaceError(409, 'Prepare a private campaign from this request first.');
+  if (result.error?.message === 'bz_site_roster_paused') throw new WorkspaceError(409, 'The site team is paused. No generation snapshot was created.');
+  if (result.error?.message === 'bz_generation_not_ready') throw new WorkspaceError(409, 'Current approved knowledge, role bindings, connectivity and spending qualification are required. No generation snapshot was created.');
+  if (result.error?.message === 'bz_generation_limit') throw new WorkspaceError(409, 'This campaign already has the maximum 25 generation snapshots.');
+  check(result.error);
   return agencyRecordSchema.parse(result.data);
 }

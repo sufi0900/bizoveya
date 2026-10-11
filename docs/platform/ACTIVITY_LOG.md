@@ -1,5 +1,15 @@
 # Bizoveya chronological activity and decision log
 
+Automated checkpoint:450 web tests/78 files,137 admin tests/14 files,51 local migrations/15 SQL assertion executions, both typechecks, web lint, targeted admin generation lint, boundaries, whitespace and264 affected local Markdown links passed. Both production builds passed; final web/document projection is verified before delivery. Hosted/browser/concurrency and MT188–191 remain pending. No provider request or hosted operation.
+
+### BZ-087 — 2026-10-11 PKT — Durable request generation preparation
+
+Resolved remote main c7b86f9; inspected historical branches/PR2 and absent AGENTS/active lease. Added051 atomic one-request/one-run preparation, current-version review, immutable lineage and actual persisted state. Existing admission enforces selected roster/knowledge/bindings/spending qualification. No provider invocation/reservation or hosted operation; whole first-four groups remain unfinished.
+
+## Reviewed request generation preparation — 2026-10-11 PKT
+
+Group2 now links a reviewed saved founder request to exactly one prepared generation snapshot through additive051 and the existing qualified generation admission. Exact request/campaign versions, immutable lineage, retry guards and current run-status projection are implemented. Preparation makes no provider call or spending reservation; execution remains separately authorized in the existing admin runtime. Full assistant dispatch/recovery, actual meetings, optional AI and live voice remain unfinished; office visualization stays ON HOLD. Routine founder acceptance MT188–191 and all earlier unanswered tests remain pending until before public reveal. See [68 contract and four deferred checks](68_REVIEWED_REQUEST_GENERATION_PREPARATION.md). No hosted SQL, deployment settings, paid request, publication or accepted generation repeated. No active checkpoint lease remains at delivery.
+
 Automated checkpoint: 445 web tests/78 files and137 admin tests/14 files passed;50 local migrations/14 SQL assertion executions, both typechecks, web lint and boundaries passed. Both production builds/projections are verified at delivery. Hosted/browser/real concurrency and MT184–187 remain pending; no provider request.
 
 ### BZ-086 — 2026-10-11 PKT — Owner-scoped site team activation and safe pause

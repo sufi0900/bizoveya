@@ -1,5 +1,7 @@
 # Site team activation and safe checkpoint pause
 
+Successor: [68 reviewed request generation preparation](68_REVIEWED_REQUEST_GENERATION_PREPARATION.md) implements one durable request-to-run snapshot handoff through this roster admission. Full workers/recovery remain next; all founder checks stay pending.
+
 Automated checkpoint: 445 web tests/78 files and137 admin tests/14 files passed;50 local migrations/14 SQL assertion executions, both typechecks, web lint and boundaries passed. Both production builds/projections are verified at delivery. Hosted/browser/real concurrency and MT184–187 remain pending; no provider request.
 
 ## Source checkpoint — 2026-10-11 PKT

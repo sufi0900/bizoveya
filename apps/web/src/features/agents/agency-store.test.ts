@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 import type { SupabaseClient } from '@supabase/supabase-js';
 vi.mock('../workspaces/store', async original => ({ ...await original<typeof import('../workspaces/store')>(), getSite: vi.fn() }));
 import { getSite } from '../workspaces/store';
-import { commandAgency, handoffAgency, loadAgency } from './agency-store';
+import { commandAgency, handoffAgency, loadAgency, prepareAgencyGeneration } from './agency-store';
 const actor = '11111111-1111-4111-8111-111111111111', wid = '22222222-2222-4222-8222-222222222222', sid = '33333333-3333-4333-8333-333333333333';
 const command = { action: 'request' as const, id: actor, instruction: 'Prepare private drafts.', channels: ['blog' as const], reviewed: true as const, inputMode: 'text' as const };
 function fixture(data: unknown = [], error: unknown = null) { const rpc = vi.fn(async () => ({ data, error })); return { rpc, db: { rpc } as unknown as SupabaseClient }; }
@@ -40,5 +40,27 @@ describe('reviewed campaign handoff boundary', () => {
   const f=fixture(record); expect((await handoffAgency(f.db,actor,wid,sid,input)).handoff?.campaignId).toBe(wid);
   expect(f.rpc).toHaveBeenCalledWith('bz_handoff_agency_campaign',{p_workspace_id:wid,p_site_id:sid,p_input:input});
   await expect(handoffAgency(fixture({...record,handoff:{...record.handoff,campaignId:'bad'}}).db,actor,wid,sid,input)).rejects.toThrow();
+ });
+});
+
+describe('request generation preparation', () => {
+ const input = { id: actor, runId: wid, expectedVersion: 2, expectedCampaignVersion: 1, reviewed: true as const };
+ it('denies editors and viewers before accessing generation admission', async () => {
+  for (const role of ['editor', 'viewer']) {
+   vi.mocked(getSite).mockResolvedValue({ workspace: { role } } as never);
+   const f = fixture(); await expect(prepareAgencyGeneration(f.db, actor, wid, sid, input)).rejects.toMatchObject({ status: 403 }); expect(f.rpc).not.toHaveBeenCalled();
+  }
+ });
+ it('reports readiness, paused team, stale, quota and missing setup without retrying', async () => {
+  for (const [error, status] of [[{code:'PGRST202'},503],[{message:'bz_generation_not_ready'},409],[{message:'bz_site_roster_paused'},409],[{message:'bz_conflict'},409],[{message:'bz_generation_limit'},409],[{message:'bz_agency_campaign_required'},409],[{message:'bz_invalid_agency_generation'},400]] as const) {
+   const f=fixture(null,error); await expect(prepareAgencyGeneration(f.db,actor,wid,sid,input)).rejects.toMatchObject({status}); expect(f.rpc).toHaveBeenCalledTimes(1);
+  }
+ });
+ it('validates confirmation before RPC and validates the returned run projection', async () => {
+  const f=fixture(); await expect(prepareAgencyGeneration(f.db,actor,wid,sid,{...input,reviewed:false} as never)).rejects.toThrow(); expect(f.rpc).not.toHaveBeenCalled();
+  const record={id:actor,kind:'request',version:3,status:'proposed',document:command,snapshot:{},createdAt:'now',events:[],executionPreparation:{campaignVersion:1,campaignTitle:'Private'},execution:{sourceVersion:2,actorId:actor,createdAt:'now',run:{id:wid,campaignId:sid,campaignVersion:1,status:'prepared',createdAt:'now',startedAt:null,finishedAt:null,stageCount:3,outputAvailable:false}}};
+  const ok=fixture(record); expect((await prepareAgencyGeneration(ok.db,actor,wid,sid,input)).execution?.run.status).toBe('prepared');
+  expect(ok.rpc).toHaveBeenCalledWith('bz_prepare_agency_generation',{p_workspace_id:wid,p_site_id:sid,p_input:input});
+  await expect(prepareAgencyGeneration(fixture({...record,execution:{...record.execution,run:{...record.execution.run,status:'invented'}}}).db,actor,wid,sid,input)).rejects.toThrow();
  });
 });
