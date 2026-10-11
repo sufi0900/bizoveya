@@ -39,3 +39,5 @@ The required checkbox reads: `I reviewed the stage markers and spending state. R
 Ephemeral PGlite applies all 52 migrations and 16 SQL assertion scripts. The new assertions cover task creation, authorization, active and expired retry guards, safe resume, zero-cost unstarted cancellation, provider-start preservation, immutable history, role isolation and cascade. App tests cover strict recovery input/output, MFA/admin RPC admission, actionable errors and the member/admin projections. No hosted SQL, browser, real concurrency, provider request, paid operation, deployment-setting change or publication was performed.
 
 Next documented implementation is Group 3: durable meeting sessions, reviewed announcements, participant acknowledgement and bounded task distribution using the existing request/task lineage. It must not infer meeting participation, send external messages or begin office visualization.
+
+Implemented successor: [70 Reviewed meeting task distribution](70_REVIEWED_MEETING_TASK_DISTRIBUTION.md). It adds bounded decision-to-request distribution only. Participant invitations/acknowledgements and facilitated meeting execution remain next.

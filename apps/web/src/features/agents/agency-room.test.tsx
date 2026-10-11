@@ -6,6 +6,20 @@ import { agencyRecordSchema } from './agency-contracts';
 const id='11111111-1111-4111-8111-111111111111';
 const base={id,kind:'request',version:2,status:'proposed',document:{instruction:'Approved facts only.',channels:['pinterest']},snapshot:{},createdAt:'now',events:[]};
 const endpoint='/api/workspaces/w/sites/s/agency';
+describe('meeting decision distribution presentation',()=>{
+ const meeting={...base,kind:'meeting',status:'decision-recorded',document:{action:'meeting',id,agenda:'Discuss private drafts.',mode:'announcement',participants:['content'],reviewed:true,inputMode:'text'}};
+ it('requires a recorded decision and explicit version review before distribution',()=>{
+  const render=(status:string)=>renderToStaticMarkup(createElement(AgencyRoom,{initial:[agencyRecordSchema.parse({...meeting,status})],owner:true,endpoint}));
+  expect(render('decision-recorded')).toContain('Distribution instruction');expect(render('decision-recorded')).toContain('I reviewed meeting v2');expect(render('decision-recorded')).toContain('Create request from decision');
+  for(const status of ['proposed','deferred','cancelled']) expect(render(status)).not.toContain('Create request from decision');
+ });
+ it('projects immutable lineage after refresh without another distribution control',()=>{
+  const requestId='22222222-2222-4222-8222-222222222222';
+  const record=agencyRecordSchema.parse({...meeting,version:3,meetingDistribution:{meetingId:id,requestId,sourceVersion:2,agenda:meeting.document,decision:'Private drafts only.',instruction:'Approved private drafts.',command:{action:'request',id:requestId,instruction:'Approved private drafts.',channels:['blog'],reviewed:true,inputMode:'text'},actorId:id,createdAt:'now'}});
+  const html=renderToStaticMarkup(createElement(AgencyRoom,{initial:[record],owner:false,endpoint}));
+  expect(html).toContain('Reviewed meeting v2 linked to private request');expect(html).toContain(requestId);expect(html).toContain('No agent attendance or acknowledgement is inferred');expect(html).not.toContain('Create request from decision');
+ });
+});
 describe('saved campaign handoff presentation',()=>{
  it('links to the saved campaign and displays immutable source lineage for a read-only member',()=>{
   const record=agencyRecordSchema.parse({...base,handoff:{campaignId:id,sourceVersion:1,title:'Private',document:{title:'Private',brief:'Approved',blog:'',pinterest:'',linkedin:''},actorId:id,createdAt:'now'}});

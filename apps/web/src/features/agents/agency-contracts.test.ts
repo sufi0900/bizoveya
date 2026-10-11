@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { agencyCommandSchema, agencyHandoffSchema, delegationProposal, voiceEntryState } from './agency-contracts';
+import { agencyCommandSchema, agencyHandoffSchema, meetingDistributionSchema, delegationProposal, voiceEntryState } from './agency-contracts';
 const request = { action: 'request' as const, id: '00000000-0000-4000-8000-000000000001', instruction: 'Prepare private drafts from approved facts.', channels: ['pinterest'] as const, reviewed: true as const, inputMode: 'text' as const };
 describe('agency planning admission', () => {
   it('requires explicit confirmation and rejects duplicate channels, controls and injected execution flags', () => {
@@ -15,6 +15,12 @@ describe('agency planning admission', () => {
   it('requires optimistic version and a reviewed reason for decisions', () => {
     expect(agencyCommandSchema.safeParse({ action: 'cancel', id: request.id, expectedVersion: 0, reviewed: true, reason: 'Cancel' }).success).toBe(false);
   });
+});
+
+it('admits only bounded reviewed meeting distributions with independent request identity', () => {
+ const input={id:request.id,requestId:'00000000-0000-4000-8000-000000000002',expectedVersion:2,instruction:'Prepare private drafts.',channels:['pinterest'],reviewed:true};
+ expect(meetingDistributionSchema.safeParse(input).success).toBe(true);
+ for(const invalid of [{...input,requestId:input.id},{...input,reviewed:false},{...input,expectedVersion:100},{...input,channels:['blog','blog']},{...input,execute:true},{...input,instruction:'x'.repeat(1401)},{...input,instruction:'\u0001'}]) expect(meetingDistributionSchema.safeParse(invalid).success).toBe(false);
 });
 
 it('rejects unreviewed, injected or oversized campaign handoffs', () => {

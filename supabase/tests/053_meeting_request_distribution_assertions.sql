@@ -1,0 +1,53 @@
+-- Local fixture only; no provider requests or hosted data.
+begin;
+create temporary table mf(actor uuid,viewer uuid,wid uuid,sid uuid,other_site uuid,meeting uuid,request uuid,input jsonb);
+insert into mf values(gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),null);
+update mf set input=jsonb_build_object('id',meeting,'requestId',request,'expectedVersion',2,'instruction','Prepare private promotion using approved facts only.','channels',jsonb_build_array('pinterest','linkedin'),'reviewed',true);
+insert into auth.users(id) select actor from mf union all select viewer from mf;
+insert into public.bizoveya_workspaces(id,owner_id,name) select wid,actor,'Meeting fixture' from mf;
+insert into public.bizoveya_memberships(workspace_id,user_id,role) select wid,actor,'owner' from mf union all select wid,viewer,'viewer' from mf;
+insert into public.bizoveya_sites(id,workspace_id,name,mode,kind,status,created_by) select sid,wid,'Meeting A','native_business','business','active',actor from mf union all select other_site,wid,'Meeting B','native_business','business','active',actor from mf;
+create function pg_temp.mexpect(q text,n text) returns void language plpgsql as $$begin begin execute q;exception when others then if strpos(sqlerrm,n)>0 then return;end if;raise;end;raise exception 'Expected %',n;end;$$;
+do $$begin execute format('grant usage on schema %I to authenticated',(select nspname from pg_namespace where oid=pg_my_temp_schema()));end;$$;grant all on mf to authenticated;
+set local role authenticated;select set_config('request.jwt.claim.sub',(select actor::text from mf),true);
+select public.bz_agency_command(wid,sid,jsonb_build_object('action','meeting','id',meeting,'agenda','Discuss the approved new tool page.','mode','announcement','participants',jsonb_build_array('coordinator','content','quality'),'reviewed',true,'inputMode','text')) from mf;
+select pg_temp.mexpect(format('select public.bz_distribute_meeting_request(%L,%L,%L::jsonb)',wid,sid,input),'bz_meeting_decision_required') from mf;
+select public.bz_agency_command(wid,sid,jsonb_build_object('action','accept-decision','id',meeting,'expectedVersion',1,'reason','Prepare private drafts only; verify all claims against approved knowledge.','reviewed',true)) from mf;
+select pg_temp.mexpect(format('select public.bz_distribute_meeting_request(%L,%L,%L::jsonb)',wid,sid,jsonb_set(input,'{reviewed}','false')),'bz_invalid_meeting_distribution') from mf;
+select pg_temp.mexpect(format('select public.bz_distribute_meeting_request(%L,%L,%L::jsonb)',wid,sid,jsonb_set(input,'{channels}','["blog","blog"]')),'bz_invalid_meeting_distribution') from mf;
+select pg_temp.mexpect(format('select public.bz_distribute_meeting_request(%L,%L,%L::jsonb)',wid,sid,input||'{"execute":true}'),'bz_invalid_meeting_distribution') from mf;
+select pg_temp.mexpect(format('select public.bz_distribute_meeting_request(%L,%L,%L::jsonb)',wid,sid,jsonb_set(input,'{expectedVersion}','1')),'bz_conflict') from mf;
+select pg_temp.mexpect(format('select public.bz_distribute_meeting_request(%L,%L,%L::jsonb)',wid,other_site,input),'bz_agency_unavailable') from mf;
+reset role;
+-- Atomic quota denial leaves parent version/events and child inventory intact.
+insert into bizoveya_private.agency_records(id,site_id,kind,document,snapshot) select gen_random_uuid(),sid,'request','{}','{}' from mf cross join generate_series(1,63);
+set local role authenticated;
+select pg_temp.mexpect(format('select public.bz_distribute_meeting_request(%L,%L,%L::jsonb)',wid,sid,input),'bz_agency_limit') from mf;
+reset role;
+do $$begin if (select version from bizoveya_private.agency_records where id=(select meeting from mf))<>2 or exists(select 1 from bizoveya_private.meeting_request_distributions) or exists(select 1 from bizoveya_private.agency_records where id=(select request from mf)) then raise exception 'Quota rollback failed';end if;end;$$;
+delete from bizoveya_private.agency_records where site_id=(select sid from mf) and id<>(select meeting from mf);
+set local role authenticated;
+select public.bz_distribute_meeting_request(wid,sid,input) from mf;
+select public.bz_distribute_meeting_request(wid,sid,input) from mf;
+select pg_temp.mexpect(format('select public.bz_distribute_meeting_request(%L,%L,%L::jsonb)',wid,sid,jsonb_set(input,'{requestId}',to_jsonb(gen_random_uuid()))),'bz_conflict') from mf;
+select public.bz_agency_command(wid,sid,jsonb_build_object('action','cancel','id',meeting,'expectedVersion',3,'reason','Cancel further meeting changes only.','reviewed',true)) from mf;
+-- Lost-response retry after cancellation only reads the original distribution.
+select public.bz_distribute_meeting_request(wid,sid,input) from mf;
+select set_config('request.jwt.claim.sub',(select viewer::text from mf),true);
+select public.bz_agency_inventory(wid,sid) from mf;
+select pg_temp.mexpect(format('select public.bz_distribute_meeting_request(%L,%L,%L::jsonb)',wid,sid,input),'bz_forbidden') from mf;
+select pg_temp.mexpect('select * from bizoveya_private.meeting_request_distributions','permission denied');
+reset role;
+do $$declare h bizoveya_private.meeting_request_distributions%rowtype;r jsonb;begin
+ select * into h from bizoveya_private.meeting_request_distributions;
+ if h.source_version<>2 or h.decision<>'Prepare private drafts only; verify all claims against approved knowledge.' then raise exception 'Decision provenance changed';end if;
+ if strpos(h.command->>'instruction',h.decision)=0 or strpos(h.command->>'instruction',h.instruction)=0 then raise exception 'Downstream task lost reviewed decision';end if;
+ if (select count(*) from bizoveya_private.meeting_request_distributions)<>1 or (select count(*) from bizoveya_private.agency_records)<>2 or (select count(*) from bizoveya_private.agency_events where action='distribute-request')<>1 then raise exception 'Duplicate distribution';end if;
+ r:=bizoveya_private.agency_json(h.request_id);
+ if r#>>'{meetingDistribution,meetingId}'<>h.meeting_id::text or r#>>'{document,channels,0}'<>'pinterest' or r->>'status'<>'proposed' or r->'execution' <> 'null'::jsonb then raise exception 'Request projection mismatch';end if;
+ if exists(select 1 from bizoveya_private.generation_runs) or exists(select 1 from bizoveya_private.generation_stage_runs) then raise exception 'Distribution executed work';end if;
+end;$$;
+select pg_temp.mexpect('update bizoveya_private.meeting_request_distributions set decision=''Forged''','bz_immutable_agency_handoff');
+delete from public.bizoveya_sites where id=(select sid from mf);
+do $$begin if exists(select 1 from bizoveya_private.meeting_request_distributions) then raise exception 'Meeting distribution cascade failed';end if;end;$$;
+rollback;

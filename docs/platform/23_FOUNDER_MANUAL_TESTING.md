@@ -1,5 +1,18 @@
 # Founder manual testing record
 
+Automated evidence: 457 web tests across 78 files, 53 ephemeral local migrations/17 SQL assertion executions, web typecheck/lint, both production builds and application boundaries passed. Documentation projects BZ-089/CW-089/MT196–199 and guide70. Admin source is unchanged; its earlier 145 tests are historical, not claimed as rerun. Hosted/browser/mobile/real concurrency and all founder acceptance remain pending. No active checkpoint lease is retained at handoff.
+
+## Reviewed meeting task distribution — MT196–199
+
+| Test | Scope | Status |
+|---|---|---|
+| MT196 | Missing 053 setup and existing draft/review/media preservation | Pending founder/operator |
+| MT197 | Disposable meeting decision and honest zero-attendance state | Pending founder |
+| MT198 | Reviewed channel request, pinned decision/lineage and refresh | Pending founder |
+| MT199 | Stale tabs, viewer denial and independent parent cancellation | Pending founder |
+
+Follow [70 four simple checks and field samples](70_REVIEWED_MEETING_TASK_DISTRIBUTION.md). No founder pass is inferred from automated coverage; existing successful generation must not be repeated.
+
 Automated checkpoint: 451 web tests/78 files, 145 admin tests/14 files and 52 local migrations/16 SQL assertion executions passed. Both typechecks, both lints, both production builds and application boundaries passed. Hosted/browser/real concurrency and MT192–195 remain pending. No provider request or hosted operation.
 
 ## Durable assistant execution and recovery — 2026-10-11 PKT

@@ -1,5 +1,11 @@
 # Bizoveya chronological activity and decision log
 
+Automated evidence: 457 web tests across 78 files, 53 ephemeral local migrations/17 SQL assertion executions, web typecheck/lint, both production builds and application boundaries passed. Documentation projects BZ-089/CW-089/MT196–199 and guide70. Admin source is unchanged; its earlier 145 tests are historical, not claimed as rerun. Hosted/browser/mobile/real concurrency and all founder acceptance remain pending. No active checkpoint lease is retained at handoff.
+
+### BZ-089 — 2026-10-11 PKT — Reviewed meeting task distribution
+
+Resolved main `76276e8`, inspected historical branches/PR2 and absent repository AGENTS/active lease. Delivered additive 053 decision-to-request transaction, immutable source/decision/actor lineage, exact retry and quota/version/role guards, authenticated server path and owner-reviewed UI/member projection. No provider, hosted SQL, settings, external message, publication or accepted generation was touched. Participant acknowledgements/deliberation/safe scheduling and live voice remain unfinished; office visualization remains on hold. See [70](70_REVIEWED_MEETING_TASK_DISTRIBUTION.md). MT196–199 and earlier unanswered founder tests remain pending.
+
 Automated checkpoint: 451 web tests/78 files, 145 admin tests/14 files and 52 local migrations/16 SQL assertion executions passed. Both typechecks, both lints, both production builds and application boundaries passed. Hosted/browser/real concurrency and MT192–195 remain pending. No provider request or hosted operation.
 
 ### BZ-088 — 2026-10-11 PKT — Durable assistant execution and recovery

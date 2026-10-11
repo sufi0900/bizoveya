@@ -1,0 +1,32 @@
+# Reviewed meeting task distribution
+
+## Implemented slice and boundaries
+
+Group 3 now connects a saved founder meeting decision to one durable private content request. Additive migration `053_meeting_request_distribution.sql` preserves 001–052, existing agency records, accepted output `80091597-06eb-4b8e-ae10-6239ae2b2b69`, media, reviews and history. The owner records the meeting decision first, then reviews a task instruction and one to three channels. Both announcement and deliberation agendas use the same explicit founder decision boundary; no specialist deliberation or attendance is claimed.
+
+One atomic transaction creates the request, stores immutable meeting/request/actor/source-version lineage and adds a meeting event. The new request combines the exact reviewed decision with the task instruction, so a later campaign handoff retains the decision in its brief. The original agenda, decision, instruction and channel command remain available in both records after refresh. The full agenda remains provenance; it does not become approved knowledge.
+
+This implements bounded decision-to-request distribution, not Group 3 completion. Real participant acknowledgements, facilitated bounded deliberation, safe scheduling pauses/resume and autonomous background scheduling remain unfinished. Group 4 live voice and qualified optional AI visuals remain unfinished. Group 5 office visualization is ON HOLD for founder design input; Group 6 custom agents is out of scope. All unanswered founder tests remain pending until before public reveal.
+
+## Access, version and retry contract
+
+Authenticated POST `/api/workspaces/[workspaceId]/sites/[siteId]/agency/distribution` accepts strict `id`, `requestId`, `expectedVersion`, `instruction`, `channels` and `reviewed:true`. The source version is bounded 1–99, instruction 1–1400 characters, and channels are unique Blog/Pinterest/LinkedIn selections. The existing 500-character decision plus fixed labels and task instruction fits the 2000-character request boundary. No execution or identity override fields are accepted.
+
+Owner membership is checked in the server and SQL. The site lock serializes quota and creation; the parent record is version-checked and must have a current recorded founder decision. Existing independent request IDs cannot be adopted. A site supports at most 64 combined agency records, so full capacity rejects atomically with no child, lineage or parent event. A meeting supports one distributed request; later decision changes cannot silently replace that request.
+
+An exact same-actor retry returns the same two records, even after later parent cancellation. It never recreates work, uncancels the parent or revises the child. The interface retains the attempt UUID on a lost-response retry, invalidates confirmation on edits, preserves entered text on errors and warns before leaving unsaved text. Existing pre053 projections default lineage to null. Missing 053 reports an actionable setup failure while saved decisions stay intact.
+
+Site members can read lineage under existing Agency access. Editors/viewers cannot distribute, and unrelated/removed members cannot read. Private lineage tables have RLS and no direct authenticated/service-role grants; updates are immutable and site removal cascades lineage. Cancelling/defering a parent later does not cancel independently handed-off campaigns or generation. Campaign preparation, current roster/knowledge/model/pricing qualification, explicit admin dispatch and human review remain separate existing gates. Distribution makes no provider request, reservation, publication, external message or approved-knowledge change.
+
+## Four deferred founder checks — MT196–199
+
+1. **Setup and preserve.** Later apply only missing migrations in order through `053_meeting_request_distribution.sql`. Open Agency planning and the existing accepted campaign. Expected: prior drafts/reviews/images and request/task records remain intact. No new key or environment setting.
+2. **Record a disposable decision.** Choose Meeting agenda and Announcement. Agenda: `Discuss promotion of the approved new tool page using private drafts only.` Select Coordinator, Content and Quality; confirm and save. Decision reason: `Prepare private drafts only; verify all claims against approved knowledge.` Confirm and click **Record founder decision** on that meeting. Expected: `decision-recorded`; no attendance, acknowledgement or provider execution.
+3. **Distribute once and refresh.** Distribution instruction: `Prepare Pinterest and LinkedIn draft promotion using only approved facts about the new tool page.` Select Pinterest and LinkedIn, confirm the displayed meeting version, then click **Create request from decision** once. Expected: one proposed request with both the exact decision and instruction, immutable lineage on both records, and no generation. Refresh: same request UUID and no second distribution control. New checkbox: `I reviewed meeting v[displayed version], its decision and this instruction. Create one private request only.`
+4. **Guards on disposable records.** Use two owner tabs to change the meeting decision before submitting an older version; compare viewer access. Expected: stale conflict preserves text without a partial request; viewers read history but cannot distribute. Cancel the parent after distribution. Expected: the original linked request remains unchanged. Do not regenerate accepted output or manufacture production accounting evidence.
+
+## Verification and continuation
+
+Completed automated verification is recorded at delivery in the canonical continuation and verification records. Local SQL assertions cover missing decision, unreviewed/injected/duplicate-channel input, exact/stale versions, wrong-site access, atomic quota rollback, retry after cancellation, immutable provenance, request decision retention, viewer denial and site cascade. Application tests cover bounded input, server owner admission/error mapping, both persisted records, honest UI and refresh projection. Hosted SQL, browser/mobile, true concurrency and MT196–199 remain pending.
+
+Next coherent Group 3 slice: versioned participant invitations and explicit acknowledgements tied to this reviewed decision/task lineage. Distinguish deterministic delivery receipts from provider reasoning; no participant can be shown as having attended or understood a meeting without recorded evidence. Preserve in-flight generation/provider accounting and continue to hold office visualization.

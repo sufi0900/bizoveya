@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { agencyCommandSchema, agencyGenerationSchema, agencyHandoffSchema, agencyRecordSchema, channels, delegationProposal, voiceEntryState, type AgencyRecord } from './agency-contracts';
+import { agencyCommandSchema, agencyGenerationSchema, agencyHandoffSchema, agencyRecordSchema, meetingDistributionSchema, meetingDistributionResultSchema, channels, delegationProposal, voiceEntryState, type AgencyRecord } from './agency-contracts';
 
 export function AgencyRoom({ initial, owner, endpoint }: { initial: AgencyRecord[]; owner: boolean; endpoint: string }) {
   const [records, setRecords] = useState(initial);
@@ -23,7 +23,11 @@ export function AgencyRoom({ initial, owner, endpoint }: { initial: AgencyRecord
   const lock = useRef(false);
   const attempt = useRef<{ body: string; id: string } | null>(null);
   const handoffAttempts = useRef(new Map<string, { key: string; campaignId: string }>());
-  const dirty = Boolean(body.trim() || reason.trim() || title.trim());
+  const [distributionInstruction, setDistributionInstruction] = useState('');
+  const [distributionChannels, setDistributionChannels] = useState<string[]>([...channels]);
+  const [distributionConfirmed, setDistributionConfirmed] = useState<string | null>(null);
+  const distributionAttempts = useRef(new Map<string, { key: string; requestId: string }>());
+  const dirty = Boolean(body.trim() || reason.trim() || title.trim() || distributionInstruction.trim());
   useEffect(() => {
     if (!dirty) return;
     const unload = (event: BeforeUnloadEvent) => event.preventDefault();
@@ -33,6 +37,24 @@ export function AgencyRoom({ initial, owner, endpoint }: { initial: AgencyRecord
     return () => { window.removeEventListener('beforeunload', unload); window.removeEventListener('bizoveya:before-signout', leave); document.removeEventListener('click', link, true); };
   }, [dirty]);
   function change() { setConfirmed(false); }
+  async function distribute(record: AgencyRecord) {
+    if (lock.current || !owner || record.meetingDistribution || record.status !== 'decision-recorded') return;
+    const key = JSON.stringify({ version: record.version, instruction: distributionInstruction.trim(), channels: distributionChannels });
+    let attempt = distributionAttempts.current.get(record.id);
+    if (attempt?.key !== key) { attempt = { key, requestId: crypto.randomUUID() }; distributionAttempts.current.set(record.id, attempt); }
+    const parsed = meetingDistributionSchema.safeParse({ id: record.id, requestId: attempt.requestId, expectedVersion: record.version, instruction: distributionInstruction, channels: distributionChannels, reviewed: distributionConfirmed === record.id });
+    if (!parsed.success) { setMessage('Review the instruction, selected channels and exact meeting decision.'); return; }
+    lock.current = true; setBusy(true); setMessage('');
+    try {
+      const response = await fetch(`${endpoint}/distribution`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(parsed.data) });
+      const data = await response.json(); if (!response.ok) throw new Error(data.error ?? 'Distribution failed.');
+      const saved = meetingDistributionResultSchema.parse(data);
+      setRecords(previous => [saved.request, saved.meeting, ...previous.filter(item => item.id !== saved.request.id && item.id !== saved.meeting.id)]);
+      setDistributionInstruction(''); setDistributionConfirmed(null); distributionAttempts.current.delete(record.id);
+      setMessage('One private draft request saved with the reviewed meeting decision. Campaign preparation and execution remain separately authorized.');
+    } catch (error) { setMessage(error instanceof Error ? error.message : 'Distribution failed.'); }
+    finally { lock.current = false; setBusy(false); }
+  }
   async function handoff(record: AgencyRecord) {
     if (lock.current || !owner || record.handoff) return;
     const key = JSON.stringify({ title: title.trim(), version: record.version });
@@ -83,7 +105,7 @@ export function AgencyRoom({ initial, owner, endpoint }: { initial: AgencyRecord
       const data = await response.json(); if (!response.ok) throw new Error(data.error ?? 'Save failed.');
       const saved = agencyRecordSchema.parse(data);
       setRecords(previous => [saved, ...previous.filter(item => item.id !== saved.id)]);
-      if (record) { setGenerationConfirmed(null); setDecisionConfirmed(false); setReason(''); } else { setConfirmed(false); setBody(''); attempt.current = null; }
+      if (record) { setDistributionConfirmed(null); setGenerationConfirmed(null); setDecisionConfirmed(false); setReason(''); } else { setConfirmed(false); setBody(''); attempt.current = null; }
       setMessage('Saved privately. This proposal change does not execute agents or alter its linked run, approved knowledge or publication.');
     } catch (error) { setMessage(error instanceof Error ? error.message : 'Save failed.'); }
     finally { lock.current = false; setBusy(false); }
@@ -116,6 +138,7 @@ export function AgencyRoom({ initial, owner, endpoint }: { initial: AgencyRecord
           <p>Input source: {record.document.inputMode === 'corrected-transcript' ? 'Pasted and corrected transcript' : 'Typed text'}{record.kind === 'meeting' ? ` · ${record.document.mode === 'deliberation' ? 'Deliberation agenda' : 'Announcement'}` : ''}</p>
           {tasks.length ? <ul>{tasks.map(task => <li key={task.channel}>{task.channel}: {task.role} · proposed · execution prerequisites pending</li>)}</ul> : <p>Requested roles: {Array.isArray(record.document.participants) ? record.document.participants.join(', ') : ''}. No agent attendance or acknowledgement recorded.</p>}
           <details><summary>Saved context and event history</summary><pre style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' }}>{JSON.stringify({ snapshot: record.snapshot, events: record.events, execution: record.execution }, null, 2)}</pre></details>
+          {record.meetingDistribution ? <div><p>Reviewed meeting v{record.meetingDistribution.sourceVersion} linked to private request {record.meetingDistribution.requestId}. No agent attendance or acknowledgement is inferred.</p><details><summary>Immutable meeting decision and distribution</summary><pre style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' }}>{JSON.stringify(record.meetingDistribution, null, 2)}</pre></details></div> : record.kind === 'meeting' && record.status === 'decision-recorded' && record.version < 100 ? <fieldset disabled={busy || !owner}><legend>Distribute this reviewed meeting decision</legend><p>Creates one content request for the selected channels. Review the saved agenda and decision above; this does not change approved knowledge or start generation.</p><label>Distribution instruction<textarea maxLength={1400} value={distributionInstruction} onChange={event => { setDistributionInstruction(event.target.value); setDistributionConfirmed(null); }} /></label><fieldset><legend>Distribution channels</legend>{channels.map(channel => <label key={channel}><input type="checkbox" checked={distributionChannels.includes(channel)} onChange={event => { setDistributionChannels(previous => event.target.checked ? [...previous, channel] : previous.filter(value => value !== channel)); setDistributionConfirmed(null); }} />{channel}</label>)}</fieldset><label><input type="checkbox" checked={distributionConfirmed === record.id} onChange={event => setDistributionConfirmed(event.target.checked ? record.id : null)} />I reviewed meeting v{record.version}, its decision and this instruction. Create one private request only.</label><button className="bz-button" disabled={distributionConfirmed !== record.id || !distributionInstruction.trim() || !distributionChannels.length} onClick={() => void distribute(record)}>Create request from decision</button></fieldset> : null}
           {record.handoff ? <div><p>Campaign prepared from request v{record.handoff.sourceVersion}. No generation was started by this handoff.</p><Link className="bz-button" href={`${endpoint.replace(/^\/api/, '').replace(/\/agency$/, '/campaigns')}/${record.handoff.campaignId}`}>Open linked campaign</Link><details><summary>Original campaign handoff</summary><pre style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' }}>{JSON.stringify(record.handoff, null, 2)}</pre></details></div> : record.kind === 'request' && record.status === 'proposed' ? <button className="bz-button" disabled={busy || !owner || !handoffConfirmed || !title.trim()} onClick={() => void handoff(record)}>Prepare campaign from this request</button> : null}
           {record.execution ? <><p>Linked generation {record.execution.run.id} · {record.execution.run.status} · campaign v{record.execution.run.campaignVersion}. Refresh this page for current status; completion and human acceptance are separate. Cancelling this proposal does not cancel this run.</p>{record.executionTask&&<p>Assistant task: {record.executionTask.state} · v{record.executionTask.version}{record.executionTask.leaseActive?' · active dispatch':record.executionTask.leaseExpired?' · expired dispatch requires admin inspection':''}. {record.executionTask.lastReason}</p>}</> : record.handoff && record.executionPreparation && record.status === 'proposed' ? <fieldset disabled={busy || !owner}><legend>Prepare the linked request for dispatch</legend><p>Linked campaign: {record.executionPreparation.campaignTitle} · v{record.executionPreparation.campaignVersion}. Open the campaign to review its current brief first. This creates one snapshot through current readiness checks and makes no provider call.</p><label><input type="checkbox" checked={generationConfirmed === record.id} onChange={event => setGenerationConfirmed(event.target.checked ? record.id : null)} />I reviewed this request v{record.version} and linked campaign v{record.executionPreparation.campaignVersion}. Prepare one snapshot only; keep execution separately authorized.</label><button className="bz-button" disabled={generationConfirmed !== record.id} onClick={() => void prepareRun(record)}>Prepare linked generation snapshot</button></fieldset> : null}
           <fieldset disabled={busy || !owner || !decisionConfirmed || !reason.trim() || record.status === 'cancelled'}><legend>Update this proposal</legend>{record.kind === 'meeting' ? <button className="bz-button" onClick={() => void save(record, 'accept-decision')}>Record founder decision</button> : null}<button className="bz-button" onClick={() => void save(record, 'defer')}>Defer proposal</button><button className="bz-button" onClick={() => void save(record, 'cancel')}>Cancel proposal</button></fieldset>

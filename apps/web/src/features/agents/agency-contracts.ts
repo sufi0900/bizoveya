@@ -11,6 +11,7 @@ export const agencyCommandSchema = z.discriminatedUnion('action', [
 export type AgencyCommand = z.infer<typeof agencyCommandSchema>;
 export const agencyHandoffSchema = z.object({ id: z.uuid(), campaignId: z.uuid(), expectedVersion: z.number().int().min(1).max(100), title: text(120).refine(value => !/[\u0000-\u001f]/.test(value)), reviewed: z.literal(true) }).strict();
 export const agencyGenerationSchema = z.object({ id: z.uuid(), runId: z.uuid(), expectedVersion: z.number().int().min(1).max(100), expectedCampaignVersion: z.number().int().min(1).max(100), reviewed: z.literal(true) }).strict();
+export const meetingDistributionSchema = z.object({ id: z.uuid(), requestId: z.uuid(), expectedVersion: z.number().int().min(1).max(99), instruction: text(1400), channels: z.array(z.enum(channels)).min(1).max(3).refine(values => new Set(values).size === values.length), reviewed: z.literal(true) }).strict().refine(value => value.id !== value.requestId);
 const executionTaskStateSchema = z.enum(['awaiting_authorization', 'running', 'awaiting_human_review', 'failed', 'recovery_required', 'cancelled']);
 export const agencyRecordSchema = z.object({
   id: z.uuid(), kind: z.enum(['request', 'meeting']), version: z.number().int().positive(),
@@ -21,7 +22,9 @@ export const agencyRecordSchema = z.object({
   execution: z.object({ sourceVersion: z.number().int().min(1).max(100), actorId: z.uuid(), createdAt: z.string(), run: generationSummarySchema }).strict().nullable().default(null),
   executionTask: z.object({ recordId: z.uuid(), runId: z.uuid(), version: z.number().int().min(1).max(100), state: executionTaskStateSchema, lastReason: z.string(), createdAt: z.string(), updatedAt: z.string(), leaseActive: z.boolean(), leaseExpired: z.boolean(), events: z.array(z.object({ version: z.number().int().min(1).max(100), action: z.string(), state: executionTaskStateSchema, reason: z.string(), actorId: z.uuid().nullable(), createdAt: z.string() }).strict()).max(100) }).strict().nullable().default(null),
   handoff: z.object({ campaignId: z.uuid(), sourceVersion: z.number().int().positive(), title: text(120), document: campaignDocumentSchema, actorId: z.uuid(), createdAt: z.string() }).strict().nullable().default(null),
+  meetingDistribution: z.object({ meetingId: z.uuid(), requestId: z.uuid(), sourceVersion: z.number().int().min(1).max(99), agenda: agencyCommandSchema.refine(value => value.action === 'meeting'), decision: text(500), instruction: text(1400), command: agencyCommandSchema.refine(value => value.action === 'request'), actorId: z.uuid(), createdAt: z.string() }).strict().nullable().default(null),
 }).strict();
+export const meetingDistributionResultSchema = z.object({ meeting: agencyRecordSchema, request: agencyRecordSchema }).strict().refine(value => value.meeting.kind === 'meeting' && value.request.kind === 'request' && value.meeting.meetingDistribution?.meetingId === value.meeting.id && value.meeting.meetingDistribution?.requestId === value.request.id && JSON.stringify(value.meeting.meetingDistribution) === JSON.stringify(value.request.meetingDistribution));
 export const agencyInventorySchema = z.array(agencyRecordSchema).max(64);
 export type AgencyRecord = z.infer<typeof agencyRecordSchema>;
 export const voiceEntryState = Object.freeze({ enabled: false, reason: 'Business voice transcription and speech providers have not been qualified. Paste and correct a transcript, then explicitly confirm the same text command.' });

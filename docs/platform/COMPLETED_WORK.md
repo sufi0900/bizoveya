@@ -1,5 +1,15 @@
 # Completed Bizoveya work only
 
+Automated evidence: 457 web tests across 78 files, 53 ephemeral local migrations/17 SQL assertion executions, web typecheck/lint, both production builds and application boundaries passed. Documentation projects BZ-089/CW-089/MT196–199 and guide70. Admin source is unchanged; its earlier 145 tests are historical, not claimed as rerun. Hosted/browser/mobile/real concurrency and all founder acceptance remain pending. No active checkpoint lease is retained at handoff.
+
+### CW-089 — Reviewed meeting decision-to-request source
+
+| Record | Implemented slice | Limits |
+|---|---|---|
+| CW-089 | Atomic reviewed decision-to-request distribution, immutable source lineage, guarded retries, owner UI/member refresh projection | No participant attendance/acknowledgement, provider execution, hosted migration or founder acceptance; first-four groups unfinished |
+
+See [70](70_REVIEWED_MEETING_TASK_DISTRIBUTION.md). Exact reviewed decision is retained in the downstream task instruction.
+
 Automated checkpoint: 451 web tests/78 files, 145 admin tests/14 files and 52 local migrations/16 SQL assertion executions passed. Both typechecks, both lints, both production builds and application boundaries passed. Hosted/browser/real concurrency and MT192–195 remain pending. No provider request or hosted operation.
 
 ### CW-088 — Durable assistant execution and explicit recovery source

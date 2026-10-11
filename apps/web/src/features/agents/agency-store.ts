@@ -1,6 +1,6 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { checkDatabaseError, getSite, WorkspaceError } from '@/features/workspaces/store';
-import { agencyGenerationSchema, agencyHandoffSchema, agencyInventorySchema, agencyRecordSchema, type AgencyCommand } from './agency-contracts';
+import { agencyGenerationSchema, agencyHandoffSchema, agencyInventorySchema, agencyRecordSchema, meetingDistributionSchema, meetingDistributionResultSchema, type AgencyCommand } from './agency-contracts';
 import type { z } from 'zod';
 function check(error: { code?: string; message?: string } | null) {
   if (['42P01', '42703', 'PGRST202', 'PGRST205'].includes(error?.code ?? '')) throw new WorkspaceError(503, 'Agency planning needs migration 045 after 044. Existing campaigns are unchanged.');
@@ -25,6 +25,16 @@ export async function loadAgency(db: SupabaseClient, userId: string, wid: string
   const context = await getSite(db, userId, wid, sid);
   const result = await db.rpc('bz_agency_inventory', { p_workspace_id: wid, p_site_id: sid }); check(result.error);
   return { ...context, records: agencyInventorySchema.parse(result.data) };
+}
+export async function distributeMeetingRequest(db: SupabaseClient, userId: string, wid: string, sid: string, input: z.infer<typeof meetingDistributionSchema>) {
+  const context = await getSite(db, userId, wid, sid);
+  if (context.workspace.role !== 'owner') throw new WorkspaceError(403, 'Only the workspace owner can distribute a reviewed meeting decision.');
+  const result = await db.rpc('bz_distribute_meeting_request', { p_workspace_id: wid, p_site_id: sid, p_input: meetingDistributionSchema.parse(input) });
+  if (['42P01', '42703', 'PGRST202', 'PGRST205'].includes(result.error?.code ?? '')) throw new WorkspaceError(503, 'Meeting distribution needs migration 053 after 052. Your decision remains saved.');
+  if (result.error?.message === 'bz_invalid_meeting_distribution') throw new WorkspaceError(400, 'Review the task instruction, channels and exact meeting version.');
+  if (result.error?.message === 'bz_meeting_decision_required') throw new WorkspaceError(409, 'Record a founder decision on this meeting before distributing a request.');
+  check(result.error);
+  return meetingDistributionResultSchema.parse(result.data);
 }
 export async function commandAgency(db: SupabaseClient, userId: string, wid: string, sid: string, command: AgencyCommand) {
   const context = await getSite(db, userId, wid, sid);
