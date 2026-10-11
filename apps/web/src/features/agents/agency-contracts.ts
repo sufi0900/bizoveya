@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { savedMeetingSnapshotSchema } from './meeting-snapshot-contracts';
 import { campaignDocumentSchema, generationSummarySchema } from '../campaigns/contracts';
 const text = (max: number) => z.string().trim().min(1).max(max).refine(value => !/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(value));
 export const channels = ['blog', 'pinterest', 'linkedin'] as const;
@@ -19,6 +20,7 @@ const scheduleStateSchema = z.enum(['ready','paused','cancelled']);
 const participantInvitationSchema = z.object({ role: z.enum(['coordinator', 'content', 'quality']), agentId: z.uuid(), agentVersion: z.number().int().positive(), state: z.enum(['invited', 'claimed', 'acknowledged', 'declined']), claimExpiresAt: z.string().nullable(), respondedAt: z.string().nullable(), note: z.string().max(500).nullable() }).strict();
 const executionTaskStateSchema = z.enum(['awaiting_authorization', 'running', 'awaiting_human_review', 'failed', 'recovery_required', 'cancelled']);
 export const agencyRecordSchema = z.object({
+  meetingExecutionSnapshot: savedMeetingSnapshotSchema.nullable().default(null),
   id: z.uuid(), kind: z.enum(['request', 'meeting']), version: z.number().int().positive(),
   status: z.enum(['proposed', 'decision-recorded', 'deferred', 'cancelled']),
   document: z.record(z.string(), z.unknown()), snapshot: z.record(z.string(), z.unknown()),

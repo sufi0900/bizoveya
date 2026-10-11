@@ -1,5 +1,15 @@
 # Bizoveya continuation checkpoint
 
+Automated BZ-096/CW-096 verification:479 web tests/79 files,157 admin tests/17 files,60 ephemeral local migrations/24 SQL assertion executions, web typecheck/lint, both production builds with type/lint validation, boundaries, whitespace and585 local Markdown links passed. Guide77 and BZ-096/CW-096/MT216–219 visual projections are verified before delivery. Hosted/PostgREST/browser/mobile/true concurrency and all founder acceptance stay pending. No hosted SQL/provider request; admin standalone typecheck/lint not separately rerun.
+
+Source base for BZ-096/CW-096: `a3c1b9234973469bf7d80b36c086d2bde35c703b`. Resolve delivered successor from remote main before editing. Historical phase branches/PR2 remain untouched, original dirty screenshot preserved, no active lease retained at handoff. Next concrete source boundary: explicit founder-admin authorization and independent shared-budget meeting-turn reservation/settlement/reconciliation, then one-attempt bounded worker/request/result receipts. Do not invoke any provider from preparation, fake receipts or mark manual tests passed. Group5 remains ON HOLD; Group6 out of scope.
+
+
+## Qualified meeting execution snapshots — 2026-10-11 PKT
+
+BZ-096/CW-096 adds060 owner-reviewed immutable preparation from the ready, acknowledged bounded plan. Current pinned agent/model/credential/connectivity/pricing, approved context, token compatibility and full repeated-turn estimates are checked; fingerprint review rejects intervening changes. Preparation creates no execution authority, reservation, provider call or AI output. MT216–219 and all earlier unanswered tests remain pending. Next: explicit authorization and independent meeting-turn accounting, followed bounded execution/receipts. First-four groups remain incomplete; live voice unfinished, office visualization ON HOLD, custom agents out of scope. See [77](77_QUALIFIED_MEETING_EXECUTION_SNAPSHOTS.md).
+
+
 Automated BZ-095/CW-095 verification: 471 web tests/78 files, 157 admin tests/17 files, 59 ephemeral local migrations/23 SQL assertion executions, admin typecheck/lint, both production builds with type/lint validation, application boundaries and whitespace passed. Guide76 and BZ-095/CW-095/MT212–215 project in the document room. SQL-backed receiver regression uses actual migrated packet and receipt JSON. Hosted/PostgREST/actual receipt/browser/mobile/true concurrency/founder acceptance remains pending. No provider call or hosted operation.
 
 Current source base: `1ef91696a7c2a09e345e17946c553791989f0223`; BZ-095/CW-095 connects the operator packet receipt worker. Next: qualified bounded deliberation turn admission and immutable execution snapshots. Routine founder tests stay deferred, actual provider/accounting dependencies still apply. No active lease retained; historical branches/PR2 untouched and original dirty screenshot preserved.

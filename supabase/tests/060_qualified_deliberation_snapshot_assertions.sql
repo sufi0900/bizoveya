@@ -1,0 +1,126 @@
+-- Local fixture only; planning must require real receipts and must not execute a model.
+begin;
+create temporary table dpf(actor uuid,viewer uuid,wid uuid,sid uuid,meeting uuid,request uuid,coord uuid,content uuid,plan uuid,c1 uuid,c2 uuid);
+insert into dpf values(gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid());
+insert into auth.users(id) select actor from dpf union all select viewer from dpf;
+insert into public.bizoveya_workspaces(id,owner_id,name) select wid,actor,'Deliberation fixture' from dpf;
+insert into public.bizoveya_memberships(workspace_id,user_id,role) select wid,actor,'owner' from dpf union all select wid,viewer,'viewer' from dpf;
+insert into public.bizoveya_sites(id,workspace_id,name,mode,kind,status,created_by) select sid,wid,'Deliberation site','native_business','business','active',actor from dpf;
+insert into bizoveya_private.site_agent_rosters(site_id,version,document,actor_id) select sid,1,jsonb_build_object('enabled',true,'agents',jsonb_build_array(jsonb_build_object('kind','coordinator','agentId',coord,'agentVersion',1),jsonb_build_object('kind','content','agentId',content,'agentVersion',1))),actor from dpf;
+create function pg_temp.dexpect(q text,n text) returns void language plpgsql as $$begin begin execute q;exception when others then if strpos(sqlerrm,n)>0 then return;end if;raise;end;raise exception 'Expected %',n;end;$$;
+do $$begin execute format('grant usage on schema %I to authenticated,service_role',(select nspname from pg_namespace where oid=pg_my_temp_schema()));end;$$;grant all on dpf to authenticated,service_role;
+set local role authenticated;select set_config('request.jwt.claim.sub',(select actor::text from dpf),true);
+select public.bz_agency_command(wid,sid,jsonb_build_object('action','meeting','id',meeting,'agenda','Compare safe launch options using approved context.','mode','deliberation','participants',jsonb_build_array('coordinator','content'),'reviewed',true,'inputMode','text')) from dpf;
+select public.bz_agency_command(wid,sid,jsonb_build_object('action','accept-decision','id',meeting,'expectedVersion',1,'reason','Prepare a bounded private recommendation only.','reviewed',true)) from dpf;
+select public.bz_distribute_meeting_request(wid,sid,jsonb_build_object('id',meeting,'requestId',request,'expectedVersion',2,'instruction','Prepare private approved-context options.','channels',jsonb_build_array('blog'),'reviewed',true)) from dpf;
+select public.bz_invite_meeting_participants(wid,sid,jsonb_build_object('id',meeting,'expectedVersion',3,'reviewed',true)) from dpf;
+select pg_temp.dexpect(format('select public.bz_prepare_meeting_deliberation(%L,%L,%L)',wid,sid,jsonb_build_object('id',meeting,'planId',plan,'expectedVersion',4,'rounds',1,'maxInputTokensPerTurn',1200,'maxOutputTokensPerTurn',600,'maxTotalCostCents',5,'reviewed',true)),'bz_meeting_receipts_required') from dpf;
+reset role;
+set local role service_role;
+select public.bz_claim_meeting_invitation(meeting,'coordinator',c1,coord,1) from dpf;
+select public.bz_finish_meeting_invitation(meeting,'coordinator',c1,coord,1,'acknowledged','Packet received; no reasoning started.') from dpf;
+select public.bz_claim_meeting_invitation(meeting,'content',c2,content,1) from dpf;
+select public.bz_finish_meeting_invitation(meeting,'content',c2,content,1,'acknowledged','Packet received; no reasoning started.') from dpf;
+reset role;
+set local role authenticated;select set_config('request.jwt.claim.sub',(select actor::text from dpf),true);
+select pg_temp.dexpect(format('select public.bz_prepare_meeting_deliberation(%L,%L,%L)',wid,sid,jsonb_build_object('id',meeting,'planId',plan,'expectedVersion',4,'rounds',3,'maxInputTokensPerTurn',1200,'maxOutputTokensPerTurn',600,'maxTotalCostCents',5,'reviewed',true)),'bz_invalid_deliberation_plan') from dpf;
+select public.bz_prepare_meeting_deliberation(wid,sid,jsonb_build_object('id',meeting,'planId',plan,'expectedVersion',4,'rounds',2,'maxInputTokensPerTurn',1200,'maxOutputTokensPerTurn',600,'maxTotalCostCents',5,'reviewed',true)) from dpf;
+select public.bz_prepare_meeting_deliberation(wid,sid,jsonb_build_object('id',meeting,'planId',plan,'expectedVersion',4,'rounds',2,'maxInputTokensPerTurn',1200,'maxOutputTokensPerTurn',600,'maxTotalCostCents',5,'reviewed',true)) from dpf;
+
+
+
+reset role;
+alter table dpf add column profile uuid default gen_random_uuid(),add column test_run uuid default gen_random_uuid(),add column execution_id uuid default gen_random_uuid();
+update bizoveya_private.model_credentials set enabled=true where id='platform-gemini';
+insert into bizoveya_private.model_profiles(id,slug,version,revision) select profile,'meeting-execution-fixture',1,1 from dpf;
+insert into bizoveya_private.model_profile_versions(profile_id,version,document,reason) select profile,1,'{"name":"Fixture Gemini","provider":"gemini","credentialRef":"platform-gemini","modelId":"fixture-model","tier":"economical","maxOutputTokens":1500,"dailyBudgetCents":100}','Synthetic meeting fixture' from dpf;
+insert into bizoveya_private.model_profile_checks(profile_id,version,credential_id,credential_version) select profile,1,'platform-gemini',1 from dpf;
+insert into bizoveya_private.model_test_runs(id,profile_id,profile_version,credential_id,credential_version,claim,status,result_code,input_tokens,output_tokens,reason,finished_at) select test_run,profile,1,'platform-gemini',1,gen_random_uuid(),'passed','response_matched',20,7,'Synthetic connectivity evidence',clock_timestamp() from dpf;
+insert into bizoveya_private.spending_policies(profile_id,version,profile_version,document,reason) select profile,1,1,jsonb_build_object('enabled',true,'inputRateMicros',1000000,'outputRateMicros',1000000,'requestFeeMicros',0,'dailyLimitMicros',100000,'runLimitMicros',10000,'validUntil',clock_timestamp()+interval '7 days','source','https://example.com/fictional-pricing','reviewed',true),'Synthetic reviewed prices' from dpf;
+insert into bizoveya_private.agent_definitions(id,slug,kind,latest_version,preview_version,revision) select coord,'meeting-fixture-coordinator','coordinator',1,1,1 from dpf union all select content,'meeting-fixture-content','content',1,1,1 from dpf;
+insert into bizoveya_private.agent_versions(agent_id,version,document,reason) select x.id,1,jsonb_set(v.document,'{modelTier}','"economical"'),'Synthetic meeting role' from dpf f cross join lateral(values(f.coord,'coordinator'),(f.content,'content')) x(id,kind) cross join lateral(select av.document from bizoveya_private.agent_versions av join bizoveya_private.agent_definitions ad on ad.id=av.agent_id where ad.kind=x.kind and ad.id<>x.id order by ad.slug limit 1)v;
+insert into bizoveya_private.agent_checks(agent_id,version) select coord,1 from dpf union all select content,1 from dpf;
+insert into bizoveya_private.agent_model_bindings(agent_id,agent_version,profile_id,profile_version,credential_version,test_id,revision,enabled,reason) select x.id,1,f.profile,1,1,f.test_run,1,true,'Synthetic meeting binding' from dpf f cross join lateral(values(f.coord),(f.content))x(id);
+set local role authenticated;
+select public.bz_mutate_knowledge(wid,sid,gen_random_uuid(),'save','{"title":"Approved facts","filename":"facts.md","sourceText":"Bizoveya prepares private reviewable drafts.","facts":[{"id":"f1","text":"Bizoveya prepares private reviewable drafts."}]}',0) from dpf;
+select public.bz_mutate_knowledge(wid,sid,(select id from public.bizoveya_knowledge_sources where site_id=sid),'approve',null,1) from dpf;
+select public.bz_control_meeting_schedule(wid,sid,jsonb_build_object('id',meeting,'planId',plan,'operationId',gen_random_uuid(),'expectedMeetingVersion',5,'expectedVersion',0,'action','queue','reason','Reviewed private bounded scheduling intent.','reviewed',true,'intentOnly',true)) from dpf;
+create temporary table candidate060 as select public.bz_review_meeting_execution_snapshot(wid,sid,meeting,plan,5,1) as value from dpf;
+reset role;
+grant all on candidate060 to authenticated,service_role;
+create function pg_temp.snapshotcmd() returns jsonb language sql as $$select jsonb_build_object('id',meeting,'planId',plan,'snapshotId',execution_id,'expectedMeetingVersion',5,'expectedScheduleVersion',1,'fingerprint',value->>'fingerprint','reviewed',true) from dpf,candidate060$$;
+-- Candidate reveals only sanitized review, no private agent instructions or credential references.
+do $$declare c jsonb;begin select value into c from candidate060;
+ if c ? 'snapshot' or c::text like '%credentialRef%' or c::text like '%spendingPolicy"%' or jsonb_array_length(c#>'{summary,turns}')<>4 or c#>>'{summary,estimatedCeilingMicros}'<>'9000' or c#>>'{summary,executionEnabled}'<>'false' then raise exception 'Unsafe candidate projection or wrong repeated-turn pricing: %',c;end if;
+end;$$;
+set local role authenticated;
+select pg_temp.dexpect(format('select public.bz_prepare_meeting_execution_snapshot(%L,%L,%L)',wid,sid,pg_temp.snapshotcmd()||jsonb_build_object(k,null)),'bz_invalid_meeting_snapshot') from dpf cross join unnest(array['id','planId','snapshotId','expectedMeetingVersion','expectedScheduleVersion','fingerprint','reviewed']) k;
+select pg_temp.dexpect(format('select public.bz_prepare_meeting_execution_snapshot(%L,%L,%L)',wid,sid,pg_temp.snapshotcmd()||jsonb_build_object('extra',true)),'bz_invalid_meeting_snapshot') from dpf;
+select pg_temp.dexpect(format('select public.bz_prepare_meeting_execution_snapshot(%L,%L,%L)',wid,sid,pg_temp.snapshotcmd()||jsonb_build_object('expectedMeetingVersion',4)),'bz_conflict') from dpf;
+select pg_temp.dexpect(format('select public.bz_prepare_meeting_execution_snapshot(%L,%L,%L)',wid,sid,pg_temp.snapshotcmd()||jsonb_build_object('fingerprint',repeat('0',64))),'bz_meeting_snapshot_changed') from dpf;
+select set_config('request.jwt.claim.sub',(select viewer::text from dpf),true);
+select pg_temp.dexpect(format('select public.bz_review_meeting_execution_snapshot(%L,%L,%L,%L,5,1)',wid,sid,meeting,plan),'bz_forbidden') from dpf;
+select pg_temp.dexpect(format('select public.bz_prepare_meeting_execution_snapshot(%L,%L,%L)',wid,sid,pg_temp.snapshotcmd()),'bz_forbidden') from dpf;
+select set_config('request.jwt.claim.sub',(select actor::text from dpf),true);
+reset role;
+-- Each mutation rolls back independently: qualification, context, bounded costs and actual prerequisites.
+do $$declare f dpf%rowtype;cmd jsonb;case_ integer;expected_ text;begin select * into f from dpf;cmd:=pg_temp.snapshotcmd();
+ for case_ in 1..18 loop
+  begin
+   case case_
+   when 1 then update bizoveya_private.model_test_runs set finished_at=clock_timestamp()-interval '25 hours' where id=f.test_run;expected_:='bz_meeting_qualification_required';
+   when 2 then update bizoveya_private.model_credentials set enabled=false where id='platform-gemini';expected_:='bz_meeting_qualification_required';
+   when 3 then update bizoveya_private.agent_model_bindings set enabled=false where agent_id=f.coord;expected_:='bz_meeting_qualification_required';
+   when 4 then update bizoveya_private.spending_policies set document=jsonb_set(document,'{validUntil}',to_jsonb((clock_timestamp()-interval '1 day')::text)) where profile_id=f.profile;expected_:='bz_meeting_qualification_required';
+   when 5 then update bizoveya_private.spending_policies set document=jsonb_set(document,'{requestFeeMicros}','20000') where profile_id=f.profile;expected_:='bz_meeting_cost_ceiling';
+   when 6 then update bizoveya_private.spending_policies set document=jsonb_set(document,'{dailyLimitMicros}','5000') where profile_id=f.profile;update bizoveya_private.spending_policies set document=jsonb_set(document,'{runLimitMicros}','5000') where profile_id=f.profile;expected_:='bz_meeting_cost_ceiling';
+   when 7 then update public.bizoveya_knowledge_sources set approved=false,approved_at=null,approved_by=null where site_id=f.sid;expected_:='bz_meeting_qualification_required';
+   when 8 then update public.bizoveya_knowledge_sources set version=version+1 where site_id=f.sid;expected_:='bz_meeting_snapshot_changed';
+   when 9 then update bizoveya_private.site_agent_rosters set document=jsonb_set(document,'{enabled}','false') where site_id=f.sid;expected_:='bz_site_roster_paused';
+   when 10 then update bizoveya_private.site_agent_rosters set version=2 where site_id=f.sid;expected_:='bz_site_roster_changed';
+   when 11 then update bizoveya_private.meeting_deliberation_schedules set state='paused' where plan_id=f.plan;expected_:='bz_meeting_snapshot_not_ready';
+   when 12 then update bizoveya_private.agency_records set status='cancelled' where id=f.meeting;expected_:='bz_meeting_snapshot_not_ready';
+   when 13 then update bizoveya_private.meeting_participant_invitations set state='declined' where meeting_id=f.meeting and role='content';expected_:='bz_meeting_receipts_required';
+   when 14 then insert into bizoveya_private.spending_ledger(run_id,profile_id,policy_version,policy_snapshot,reserved_micros,charged_micros,state) select test_run,profile,1,sp.document,100,100,'unknown' from dpf join bizoveya_private.spending_policies sp on sp.profile_id=dpf.profile;expected_:='bz_spending_unresolved';
+   when 15 then insert into public.bizoveya_site_agent_preferences(site_id,version,document) values(f.sid,1,'{"brandVoice":"Changed","audience":"Founders","guidance":"Private only"}');expected_:='bz_meeting_snapshot_changed';
+   when 16 then update bizoveya_private.agent_model_bindings set revision=revision+1 where agent_id=f.coord;expected_:='bz_meeting_snapshot_changed';
+   when 17 then update bizoveya_private.model_profile_versions set document=jsonb_set(document,'{maxOutputTokens}','128') where profile_id=f.profile;expected_:='bz_meeting_qualification_required';
+   when 18 then update bizoveya_private.spending_policies set document=jsonb_set(document,'{runLimitMicros}','1000') where profile_id=f.profile;expected_:='bz_meeting_cost_ceiling';
+   end case;
+   perform pg_temp.dexpect(format('select public.bz_prepare_meeting_execution_snapshot(%L,%L,%L)',f.wid,f.sid,cmd),expected_);
+   raise exception 'fixture_restore';
+  exception when others then if sqlerrm<>'fixture_restore' then raise;end if;end;
+ end loop;
+end;$$;
+set local role authenticated;
+select public.bz_prepare_meeting_execution_snapshot(wid,sid,pg_temp.snapshotcmd()) from dpf;
+select public.bz_prepare_meeting_execution_snapshot(wid,sid,pg_temp.snapshotcmd()) from dpf;
+select pg_temp.dexpect(format('select public.bz_prepare_meeting_execution_snapshot(%L,%L,%L)',wid,sid,pg_temp.snapshotcmd()||jsonb_build_object('snapshotId',gen_random_uuid())),'bz_conflict') from dpf;
+select pg_temp.dexpect('select * from bizoveya_private.meeting_execution_snapshots','permission denied');
+reset role;
+do $$declare c jsonb;begin
+ if (select count(*) from bizoveya_private.meeting_execution_snapshots)<>1 then raise exception 'Duplicate snapshot';end if;
+ select bizoveya_private.agency_json(meeting) into c from dpf;
+ if c#>>'{meetingExecutionSnapshot,state}'<>'prepared' or c#>>'{meetingExecutionSnapshot,summary,executionEnabled}'<>'false' or c::text like '%credentialRef%' then raise exception 'Invalid saved projection';end if;
+ if exists(select 1 from bizoveya_private.generation_runs) or exists(select 1 from bizoveya_private.spending_ledger) or exists(select 1 from bizoveya_private.generation_stage_runs) then raise exception 'Preparation started execution or spending';end if;
+ perform pg_temp.dexpect('update bizoveya_private.meeting_execution_snapshots set fingerprint=repeat(''0'',64)','bz_immutable');
+end;$$;
+-- Exact retry after pause returns saved truth only, never fresh authority.
+update bizoveya_private.meeting_deliberation_schedules set state='paused',version=2 where plan_id=(select plan from dpf);
+set local role authenticated;
+select public.bz_prepare_meeting_execution_snapshot(wid,sid,pg_temp.snapshotcmd()) from dpf;
+select pg_temp.dexpect(format('select public.bz_review_meeting_execution_snapshot(%L,%L,%L,%L,5,2)',wid,sid,meeting,plan),'bz_meeting_snapshot_not_ready') from dpf;
+reset role;
+delete from public.bizoveya_memberships where user_id=(select actor from dpf) and workspace_id=(select wid from dpf);
+set local role authenticated;
+select pg_temp.dexpect(format('select public.bz_prepare_meeting_execution_snapshot(%L,%L,%L)',wid,sid,pg_temp.snapshotcmd()),'bz_forbidden') from dpf;
+reset role;
+set local role service_role;
+select pg_temp.dexpect('select * from bizoveya_private.meeting_execution_snapshots','permission denied');
+select pg_temp.dexpect(format('select public.bz_prepare_meeting_execution_snapshot(%L,%L,%L)',wid,sid,pg_temp.snapshotcmd()),'permission denied') from dpf;
+select pg_temp.dexpect(format('select bizoveya_private.deliberation_execution_candidate(%L,%L,%L,%L,5,1)',wid,sid,meeting,plan),'permission denied') from dpf;
+reset role;
+select jsonb_build_object('candidate',value,'command',pg_temp.snapshotcmd(),'record',bizoveya_private.agency_json(meeting)) as contract060 from dpf,candidate060;
+delete from public.bizoveya_sites where id=(select sid from dpf);
+do $$begin if exists(select 1 from bizoveya_private.meeting_execution_snapshots) then raise exception 'Private snapshot failed site cascade';end if;end;$$;
+rollback;

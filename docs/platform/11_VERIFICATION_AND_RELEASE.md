@@ -1,5 +1,13 @@
 # Verification, manual acceptance and release evidence
 
+Automated BZ-096/CW-096 verification:479 web tests/79 files,157 admin tests/17 files,60 ephemeral local migrations/24 SQL assertion executions, web typecheck/lint, both production builds with type/lint validation, boundaries, whitespace and585 local Markdown links passed. Guide77 and BZ-096/CW-096/MT216–219 visual projections are verified before delivery. Hosted/PostgREST/browser/mobile/true concurrency and all founder acceptance stay pending. No hosted SQL/provider request; admin standalone typecheck/lint not separately rerun.
+
+
+## Qualified meeting execution snapshots — 2026-10-11 PKT
+
+BZ-096/CW-096 adds060 owner-reviewed immutable preparation from the ready, acknowledged bounded plan. Current pinned agent/model/credential/connectivity/pricing, approved context, token compatibility and full repeated-turn estimates are checked; fingerprint review rejects intervening changes. Preparation creates no execution authority, reservation, provider call or AI output. MT216–219 and all earlier unanswered tests remain pending. Next: explicit authorization and independent meeting-turn accounting, followed bounded execution/receipts. First-four groups remain incomplete; live voice unfinished, office visualization ON HOLD, custom agents out of scope. See [77](77_QUALIFIED_MEETING_EXECUTION_SNAPSHOTS.md).
+
+
 BZ-095/CW-095 automated source checks: 471 web tests/78 files; 157 admin tests/17 files; 59 local migrations/23 SQL assertion executions; admin typecheck/lint; both production builds including type/lint; boundaries and whitespace. The real SQL packet/receipt contract passes the production receiver. Actual hosted receipt/browser/mobile/concurrency and MT212–215 remain pending; none is inferred from local simulated auth. Guide76 and current progress records project in the document room.
 
 ## Operator meeting packet delivery — 2026-10-11 PKT

@@ -1,5 +1,15 @@
 # Completed Bizoveya work only
 
+Automated BZ-096/CW-096 verification:479 web tests/79 files,157 admin tests/17 files,60 ephemeral local migrations/24 SQL assertion executions, web typecheck/lint, both production builds with type/lint validation, boundaries, whitespace and585 local Markdown links passed. Guide77 and BZ-096/CW-096/MT216–219 visual projections are verified before delivery. Hosted/PostgREST/browser/mobile/true concurrency and all founder acceptance stay pending. No hosted SQL/provider request; admin standalone typecheck/lint not separately rerun.
+
+### CW-096 — Qualified meeting execution snapshots
+
+| Record | Completed source | Remaining evidence |
+|---|---|---|
+| CW-096 | Additive060 immutable qualified plan preparation; sanitized fingerprint review; owner API/UI; exact qualification/context/token/cost guards; retry/privacy/refresh projection | Hosted/browser/concurrency and MT216–219 pending; authorization, meeting-turn accounting/execution and first-four completion unfinished |
+
+See [77](77_QUALIFIED_MEETING_EXECUTION_SNAPSHOTS.md). Prepared is not execution authority or spending reservation.
+
 ### CW-095 — Connected operator meeting receipt worker
 
 | Record | Completed source | Remaining evidence |

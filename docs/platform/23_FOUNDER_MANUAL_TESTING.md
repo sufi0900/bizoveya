@@ -1,5 +1,22 @@
 # Founder manual testing record
 
+## Qualified meeting snapshot preparation — MT216–219
+
+| Test | Scope | Status |
+|---|---|---|
+| MT216 | Missing060 setup and preserved accepted drafts/media/meetings/history | Pending founder/operator |
+| MT217 | Current ready/acknowledged plan review, exact selected qualification/context and truthful blockers | Pending founder |
+| MT218 | Explicit snapshot confirmation, one saved prepared identity, reload and no generation/spending | Pending founder |
+| MT219 | Viewer/stale/paused/changed-context guards, intact snapshot after safety controls, retry/concurrency | Pending founder/hosted |
+
+Use the four steps and exact checkbox label in [77](77_QUALIFIED_MEETING_EXECUTION_SNAPSHOTS.md). No new text/key/flag field. All earlier unanswered tests remain pending; automation is not founder acceptance.
+
+
+## Qualified meeting execution snapshots — 2026-10-11 PKT
+
+BZ-096/CW-096 adds060 owner-reviewed immutable preparation from the ready, acknowledged bounded plan. Current pinned agent/model/credential/connectivity/pricing, approved context, token compatibility and full repeated-turn estimates are checked; fingerprint review rejects intervening changes. Preparation creates no execution authority, reservation, provider call or AI output. MT216–219 and all earlier unanswered tests remain pending. Next: explicit authorization and independent meeting-turn accounting, followed bounded execution/receipts. First-four groups remain incomplete; live voice unfinished, office visualization ON HOLD, custom agents out of scope. See [77](77_QUALIFIED_MEETING_EXECUTION_SNAPSHOTS.md).
+
+
 ## Operator packet delivery — MT212–215
 
 | Test | Scope | Status |

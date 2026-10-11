@@ -1,5 +1,11 @@
 # Bizoveya chronological activity and decision log
 
+Automated BZ-096/CW-096 verification:479 web tests/79 files,157 admin tests/17 files,60 ephemeral local migrations/24 SQL assertion executions, web typecheck/lint, both production builds with type/lint validation, boundaries, whitespace and585 local Markdown links passed. Guide77 and BZ-096/CW-096/MT216–219 visual projections are verified before delivery. Hosted/PostgREST/browser/mobile/true concurrency and all founder acceptance stay pending. No hosted SQL/provider request; admin standalone typecheck/lint not separately rerun.
+
+### BZ-096 — 2026-10-11 PKT — Qualified meeting execution snapshots
+
+Resolved main `a3c1b9234973469bf7d80b36c086d2bde35c703b`, inspected branches/open historical draft PR2, absent repository AGENTS and no active checkpoint lease. Continued in a clean current-main worktree, preserving the original dirty homepage screenshot. Added060 immutable private snapshot preparation, sanitized current fingerprint review, owner-only APIs, Founder desk controls and refresh projection. Rechecks acknowledged ready plan, enabled exact roster, approved context, agent/model/credential/connectivity/pricing, compatible output limits, unresolved spending and complete repeated-turn cost ceilings. Same-command retries preserve recorded preparation only; no AI work or reservation. MT216–219 and earlier unanswered tests remain pending. Next: independently authorized shared-budget meeting-turn accounting and guarded execution. First-four groups remain incomplete, office ON HOLD. No hosted/provider/settings/message/publication or repeated generation. See [77](77_QUALIFIED_MEETING_EXECUTION_SNAPSHOTS.md).
+
 Automated BZ-095/CW-095 verification: 471 web tests/78 files, 157 admin tests/17 files, 59 ephemeral local migrations/23 SQL assertion executions, admin typecheck/lint, both production builds with type/lint validation, application boundaries and whitespace passed. Guide76/activity/work/pending-test visual projections are checked in final HTML. Hosted/PostgREST/actual receipt/browser/mobile/concurrency and all founder tests remain pending; no provider or hosted operation.
 
 ### BZ-095 — 2026-10-11 PKT — Connected operator meeting receipt worker
