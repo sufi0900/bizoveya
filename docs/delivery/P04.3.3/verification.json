@@ -1,0 +1,28 @@
+{
+  "checkpoint": "P04.3.3.1",
+  "version": "1.20",
+  "phaseComplete": false,
+  "baseCommit": "b0686b3ec34492b9a33812ea2027f21053b0215b",
+  "branch": "phase/p04-3-3-durable-drafts",
+  "checkedAt": "2026-10-03T17:22:07.260846+00:00",
+  "webUnitTests": 319,
+  "adminUnitTests": 78,
+  "localSqlSteps": 51,
+  "sqlStatus": "passed",
+  "typechecks": "passed",
+  "appBoundaries": "passed",
+  "browserVisualAcceptance": "not performed",
+  "hostedMigrations": "not performed",
+  "providerRequests": "none",
+  "founderManualCases": {
+    "MT107": "connectivity and settlement evidenced",
+    "MT110-MT117": "pending"
+  },
+  "nextWork": "Bound-agent orchestration and shared spending reservations for durable generation; no runtime activation at this checkpoint",
+  "webBuild": "passed",
+  "adminBuild": "passed",
+  "targetedLint": "passed",
+  "docsProjection": "40 campaign status visual rendered in generated HTML",
+  "finishedAt": "2026-10-03T17:23:01.107428+00:00",
+  "initialBuildAttempt": "Web export cleanup ENOTEMPTY; removed generated .next only and rebuilt successfully. No source deletion."
+}

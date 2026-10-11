@@ -1,5 +1,12 @@
 # Spending controls and testing — P04.3.2 / 1.19
 
+## Current checkpoint — 1.20 / P04.3.3.1
+
+Private campaign draft storage is implemented at `/workspaces/[workspaceId]/sites/[siteId]/campaigns`, with saved campaign URLs ending in `/[campaignId]`. This checkpoint stores manually authored brief/blog/Pinterest/LinkedIn text; it makes no model request and does not publish. Additive migration033 follows032. P04.3.3 remains in progress: bound-agent orchestration, generation reservations, durable execution/usage and output review are the next work on the SAME `phase/p04-3-3-durable-drafts` branch. See [40 Campaign drafts](40_CAMPAIGN_DRAFTS_AND_TESTING.md).
+
+Founder screenshots on2026-10-03 confirm Gemini connectivity and MT107 settlement:20 input/7 output tokens, pricingv1, held/count amounts$0, run `e5be1ac3-5620-40e0-9498-97febb96fb15`. MT103 saved policy/history is evidenced; refresh persistence is not separately reported. Other unevidenced manual gates stay pending. Pakistan Token Factory onboarding is blocked; Builder application is under review. Nebius support email was drafted for the founder, not sent by the assistant. No main merge, production deployment, hosted SQL or provider call performed.
+
+
 ## Scope and implementation
 
 Admin host only: `/admin/spending`; API `/api/admin/spending`. No public admin link, route or API. Apply missing `032_spending_controls.sql` after031. Private tables store policies, immutable pricing history, a run ledger and charge activity. RLS and grants prevent direct client access. Existing connectivity history is preserved and explicitly untracked in this new ledger.

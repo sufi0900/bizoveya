@@ -182,3 +182,6 @@ Actor: ChatGPT Codex assistant, authorized by founder continuation while testing
 ## 1.18 / P04.3.1
 
 Added admin-only model assignments, additive031 and audit events; version/freshness/review validation. Updated25 living documents and added37,38,CONTINUATION andADR0015. Recorded branch/schedule/hackathon decisions and local Gemini evidence. Corrected truncated archive recovery. Spending and generation remain pending.
+
+## 1.20 / P04.3.3.1
+Private campaign draft persistence added; source checkpoint only, no AI execution or publication. Founder Gemini settlement evidence recorded.
