@@ -4,10 +4,11 @@ import { checkDatabaseError, getSite, requireId, WorkspaceError } from '@/featur
 import { archivePrivateMediaInputSchema, privateMediaInventorySchema, privateMediaRecordSchema, reviewPrivateMediaInputSchema } from './private-media-contracts';
 
 function check(error: { code?: string; message?: string } | null) {
-  if (['42P01', '42703', 'PGRST202', 'PGRST205'].includes(error?.code ?? '')) throw new WorkspaceError(503, 'Private media storage needs migration 043 after 042. Existing campaign visuals are unchanged.');
+  if (['42P01', '42703', 'PGRST202', 'PGRST205'].includes(error?.code ?? '')) throw new WorkspaceError(503, 'Private media storage needs migrations 043 and 044 after 042. Existing campaign visuals are unchanged.');
   if (error?.message === 'bz_media_unavailable') throw new WorkspaceError(404, 'This private media item is unavailable.');
   if (error?.message === 'bz_conflict') throw new WorkspaceError(409, 'This private media item changed in another session. Reload before continuing.');
   if (error?.message === 'bz_media_limit') throw new WorkspaceError(409, 'This private media pilot supports 32 items per creator/site and 20 immutable versions per item.');
+  if (error?.message === 'bz_media_byte_limit') throw new WorkspaceError(409, 'This private media pilot retains at most 160 MiB per creator/site across all versions, including archived media.');
   if (error?.message === 'bz_invalid_media') throw new WorkspaceError(400, 'Check the media review fields.');
   checkDatabaseError(error);
 }

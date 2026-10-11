@@ -1,0 +1,77 @@
+'use client';
+import { useEffect, useRef, useState } from 'react';
+import { agencyCommandSchema, agencyRecordSchema, channels, delegationProposal, voiceEntryState, type AgencyRecord } from './agency-contracts';
+
+export function AgencyRoom({ initial, owner, endpoint }: { initial: AgencyRecord[]; owner: boolean; endpoint: string }) {
+  const [records, setRecords] = useState(initial);
+  const [kind, setKind] = useState<'request' | 'meeting'>('request');
+  const [body, setBody] = useState('');
+  const [inputMode, setInputMode] = useState<'text' | 'corrected-transcript'>('text');
+  const [mode, setMode] = useState<'announcement' | 'deliberation'>('announcement');
+  const [selectedChannels, setSelectedChannels] = useState<string[]>([...channels]);
+  const [roles, setRoles] = useState<string[]>(['coordinator', 'content', 'quality']);
+  const [confirmed, setConfirmed] = useState(false);
+  const [reason, setReason] = useState('');
+  const [decisionConfirmed, setDecisionConfirmed] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [message, setMessage] = useState('');
+  const lock = useRef(false);
+  const attempt = useRef<{ body: string; id: string } | null>(null);
+  const dirty = Boolean(body.trim() || reason.trim());
+  useEffect(() => {
+    if (!dirty) return;
+    const unload = (event: BeforeUnloadEvent) => event.preventDefault();
+    const leave = (event: Event) => { if (!window.confirm('Discard unsaved proposal or decision text?')) event.preventDefault(); };
+    const link = (event: MouseEvent) => { if ((event.target as HTMLElement).closest('a[href]')) leave(event); };
+    window.addEventListener('beforeunload', unload); window.addEventListener('bizoveya:before-signout', leave); document.addEventListener('click', link, true);
+    return () => { window.removeEventListener('beforeunload', unload); window.removeEventListener('bizoveya:before-signout', leave); document.removeEventListener('click', link, true); };
+  }, [dirty]);
+  function change() { setConfirmed(false); }
+  async function save(record?: AgencyRecord, action?: 'accept-decision' | 'defer' | 'cancel') {
+    if (lock.current || !owner) return;
+    const draft = kind === 'request' ? { action: kind, instruction: body, channels: selectedChannels, reviewed: confirmed, inputMode } : { action: kind, agenda: body, participants: roles, mode, reviewed: confirmed, inputMode };
+    const key = JSON.stringify(draft);
+    if (!record && attempt.current?.body !== key) attempt.current = { body: key, id: crypto.randomUUID() };
+    const command = record ? { action, id: record.id, expectedVersion: record.version, reason, reviewed: decisionConfirmed } : { ...draft, id: attempt.current!.id };
+    const parsed = agencyCommandSchema.safeParse(command);
+    if (!parsed.success) { setMessage('Check the fields and explicitly confirm the proposal or decision.'); return; }
+    lock.current = true; setBusy(true); setMessage('');
+    try {
+      const response = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(parsed.data) });
+      const data = await response.json(); if (!response.ok) throw new Error(data.error ?? 'Save failed.');
+      const saved = agencyRecordSchema.parse(data);
+      setRecords(previous => [saved, ...previous.filter(item => item.id !== saved.id)]);
+      if (record) { setDecisionConfirmed(false); setReason(''); } else { setConfirmed(false); setBody(''); attempt.current = null; }
+      setMessage('Saved privately. No agent has executed this proposal, attended a meeting or changed approved knowledge.');
+    } catch (error) { setMessage(error instanceof Error ? error.message : 'Save failed.'); }
+    finally { lock.current = false; setBusy(false); }
+  }
+  return <section className="bz-agent-room">
+    <div className="bz-card"><h2>Founder desk</h2><p>Requests become proposed channel tasks for the existing content role. Pinterest and LinkedIn are channels, not separate hired agents. Saving costs no provider call.</p><p>{voiceEntryState.reason}</p>
+      <fieldset disabled={busy || !owner}><legend>{owner ? 'Prepare a private proposal' : 'Read-only proposals'}</legend>
+        <label>Proposal type<select value={kind} onChange={event => { setKind(event.target.value as typeof kind); change(); }}><option value="request">Content request</option><option value="meeting">Meeting agenda</option></select></label>
+        <label>Input source<select value={inputMode} onChange={event => { setInputMode(event.target.value as typeof inputMode); change(); }}><option value="text">Typed text</option><option value="corrected-transcript">Pasted and corrected transcript</option></select></label>
+        <label>{kind === 'request' ? 'Instruction' : 'Agenda'}<textarea maxLength={2000} value={body} onChange={event => { setBody(event.target.value); change(); }} /></label>
+        {kind === 'request' ? <fieldset><legend>Requested channels</legend>{channels.map(channel => <label key={channel}><input type="checkbox" checked={selectedChannels.includes(channel)} onChange={event => { setSelectedChannels(previous => event.target.checked ? [...previous, channel] : previous.filter(value => value !== channel)); change(); }} />{channel}</label>)}</fieldset> : <>
+          <label>Meeting mode<select value={mode} onChange={event => { setMode(event.target.value as typeof mode); change(); }}><option value="announcement">Announcement</option><option value="deliberation">Deliberation agenda</option></select></label>
+          <fieldset><legend>Requested roles (attendance has not occurred)</legend>{['coordinator', 'content', 'quality'].map(role => <label key={role}><input type="checkbox" checked={roles.includes(role)} onChange={event => { setRoles(previous => event.target.checked ? [...previous, role] : previous.filter(value => value !== role)); change(); }} />{role}</label>)}</fieldset>
+        </>}
+        <label><input type="checkbox" checked={confirmed} onChange={event => setConfirmed(event.target.checked)} />I reviewed the exact text and selections. Save a private proposal only.</label>
+        <button className="bz-button" disabled={!confirmed || !body.trim()} onClick={() => void save()}>Save proposal</button>
+      </fieldset><p role="status" aria-live="polite">{message}</p>
+    </div>
+    <div className="bz-card"><h2>Saved proposals and decisions</h2><p>Snapshots preserve the authorized catalog, approved sources and preferences at creation. They do not automatically become current knowledge or grant execution permission. Future execution must recheck current approvals and budget.</p>
+      <fieldset disabled={busy || !owner}><legend>Founder decision</legend><label>Decision reason<textarea maxLength={500} value={reason} onChange={event => { setReason(event.target.value); setDecisionConfirmed(false); }} /></label><label><input type="checkbox" checked={decisionConfirmed} onChange={event => setDecisionConfirmed(event.target.checked)} />I confirm this decision applies only to the selected saved proposal.</label></fieldset>
+      {!records.length ? <p>No saved proposals yet.</p> : records.map(record => {
+        const command = agencyCommandSchema.safeParse(record.document);
+        const tasks = command.success && command.data.action === 'request' ? delegationProposal(command.data) : [];
+        return <article key={record.id}><h3>{record.kind} · {record.status} · v{record.version}</h3><p style={{ whiteSpace: 'pre-wrap' }}>{String(record.document.instruction ?? record.document.agenda ?? '')}</p>
+          <p>Input source: {record.document.inputMode === 'corrected-transcript' ? 'Pasted and corrected transcript' : 'Typed text'}{record.kind === 'meeting' ? ` · ${record.document.mode === 'deliberation' ? 'Deliberation agenda' : 'Announcement'}` : ''}</p>
+          {tasks.length ? <ul>{tasks.map(task => <li key={task.channel}>{task.channel}: {task.role} · proposed · execution prerequisites pending</li>)}</ul> : <p>Requested roles: {Array.isArray(record.document.participants) ? record.document.participants.join(', ') : ''}. No agent attendance or acknowledgement recorded.</p>}
+          <details><summary>Saved context and event history</summary><pre style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' }}>{JSON.stringify({ snapshot: record.snapshot, events: record.events }, null, 2)}</pre></details>
+          <fieldset disabled={busy || !owner || !decisionConfirmed || !reason.trim() || record.status === 'cancelled'}><legend>Update this proposal</legend>{record.kind === 'meeting' ? <button className="bz-button" onClick={() => void save(record, 'accept-decision')}>Record founder decision</button> : null}<button className="bz-button" onClick={() => void save(record, 'defer')}>Defer proposal</button><button className="bz-button" onClick={() => void save(record, 'cancel')}>Cancel proposal</button></fieldset>
+        </article>;
+      })}
+    </div>
+  </section>;
+}

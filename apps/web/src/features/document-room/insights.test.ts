@@ -1,7 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { latestPackage, phases } from "./insights";
+import { events, latestPackage, phases, work } from "./insights";
 const row = (version: string) => `| ${version} / P01.4 | \`Bizoveya_${version}_Admin-Identity.zip\`; time external | Source, acceptance pending | Evidence |`;
 describe("document-room release projection", () => {
+  it('projects newest records correctly when checkpoints are prepended above chronological history', () => {
+    expect(work('| CW-080 | Foundation | Acceptance pending |\n| CW-079 | Storage | Pending |').at(-1)?.id).toBe('CW-080');
+    expect(events('### BZ-080 — 2026-10-10 UTC — Foundation\n### BZ-079 — 2026-10-11 PKT — Storage').at(-1)?.id).toBe('BZ-080');
+  });
   it("chooses numeric delivery order including double-digit subversions", () => { expect(latestPackage([row("1.9"), row("1.10"), row("1.2")].join("\n"))).toEqual({ version: "1.10", filename: "Bizoveya_1.10_Admin-Identity.zip", title: "Admin Identity" }); });
   it("compares grand phase before subversion", () => { expect(latestPackage([row("1.99"), row("2.0")].join("\n"))?.version).toBe("2.0"); });
   it("does not promote a next-package mention in prose", () => { expect(latestPackage(`${row("1.6")}\nNext package is 1.7: Bizoveya_1.7_Future.zip`)?.version).toBe("1.6"); });

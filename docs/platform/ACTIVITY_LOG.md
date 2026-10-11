@@ -1,5 +1,11 @@
 # Bizoveya chronological activity and decision log
 
+### BZ-080 — 2026-10-10 UTC — Grouped scope, media repair and agency planning
+
+Automated verification: 402 web tests/72 files, 45 migrations/nine local SQL assertion executions, typecheck, lint, production build and application boundaries passed. The failed initial build used stale generated export files; a reversible move of that generated folder and rebuild succeeded. Work/activity visual projections now order numeric record IDs correctly even with prepended checkpoints. Hosted setup, Vercel/browser/manual acceptance remains pending; admin source unchanged and not rerun.
+
+Resolved remote main4ea33a76014b7934022001f21738da74f3b481c6; historical branches/PR2 and absent AGENTS/lease inspected before edits. Founder groups media, assistant/delegation, meetings and voice into one delivery effort, defers routine manual acceptance, and reserves visual office/custom agents for later separate deliveries. This checkpoint delivers additive044 media hardening, real bounded image sanitization and additive045 private proposal/meeting-decision storage plus owner-reviewed planning UI. Live uploads/rendering, workers, agent meetings and voice remain unfinished; all four groups are not complete. No hosted SQL/provider/publication/settings change or repeated generation. Read [61 Grouped scope and four deferred checks](61_GROUPED_AGENCY_FOUNDATION_AND_TESTS.md). MT160–163 and all unrelated unanswered tests remain pending; earlier narrow founder passes remain unchanged.
+
 ### BZ-079 — 2026-10-11 PKT — Private media storage boundary
 
 Resolved mainf124601; inspected historical branches/PR2/no repository AGENTS/no active lease. Added043 private bucket/metadata, service-only sanitized-byte admission record and authenticated creator read/owner review/archive routes. Added local SQL/application denial/conflict tests plus guide60. No sanitizer, upload/download UI, renderer, hosted SQL, provider, settings or publication action. All founder tests remain pending.

@@ -17,10 +17,10 @@ export function work(markdown: string): Work[] {
   return markdown.split("\n").filter((line) => /^\| CW-\d+ \|/.test(line)).map((line) => {
     const [id, result, evidence] = cells(line);
     return { id, result: plain(result), evidence: plain(evidence) };
-  });
+  }).sort((a, b) => Number(a.id.slice(3)) - Number(b.id.slice(3)));
 }
 export function events(markdown: string): Event[] {
-  return [...markdown.matchAll(/^### (BZ-\d+) — ([^—\n]+) — ([^\n]+)/gm)].map((match) => ({ id: match[1], when: match[2].trim(), title: match[3].trim() }));
+  return [...markdown.matchAll(/^### (BZ-\d+) — ([^—\n]+) — ([^\n]+)/gm)].map((match) => ({ id: match[1], when: match[2].trim(), title: match[3].trim() })).sort((a, b) => Number(a.id.slice(3)) - Number(b.id.slice(3)));
 }
 
 /** Only recorded table rows count as deliveries; prose about a future ZIP does not. */

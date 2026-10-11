@@ -1,5 +1,18 @@
 # Founder manual testing record
 
+## Grouped first-four foundation — current source checkpoint
+
+| Test | Deferred acceptance scope | Status |
+|---|---|---|
+| MT160 | Missing043–045 setup and prior draft/template retention | Pending founder/operator evidence |
+| MT161 | Reviewed founder request, channel proposals, corrected transcript and refresh | Pending founder evidence |
+| MT162 | Meeting agenda, founder decision/defer/cancel history and refresh | Pending founder evidence |
+| MT163 | Roles, nonmembership, stale decisions, unsaved edits and existing exports | Pending founder evidence |
+
+Run these through the four combined steps in61; live upload/worker/voice tests will be added only with their implemented interfaces. These rows are not passes or completion of groups1–4.
+
+Founder groups media, assistant/delegation, meetings and voice into one delivery effort, defers routine manual acceptance, and reserves visual office/custom agents for later separate deliveries. This checkpoint delivers additive044 media hardening, real bounded image sanitization and additive045 private proposal/meeting-decision storage plus owner-reviewed planning UI. Live uploads/rendering, workers, agent meetings and voice remain unfinished; all four groups are not complete. No hosted SQL/provider/publication/settings change or repeated generation. Read [61 Grouped scope and four deferred checks](61_GROUPED_AGENCY_FOUNDATION_AND_TESTS.md). MT160–163 and all unrelated unanswered tests remain pending; earlier narrow founder passes remain unchanged.
+
 ## P04.3.4.4b — no new founder test
 
 Storage/server access is headless and upload remains disabled. Do not install043 only to test an unavailable interface. MT152–159 and all unrelated unanswered checks remain pending. See [60](60_PRIVATE_MEDIA_STORAGE_AND_SERVER_ACCESS.md).

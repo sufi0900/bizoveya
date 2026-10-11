@@ -1,5 +1,9 @@
 # Verified main delivery — P04.3.3 founder evidence checkpoint
 
+## Grouped first-four successor
+
+Additive044/045 media hardening and private agency planning preserve prior P04.3.3 evidence and history. Groups1–4 remain unfinished; founder acceptance is deferred, not passed. See [61 scope and four deferred checks](../../platform/61_GROUPED_AGENCY_FOUNDATION_AND_TESTS.md). Direct main delivery uses current remote expected-head, never local synthetic history or force. No hosted SQL/provider/settings/publication action.
+
 ## P04.3.4.4b successor storage note
 
 Additive043 and headless private-media server access do not change P04.3.3 evidence. See [60](../../platform/60_PRIVATE_MEDIA_STORAGE_AND_SERVER_ACCESS.md). No hosted SQL/provider/settings/publication or repeat generation.

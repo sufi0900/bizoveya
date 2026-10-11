@@ -1,5 +1,11 @@
 # Combined pending setup and manual tests
 
+## Grouped first-four foundation — current source checkpoint
+
+Pending new combined checks: MT160 migration setup/retention; MT161 founder requests/transcript source/refresh; MT162 meeting decisions/history; MT163 access/conflicts/unsaved text/existing exports. Follow the four steps in61 later. No immediate new credential field. Live image uploads, specialist execution, agent meetings and voice are not available for acceptance yet; their implementation remains unfinished.
+
+Founder groups media, assistant/delegation, meetings and voice into one delivery effort, defers routine manual acceptance, and reserves visual office/custom agents for later separate deliveries. This checkpoint delivers additive044 media hardening, real bounded image sanitization and additive045 private proposal/meeting-decision storage plus owner-reviewed planning UI. Live uploads/rendering, workers, agent meetings and voice remain unfinished; all four groups are not complete. No hosted SQL/provider/publication/settings change or repeated generation. Read [61 Grouped scope and four deferred checks](61_GROUPED_AGENCY_FOUNDATION_AND_TESTS.md). MT160–163 and all unrelated unanswered tests remain pending; earlier narrow founder passes remain unchanged.
+
 ## Private media storage — P04.3.4.4b pending items
 
 No manual step is added. Hosted043, real Storage bytes/sanitization/downloads/concurrency, visible upload/review/rendering and founder acceptance remain pending. Existing MT152–159 and unrelated checks remain open. See [60](60_PRIVATE_MEDIA_STORAGE_AND_SERVER_ACCESS.md).

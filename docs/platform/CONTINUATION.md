@@ -1,5 +1,11 @@
 # Bizoveya continuation checkpoint
 
+## Grouped first-four foundation — current source checkpoint
+
+Verified source: 402 web tests/72 files, 45 migrations/nine local SQL assertion executions, typecheck, lint, production build and boundaries. Work/activity visual projections now reflect current numeric record order. Remote base4ea33a76014b7934022001f21738da74f3b481c6; delivered successor is identifiable in main history. No active worker lease is retained at handoff.
+
+Founder groups media, assistant/delegation, meetings and voice into one delivery effort, defers routine manual acceptance, and reserves visual office/custom agents for later separate deliveries. This checkpoint delivers additive044 media hardening, real bounded image sanitization and additive045 private proposal/meeting-decision storage plus owner-reviewed planning UI. Live uploads/rendering, workers, agent meetings and voice remain unfinished; all four groups are not complete. No hosted SQL/provider/publication/settings change or repeated generation. Read [61 Grouped scope and four deferred checks](61_GROUPED_AGENCY_FOUNDATION_AND_TESTS.md). MT160–163 and all unrelated unanswered tests remain pending; earlier narrow founder passes remain unchanged.
+
 ## Private media storage — P04.3.4.4b / 2026-10-11 PKT
 
 Additive043 defines a private no-browser-policy bucket, creator/site/workspace metadata and service-only sanitized-byte admission record, with authenticated creator reads and owner review/archive routes. No byte sanitizer/upload/download UI or rendering is enabled. See [60](60_PRIVATE_MEDIA_STORAGE_AND_SERVER_ACCESS.md). Next: bounded server sanitizer and object lifecycle. All founder tests remain pending; do not apply043 solely for this hidden checkpoint.
