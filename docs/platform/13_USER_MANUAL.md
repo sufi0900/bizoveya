@@ -1,5 +1,8 @@
 # Bizoveya user manual — prelaunch working edition
 
+After migration063 and admin-only `BIZOVEYA_ENABLE_MEETING_EXECUTION=true`, an active consent shows **Run ordered turn N**. Review the checkbox and run one turn once; then refresh and inspect its private receipt before any next turn. Never retry an uncertain outcome. Nothing is published. Founder checks MT228–231 remain pending. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
+
+
 ## Shared meeting-turn accounting — 2026-10-12 PKT
 
 Spending controls now labels future meeting-turn rows by snapshot and ordinal and combines them with connectivity/campaign charges. The meeting worker is not connected. Later reconciliation uses the existing amount field and sample reason `Reviewed provider billing for this disposable meeting turn.` Only use real provider evidence; follow guide79.

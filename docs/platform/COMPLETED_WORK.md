@@ -1,5 +1,16 @@
 # Completed Bizoveya work only
 
+Automated BZ-099/CW-099 verification: 173 admin tests/19 files, 63 ephemeral local migrations/27 SQL assertion executions, admin standalone typecheck/lint, both production builds, application boundaries, whitespace, affected Markdown links and documentation projections passed. Web source is unchanged; its prior 480-test result is historical. No hosted SQL or provider request.
+
+### CW-099 — One-attempt private meeting-turn worker
+
+| Record | Completed source | Remaining evidence |
+|---|---|---|
+| CW-099 | Additive063 immutable request/result receipts; ordered server runtime; bounded approved-fact prompt; one provider attempt; operator recheck; atomic usage/result settlement; admin private projection and default-off control | MT228–231/hosted/browser/provider/concurrency pending; whole-deliberation completion, qualified optional AI visuals, live voice and first-four completion unfinished |
+
+See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md). This records source completion, not founder acceptance or a real provider result.
+
+
 Automated BZ-098/CW-098 verification: 164 admin tests/18 files, 62 ephemeral local migrations/26 SQL assertion executions, admin standalone typecheck/lint, both production builds, application boundaries, whitespace, 664 affected local Markdown links and guide/activity/work/pending-test visual projections passed. Web application source is unchanged and its 480-test prior result is historical, not rerun. Hosted/PostgREST/browser/mobile/true concurrency, real worker/provider billing and all founder acceptance remain pending. No hosted SQL, provider request or generation.
 
 ### CW-098 — Shared meeting-turn accounting

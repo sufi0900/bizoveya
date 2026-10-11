@@ -1,5 +1,8 @@
 # Combined pending setup and manual tests
 
+BZ-099/CW-099 source connects one ordered private meeting turn, but hosted migration063, admin-only activation, a disposable provider turn, persistence/order/access and genuine failure accounting checks remain pending as MT228–231. No live provider was called. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
+
+
 ## Shared meeting-turn accounting — 2026-10-12 PKT
 
 Combined setup now extends only through missing migration062, in order, with no new key or flag. MT224–227 are deferred with earlier tests. The worker-dependent checks cannot honestly pass until the next source slice exists; no service RPC should be called manually.

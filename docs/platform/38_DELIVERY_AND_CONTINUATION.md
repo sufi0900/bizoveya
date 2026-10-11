@@ -1,5 +1,8 @@
 # GitHub delivery and scheduled continuation
 
+BZ-099/CW-099 follows base `5fa3834990a2aae40605d9fdd68091d35d8de480` with additive063 and the default-off ordered meeting runtime. No hosted SQL/provider/publication/settings change occurred. MT228–231 remain pending. Next source boundary: immutable whole-deliberation completion/read model and reviewed downstream handoff. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
+
+
 ## Shared meeting-turn accounting — 2026-10-12 PKT
 
 Deliver from expected main `26ebd3b` by non-force update. This source accounting checkpoint is not hosted readiness or first-four completion. Do not infer Vercel/Supabase/manual acceptance.

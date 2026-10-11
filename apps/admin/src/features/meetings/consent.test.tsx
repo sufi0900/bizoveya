@@ -61,8 +61,8 @@ describe('actual SQL consent contract and admin boundary', () => {
 });
 describe('consent-only operator interface', () => {
   const render = (meetings = active) => renderToStaticMarkup(<MeetingConsentRoom initial={{ meetings }} />);
-  it('shows approved context, both explicit review fields and no provider or activation inputs', () => {
-    const html = render(); expect(html).toContain('Execution consent review reason'); expect(html).toContain('Revocation review reason'); expect(html).toContain('Save 15-minute consent only.'); expect(html).toContain('independent accounting are not connected yet'); expect(html).not.toContain('apiKey');
+  it('shows approved context, explicit one-attempt execution and no credential input', () => {
+    const html = render(); expect(html).toContain('Execution consent review reason'); expect(html).toContain('Revocation review reason'); expect(html).toContain('Save 15-minute consent only.'); expect(html).toContain('Run ordered turn 1'); expect(html).toContain('one private provider attempt'); expect(html).not.toContain('apiKey');
   });
   it('disables new consent for active, blocked and capped records while preserving revocation', () => {
     for (const meetings of [active, [{ ...active[0], blocked: true }], history]) {

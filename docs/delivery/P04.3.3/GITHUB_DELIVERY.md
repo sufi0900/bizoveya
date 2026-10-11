@@ -1,5 +1,12 @@
 # Verified main delivery — P04.3.3 founder evidence checkpoint
 
+Automated BZ-099/CW-099 verification: 173 admin tests/19 files, 63 ephemeral local migrations/27 SQL assertion executions, admin standalone typecheck/lint, both production builds, application boundaries, whitespace, affected Markdown links and documentation projections passed. Web source is unchanged and its prior 480-test result is historical. No hosted SQL/provider request/publication/settings change.
+
+## BZ-099/CW-099 meeting worker source delivery — 2026-10-12 PKT
+
+Resolved base `5fa3834990a2aae40605d9fdd68091d35d8de480`. Additive063 and the admin runtime connect one explicit ordered private turn with immutable request/result receipts and the 062 shared accounting contract. The default-off worker made no provider call during verification. MT228–231 and all earlier founder tests remain pending; first-four groups remain incomplete. See [guide80](../../platform/80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
+
+
 Automated BZ-098/CW-098 verification: 164 admin tests/18 files, 62 ephemeral local migrations/26 SQL assertion executions, admin standalone typecheck/lint, both production builds, application boundaries, whitespace, 664 affected local Markdown links and guide/activity/work/pending-test visual projections passed. Web application source is unchanged and its 480-test prior result is historical, not rerun. Hosted/PostgREST/browser/mobile/true concurrency, real worker/provider billing and all founder acceptance remain pending. No hosted SQL, provider request or generation.
 
 ## BZ-098/CW-098 accounting source delivery — 2026-10-12 PKT

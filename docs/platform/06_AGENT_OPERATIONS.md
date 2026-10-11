@@ -1,5 +1,8 @@
 # AI employees, meetings and interruptions
 
+BZ-099 runs only one explicitly reviewed, ordered private turn at a time. The selected role receives bounded approved facts and prior successful turn receipts; it has no tools or publication authority. Unknown usage, changed consent/roster/schedule or failed predecessor blocks later turns. Whole-deliberation completion is next. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
+
+
 ## Shared meeting-turn accounting — 2026-10-12 PKT
 
 Prepared + ready + consent still does not mean running. Each future ordered turn needs fresh current dependency checks and an independent reservation. Pause/revocation blocks new provider starts; already-started actual usage remains settleable. No reasoning/result exists in this slice.

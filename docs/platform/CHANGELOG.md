@@ -1,5 +1,10 @@
 # Living documentation changelog
 
+## One-attempt private meeting-turn worker — 2026-10-12 PKT
+
+BZ-099/CW-099 adds migration063, a default-off server worker and admin review control for one ordered private meeting turn. Request provenance is immutable before provider start; result and usage settle together; uncertain outcomes cannot be blindly retried. Approved citations, token limits, active consent, ordering, qualification, spending and MFA/admin recheck remain enforced. No hosted SQL or live provider request occurred. MT228–231 remain pending. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
+
+
 ## Shared meeting-turn accounting — 2026-10-12 PKT
 
 BZ-098/CW-098 adds062 independent meeting-turn reservations, provider-start markers, truthful settlement/reconciliation and shared UTC daily-budget enforcement across connectivity, campaign and meeting ledgers. Exact snapshot/consent/turn/current-dependency guards and ordered idempotent admission are implemented; safe pre-provider cancellation records zero, while unknown/overrun usage blocks fresh work. Admin spending projects sanitized meeting rows. No worker or provider call is connected. MT224–227 and every earlier unanswered test remain pending. Next: one-attempt bounded meeting worker and immutable private request/result receipts. First-four groups remain incomplete, live voice unfinished, office visualization ON HOLD, custom agents out of scope. See [79](79_SHARED_MEETING_TURN_ACCOUNTING.md).

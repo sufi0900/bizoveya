@@ -1,5 +1,8 @@
 # Data, schema and memory
 
+Additive063 stores immutable private meeting request and result receipts keyed one-to-one to the 062 turn ledger. Request hashes, output, tokens, errors and spending truth survive refresh without changing approved knowledge, campaign drafts or meeting decisions. MT228–231 remain pending. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
+
+
 ## Shared meeting-turn accounting — 2026-10-12 PKT
 
 Additive062 stores private meeting_turn_runs and immutable spending events, cascading from snapshot/site deletion. It contains accounting identity, captured pricing, token bounds/counts and provider-start time—no prompt/output/discussion. Admin projection exposes only sanitized snapshot/ordinal accounting metadata.

@@ -1,5 +1,12 @@
 # Bizoveya chronological activity and decision log
 
+Automated BZ-099/CW-099 verification: 173 admin tests/19 files, 63 ephemeral local migrations/27 SQL assertion executions, admin standalone typecheck/lint, both production builds, application boundaries, whitespace, affected Markdown links and documentation projections passed. Web application source is unchanged and its prior 480-test result is historical, not rerun. Hosted/PostgREST/browser/mobile/true concurrency, real provider billing and all founder acceptance remain pending. No hosted SQL or provider request.
+
+### BZ-099 — 2026-10-12 PKT — One-attempt private meeting-turn worker
+
+Connected the 062 ledger to a server-only ordered-turn runtime with additive063 immutable private request/result receipts, bounded approved-fact prompts, local citation validation, immediate operator recheck, one provider attempt and atomic result/usage settlement. Added an explicit admin review action, default-off flag and private receipt projection. No provider was called. MT228–231 remain pending; first-four groups are not complete. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
+
+
 Automated BZ-098/CW-098 verification: 164 admin tests/18 files, 62 ephemeral local migrations/26 SQL assertion executions, admin standalone typecheck/lint, both production builds, application boundaries, whitespace, 664 affected local Markdown links and guide/activity/work/pending-test visual projections passed. Web application source is unchanged and its 480-test prior result is historical, not rerun. Hosted/PostgREST/browser/mobile/true concurrency, real worker/provider billing and all founder acceptance remain pending. No hosted SQL, provider request or generation.
 
 ### BZ-098 — 2026-10-12 PKT — Shared meeting-turn accounting

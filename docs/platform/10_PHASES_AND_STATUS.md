@@ -1,5 +1,8 @@
 # Implementation phases and status ledger
 
+BZ-099/CW-099 source is complete for the one-attempt ordered meeting worker; MT228–231 remain pending. Group 3 still requires whole-deliberation completion and reviewed downstream handoff. Group 1 qualified optional AI visuals and Group 4 live voice remain unfinished. Group 5 office visualization remains ON HOLD; Group 6/custom agents is out of scope. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
+
+
 ## Shared meeting-turn accounting — 2026-10-12 PKT
 
 BZ-098/CW-098 adds062 independent meeting-turn reservations, provider-start markers, truthful settlement/reconciliation and shared UTC daily-budget enforcement across connectivity, campaign and meeting ledgers. Exact snapshot/consent/turn/current-dependency guards and ordered idempotent admission are implemented; safe pre-provider cancellation records zero, while unknown/overrun usage blocks fresh work. Admin spending projects sanitized meeting rows. No worker or provider call is connected. MT224–227 and every earlier unanswered test remain pending. Next: one-attempt bounded meeting worker and immutable private request/result receipts. First-four groups remain incomplete, live voice unfinished, office visualization ON HOLD, custom agents out of scope. See [79](79_SHARED_MEETING_TURN_ACCOUNTING.md).

@@ -1,5 +1,8 @@
 # Backend and super admin control contract
 
+Additive063 grants only service-role execution RPCs and the authenticated admin queue. The Node route requires the existing admin/MFA boundary, uses the service recorder server-side, rechecks the operator before provider start and never returns credentials. The new execution flag defaults false. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
+
+
 ## Shared meeting-turn accounting — 2026-10-12 PKT
 
 Migration062 service-only accounting APIs reserve, mark provider start, cancel unstarted and settle future turns. Authenticated admins only view/reconcile via existing spending controls. Private tables/helpers remain denied, including direct service-role table access; the application has no connected meeting worker.

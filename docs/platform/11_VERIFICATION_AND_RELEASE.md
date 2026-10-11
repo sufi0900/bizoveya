@@ -1,5 +1,8 @@
 # Verification, manual acceptance and release evidence
 
+BZ-099 automated verification covers the default-off one-attempt runtime, ordering, request-before-start choreography, operator recheck, citation rejection, failure settlement, migration ACLs and private projection with synthetic/injected providers only. Hosted SQL, real billing, browser/mobile, concurrency and MT228–231 remain pending. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
+
+
 Automated BZ-098/CW-098 verification: 164 admin tests/18 files, 62 ephemeral local migrations/26 SQL assertion executions, admin standalone typecheck/lint, both production builds, application boundaries, whitespace, 664 affected local Markdown links and guide/activity/work/pending-test visual projections passed. Web application source is unchanged and its 480-test prior result is historical, not rerun. Hosted/PostgREST/browser/mobile/true concurrency, real worker/provider billing and all founder acceptance remain pending. No hosted SQL, provider request or generation.
 
 ## Shared meeting-turn accounting — 2026-10-12 PKT

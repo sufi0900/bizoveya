@@ -1,5 +1,14 @@
 # Bizoveya continuation checkpoint
 
+Automated BZ-099/CW-099 verification: 173 admin tests/19 files, 63 ephemeral local migrations/27 SQL assertion executions, admin standalone typecheck/lint, both production builds, application boundaries, whitespace, affected Markdown links and documentation projections passed. Web application source is unchanged and its prior 480-test result is historical, not rerun. Hosted/PostgREST/browser/mobile/true concurrency, real provider billing and all founder acceptance remain pending. No hosted SQL, provider request, generation, publication or deployment-setting change.
+
+## One-attempt private meeting-turn worker — 2026-10-12 PKT
+
+Resolved source base `5fa3834990a2aae40605d9fdd68091d35d8de480`. Historical phase branches remain untouched; no repository AGENTS, open PR or active checkpoint lease was found. Resolve this slice's delivered successor from remote main. No active lease retained.
+
+BZ-099/CW-099 connects one explicit ordered private meeting turn through additive063 and the qualified provider adapter. Immutable request provenance precedes the provider-start marker; one-attempt output, citations, usage and result settlement are private and fail closed. Admin/MFA is rechecked immediately before provider start. The worker is default off behind `BIZOVEYA_ENABLE_MEETING_EXECUTION=true`; automated tests used injected/synthetic providers only. MT228–231 and all earlier unanswered founder tests remain pending. Next: whole-deliberation completion/read model and reviewed downstream handoff. First-four groups remain incomplete: qualified optional AI visuals and live voice are unfinished; office visualization stays ON HOLD and custom agents out of scope. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
+
+
 Automated BZ-098/CW-098 verification: 164 admin tests/18 files, 62 ephemeral local migrations/26 SQL assertion executions, admin standalone typecheck/lint, both production builds, application boundaries, whitespace, 664 affected local Markdown links and guide/activity/work/pending-test visual projections passed. Web application source is unchanged and its 480-test prior result is historical, not rerun. Hosted/PostgREST/browser/mobile/true concurrency, real worker/provider billing and all founder acceptance remain pending. No hosted SQL, provider request or generation.
 
 ## Shared meeting-turn accounting — 2026-10-12 PKT

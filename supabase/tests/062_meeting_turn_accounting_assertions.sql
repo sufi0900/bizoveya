@@ -124,8 +124,10 @@ do $$declare f dpf%rowtype;expected_ text;i integer;begin select * into f from d
  perform pg_temp.dexpect(format('select public.bz_record_meeting_turn_provider_start(%L,%L)',f.turn1,f.claim1),expected_);raise exception 'fixture_restore';
 exception when others then if sqlerrm<>'fixture_restore' then raise;end if;end;end loop;end;$$;
 set local role service_role;
+select public.bz_record_meeting_turn_request(turn1,claim1,jsonb_build_object('runtimeVersion','meeting-runtime-v1-ai7.0.127','instructions','Return one bounded private result.','prompt','Use approved facts only.','outputSchema','meeting-turn-result-v1','maxOutputTokens',600)) from dpf;
+select public.bz_record_meeting_turn_request(turn1,claim1,jsonb_build_object('runtimeVersion','meeting-runtime-v1-ai7.0.127','instructions','Return one bounded private result.','prompt','Use approved facts only.','outputSchema','meeting-turn-result-v1','maxOutputTokens',600)) from dpf;
 select public.bz_record_meeting_turn_provider_start(turn1,claim1) from dpf;
-select public.bz_finish_meeting_turn_spending(turn1,claim1,true,null,1200,600) from dpf;
+select public.bz_finish_meeting_turn_execution(turn1,claim1,jsonb_build_object('schema','meeting-turn-result-v1','summary','Prepare a private reviewed draft.','recommendations',jsonb_build_array('Review the private draft.'),'concerns','[]'::jsonb,'citations',jsonb_build_array(jsonb_build_object('sourceId',(select id from public.bizoveya_knowledge_sources where site_id=sid),'sourceVersion',2,'factId','f1'))),null,1200,600) from dpf;
 select public.bz_begin_meeting_turn(execution_id,consent_id,turn2,2,claim2,actor) from dpf;
 select public.bz_cancel_unstarted_meeting_turn(turn2,claim2) from dpf;
 reset role;
@@ -133,6 +135,7 @@ do $$begin
  if not exists(select 1 from bizoveya_private.meeting_turn_runs where id=(select turn1 from dpf) and status='succeeded' and spending_state='settled' and charged_micros=1800) then raise exception 'Meeting settlement mismatch';end if;
  if not exists(select 1 from bizoveya_private.meeting_turn_runs where id=(select turn2 from dpf) and status='failed' and spending_state='settled' and charged_micros=0 and provider_started_at is null) then raise exception 'Unstarted cancellation mismatch';end if;
  if (select count(*) from bizoveya_private.meeting_turn_spending_events where turn_id=(select turn1 from dpf))<>3 then raise exception 'Meeting events mismatch';end if;
+ if not exists(select 1 from bizoveya_private.meeting_turn_requests where turn_id=(select turn1 from dpf) and request_hash~'^[a-f0-9]{64}$') or not exists(select 1 from bizoveya_private.meeting_turn_results where turn_id=(select turn1 from dpf) and document->>'schema'='meeting-turn-result-v1') then raise exception 'Meeting request/result receipt mismatch';end if;
 end;$$;
 -- Cancelled turn cannot satisfy ordering; local fixture marks it succeeded to exercise unknown/reconciliation on later turns.
 update bizoveya_private.meeting_turn_runs set status='succeeded',error_code=null where id=(select turn2 from dpf);

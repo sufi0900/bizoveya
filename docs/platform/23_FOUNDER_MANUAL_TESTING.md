@@ -1,5 +1,17 @@
 # Founder manual testing record
 
+## One-attempt private meeting-turn worker — 2026-10-12 PKT
+
+| Test | Scope | Status |
+|---|---|---|
+| MT228 | Missing063 setup, admin-only flag and preservation of all existing records | Pending founder/operator |
+| MT229 | One disposable ordered provider turn, immutable request/result and one accounting record | Pending founder/provider |
+| MT230 | Refresh persistence, strict ordinal, active-consent and owner/admin access guards | Pending founder/hosted |
+| MT231 | Genuine preflight/provider failure, unknown/overrun blocking and evidence reconciliation | Pending founder/provider evidence |
+
+BZ-099/CW-099 connects the default-off one-attempt meeting worker. Automated tests used injected/synthetic providers only; no founder or live-provider pass is inferred. Use the exact four deferred steps in [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md). All earlier unanswered tests remain pending.
+
+
 ## Shared meeting-turn accounting — 2026-10-12 PKT
 
 | Test | Scope | Status |

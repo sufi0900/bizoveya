@@ -1,5 +1,8 @@
 # System architecture
 
+The BZ-099 meeting execution path is `explicit admin action → service reservation → immutable private request → admin/MFA recheck → provider-start marker → one provider attempt → atomic private result and usage settlement`. Additive063 denies direct table access and projects receipts only through the admin queue. It publishes nothing and exposes no external tools. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
+
+
 ## Shared meeting-turn accounting — 2026-10-12 PKT
 
 Accounting is now a separate prerequisite between consent and the future meeting worker. One global lock serializes all three ledgers. Reservation and settlement endpoints are service-only; admin can view/reconcile evidence, while members receive no new execution controls.

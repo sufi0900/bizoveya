@@ -1,5 +1,8 @@
 # Dependencies and change-impact register
 
+063 depends on060 qualified snapshots,061 active consent,062 shared accounting, current owner/platform-admin/MFA, selected provider credentials and the default-off admin flag. It preserves all existing migrations and uses the captured profile/pricing/limits. The next completion model must consume only truthful terminal turn receipts and cannot bypass unresolved accounting. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
+
+
 ## Shared meeting-turn accounting — 2026-10-12 PKT
 
 062 depends on060 immutable snapshots,061 active consent, current owner/admin authorization,054–059 plan/schedule/receipts, current agent/model/connectivity/pricing and032/035 accounting. It wraps current admission functions so meeting charges participate in old daily gates. The next worker must call reserve → record provenance → marker → provider → settle exactly once.
