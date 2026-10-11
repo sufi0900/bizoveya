@@ -1,5 +1,11 @@
 # Bizoveya chronological activity and decision log
 
+Automated BZ-095/CW-095 verification: 471 web tests/78 files, 157 admin tests/17 files, 59 ephemeral local migrations/23 SQL assertion executions, admin typecheck/lint, both production builds with type/lint validation, application boundaries and whitespace passed. Guide76/activity/work/pending-test visual projections are checked in final HTML. Hosted/PostgREST/actual receipt/browser/mobile/concurrency and all founder tests remain pending; no provider or hosted operation.
+
+### BZ-095 — 2026-10-11 PKT — Connected operator meeting receipt worker
+
+Resolved remote main `1ef91696a7c2a09e345e17946c553791989f0223`; inspected historical branches/open draft PR2, absent repository AGENTS and no active lease. Preserved the dirty homepage screenshot in the original checkout and used a clean current-main worktree. Implemented additive059 private owner-scoped admin queue, reviewed role-pinned deterministic receiver, guarded claim/finish retry and truthful acknowledgement/decline projection. This closes the source receipt-worker prerequisite, not AI deliberation execution or group completion. Hosted receipt/MFA/browser/concurrency and MT212–215 remain pending. No hosted/provider/settings/message/publication or repeated generation. Next: qualified bounded turn admission and immutable execution snapshots. See [76](76_OPERATOR_MEETING_PACKET_DELIVERY.md).
+
 Automated BZ-094/CW-094 verification:471 web tests/78 files,58 ephemeral local migrations/22 SQL assertion executions, web production build with type/lint validation, web lint, boundaries and whitespace passed. Guide75 and current activity/work/pending-test visual projections are verified at final build. Admin source/tests/build are unchanged and not rerun. Hosted/PostgREST/worker/true concurrency/browser/founder acceptance remains pending; no active lease retained.
 
 ### BZ-094 — 2026-10-11 PKT — Reviewed deliberation scheduling intent

@@ -1,5 +1,21 @@
 # Founder manual testing record
 
+## Operator packet delivery — MT212–215
+
+| Test | Scope | Status |
+|---|---|---|
+| MT212 | Missing059 setup and preserved drafts/media/meetings/history | Pending founder/operator |
+| MT213 | Reviewed disposable deliberation with exact selected participant packets | Pending founder |
+| MT214 | Operator receiver acknowledges real packets, refresh projects same receipts, bounded-plan readiness | Pending founder/hosted receiver |
+| MT215 | Unrelated-admin/MFA/privacy, paused/stale team, active claim and retry/concurrency guards | Pending founder/hosted concurrency |
+
+Four steps and samples: [76](76_OPERATOR_MEETING_PACKET_DELIVERY.md). No accepted generation should be repeated; all earlier unanswered tests remain pending.
+
+## Operator meeting packet delivery — 2026-10-11 PKT
+
+BZ-095/CW-095 supplies the missing receipt-worker prerequisite for bounded deliberation: additive059 owner-scoped admin queue, MFA-protected delivery and deterministic pinned-packet validation through existing054–055 claims/receipts. Reviewed delivery records acknowledged/declined only, with retry/lease/privacy guards; it makes no AI call, spending reservation or participation claim. Hosted setup and MT212–215 remain pending with all earlier unanswered founder tests. Qualified bounded turn admission/execution is next; first-four groups remain incomplete, live voice unfinished, office visualization ON HOLD and custom agents out of scope. See [76](76_OPERATOR_MEETING_PACKET_DELIVERY.md).
+
+
 ## Reviewed deliberation scheduling intent — 2026-10-11 PKT
 
 BZ-094/CW-094 adds owner-reviewed queue, pause, resume and terminal cancel intent with additive058, strict authenticated API, founder-desk controls and immutable event history. Queue/resume require the unchanged enabled pinned team, acknowledged packets and exact meeting/schedule versions. Pause/cancel remain possible after team or parent changes. Exact operation retries return current state without duplicated transitions; final history slots are reserved for safety controls. This is scheduling intent only: no worker admission, AI turn, reservation, spending or result is implemented. Qualified bounded turn execution is next; first-four groups remain incomplete, live voice unfinished, office visualization ON HOLD and custom agents out of scope. MT208–211 and all earlier unanswered founder tests remain pending. See [75](75_DELIBERATION_SCHEDULING_INTENT.md).

@@ -1,0 +1,24 @@
+'use client';
+import React,{useRef,useState} from 'react';
+import {deliveryInputSchema,deliveryQueueSchema,deliveryResultSchema,type deliverySetup} from './contracts';
+import type {z} from 'zod';
+export function MeetingDeliveryRoom({initial}:{initial:{meetings:z.infer<typeof deliveryQueueSchema>;setup:ReturnType<typeof deliverySetup>}}){
+ const [room,setRoom]=useState(initial),[reviewed,setReviewed]=useState<string|null>(null),[busy,setBusy]=useState(false),[message,setMessage]=useState('');
+ const lock=useRef(false),attempts=useRef(new Map<string,string>());
+ async function refresh(){if(lock.current)return;lock.current=true;setBusy(true);try{const response=await fetch('/api/admin/meetings',{cache:'no-store'}),data=await response.json();if(!response.ok)throw Error(data.error??'Refresh failed.');setRoom({meetings:deliveryQueueSchema.parse(data.meetings),setup:{recorderConfigured:data.setup?.recorderConfigured===true}});setReviewed(null);setMessage('Receipt records refreshed.');}catch(error){setMessage(error instanceof Error?error.message:'Refresh failed.');}finally{lock.current=false;setBusy(false);}}
+ async function deliver(meeting:typeof room.meetings[number],participant:typeof meeting.participants[number]){
+  if(lock.current)return;
+  const input={meetingId:meeting.meetingId,role:participant.role,agentId:participant.agentId,agentVersion:participant.agentVersion,meetingVersion:meeting.meetingVersion,sourceVersion:meeting.sourceVersion,rosterVersion:meeting.rosterVersion};
+  const key=JSON.stringify(input);if(!attempts.current.has(key))attempts.current.set(key,crypto.randomUUID());
+  const parsed=deliveryInputSchema.safeParse({...input,claimId:attempts.current.get(key),reviewed:reviewed===key});if(!parsed.success)return;
+  lock.current=true;setBusy(true);setMessage('Delivering the selected private packet to its receipt worker.');
+  try{const response=await fetch('/api/admin/meetings',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(parsed.data)}),data=await response.json();if(!response.ok)throw Error(data.error??'Delivery could not be confirmed. Refresh receipt records.');const result=deliveryResultSchema.parse(data.result);setRoom({meetings:deliveryQueueSchema.parse(data.meetings),setup:{recorderConfigured:data.setup?.recorderConfigured===true}});setReviewed(null);attempts.current.delete(key);setMessage(`${result.role}: ${result.state}. Receipt validates packet delivery only; no agent reasoning or task execution occurred.`);}catch(error){setMessage(error instanceof Error?error.message:'Delivery could not be confirmed. Refresh before another attempt.');}finally{lock.current=false;setBusy(false);}
+ }
+ return <section className="ba-agent-room"><p className="ba-eyebrow">PRIVATE MEETING DELIVERY</p><h1>Participant packet receipts</h1><p>Your latest 100 owner-requested invitation batches. Each selected role receives its pinned packet through a deterministic server handler. Acknowledgement records receipt only; agent reasoning and task execution require separate authorization.</p><p>{room.setup.recorderConfigured?'The private recorder is configured.':'The existing admin-only recording key is required before delivery.'}</p><button disabled={busy} onClick={()=>void refresh()}>Refresh receipt records</button><p role="status" aria-live="polite">{message}</p>
+ {room.meetings.length===0?<p>Prepare reviewed meeting invitations in the Founder desk first.</p>:room.meetings.map(meeting=><article key={meeting.meetingId}><h2>{meeting.agenda}</h2><p>Meeting {meeting.meetingId} · v{meeting.meetingVersion} · pinned team v{meeting.rosterVersion}</p>{meeting.blocked?<p>New delivery is blocked because the meeting or pinned team changed. Existing receipts remain visible.</p>:null}{meeting.participants.map(participant=>{
+  const key=JSON.stringify({meetingId:meeting.meetingId,role:participant.role,agentId:participant.agentId,agentVersion:participant.agentVersion,meetingVersion:meeting.meetingVersion,sourceVersion:meeting.sourceVersion,rosterVersion:meeting.rosterVersion});
+  const eligible=!meeting.blocked&&room.setup.recorderConfigured&&!participant.leaseActive&&['invited','claimed'].includes(participant.state);
+  return <fieldset key={participant.role} disabled={busy||!eligible}><legend>{participant.role} · {participant.state}</legend><p>Agent {participant.agentId} · v{participant.agentVersion}{participant.leaseActive?' · active delivery claim':''}</p>{participant.note?<p>{participant.note}</p>:null}<label><input type="checkbox" checked={reviewed===key} onChange={event=>setReviewed(event.target.checked?key:null)}/>I reviewed this meeting, pinned role and versions. Deliver this packet and record receipt only.</label><button disabled={reviewed!==key} onClick={()=>void deliver(meeting,participant)}>Deliver selected packet</button></fieldset>;
+ })}</article>)}
+ </section>;
+}

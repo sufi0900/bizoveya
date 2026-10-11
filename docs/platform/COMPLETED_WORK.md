@@ -1,5 +1,13 @@
 # Completed Bizoveya work only
 
+### CW-095 — Connected operator meeting receipt worker
+
+| Record | Completed source | Remaining evidence |
+|---|---|---|
+| CW-095 | Additive059 owner/MFA-scoped operator queue, reviewed pinned packet delivery, deterministic lineage/lease validation, exact retry and truthful receipt history via054–055 | Hosted setup/actual receipt/browser/concurrency and MT212–215 pending; qualified AI turn execution and first-four completion remain unfinished |
+
+See [76](76_OPERATOR_MEETING_PACKET_DELIVERY.md). Receipt handling makes no model call or spending reservation.
+
 ### CW-094 — Reviewed deliberation scheduling intent
 
 | Record | Completed source | Remaining evidence |
