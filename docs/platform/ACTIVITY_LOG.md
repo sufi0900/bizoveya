@@ -1,5 +1,12 @@
 # Bizoveya chronological activity and decision log
 
+Automated verification for BZ-091/CW-091: 461 web tests/78 files and 55 ephemeral local migrations/19 SQL assertion executions passed; web production build (including type/lint checks), application boundaries, whitespace and 426 affected local Markdown links passed. Guide72 is projected in the document room. Admin source/tests/build are unchanged and were not rerun; prior evidence is historical. Hosted SQL, actual workers, browser/mobile, concurrency and founder acceptance remain pending. No active checkpoint lease retained at delivery.
+
+
+### BZ-091 — 2026-10-11 PKT — Meeting receipt admission repair
+
+Closed null worker-identity and stale-delivery admission gaps through additive055. Added local regression assertions for paused/changed roster, owner revocation, meeting cancellation, expired leases, recovery, retries and ACL denial. Preserved existing receipt/history and the local homepage screenshot change; no hosted/provider/publication operation. See [72](72_MEETING_RECEIPT_ADMISSION_HARDENING.md). Manual acceptance remains pending.
+
 Automated evidence: 461 web tests across 78 files, 54 ephemeral local migrations/18 SQL assertion executions, web typecheck/lint, both production builds and application boundaries passed. Documentation projects BZ-090/CW-090/MT200–203 and guide71. Admin source is unchanged; its earlier 145 tests are historical, not claimed as rerun. Hosted/browser/mobile/real worker/concurrency and all founder acceptance remain pending. No active checkpoint lease is retained at handoff.
 
 ### BZ-090 — 2026-10-11 PKT — Versioned meeting invitations and explicit receipts

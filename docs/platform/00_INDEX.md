@@ -1,5 +1,10 @@
 # Bizoveya platform documentation — start here
 
+## Meeting receipt admission repair — 2026-10-11 PKT
+
+Additive 055 rejects omitted worker identity and rechecks owner membership, unchanged meeting and enabled pinned team before new delivery claims. Already claimed packets can still record truthful completion after pause/cancellation; completion grants no new execution authority. Null identity, stale/paused/revoked/cancelled admission, expiry recovery, retry and ACL regressions are covered locally. This repairs prerequisites for the next bounded deliberation-plan slice; first-four groups remain unfinished, office visualization ON HOLD and custom agents out of scope. All founder tests, including MT200–203, remain pending. No new UI field, provider call, hosted SQL, settings, messages, publication or repeated generation. Base main `0aee385a9ffa402809b28124225af7f523b1e6e6`; historical branches/PR2 inspected, no AGENTS or active lease. See [72 receipt repair](72_MEETING_RECEIPT_ADMISSION_HARDENING.md).
+
+
 ## Versioned meeting invitations and explicit receipts — 2026-10-11 PKT
 
 Group 3 now prepares owner-reviewed participant packets pinned to current enabled site-team agent versions after a reviewed meeting decision is distributed. Additive 054 records private invited/claimed/acknowledged/declined delivery states and immutable receipt events; it does not claim attendance, understanding, reasoning or task completion. Bounded deliberation, safe scheduling and live voice remain unfinished, so the first four groups are not complete. Office visualization remains ON HOLD and custom agents remain out of scope. See [71 contract and four deferred checks](71_VERSIONED_MEETING_INVITATIONS_AND_RECEIPTS.md). MT200–203 and earlier unanswered founder tests remain pending; no hosted SQL, provider call, setting, external message, publication or repeated generation.

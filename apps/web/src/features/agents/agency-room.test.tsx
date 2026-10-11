@@ -26,7 +26,7 @@ describe('meeting decision distribution presentation',()=>{
   expect(renderToStaticMarkup(createElement(AgencyRoom,{initial:[prepared],owner:true,endpoint}))).toContain('Prepare participant invitations');
   const invited=agencyRecordSchema.parse({...prepared,version:4,meetingInvitations:{meetingId:id,requestId,sourceVersion:3,rosterVersion:2,actorId:id,createdAt:'now',participants:[{role:'content',agentId:requestId,agentVersion:5,state:'acknowledged',claimExpiresAt:'later',respondedAt:'now',note:'Packet received.'}]}});
   const html=renderToStaticMarkup(createElement(AgencyRoom,{initial:[invited],owner:false,endpoint}));
-  expect(html).toContain('content · acknowledged');expect(html).toContain('not attendance, understanding or task completion');expect(html).not.toContain('Prepare participant invitations');
+  expect(html).toContain('content · acknowledged');expect(html).toContain('not attendance, understanding or task completion');expect(html).not.toContain('No agent attendance or acknowledgement recorded');expect(html).not.toContain('Prepare participant invitations');
  });
 });
 describe('saved campaign handoff presentation',()=>{

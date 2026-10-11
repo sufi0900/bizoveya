@@ -1,5 +1,16 @@
 # Completed Bizoveya work only
 
+Automated verification for BZ-091/CW-091: 461 web tests/78 files and 55 ephemeral local migrations/19 SQL assertion executions passed; web production build (including type/lint checks), application boundaries, whitespace and 426 affected local Markdown links passed. Guide72 is projected in the document room. Admin source/tests/build are unchanged and were not rerun; prior evidence is historical. Hosted SQL, actual workers, browser/mobile, concurrency and founder acceptance remain pending. No active checkpoint lease retained at delivery.
+
+
+### CW-091 — Meeting receipt admission source repair
+
+| Record | Completed source | Remaining evidence |
+|---|---|---|
+| CW-091 | Additive055 null identity rejection, fresh claim admission and safe receipt completion with regression coverage | Hosted installation, actual worker receipt, founder tests and true concurrency pending; no group completion |
+
+See [72](72_MEETING_RECEIPT_ADMISSION_HARDENING.md).
+
 Automated evidence: 461 web tests across 78 files, 54 ephemeral local migrations/18 SQL assertion executions, web typecheck/lint, both production builds and application boundaries passed. Documentation projects BZ-090/CW-090/MT200–203 and guide71. Admin source is unchanged; its earlier 145 tests are historical, not claimed as rerun. Hosted/browser/mobile/real worker/concurrency and all founder acceptance remain pending. No active checkpoint lease is retained at handoff.
 
 ### CW-090 — Versioned meeting invitation and receipt source

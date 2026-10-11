@@ -1,5 +1,7 @@
 # Versioned meeting invitations and explicit receipts
 
+Successor [72](72_MEETING_RECEIPT_ADMISSION_HARDENING.md) corrects missing identity checks and fresh delivery admission through additive055. Apply its corrected worker boundary when reading the 054 contract below.
+
 ## Implemented slice and honest boundary
 
 Group 3 now prepares one private participant packet for every role selected in an already reviewed and distributed founder meeting. Additive migration `054_meeting_participant_invitations.sql` preserves migrations 001–053, existing records, accepted output `80091597-06eb-4b8e-ae10-6239ae2b2b69`, media and reviews. The owner reviews the current meeting version and prepares invitations; each role is pinned to the current enabled site-team roster version, agent identity and agent version.
