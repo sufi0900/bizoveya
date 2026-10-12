@@ -1,5 +1,8 @@
 # Data, schema and memory
 
+BZ-102/CW-102 adds explicit interrupted-turn recovery and immutable snapshot closure through additive066, with admin controls and sanitized Founder desk status. Unknown provider usage requires billing reconciliation; no retry occurs. MT240–243 remain pending. First-four completion is still open; next is the consolidated source-to-plan audit of assistant/specialist, interruption/knowledge, AI visuals and live voice exits. Office visualization stays ON HOLD. See [83](83_MEETING_TERMINAL_RECOVERY_AND_CLOSURE.md).
+
+
 Additive065 stores immutable outcome/request lineage and exact commands. `agency_json` projects sanitized identities, instruction and channels only; private turn outputs remain admin-only. See [82](82_REVIEWED_MEETING_OUTCOME_REQUEST_HANDOFFS.md).
 
 Additive064 stores one immutable founder-reviewed outcome per execution snapshot. Its deterministic document retains ordered request hashes, private results/citations, known token totals and pinned meeting/plan/team versions without changing approved knowledge or creating work. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).

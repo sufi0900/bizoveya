@@ -1,5 +1,10 @@
 # Living documentation changelog
 
+## 2026-10-12 PKT — BZ-102/CW-102 meeting recovery and closure
+
+BZ-102/CW-102 adds explicit interrupted-turn recovery and immutable snapshot closure through additive066, with admin controls and sanitized Founder desk status. Unknown provider usage requires billing reconciliation; no retry occurs. MT240–243 remain pending. First-four completion is still open; next is the consolidated source-to-plan audit of assistant/specialist, interruption/knowledge, AI visuals and live voice exits. Office visualization stays ON HOLD. See [83](83_MEETING_TERMINAL_RECOVERY_AND_CLOSURE.md).
+
+
 ## 2026-10-12 PKT — BZ-101/CW-101 reviewed outcome handoff
 
 Added migration065 and explicit reviewed meeting-outcome to private-request handoff. Private turn text stays admin-only; exact retry is safe and no generation, spending, message or publication starts. MT236–239 remain pending. See [82](82_REVIEWED_MEETING_OUTCOME_REQUEST_HANDOFFS.md).

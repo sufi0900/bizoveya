@@ -1,5 +1,8 @@
 # Bizoveya user manual — prelaunch working edition
 
+BZ-102/CW-102 adds explicit interrupted-turn recovery and immutable snapshot closure through additive066, with admin controls and sanitized Founder desk status. Unknown provider usage requires billing reconciliation; no retry occurs. MT240–243 remain pending. First-four completion is still open; next is the consolidated source-to-plan audit of assistant/specialist, interruption/knowledge, AI visuals and live voice exits. Office visualization stays ON HOLD. See [83](83_MEETING_TERMINAL_RECOVERY_AND_CLOSURE.md).
+
+
 After reviewing a completed private meeting outcome, an authorized founder-admin can enter one follow-up instruction, choose channels, confirm and create one private request. It does not generate or publish. See [82](82_REVIEWED_MEETING_OUTCOME_REQUEST_HANDOFFS.md).
 
 After every planned private turn succeeds and spending is settled/reconciled, the admin meeting page shows **Review completed private outcome**. Inspect all receipts, enter the review reason, confirm, and save. Refresh to verify the immutable `reviewed` receipt. This creates no task or publication. MT232–235 remain pending. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).

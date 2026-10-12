@@ -1,5 +1,8 @@
 # Bizoveya platform documentation — start here
 
+BZ-102/CW-102 adds explicit interrupted-turn recovery and immutable snapshot closure through additive066, with admin controls and sanitized Founder desk status. Unknown provider usage requires billing reconciliation; no retry occurs. MT240–243 remain pending. First-four completion is still open; next is the consolidated source-to-plan audit of assistant/specialist, interruption/knowledge, AI visuals and live voice exits. Office visualization stays ON HOLD. See [83](83_MEETING_TERMINAL_RECOVERY_AND_CLOSURE.md).
+
+
 BZ-101/CW-101 adds the explicit reviewed-outcome to private-request boundary through additive065, preserving sanitized immutable lineage without exposing turn text or starting generation. MT236–239 remain pending; terminal recovery is next. See [82](82_REVIEWED_MEETING_OUTCOME_REQUEST_HANDOFFS.md).
 
 BZ-100/CW-100 adds deterministic whole-deliberation states and immutable private founder review through additive064. It starts no downstream action. MT232–235 remain pending; reviewed outcome handoff is next and first-four groups remain incomplete. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).

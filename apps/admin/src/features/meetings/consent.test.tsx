@@ -7,8 +7,8 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import type { SupabaseClient } from '@supabase/supabase-js';
 import type { z } from 'zod';
-import { meetingConsentInputSchema, meetingExecutionQueueSchema, meetingOutcomeHandoffInputSchema, meetingOutcomeReviewInputSchema } from './consent-contracts';
-import { controlMeetingExecutionConsent, handoffMeetingDeliberationOutcome, loadMeetingExecutionConsents, reviewMeetingDeliberationOutcome } from './consent-store';
+import { meetingRecoveryInputSchema, meetingConsentInputSchema, meetingExecutionQueueSchema, meetingOutcomeHandoffInputSchema, meetingOutcomeReviewInputSchema } from './consent-contracts';
+import { controlMeetingExecutionConsent, handoffMeetingDeliberationOutcome, loadMeetingExecutionConsents, recoverMeetingDeliberation, reviewMeetingDeliberationOutcome } from './consent-store';
 import { MeetingConsentRoom } from './consent-room';
 
 let input: z.infer<typeof meetingConsentInputSchema>, revoke: z.infer<typeof meetingConsentInputSchema>, active: z.infer<typeof meetingExecutionQueueSchema>, history: z.infer<typeof meetingExecutionQueueSchema>;
@@ -84,4 +84,24 @@ describe('founder outcome review boundary',()=>{
 describe('reviewed outcome handoff boundary',()=>{
  it('requires an independent request identity, explicit channels and no execution flags',()=>{const value={action:'handoff-outcome',outcomeId:crypto.randomUUID(),requestId:crypto.randomUUID(),fingerprint:'d'.repeat(64),instruction:'Prepare a private approved-context follow-up.',channels:['blog','linkedin'],reviewed:true as const};expect(meetingOutcomeHandoffInputSchema.parse(value)).toEqual(value);for(const invalid of [{...value,requestId:value.outcomeId},{...value,channels:[]},{...value,channels:['blog','blog']},{...value,reviewed:false},{...value,execute:true}])expect(meetingOutcomeHandoffInputSchema.safeParse(invalid).success).toBe(false);});
  it('calls the dedicated RPC and confirms exact sanitized lineage',async()=>{const base=active[0],outcomeId=crypto.randomUUID(),requestId=crypto.randomUUID(),fingerprint='e'.repeat(64),reason='Reviewed all private meeting evidence.',turn=base.summary.turns[0],result={schema:'meeting-turn-result-v1' as const,summary:'Private result.',recommendations:[],concerns:[],citations:[{sourceId:base.summary.knowledge[0].sourceId,sourceVersion:base.summary.knowledge[0].sourceVersion,factId:base.summary.knowledge[0].facts[0].id}]},document={schema:'meeting-deliberation-outcome-v1' as const,snapshotId:base.snapshotId,meetingId:base.meetingId,planId:base.summary.planId,meetingVersion:base.meetingVersion,scheduleVersion:base.summary.scheduleVersion,rosterVersion:base.summary.rosterVersion,status:'completed' as const,turns:[{turnId:crypto.randomUUID(),ordinal:1,role:turn.role,requestHash:'f'.repeat(64),result,inputTokens:1,outputTokens:2,spendingState:'settled' as const,finishedAt:'now'}],totals:{inputTokens:1,outputTokens:2},publish:false as const,externalDelivery:false as const},reviewedOutcome={id:outcomeId,snapshotId:base.snapshotId,fingerprint,reason,document,actorId:base.consents[0].actorId,createdAt:'now'},input={action:'handoff-outcome' as const,outcomeId,requestId,fingerprint,instruction:'Prepare a private approved-context follow-up.',channels:['blog' as const],reviewed:true as const},handoff={outcomeId,snapshotId:base.snapshotId,meetingId:base.meetingId,requestId,fingerprint,instruction:input.instruction,channels:input.channels,actorId:reviewedOutcome.actorId,createdAt:'now'},queue=meetingExecutionQueueSchema.parse([{...base,completion:{state:'reviewed',expectedTurns:base.summary.turns.length,recordedTurns:base.turns.length,fingerprint},reviewedOutcome,outcomeHandoff:handoff}]),f=client(queue);expect(await handoffMeetingDeliberationOutcome(f.db,input)).toEqual({meetings:queue});expect(f.rpc).toHaveBeenLastCalledWith('bz_admin_handoff_meeting_outcome',{p_input:input});});
+});
+
+describe('interrupted meeting recovery contract',()=>{
+ it('requires explicit reviewed exact identities and rejects authority expansion',()=>{
+  const value={action:'recover-turn',snapshotId:'00000000-0000-4000-8000-000000000001',turnId:'00000000-0000-4000-8000-000000000002',operationId:'00000000-0000-4000-8000-000000000003',reason:'Inspect the interrupted private turn.',reviewed:true};
+  expect(meetingRecoveryInputSchema.safeParse(value).success).toBe(true);
+  for(const invalid of [{...value,reviewed:false},{...value,turnId:value.snapshotId},{...value,operationId:value.turnId},{...value,retry:true},{...value,reason:'short'},{...value,reason:'Control\u0001character reason'}])expect(meetingRecoveryInputSchema.safeParse(invalid).success).toBe(false);
+ });
+ it('confirms the exact durable receipt and refuses ambiguous success',async()=>{
+  const base=structuredClone(active),snapshotId=base[0].snapshotId,operationId='00000000-0000-4000-8000-000000000003',turnId='00000000-0000-4000-8000-000000000002',reason='Inspect the interrupted private turn.';
+  base[0].recoveryReceipts=[{id:operationId,snapshotId,turnId,action:'recover-turn',state:'accounting_required',reason,actorId:base[0].consents[0].actorId,createdAt:'2026-10-12T00:00:00Z'}];
+  const command={action:'recover-turn' as const,snapshotId,operationId,turnId,reason,reviewed:true as const},good=client(base);
+  await expect(recoverMeetingDeliberation(good.db,command)).resolves.toEqual({meetings:base});expect(good.rpc).toHaveBeenCalledWith('bz_admin_recover_meeting',{p_input:command});
+  await expect(recoverMeetingDeliberation(client(active).db,command)).rejects.toThrow('Recovery could not be confirmed');
+  await expect(recoverMeetingDeliberation(client(base,null,{isAdmin:true,aal2:false}).db,command)).rejects.toThrow();
+ });
+ it('shows explicit recovery controls without automatic execution',()=>{
+  const html=renderToStaticMarkup(<MeetingConsentRoom initial={{meetings:active}}/>);
+  expect(html).toContain('Meeting recovery and closure');expect(html).toContain('Meeting recovery review reason');expect(html).toContain('Close this meeting snapshot');expect(html).toContain('without a provider retry');
+ });
 });

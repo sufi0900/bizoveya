@@ -1,5 +1,8 @@
 # System architecture
 
+BZ-102/CW-102 adds explicit interrupted-turn recovery and immutable snapshot closure through additive066, with admin controls and sanitized Founder desk status. Unknown provider usage requires billing reconciliation; no retry occurs. MT240–243 remain pending. First-four completion is still open; next is the consolidated source-to-plan audit of assistant/specialist, interruption/knowledge, AI visuals and live voice exits. Office visualization stays ON HOLD. See [83](83_MEETING_TERMINAL_RECOVERY_AND_CLOSURE.md).
+
+
 The BZ-101 path is `reviewed private outcome → explicit instruction/channels → existing private agency command → immutable receipt`. Complete evidence stays admin-only; members receive sanitized lineage. See [82](82_REVIEWED_MEETING_OUTCOME_REQUEST_HANDOFFS.md).
 
 The BZ-100 completion path is `immutable turn receipts → deterministic candidate/fingerprint → explicit founder review → immutable private outcome`. Missing/failed/unsettled turns cannot complete, and the outcome hard-codes no publication or external delivery. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).

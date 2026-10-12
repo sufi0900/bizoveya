@@ -3,14 +3,14 @@ import { adminApi } from '@/features/admin/api';
 import { adminSession, safeAdminError } from '@/features/admin/access';
 import { readInput } from '@/features/agents/input';
 import { meetingAdminInputSchema } from '@/features/meetings/consent-contracts';
-import { controlMeetingExecutionConsent, handoffMeetingDeliberationOutcome, loadMeetingExecutionConsents, reviewMeetingDeliberationOutcome } from '@/features/meetings/consent-store';
+import { controlMeetingExecutionConsent, handoffMeetingDeliberationOutcome, loadMeetingExecutionConsents, recoverMeetingDeliberation, reviewMeetingDeliberationOutcome } from '@/features/meetings/consent-store';
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 export const GET = () => adminApi(db => loadMeetingExecutionConsents(db));
 export async function POST(request: Request) {
   try {
     const { db } = await adminSession(), input = await readInput(request, meetingAdminInputSchema, 2000);
-    return NextResponse.json(input.action==='review-outcome'?await reviewMeetingDeliberationOutcome(db,input):input.action==='handoff-outcome'?await handoffMeetingDeliberationOutcome(db,input):await controlMeetingExecutionConsent(db,input), { headers: { 'Cache-Control': 'private, no-store' } });
+    return NextResponse.json(input.action==='recover-turn'||input.action==='close-meeting'?await recoverMeetingDeliberation(db,input):input.action==='review-outcome'?await reviewMeetingDeliberationOutcome(db,input):input.action==='handoff-outcome'?await handoffMeetingDeliberationOutcome(db,input):await controlMeetingExecutionConsent(db,input), { headers: { 'Cache-Control': 'private, no-store' } });
   } catch (cause) {
     const error = safeAdminError(cause);
     return NextResponse.json({ error: error.message, code: error.code }, { status: error.status, headers: { 'Cache-Control': 'private, no-store' } });

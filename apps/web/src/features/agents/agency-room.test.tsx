@@ -87,10 +87,17 @@ describe('deliberation scheduling intent presentation',()=>{
  const render=(data:unknown,owner=true)=>renderToStaticMarkup(createElement(AgencyRoom,{initial:[agencyRecordSchema.parse(data)],owner,endpoint}));
  it('requires a saved plan and explicit reason/version review without claiming execution',()=>{
   expect(render(base)).not.toContain('Scheduling review reason');const html=render(record);
-  expect(html).toContain('Scheduling review reason');expect(html).toContain('schedule v0');expect(html).toContain('Ready does not mean running');expect(html).toContain('qualified bounded turn executor');
+  expect(html).toContain('Scheduling review reason');expect(html).toContain('schedule v0');expect(html).toContain('Ready does not mean running');expect(html).toContain('admin meeting view');
  });
  it('projects persisted history for viewers and removes controls after terminal cancellation',()=>{
   const html=render({...record,meetingSchedule:schedule},false);expect(html).toContain('ready · v1');expect(html).toContain('Scheduling event history');expect(html).toContain('<fieldset disabled=""');
   expect(render({...record,meetingSchedule:{...schedule,state:'cancelled'}})).not.toContain('Save scheduling intent');
  });
+});
+
+it('shows persisted meeting closure for members without recovery reasons or turn text',()=>{
+ const record=agencyRecordSchema.parse({...base,kind:'meeting',meetingClosures:[{snapshotId:id,state:'stopped',createdAt:'now'}]});
+ const html=renderToStaticMarkup(createElement(AgencyRoom,{initial:[record],owner:false,endpoint}));
+ expect(html).toContain('closed · stopped');expect(html).toContain('this snapshot cannot run more turns');expect(html).not.toContain('Meeting recovery review reason');
+ expect(agencyRecordSchema.safeParse({...base,meetingClosures:[{snapshotId:id,state:'stopped',createdAt:'now',reason:'Private operator evidence'}]}).success).toBe(false);
 });

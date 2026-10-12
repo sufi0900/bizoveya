@@ -22,6 +22,7 @@ const participantInvitationSchema = z.object({ role: z.enum(['coordinator', 'con
 const executionTaskStateSchema = z.enum(['awaiting_authorization', 'running', 'awaiting_human_review', 'failed', 'recovery_required', 'cancelled']);
 export const agencyRecordSchema = z.object({
   meetingExecutionSnapshot: savedMeetingSnapshotSchema.nullable().default(null),
+  meetingClosures:z.array(z.object({snapshotId:z.uuid(),state:z.enum(['completed','stopped']),createdAt:z.string()}).strict()).max(50).default([]),
   meetingExecutionConsents: z.array(meetingConsentSchema).max(25).default([]),
   id: z.uuid(), kind: z.enum(['request', 'meeting']), version: z.number().int().positive(),
   status: z.enum(['proposed', 'decision-recorded', 'deferred', 'cancelled']),

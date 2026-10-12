@@ -1,5 +1,8 @@
 # Dependencies and change-impact register
 
+BZ-102/CW-102 adds explicit interrupted-turn recovery and immutable snapshot closure through additive066, with admin controls and sanitized Founder desk status. Unknown provider usage requires billing reconciliation; no retry occurs. MT240–243 remain pending. First-four completion is still open; next is the consolidated source-to-plan audit of assistant/specialist, interruption/knowledge, AI visuals and live voice exits. Office visualization stays ON HOLD. See [83](83_MEETING_TERMINAL_RECOVERY_AND_CLOSURE.md).
+
+
 065 depends on064 outcomes, truthful060–063 lineage, existing private request command and current owner/admin/MFA. No key/provider setting is added. Terminal recovery is next. See [82](82_REVIEWED_MEETING_OUTCOME_REQUEST_HANDOFFS.md).
 
 BZ-100 depends on migrations060–063 and truthful complete request/result/accounting receipts. Migration064 is additive and must be applied after063; no provider credential or new environment variable is required. Reviewed downstream handoff depends on this immutable outcome and remains unimplemented. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).

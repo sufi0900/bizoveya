@@ -2,6 +2,16 @@
 
 | ID | Check | Status |
 |---|---|---|
+| MT240 | Missing066 setup and preservation | Pending founder/operator |
+| MT241 | Genuine interrupted-turn recovery and no provider retry | Pending founder |
+| MT242 | Disposable closure, refresh and blocked fresh execution | Pending founder |
+| MT243 | Access, active/unresolved-accounting, changed retry and exact retry checks | Pending founder |
+
+Use [guide83](83_MEETING_TERMINAL_RECOVERY_AND_CLOSURE.md). Every earlier unanswered check remains pending.
+
+
+| ID | Check | Status |
+|---|---|---|
 | MT236 | Missing065 setup and preservation | Pending founder/operator |
 | MT237 | One outcome creates one private request and no downstream action | Pending founder |
 | MT238 | Refresh persistence and sanitized lineage | Pending founder |

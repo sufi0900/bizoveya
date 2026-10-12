@@ -1,5 +1,8 @@
 # AI employees, meetings and interruptions
 
+BZ-102/CW-102 adds explicit interrupted-turn recovery and immutable snapshot closure through additive066, with admin controls and sanitized Founder desk status. Unknown provider usage requires billing reconciliation; no retry occurs. MT240–243 remain pending. First-four completion is still open; next is the consolidated source-to-plan audit of assistant/specialist, interruption/knowledge, AI visuals and live voice exits. Office visualization stays ON HOLD. See [83](83_MEETING_TERMINAL_RECOVERY_AND_CLOSURE.md).
+
+
 BZ-101 permits no autonomous delegation: a second explicit founder-admin action creates one private request after outcome review. Generation, messaging and publication remain separate. See [82](82_REVIEWED_MEETING_OUTCOME_REQUEST_HANDOFFS.md).
 
 BZ-100 aggregates only complete successful settled/reconciled turns into a founder-reviewable private outcome. In-progress, failed, unknown/overrun and cancelled deliberations remain distinct. No agent receives work from the outcome yet; reviewed downstream handoff is next. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).

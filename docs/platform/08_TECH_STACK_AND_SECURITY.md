@@ -1,5 +1,8 @@
 # Stack, provider policy and security
 
+BZ-102/CW-102 adds explicit interrupted-turn recovery and immutable snapshot closure through additive066, with admin controls and sanitized Founder desk status. Unknown provider usage requires billing reconciliation; no retry occurs. MT240–243 remain pending. First-four completion is still open; next is the consolidated source-to-plan audit of assistant/specialist, interruption/knowledge, AI visuals and live voice exits. Office visualization stays ON HOLD. See [83](83_MEETING_TERMINAL_RECOVERY_AND_CLOSURE.md).
+
+
 Migration065 uses private RLS/no direct grants and rechecks original actors, current owner, admin/MFA, exact lineage plus unchanged meeting status/version. Member JSON omits private turn text. See [82](82_REVIEWED_MEETING_OUTCOME_REQUEST_HANDOFFS.md).
 
 Additive064 is provider-independent: it deterministically hashes existing private receipts and exposes them only through the MFA admin queue. RLS/no direct grants, current owner checks and immutable exact-command review apply. It performs no model or external request. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).
