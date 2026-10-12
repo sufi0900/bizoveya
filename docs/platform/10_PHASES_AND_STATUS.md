@@ -1,5 +1,7 @@
 # Implementation phases and status ledger
 
+BZ-103/CW-103 closes Group 3 source implementation for private announcement broadcast, acknowledged receipts, reviewed knowledge-draft handoff, bounded deliberation, downstream private requests and terminal recovery. Migration067 never auto-approves knowledge or starts provider/external work. MT244–247 remain pending, so acceptance is not claimed. First-four source completion remains open on Group1 qualified optional AI artwork, Group2 channel-specialist expansion and Group4 qualified live voice. See [84](84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md).
+
 BZ-102/CW-102 adds explicit interrupted-turn recovery and immutable snapshot closure through additive066, with admin controls and sanitized Founder desk status. Unknown provider usage requires billing reconciliation; no retry occurs. MT240–243 remain pending. First-four completion is still open; next is the consolidated source-to-plan audit of assistant/specialist, interruption/knowledge, AI visuals and live voice exits. Office visualization stays ON HOLD. See [83](83_MEETING_TERMINAL_RECOVERY_AND_CLOSURE.md).
 
 

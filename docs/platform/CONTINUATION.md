@@ -1,5 +1,11 @@
 # Bizoveya continuation checkpoint
 
+Automated BZ-103/CW-103 verification: 487 web tests/80 files, 181 admin tests/19 files, 67 ephemeral migrations/31 SQL assertion executions, both standalone typechecks/lints, both production builds, application boundaries and whitespace passed. Guide84 and the BZ-103/CW-103/MT244–247 projections are included in the built document room. SQL auth/receipts are synthetic; hosted067/PostgREST/browser/mobile/true concurrency and founder acceptance remain pending.
+
+BZ-103/CW-103 completes the documented Group 3 source workflow: acknowledged announcements can now create one owner-reviewed, unapproved Site knowledge draft with exact meeting/roster lineage and retry/access guards. Nothing is auto-approved, sent, generated or published. MT244–247 and all earlier unanswered founder tests remain pending. Group 1 qualified optional AI artwork, Group 2 channel-specialist expansion and Group 4 qualified live voice remain open; Group 5 stays ON HOLD and Group 6 out of scope. See [84](84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md).
+
+Next: expand the current three-role roster into the documented private channel-specialist delegation contract without weakening existing campaign compatibility. Qualified artwork and live voice remain provider-gated and must not be simulated.
+
 Automated BZ-102/CW-102 verification: 181 admin tests/19 files, 482 web tests/80 files, 66 ephemeral migrations/30 SQL assertion executions, both standalone typechecks/lints, both production builds, application boundaries, whitespace and 911 local Markdown links passed. Guide83, BZ-102/CW-102 and MT240–243 project into built documentation. SQL auth/provider evidence is synthetic; hosted/browser/mobile/true concurrency, provider billing and founder acceptance remain pending. No hosted SQL, provider call, message, publication or settings change.
 
 

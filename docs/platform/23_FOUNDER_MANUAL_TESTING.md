@@ -1,5 +1,14 @@
 # Founder manual testing record
 
+## MT244–247 — acknowledged announcement knowledge draft (pending)
+
+- **MT244:** Apply hosted067 after066 in the intended project; confirm existing meeting and knowledge history remains intact.
+- **MT245:** Complete a disposable announcement and all exact recipient acknowledgements, then save the sample source/fact from guide84. Confirm one unapproved draft and no generation/message/publication.
+- **MT246:** Refresh Agency planning and Site knowledge; confirm the same meeting lineage and Draft revision 1 persist, and approved lookup excludes it before separate approval.
+- **MT247:** Confirm viewer, stale version, incomplete acknowledgement, changed retry and second-handoff attempts fail without duplicate knowledge or events.
+
+Samples and expected results: [84](84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md). These and every earlier unanswered founder check remain pending.
+
 | ID | Check | Status |
 |---|---|---|
 | MT240 | Missing066 setup and preservation | Pending founder/operator |

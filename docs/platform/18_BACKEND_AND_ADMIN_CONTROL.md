@@ -1,5 +1,7 @@
 # Backend and super admin control contract
 
+`bz_prepare_announcement_knowledge` is an authenticated owner-only RPC behind exact announcement, version, roster and acknowledgement gates. It atomically creates revision-1 unapproved knowledge and immutable lineage; no admin/provider worker is invoked. See [84](84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md).
+
 BZ-102/CW-102 adds explicit interrupted-turn recovery and immutable snapshot closure through additive066, with admin controls and sanitized Founder desk status. Unknown provider usage requires billing reconciliation; no retry occurs. MT240–243 remain pending. First-four completion is still open; next is the consolidated source-to-plan audit of assistant/specialist, interruption/knowledge, AI visuals and live voice exits. Office visualization stays ON HOLD. See [83](83_MEETING_TERMINAL_RECOVERY_AND_CLOSURE.md).
 
 

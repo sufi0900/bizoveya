@@ -1,5 +1,11 @@
 # Verified main delivery — P04.3.3 founder evidence checkpoint
 
+Automated BZ-103/CW-103 verification passed: 487 web tests, 181 admin tests, 67 migrations/31 SQL assertions, both typechecks/lints/builds, boundaries and whitespace. Hosted067/browser/founder acceptance remain pending.
+
+## BZ-103/CW-103 acknowledged announcement knowledge draft delivery
+
+Base remote main `8a145943f1e4981117a1f084e279cefc120aac06`. Additive067 and the Agency planning/API workflow save one acknowledged announcement as an unapproved private knowledge draft with immutable lineage. No hosted SQL/provider/message/publication/settings change. MT244–247 remain pending; exact delivered successor is recorded in main history. See [guide84](../../platform/84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md).
+
 Automated BZ-102/CW-102 verification: 181 admin tests/19 files, 482 web tests/80 files, 66 ephemeral migrations/30 SQL assertion executions, both standalone typechecks/lints, both production builds, application boundaries, whitespace and 911 local Markdown links passed. Guide83, BZ-102/CW-102 and MT240–243 project into built documentation. SQL auth/provider evidence is synthetic; hosted/browser/mobile/true concurrency, provider billing and founder acceptance remain pending. No hosted SQL, provider call, message, publication or settings change.
 
 

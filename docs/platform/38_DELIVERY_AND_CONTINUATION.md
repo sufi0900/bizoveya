@@ -1,5 +1,7 @@
 # GitHub delivery and scheduled continuation
 
+BZ-103/CW-103 follows base `8a145943f1e4981117a1f084e279cefc120aac06` with additive067 and the complete acknowledged-announcement knowledge-draft workflow. Expected-head non-force main delivery only after full verification. No active lease is retained. Next source boundary is Group2 channel-specialist expansion; Group1 artwork and Group4 live voice remain capability-gated. See [84](84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md).
+
 BZ-102/CW-102 adds explicit interrupted-turn recovery and immutable snapshot closure through additive066, with admin controls and sanitized Founder desk status. Unknown provider usage requires billing reconciliation; no retry occurs. MT240–243 remain pending. First-four completion is still open; next is the consolidated source-to-plan audit of assistant/specialist, interruption/knowledge, AI visuals and live voice exits. Office visualization stays ON HOLD. See [83](83_MEETING_TERMINAL_RECOVERY_AND_CLOSURE.md).
 
 

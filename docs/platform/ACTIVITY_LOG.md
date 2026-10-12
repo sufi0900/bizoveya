@@ -1,5 +1,11 @@
 # Bizoveya chronological activity and decision log
 
+Automated BZ-103/CW-103 evidence: 487 web tests/80 files, 181 admin tests/19 files, 67 ephemeral migrations/31 SQL assertion executions, both typechecks/lints/builds, application boundaries and whitespace passed. Built documentation includes guide84 and current status/manual projections. Hosted067/PostgREST/browser/mobile/true concurrency and all founder acceptance remain pending.
+
+### BZ-103 — 2026-10-12 PKT — Acknowledged announcement knowledge drafts
+
+Resolved remote main `8a145943f1e4981117a1f084e279cefc120aac06`; inspected historical phase branches/open draft PRs, repository instructions and lease state. No AGENTS or active checkpoint lease was found. Added067 owner-only announcement-to-unapproved-knowledge-draft handoff, exact acknowledgement/version/retry guards, immutable lineage, Agency planning controls and member-safe projection. This closes Group3 source, not hosted activation or founder acceptance. No hosted SQL/provider/settings/message/publication or repeated generation. MT244–247 remain pending. See [84](84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md).
+
 Automated BZ-102/CW-102 verification: 181 admin tests/19 files, 482 web tests/80 files, 66 ephemeral migrations/30 SQL assertion executions, both standalone typechecks/lints, both production builds, application boundaries, whitespace and 911 local Markdown links passed. Guide83, BZ-102/CW-102 and MT240–243 project into built documentation. SQL auth/provider evidence is synthetic; hosted/browser/mobile/true concurrency, provider billing and founder acceptance remain pending. No hosted SQL, provider call, message, publication or settings change.
 
 

@@ -1,5 +1,11 @@
 # Living documentation changelog
 
+## BZ-103 / CW-103 — acknowledged announcement knowledge drafts
+
+- Added additive067 and the owner-reviewed announcement-to-Site-knowledge draft workflow.
+- Requires all pinned packet acknowledgements and exact current meeting version; retains immutable agenda, decision, roster, document and actor lineage.
+- Saves revision 1 as unapproved and keeps approval, model execution, messaging and publication separate.
+
 ## 2026-10-12 PKT — BZ-102/CW-102 meeting recovery and closure
 
 BZ-102/CW-102 adds explicit interrupted-turn recovery and immutable snapshot closure through additive066, with admin controls and sanitized Founder desk status. Unknown provider usage requires billing reconciliation; no retry occurs. MT240–243 remain pending. First-four completion is still open; next is the consolidated source-to-plan audit of assistant/specialist, interruption/knowledge, AI visuals and live voice exits. Office visualization stays ON HOLD. See [83](83_MEETING_TERMINAL_RECOVERY_AND_CLOSURE.md).
