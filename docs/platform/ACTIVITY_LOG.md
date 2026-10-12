@@ -1,5 +1,11 @@
 # Bizoveya chronological activity and decision log
 
+## 2026-10-12 — BZ-106 Group 2 source closure
+
+Audited the full founder-request, approved-context onboarding, reviewed hiring, campaign handoff, durable execution/recovery and channel-specialist chain. Added070 so a succeeded shared run with an absent requested channel reports `output_missing` instead of falling back to `prepared`; stronger terminal/recovery evidence retains precedence. Added strict web parsing/rendering coverage and guide87. This closes Group2 source only; MT256–259 and all earlier founder tests remain pending. No hosted SQL, provider call, setting, message or publication.
+
+Automated verification: 495 web tests/81 files, 181 admin tests/19 files, 70 ephemeral migrations/34 SQL assertion executions, both standalone typechecks/lints, both production builds, application boundaries and whitespace passed. The web build generated 143 static pages. Hosted/browser/provider/founder evidence remains pending.
+
 ## 2026-10-12 — BZ-105 channel specialist runtime lineage
 
 Implemented additive069 immutable delegation/campaign/run lineage and a member-safe per-channel execution/read model over the existing single Content-stage runtime. Added strict web contracts, Founder-desk compatibility/terminal projection, SQL assertions and guide86. No extra provider path, hosted SQL, spending reservation, settings change, message or publication. MT252–255 remain pending; Group2 is not yet declared complete.

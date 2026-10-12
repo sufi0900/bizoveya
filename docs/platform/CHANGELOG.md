@@ -1,5 +1,7 @@
 # Living documentation changelog
 
+- BZ-106/CW-106: complete the documented Group2 source audit; add migration070 and strict web coverage so missing requested output is explicit as `output_missing`. Hosted activation and MT256–259 remain pending; Groups1 and4 are provider-gated.
+
 - BZ-105: pin reviewed Blog/Pinterest/LinkedIn delegation to the existing single Content-stage run, preserving one-attempt accounting/recovery and projecting evidence-backed channel states. Added migration069, contracts/UI/tests and guide86; founder acceptance remains pending.
 
 ## BZ-104 / CW-104 — private channel specialist delegation

@@ -1,5 +1,7 @@
 # Founder manual testing record
 
+MT256–259 remain pending for Group2 source closure: apply070 after069 and preserve history; refresh the existing accepted run without regenerating; use only a disposable local/operator fixture to confirm exact `output_missing`; verify terminal precedence and member privacy. Exact expectations are in [87](87_GROUP_TWO_SOURCE_CLOSURE.md). Source completion is not founder acceptance.
+
 MT252–255 are pending: apply069 after068; prepare one delegated Blog+LinkedIn snapshot; verify refresh-to-terminal channel states; test undelegated/viewer/stale/recovery negatives. Exact samples and expected results are in [86](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md). Do not repeat successful live generation merely to test preparation.
 
 ## MT248–251 — private channel specialists — pending

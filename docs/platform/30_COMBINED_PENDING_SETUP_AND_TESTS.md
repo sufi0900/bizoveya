@@ -1,5 +1,7 @@
 # Combined pending setup and manual tests
 
+Pending MT256–259: apply only missing migration070 after069, refresh the existing accepted run without regenerating, verify `output_missing` only in a disposable local/operator negative fixture, and check terminal/access precedence. No new credential or input field is introduced. See [87](87_GROUP_TWO_SOURCE_CLOSURE.md). Group2 source is complete; acceptance is not.
+
 Pending MT252–255: hosted069, delegated snapshot lineage, refresh/terminal review projection and undelegated/viewer/stale/recovery negatives. Preparation itself must show one shared Content stage and must not start a provider call. See [86](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).
 
 **Pending MT248–251:** apply only missing hosted migration068; configure the reviewed private Blog/Pinterest/LinkedIn specialist roster; delegate one disposable Blog+LinkedIn request; verify persistence and viewer/stale/paused denials. Exact fields and expectations: [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md). No provider call or publication is part of these checks.

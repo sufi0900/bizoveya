@@ -1,5 +1,7 @@
 # Implementation phases and status ledger
 
+BZ-106/CW-106 completes Group2 source implementation after a full boundary audit. Additive070 reports a missing requested channel from a succeeded shared run as `output_missing` rather than `prepared`, preserving stronger failure/recovery evidence and the one-Content-stage provider limit. MT256–259 and all earlier founder acceptance remain pending. Group3 source is complete; Group1 artwork and Group4 live voice remain genuine provider-gated exits. See [87](87_GROUP_TWO_SOURCE_CLOSURE.md).
+
 Current Group2 checkpoint BZ-105/CW-105 connects reviewed channel responsibility to one compatible Content-stage run and evidence-backed terminal/recovery projection. This is implemented source, not founder acceptance or Group2 completion. MT252–255 remain pending; the next slice is the Group2 closure audit. See [86](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).
 
 BZ-104/CW-104 implements the first Group2 channel-specialist expansion slice: private versioned Blog/Pinterest/LinkedIn assignments plus immutable reviewed request delegation through additive068. Existing campaign stages and accepted history remain compatible and no execution is inferred. MT248–251 remain pending. Group2 still needs delegation-to-runtime lineage and channel-terminal result/recovery projection. See [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).

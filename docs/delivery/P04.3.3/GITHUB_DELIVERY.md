@@ -1,5 +1,9 @@
 # Verified main delivery — P04.3.3 founder evidence checkpoint
 
+## BZ-106 / CW-106 Group 2 source closure
+
+Resolved remote base `e629a339af0957ffdb81f64bc1382d1732b8ec97`; historical phase branches remain untouched, repository AGENTS is absent and no active checkpoint lease is recorded. Additive070 and strict web coverage make absent requested output from a succeeded shared run explicit as `output_missing`, while preserving stronger failed/cancelled/recovery evidence and the single Content-stage provider boundary. The audited Group2 source chain is complete; MT256–259 and all earlier founder tests remain pending. Groups1 and4 remain genuinely provider-gated, Group3 source is complete, Group5 ON HOLD and Group6 out of scope. No hosted SQL/provider/settings/message/publication. See [guide87](../../platform/87_GROUP_TWO_SOURCE_CLOSURE.md).
+
 ## BZ-105 / CW-105 channel specialist runtime lineage
 
 Resolved remote base `4f658481af88a1af0e3a7784b4bb1d09d78f8321`; historical branches/draft PR2 remain untouched and no active checkpoint lease was found. Additive069 records immutable request/delegation/campaign/run lineage whenever a reviewed delegated request prepares its compatible generation snapshot. The existing three-stage runtime remains unchanged: there is one shared Content-stage provider attempt, existing authorization/spending/recovery gates remain authoritative, and requested channels project only evidence-backed state/output/review status. Legacy nondelegated preparations stay readable; the Founder desk requires delegation before offering a new preparation. MT252–255 remain pending. No hosted SQL, provider call, deployment setting, message or publication. See [guide86](../../platform/86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).

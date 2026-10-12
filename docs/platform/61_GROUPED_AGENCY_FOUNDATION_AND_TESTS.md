@@ -2,6 +2,8 @@
 
 ## Site team activation and safe checkpoint pause — 2026-10-11 PKT
 
+Group2 source implementation is complete through additive070 and the audit in [87](87_GROUP_TWO_SOURCE_CLOSURE.md). MT256–259 plus every earlier unanswered founder check remain pending. Group1 qualified optional artwork and Group4 qualified live voice remain provider-gated; Group3 source is complete and Group5 stays ON HOLD.
+
 Group2 now has owner-reviewed site-specific Coordinator/Content/Quality selections, enable/pause controls and immutable history through additive050. Preparation/authorization/new reservation/provider-start boundaries enforce pinned roster versions; started work can still settle. Onboarding respects the selected/paused team. All founder acceptance stays pending until before public reveal; coding continues independently within real dependencies. Assistant dispatch/recovery, meetings, optional AI and live voice remain unfinished; office ON HOLD. See [67 contract and four deferred checks](67_SITE_TEAM_ACTIVATION_AND_SAFE_PAUSE.md). MT184–187 and prior unanswered tests remain pending. No hosted SQL/provider/settings/publication or regeneration; no active checkpoint lease remains at handoff.
 
 ## Approved-context onboarding assessment — 2026-10-11 PKT

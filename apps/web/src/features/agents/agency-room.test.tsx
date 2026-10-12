@@ -88,6 +88,11 @@ describe('linked generation presentation',()=>{
   const record=agencyRecordSchema.parse({...base,handoff,channelDelegation,execution:{sourceVersion:2,actorId:id,createdAt:'now',run:{id,campaignId:id,campaignVersion:1,status:'succeeded',createdAt:'now',startedAt:'then',finishedAt:'now',stageCount:3,outputAvailable:true}},specialistRuntime});
   const html=renderToStaticMarkup(createElement(AgencyRoom,{initial:[record],owner:false,endpoint}));expect(html).toContain('one shared Content-stage provider attempt');expect(html).toContain('pinterest specialist · accepted · private output saved');expect(html).not.toContain('Prepare linked generation snapshot');
  });
+ it('surfaces a missing requested channel from a succeeded shared run',()=>{
+  const specialistRuntime={runId:id,delegationSourceVersion:1,rosterVersion:2,campaignId:id,campaignVersion:1,executionMode:'shared-content-stage',providerCallsPerContentStage:1,actorId:id,createdAt:'now',sharedContentExecution:{agentId:id,agentVersion:1,status:'succeeded',spendingState:'settled'},channels:[{channel:'linkedin',specialistKind:'content',agentId:id,agentVersion:1,state:'output_missing',outputAvailable:false}]};
+  const record=agencyRecordSchema.parse({...base,handoff,channelDelegation,execution:{sourceVersion:2,actorId:id,createdAt:'now',run:{id,campaignId:id,campaignVersion:1,status:'succeeded',createdAt:'now',startedAt:'then',finishedAt:'now',stageCount:3,outputAvailable:true}},specialistRuntime});
+  const html=renderToStaticMarkup(createElement(AgencyRoom,{initial:[record],owner:false,endpoint}));expect(html).toContain('linkedin specialist · output_missing');expect(html).not.toContain('linkedin specialist · output_missing · private output saved');
+ });
 });
 
 describe('deliberation scheduling intent presentation',()=>{

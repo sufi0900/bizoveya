@@ -1,5 +1,7 @@
 # GitHub delivery and scheduled continuation
 
+BZ-106/CW-106 closes Group2 source with additive070 and the audited terminal projection in guide87. Deliver only after full automated verification and an expected-head non-force main update. Keep hosted070 and MT256–259 pending; do not claim first-four completion because qualified artwork and live voice remain provider-gated. No active lease is retained. See [87](87_GROUP_TWO_SOURCE_CLOSURE.md).
+
 Current successor work is BZ-105/CW-105 additive069 and guide86. After verified delivery, continue with the Group2 closure audit; do not start Group5, simulate qualified artwork/live voice or repeat accepted generation. MT252–255 stay pending. See [86](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).
 
 BZ-104/CW-104 follows remote main `472113ff36c05669b669ea404e53bd97aa9f7858` with additive068 and the private channel-specialist roster/delegation contract. Deliver only by verified expected-head non-force update. No lease is retained. Next source boundary is delegation-to-compatible-runtime lineage and truthful channel terminal/recovery projection; Group1/4 provider gates remain. See [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).

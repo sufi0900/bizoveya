@@ -1,5 +1,7 @@
 # Verification, manual acceptance and release evidence
 
+BZ-106/CW-106 automated closure evidence covers migration070 ordering/privacy, the migrated missing-channel behavior, strict web parsing and Founder-desk rendering. Hosted070, PostgREST, browser/mobile, true concurrency and MT256–259 remain pending; Group2 source completion does not mean release acceptance. See [87](87_GROUP_TWO_SOURCE_CLOSURE.md).
+
 BZ-105 automated scope includes 494 web tests/81 files, 181 admin tests/19 files, strict web projection tests, 69 ephemeral migrations/33 SQL assertion scripts, both typechecks/lints/builds, boundaries and whitespace. Hosted069/PostgREST, browser/mobile, real billing/concurrency and MT252–255 remain pending; no manual pass is inferred. See [86](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).
 
 Automated BZ-104/CW-104 result: 492 web tests across 81 files, 181 admin tests across 19 files, all 68 migrations and 32 SQL assertion scripts, both application typechecks/lints/builds, boundaries and whitespace passed. SQL authentication/provider qualification is synthetic; hosted068, browser/mobile, true concurrency and MT248–251 remain pending.

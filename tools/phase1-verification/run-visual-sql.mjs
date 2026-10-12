@@ -20,6 +20,7 @@ const scripts=['037_generation_dispatch_assertions.sql','039_visual_composition_
  scripts.push('067_reviewed_announcement_knowledge_handoff_assertions.sql');
  scripts.push('068_private_channel_specialist_delegation_assertions.sql');
  scripts.push('069_channel_specialist_runtime_lineage_assertions.sql');
+ scripts.push('070_channel_specialist_terminal_closure_assertions.sql');
  for(const name of scripts){step=name;const results=await db.exec(await read(`supabase/tests/${name}`));if(name.startsWith('041_'))contracts=results.flatMap(r=>r.rows).flatMap(row=>Object.values(row)).filter(value=>value&&typeof value==='object'&&Array.isArray(value.versions));if(name.startsWith('059_'))meetingContract=results.flatMap(r=>r.rows).find(row=>row.contract059)?.contract059;if(name.startsWith('060_'))snapshotContract=results.flatMap(r=>r.rows).find(row=>row.contract060)?.contract060;if(name.startsWith('061_'))consentContract=results.flatMap(r=>r.rows).find(row=>row.contract061)?.contract061;}
  if(process.argv[2]==='--contracts'){if(!process.argv[3]||!contracts.length)throw new Error('Contract output path or snapshots missing');await writeFile(process.argv[3],JSON.stringify(contracts));}
  if(process.argv[2]==='--meeting-contract'){if(!process.argv[3]||!meetingContract)throw new Error('Meeting contract output path or fixture missing');await writeFile(process.argv[3],JSON.stringify(meetingContract));}

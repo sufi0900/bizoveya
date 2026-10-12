@@ -1,5 +1,7 @@
 # Dependencies and change-impact register
 
+Additive070 depends on069's immutable specialist lineage and the052 durable task plus generation output/review state. It wraps only the private read model: no write, retry, accounting or provider boundary changes. Any future per-channel runtime must preserve `output_missing` truthfulness or replace it with stronger evidence, and must not infer success from the shared run alone. Group2 source is complete; hosted070 and MT256–259 remain pending. See [87](87_GROUP_TWO_SOURCE_CLOSURE.md).
+
 Additive069 depends on 068 delegation plus the existing 048/051/052 campaign, generation and durable task contracts. It deliberately reuses the single Content stage and its existing qualification, authorization, shared-budget accounting and recovery evidence. Removing or changing delegation, generation snapshot stages, output shape or human review requires a lineage/projection migration; never fan out provider calls implicitly. See [86](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).
 
 BZ-104/CW-104 adds migration068 and web-only specialist roster/delegation routes. It depends on existing approved Content-agent previews, current bindings/connectivity and spending policies, but makes no provider call. Hosted068 is required before the UI can persist. Existing core roster, campaigns and runtime signatures are unchanged. MT248–251 and all earlier unanswered tests remain pending. See [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).

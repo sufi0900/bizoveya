@@ -1,5 +1,7 @@
 # Evolution record: templates, voice and the visual digital agency
 
+Group2 source is complete at BZ-106/CW-106: additive070 closes the final specialist terminal projection gap and guide87 records the audited request/onboarding/hiring/delegation/execution chain. Founder acceptance remains pending. Group5 office visualization is still ON HOLD; this checkpoint does not begin it. See [87](87_GROUP_TWO_SOURCE_CLOSURE.md).
+
 Current Group2 implementation pins reviewed per-channel responsibility into the existing single Content-stage runtime rather than multiplying provider calls. Channel state is evidence-backed through saved output and human review; see [86](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md). This does not begin Group5 office visualization.
 
 BZ-104/CW-104 begins the documented channel-specialist expansion with a private versioned Blog/Pinterest/LinkedIn roster and immutable request delegation. Assignments pin qualified Content-agent versions while preserving the existing three-stage campaign runtime; delegation is not execution. Group2 remains open for runtime lineage and truthful per-channel terminal/recovery projection. See [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).
