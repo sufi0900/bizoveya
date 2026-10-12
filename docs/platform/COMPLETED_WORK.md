@@ -1,5 +1,15 @@
 # Completed Bizoveya work only
 
+Automated BZ-100/CW-100 verification: 176 admin tests/19 files, 64 ephemeral local migrations/28 SQL assertion executions, admin typecheck/lint, both production builds, boundaries, whitespace and documentation projections passed. Web source is unchanged; its prior 480 tests are historical. No hosted SQL/provider/downstream action.
+
+### CW-100 — Reviewed private meeting-deliberation outcomes
+
+| Work | Completed source boundary | Explicitly unfinished |
+|---|---|---|
+| CW-100 | Additive064 private immutable outcomes; deterministic five-state completion read model; exact founder review; ordered receipt/citation/token lineage; false publication/external-delivery flags | MT232–235/hosted/browser/concurrency pending; reviewed downstream handoff, optional AI visuals, live voice and first-four completion unfinished |
+
+See [guide81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).
+
 Automated BZ-099/CW-099 verification: 173 admin tests/19 files, 63 ephemeral local migrations/27 SQL assertion executions, admin standalone typecheck/lint, both production builds, application boundaries, whitespace, affected Markdown links and documentation projections passed. Web source is unchanged; its prior 480-test result is historical. No hosted SQL or provider request.
 
 ### CW-099 — One-attempt private meeting-turn worker

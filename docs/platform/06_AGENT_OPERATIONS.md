@@ -1,5 +1,7 @@
 # AI employees, meetings and interruptions
 
+BZ-100 aggregates only complete successful settled/reconciled turns into a founder-reviewable private outcome. In-progress, failed, unknown/overrun and cancelled deliberations remain distinct. No agent receives work from the outcome yet; reviewed downstream handoff is next. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).
+
 BZ-099 runs only one explicitly reviewed, ordered private turn at a time. The selected role receives bounded approved facts and prior successful turn receipts; it has no tools or publication authority. Unknown usage, changed consent/roster/schedule or failed predecessor blocks later turns. Whole-deliberation completion is next. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
 
 

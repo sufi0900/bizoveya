@@ -7,8 +7,8 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import type { SupabaseClient } from '@supabase/supabase-js';
 import type { z } from 'zod';
-import { meetingConsentInputSchema, meetingExecutionQueueSchema } from './consent-contracts';
-import { controlMeetingExecutionConsent, loadMeetingExecutionConsents } from './consent-store';
+import { meetingConsentInputSchema, meetingExecutionQueueSchema, meetingOutcomeReviewInputSchema } from './consent-contracts';
+import { controlMeetingExecutionConsent, loadMeetingExecutionConsents, reviewMeetingDeliberationOutcome } from './consent-store';
 import { MeetingConsentRoom } from './consent-room';
 
 let input: z.infer<typeof meetingConsentInputSchema>, revoke: z.infer<typeof meetingConsentInputSchema>, active: z.infer<typeof meetingExecutionQueueSchema>, history: z.infer<typeof meetingExecutionQueueSchema>;
@@ -54,6 +54,7 @@ describe('actual SQL consent contract and admin boundary', () => {
   });
   it('rejects incomplete confirmation and safely reports blockers without retrying', async () => {
     const missing = client([]); await expect(controlMeetingExecutionConsent(missing.db, input)).rejects.toMatchObject({ status: 503 }); expect(missing.rpc).toHaveBeenCalledTimes(2);
+    const legacy=JSON.parse(JSON.stringify(active));delete legacy[0].completion;delete legacy[0].reviewedOutcome;await expect(loadMeetingExecutionConsents(client(legacy).db)).rejects.toMatchObject({status:503,code:'MEETING_OUTCOME_SETUP'});
     for (const error of [{ code: 'PGRST202' }, { code: '42501', message: 'bz_forbidden' }, { message: 'bz_meeting_snapshot_changed' }, { message: 'bz_meeting_consent_active' }, { message: 'private credential details' }]) {
       const f = client(null, error); await expect(loadMeetingExecutionConsents(f.db)).rejects.not.toThrow('private credential details'); expect(f.rpc).toHaveBeenCalledTimes(2);
     }
@@ -70,4 +71,13 @@ describe('consent-only operator interface', () => {
     }
     expect(render([])).toContain('Save a qualified meeting snapshot');
   });
+  it('shows founder review only after the whole private deliberation is complete',()=>{
+    const completed=[{...active[0],completion:{state:'completed' as const,expectedTurns:active[0].summary.turns.length,recordedTurns:active[0].summary.turns.length,fingerprint:'a'.repeat(64)},reviewedOutcome:null}];
+    const html=render(completed);expect(html).toContain('Founder outcome review reason');expect(html).toContain('Save founder outcome review');expect(html).toContain('Save this private outcome only');expect(render()).not.toContain('Save founder outcome review');
+  });
+});
+
+describe('founder outcome review boundary',()=>{
+ it('accepts only an explicit reviewed private outcome command',()=>{const value={action:'review-outcome',snapshotId:active[0].snapshotId,outcomeId:crypto.randomUUID(),fingerprint:'a'.repeat(64),reason:'Reviewed every private turn and citation.',reviewed:true as const};expect(meetingOutcomeReviewInputSchema.parse(value)).toEqual(value);expect(meetingOutcomeReviewInputSchema.safeParse({...value,reviewed:false}).success).toBe(false);});
+ it('calls the dedicated review RPC and confirms the exact immutable receipt',async()=>{const base=active[0],turn=base.summary.turns[0],result={schema:'meeting-turn-result-v1' as const,summary:'Reviewed private result.',recommendations:[],concerns:[],citations:[{sourceId:base.summary.knowledge[0].sourceId,sourceVersion:base.summary.knowledge[0].sourceVersion,factId:base.summary.knowledge[0].facts[0].id}]},outcomeId=crypto.randomUUID(),fingerprint='b'.repeat(64),reason='Reviewed all completed turns and approved facts.',document={schema:'meeting-deliberation-outcome-v1' as const,snapshotId:base.snapshotId,meetingId:base.meetingId,planId:base.summary.planId,meetingVersion:base.meetingVersion,scheduleVersion:base.summary.scheduleVersion,rosterVersion:base.summary.rosterVersion,status:'completed' as const,turns:[{turnId:crypto.randomUUID(),ordinal:1,role:turn.role,requestHash:'c'.repeat(64),result,inputTokens:10,outputTokens:20,spendingState:'settled' as const,finishedAt:'2099-01-01T00:00:00Z'}],totals:{inputTokens:10,outputTokens:20},publish:false as const,externalDelivery:false as const},queue=[{...base,completion:{state:'reviewed' as const,expectedTurns:base.summary.turns.length,recordedTurns:base.turns.length,fingerprint},reviewedOutcome:{id:outcomeId,snapshotId:base.snapshotId,fingerprint,reason,document,actorId:base.consents[0].actorId,createdAt:'2099-01-01T00:00:00Z'}}],input={action:'review-outcome' as const,snapshotId:base.snapshotId,outcomeId,fingerprint,reason,reviewed:true as const},f=client(queue);expect(await reviewMeetingDeliberationOutcome(f.db,input)).toEqual({meetings:queue});expect(f.rpc).toHaveBeenLastCalledWith('bz_admin_review_meeting_outcome',{p_input:input});});
 });

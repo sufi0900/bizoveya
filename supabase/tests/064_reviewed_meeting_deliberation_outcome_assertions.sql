@@ -1,0 +1,22 @@
+begin;
+set local session_replication_role=replica;
+insert into bizoveya_private.meeting_deliberation_plans(id,meeting_id,request_id,source_version,roster_version,rounds,max_input_tokens_per_turn,max_output_tokens_per_turn,max_total_cost_cents,actor_id) values('64000000-0000-4000-8000-000000000001','64000000-0000-4000-8000-000000000002','64000000-0000-4000-8000-000000000003',1,1,1,256,128,1,'64000000-0000-4000-8000-000000000004');
+insert into bizoveya_private.meeting_execution_snapshots(id,plan_id,command,fingerprint,input_snapshot,summary,actor_id) values('64000000-0000-4000-8000-000000000005','64000000-0000-4000-8000-000000000001','{}','aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa','{"turns":[{"ordinal":1,"role":"content"}]}','{"meetingVersion":2,"scheduleVersion":1,"rosterVersion":1}','64000000-0000-4000-8000-000000000004');
+insert into bizoveya_private.meeting_execution_consents(id,snapshot_id,command,actor_id,created_at,expires_at) values('64000000-0000-4000-8000-000000000006','64000000-0000-4000-8000-000000000005','{}','64000000-0000-4000-8000-000000000004',statement_timestamp(),statement_timestamp()+interval '15 minutes');
+insert into bizoveya_private.meeting_turn_runs(id,snapshot_id,consent_id,ordinal,profile_id,profile_version,policy_version,policy_snapshot,claim,actor_id,status,spending_state,reserved_micros,charged_micros,input_token_limit,output_token_limit,input_tokens,output_tokens,provider_started_at,finished_at) values('64000000-0000-4000-8000-000000000007','64000000-0000-4000-8000-000000000005','64000000-0000-4000-8000-000000000006',1,'64000000-0000-4000-8000-000000000008',1,1,'{}','64000000-0000-4000-8000-000000000009','64000000-0000-4000-8000-000000000004','succeeded','settled',10,10,256,128,12,34,statement_timestamp(),statement_timestamp());
+insert into bizoveya_private.meeting_turn_requests(turn_id,document,request_hash) values('64000000-0000-4000-8000-000000000007','{}','bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb');
+insert into bizoveya_private.meeting_turn_results(turn_id,document) values('64000000-0000-4000-8000-000000000007','{"schema":"meeting-turn-result-v1","summary":"Synthetic private result.","recommendations":[],"concerns":[],"citations":[]}');
+set local session_replication_role=origin;
+do $$begin
+ if not exists(select 1 from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname='bizoveya_private' and c.relname='meeting_deliberation_outcomes' and c.relrowsecurity) then raise exception 'Meeting outcomes must be private with RLS';end if;
+ if has_table_privilege('authenticated','bizoveya_private.meeting_deliberation_outcomes','select') or has_table_privilege('service_role','bizoveya_private.meeting_deliberation_outcomes','select') then raise exception 'Outcome table leaked direct read access';end if;
+ if not exists(select 1 from pg_trigger where tgname='meeting_deliberation_outcome_immutable') then raise exception 'Outcome immutability trigger missing';end if;
+ if not has_function_privilege('authenticated','public.bz_admin_review_meeting_outcome(jsonb)','execute') or has_function_privilege('service_role','public.bz_admin_review_meeting_outcome(jsonb)','execute') then raise exception 'Outcome review grant mismatch';end if;
+ if has_function_privilege('authenticated','bizoveya_private.meeting_deliberation_outcome_candidate(uuid)','execute') then raise exception 'Private candidate leaked';end if;
+ if (bizoveya_private.meeting_deliberation_outcome_candidate('64000000-0000-4000-8000-000000000005')->'document'->>'schema')<>'meeting-deliberation-outcome-v1' or (bizoveya_private.meeting_deliberation_outcome_candidate('64000000-0000-4000-8000-000000000005')->'document'->'totals'->>'inputTokens')::integer<>12 or bizoveya_private.meeting_deliberation_outcome_candidate('64000000-0000-4000-8000-000000000005')->'document'->'publish'<>'false'::jsonb then raise exception 'Deterministic completion candidate mismatch';end if;
+end;$$;
+set local role authenticated;
+create function pg_temp.expect_denied(q text) returns void language plpgsql as $$begin begin execute q;exception when insufficient_privilege then return;end;raise exception 'Expected permission denial';end;$$;
+select pg_temp.expect_denied('select * from bizoveya_private.meeting_deliberation_outcomes');
+reset role;
+rollback;

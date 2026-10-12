@@ -1,5 +1,7 @@
 # System architecture
 
+The BZ-100 completion path is `immutable turn receipts → deterministic candidate/fingerprint → explicit founder review → immutable private outcome`. Missing/failed/unsettled turns cannot complete, and the outcome hard-codes no publication or external delivery. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).
+
 The BZ-099 meeting execution path is `explicit admin action → service reservation → immutable private request → admin/MFA recheck → provider-start marker → one provider attempt → atomic private result and usage settlement`. Additive063 denies direct table access and projects receipts only through the admin queue. It publishes nothing and exposes no external tools. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
 
 

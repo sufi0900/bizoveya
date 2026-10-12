@@ -1,5 +1,9 @@
 # Living documentation changelog
 
+## 2026-10-12 PKT — BZ-100/CW-100 reviewed meeting outcomes
+
+Added migration064, deterministic whole-deliberation states and an explicit founder review control. Only complete successful settled/reconciled request/result receipts produce the immutable private outcome; no task, message, knowledge change, publication or external delivery occurs. MT232–235 remain pending. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).
+
 ## One-attempt private meeting-turn worker — 2026-10-12 PKT
 
 BZ-099/CW-099 adds migration063, a default-off server worker and admin review control for one ordered private meeting turn. Request provenance is immutable before provider start; result and usage settle together; uncertain outcomes cannot be blindly retried. Approved citations, token limits, active consent, ordering, qualification, spending and MFA/admin recheck remain enforced. No hosted SQL or live provider request occurred. MT228–231 remain pending. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).

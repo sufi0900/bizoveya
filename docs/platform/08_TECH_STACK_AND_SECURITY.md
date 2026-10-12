@@ -1,5 +1,7 @@
 # Stack, provider policy and security
 
+Additive064 is provider-independent: it deterministically hashes existing private receipts and exposes them only through the MFA admin queue. RLS/no direct grants, current owner checks and immutable exact-command review apply. It performs no model or external request. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).
+
 The meeting worker reuses the qualified AI SDK adapters and restricted fetch policy, forces `maxRetries:0`, stores request provenance before provider start and rechecks the authenticated MFA admin immediately before the call. `BIZOVEYA_ENABLE_MEETING_EXECUTION` defaults false. Provider and service-role keys remain server-only. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
 
 

@@ -1,5 +1,7 @@
 # Bizoveya user manual — prelaunch working edition
 
+After every planned private turn succeeds and spending is settled/reconciled, the admin meeting page shows **Review completed private outcome**. Inspect all receipts, enter the review reason, confirm, and save. Refresh to verify the immutable `reviewed` receipt. This creates no task or publication. MT232–235 remain pending. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).
+
 After migration063 and admin-only `BIZOVEYA_ENABLE_MEETING_EXECUTION=true`, an active consent shows **Run ordered turn N**. Review the checkbox and run one turn once; then refresh and inspect its private receipt before any next turn. Never retry an uncertain outcome. Nothing is published. Founder checks MT228–231 remain pending. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
 
 

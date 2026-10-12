@@ -1,5 +1,7 @@
 # Data, schema and memory
 
+Additive064 stores one immutable founder-reviewed outcome per execution snapshot. Its deterministic document retains ordered request hashes, private results/citations, known token totals and pinned meeting/plan/team versions without changing approved knowledge or creating work. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).
+
 Additive063 stores immutable private meeting request and result receipts keyed one-to-one to the 062 turn ledger. Request hashes, output, tokens, errors and spending truth survive refresh without changing approved knowledge, campaign drafts or meeting decisions. MT228–231 remain pending. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
 
 

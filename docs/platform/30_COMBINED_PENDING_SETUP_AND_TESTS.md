@@ -1,5 +1,7 @@
 # Combined pending setup and manual tests
 
+BZ-100/CW-100 source adds deterministic meeting completion and immutable founder review, but hosted migration064, completion-state, persistence/no-action and access/stale-evidence checks remain pending as MT232–235. No provider or downstream action occurred. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).
+
 BZ-099/CW-099 source connects one ordered private meeting turn, but hosted migration063, admin-only activation, a disposable provider turn, persistence/order/access and genuine failure accounting checks remain pending as MT228–231. No live provider was called. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
 
 

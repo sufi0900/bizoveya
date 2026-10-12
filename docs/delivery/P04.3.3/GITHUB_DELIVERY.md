@@ -1,5 +1,11 @@
 # Verified main delivery — P04.3.3 founder evidence checkpoint
 
+Automated BZ-100/CW-100 verification: 176 admin tests/19 files, 64 ephemeral local migrations/28 SQL assertion executions, admin typecheck/lint, both production builds, boundaries, whitespace, affected Markdown links and projections passed. Web source is unchanged and its prior 480 tests are historical. No hosted SQL/provider request/downstream action/settings change.
+
+## BZ-100/CW-100 reviewed meeting outcome source delivery — 2026-10-12 PKT
+
+Resolved base `92c485fbef34ee7c41482665dd5a10cca9c7b078`. Additive064 and the admin read/review controls distinguish incomplete, completed, blocked, cancelled and reviewed deliberations, saving an immutable private outcome only from a complete truthful receipt set. It creates no task, message or publication. MT232–235 and all earlier tests remain pending; first-four groups remain incomplete. See [guide81](../../platform/81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).
+
 Automated BZ-099/CW-099 verification: 173 admin tests/19 files, 63 ephemeral local migrations/27 SQL assertion executions, admin standalone typecheck/lint, both production builds, application boundaries, whitespace, affected Markdown links and documentation projections passed. Web source is unchanged and its prior 480-test result is historical. No hosted SQL/provider request/publication/settings change.
 
 ## BZ-099/CW-099 meeting worker source delivery — 2026-10-12 PKT

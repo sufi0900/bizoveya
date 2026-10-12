@@ -1,5 +1,7 @@
 # GitHub delivery and scheduled continuation
 
+BZ-100/CW-100 follows base `92c485fbef34ee7c41482665dd5a10cca9c7b078` with additive064 and private founder outcome review. No hosted SQL/provider/downstream action/settings change occurred. MT232–235 remain pending. Next source boundary: owner-reviewed outcome-to-private-request handoff and terminal recovery. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).
+
 BZ-099/CW-099 follows base `5fa3834990a2aae40605d9fdd68091d35d8de480` with additive063 and the default-off ordered meeting runtime. No hosted SQL/provider/publication/settings change occurred. MT228–231 remain pending. Next source boundary: immutable whole-deliberation completion/read model and reviewed downstream handoff. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
 
 

@@ -1,5 +1,14 @@
 # Founder manual testing record
 
+| ID | Check | Status |
+|---|---|---|
+| MT232 | Missing064 setup and preservation of existing meeting/draft/media history | Pending founder/operator |
+| MT233 | Whole-deliberation completed gate versus in-progress/blocked/cancelled states | Pending founder |
+| MT234 | Exact founder outcome review, refresh persistence and zero downstream action | Pending founder |
+| MT235 | Viewer/unrelated-admin/former-owner/incomplete/stale fingerprint denial | Pending founder |
+
+BZ-100/CW-100 adds the private whole-deliberation read/review boundary. No founder, hosted, browser or live-provider pass is inferred. Use the exact four deferred steps in [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md). All earlier unanswered tests remain pending.
+
 ## One-attempt private meeting-turn worker — 2026-10-12 PKT
 
 | Test | Scope | Status |

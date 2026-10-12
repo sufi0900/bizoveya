@@ -1,5 +1,7 @@
 # Bizoveya platform documentation — start here
 
+BZ-100/CW-100 adds deterministic whole-deliberation states and immutable private founder review through additive064. It starts no downstream action. MT232–235 remain pending; reviewed outcome handoff is next and first-four groups remain incomplete. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).
+
 BZ-099/CW-099 connects the one-attempt private meeting-turn worker with additive063 immutable request/result receipts, exact 062 accounting, approved-fact citations and an admin-only default-off control. No live provider was called. MT228–231 remain pending; first-four groups remain incomplete. Next is the whole-deliberation completion/read model. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
 
 

@@ -1,5 +1,7 @@
 # Evolution record: templates, voice and the visual digital agency
 
+BZ-100/CW-100 adds a deterministic private whole-deliberation read model and immutable founder review from complete truthful turn receipts. It does not create downstream work. Group3 next needs reviewed outcome handoff and terminal recovery; Group1 qualified optional AI visuals and Group4 live voice remain unfinished. Office visualization stays ON HOLD. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).
+
 BZ-099/CW-099 adds real one-attempt private meeting turns with immutable receipts and shared accounting, not office animation or autonomous publication. Group 3 still needs whole-deliberation completion; qualified optional AI visuals and Group 4 live voice remain unfinished. Office visualization stays ON HOLD for founder design input. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).
 
 
