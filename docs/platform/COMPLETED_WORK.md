@@ -1,5 +1,7 @@
 # Completed Bizoveya work only
 
+BZ-107/CW-107 hosted setup checkpoint (2026-10-12 PKT): founder explicitly authorized direct Supabase installation, superseding the earlier no-hosted-SQL restriction for reviewed Bizoveya migrations. Verified project `voxfolio` (`lvxrqmgsfarimbhmcbcc`) had schema039 with no tracked migration history. Applied the exact main-source migrations040–070 sequentially through the Supabase migration interface; all31 succeeded and are now tracked. Generation-run, review, visual and visual-history fingerprints were unchanged. All private tables have RLS; private specialist projection denies authenticated execution; `campaign-private-media` is private with a5MiB limit. This completes installation only, not browser/provider/role/concurrency acceptance. Earlier manual behavioral tests remain pending. Media server-key activation and artwork/voice qualification remain outstanding. See [88](88_HOSTED_SUPABASE_INSTALLATION.md).
+
 | CW-106 | Audited Group2 source chain and additive070 truthful missing-channel terminal projection | Source and automated checks complete; hosted070 and MT256–259 pending; not founder acceptance |
 
 | CW-105 | Immutable reviewed channel-delegation lineage into one compatible shared Content-stage generation run, with evidence-backed channel output/review/recovery states | Source and automated checks complete; hosted069, browser/true concurrency/provider billing and MT252–255 pending; Group2 closure audit remains |

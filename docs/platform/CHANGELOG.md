@@ -1,5 +1,7 @@
 # Living documentation changelog
 
+BZ-107/CW-107 hosted setup checkpoint (2026-10-12 PKT): founder explicitly authorized direct Supabase installation, superseding the earlier no-hosted-SQL restriction for reviewed Bizoveya migrations. Verified project `voxfolio` (`lvxrqmgsfarimbhmcbcc`) had schema039 with no tracked migration history. Applied the exact main-source migrations040–070 sequentially through the Supabase migration interface; all31 succeeded and are now tracked. Generation-run, review, visual and visual-history fingerprints were unchanged. All private tables have RLS; private specialist projection denies authenticated execution; `campaign-private-media` is private with a5MiB limit. This completes installation only, not browser/provider/role/concurrency acceptance. Earlier manual behavioral tests remain pending. Media server-key activation and artwork/voice qualification remain outstanding. See [88](88_HOSTED_SUPABASE_INSTALLATION.md).
+
 - BZ-106/CW-106: complete the documented Group2 source audit; add migration070 and strict web coverage so missing requested output is explicit as `output_missing`. Hosted activation and MT256–259 remain pending; Groups1 and4 are provider-gated.
 
 - BZ-105: pin reviewed Blog/Pinterest/LinkedIn delegation to the existing single Content-stage run, preserving one-attempt accounting/recovery and projecting evidence-backed channel states. Added migration069, contracts/UI/tests and guide86; founder acceptance remains pending.

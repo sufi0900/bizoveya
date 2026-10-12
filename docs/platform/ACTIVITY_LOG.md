@@ -1,5 +1,7 @@
 # Bizoveya chronological activity and decision log
 
+BZ-107/CW-107 hosted setup checkpoint (2026-10-12 PKT): founder explicitly authorized direct Supabase installation, superseding the earlier no-hosted-SQL restriction for reviewed Bizoveya migrations. Verified project `voxfolio` (`lvxrqmgsfarimbhmcbcc`) had schema039 with no tracked migration history. Applied the exact main-source migrations040–070 sequentially through the Supabase migration interface; all31 succeeded and are now tracked. Generation-run, review, visual and visual-history fingerprints were unchanged. All private tables have RLS; private specialist projection denies authenticated execution; `campaign-private-media` is private with a5MiB limit. This completes installation only, not browser/provider/role/concurrency acceptance. Earlier manual behavioral tests remain pending. Media server-key activation and artwork/voice qualification remain outstanding. See [88](88_HOSTED_SUPABASE_INSTALLATION.md).
+
 ## 2026-10-12 — BZ-106 Group 2 source closure
 
 Audited the full founder-request, approved-context onboarding, reviewed hiring, campaign handoff, durable execution/recovery and channel-specialist chain. Added070 so a succeeded shared run with an absent requested channel reports `output_missing` instead of falling back to `prepared`; stronger terminal/recovery evidence retains precedence. Added strict web parsing/rendering coverage and guide87. This closes Group2 source only; MT256–259 and all earlier founder tests remain pending. No hosted SQL, provider call, setting, message or publication.
