@@ -45,6 +45,7 @@ describe('bounded deliberation presentation',()=>{
  });
 });
 describe('saved campaign handoff presentation',()=>{
+ it('labels a reviewed-outcome request without exposing private deliberation text',()=>{const outcomeId='22222222-2222-4222-8222-222222222222',record=agencyRecordSchema.parse({...base,outcomeHandoff:{outcomeId,snapshotId:'33333333-3333-4333-8333-333333333333',meetingId:'44444444-4444-4444-8444-444444444444',requestId:id,fingerprint:'a'.repeat(64),instruction:'Prepare a private follow-up.',channels:['blog'],actorId:id,createdAt:'now'}}),html=renderToStaticMarkup(createElement(AgencyRoom,{initial:[record],owner:false,endpoint}));expect(html).toContain(`reviewed private meeting outcome ${outcomeId}`);expect(html).toContain('private turn text remains in administration');});
  it('links to the saved campaign and displays immutable source lineage for a read-only member',()=>{
   const record=agencyRecordSchema.parse({...base,handoff:{campaignId:id,sourceVersion:1,title:'Private',document:{title:'Private',brief:'Approved',blog:'',pinterest:'',linkedin:''},actorId:id,createdAt:'now'}});
   const html=renderToStaticMarkup(createElement(AgencyRoom,{initial:[record],owner:false,endpoint}));

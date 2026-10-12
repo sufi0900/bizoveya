@@ -1,9 +1,9 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { AdminError, requireAdmin } from '../admin/access';
-import { meetingAdminInputSchema, meetingConsentInputSchema, meetingExecutionQueueSchema, type MeetingConsentInput, type MeetingOutcomeReviewInput } from './consent-contracts';
+import { meetingAdminInputSchema, meetingConsentInputSchema, meetingExecutionQueueSchema, type MeetingConsentInput, type MeetingOutcomeHandoffInput, type MeetingOutcomeReviewInput } from './consent-contracts';
 function check(error: { code?: string; message?: string } | null) {
   if (!error) return;
-  if (['PGRST202', 'PGRST205', '42P01', '42703'].includes(error.code ?? '')) throw new AdminError(503, 'MEETING_OUTCOME_SETUP', 'Meeting execution and completion need migrations 061 through 064 in order. No work was started.');
+  if (['PGRST202', 'PGRST205', '42P01', '42703'].includes(error.code ?? '')) throw new AdminError(503, 'MEETING_OUTCOME_SETUP', 'Meeting execution, completion and handoff need migrations 061 through 065 in order. No work was started.');
   const messages: Record<string, string> = {
     bz_forbidden: 'Only your own prepared snapshot in a currently owned workspace is available.',
     bz_conflict: 'The selected identity or versions changed. Refresh before reviewing again.',
@@ -20,10 +20,11 @@ function check(error: { code?: string; message?: string } | null) {
     bz_invalid_meeting_outcome: 'Review the completed outcome identity, fingerprint and reason.',
     bz_meeting_outcome_not_ready: 'Every planned turn must have a successful private result and settled or reconciled spending before review.',
     bz_meeting_outcome_changed: 'The completed result changed before review. Refresh and inspect it again.',
+    bz_invalid_meeting_outcome_handoff: 'Review the outcome, request identity, instruction and selected channels.',
   };
   throw new AdminError(error.code === '42501' || error.message === 'bz_forbidden' ? 403 : 409, 'MEETING_CONSENT_BLOCKED', messages[error.message ?? ''] ?? 'Meeting consent could not be confirmed. Refresh its history.');
 }
-function parseQueue(data:unknown){const parsed=meetingExecutionQueueSchema.safeParse(data);if(!parsed.success)throw new AdminError(503,'MEETING_OUTCOME_SETUP','Meeting completion needs migration 064 after 063. No work was started.');return parsed.data;}
+function parseQueue(data:unknown){const parsed=meetingExecutionQueueSchema.safeParse(data);if(!parsed.success)throw new AdminError(503,'MEETING_OUTCOME_SETUP','Meeting outcome handoff needs migration 065 after 064. No work was started.');return parsed.data;}
 export async function loadMeetingExecutionConsents(db: SupabaseClient) {
   await requireAdmin(db);
   const result = await db.rpc('bz_admin_meeting_execution_queue'); check(result.error);
@@ -41,5 +42,11 @@ export async function reviewMeetingDeliberationOutcome(db:SupabaseClient,input:M
  await requireAdmin(db);const command=meetingAdminInputSchema.parse(input);if(command.action!=='review-outcome')throw new AdminError(400,'INVALID_OUTCOME','Review the completed outcome.');
  const result=await db.rpc('bz_admin_review_meeting_outcome',{p_input:command});check(result.error);const meetings=parseQueue(result.data),meeting=meetings.find(item=>item.snapshotId===command.snapshotId),saved=meeting?.reviewedOutcome;
  if(!saved||saved.id!==command.outcomeId||saved.fingerprint!==command.fingerprint||saved.reason!==command.reason)throw new AdminError(503,'OUTCOME_UNCONFIRMED','Outcome review could not be confirmed. Refresh before another attempt.');
+ return {meetings};
+}
+export async function handoffMeetingDeliberationOutcome(db:SupabaseClient,input:MeetingOutcomeHandoffInput){
+ await requireAdmin(db);const command=meetingAdminInputSchema.parse(input);if(command.action!=='handoff-outcome')throw new AdminError(400,'INVALID_OUTCOME_HANDOFF','Review the outcome follow-up request.');
+ const result=await db.rpc('bz_admin_handoff_meeting_outcome',{p_input:command});check(result.error);const meetings=parseQueue(result.data),saved=meetings.find(item=>item.reviewedOutcome?.id===command.outcomeId)?.outcomeHandoff;
+ if(!saved||saved.requestId!==command.requestId||saved.fingerprint!==command.fingerprint||saved.instruction!==command.instruction||JSON.stringify(saved.channels)!==JSON.stringify(command.channels))throw new AdminError(503,'OUTCOME_HANDOFF_UNCONFIRMED','Outcome handoff could not be confirmed. Refresh before another attempt.');
  return {meetings};
 }

@@ -1,5 +1,13 @@
 # Completed Bizoveya work only
 
+### CW-101 — Reviewed outcome private-request handoff
+
+| Work | Completed source boundary | Explicitly unfinished |
+|---|---|---|
+| CW-101 | Additive065 immutable one-outcome/one-request receipt; sanitized lineage; owner/admin/MFA/stale/retry guards; admin and Founder desk projections | MT236–239/hosted/browser/concurrency pending; terminal recovery, optional AI visuals, live voice and first-four completion unfinished |
+
+See [guide82](82_REVIEWED_MEETING_OUTCOME_REQUEST_HANDOFFS.md).
+
 Automated BZ-100/CW-100 verification: 176 admin tests/19 files, 64 ephemeral local migrations/28 SQL assertion executions, admin typecheck/lint, both production builds, boundaries, whitespace and documentation projections passed. Web source is unchanged; its prior 480 tests are historical. No hosted SQL/provider/downstream action.
 
 ### CW-100 — Reviewed private meeting-deliberation outcomes

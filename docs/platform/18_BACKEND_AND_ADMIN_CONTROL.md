@@ -1,5 +1,7 @@
 # Backend and super admin control contract
 
+Additive065 exposes authenticated `bz_admin_handoff_meeting_outcome(jsonb)` behind admin/MFA, locks exact lineage, invokes the private request command once and returns the refreshed queue. See [82](82_REVIEWED_MEETING_OUTCOME_REQUEST_HANDOFFS.md).
+
 BZ-100 adds authenticated `bz_admin_review_meeting_outcome` and augments the existing admin execution queue. Only the original snapshot founder who is still an owner and MFA admin may persist an exact complete fingerprint; the private table has no direct caller read. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).
 
 Additive063 grants only service-role execution RPCs and the authenticated admin queue. The Node route requires the existing admin/MFA boundary, uses the service recorder server-side, rechecks the operator before provider start and never returns credentials. The new execution flag defaults false. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).

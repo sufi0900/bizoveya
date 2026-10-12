@@ -1,5 +1,9 @@
 # Living documentation changelog
 
+## 2026-10-12 PKT — BZ-101/CW-101 reviewed outcome handoff
+
+Added migration065 and explicit reviewed meeting-outcome to private-request handoff. Private turn text stays admin-only; exact retry is safe and no generation, spending, message or publication starts. MT236–239 remain pending. See [82](82_REVIEWED_MEETING_OUTCOME_REQUEST_HANDOFFS.md).
+
 ## 2026-10-12 PKT — BZ-100/CW-100 reviewed meeting outcomes
 
 Added migration064, deterministic whole-deliberation states and an explicit founder review control. Only complete successful settled/reconciled request/result receipts produce the immutable private outcome; no task, message, knowledge change, publication or external delivery occurs. MT232–235 remain pending. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).

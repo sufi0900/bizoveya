@@ -1,5 +1,7 @@
 # Verification, manual acceptance and release evidence
 
+BZ-101 verification passed 178 admin tests/19 files, 481 web tests/80 files, all65 local migrations/29 SQL assertions, both typechecks/lints/builds, boundaries, whitespace and867 links. Hosted/browser/concurrency and MT236–239 remain pending. See [82](82_REVIEWED_MEETING_OUTCOME_REQUEST_HANDOFFS.md).
+
 BZ-100 automated verification covers migration064 privacy/ACLs, deterministic completion schemas, five-state projection, explicit exact review and admin UI boundaries. Hosted SQL, browser/mobile/concurrency, real receipts and MT232–235 remain pending. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).
 
 BZ-099 automated verification covers the default-off one-attempt runtime, ordering, request-before-start choreography, operator recheck, citation rejection, failure settlement, migration ACLs and private projection with synthetic/injected providers only. Hosted SQL, real billing, browser/mobile, concurrency and MT228–231 remain pending. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).

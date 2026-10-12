@@ -1,5 +1,7 @@
 # Implementation phases and status ledger
 
+BZ-101/CW-101 source is complete for reviewed-outcome handoff; MT236–239 remain pending. Group3 still requires terminal recovery. Group1 qualified optional AI visuals and Group4 live voice remain unfinished. Group5 remains ON HOLD; Group6 is out of scope. See [82](82_REVIEWED_MEETING_OUTCOME_REQUEST_HANDOFFS.md).
+
 BZ-100/CW-100 source is complete for deterministic whole-deliberation completion and immutable founder review; MT232–235 remain pending. Group3 still requires reviewed downstream handoff and terminal recovery. Group1 qualified optional AI visuals and Group4 live voice remain unfinished. Group5 office visualization remains ON HOLD; Group6/custom agents is out of scope. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).
 
 BZ-099/CW-099 source is complete for the one-attempt ordered meeting worker; MT228–231 remain pending. Group 3 still requires whole-deliberation completion and reviewed downstream handoff. Group 1 qualified optional AI visuals and Group 4 live voice remain unfinished. Group 5 office visualization remains ON HOLD; Group 6/custom agents is out of scope. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).

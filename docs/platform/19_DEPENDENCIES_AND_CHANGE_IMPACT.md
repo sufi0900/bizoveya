@@ -1,5 +1,7 @@
 # Dependencies and change-impact register
 
+065 depends on064 outcomes, truthful060–063 lineage, existing private request command and current owner/admin/MFA. No key/provider setting is added. Terminal recovery is next. See [82](82_REVIEWED_MEETING_OUTCOME_REQUEST_HANDOFFS.md).
+
 BZ-100 depends on migrations060–063 and truthful complete request/result/accounting receipts. Migration064 is additive and must be applied after063; no provider credential or new environment variable is required. Reviewed downstream handoff depends on this immutable outcome and remains unimplemented. See [81](81_REVIEWED_MEETING_DELIBERATION_OUTCOMES.md).
 
 063 depends on060 qualified snapshots,061 active consent,062 shared accounting, current owner/platform-admin/MFA, selected provider credentials and the default-off admin flag. It preserves all existing migrations and uses the captured profile/pricing/limits. The next completion model must consume only truthful terminal turn receipts and cannot bypass unresolved accounting. See [80](80_ONE_ATTEMPT_MEETING_TURN_WORKER.md).

@@ -1,5 +1,9 @@
 # Bizoveya continuation checkpoint
 
+Automated BZ-101/CW-101 verification: 178 admin tests/19 files, 481 web tests/80 files, 65 ephemeral local migrations/29 SQL assertion executions, both standalone typechecks/lints, both production builds, application boundaries, whitespace and 867 local Markdown links passed. Web build retained pre-existing CSS autoprefixer/cache warnings. Hosted/browser/concurrency and all founder acceptance remain pending. No hosted SQL, provider request, message, publication or setting change.
+
+BZ-101/CW-101 source adds one explicit owner-reviewed outcome-to-private-request handoff through additive065. Immutable lineage is preserved, member projection is sanitized, and no generation/message/publication starts. MT236–239 remain pending. Next: truthful terminal deliberation recovery/closure; first-four groups remain incomplete. See [82](82_REVIEWED_MEETING_OUTCOME_REQUEST_HANDOFFS.md).
+
 Automated BZ-100/CW-100 verification: 176 admin tests/19 files, 64 ephemeral local migrations/28 SQL assertion executions, admin typecheck/lint, both production builds, application boundaries, whitespace, affected Markdown links and documentation projections passed. Web source is unchanged and its prior 480-test result is historical, not rerun. Hosted/PostgREST/browser/mobile/true concurrency, real provider billing and all founder acceptance remain pending. No hosted SQL, provider request, task creation, message, publication or deployment-setting change.
 
 ## Reviewed private meeting outcomes — 2026-10-12 PKT

@@ -1,5 +1,11 @@
 # Bizoveya chronological activity and decision log
 
+Automated BZ-101/CW-101 verification: 178 admin tests, 481 web tests, 65 local migrations/29 SQL assertions, both typechecks/lints/builds, boundaries, whitespace and links passed. Hosted/browser/concurrency/founder acceptance remain pending.
+
+### BZ-101 — 2026-10-12 PKT — Reviewed outcome private-request handoff
+
+Added additive065 and explicit admin controls converting one reviewed outcome into one private founder request. Sanitized immutable lineage persists, private turn text stays admin-only, exact retry is idempotent and changed/stale/unauthorized commands fail closed. MT236–239 remain pending; terminal recovery is next. See [82](82_REVIEWED_MEETING_OUTCOME_REQUEST_HANDOFFS.md).
+
 Automated BZ-100/CW-100 verification: 176 admin tests/19 files, 64 ephemeral local migrations/28 SQL assertion executions, admin typecheck/lint, both production builds, boundaries, whitespace, affected Markdown links and documentation projections passed. Web source is unchanged; its prior 480-test result is historical. No hosted SQL, provider request or downstream action.
 
 ### BZ-100 — 2026-10-12 PKT — Reviewed private meeting outcomes

@@ -2,6 +2,15 @@
 
 | ID | Check | Status |
 |---|---|---|
+| MT236 | Missing065 setup and preservation | Pending founder/operator |
+| MT237 | One outcome creates one private request and no downstream action | Pending founder |
+| MT238 | Refresh persistence and sanitized lineage | Pending founder |
+| MT239 | Retry/stale/changed meeting/access denials | Pending founder |
+
+Use [guide82](82_REVIEWED_MEETING_OUTCOME_REQUEST_HANDOFFS.md). No founder pass is inferred; earlier unanswered tests remain pending.
+
+| ID | Check | Status |
+|---|---|---|
 | MT232 | Missing064 setup and preservation of existing meeting/draft/media history | Pending founder/operator |
 | MT233 | Whole-deliberation completed gate versus in-progress/blocked/cancelled states | Pending founder |
 | MT234 | Exact founder outcome review, refresh persistence and zero downstream action | Pending founder |
