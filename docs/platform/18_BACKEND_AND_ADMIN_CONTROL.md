@@ -1,5 +1,7 @@
 # Backend and super admin control contract
 
+The admin generation authorization/recovery workflow remains unchanged by additive069. Specialist lineage is created during member-side snapshot preparation when delegation exists; admin dispatch still requires the existing explicit owner/admin checks and cannot fan out extra channel calls. See [86](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).
+
 Channel specialist roster/delegation is workspace-owner controlled on the web application. Admin-owned model qualification and spending policy remain prerequisites, but additive068 adds no new admin mutation or provider execution. See [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).
 
 `bz_prepare_announcement_knowledge` is an authenticated owner-only RPC behind exact announcement, version, roster and acknowledgement gates. It atomically creates revision-1 unapproved knowledge and immutable lineage; no admin/provider worker is invoked. See [84](84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md).

@@ -1,5 +1,7 @@
 # Requirements register
 
+BZ-105 requirement: a reviewed delegated request that enters generation must retain exact channel responsibility, delegation/campaign/run versions and one shared Content-stage execution boundary. Channel status may advance only from saved runtime/output/review evidence. See [86](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).
+
 BZ-104/CW-104 satisfies the private, owner-reviewed Blog/Pinterest/LinkedIn assignment and immutable request-delegation requirement without changing the compatible three-stage runtime. Delegation does not claim execution. Runtime lineage and channel-terminal recovery remain Group2 work. See [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).
 
 ## Site team activation and safe checkpoint pause — 2026-10-11 PKT

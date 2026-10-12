@@ -1,5 +1,7 @@
 # Combined pending setup and manual tests
 
+Pending MT252–255: hosted069, delegated snapshot lineage, refresh/terminal review projection and undelegated/viewer/stale/recovery negatives. Preparation itself must show one shared Content stage and must not start a provider call. See [86](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).
+
 **Pending MT248–251:** apply only missing hosted migration068; configure the reviewed private Blog/Pinterest/LinkedIn specialist roster; delegate one disposable Blog+LinkedIn request; verify persistence and viewer/stale/paused denials. Exact fields and expectations: [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md). No provider call or publication is part of these checks.
 
 BZ-103 adds pending one-time hosted migration067 and MT244–247. Use the four exact steps and sample fields in [84](84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md). No test is passed by source delivery; all earlier unanswered checks remain pending.

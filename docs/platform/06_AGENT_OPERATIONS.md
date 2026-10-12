@@ -1,5 +1,7 @@
 # AI employees, meetings and interruptions
 
+Channel specialists now retain reviewed responsibility through the compatible campaign run. This does not mean three workers ran: one qualified Content stage produces the compatible draft bundle, while requested channels expose evidence-backed preparation, execution, review and recovery state. See [86](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).
+
 Blog, Pinterest and LinkedIn now have explicit reviewed private assignments pinned to approved Content-agent versions, and founder requests can record immutable requested-channel delegation. The compatible Content generation stage is not duplicated; execution and recovery remain separately gated. See [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).
 
 An announcement reaches knowledge only after the existing reviewed decision/distribution and every pinned recipient acknowledgement. The owner then explicitly saves a draft; separate knowledge-room approval is still required. No acknowledgement implies understanding, execution or permission. See [84](84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md).

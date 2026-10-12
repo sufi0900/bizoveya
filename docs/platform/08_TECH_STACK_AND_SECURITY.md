@@ -1,5 +1,7 @@
 # Stack, provider policy and security
 
+Migration069 introduces no credential or provider path. It reuses existing qualification, admin authorization, request-before-provider marker, spending settlement and one-attempt recovery. The private lineage table has RLS enabled and grants no direct member/service access. See [86](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).
+
 Migration068 keeps specialist configuration private under RLS/security-definer functions, owner-only writes, strict JSON/version limits, immutable history and current binding/policy rechecks. It adds no credential, provider request, external tool or publication permission. See [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).
 
 Migration067 is additive, owner-only, RLS-hidden and retry-safe. It reuses strict026 knowledge validation and preserves an unapproved default; direct private-table access, stale/incomplete announcement state and duplicate handoffs are denied. See [84](84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md).

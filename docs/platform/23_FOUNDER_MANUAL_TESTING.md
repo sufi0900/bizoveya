@@ -1,5 +1,7 @@
 # Founder manual testing record
 
+MT252–255 are pending: apply069 after068; prepare one delegated Blog+LinkedIn snapshot; verify refresh-to-terminal channel states; test undelegated/viewer/stale/recovery negatives. Exact samples and expected results are in [86](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md). Do not repeat successful live generation merely to test preparation.
+
 ## MT248–251 — private channel specialists — pending
 
 Apply hosted068 later, enable reviewed Blog/Pinterest/LinkedIn Content-agent assignments, delegate one disposable Blog+LinkedIn request, then verify refresh/viewer/stale/pause denials. Use the exact samples and expected results in [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md). No step is currently claimed passed; delegation alone must create no AI output, spend or publication.

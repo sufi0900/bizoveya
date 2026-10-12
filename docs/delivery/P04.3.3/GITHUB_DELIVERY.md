@@ -1,5 +1,9 @@
 # Verified main delivery — P04.3.3 founder evidence checkpoint
 
+## BZ-105 / CW-105 channel specialist runtime lineage
+
+Resolved remote base `4f658481af88a1af0e3a7784b4bb1d09d78f8321`; historical branches/draft PR2 remain untouched and no active checkpoint lease was found. Additive069 records immutable request/delegation/campaign/run lineage whenever a reviewed delegated request prepares its compatible generation snapshot. The existing three-stage runtime remains unchanged: there is one shared Content-stage provider attempt, existing authorization/spending/recovery gates remain authoritative, and requested channels project only evidence-backed state/output/review status. Legacy nondelegated preparations stay readable; the Founder desk requires delegation before offering a new preparation. MT252–255 remain pending. No hosted SQL, provider call, deployment setting, message or publication. See [guide86](../../platform/86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).
+
 ## BZ-104 / CW-104 channel specialist delegation
 
 Base remote main: `472113ff36c05669b669ea404e53bd97aa9f7858`. Additive068, web contracts/routes/UI/tests and guide85 form one coherent Group2 slice. Expected-head non-force main delivery only after verification. No hosted SQL, provider request, settings change, external message or publication. MT248–251 remain pending; exact delivered successor is recorded in GitHub history/chat.

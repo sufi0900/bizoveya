@@ -1,5 +1,7 @@
 # Living documentation changelog
 
+- BZ-105: pin reviewed Blog/Pinterest/LinkedIn delegation to the existing single Content-stage run, preserving one-attempt accounting/recovery and projecting evidence-backed channel states. Added migration069, contracts/UI/tests and guide86; founder acceptance remains pending.
+
 ## BZ-104 / CW-104 — private channel specialist delegation
 
 - Added versioned owner-reviewed Blog, Pinterest and LinkedIn specialist assignments pinned to qualified Content-agent versions.

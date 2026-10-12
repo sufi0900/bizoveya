@@ -25,4 +25,11 @@ export const channelDelegationSchema = z.object({
   assignments: z.array(z.object({ channel: z.enum(specialistChannels), specialistKind: z.literal('content'), agentId: z.uuid(), agentVersion: z.number().int().positive(), state: z.literal('delegated') }).strict()).min(1).max(3),
   actorId: z.uuid(), createdAt: z.string(),
 }).strict();
+const specialistRuntimeStateSchema = z.enum(['prepared', 'running', 'awaiting_human_review', 'accepted', 'changes_requested', 'failed', 'recovery_required', 'cancelled']);
+export const specialistRuntimeSchema = z.object({
+  runId: z.uuid(), delegationSourceVersion: z.number().int().positive(), rosterVersion: z.number().int().positive(),
+  campaignId: z.uuid(), campaignVersion: z.number().int().positive(), executionMode: z.literal('shared-content-stage'), providerCallsPerContentStage: z.literal(1), actorId: z.uuid(), createdAt: z.string(),
+  sharedContentExecution: z.object({ agentId: z.uuid(), agentVersion: z.number().int().positive(), status: z.string(), spendingState: z.string() }).strict(),
+  channels: z.array(z.object({ channel: z.enum(specialistChannels), specialistKind: z.literal('content'), agentId: z.uuid(), agentVersion: z.number().int().positive(), state: specialistRuntimeStateSchema, outputAvailable: z.boolean() }).strict()).min(1).max(3),
+}).strict();
 export type SpecialistRoster = z.infer<typeof specialistRosterRecordSchema>;

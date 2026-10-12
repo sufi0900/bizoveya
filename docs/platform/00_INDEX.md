@@ -1,5 +1,7 @@
 # Bizoveya platform documentation — start here
 
+Current implementation guide: [86 Channel specialist runtime lineage](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).
+
 Current checkpoint BZ-104/CW-104 adds additive068 private channel-specialist rosters and immutable reviewed request delegation. Read [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md). Group2 remains in progress; MT248–251 pending.
 
 Current continuation: [84 — Acknowledged announcement knowledge drafts](84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md). Group3 source is complete; hosted activation and founder acceptance remain pending.

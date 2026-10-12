@@ -1,5 +1,7 @@
 # Bizoveya user manual — prelaunch working edition
 
+For new private request execution, first record channel delegation, then prepare/link the campaign and snapshot. The Founder desk displays one shared Content-stage attempt plus each requested channel's evidence-backed state. `Delegated`, `prepared` and `awaiting_human_review` do not mean accepted or published. See [86](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).
+
 Agency planning now includes **Private channel specialists**. Load the roster, select approved Content-agent versions for Blog/Pinterest/LinkedIn, review and enable; then explicitly delegate each proposed request. Delegation records responsibility only and does not generate or publish. Exact deferred test samples are in [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).
 
 For an acknowledged announcement, the owner can now enter a source title, verified source text and proposed fact in Agency planning, confirm the exact meeting version, and prepare an unapproved knowledge draft. Review and approval still occur separately in Site knowledge. See [84](84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md).

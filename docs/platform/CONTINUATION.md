@@ -1,5 +1,11 @@
 # Bizoveya continuation checkpoint
 
+Automated BZ-105/CW-105 evidence: 494 web tests/81 files, 181 admin tests/19 files, 69 ephemeral migrations/33 SQL assertion executions, both typechecks/lints/builds, application boundaries and whitespace passed. The web build generated 142 static pages including guide86. Hosted069/PostgREST/browser/mobile/true concurrency/provider billing and all founder acceptance remain pending.
+
+BZ-105/CW-105 pins reviewed channel delegation to the existing one-attempt campaign runtime through additive069. One shared Content-stage provider attempt retains existing authorization/accounting/recovery; requested channels receive immutable responsibility lineage and truthful prepared/running/review/terminal states. MT252–255 and all earlier unanswered founder tests remain pending. Group2 remains in progress; next is its channel execution/read-model closure audit. Group1 artwork and Group4 live voice remain provider-gated; Group3 source is complete; Group5 stays ON HOLD and Group6 out of scope. See [86](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).
+
+Next: audit and close remaining Group2 specialist terminal/recovery gaps without adding provider calls or weakening the existing one-attempt runtime.
+
 Automated BZ-104/CW-104 evidence: 492 web tests/81 files, 181 admin tests/19 files, 68 ephemeral migrations/32 SQL assertion executions, both typechecks/lints/builds, application boundaries and whitespace passed. The web build includes guide85 and 141 static pages. Hosted068/PostgREST/browser/mobile/true concurrency and all founder acceptance remain pending.
 
 BZ-104/CW-104 adds additive068 owner-reviewed Blog/Pinterest/LinkedIn specialist rosters and immutable per-request delegation receipts. Existing Coordinator/Content/Quality generation remains compatible; delegated never means generated, reviewed or published. MT248–251 remain pending. Group2 next must pin this delegation into the compatible campaign/execution task and project channel outcomes/recovery before source completion is claimed. Group1 artwork and Group4 live voice remain provider-gated; Group3 source is complete; Group5 stays ON HOLD and Group6 out of scope. See [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).

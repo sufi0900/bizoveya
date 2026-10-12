@@ -87,6 +87,7 @@ export async function prepareAgencyGeneration(db: SupabaseClient, userId: string
   if (['42P01', '42703', 'PGRST202', 'PGRST205'].includes(result.error?.code ?? '')) throw new WorkspaceError(503, 'Request generation preparation needs migration 051 after 050. No provider call was started.');
   if (result.error?.message === 'bz_invalid_agency_generation') throw new WorkspaceError(400, 'Review the exact request and campaign versions and confirm preparation.');
   if (result.error?.message === 'bz_agency_campaign_required') throw new WorkspaceError(409, 'Prepare a private campaign from this request first.');
+  if (result.error?.message === 'bz_channel_specialist_runtime_changed') throw new WorkspaceError(409, 'The compatible Content-stage snapshot changed. Refresh and prepare a new reviewed request snapshot.');
   if (result.error?.message === 'bz_site_roster_paused') throw new WorkspaceError(409, 'The site team is paused. No generation snapshot was created.');
   if (result.error?.message === 'bz_generation_not_ready') throw new WorkspaceError(409, 'Current approved knowledge, role bindings, connectivity and spending qualification are required. No generation snapshot was created.');
   if (result.error?.message === 'bz_generation_limit') throw new WorkspaceError(409, 'This campaign already has the maximum 25 generation snapshots.');

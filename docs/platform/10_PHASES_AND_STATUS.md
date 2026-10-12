@@ -1,5 +1,7 @@
 # Implementation phases and status ledger
 
+Current Group2 checkpoint BZ-105/CW-105 connects reviewed channel responsibility to one compatible Content-stage run and evidence-backed terminal/recovery projection. This is implemented source, not founder acceptance or Group2 completion. MT252–255 remain pending; the next slice is the Group2 closure audit. See [86](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).
+
 BZ-104/CW-104 implements the first Group2 channel-specialist expansion slice: private versioned Blog/Pinterest/LinkedIn assignments plus immutable reviewed request delegation through additive068. Existing campaign stages and accepted history remain compatible and no execution is inferred. MT248–251 remain pending. Group2 still needs delegation-to-runtime lineage and channel-terminal result/recovery projection. See [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).
 
 BZ-103/CW-103 closes Group 3 source implementation for private announcement broadcast, acknowledged receipts, reviewed knowledge-draft handoff, bounded deliberation, downstream private requests and terminal recovery. Migration067 never auto-approves knowledge or starts provider/external work. MT244–247 remain pending, so acceptance is not claimed. First-four source completion remains open on Group1 qualified optional AI artwork, Group2 channel-specialist expansion and Group4 qualified live voice. See [84](84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md).

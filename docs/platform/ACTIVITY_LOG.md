@@ -1,5 +1,11 @@
 # Bizoveya chronological activity and decision log
 
+## 2026-10-12 — BZ-105 channel specialist runtime lineage
+
+Implemented additive069 immutable delegation/campaign/run lineage and a member-safe per-channel execution/read model over the existing single Content-stage runtime. Added strict web contracts, Founder-desk compatibility/terminal projection, SQL assertions and guide86. No extra provider path, hosted SQL, spending reservation, settings change, message or publication. MT252–255 remain pending; Group2 is not yet declared complete.
+
+Automated verification: 494 web tests across 81 files, 181 admin tests across 19 files, 69 ephemeral migrations and 33 SQL assertion scripts, both standalone typechecks/lints, both production builds, application boundaries and whitespace passed. The web build generated 142 static pages. Hosted/browser/true-concurrency/provider-billing evidence and founder acceptance remain pending.
+
 Automated BZ-104/CW-104 evidence: 492 web tests/81 files, 181 admin tests/19 files, 68 ephemeral migrations/32 SQL assertion executions, both typechecks/lints/builds, application boundaries and whitespace passed. Guide85 and MT248–251 project into the 141-page web build. Hosted068/PostgREST/browser/mobile/true concurrency and founder acceptance remain pending.
 
 ### BZ-104 — 2026-10-12 PKT — Private channel specialist delegation

@@ -66,11 +66,13 @@ describe('saved campaign handoff presentation',()=>{
 
 describe('linked generation presentation',()=>{
  const handoff={campaignId:id,sourceVersion:1,title:'Private',document:{title:'Private',brief:'Approved',blog:'',pinterest:'',linkedin:''},actorId:id,createdAt:'now'};
+ const channelDelegation={requestId:id,sourceVersion:1,rosterVersion:2,instruction:'Approved facts only.',reason:'Delegate reviewed private request.',assignments:[{channel:'pinterest',specialistKind:'content',agentId:id,agentVersion:1,state:'delegated'}],actorId:id,createdAt:'now'};
  it('requires review of the displayed current campaign version and keeps dispatch separate',()=>{
-  const record=agencyRecordSchema.parse({...base,handoff,executionPreparation:{campaignVersion:4,campaignTitle:'Edited private brief'}});
+  const record=agencyRecordSchema.parse({...base,handoff,channelDelegation,executionPreparation:{campaignVersion:4,campaignTitle:'Edited private brief'}});
   const html=renderToStaticMarkup(createElement(AgencyRoom,{initial:[record],owner:true,endpoint}));
   expect(html).toContain('Edited private brief');expect(html).toContain('linked campaign v4');expect(html).toContain('Prepare linked generation snapshot');expect(html).toContain('keep execution separately authorized');
  });
+ it('requires reviewed channel delegation before preparing the shared runtime',()=>{const record=agencyRecordSchema.parse({...base,handoff,executionPreparation:{campaignVersion:4,campaignTitle:'Edited private brief'}}),html=renderToStaticMarkup(createElement(AgencyRoom,{initial:[record],owner:true,endpoint}));expect(html).toContain('Delegate this request to the reviewed channel specialists');expect(html).not.toContain('Prepare linked generation snapshot');});
  it('shows actual persisted run state for read-only members without another preparation button',()=>{
   const record=agencyRecordSchema.parse({...base,handoff,execution:{sourceVersion:2,actorId:id,createdAt:'now',run:{id,campaignId:id,campaignVersion:1,status:'failed',createdAt:'now',startedAt:'then',finishedAt:'now',stageCount:3,outputAvailable:false}}});
   const html=renderToStaticMarkup(createElement(AgencyRoom,{initial:[record],owner:false,endpoint}));
@@ -80,6 +82,11 @@ describe('linked generation presentation',()=>{
   const record=agencyRecordSchema.parse({...base,handoff,execution:{sourceVersion:2,actorId:id,createdAt:'now',run:{id,campaignId:id,campaignVersion:1,status:'running',createdAt:'now',startedAt:'then',finishedAt:null,stageCount:3,outputAvailable:false}},executionTask:{recordId:id,runId:id,version:2,state:'recovery_required',lastReason:'Provider reconciliation is required.',createdAt:'now',updatedAt:'now',leaseActive:false,leaseExpired:true,events:[]}});
   const html=renderToStaticMarkup(createElement(AgencyRoom,{initial:[record],owner:false,endpoint}));
   expect(html).toContain('Assistant task: recovery_required');expect(html).toContain('expired dispatch requires admin inspection');expect(html).toContain('Provider reconciliation is required.');expect(html).not.toContain('Reconcile interrupted task');
+ });
+ it('projects truthful per-channel terminal state while retaining one shared provider attempt',()=>{
+  const specialistRuntime={runId:id,delegationSourceVersion:1,rosterVersion:2,campaignId:id,campaignVersion:1,executionMode:'shared-content-stage',providerCallsPerContentStage:1,actorId:id,createdAt:'now',sharedContentExecution:{agentId:id,agentVersion:1,status:'succeeded',spendingState:'settled'},channels:[{channel:'pinterest',specialistKind:'content',agentId:id,agentVersion:1,state:'accepted',outputAvailable:true}]};
+  const record=agencyRecordSchema.parse({...base,handoff,channelDelegation,execution:{sourceVersion:2,actorId:id,createdAt:'now',run:{id,campaignId:id,campaignVersion:1,status:'succeeded',createdAt:'now',startedAt:'then',finishedAt:'now',stageCount:3,outputAvailable:true}},specialistRuntime});
+  const html=renderToStaticMarkup(createElement(AgencyRoom,{initial:[record],owner:false,endpoint}));expect(html).toContain('one shared Content-stage provider attempt');expect(html).toContain('pinterest specialist · accepted · private output saved');expect(html).not.toContain('Prepare linked generation snapshot');
  });
 });
 

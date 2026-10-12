@@ -1,5 +1,7 @@
 # System architecture
 
+Additive069 overlays immutable channel-responsibility lineage on the existing request → campaign → generation → durable-task path. It does not add a worker: the existing Coordinator/Content/Quality runtime remains authoritative, with one Content provider attempt and per-request channel projections. See [86](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).
+
 Additive068 introduces a site-scoped channel-specialist roster beside the core Coordinator/Content/Quality roster, plus one immutable delegation edge from a founder request to its requested-channel assignments. The existing campaign/runtime topology is unchanged. See [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).
 
 Additive067 extends the private agency event graph from acknowledged announcement packets to one normal unapproved knowledge source plus immutable meeting/source lineage. Knowledge approval and all execution remain separate authorization boundaries. See [84](84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md).

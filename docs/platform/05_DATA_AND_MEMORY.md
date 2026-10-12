@@ -1,5 +1,7 @@
 # Data, schema and memory
 
+`agency_specialist_runtime_lineage` is private, immutable and site-cascade-bound through its request/run/campaign references. It pins delegation source/roster versions, requested assignments, campaign/run versions and the shared Content-stage agent/version; the current channel state is derived rather than stored. Preparation and delegation insertion both perform idempotent attachment so operation order cannot create another run. See [86](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).
+
 BZ-104/CW-104 stores immutable specialist-roster revisions and one version-pinned channel delegation per request through additive068. It stores responsibility/lineage, not generated content or execution claims. Existing campaign history remains unchanged. See [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).
 
 Announcement knowledge handoffs pin meeting/source IDs, meeting and roster versions, agenda, decision, exact knowledge document, command, actor and time. The created knowledge revision starts unapproved; it cannot silently enter approved retrieval. See [84](84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md).
