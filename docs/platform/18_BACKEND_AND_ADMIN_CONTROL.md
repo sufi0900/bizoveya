@@ -1,5 +1,8 @@
 # Backend and super admin control contract
 
+BZ-109/CW-109 — five-delivery Turn 1: additive071–072 implements independent image/live-voice qualification, owner-only durable request admission, immutable provenance, one-attempt server claim/start/receipt boundaries, quota/concurrency limits, shared UTC budget checks and reviewed recovery. Admin Media capabilities and authenticated site media APIs are wired; neither endpoint starts a provider. Unknown usage remains unresolved; token issuance is not completed voice execution. Groups2/3 remain source-complete; Groups1/4 remain open for Turns2/3. Group5 ON HOLD; Group6 out of scope. Routine founder acceptance MT264–267 and earlier unanswered tests remain pending. See [90](90_FIVE_DELIVERY_MEDIA_ADMISSION.md).
+
+
 The admin generation authorization/recovery workflow remains unchanged by additive069. Specialist lineage is created during member-side snapshot preparation when delegation exists; admin dispatch still requires the existing explicit owner/admin checks and cannot fan out extra channel calls. See [86](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).
 
 Channel specialist roster/delegation is workspace-owner controlled on the web application. Admin-owned model qualification and spending policy remain prerequisites, but additive068 adds no new admin mutation or provider execution. See [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).

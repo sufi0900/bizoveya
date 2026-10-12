@@ -1,5 +1,8 @@
 # Bizoveya user manual — prelaunch working edition
 
+BZ-109/CW-109 — five-delivery Turn 1: additive071–072 implements independent image/live-voice qualification, owner-only durable request admission, immutable provenance, one-attempt server claim/start/receipt boundaries, quota/concurrency limits, shared UTC budget checks and reviewed recovery. Admin Media capabilities and authenticated site media APIs are wired; neither endpoint starts a provider. Unknown usage remains unresolved; token issuance is not completed voice execution. Groups2/3 remain source-complete; Groups1/4 remain open for Turns2/3. Group5 ON HOLD; Group6 out of scope. Routine founder acceptance MT264–267 and earlier unanswered tests remain pending. See [90](90_FIVE_DELIVERY_MEDIA_ADMISSION.md).
+
+
 For new private request execution, first record channel delegation, then prepare/link the campaign and snapshot. The Founder desk displays one shared Content-stage attempt plus each requested channel's evidence-backed state. `Delegated`, `prepared` and `awaiting_human_review` do not mean accepted or published. See [86](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).
 
 Agency planning now includes **Private channel specialists**. Load the roster, select approved Content-agent versions for Blog/Pinterest/LinkedIn, review and enable; then explicitly delegate each proposed request. Delegation records responsibility only and does not generate or publish. Exact deferred test samples are in [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).

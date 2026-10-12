@@ -37,3 +37,5 @@ export const campaignQualitySchema=z.object({schema:z.literal("campaign-quality-
 export type CampaignPlan=z.infer<typeof campaignPlanSchema>;
 export type CampaignDraftBundle=z.infer<typeof campaignDraftBundleSchema>;
 export type CampaignQuality=z.infer<typeof campaignQualitySchema>;
+
+export * from './media';

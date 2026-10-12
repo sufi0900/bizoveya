@@ -1,5 +1,12 @@
 # Bizoveya chronological activity and decision log
 
+### BZ-109 — 2026-10-12 UTC — Turn1 durable media admission and five-delivery ledger
+
+Independent voice/image qualification, owner-only admission, trusted one-attempt worker boundaries, shared spending and guarded recovery. No provider execution. Four later deliveries remain scoped in guide90.
+
+BZ-109/CW-109 — five-delivery Turn 1: additive071–072 implements independent image/live-voice qualification, owner-only durable request admission, immutable provenance, one-attempt server claim/start/receipt boundaries, quota/concurrency limits, shared UTC budget checks and reviewed recovery. Admin Media capabilities and authenticated site media APIs are wired; neither endpoint starts a provider. Unknown usage remains unresolved; token issuance is not completed voice execution. Groups2/3 remain source-complete; Groups1/4 remain open for Turns2/3. Group5 ON HOLD; Group6 out of scope. Routine founder acceptance MT264–267 and earlier unanswered tests remain pending. See [90](90_FIVE_DELIVERY_MEDIA_ADMISSION.md).
+
+
 BZ-108 verified:194 admin tests/20 files,13 synthetic media tests,11 document-room tests, admin typecheck/lint, both builds, boundaries and whitespace passed. Guide89 is rendered in145-page web build. Live/API/browser/manual acceptance remains pending.
 
 BZ-108/CW-108 (2026-10-13 PKT): founder selects Gemini for voice and Nano Banana2 Lite (`gemini-3.1-flash-lite-image`) for optional artwork. Inspected screenshot confirms AI Studio image generation, not API quota/billing qualification. Artwork is optional and must not block text drafts, templates, uploads, assistant execution or meetings; unavailable artwork stops only that capability. Added separate server-side media adapter contracts, one-attempt bounded Gemini image transport and model-constrained120-second Live token provisioning with transcript-only action authority. No endpoint/worker/browser activation or provider request. OpenAI is a future adapter option, not a required credential today. First-four source remains unfinished on durable media admission/accounting and browser voice integration; founder/manual/live tests remain pending. See [89](89_OPTIONAL_ARTWORK_AND_GEMINI_MEDIA_TRANSPORTS.md).
