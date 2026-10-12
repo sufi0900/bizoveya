@@ -1,5 +1,7 @@
 # Requirements register
 
+BZ-104/CW-104 satisfies the private, owner-reviewed Blog/Pinterest/LinkedIn assignment and immutable request-delegation requirement without changing the compatible three-stage runtime. Delegation does not claim execution. Runtime lineage and channel-terminal recovery remain Group2 work. See [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).
+
 ## Site team activation and safe checkpoint pause — 2026-10-11 PKT
 
 Group2 now has owner-reviewed site-specific Coordinator/Content/Quality selections, enable/pause controls and immutable history through additive050. Preparation/authorization/new reservation/provider-start boundaries enforce pinned roster versions; started work can still settle. Onboarding respects the selected/paused team. All founder acceptance stays pending until before public reveal; coding continues independently within real dependencies. Assistant dispatch/recovery, meetings, optional AI and live voice remain unfinished; office ON HOLD. See [67 contract and four deferred checks](67_SITE_TEAM_ACTIVATION_AND_SAFE_PAUSE.md). MT184–187 and prior unanswered tests remain pending. No hosted SQL/provider/settings/publication or regeneration; no active checkpoint lease remains at handoff.

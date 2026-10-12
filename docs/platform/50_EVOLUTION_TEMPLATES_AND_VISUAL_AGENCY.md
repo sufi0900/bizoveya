@@ -1,5 +1,7 @@
 # Evolution record: templates, voice and the visual digital agency
 
+BZ-104/CW-104 begins the documented channel-specialist expansion with a private versioned Blog/Pinterest/LinkedIn roster and immutable request delegation. Assignments pin qualified Content-agent versions while preserving the existing three-stage campaign runtime; delegation is not execution. Group2 remains open for runtime lineage and truthful per-channel terminal/recovery projection. See [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).
+
 BZ-103/CW-103 completes Group3 source for the documented private meeting/announcement boundary. A fully acknowledged announcement can create one immutable-lineage Site knowledge draft, but it remains unapproved until separate owner review. Group1 optional AI artwork, Group2 channel-specialist expansion and Group4 live voice remain unfinished. Office visualization remains ON HOLD. See [84](84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md).
 
 BZ-102/CW-102 adds explicit interrupted-turn recovery and immutable snapshot closure through additive066, with admin controls and sanitized Founder desk status. Unknown provider usage requires billing reconciliation; no retry occurs. MT240–243 remain pending. First-four completion is still open; next is the consolidated source-to-plan audit of assistant/specialist, interruption/knowledge, AI visuals and live voice exits. Office visualization stays ON HOLD. See [83](83_MEETING_TERMINAL_RECOVERY_AND_CLOSURE.md).

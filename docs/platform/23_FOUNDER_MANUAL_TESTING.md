@@ -1,5 +1,9 @@
 # Founder manual testing record
 
+## MT248–251 — private channel specialists — pending
+
+Apply hosted068 later, enable reviewed Blog/Pinterest/LinkedIn Content-agent assignments, delegate one disposable Blog+LinkedIn request, then verify refresh/viewer/stale/pause denials. Use the exact samples and expected results in [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md). No step is currently claimed passed; delegation alone must create no AI output, spend or publication.
+
 ## MT244–247 — acknowledged announcement knowledge draft (pending)
 
 - **MT244:** Apply hosted067 after066 in the intended project; confirm existing meeting and knowledge history remains intact.

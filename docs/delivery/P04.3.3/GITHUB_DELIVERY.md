@@ -1,5 +1,9 @@
 # Verified main delivery — P04.3.3 founder evidence checkpoint
 
+## BZ-104 / CW-104 channel specialist delegation
+
+Base remote main: `472113ff36c05669b669ea404e53bd97aa9f7858`. Additive068, web contracts/routes/UI/tests and guide85 form one coherent Group2 slice. Expected-head non-force main delivery only after verification. No hosted SQL, provider request, settings change, external message or publication. MT248–251 remain pending; exact delivered successor is recorded in GitHub history/chat.
+
 Automated BZ-103/CW-103 verification passed: 487 web tests, 181 admin tests, 67 migrations/31 SQL assertions, both typechecks/lints/builds, boundaries and whitespace. Hosted067/browser/founder acceptance remain pending.
 
 ## BZ-103/CW-103 acknowledged announcement knowledge draft delivery

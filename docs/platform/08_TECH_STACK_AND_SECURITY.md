@@ -1,5 +1,7 @@
 # Stack, provider policy and security
 
+Migration068 keeps specialist configuration private under RLS/security-definer functions, owner-only writes, strict JSON/version limits, immutable history and current binding/policy rechecks. It adds no credential, provider request, external tool or publication permission. See [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).
+
 Migration067 is additive, owner-only, RLS-hidden and retry-safe. It reuses strict026 knowledge validation and preserves an unapproved default; direct private-table access, stale/incomplete announcement state and duplicate handoffs are denied. See [84](84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md).
 
 BZ-102/CW-102 adds explicit interrupted-turn recovery and immutable snapshot closure through additive066, with admin controls and sanitized Founder desk status. Unknown provider usage requires billing reconciliation; no retry occurs. MT240–243 remain pending. First-four completion is still open; next is the consolidated source-to-plan audit of assistant/specialist, interruption/knowledge, AI visuals and live voice exits. Office visualization stays ON HOLD. See [83](83_MEETING_TERMINAL_RECOVERY_AND_CLOSURE.md).

@@ -3,6 +3,7 @@ import { savedMeetingSnapshotSchema } from './meeting-snapshot-contracts';
 import { meetingConsentSchema } from './meeting-consent-contracts';
 import { campaignDocumentSchema, generationSummarySchema } from '../campaigns/contracts';
 import { knowledgeDocumentSchema } from '@/domain/knowledge';
+import { channelDelegationSchema } from './specialist-contracts';
 const text = (max: number) => z.string().trim().min(1).max(max).refine(value => !/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(value));
 export const channels = ['blog', 'pinterest', 'linkedin'] as const;
 const participants = z.array(z.enum(['coordinator', 'content', 'quality'])).min(1).max(3).refine(values => new Set(values).size === values.length);
@@ -38,6 +39,7 @@ export const agencyRecordSchema = z.object({
   outcomeHandoff: z.object({ outcomeId:z.uuid(),snapshotId:z.uuid(),meetingId:z.uuid(),requestId:z.uuid(),fingerprint:z.string().regex(/^[a-f0-9]{64}$/),instruction:text(1400),channels:z.array(z.enum(channels)).min(1).max(3).refine(values=>new Set(values).size===values.length),actorId:z.uuid(),createdAt:z.string() }).strict().nullable().default(null),
   meetingInvitations: z.object({ meetingId: z.uuid(), requestId: z.uuid(), sourceVersion: z.number().int().min(1).max(99), rosterVersion: z.number().int().min(1).max(50), actorId: z.uuid(), createdAt: z.string(), participants: z.array(participantInvitationSchema).min(1).max(3) }).strict().nullable().default(null),
   announcementKnowledgeDraft: z.object({ meetingId:z.uuid(),sourceId:z.uuid(),sourceMeetingVersion:z.number().int().min(1).max(99),rosterVersion:z.number().int().min(1).max(50),title:text(120),factCount:z.number().int().min(1).max(40),createdUnapproved:z.literal(true),currentApproved:z.boolean(),sourceVersion:z.number().int().positive(),actorId:z.uuid(),createdAt:z.string() }).strict().nullable().default(null),
+  channelDelegation: channelDelegationSchema.nullable().default(null),
   meetingSchedule: z.object({ planId: z.uuid(), version: z.number().int().min(1).max(100), state: scheduleStateSchema, actorId: z.uuid(), createdAt: z.string(), updatedAt: z.string(), events: z.array(z.object({ version: z.number().int().min(1).max(100), action: z.enum(['queue','pause','resume','cancel']), state: scheduleStateSchema, reason: text(300), actorId: z.uuid(), createdAt: z.string() }).strict()).min(1).max(100) }).strict().nullable().default(null),
   meetingDeliberation: z.object({ id: z.uuid(), meetingId: z.uuid(), requestId: z.uuid(), sourceVersion: z.number().int().min(1).max(99), rosterVersion: z.number().int().min(1).max(50), rounds: z.number().int().min(1).max(2), maxInputTokensPerTurn: z.number().int().min(256).max(2000), maxOutputTokensPerTurn: z.number().int().min(128).max(1000), maxTotalCostCents: z.number().int().min(1).max(25), actorId: z.uuid(), createdAt: z.string(), turns: z.array(z.object({ ordinal: z.number().int().min(1).max(6), round: z.number().int().min(1).max(2), role: z.enum(['coordinator','content','quality']), agentId: z.uuid(), agentVersion: z.number().int().positive(), purpose: text(240), state: z.literal('planned') }).strict()).min(1).max(6) }).strict().nullable().default(null),
 }).strict();
@@ -47,5 +49,5 @@ export type AgencyRecord = z.infer<typeof agencyRecordSchema>;
 export const voiceEntryState = Object.freeze({ enabled: false, reason: 'Business voice transcription and speech providers have not been qualified. Paste and correct a transcript, then explicitly confirm the same text command.' });
 // Preparing work is deterministic and costs no model call. Tasks are proposals, never fake specialist results.
 export function delegationProposal(input: Extract<AgencyCommand, { action: 'request' }>) {
-  return input.channels.map(channel => ({ channel, role: 'content' as const, state: 'proposed' as const, requires: ['current-approved-knowledge', 'qualified-role-binding', 'budget-admission', 'human-review'] }));
+  return input.channels.map(channel => ({ channel, role: `${channel}-specialist` as const, specialistKind: 'content' as const, state: 'proposed' as const, requires: ['current-approved-knowledge', 'reviewed-channel-roster', 'qualified-role-binding', 'budget-admission', 'human-review'] }));
 }

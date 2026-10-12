@@ -1,5 +1,11 @@
 # Living documentation changelog
 
+## BZ-104 / CW-104 — private channel specialist delegation
+
+- Added versioned owner-reviewed Blog, Pinterest and LinkedIn specialist assignments pinned to qualified Content-agent versions.
+- Added immutable, idempotent, version-bound delegation of proposed founder requests.
+- Preserved existing Coordinator/Content/Quality campaign runtime and made no provider/publication change.
+
 ## BZ-103 / CW-103 — acknowledged announcement knowledge drafts
 
 - Added additive067 and the owner-reviewed announcement-to-Site-knowledge draft workflow.

@@ -1,5 +1,9 @@
 # Verification, manual acceptance and release evidence
 
+Automated BZ-104/CW-104 result: 492 web tests across 81 files, 181 admin tests across 19 files, all 68 migrations and 32 SQL assertion scripts, both application typechecks/lints/builds, boundaries and whitespace passed. SQL authentication/provider qualification is synthetic; hosted068, browser/mobile, true concurrency and MT248–251 remain pending.
+
+BZ-104/CW-104 automated verification covers strict specialist contracts/routes/UI and migration068 SQL behavior. Hosted068, PostgREST, browser/mobile, true concurrency and MT248–251 remain pending; no founder pass is inferred. See [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).
+
 Automated BZ-103/CW-103 verification: 487 web tests/80 files, 181 admin tests/19 files, 67 ephemeral migrations/31 SQL assertion executions, both standalone typechecks/lints, both production builds, application boundaries and whitespace passed. Built documentation includes guide84 and current projections. SQL auth/receipts are synthetic; hosted067/PostgREST/browser/mobile/true concurrency and founder acceptance remain pending. No hosted SQL, provider request, message, publication or settings change.
 
 BZ-103/CW-103 local verification covers additive067 announcement knowledge handoff, acknowledgement/version/access/retry/immutability gates, unapproved knowledge state and zero generation side effects. MT244–247, hosted067, PostgREST/browser/mobile/real concurrency and all earlier unanswered founder tests remain pending. See [84](84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md).

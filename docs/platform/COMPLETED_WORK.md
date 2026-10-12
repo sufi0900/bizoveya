@@ -1,5 +1,7 @@
 # Completed Bizoveya work only
 
+BZ-104/CW-104 source slice: additive068 private channel-specialist roster and immutable reviewed request delegation are implemented and locally verified. This is completed source work, not Group2 completion or founder acceptance. MT248–251 remain pending. See [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).
+
 ## BZ-103/CW-103 source checkpoint
 
 Group3 source is complete through additive067: versioned private announcements, receipts, reviewed unapproved knowledge drafts, bounded meeting execution, reviewed outcomes/private requests and safe terminal recovery are implemented. Automated source verification is recorded; hosted migration/browser/founder acceptance is still pending and therefore not marked passed. Groups1,2 and4 remain incomplete.

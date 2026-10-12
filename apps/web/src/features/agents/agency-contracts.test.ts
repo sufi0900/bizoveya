@@ -9,7 +9,7 @@ describe('agency planning admission', () => {
   it('keeps channel delegation proposed and business voice disabled', () => {
     const parsed = agencyCommandSchema.parse(request);
     if (parsed.action !== 'request') throw new Error('Fixture mismatch');
-    expect(delegationProposal(parsed)[0]).toMatchObject({ channel: 'pinterest', role: 'content', state: 'proposed' });
+    expect(delegationProposal(parsed)[0]).toMatchObject({ channel: 'pinterest', role: 'pinterest-specialist', specialistKind: 'content', state: 'proposed' });
     expect(voiceEntryState.enabled).toBe(false);
   });
   it('requires optimistic version and a reviewed reason for decisions', () => {

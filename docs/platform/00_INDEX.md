@@ -1,5 +1,7 @@
 # Bizoveya platform documentation — start here
 
+Current checkpoint BZ-104/CW-104 adds additive068 private channel-specialist rosters and immutable reviewed request delegation. Read [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md). Group2 remains in progress; MT248–251 pending.
+
 Current continuation: [84 — Acknowledged announcement knowledge drafts](84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md). Group3 source is complete; hosted activation and founder acceptance remain pending.
 
 BZ-102/CW-102 adds explicit interrupted-turn recovery and immutable snapshot closure through additive066, with admin controls and sanitized Founder desk status. Unknown provider usage requires billing reconciliation; no retry occurs. MT240–243 remain pending. First-four completion is still open; next is the consolidated source-to-plan audit of assistant/specialist, interruption/knowledge, AI visuals and live voice exits. Office visualization stays ON HOLD. See [83](83_MEETING_TERMINAL_RECOVERY_AND_CLOSURE.md).

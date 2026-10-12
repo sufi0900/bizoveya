@@ -1,5 +1,7 @@
 # System architecture
 
+Additive068 introduces a site-scoped channel-specialist roster beside the core Coordinator/Content/Quality roster, plus one immutable delegation edge from a founder request to its requested-channel assignments. The existing campaign/runtime topology is unchanged. See [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).
+
 Additive067 extends the private agency event graph from acknowledged announcement packets to one normal unapproved knowledge source plus immutable meeting/source lineage. Knowledge approval and all execution remain separate authorization boundaries. See [84](84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md).
 
 BZ-102/CW-102 adds explicit interrupted-turn recovery and immutable snapshot closure through additive066, with admin controls and sanitized Founder desk status. Unknown provider usage requires billing reconciliation; no retry occurs. MT240–243 remain pending. First-four completion is still open; next is the consolidated source-to-plan audit of assistant/specialist, interruption/knowledge, AI visuals and live voice exits. Office visualization stays ON HOLD. See [83](83_MEETING_TERMINAL_RECOVERY_AND_CLOSURE.md).

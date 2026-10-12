@@ -1,5 +1,11 @@
 # Bizoveya continuation checkpoint
 
+Automated BZ-104/CW-104 evidence: 492 web tests/81 files, 181 admin tests/19 files, 68 ephemeral migrations/32 SQL assertion executions, both typechecks/lints/builds, application boundaries and whitespace passed. The web build includes guide85 and 141 static pages. Hosted068/PostgREST/browser/mobile/true concurrency and all founder acceptance remain pending.
+
+BZ-104/CW-104 adds additive068 owner-reviewed Blog/Pinterest/LinkedIn specialist rosters and immutable per-request delegation receipts. Existing Coordinator/Content/Quality generation remains compatible; delegated never means generated, reviewed or published. MT248–251 remain pending. Group2 next must pin this delegation into the compatible campaign/execution task and project channel outcomes/recovery before source completion is claimed. Group1 artwork and Group4 live voice remain provider-gated; Group3 source is complete; Group5 stays ON HOLD and Group6 out of scope. See [85](85_PRIVATE_CHANNEL_SPECIALIST_DELEGATION.md).
+
+Next: connect reviewed specialist delegation lineage to the existing one-attempt campaign/task runtime without duplicating Content provider calls or weakening accounting, then expose truthful channel-terminal state.
+
 Automated BZ-103/CW-103 verification: 487 web tests/80 files, 181 admin tests/19 files, 67 ephemeral migrations/31 SQL assertion executions, both standalone typechecks/lints, both production builds, application boundaries and whitespace passed. Guide84 and the BZ-103/CW-103/MT244–247 projections are included in the built document room. SQL auth/receipts are synthetic; hosted067/PostgREST/browser/mobile/true concurrency and founder acceptance remain pending.
 
 BZ-103/CW-103 completes the documented Group 3 source workflow: acknowledged announcements can now create one owner-reviewed, unapproved Site knowledge draft with exact meeting/roster lineage and retry/access guards. Nothing is auto-approved, sent, generated or published. MT244–247 and all earlier unanswered founder tests remain pending. Group 1 qualified optional AI artwork, Group 2 channel-specialist expansion and Group 4 qualified live voice remain open; Group 5 stays ON HOLD and Group 6 out of scope. See [84](84_ACKNOWLEDGED_ANNOUNCEMENT_KNOWLEDGE_DRAFTS.md).
