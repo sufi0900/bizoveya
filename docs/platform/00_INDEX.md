@@ -1,12 +1,18 @@
 # Bizoveya platform documentation — start here
 
+- [96 Qualification expiry, execution controls and four exact founder steps](96_QUALIFICATION_EXPIRY_AND_EXECUTION_GUIDANCE.md).
+
+BZ-115/CW-115 — read-only hosted diagnosis confirms the three existing v2 agents are already approved and bound, but the shared Gemini connectivity test is older than24 hours and the enabled pricing policy expired on October10. Corrected stale admin/customer capability guidance and clarified that onboarding `executionEnabled:false` describes the assessment only. Existing execution/runtime remains implemented; no hosted policy, provider, deployment setting or saved content changed. Founder planning/campaign-save evidence is narrow; MT280–283 and earlier live acceptance remain pending. See [96](96_QUALIFICATION_EXPIRY_AND_EXECUTION_GUIDANCE.md).
+
 - [95 First-four second review and voice-start repair](95_FIRST_FOUR_SECOND_REVIEW.md).
 
 - [94 First-four source completion and consolidated acceptance](94_FIRST_FOUR_SOURCE_COMPLETION_AND_ACCEPTANCE.md).
 
 - [93 First-four integration and recovery](93_FIRST_FOUR_INTEGRATION_AND_RECOVERY.md) — Turn4, MT276–279 pending; Turn5 final audit next.
 
-Latest fixed-budget delivery: **Turn1/5 complete**, durable voice/image admission and reviewed recovery through071–072. [Five-delivery plan, exact exits, verification and later samples](90_FIVE_DELIVERY_MEDIA_ADMISSION.md). Turn2 live voice is next; all founder acceptance remains pending.
+## Historical checkpoint entries
+
+Latest fixed-budget delivery at that checkpoint: **Turn1/5 complete**, durable voice/image admission and reviewed recovery through071–072. [Five-delivery plan, exact exits, verification and later samples](90_FIVE_DELIVERY_MEDIA_ADMISSION.md). Turn2 live voice is next; all founder acceptance remains pending.
 
 Current implementation guide: [86 Channel specialist runtime lineage](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).
 

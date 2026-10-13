@@ -1,5 +1,7 @@
 # Completed Bizoveya work only
 
+| CW-115 | Existing runtime/qualification traced; expired hosted evidence identified read-only; stale capability text and navigation corrected | Live activation and MT280–283 remain pending; see96 |
+
 | CW-114 | Post-delivery source review and immediate pending-start microphone cleanup | Synthetic regressions verified; real browser acceptance pending; see95 |
 
 | CW-113 | Turn5 first-four source audit/closure and acceptance package | All four documented source groups complete after final checks; live/founder acceptance pending; see94 |

@@ -12,7 +12,7 @@ export function assessOnboarding(snapshot:z.infer<typeof onboardingSnapshotSchem
  if(!snapshot.facts.length)blockers.push('Approve at least one site fact in Knowledge.');
  if(snapshot.siteTeam.enabled===false)blockers.push('The owner has paused the site team. Enable a reviewed qualified team before preparing new work.');
  for(const role of snapshot.siteTeam.enabled===false?[]:snapshot.roles){
-  if(role.qualifiedCount===0)blockers.push(`${role.kind}: the operator must approve a current agent, bind a checked model and renew its spending policy.`);
+  if(role.qualifiedCount===0)blockers.push(`${role.kind}: the operator must review the approved agent version, enabled model assignment, passed connectivity test from the last 24 hours and unexpired enabled pricing policy.`);
   if(role.qualifiedCount>1)blockers.push(`${role.kind}: multiple qualified agents are eligible. The operator must resolve this ambiguity before generation preparation.`);
  }
  const recommendations:string[]=[];

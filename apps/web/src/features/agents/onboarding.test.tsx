@@ -18,6 +18,7 @@ describe('grounded onboarding assessment',()=>{
   expect(assessOnboarding(report.current)).toMatchObject({preparationChecksPassed:true,sourceCount:1,factCount:1});
   const missing=assessOnboarding({...report.current,facts:[],roles:report.current.roles.map((r,i)=>({...r,qualifiedCount:i===0?2:0}))});
   expect(missing.preparationChecksPassed).toBe(false);expect(missing.blockers).toHaveLength(4);expect(missing.blockers.join(' ')).toContain('ambiguity');
+  expect(missing.blockers.join(' ')).toContain('last 24 hours');expect(missing.blockers.join(' ')).toContain('unexpired enabled pricing policy');
  });
  it('rejects execution flags, duplicate role records and unreviewed commands',()=>{
   expect(onboardingReviewSchema.safeParse({...input,reviewed:false}).success).toBe(false);
