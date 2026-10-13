@@ -44,8 +44,8 @@ export async function handleMcp(request: Request) {
   if (rpc.id === undefined) return new Response(null, { status: 202, headers });
   const result = (value: unknown) => reply({ jsonrpc: "2.0", id: rpc.id, result: value });
   switch (rpc.method) {
-    case "initialize": return result({ protocolVersion: versions.includes(String(rpc.params?.protocolVersion)) ? rpc.params?.protocolVersion : versions[0], capabilities: { tools: {} }, serverInfo: { name: "bizoveya-workspaces", version: "0.1.0" }, instructions: "Private Bizoveya workspace data. Respect workspace roles, approval status and record versions. Save drafts only when requested by the user." });
-    case "server/discover": return result({ supportedVersions: versions, capabilities: { tools: {} }, serverInfo: { name: "bizoveya-workspaces", version: "0.1.0" } });
+    case "initialize": return result({ protocolVersion: versions.includes(String(rpc.params?.protocolVersion)) ? rpc.params?.protocolVersion : versions[0], capabilities: { tools: {} }, serverInfo: { name: "bizoveya-workspaces", version: "0.2.0" }, instructions: "Private Bizoveya workspace data. Respect workspace roles, approval status and record versions. Save drafts only when requested by the user." });
+    case "server/discover": return result({ supportedVersions: versions, capabilities: { tools: {} }, serverInfo: { name: "bizoveya-workspaces", version: "0.2.0" } });
     case "ping": return result({});
     case "tools/list": return result({ tools: mcpTools(config.writes) });
     case "tools/call": {

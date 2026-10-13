@@ -14,7 +14,21 @@ The integration adds an authenticated MCP endpoint to the existing Next.js web a
 | `save_campaign_draft` | Optional versioned campaign draft save |
 | `save_knowledge_draft` | Optional versioned knowledge draft save; approval is removed on edit |
 
+| `read_agent_readiness` | Read brand voice, audience, guidance and the approved catalog |
+| `save_agent_preferences` | Fill versioned site preferences |
+| `read_setup_status` | Inspect real onboarding blockers and recommendations |
+| `read_agent_team` | Read the selected roster and approved agent options |
+| `preview_agent_context` | Preview approved context without executing an agent |
+| `read_business_draft` | Read native business website content and design |
+| `save_business_draft` | Save validated native business website content as a draft |
+
 Draft tools are disabled by default. The endpoint has no publishing, approval, deletion, agent execution or provider spending tools.
+
+## Context-based setup
+
+The assistant can map user-provided context to supported fields. It uses context available in the conversation and any explicitly authorized retrieval; it does not automatically gain access to every historical ChatGPT conversation. Missing business facts must be requested rather than invented.
+
+Customer fields include brand voice, audience, site guidance, proposed knowledge, campaign brief and channel drafts, and native business content. Platform agent definitions, model qualification, team enablement and spending approval remain controlled by the existing operator/owner workflows. Filling preferences does not create an agent or satisfy those gates.
 
 ## Authentication and configuration
 

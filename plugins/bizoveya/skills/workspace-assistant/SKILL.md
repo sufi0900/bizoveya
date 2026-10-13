@@ -17,3 +17,13 @@ Use the connected Bizoveya MCP tools. If connection or OAuth setup is incomplete
 The plugin exposes workspace/site reads, knowledge reads, campaign reads and optional draft saves. It does not expose account administration, workspace membership changes, provider spending, campaign execution, human review approval, site deletion or publishing. Respect any disabled tool and the user's current owner/editor/viewer role.
 
 Prefer concise summaries. Disclose private workspace content only as needed for the user's request. Do not insert invented statistics, product capabilities, career facts or unsupported claims into drafts.
+
+## Fill site setup from available ChatGPT context
+
+When the user asks to complete site setup, first read the site, agent readiness, setup status, team catalog, knowledge and campaigns. Read the native business document only when the site supports it.
+
+Use facts available in the current conversation, user-provided attachments, authorized retrieved context and saved site knowledge. This plugin does not grant access to all historical ChatGPT conversations or guarantee that ChatGPT remembers the business. Never claim to have read an unavailable conversation. Ask only for missing information that materially affects accuracy; do not invent offers, prices, contacts, credentials, accomplishments or business claims.
+
+Map confirmed context to brandVoice, audience and guidance; knowledge source text and proposed facts; campaign title, brief and channel drafts; and supported native business content fields. Preserve the current document's design, identifiers and unrelated values. Use the tool's actual schema and current record version, never arbitrary field names.
+
+Save the authorized draft fields with their separate tools. Each save is an independent operation: report successful saves, leave failures explicit, and reread before retrying uncertain writes. After saving, reread readiness and setup status. Explain remaining knowledge approval, team review, model-binding and spending-policy requirements. Do not state that an agent was created or activated when only its site preferences were saved. Platform agent definitions and qualification remain operator-only. Users choose existing approved agents from the catalog in Bizoveya; the plugin may preview their assembled context.
