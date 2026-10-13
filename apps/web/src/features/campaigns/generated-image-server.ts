@@ -40,6 +40,7 @@ export async function generatePrivateImage(db: SupabaseClient, actor: string, wi
   // replay-safe even if the original request has since expired or qualification paused.
   const prior = await service.rpc('bz_resume_generated_media', { p_request: input.id, p_actor: actor }); denied(prior.error);
   const priorState = resumeSchema.parse(prior.data);
+  if (priorState.state !== 'unavailable' && (priorState.request.siteId !== sid || priorState.request.actorId !== actor)) throw new WorkspaceError(404, 'This image request is unavailable at this site.');
   if (priorState.state === 'committed') return priorState.record;
   if (priorState.state === 'pending') return resume(service, actor, wid, sid, input.id);
   if (priorState.state === 'failed') throw new WorkspaceError(409, 'This image request already failed and cannot call the provider again. Start a new reviewed request after resolving any spending state.');

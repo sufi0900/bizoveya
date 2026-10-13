@@ -1,5 +1,7 @@
 # Bizoveya platform documentation — start here
 
+- [93 First-four integration and recovery](93_FIRST_FOUR_INTEGRATION_AND_RECOVERY.md) — Turn4, MT276–279 pending; Turn5 final audit next.
+
 Latest fixed-budget delivery: **Turn1/5 complete**, durable voice/image admission and reviewed recovery through071–072. [Five-delivery plan, exact exits, verification and later samples](90_FIVE_DELIVERY_MEDIA_ADMISSION.md). Turn2 live voice is next; all founder acceptance remains pending.
 
 Current implementation guide: [86 Channel specialist runtime lineage](86_CHANNEL_SPECIALIST_RUNTIME_LINEAGE.md).

@@ -3,7 +3,7 @@ import { voiceSessionCloseSchema } from '@bizoveya/agent-contract';
 
 const uuid=z.string().uuid();
 export const liveVoiceCommandSchema=z.discriminatedUnion('action',[
- z.object({action:z.literal('start'),id:uuid,expectedQualificationVersion:z.number().int().min(1).max(50),reviewed:z.literal(true)}).strict(),
+ z.object({action:z.literal('start'),id:uuid,expectedQualificationVersion:z.number().int().min(1).max(50),reviewed:z.literal(true),useSiteContext:z.boolean().optional().default(false),contextRecordId:uuid.nullable().optional().default(null)}).strict(),
  z.object({action:z.literal('close'),id:uuid,input:voiceSessionCloseSchema}).strict(),
 ]);
 export const liveVoiceTokenSchema=z.object({requestId:uuid,token:z.string().min(1).max(8192),modelId:z.string().min(1).max(120),expiresAt:z.iso.datetime({offset:true}),newSessionExpiresAt:z.iso.datetime({offset:true}),websocketEndpoint:z.string().url().startsWith('wss://'),setup:z.object({model:z.string(),responseModalities:z.tuple([z.literal('AUDIO')]),systemInstruction:z.object({parts:z.tuple([z.object({text:z.string()}).strict()])}).strict(),inputAudioTranscription:z.object({}).strict(),outputAudioTranscription:z.object({}).strict()}).strict()}).strict();

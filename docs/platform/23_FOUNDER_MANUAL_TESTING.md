@@ -1,5 +1,7 @@
 # Founder manual testing record
 
+BZ-112/CW-112 — fixed Turn4 integrates optional capability isolation, Founder desk media receipts/core links, explicitly consented approved site and selected meeting/proposal voice context, confirmed/retryable close receipts, setup/cancellation guards, cross-site artwork replay protection and mobile/accessibility fixes. MT276–279 and all live/founder acceptance remain pending. No new migration/provider/hosted write/publication/settings change. Turn5 final audit and acceptance package is the sole remaining planned delivery. See [93](93_FIRST_FOUR_INTEGRATION_AND_RECOVERY.md).
+
 MT268–271 are pending for qualified browser Live voice: activation/no-call-on-load; one microphone/playback session; interruption/stop/corrected transcript transfer; private reviewed save/refresh and truthful free-vs-metered accounting. Exact four steps and samples are in [91](91_BROWSER_LIVE_VOICE_AND_REVIEWED_HANDOFF.md). No item is marked passed from automated mocks.
 
 | Test | Deferred acceptance | Status |

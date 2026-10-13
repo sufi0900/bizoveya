@@ -13,3 +13,9 @@ export async function admitMedia(db:SupabaseClient,userId:string,wid:string,sid:
  const context=await getSite(db,userId,wid,sid);if(context.workspace.role!=='owner')throw new WorkspaceError(403,'Only the workspace owner can authorize media requests.');
  const r=await db.rpc('bz_admit_media_request',{p_workspace_id:wid,p_site_id:sid,p_input:mediaAdmissionSchema.parse(input)});check(r.error);return mediaRequestSchema.parse(r.data);
 }
+
+/** Optional readiness must not turn a healthy core page into a setup screen. */
+export async function loadOptionalMedia(db:SupabaseClient,userId:string,wid:string,sid:string){
+ try{return {inventory:await loadMedia(db,userId,wid,sid),notice:''};}
+ catch(error){if(error instanceof WorkspaceError&&error.status===503)return {inventory:{capabilities:[],requests:[]},notice:'Optional voice and AI artwork readiness is unavailable. Typed proposals, uploads and templates remain available.'};throw error;}
+}

@@ -1,5 +1,11 @@
 # Five-delivery completion plan — Turn 1 media admission
 
+## Turn4 completion ledger
+
+BZ-112/CW-112 — fixed Turn4 integrates optional capability isolation, Founder desk media receipts/core links, explicitly consented approved site and selected meeting/proposal voice context, confirmed/retryable close receipts, setup/cancellation guards, cross-site artwork replay protection and mobile/accessibility fixes. MT276–279 and all live/founder acceptance remain pending. No new migration/provider/hosted write/publication/settings change. Turn5 final audit and acceptance package is the sole remaining planned delivery. See [93](93_FIRST_FOUR_INTEGRATION_AND_RECOVERY.md).
+
+Ledger: Turns1–4 assigned source exits closed; Turn5 final full audit/acceptance package remains. Base194fbb8; exact delivered successor is recorded in GitHub commit metadata/chat. No Turn4 coding exit is intentionally deferred.
+
 ## Turn3 completion ledger
 
 Turn3 source implementation and required automated checks are complete at the next delivered main successor of `d1fc47203fd3c51f3984fe1713adf1cf0ebbd996`: qualified one-attempt Gemini image execution, sanitized v2 generated provenance, retry-safe private Storage commit, immutable owner review and existing image-library/composition reuse through additives074–075. Verified520 web/201 admin tests,75 migrations/38 SQL scripts, both typechecks/lints/builds, boundaries, whitespace and148 projected pages. Hosted074–075 are installed with prior saved content preserved. No Turn1–2 coding item carries forward. Real image API/quota/billing qualification and MT272–275 remain pending; no provider call was made. See [92](92_PRIVATE_GENERATED_ARTWORK_EXECUTION.md). Completion ledger: **Turns1–3 complete; Turns4–5 planned**.

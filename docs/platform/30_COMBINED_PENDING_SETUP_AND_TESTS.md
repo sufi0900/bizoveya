@@ -1,5 +1,7 @@
 # Combined pending setup and manual tests
 
+BZ-112/CW-112 — fixed Turn4 integrates optional capability isolation, Founder desk media receipts/core links, explicitly consented approved site and selected meeting/proposal voice context, confirmed/retryable close receipts, setup/cancellation guards, cross-site artwork replay protection and mobile/accessibility fixes. MT276–279 and all live/founder acceptance remain pending. No new migration/provider/hosted write/publication/settings change. Turn5 final audit and acceptance package is the sole remaining planned delivery. See [93](93_FIRST_FOUR_INTEGRATION_AND_RECOVERY.md).
+
 Turn2 pending activation/acceptance: additive073 is installed; retain server-only `GEMINI_API_KEY` and `BIZOVEYA_MEDIA_SERVICE_KEY`, qualify the exact Gemini Live model/project/terms/pricing, then perform MT268–271 once. Missing voice activation does not block typed proposals or Turn3 source work. See [91](91_BROWSER_LIVE_VOICE_AND_REVIEWED_HANDOFF.md).
 
 | Test | Deferred acceptance | Status |

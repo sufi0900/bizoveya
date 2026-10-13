@@ -1,0 +1,10 @@
+import { mediaRequestSchema, voiceSessionCloseSchema } from '@bizoveya/agent-contract';
+import type { z } from 'zod';
+
+export type VoiceClose = { action: 'close'; id: string; input: z.infer<typeof voiceSessionCloseSchema> };
+/** Replaying this exact close receipt never starts another provider session. */
+export async function recordVoiceClose(endpoint: string, command: VoiceClose) {
+  const response = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, keepalive: true, signal: AbortSignal.timeout(8000), body: JSON.stringify(command) });
+  if (!response.ok) throw new Error('Voice stopped, but its closure was not confirmed. Retry saving this same receipt or ask the operator to inspect recovery. Do not start another session.');
+  return mediaRequestSchema.parse(await response.json());
+}

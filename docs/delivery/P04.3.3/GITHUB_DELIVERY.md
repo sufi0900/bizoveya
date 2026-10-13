@@ -1,5 +1,9 @@
 # Verified main delivery — P04.3.3 founder evidence checkpoint
 
+## Turn4 — BZ-112/CW-112
+
+BZ-112/CW-112 — fixed Turn4 integrates optional capability isolation, Founder desk media receipts/core links, explicitly consented approved site and selected meeting/proposal voice context, confirmed/retryable close receipts, setup/cancellation guards, cross-site artwork replay protection and mobile/accessibility fixes. MT276–279 and all live/founder acceptance remain pending. No new migration/provider/hosted write/publication/settings change. Turn5 final audit and acceptance package is the sole remaining planned delivery. See [93](../../platform/93_FIRST_FOUR_INTEGRATION_AND_RECOVERY.md).
+
 ## BZ-111 / CW-111 fixed delivery Turn3
 
 Base main `d1fc47203fd3c51f3984fe1713adf1cf0ebbd996`. Optional qualified Gemini artwork now has one-attempt server execution, sanitized generated provenance, retry-safe private Storage, immutable owner review and existing library/composition reuse through additives074–075. Full automated checks and hosted preservation verification passed. Real API/quota/billing activation and MT272–275 remain pending; no provider call. The exact expected-head non-force successor is recorded in GitHub/chat. See [guide92](../../platform/92_PRIVATE_GENERATED_ARTWORK_EXECUTION.md).
