@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import sharp from 'sharp';
 import { createHash } from 'node:crypto';
-import { sanitizePrivateMedia } from './private-media-sanitize';
+import { sanitizeGeneratedMedia, sanitizePrivateMedia } from './private-media-sanitize';
 const attestation = { alt: 'Blue background', rights: { basis: 'own-work' as const, evidence: 'Original test fixture', attested: true as const } };
 describe('server media sanitization', () => {
   it('reencodes bytes, strips metadata, retains alpha and hashes only the actual output', async () => {
@@ -22,5 +22,11 @@ describe('server media sanitization', () => {
   });
   it('rejects input beyond the transport limit before decoding', async () => {
     await expect(sanitizePrivateMedia(new Uint8Array(5 * 1024 * 1024 + 1), attestation)).rejects.toThrow('input limit');
+  });
+  it('reencodes provider bytes with sanitized provenance and an unresolved rights review', async () => {
+    const input = await sharp({ create: { width: 16, height: 24, channels: 3, background: 'blue' } }).png().withMetadata({ orientation: 6 }).toBuffer();
+    const result = await sanitizeGeneratedMedia(input, 'image/png', 'Blue generated assistant', { requestId: '11111111-1111-4111-8111-111111111111', provider: 'gemini', modelId: 'gemini-image', promptHash: 'a'.repeat(64) });
+    expect(result.descriptor).toMatchObject({ schema: 'private-media-descriptor-v2', origin: 'ai-generated', rights: { basis: 'provider-output', attested: false }, provenance: { provider: 'gemini' } });
+    expect((await sharp(result.bytes).metadata()).exif).toBeUndefined();
   });
 });

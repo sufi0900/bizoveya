@@ -1,5 +1,9 @@
 # Five-delivery completion plan — Turn 1 media admission
 
+## Turn3 completion ledger
+
+Turn3 source implementation and required automated checks are complete at the next delivered main successor of `d1fc47203fd3c51f3984fe1713adf1cf0ebbd996`: qualified one-attempt Gemini image execution, sanitized v2 generated provenance, retry-safe private Storage commit, immutable owner review and existing image-library/composition reuse through additives074–075. Verified520 web/201 admin tests,75 migrations/38 SQL scripts, both typechecks/lints/builds, boundaries, whitespace and148 projected pages. Hosted074–075 are installed with prior saved content preserved. No Turn1–2 coding item carries forward. Real image API/quota/billing qualification and MT272–275 remain pending; no provider call was made. See [92](92_PRIVATE_GENERATED_ARTWORK_EXECUTION.md). Completion ledger: **Turns1–3 complete; Turns4–5 planned**.
+
 ## Turn2 completion ledger
 
 Turn2 source implementation is complete at the next delivered main successor of `d751eb5adf3746fa6a78e3e5935fcf3be221c8c5`: authenticated qualified Gemini Live token execution, direct browser microphone/playback, interruption, disconnect/setup/session timeouts, transcript correction, separately reviewed agency-form handoff and truthful additive073 session closure. No Turn2 coding item carries into Turn3. Live qualification, credentials/quota, browser acceptance and MT268–271 remain pending; no provider call was made. See [91](91_BROWSER_LIVE_VOICE_AND_REVIEWED_HANDOFF.md). Completion ledger: **Turns1–2 complete; Turns3,4,5 planned**.

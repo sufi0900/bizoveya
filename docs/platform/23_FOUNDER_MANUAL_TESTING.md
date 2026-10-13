@@ -511,3 +511,4 @@ Evidence copies forMT-007/008: docs/delivery/P02.1/founder/admin-deployment-read
 | MT-031 | Signed-in onboarding/navigation/duplication/template access | Founder described specific1.9 failures and provided screenshots | [ ] failed; fixes require retest |
 | MT-032 | Other manual checks and022 | Founder reported other checks working and addition applied; exact cases/DB proof unspecified | [~] broad report only |
 | MT-033–040 | Changed1.10 flow/design/security regressions | Detailed steps in27; no founder1.10 result yet | [ ] pending |
+MT272–275 are pending for optional private generated artwork: real image qualification/no-call-on-load; one reviewed generation; refresh/replay/review persistence; reviewed composition plus disabled-artwork isolation/accounting. Exact four steps and copy/paste samples are in [92](92_PRIVATE_GENERATED_ARTWORK_EXECUTION.md). No item is marked passed from automated mocks.

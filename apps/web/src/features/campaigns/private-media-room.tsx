@@ -1,8 +1,9 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import type { z } from 'zod';
 import { privateMediaRecordSchema, privateMediaSummarySchema, type PrivateMediaRecord } from './private-media-contracts';
 import { MEDIA_UPLOAD_INPUT_LIMIT, mediaUploadInputSchema } from './private-media-upload-contracts';
+import { generatedImageInputSchema } from './generated-image-contracts';
 type Summary = z.infer<typeof privateMediaSummarySchema>;
 function summary(record: PrivateMediaRecord): Summary {
   const last = record.versions.at(-1)!;
@@ -13,7 +14,8 @@ async function base64(file: File) {
   for (let offset = 0; offset < bytes.length; offset += 16384) text += String.fromCharCode(...bytes.subarray(offset, offset + 16384));
   return btoa(text);
 }
-export function MediaRoom({ initial, owner, endpoint }: { initial: Summary[]; owner: boolean; endpoint: string }) {
+type ImageQualification = { version: number; document: { provider: string; modelId: string } };
+export function MediaRoom({ initial, owner, endpoint, imageQualification }: { initial: Summary[]; owner: boolean; endpoint: string; imageQualification: ImageQualification | null }) {
   const [items, setItems] = useState(initial);
   const [record, setRecord] = useState<PrivateMediaRecord | null>(null);
   const [version, setVersion] = useState(1);
@@ -26,11 +28,16 @@ export function MediaRoom({ initial, owner, endpoint }: { initial: Summary[]; ow
   const [reason, setReason] = useState('');
   const [decision, setDecision] = useState<'accepted' | 'rejected'>('accepted');
   const [reviewConfirmed, setReviewConfirmed] = useState(false);
+  const [prompt, setPrompt] = useState('');
+  const [generatedAlt, setGeneratedAlt] = useState('');
+  const [aspectRatio, setAspectRatio] = useState<'1:1' | '2:3' | '3:2' | '3:4' | '4:3' | '9:16' | '16:9'>('2:3');
+  const [generationReviewed, setGenerationReviewed] = useState(false);
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState('');
   const lock = useRef(false); const fileElement = useRef<HTMLInputElement>(null);
   const attempt = useRef<{ key: string; mediaId: string; attemptId: string } | null>(null);
-  const dirty = Boolean(file || reason.trim());
+  const generationAttempt = useRef<{ key: string; id: string } | null>(null);
+  const dirty = Boolean(file || reason.trim() || prompt.trim() || generatedAlt.trim());
   useEffect(() => {
     if (!dirty) return;
     const unload = (event: BeforeUnloadEvent) => event.preventDefault();
@@ -66,6 +73,15 @@ export function MediaRoom({ initial, owner, endpoint }: { initial: Summary[]; ow
     const next = privateMediaRecordSchema.parse(await json(`${endpoint}/upload`, parsed.data)); accept(next); setVersion(next.versions.length); clearUpload(); attempt.current = null;
     setMessage('Sanitized image saved privately. Review this new version before using it. No campaign image was changed.');
   }
+  async function generate() {
+    if (!owner || !imageQualification || !generationReviewed) throw new Error('AI artwork is not qualified or the reviewed request is incomplete.');
+    const key = JSON.stringify({ prompt, generatedAlt, aspectRatio, version: imageQualification.version });
+    if (generationAttempt.current?.key !== key) generationAttempt.current = { key, id: crypto.randomUUID() };
+    const parsed = generatedImageInputSchema.safeParse({ id: generationAttempt.current.id, expectedQualificationVersion: imageQualification.version, prompt, aspectRatio, alt: generatedAlt, reviewed: generationReviewed });
+    if (!parsed.success) throw new Error('Check the prompt, alternative text and review confirmation.');
+    const next = privateMediaRecordSchema.parse(await json(`${endpoint}/generate`, parsed.data)); accept(next); setVersion(next.versions.length); setRecord(next); setPrompt(''); setGeneratedAlt(''); setGenerationReviewed(false); generationAttempt.current = null;
+    setMessage('One generated image was sanitized and saved privately. Review this version before using it. Nothing was published.');
+  }
   const selected = record?.versions[version - 1];
   return <section className="bz-agent-room">
     <div className="bz-card"><h2>Your private images</h2><p>Only your own creator inventory appears here. Saved and archived versions retain their original bytes and rights history.</p>
@@ -81,6 +97,15 @@ export function MediaRoom({ initial, owner, endpoint }: { initial: Summary[]; ow
       </fieldset>
       <button className="bz-button" disabled={busy || !owner} onClick={() => { if (window.confirm('Recover tracked uploads that have been incomplete for at least ten minutes? Saved versions will be retained.')) void run(async () => { const result = await json(`${endpoint}/recover`, { confirmed: true }); attempt.current = null; setMessage(`${result.recovered} uploads recovered; ${result.pending} cleanup attempts remain. Saved versions retained.`); }); }}>Recover incomplete uploads</button>
       <p role="status" aria-live="polite">{message}</p>
+    </div>
+    <div className="bz-card"><h2>Optional AI artwork</h2><p>{imageQualification ? `${imageQualification.document.provider} · ${imageQualification.document.modelId}. One reviewed request creates at most one private image; the same request is never sent twice.` : 'AI artwork is paused or not qualified. Uploads, templates, text drafts and meetings still work.'}</p>
+      <fieldset disabled={busy || !owner || !imageQualification}><legend>Generate one private draft</legend>
+        <label>Image prompt<textarea value={prompt} maxLength={2000} onChange={event => { setPrompt(event.target.value); setGenerationReviewed(false); generationAttempt.current = null; }} /></label>
+        <label>Alternative text<textarea value={generatedAlt} maxLength={300} onChange={event => { setGeneratedAlt(event.target.value); setGenerationReviewed(false); generationAttempt.current = null; }} /></label>
+        <label>Aspect ratio<select value={aspectRatio} onChange={event => { setAspectRatio(event.target.value as typeof aspectRatio); setGenerationReviewed(false); generationAttempt.current = null; }}>{['1:1','2:3','3:2','3:4','4:3','9:16','16:9'].map(value => <option key={value}>{value}</option>)}</select></label>
+        <label><input type="checkbox" checked={generationReviewed} onChange={event => setGenerationReviewed(event.target.checked)} />I reviewed this one-attempt private generation request. It will not publish anything.</label>
+        <button className="bz-button" disabled={!imageQualification || !generationReviewed || prompt.trim().length < 10 || !generatedAlt.trim()} onClick={() => void run(generate)}>Generate one private image</button>
+      </fieldset>
     </div>
     <div className="bz-card"><h2>Version preview and review</h2>{record && selected ? <>
       <p>{record.archived ? 'Archived' : 'Active'} · revision {record.revision}. Review is immutable; corrections need a new image version.</p>

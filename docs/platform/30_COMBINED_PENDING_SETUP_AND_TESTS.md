@@ -345,3 +345,4 @@ Founder reported all previous new Supabase files applied through028 in this revi
 ## Founder setup report2026-10-03
 
 032 reported applied; do not reapply. MT102–109 remain pending. Read39 for exact Gemini Free Tier walkthrough, MT106 N/A for zero rates, MT108 conditional. Read12 for Nebius/NVIDIA key route and38 for automatic production deployment after PR merge. Manual steps must be provided in chat too.
+Turn3 pending activation/acceptance: additive074–075 are installed; retain server-only `GEMINI_API_KEY` and `BIZOVEYA_MEDIA_SERVICE_KEY`, qualify the exact Gemini image API/project/terms/pricing, then perform MT272–275 once. AI Studio generation is not API/free-tier evidence. Missing artwork activation does not block uploads, templates, text, assistant tasks, meetings or Turn4 source work. See [92](92_PRIVATE_GENERATED_ARTWORK_EXECUTION.md).

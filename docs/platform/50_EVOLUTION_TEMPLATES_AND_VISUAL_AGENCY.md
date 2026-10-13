@@ -1,5 +1,7 @@
 # Evolution record: templates, voice and the visual digital agency
 
+Fixed Turn3 completes Group1's optional generated-artwork source path without making artwork a core dependency. A qualified owner-reviewed Gemini request makes at most one provider attempt, sanitizes bytes and provenance, stores privately, requires immutable human review and then reuses the existing composition workflow. API activation/MT272–275 remain pending; Turn4 performs the integrated first-four closure review. Group5 office visualization remains ON HOLD. See [92](92_PRIVATE_GENERATED_ARTWORK_EXECUTION.md).
+
 BZ-109/CW-109 — five-delivery Turn 1: additive071–072 implements independent image/live-voice qualification, owner-only durable request admission, immutable provenance, one-attempt server claim/start/receipt boundaries, quota/concurrency limits, shared UTC budget checks and reviewed recovery. Admin Media capabilities and authenticated site media APIs are wired; neither endpoint starts a provider. Unknown usage remains unresolved; token issuance is not completed voice execution. Groups2/3 remain source-complete; Groups1/4 remain open for Turns2/3. Group5 ON HOLD; Group6 out of scope. Routine founder acceptance MT264–267 and earlier unanswered tests remain pending. See [90](90_FIVE_DELIVERY_MEDIA_ADMISSION.md).
 
 

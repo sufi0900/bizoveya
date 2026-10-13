@@ -1,5 +1,7 @@
 # Completed Bizoveya work only
 
+| CW-111 | Fixed Turn3 optional Gemini artwork: one-attempt execution, sanitized provenance, retry-safe private storage, review and composition reuse | Source and automated checks complete; hosted074–075 installed; real qualification/API/quota/billing MT272–275 pending; Turn4 integration next |
+
 | CW-110 | Fixed Turn2 browser Gemini Live voice: qualified one-use token route, mic/playback/interruption/cleanup, corrected transcript reviewed handoff and additive073 truthful close accounting | Source and automated checks complete; real qualification/credentials/quota/browser MT268–271 pending; Turn3 image execution/storage next |
 
 | Work | Completed source boundary | Evidence / pending acceptance |

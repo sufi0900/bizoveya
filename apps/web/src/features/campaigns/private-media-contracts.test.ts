@@ -24,6 +24,12 @@ describe('private media contract foundation', () => {
   it('rejects unsupported formats, URL/executable fields and false rights attestation', () => {
     for (const change of [{ mime: 'image/svg+xml' }, { mime: 'image/gif' }, { url: 'https://example.com/image.png' }, { script: 'alert(1)' }, { origin: 'ai-provider' }, { rights: { ...descriptor.rights, attested: false } }]) expect(privateMediaDescriptorSchema.safeParse({ ...descriptor, ...change }).success).toBe(false);
   });
+  it('accepts only sanitized generated provenance and still requires a separate owner review', () => {
+    const generated = { ...descriptor, schema: 'private-media-descriptor-v2', origin: 'ai-generated', rights: { basis: 'provider-output', evidence: 'Provider output requires owner review.', attested: false }, provenance: { requestId: mediaId, provider: 'gemini', modelId: 'gemini-image', promptHash: 'b'.repeat(64) } };
+    expect(privateMediaDescriptorSchema.safeParse(generated).success).toBe(true);
+    const record = createPrivateMedia(mediaId, scope, generated, time); expect(() => resolvePrivateMedia(record, scope, reference)).toThrow('review-required');
+    expect(privateMediaDescriptorSchema.safeParse({ ...generated, provenance: { ...generated.provenance, prompt: 'private prompt' } }).success).toBe(false);
+  });
   it('enforces byte, dimension, pixel and hash limits without claiming byte decoding', () => {
     for (const change of [{ bytes: 5 * 1024 * 1024 + 1 }, { bytes: 0 }, { width: 4097 }, { width: 4096, height: 4096 }, { width: 1.5 }, { sha256: 'not-a-hash' }, { alt: '\u0000' }]) expect(privateMediaDescriptorSchema.safeParse({ ...descriptor, ...change }).success).toBe(false);
     expect(privateMediaDescriptorSchema.safeParse({ ...descriptor, bytes: 5 * 1024 * 1024, width: 4000, height: 3000 }).success).toBe(true);

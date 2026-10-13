@@ -373,3 +373,4 @@ New canonical sources: [Founder manual testing](23_FOUNDER_MANUAL_TESTING.md), [
 Shared business-site templates26/29 remain separate from campaign visual templates. Use latest dated blocks for current state, older blocks for evolution history.
 
 - [51 Shared templates and LinkedIn image: four tests](51_VISUAL_TEMPLATES_AND_LINKEDIN_IMAGE.md)
+Fixed delivery Turn3 completes optional private generated-artwork source: one qualified owner-reviewed Gemini attempt, sanitized v2 provenance, retry-safe private Storage, immutable review and existing visual composition reuse. Real image API/quota/billing activation and MT272–275 remain pending. Turn4 integration and Turn5 final audit remain; office visualization stays ON HOLD. See [92](92_PRIVATE_GENERATED_ARTWORK_EXECUTION.md).

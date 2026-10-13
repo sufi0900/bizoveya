@@ -3,17 +3,28 @@ import { z } from 'zod';
 // Metadata admission only. A future server must decode, sanitize and hash bytes itself.
 export const PRIVATE_MEDIA_LIMITS = Object.freeze({ maxBytes: 5 * 1024 * 1024, maxSide: 4096, maxPixels: 12_000_000, maxVersions: 20 });
 const note = z.string().trim().min(1).max(500).refine(value => !/[\u0000-\u001f]/.test(value));
-export const privateMediaDescriptorSchema = z.object({
-  schema: z.literal('private-media-descriptor-v1'),
+const descriptorBase = {
   mime: z.enum(['image/png', 'image/jpeg']),
   bytes: z.number().int().min(1).max(PRIVATE_MEDIA_LIMITS.maxBytes),
   width: z.number().int().min(1).max(PRIVATE_MEDIA_LIMITS.maxSide),
   height: z.number().int().min(1).max(PRIVATE_MEDIA_LIMITS.maxSide),
   sha256: z.string().regex(/^[a-f0-9]{64}$/),
   alt: z.string().trim().min(1).max(300).refine(value => !/[\u0000-\u001f]/.test(value)),
+};
+export const userPrivateMediaDescriptorSchema = z.object({
+  schema: z.literal('private-media-descriptor-v1'),
+  ...descriptorBase,
   origin: z.literal('user-upload'),
   rights: z.object({ basis: z.enum(['own-work', 'licensed', 'permission']), evidence: note, attested: z.literal(true) }).strict(),
-}).strict().refine(value => value.width * value.height <= PRIVATE_MEDIA_LIMITS.maxPixels, 'Image exceeds pixel limit.');
+}).strict();
+export const generatedPrivateMediaDescriptorSchema = z.object({
+  schema: z.literal('private-media-descriptor-v2'),
+  ...descriptorBase,
+  origin: z.literal('ai-generated'),
+  rights: z.object({ basis: z.literal('provider-output'), evidence: note, attested: z.literal(false) }).strict(),
+  provenance: z.object({ requestId: z.uuid(), provider: z.enum(['gemini', 'openai']), modelId: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._-]{0,119}$/), promptHash: z.string().regex(/^[a-f0-9]{64}$/) }).strict(),
+}).strict();
+export const privateMediaDescriptorSchema = z.discriminatedUnion('schema', [userPrivateMediaDescriptorSchema, generatedPrivateMediaDescriptorSchema]).refine(value => value.width * value.height <= PRIVATE_MEDIA_LIMITS.maxPixels, 'Image exceeds pixel limit.');
 export type PrivateMediaDescriptor = z.infer<typeof privateMediaDescriptorSchema>;
 const reviewSchema = z.object({ decision: z.enum(['accepted', 'rejected']), actorId: z.uuid(), reason: note, reviewedAt: z.iso.datetime() }).strict();
 export const privateMediaRecordSchema = z.object({
