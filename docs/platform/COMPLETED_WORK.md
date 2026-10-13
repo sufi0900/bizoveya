@@ -1,5 +1,7 @@
 # Completed Bizoveya work only
 
+| CW-113 | Turn5 first-four source audit/closure and acceptance package | All four documented source groups complete after final checks; live/founder acceptance pending; see94 |
+
 | CW-112 | First-four integration, authorized context, media receipt/recovery and mobile/accessibility source closure | MT276–279/live acceptance pending; Turn5 final audit next; see93 |
 
 | CW-111 | Fixed Turn3 optional Gemini artwork: one-attempt execution, sanitized provenance, retry-safe private storage, review and composition reuse | Source and automated checks complete; hosted074–075 installed; real qualification/API/quota/billing MT272–275 pending; Turn4 integration next |

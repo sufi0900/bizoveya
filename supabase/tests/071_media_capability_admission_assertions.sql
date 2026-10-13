@@ -73,7 +73,7 @@ set local role service_role;select public.bz_claim_media_request(request,claim,a
 select public.bz_finish_media_request(request,claim,true,null,null,jsonb_build_object('tokenExpiresAt',clock_timestamp()+interval '30 seconds'),null) from mf;
 select pg_temp.expect(format('select public.bz_finish_media_request(%L,%L,true,0,0,null,null)',request,claim),'bz_media_session_active') from mf;reset role;
 do $$begin if not exists(select 1 from bizoveya_private.media_requests where status='issued' and spending_state='reserved' and input_tokens is null) then raise exception 'Token issuance falsely settled';end if;end;$$;
-update bizoveya_private.media_requests set expires_at=clock_timestamp()-interval '1 second' where capability='live-voice';
+update bizoveya_private.media_requests set expires_at=statement_timestamp()-interval '1 second' where capability='live-voice';
 set local role authenticated;select public.bz_admin_recover_media_request(request,'reserved','recover',null,'Synthetic expired session with unknown usage.',true) from mf;reset role;
 set local role authenticated;select public.bz_admin_recover_media_request(request,'unknown','reconcile',0,'Synthetic expired session charge confirmed.',true) from mf;reset role;
 -- Qualification changes are rechecked before provider start, not just on admission.

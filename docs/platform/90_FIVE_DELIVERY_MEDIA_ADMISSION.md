@@ -1,5 +1,9 @@
 # Five-delivery completion plan — Turn 1 media admission
 
+Final Turn5 verification:531 web/201 admin tests,75 migrations/38 SQL scripts,both typechecks/lints/builds,boundaries,whitespace,657 links and150-page canonical projection. All four documented first-version source groups are complete; live activation/founder acceptance stays pending. No further automatic source continuation after Turn5.
+
+BZ-113/CW-113 — Turn5 final audit closes the documented first-four source implementation, including matching terminal voice-receipt validation and hash-failure-safe closure. All five deliveries are complete after required checks; no sixth coding delivery is planned. Live qualification/activation, founder MT264–279 and earlier unanswered tests remain pending. Group5 office ON HOLD; Group6 out of scope. No hosted write/provider/publication/settings change. See [94](94_FIRST_FOUR_SOURCE_COMPLETION_AND_ACCEPTANCE.md).
+
 ## Turn4 completion ledger
 
 BZ-112/CW-112 — fixed Turn4 integrates optional capability isolation, Founder desk media receipts/core links, explicitly consented approved site and selected meeting/proposal voice context, confirmed/retryable close receipts, setup/cancellation guards, cross-site artwork replay protection and mobile/accessibility fixes. MT276–279 and all live/founder acceptance remain pending. No new migration/provider/hosted write/publication/settings change. Turn5 final audit and acceptance package is the sole remaining planned delivery. See [93](93_FIRST_FOUR_INTEGRATION_AND_RECOVERY.md).

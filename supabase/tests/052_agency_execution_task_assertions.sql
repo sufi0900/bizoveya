@@ -43,7 +43,7 @@ set local role authenticated;select set_config('request.jwt.claims','{"aal":"aal
 -- Authorization creates durable running state. An expired dispatch with no stage is safe to resume.
 select public.bz_admin_authorize_generation(g1,claim1,'Authorize synthetic safe resume.',true) from ex;
 select pg_temp.exexpect(format('select public.bz_admin_authorize_generation(%L,%L,%L,true)',g1,gen_random_uuid(),'Duplicate active authorization'),'bz_generation_busy') from ex;
-reset role;update bizoveya_private.generation_dispatches set expires_at=clock_timestamp()-interval '1 second' where generation_id=(select g1 from ex);
+reset role;update bizoveya_private.generation_dispatches set expires_at=statement_timestamp()-interval '1 second' where generation_id=(select g1 from ex);
 set local role authenticated;
 select pg_temp.exexpect(format('select public.bz_admin_authorize_generation(%L,%L,%L,true)',g1,gen_random_uuid(),'Bypass required recovery'),'bz_agency_execution_blocked') from ex;
 select public.bz_admin_reconcile_agency_execution(g1,2,'Inspect expired dispatch with no stage.',true) from ex;
@@ -53,7 +53,7 @@ select public.bz_admin_authorize_generation(g1,claim1,'Resume only after safe ch
 select public.bz_admin_authorize_generation(g2,claim2,'Authorize unstarted reservation fixture.',true) from ex;
 reset role;set local role service_role;
 select public.bz_claim_campaign_generation_stage(g2,gen_random_uuid(),'coordinator',claim3,owner_id) from ex;
-reset role;update bizoveya_private.generation_dispatches set expires_at=clock_timestamp()-interval '1 second' where generation_id=(select g2 from ex);
+reset role;update bizoveya_private.generation_dispatches set expires_at=statement_timestamp()-interval '1 second' where generation_id=(select g2 from ex);
 set local role authenticated;select set_config('request.jwt.claim.sub',(select owner_id::text from ex),true);select set_config('request.jwt.claims','{"aal":"aal2"}',true);
 select public.bz_admin_reconcile_agency_execution(g2,2,'Cancel only the unstarted expired reservation.',true) from ex;
 -- A committed provider-start marker is never cancelled or retried by reconciliation.
@@ -62,7 +62,7 @@ reset role;set local role service_role;
 create temporary table started_stage as select gen_random_uuid() id,gen_random_uuid() claim;grant all on started_stage to service_role,authenticated;
 select public.bz_claim_campaign_generation_stage(g3,started_stage.id,'coordinator',started_stage.claim,owner_id) from ex,started_stage;
 select public.bz_record_generation_request(started_stage.id,started_stage.claim,'{"runtimeVersion":"draft-runtime-v1-ai7.0.127","instructions":"Synthetic only","prompt":"No provider call","outputSchema":"coordinator","maxOutputTokens":100}') from started_stage;
-reset role;update bizoveya_private.generation_dispatches set expires_at=clock_timestamp()-interval '1 second' where generation_id=(select g3 from ex);
+reset role;update bizoveya_private.generation_dispatches set expires_at=statement_timestamp()-interval '1 second' where generation_id=(select g3 from ex);
 set local role authenticated;select set_config('request.jwt.claim.sub',(select owner_id::text from ex),true);select set_config('request.jwt.claims','{"aal":"aal2"}',true);
 select public.bz_admin_reconcile_agency_execution(g3,2,'Preserve the uncertain provider-start marker.',true) from ex;
 select pg_temp.exexpect(format('select public.bz_admin_authorize_generation(%L,%L,%L,true)',g3,gen_random_uuid(),'Unsafe retry attempt'),'bz_agency_execution_blocked') from ex;

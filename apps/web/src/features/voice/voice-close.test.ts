@@ -14,4 +14,13 @@ describe('voice closure confirmation', () => {
     vi.spyOn(globalThis, 'fetch').mockResolvedValue(Response.json({ status: 'succeeded' }));
     await expect(recordVoiceClose('/voice', command)).rejects.toThrow();
   });
+  it('accepts only the matching terminal voice receipt and preserves unknown accounting', async () => {
+    const receipt = { id: command.id, siteId: command.id, actorId: command.id, capability: 'live-voice', qualificationVersion: 1, profileId: command.id, status: 'failed', spendingState: 'unknown', reservedMicros: 1, chargedMicros: 1, inputTokens: null, outputTokens: null, providerStarted: true, expiresAt: 'now', createdAt: 'now', finishedAt: 'now', receipt: null, errorCode: 'client_usage_unverified', requestHash: 'a'.repeat(64) };
+    const fetcher = vi.spyOn(globalThis, 'fetch').mockResolvedValue(Response.json(receipt));
+    expect((await recordVoiceClose('/voice', command)).spendingState).toBe('unknown');
+    for (const patch of [{ id: '22222222-2222-4222-8222-222222222222' }, { capability: 'image' }, { status: 'issued' }]) {
+      fetcher.mockResolvedValue(Response.json({ ...receipt, ...patch }));
+      await expect(recordVoiceClose('/voice', command)).rejects.toThrow('unrelated or nonterminal');
+    }
+  });
 });
