@@ -1,5 +1,7 @@
 # Implementation phases and status ledger
 
+BZ-114/CW-114 — founder-requested second review identified and repaired pending voice-start microphone cleanup; Stop/unmount now releases starting resources immediately and token HTTP is bounded. Fresh533 web tests/92 files, typecheck/lint/build/boundaries/projection verify the correction. First-four documented source stays complete; live/founder acceptance stays pending. No additional source exit identified; no bug-free/public-release claim. Office ON HOLD for founder design; continuation paused. See [95](95_FIRST_FOUR_SECOND_REVIEW.md).
+
 Final Turn5 verification:531 web/201 admin tests,75 migrations/38 SQL scripts,both typechecks/lints/builds,boundaries,whitespace,657 links and150-page canonical projection. All four documented first-version source groups are complete; live activation/founder acceptance stays pending. No further automatic source continuation after Turn5.
 
 BZ-113/CW-113 — Turn5 final audit closes the documented first-four source implementation, including matching terminal voice-receipt validation and hash-failure-safe closure. All five deliveries are complete after required checks; no sixth coding delivery is planned. Live qualification/activation, founder MT264–279 and earlier unanswered tests remain pending. Group5 office ON HOLD; Group6 out of scope. No hosted write/provider/publication/settings change. See [94](94_FIRST_FOUR_SOURCE_COMPLETION_AND_ACCEPTANCE.md).

@@ -1,5 +1,7 @@
 # First-four source completion and acceptance — Turn 5 of 5
 
+Second-review correction: [95](95_FIRST_FOUR_SECOND_REVIEW.md) records an identified pending-start cleanup defect and its repair. The source verdict applies to the documented reviewed first-version workflows; live acceptance and public readiness remain pending.
+
 Base main: `b50cf91a2bda18b8c5949140fa97dffd2400958d`. The fixed five-delivery budget concludes here. Source-complete means the documented first-version private workflows are coded, wired and automatically verified. It does not mean live provider qualification, founder acceptance, commercial readiness or public release. Office visualization (Group5) remains ON HOLD for founder design input; custom agents (Group6) remain out of scope. Publishing/customer content is outside this private-draft delivery.
 
 ## Final source-to-plan audit
@@ -23,7 +25,7 @@ Final repairs require matching request ID, live-voice capability, recorded provi
 | 2 | [d1fc472](https://github.com/sufi0900/bizoveya/commit/d1fc47203fd3c51f3984fe1713adf1cf0ebbd996) | Complete browser Live voice and reviewed handoff |
 | 3 | [194fbb8](https://github.com/sufi0900/bizoveya/commit/194fbb831fca7c8e0e095e7e3d1c12242fbeb5bd) | Optional one-attempt image execution/private storage/review/composition |
 | 4 | [b50cf91](https://github.com/sufi0900/bizoveya/commit/b50cf91a2bda18b8c5949140fa97dffd2400958d) | Integrated context/permissions/recovery/mobile/accessibility |
-| 5 | Expected-head successor of b50cf91; exact final commit is recorded in GitHub commit metadata and delivery chat | Final audit, receipt repairs, complete automated checks, canonical records and consolidated acceptance |
+| 5 | [9366aab](https://github.com/sufi0900/bizoveya/commit/9366aabdecae66ef7e1f2469f8cb578b0f9d710b) | Final audit, receipt repairs, complete automated checks, canonical records and consolidated acceptance |
 
 No prior coding exit is intentionally carried to a sixth delivery. Historical lower paragraphs in earlier guides describe their original checkpoints; this final verdict supersedes their remaining-source/provider-blocker statements. The final main delivery requires all verification below to pass. Scheduled continuation pauses after this delivery regardless of live activation status.
 

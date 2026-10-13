@@ -1,5 +1,7 @@
 # Bizoveya platform documentation — start here
 
+- [95 First-four second review and voice-start repair](95_FIRST_FOUR_SECOND_REVIEW.md).
+
 - [94 First-four source completion and consolidated acceptance](94_FIRST_FOUR_SOURCE_COMPLETION_AND_ACCEPTANCE.md).
 
 - [93 First-four integration and recovery](93_FIRST_FOUR_INTEGRATION_AND_RECOVERY.md) — Turn4, MT276–279 pending; Turn5 final audit next.

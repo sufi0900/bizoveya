@@ -1,5 +1,7 @@
 # Verified main delivery — P04.3.3 founder evidence checkpoint
 
+BZ-114/CW-114 — founder-requested second review identified and repaired pending voice-start microphone cleanup; Stop/unmount now releases starting resources immediately and token HTTP is bounded. Fresh533 web tests/92 files, typecheck/lint/build/boundaries/projection verify the correction. First-four documented source stays complete; live/founder acceptance stays pending. No additional source exit identified; no bug-free/public-release claim. Office ON HOLD for founder design; continuation paused. See [95](../../platform/95_FIRST_FOUR_SECOND_REVIEW.md).
+
 BZ-113/CW-113 — Turn5 final audit closes the documented first-four source implementation, including matching terminal voice-receipt validation and hash-failure-safe closure. All five deliveries are complete after required checks; no sixth coding delivery is planned. Live qualification/activation, founder MT264–279 and earlier unanswered tests remain pending. Group5 office ON HOLD; Group6 out of scope. No hosted write/provider/publication/settings change. See [94](../../platform/94_FIRST_FOUR_SOURCE_COMPLETION_AND_ACCEPTANCE.md).
 
 ## Turn4 — BZ-112/CW-112
