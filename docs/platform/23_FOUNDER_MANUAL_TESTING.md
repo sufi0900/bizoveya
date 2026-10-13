@@ -1,5 +1,7 @@
 # Founder manual testing record
 
+MT268–271 are pending for qualified browser Live voice: activation/no-call-on-load; one microphone/playback session; interruption/stop/corrected transcript transfer; private reviewed save/refresh and truthful free-vs-metered accounting. Exact four steps and samples are in [91](91_BROWSER_LIVE_VOICE_AND_REVIEWED_HANDOFF.md). No item is marked passed from automated mocks.
+
 | Test | Deferred acceptance | Status |
 |---|---|---|
 | MT264 | Admin media page, ownership/MFA and independent capability inventory | Pending |

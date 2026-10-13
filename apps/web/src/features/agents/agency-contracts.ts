@@ -47,7 +47,6 @@ export const agencyRecordSchema = z.object({
 export const meetingDistributionResultSchema = z.object({ meeting: agencyRecordSchema, request: agencyRecordSchema }).strict().refine(value => value.meeting.kind === 'meeting' && value.request.kind === 'request' && value.meeting.meetingDistribution?.meetingId === value.meeting.id && value.meeting.meetingDistribution?.requestId === value.request.id && JSON.stringify(value.meeting.meetingDistribution) === JSON.stringify(value.request.meetingDistribution));
 export const agencyInventorySchema = z.array(agencyRecordSchema).max(64);
 export type AgencyRecord = z.infer<typeof agencyRecordSchema>;
-export const voiceEntryState = Object.freeze({ enabled: false, reason: 'Business voice transcription and speech providers have not been qualified. Paste and correct a transcript, then explicitly confirm the same text command.' });
 // Preparing work is deterministic and costs no model call. Tasks are proposals, never fake specialist results.
 export function delegationProposal(input: Extract<AgencyCommand, { action: 'request' }>) {
   return input.channels.map(channel => ({ channel, role: `${channel}-specialist` as const, specialistKind: 'content' as const, state: 'proposed' as const, requires: ['current-approved-knowledge', 'reviewed-channel-roster', 'qualified-role-binding', 'budget-admission', 'human-review'] }));

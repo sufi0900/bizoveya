@@ -1,5 +1,7 @@
 # Bizoveya user manual — prelaunch working edition
 
+Qualified owners now see **Private live voice** at the Founder desk. Start the microphone, converse, interrupt playback by speaking, stop, correct only the founder transcript, then use it in the existing proposal form. Transfer does not save or execute; review the exact text and selections and confirm the private proposal separately. When voice is disabled, typed text and pasted transcripts remain available. Activation and four pending checks are in [91](91_BROWSER_LIVE_VOICE_AND_REVIEWED_HANDOFF.md).
+
 BZ-109/CW-109 — five-delivery Turn 1: additive071–072 implements independent image/live-voice qualification, owner-only durable request admission, immutable provenance, one-attempt server claim/start/receipt boundaries, quota/concurrency limits, shared UTC budget checks and reviewed recovery. Admin Media capabilities and authenticated site media APIs are wired; neither endpoint starts a provider. Unknown usage remains unresolved; token issuance is not completed voice execution. Groups2/3 remain source-complete; Groups1/4 remain open for Turns2/3. Group5 ON HOLD; Group6 out of scope. Routine founder acceptance MT264–267 and earlier unanswered tests remain pending. See [90](90_FIVE_DELIVERY_MEDIA_ADMISSION.md).
 
 

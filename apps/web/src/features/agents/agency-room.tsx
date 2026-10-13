@@ -2,10 +2,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { MeetingSnapshotPanel } from './meeting-snapshot-panel';
-import { agencyCommandSchema, agencyGenerationSchema, agencyHandoffSchema, agencyRecordSchema, announcementKnowledgeHandoffSchema, meetingDeliberationSchema, meetingScheduleSchema, meetingDistributionSchema, meetingDistributionResultSchema, meetingInvitationSchema, channels, delegationProposal, voiceEntryState, type AgencyRecord } from './agency-contracts';
+import { agencyCommandSchema, agencyGenerationSchema, agencyHandoffSchema, agencyRecordSchema, announcementKnowledgeHandoffSchema, meetingDeliberationSchema, meetingScheduleSchema, meetingDistributionSchema, meetingDistributionResultSchema, meetingInvitationSchema, channels, delegationProposal, type AgencyRecord } from './agency-contracts';
 import { specialistDelegationInputSchema } from './specialist-contracts';
+import { FounderLiveVoice } from '@/features/voice/founder-live-voice';
 
-export function AgencyRoom({ initial, owner, endpoint }: { initial: AgencyRecord[]; owner: boolean; endpoint: string }) {
+export function AgencyRoom({ initial, owner, endpoint, liveVoiceVersion = null }: { initial: AgencyRecord[]; owner: boolean; endpoint: string; liveVoiceVersion?: number | null }) {
   const [records, setRecords] = useState(initial);
   const [kind, setKind] = useState<'request' | 'meeting'>('request');
   const [body, setBody] = useState('');
@@ -196,7 +197,8 @@ export function AgencyRoom({ initial, owner, endpoint }: { initial: AgencyRecord
     finally { lock.current = false; setBusy(false); }
   }
   return <section className="bz-agent-room">
-    <div className="bz-card"><h2>Founder desk</h2><p>Requests become proposed Blog, Pinterest and LinkedIn specialist tasks. A separately reviewed channel roster pins each responsibility to an approved Content-agent version; saving still costs no provider call.</p><p>{voiceEntryState.reason}</p>
+    <div className="bz-card"><h2>Founder desk</h2><p>Requests become proposed Blog, Pinterest and LinkedIn specialist tasks. A separately reviewed channel roster pins each responsibility to an approved Content-agent version; saving still costs no provider call.</p>
+      <FounderLiveVoice endpoint={endpoint.replace(/\/agency$/,'/media/live-voice')} qualificationVersion={liveVoiceVersion} owner={owner} onUseTranscript={text=>{setBody(text);setInputMode('corrected-transcript');setConfirmed(false);}} />
       <fieldset disabled={busy || !owner}><legend>{owner ? 'Prepare a private proposal' : 'Read-only proposals'}</legend>
         <label>Proposal type<select value={kind} onChange={event => { setKind(event.target.value as typeof kind); change(); }}><option value="request">Content request</option><option value="meeting">Meeting agenda</option></select></label>
         <label>Input source<select value={inputMode} onChange={event => { setInputMode(event.target.value as typeof inputMode); change(); }}><option value="text">Typed text</option><option value="corrected-transcript">Pasted and corrected transcript</option></select></label>

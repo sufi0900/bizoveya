@@ -1,5 +1,9 @@
 # Five-delivery completion plan — Turn 1 media admission
 
+## Turn2 completion ledger
+
+Turn2 source implementation is complete at the next delivered main successor of `d751eb5adf3746fa6a78e3e5935fcf3be221c8c5`: authenticated qualified Gemini Live token execution, direct browser microphone/playback, interruption, disconnect/setup/session timeouts, transcript correction, separately reviewed agency-form handoff and truthful additive073 session closure. No Turn2 coding item carries into Turn3. Live qualification, credentials/quota, browser acceptance and MT268–271 remain pending; no provider call was made. See [91](91_BROWSER_LIVE_VOICE_AND_REVIEWED_HANDOFF.md). Completion ledger: **Turns1–2 complete; Turns3,4,5 planned**.
+
 Source base `96625ff082dde25a5af8e7dcc2acb31e5899bdf1`. The founder requires five bounded deliveries, each completing its assigned coding and verification before handoff. Source-complete means implemented code and required automated checks; it does not mean deployed live acceptance, and does not mean missing coding. Deferred founder tests remain pending until before public reveal. No optional artwork requirement may block the core agency.
 
 | Turn | Fixed deliverable | Exit |

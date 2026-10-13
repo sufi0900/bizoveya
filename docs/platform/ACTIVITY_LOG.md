@@ -1,5 +1,7 @@
 # Bizoveya chronological activity and decision log
 
+2026-10-13 PKT — BZ-110/CW-110 fixed delivery Turn2 implemented end-to-end browser Gemini Live voice under disabled/synthetic verification: qualified one-use token route, trusted start ordering,16kHz microphone,24kHz playback, barge-in, cleanup/timeouts, corrected transcript handoff and additive073 free-vs-metered truthful closure. No live provider request/publication/message/settings change. MT268–271 remain pending. See [91](91_BROWSER_LIVE_VOICE_AND_REVIEWED_HANDOFF.md).
+
 ### BZ-109 — 2026-10-12 UTC — Turn1 durable media admission and five-delivery ledger
 
 Independent voice/image qualification, owner-only admission, trusted one-attempt worker boundaries, shared spending and guarded recovery. No provider execution. Four later deliveries remain scoped in guide90.

@@ -1,0 +1,28 @@
+-- Ephemeral browser voice-close contract; no provider call or real credential.
+begin;
+create temporary table vf(actor uuid,viewer uuid,wid uuid,sid uuid,profile uuid,request uuid,claim uuid,doc jsonb);
+insert into vf values(gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),null);
+insert into auth.users(id) select actor from vf union all select viewer from vf;
+insert into public.bizoveya_workspaces(id,owner_id,name) select wid,actor,'Voice fixture' from vf;
+insert into public.bizoveya_memberships(workspace_id,user_id,role) select wid,actor,'owner' from vf union all select wid,viewer,'viewer' from vf;
+insert into public.bizoveya_sites(id,workspace_id,name,mode,kind,status,created_by) select sid,wid,'Voice site','native_business','business','active',actor from vf;
+select bizoveya_private.set_platform_admin(actor,true,'fixture','Synthetic voice operator') from vf;
+update bizoveya_private.model_credentials set enabled=true where id='platform-gemini';
+insert into bizoveya_private.model_profiles(id,slug,version,revision) select profile,'voice-fixture',1,1 from vf;
+insert into bizoveya_private.model_profile_versions(profile_id,version,document,reason) select profile,1,'{"name":"Voice","provider":"gemini","credentialRef":"platform-gemini","modelId":"fixture-live","tier":"economical","maxOutputTokens":512,"dailyBudgetCents":10}','fixture' from vf;
+insert into bizoveya_private.model_profile_checks(profile_id,version,credential_id,credential_version) select profile,1,'platform-gemini',1 from vf;
+insert into bizoveya_private.spending_policies(profile_id,version,profile_version,document,reason) select profile,1,1,jsonb_build_object('enabled',true,'inputRateMicros',0,'outputRateMicros',0,'requestFeeMicros',0,'dailyLimitMicros',1000,'runLimitMicros',1000,'validUntil',clock_timestamp()+interval '1 day','source','https://example.com','reviewed',true),'fixture' from vf;
+update vf set doc=jsonb_build_object('provider','gemini','modelId','fixture-live','credentialRef','platform-gemini','credentialVersion',1,'budgetProfileId',profile,'costMode','free-attested','inputTokenLimit',512,'outputTokenLimit',256,'durationSeconds',60,'maxDailyRequests',2,'maxConcurrent',1,'inputRateMicros',0,'outputRateMicros',0,'requestFeeMicros',0,'validUntil',clock_timestamp()+interval '1 day','evidenceUrl','https://example.com/evidence','apiVerified',true,'commercialReviewed',true);
+create function pg_temp.expect(q text,n text) returns void language plpgsql as $$begin begin execute q;exception when others then if strpos(sqlerrm,n)>0 then return;end if;raise;end;raise exception 'Expected %',n;end;$$;
+do $$begin execute format('grant all on %I.vf to authenticated,service_role',(select nspname from pg_namespace where oid=pg_my_temp_schema()));end;$$;
+set local role authenticated;select set_config('request.jwt.claim.sub',(select actor::text from vf),true);select set_config('request.jwt.claims','{"aal":"aal2"}',true);
+select public.bz_admin_review_media_capability(wid,sid,jsonb_build_object('operationId',gen_random_uuid(),'capability','live-voice','expectedVersion',0,'action','qualify','reason','Synthetic free API evidence reviewed.','reviewed',true,'document',doc)) from vf;
+select public.bz_admit_media_request(wid,sid,jsonb_build_object('id',request,'capability','live-voice','expectedQualificationVersion',1,'document','{"purpose":"founder-assistant"}'::jsonb,'reviewed',true)) from vf;reset role;
+set local role service_role;select public.bz_claim_media_request(request,claim,actor) from vf;select public.bz_start_media_provider(request,claim,actor) from vf;select public.bz_finish_media_request(request,claim,true,null,null,jsonb_build_object('tokenExpiresAt',clock_timestamp()+interval '20 seconds'),null) from vf;reset role;
+set local role authenticated;select set_config('request.jwt.claim.sub',(select viewer::text from vf),true);select pg_temp.expect(format('select public.bz_close_media_voice_session(%L,%L,%L,%L)',wid,sid,request,'{"reason":"completed","inputTokens":12,"outputTokens":8,"transcriptHash":null,"providerUsageReported":true,"reviewed":true}'),'bz_forbidden') from vf;
+select set_config('request.jwt.claim.sub',(select actor::text from vf),true);
+select public.bz_close_media_voice_session(wid,sid,request,'{"reason":"completed","inputTokens":12,"outputTokens":8,"transcriptHash":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","providerUsageReported":true,"reviewed":true}') from vf;
+select public.bz_close_media_voice_session(wid,sid,request,'{"reason":"completed","inputTokens":12,"outputTokens":8,"transcriptHash":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","providerUsageReported":true,"reviewed":true}') from vf;
+select pg_temp.expect(format('select public.bz_close_media_voice_session(%L,%L,%L,%L)',wid,sid,request,'{"reason":"stopped","inputTokens":12,"outputTokens":8,"transcriptHash":null,"providerUsageReported":true,"reviewed":true}'),'bz_conflict') from vf;reset role;
+do $$begin if not exists(select 1 from bizoveya_private.media_requests where id=(select request from vf) and status='succeeded' and spending_state='settled' and charged_micros=0 and input_tokens=12 and receipt->>'usageSource'='client-provider-message') then raise exception 'Free voice closure not settled truthfully';end if;if has_function_privilege('anon','public.bz_close_media_voice_session(uuid,uuid,uuid,jsonb)','EXECUTE') then raise exception 'Anon voice closure grant';end if;end;$$;
+rollback;

@@ -1,5 +1,7 @@
 # Combined pending setup and manual tests
 
+Turn2 pending activation/acceptance: additive073 is installed; retain server-only `GEMINI_API_KEY` and `BIZOVEYA_MEDIA_SERVICE_KEY`, qualify the exact Gemini Live model/project/terms/pricing, then perform MT268–271 once. Missing voice activation does not block typed proposals or Turn3 source work. See [91](91_BROWSER_LIVE_VOICE_AND_REVIEWED_HANDOFF.md).
+
 | Test | Deferred acceptance | Status |
 |---|---|---|
 | MT264 | Admin media page, ownership/MFA and independent capability inventory | Pending |

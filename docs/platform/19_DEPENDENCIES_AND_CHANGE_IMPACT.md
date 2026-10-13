@@ -1,5 +1,7 @@
 # Dependencies and change-impact register
 
+BZ-110 dependency record: browser Live voice depends on installed071–073, an enabled current `live-voice` qualification, its current spending profile/credential version, server-only `GEMINI_API_KEY` and `BIZOVEYA_MEDIA_SERVICE_KEY`, microphone permission, WebSocket/audio browser support and actual Gemini quota. Missing any activation dependency disables voice only; typed/pasted proposals, templates, uploads, text execution and meetings remain available. Client usage is not authoritative metered billing. See [91](91_BROWSER_LIVE_VOICE_AND_REVIEWED_HANDOFF.md).
+
 BZ-109/CW-109 — five-delivery Turn 1: additive071–072 implements independent image/live-voice qualification, owner-only durable request admission, immutable provenance, one-attempt server claim/start/receipt boundaries, quota/concurrency limits, shared UTC budget checks and reviewed recovery. Admin Media capabilities and authenticated site media APIs are wired; neither endpoint starts a provider. Unknown usage remains unresolved; token issuance is not completed voice execution. Groups2/3 remain source-complete; Groups1/4 remain open for Turns2/3. Group5 ON HOLD; Group6 out of scope. Routine founder acceptance MT264–267 and earlier unanswered tests remain pending. See [90](90_FIVE_DELIVERY_MEDIA_ADMISSION.md).
 
 

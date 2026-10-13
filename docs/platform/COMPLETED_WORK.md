@@ -1,5 +1,7 @@
 # Completed Bizoveya work only
 
+| CW-110 | Fixed Turn2 browser Gemini Live voice: qualified one-use token route, mic/playback/interruption/cleanup, corrected transcript reviewed handoff and additive073 truthful close accounting | Source and automated checks complete; real qualification/credentials/quota/browser MT268–271 pending; Turn3 image execution/storage next |
+
 | Work | Completed source boundary | Evidence / pending acceptance |
 |---|---|---|
 | CW-109 | Turn1 durable independent media qualification/admission/accounting/recovery and server/admin wiring | Migrations071–072 and synthetic checks; MT264–267 pending; Turns2–5 separate |
