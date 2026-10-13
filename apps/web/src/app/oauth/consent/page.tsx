@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { z } from "zod";
+import { authorizationIdSchema } from "@/features/mcp/oauth-contracts";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { mcpConfig } from "@/features/mcp/config";
 import { ConsentForm } from "@/features/mcp/consent-form";
 export const dynamic = "force-dynamic";
 export default async function OAuthConsent({ searchParams }: { searchParams: Promise<{ authorization_id?: string }> }) {
   const id = (await searchParams).authorization_id;
-  if (!id || !z.uuid().safeParse(id).success) return <main className="flow-page"><h1>Invalid connection request</h1><p>Start the connection again from your plugin.</p></main>;
+  if (!id || !authorizationIdSchema.safeParse(id).success) return <main className="flow-page"><h1>Invalid connection request</h1><p>Start the connection again from your plugin.</p></main>;
   let state: { name: string; redirectUri: string; scopes: string[]; writes: boolean } | null = null;
   let issue = ""; let callback = ""; let needsLogin = false;
   try {

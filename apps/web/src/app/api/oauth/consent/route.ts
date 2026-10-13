@@ -1,10 +1,11 @@
 import { z } from "zod";
+import { authorizationIdSchema } from "@/features/mcp/oauth-contracts";
 import { readInput, workspaceApi, workspaceJson } from "@/features/workspaces/api";
 import { WorkspaceError } from "@/features/workspaces/store";
 import { mcpConfig } from "@/features/mcp/config";
 export const dynamic = "force-dynamic";
 const inputSchema = z.discriminatedUnion("decision", [
-  z.object({ authorizationId: z.uuid(), decision: z.enum(["approve", "deny"]) }).strict(),
+  z.object({ authorizationId: authorizationIdSchema, decision: z.enum(["approve", "deny"]) }).strict(),
   z.object({ clientId: z.uuid(), decision: z.literal("revoke") }).strict(),
 ]);
 export async function POST(request: Request) {
