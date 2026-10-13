@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "bizoveya",
+  "version": "0.2.0",
+  "description": "Fill Bizoveya site preferences, knowledge, campaign drafts and native website content from user-provided context; inspect agent readiness.",
+  "author": {
+    "name": "Sufian Mustafa"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Bizoveya",
+        "shortDescription": "Your workspaces in ChatGPT",
+        "longDescription": "Read your Bizoveya workspaces and fill site guidance, knowledge drafts, campaign content and native business website fields. Inspect actual agent readiness and preview approved context using your account permissions.",
+        "developerName": "Sufian Mustafa",
+        "category": "Productivity",
+        "defaultPrompt": "Show my Bizoveya workspaces and help me prepare a campaign draft."
+      }
+    }
+  }
+}
