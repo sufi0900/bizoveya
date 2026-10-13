@@ -4,6 +4,8 @@ import { NextResponse, type NextRequest } from "next/server";
 export async function middleware(request: NextRequest) {
   // Removed admin endpoints never depend on public authentication or redirect.
   const pathname = request.nextUrl.pathname.toLowerCase();
+  // The MCP endpoint authenticates an OAuth bearer token, never a browser cookie.
+  if (pathname === "/mcp" || pathname.startsWith("/.well-known/")) return NextResponse.next({ request });
   if (pathname === "/admin" || pathname.startsWith("/admin/") || pathname === "/api/admin" || pathname.startsWith("/api/admin/")) {
     return new NextResponse("Not found", { status: 404, headers: { "Cache-Control": "no-store" } });
   }

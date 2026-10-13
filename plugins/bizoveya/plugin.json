@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "bizoveya",
+  "version": "0.1.0",
+  "description": "Read Bizoveya workspaces, sites, private knowledge and campaign drafts; save drafts when enabled and authorized.",
+  "author": {
+    "name": "Sufian Mustafa"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Bizoveya",
+        "shortDescription": "Your workspaces in ChatGPT",
+        "longDescription": "Connect your Bizoveya account to read your accessible workspaces, sites, knowledge and campaigns. Optional draft saves use your existing workspace permissions and record versions.",
+        "developerName": "Sufian Mustafa",
+        "category": "Productivity",
+        "defaultPrompt": "Show my Bizoveya workspaces and help me prepare a campaign draft."
+      }
+    }
+  }
+}
