@@ -1,5 +1,7 @@
 # Completed Bizoveya work only
 
+| CW-116 | Safe connectivity failure categories, final preflight no-dispatch recovery, schema readiness and additive076 | Historical unknown charge and real new-key connectivity remain pending; see97 |
+
 | CW-115 | Existing runtime/qualification traced; expired hosted evidence identified read-only; stale capability text and navigation corrected | Live activation and MT280–283 remain pending; see96 |
 
 | CW-114 | Post-delivery source review and immediate pending-start microphone cleanup | Synthetic regressions verified; real browser acceptance pending; see95 |

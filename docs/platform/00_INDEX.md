@@ -1,5 +1,7 @@
 # Bizoveya platform documentation — start here
 
+- [97 Connectivity diagnostics and preflight recovery](97_CONNECTIVITY_DIAGNOSTICS_AND_PREFLIGHT_RECOVERY.md).
+
 - [96 Qualification expiry, execution controls and four exact founder steps](96_QUALIFICATION_EXPIRY_AND_EXECUTION_GUIDANCE.md).
 
 BZ-115/CW-115 — read-only hosted diagnosis confirms the three existing v2 agents are already approved and bound, but the shared Gemini connectivity test is older than24 hours and the enabled pricing policy expired on October10. Corrected stale admin/customer capability guidance and clarified that onboarding `executionEnabled:false` describes the assessment only. Existing execution/runtime remains implemented; no hosted policy, provider, deployment setting or saved content changed. Founder planning/campaign-save evidence is narrow; MT280–283 and earlier live acceptance remain pending. See [96](96_QUALIFICATION_EXPIRY_AND_EXECUTION_GUIDANCE.md).

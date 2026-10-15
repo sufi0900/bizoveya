@@ -1,4 +1,5 @@
-import {generateText} from 'ai';
+import {generateText,APICallError} from 'ai';
+import {providerFailure} from '../generation/diagnostics';
 import {createOpenAI} from '@ai-sdk/openai';
 import {createOpenAICompatible} from '@ai-sdk/openai-compatible';
 import {createGoogleGenerativeAI} from '@ai-sdk/google';
@@ -12,5 +13,9 @@ export async function testProvider(d:ProfileDocument,env:Record<string,string|un
  const signal=AbortSignal.timeout(20000);
  try{const result=await generateText({model,prompt,maxOutputTokens:128,maxRetries:0,abortSignal:signal,...(d.provider==='openai'?{providerOptions:{openai:{store:false}}}:{})});const usage=(n:number|undefined)=>typeof n==='number'&&Number.isInteger(n)&&n>=0&&n<=2000000?n:null;
  return {code:result.text.trim()==='BIZOVEYA_OK'?'response_matched':'unexpected_response',inputTokens:usage(result.usage.inputTokens),outputTokens:usage(result.usage.outputTokens)};
- }catch{return {code:signal.aborted?'timeout':'provider_error',inputTokens:null,outputTokens:null};}
+ }catch(error){
+ const failure=providerFailure(error,signal.aborted);
+ const code:TestResult['code']=!signal.aborted&&APICallError.isInstance(error)&&error.statusCode===404?'provider_model_unavailable':failure.error==='provider_or_output_error'||failure.error==='structured_output_invalid'||failure.error==='output_limit'?'provider_error':failure.error as TestResult['code'];
+ return {code,inputTokens:failure.inputTokens,outputTokens:failure.outputTokens};
+ }
 }

@@ -1,0 +1,43 @@
+-- Local synthetic fixture, not a hosted migration; fictional USD rates.
+begin;
+create temporary table sf(actor uuid,profile uuid,run uuid,claim uuid,run2 uuid,claim2 uuid,d jsonb);
+insert into sf values(gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),gen_random_uuid(),jsonb_build_object('enabled',true,'inputRateMicros',1000000,'outputRateMicros',1000000,'requestFeeMicros',0,'dailyLimitMicros',20000,'runLimitMicros',10000,'validUntil',clock_timestamp()+interval '7 days','source','https://example.com/fictional-test-pricing','reviewed',true));
+insert into auth.users(id) select actor from sf;
+select bizoveya_private.set_platform_admin(actor,true,'test-operator','Spending synthetic fixture') from sf;
+create function pg_temp.sexpect(q text,n text) returns void language plpgsql as $$begin begin execute q;exception when others then if strpos(sqlerrm,n)>0 then return;else raise exception 'Unexpected: %',sqlerrm;end if;end;raise exception 'Expected %',n;end;$$;
+do $$begin execute format('grant usage on schema %I to authenticated,service_role,anon',(select nspname from pg_namespace where oid=pg_my_temp_schema()));end;$$;
+grant all on sf to authenticated,service_role,anon;
+reset role;set local role authenticated;
+select set_config('request.jwt.claim.sub',(select actor::text from sf),true);select set_config('request.jwt.claims','{"aal":"aal1"}',true);
+select pg_temp.sexpect('select public.bz_admin_spending()','bz_mfa_required');
+select set_config('request.jwt.claims','{"aal":"aal2"}',true);
+select public.bz_admin_mutate_model(profile,'save','spending-profile','{"name":"Spending test","provider":"nebius","credentialRef":"platform-nebius","modelId":"fixture-model","tier":"economical","maxOutputTokens":128,"dailyBudgetCents":100}',0,'Create spending fixture profile') from sf;
+select public.bz_admin_mutate_credential('platform-nebius','enable',1,'Enable spending fixture',true);
+select public.bz_admin_mutate_model(profile,'check',null,null,1,'Check spending fixture model') from sf;
+select public.bz_admin_save_spending(profile,2,0,jsonb_set(d,'{requestFeeMicros}','100'),'Review fictional request fee',true) from sf;
+select public.bz_admin_begin_model_test(run,profile,2,2,claim,true,'Unknown historical provider fixture') from sf;
+reset role;set local role service_role;
+select public.bz_finish_model_test(run,claim,'provider_unavailable',null,null) from sf;
+reset role;
+do $$begin
+ if (select result_code from bizoveya_private.model_test_runs where id=(select run from sf))<>'provider_unavailable' then raise exception 'Diagnostic missing';end if;
+ if (select state from bizoveya_private.spending_ledger where run_id=(select run from sf))<>'unknown' then raise exception 'Unknown charge cleared';end if;
+end;$$;
+set local role authenticated;
+select pg_temp.sexpect(format('select public.bz_admin_begin_model_test(%L,%L,2,2,%L,true,''Unknown still blocks dispatch'')',run2,profile,claim2),'bz_spending_unresolved') from sf;
+select public.bz_admin_reconcile_spending(run,'unknown',100,'Synthetic independently verified cost',true) from sf;
+select public.bz_admin_begin_model_test(run2,profile,2,2,claim2,true,'Preflight no dispatch fixture') from sf;
+select pg_temp.sexpect(format('select public.bz_finish_model_test(%L,%L,''preflight_failed'',0,0)',run2,claim2),'permission denied') from sf;
+reset role;set local role service_role;
+select pg_temp.sexpect(format('select public.bz_finish_model_test(%L,%L,''preflight_failed'',null,null)',run2,claim2),'bz_invalid_test') from sf;
+select pg_temp.sexpect(format('select public.bz_finish_model_test(%L,%L,''preflight_failed'',0,0)',run2,gen_random_uuid()),'bz_test_expired') from sf;
+select public.bz_finish_model_test(run2,claim2,'preflight_failed',0,0) from sf;
+select pg_temp.sexpect(format('select public.bz_finish_model_test(%L,%L,''preflight_failed'',0,0)',run2,claim2),'bz_test_expired') from sf;
+reset role;
+do $$begin
+ if (select result_code from bizoveya_private.model_test_runs where id=(select run2 from sf))<>'preflight_failed' then raise exception 'Preflight diagnostic missing';end if;
+ if not exists(select 1 from bizoveya_private.spending_ledger where run_id=(select run2 from sf) and state='settled' and charged_micros=0) then raise exception 'Unused request fee retained';end if;
+end;$$;
+set local role authenticated;
+select public.bz_admin_begin_model_test(gen_random_uuid(),profile,2,2,gen_random_uuid(),true,'New test after proven preflight failure') from sf;
+rollback;

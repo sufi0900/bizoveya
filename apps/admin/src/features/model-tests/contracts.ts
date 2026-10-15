@@ -6,4 +6,4 @@ export type TestReport=z.infer<typeof reportSchema>;
 export function executionSetup(env:Record<string,string|undefined>){return {enabled:env.BIZOVEYA_ENABLE_MODEL_TESTS==='true',recorderConfigured:!!env.SUPABASE_SERVICE_ROLE_KEY?.trim(),keys:{nebius:!!env.BIZOVEYA_NEBIUS_API_KEY?.trim(),openai:!!env.BIZOVEYA_OPENAI_API_KEY?.trim(),gemini:!!env.BIZOVEYA_GEMINI_API_KEY?.trim()}};}
 export type TestSetup=ReturnType<typeof executionSetup>;
 export const prompt='Connectivity check only. Reply with exactly BIZOVEYA_OK and no other text.';
-export type TestResult={code:'response_matched'|'unexpected_response'|'provider_error'|'timeout';inputTokens:number|null;outputTokens:number|null};
+export type TestResult={code:'response_matched'|'unexpected_response'|'provider_error'|'timeout'|'preflight_failed'|'rate_limited'|'provider_payment_required'|'provider_access_denied'|'provider_request_rejected'|'provider_schema_rejected'|'provider_precondition_failed'|'provider_key_invalid'|'provider_key_blocked'|'provider_unavailable'|'provider_model_unavailable';inputTokens:number|null;outputTokens:number|null};

@@ -1,5 +1,10 @@
 # Bizoveya chronological activity and decision log
 
+Verified corrective delivery: 213 admin tests/23 files, 565 web tests/96 files, 76 ephemeral migrations/39 SQL assertion scripts, both typechecks/lints/production builds, application boundaries and whitespace passed. Canonical documentation projects to153 static pages. Hosted076 preserved all six checked content/test/ledger fingerprints and the one historical unknown charge. Provider/browser acceptance MT284–287 remains pending; no real provider call was made.
+
+BZ-116/CW-116 — connectivity diagnostics now distinguish safe fixed provider failure categories from final pre-provider permission/configuration failures. Additive076 retains claim/lease/accounting boundaries, releases only proven unused future preflight reservations (including request fees), and leaves historical unknown usage unchanged. Readiness is checked before reservation/provider entry. No live provider request, key read, Groq integration, publication or deployment-setting change. Hosted076 installed with all six saved-record fingerprints unchanged. See [97](97_CONNECTIVITY_DIAGNOSTICS_AND_PREFLIGHT_RECOVERY.md).
+
+
 ## 2026-10-13 — BZ-115 qualification expiry and misleading status repair
 
 BZ-115/CW-115 — read-only hosted diagnosis confirms the three existing v2 agents are already approved and bound, but the shared Gemini connectivity test is older than24 hours and the enabled pricing policy expired on October10. Corrected stale admin/customer capability guidance and clarified that onboarding `executionEnabled:false` describes the assessment only. Existing execution/runtime remains implemented; no hosted policy, provider, deployment setting or saved content changed. Founder planning/campaign-save evidence is narrow; MT280–283 and earlier live acceptance remain pending. See [96](96_QUALIFICATION_EXPIRY_AND_EXECUTION_GUIDANCE.md).
