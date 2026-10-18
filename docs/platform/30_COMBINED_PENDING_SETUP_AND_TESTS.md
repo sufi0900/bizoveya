@@ -1,5 +1,15 @@
 # Combined pending setup and manual tests
 
+BZ-117/CW-117 — development-only local admin Ollama rehearsal from owned historical snapshots; shared prompts/schema/citation checks, three-channel preview, bounded one-attempt transport, cancellation and private local retry-safe receipts. Additive077 is read-only and hosted with generation/review/spending fingerprints unchanged. Local output does not become a production customer draft or a Gemini pass. Founder MT288–291 and production unknown-spending recovery stay pending. See [98](98_LOCAL_ADMIN_OLLAMA_REHEARSAL.md).
+
+| Test | Deferred local acceptance | Status |
+|---|---|---|
+| MT288 | Local login/MFA and hosted route disabled | Pending |
+| MT289 | Clearly labelled synthetic fixture, no production mutation | Pending |
+| MT290 | Actual installed Ollama model, cited drafts and human quality review | Pending |
+| MT291 | Stop, receipt lookup and interrupted-process recovery | Pending |
+
+
 BZ-114/CW-114 — founder-requested second review identified and repaired pending voice-start microphone cleanup; Stop/unmount now releases starting resources immediately and token HTTP is bounded. Fresh533 web tests/92 files, typecheck/lint/build/boundaries/projection verify the correction. First-four documented source stays complete; live/founder acceptance stays pending. No additional source exit identified; no bug-free/public-release claim. Office ON HOLD for founder design; continuation paused. See [95](95_FIRST_FOUR_SECOND_REVIEW.md).
 
 BZ-113/CW-113 — Turn5 final audit closes the documented first-four source implementation, including matching terminal voice-receipt validation and hash-failure-safe closure. All five deliveries are complete after required checks; no sixth coding delivery is planned. Live qualification/activation, founder MT264–279 and earlier unanswered tests remain pending. Group5 office ON HOLD; Group6 out of scope. No hosted write/provider/publication/settings change. See [94](94_FIRST_FOUR_SOURCE_COMPLETION_AND_ACCEPTANCE.md).

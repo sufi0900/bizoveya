@@ -1,5 +1,7 @@
 # Bizoveya platform documentation — start here
 
+- [98 Local admin Ollama rehearsal](98_LOCAL_ADMIN_OLLAMA_REHEARSAL.md).
+
 - [97 Connectivity diagnostics and preflight recovery](97_CONNECTIVITY_DIAGNOSTICS_AND_PREFLIGHT_RECOVERY.md).
 
 - [96 Qualification expiry, execution controls and four exact founder steps](96_QUALIFICATION_EXPIRY_AND_EXECUTION_GUIDANCE.md).

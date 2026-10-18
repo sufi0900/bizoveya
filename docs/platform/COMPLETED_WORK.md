@@ -1,5 +1,7 @@
 # Completed Bizoveya work only
 
+| CW-117 | Local admin Ollama/fixture rehearsal, historical owner-scoped snapshot read, local receipt/recovery and draft preview | Source verified; real PC/Ollama MT288–291 pending; production acceptance unchanged; see98 |
+
 | CW-116 | Safe connectivity failure categories, final preflight no-dispatch recovery, schema readiness and additive076 | Historical unknown charge and real new-key connectivity remain pending; see97 |
 
 | CW-115 | Existing runtime/qualification traced; expired hosted evidence identified read-only; stale capability text and navigation corrected | Live activation and MT280–283 remain pending; see96 |
