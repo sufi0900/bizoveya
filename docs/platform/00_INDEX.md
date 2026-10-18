@@ -1,5 +1,7 @@
 # Bizoveya platform documentation — start here
 
+- [100 Local background execution and disconnect recovery](100_LOCAL_BACKGROUND_EXECUTION.md).
+
 - [99 Customer local execution and review](99_CUSTOMER_LOCAL_EXECUTION_AND_REVIEW.md).
 
 - [98 Local admin Ollama rehearsal](98_LOCAL_ADMIN_OLLAMA_REHEARSAL.md).

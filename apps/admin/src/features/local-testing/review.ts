@@ -1,5 +1,6 @@
-import {readFile,open,writeFile,unlink} from 'node:fs/promises';
+import {readFile,open,unlink} from 'node:fs/promises';
 import path from 'node:path';
+import {replaceReceipt} from './service';
 import {z} from 'zod';
 import {campaignQualitySchema} from '@bizoveya/agent-contract';
 import type {SupabaseClient} from '@supabase/supabase-js';
@@ -18,6 +19,6 @@ export async function reviewLocalReceipt(db:SupabaseClient,actor:string,input:z.
  const reviews=receipt.reviews??[];const last=reviews.at(-1);
  if(reviews.length!==input.expectedVersion){if(last?.version===input.expectedVersion+1&&last.decision===input.decision&&last.reason===input.reviewReason)return receipt;throw new AdminError(409,'REVIEW_CONFLICT','Read current receipt before reviewing.');}
  const result={...receipt,reviews:[...reviews,{version:reviews.length+1,decision:input.decision,reason:input.reviewReason,at:new Date().toISOString()}]};
- await writeFile(file,JSON.stringify(result,null,2),{mode:0o600});return result;
+ await replaceReceipt(file,result);return result;
  }finally{await handle.close();await unlink(lock);}
 }

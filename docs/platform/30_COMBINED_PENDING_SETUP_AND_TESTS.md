@@ -1,5 +1,12 @@
 # Combined pending setup and manual tests
 
+## Local disconnect repair — MT296–298 pending
+
+MT296: fixture admission promptly returns, pause/reload/read retains one request and final receipt. MT297: one real local run finishes Quality after monitoring is paused/closed while admin process stays alive; verify model/QA and preserved outputs. MT298: terminal final receipt and no duplicate dispatch after reload/read; inspect a genuine process crash manually without deleting receipts or auto-resuming. Samples and expected results in [100](100_LOCAL_BACKGROUND_EXECUTION.md).
+
+October18 founder evidence: customer fixture MT293 observed synthetic_workflow_checked/all three completed. Actual customer run1f86abfa used qwen3:4b; Coordinator/Content completed but Quality returned cancelled after main request503 around310 seconds. Final read showed failed with drafts preserved and no new model call. Customer transport and partial output are demonstrated; MT294 whole-run/quality acceptance is not passed. MT295 read recovery is evidenced narrowly; mobile/permission negatives remain pending. Task Manager17.9/20GB RAM and29.8/32.9GB committed plus prior allocation failure show independent memory pressure. Do not interpret the repair as a memory-capacity fix.
+
+
 ## Local customer pilot — MT292–295 pending
 
 MT292: same-owner local admin MFA and customer campaign navigation; hosted feature absent. MT293: fixture three-stage progress and synthetic output, no AI/production writes. MT294: real Ollama content/QA display and local request-changes/acceptance gating; receipt persists on PC. MT295: refresh/read/replay, stale review conflicts, foreign-site/member negatives and mobile keyboard layout. Samples/expected outcomes in [99](99_CUSTOMER_LOCAL_EXECUTION_AND_REVIEW.md).

@@ -1,5 +1,7 @@
 # Living documentation changelog
 
+BZ-119/CW-119 — local runs now admit promptly with HTTP202 and execute through Next.js after in the local admin process, independently of the browser/proxy abort signal. Separate read-only10-second monitoring, atomic checkpoints, scheduler-failure receipts and retained one-attempt locks/replays. No automatic restart/retry or production execution. See [100](100_LOCAL_BACKGROUND_EXECUTION.md).
+
 BZ-118/CW-118 — customer-side local Ollama execution panel on private campaign pages, fixed loopback admin bridge with owner/site/MFA checks, read-only progress polling and refresh recovery, three-channel drafts and explicit local human review. Hosted execution remains disabled; production drafts/accounting unchanged. Writer/reviewer instructions tightened after real qwen3:4b receipt evidence. See [99](99_CUSTOMER_LOCAL_EXECUTION_AND_REVIEW.md).
 
 BZ-117/CW-117 — development-only local admin Ollama rehearsal from owned historical snapshots; shared prompts/schema/citation checks, three-channel preview, bounded one-attempt transport, cancellation and private local retry-safe receipts. Additive077 is read-only and hosted with generation/review/spending fingerprints unchanged. Local output does not become a production customer draft or a Gemini pass. Founder MT288–291 and production unknown-spending recovery stay pending. See [98](98_LOCAL_ADMIN_OLLAMA_REHEARSAL.md).

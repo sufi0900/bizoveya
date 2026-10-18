@@ -14,7 +14,7 @@ export type DocumentEntry = {
 };
 
 const group = (name: string) => {
-  if (/^\d\d_/.test(name)) return Number(name.slice(0, 2)) <= 3 ? "Product & experience" : Number(name.slice(0, 2)) <= 9 ? "System & design" : "Delivery & guidance";
+  if (/^\d+_/.test(name)) return Number(name.split("_")[0]) <= 3 ? "Product & experience" : Number(name.split("_")[0]) <= 9 ? "System & design" : "Delivery & guidance";
   if (name.startsWith("ADR-")) return "Decisions";
   return "Progress & records";
 };

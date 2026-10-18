@@ -1,5 +1,7 @@
 # Implementation phases and status ledger
 
+BZ-119/CW-119 — local runs now admit promptly with HTTP202 and execute through Next.js after in the local admin process, independently of the browser/proxy abort signal. Separate read-only10-second monitoring, atomic checkpoints, scheduler-failure receipts and retained one-attempt locks/replays. No automatic restart/retry or production execution. See [100](100_LOCAL_BACKGROUND_EXECUTION.md).
+
 BZ-118/CW-118 — customer-side local Ollama execution panel on private campaign pages, fixed loopback admin bridge with owner/site/MFA checks, read-only progress polling and refresh recovery, three-channel drafts and explicit local human review. Hosted execution remains disabled; production drafts/accounting unchanged. Writer/reviewer instructions tightened after real qwen3:4b receipt evidence. See [99](99_CUSTOMER_LOCAL_EXECUTION_AND_REVIEW.md).
 
 First-four source status does not imply live acceptance. This follow-up is an explicit local customer pilot; not office visualization or public publication.

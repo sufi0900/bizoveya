@@ -1,5 +1,7 @@
 # Local admin Ollama rehearsal
 
+October18 follow-up: [100](100_LOCAL_BACKGROUND_EXECUTION.md) supersedes the HTTP-wait/Stop controls below. Runs admit first and continue in local admin; **Pause progress updates** stops monitoring only. Preserve old receipts; interrupted attempts are never silently retried.
+
 BZ-117/CW-117 — 18 October 2026 PKT. Base main `cb95f44d45511b0b729b37f6b1a26fb3db734d6c`. Founder authorizes local admin testing while the customer app remains hosted. No AGENTS or active checkpoint lease found; remote branches and open PR search inspected. No other open PR returned. Historical branches retained. Office visualization stays ON HOLD; custom agents out of scope.
 
 ## Delivered boundary and correction

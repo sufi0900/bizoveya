@@ -1,5 +1,9 @@
 # Completed Bizoveya work only
 
+Verification BZ-119:260 admin tests/29 files,578 web tests/98 files,77 ephemeral migrations/40 SQL assertions,both typechecks/lints/builds,boundaries,whitespace and156 projected pages passed. Actual Next15 after lifecycle verified with synthetic HTTP/file probe; provider responses mocked. Real Windows/Ollama/disconnect acceptance MT296–298 remains pending.
+
+| CW-119 | Independent local HTTP admission/background execution, atomic receipts and separate progress monitoring | Founder background acceptance pending; no process-crash resume or production activation; see100 |
+
 Verification BZ-118:578 web/98 files,252 admin/28 files,77 migrations/40 SQL assertions, both typechecks/lints/builds, boundaries/whitespace and155 projected pages. Browser download unavailable; real local-customer acceptance MT292–295 remains pending. No real model call, hosted SQL or production content change.
 
 | CW-118 | Local customer execution/progress/results/review; owner-scoped loopback bridge; writer/reviewer factual guidance | Automated verification recorded in99; MT292–295 pending; no production acceptance |

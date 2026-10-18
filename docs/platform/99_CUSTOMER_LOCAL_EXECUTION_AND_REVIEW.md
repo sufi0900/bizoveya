@@ -1,5 +1,7 @@
 # Customer local execution and review
 
+October18 follow-up: [100](100_LOCAL_BACKGROUND_EXECUTION.md) supersedes the HTTP-wait/Stop controls below. Runs admit first and continue in local admin; **Pause progress updates** stops monitoring only. Preserve old receipts; interrupted attempts are never silently retried.
+
 BZ-118/CW-118 — 18 October2026 PKT. Base remote main d93e6b317b4624c7ace049c5f4d1b8cfa1c68295. No AGENTS or active checkpoint lease; branches and historical open draft PR2 inspected without reuse. Founder authorized customer-visible results after local admin rehearsal. Office ON HOLD; custom agents out of scope.
 
 ## Delivered behavior
