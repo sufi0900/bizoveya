@@ -1,5 +1,9 @@
 # GitHub delivery and scheduled continuation
 
+BZ-118/CW-118 — customer-side local Ollama execution panel on private campaign pages, fixed loopback admin bridge with owner/site/MFA checks, read-only progress polling and refresh recovery, three-channel drafts and explicit local human review. Hosted execution remains disabled; production drafts/accounting unchanged. Writer/reviewer instructions tightened after real qwen3:4b receipt evidence. See [99](99_CUSTOMER_LOCAL_EXECUTION_AND_REVIEW.md).
+
+Delivery is a coherent expected-head non-force main update. Real provider quality remains pending; no automatic extra rounds. No new hosted migration or deployment setting required. See99 for four exact steps and samples.
+
 BZ-117/CW-117 — development-only local admin Ollama rehearsal from owned historical snapshots; shared prompts/schema/citation checks, three-channel preview, bounded one-attempt transport, cancellation and private local retry-safe receipts. Additive077 is read-only and hosted with generation/review/spending fingerprints unchanged. Local output does not become a production customer draft or a Gemini pass. Founder MT288–291 and production unknown-spending recovery stay pending. See [98](98_LOCAL_ADMIN_OLLAMA_REHEARSAL.md).
 
 Verification:240 admin tests/26 files,565 web tests/96 files,77 ephemeral migrations/40 SQL assertion executions,both typechecks/lints/builds and application boundaries passed. Web projection contains154 static pages including guide98. Hosted077 grants/preservation verified. Provider responses are mocked; actual Windows/Ollama/browser tests remain pending.

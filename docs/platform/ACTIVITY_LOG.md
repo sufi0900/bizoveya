@@ -1,5 +1,11 @@
 # Bizoveya chronological activity and decision log
 
+Verification BZ-118:578 web/98 files,252 admin/28 files,77 migrations/40 SQL assertions, both typechecks/lints/builds, boundaries/whitespace and155 projected pages. Browser download unavailable; real local-customer acceptance MT292–295 remains pending. No real model call, hosted SQL or production content change.
+
+### BZ-118 — 2026-10-18 PKT — Customer-visible local execution and review
+
+BZ-118/CW-118 — customer-side local Ollama execution panel on private campaign pages, fixed loopback admin bridge with owner/site/MFA checks, read-only progress polling and refresh recovery, three-channel drafts and explicit local human review. Hosted execution remains disabled; production drafts/accounting unchanged. Writer/reviewer instructions tightened after real qwen3:4b receipt evidence. See [99](99_CUSTOMER_LOCAL_EXECUTION_AND_REVIEW.md).
+
 ### BZ-117 — 2026-10-18 PKT — Local admin rehearsal without Gemini dependency
 
 BZ-117/CW-117 — development-only local admin Ollama rehearsal from owned historical snapshots; shared prompts/schema/citation checks, three-channel preview, bounded one-attempt transport, cancellation and private local retry-safe receipts. Additive077 is read-only and hosted with generation/review/spending fingerprints unchanged. Local output does not become a production customer draft or a Gemini pass. Founder MT288–291 and production unknown-spending recovery stay pending. See [98](98_LOCAL_ADMIN_OLLAMA_REHEARSAL.md).

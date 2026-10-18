@@ -1,5 +1,12 @@
 # Combined pending setup and manual tests
 
+## Local customer pilot — MT292–295 pending
+
+MT292: same-owner local admin MFA and customer campaign navigation; hosted feature absent. MT293: fixture three-stage progress and synthetic output, no AI/production writes. MT294: real Ollama content/QA display and local request-changes/acceptance gating; receipt persists on PC. MT295: refresh/read/replay, stale review conflicts, foreign-site/member negatives and mobile keyboard layout. Samples/expected outcomes in [99](99_CUSTOMER_LOCAL_EXECUTION_AND_REVIEW.md).
+
+Founder evidence October18: local admin login/MFA and fixture observed passed; downloaded receipt62f2a995 confirms actual ollama-loopback qwen3:4b, all three stages,6m27s, QAapproved=false/six warnings. Local transport/workflow passed; human quality failed (unsupported capabilities, short blog, missed slug claim and questionable reviewer findings). This does not pass all MT290 or recovery MT291. Production Gemini/unknown-spending recovery and unrelated agency-form styling stay pending.
+
+
 BZ-117/CW-117 — development-only local admin Ollama rehearsal from owned historical snapshots; shared prompts/schema/citation checks, three-channel preview, bounded one-attempt transport, cancellation and private local retry-safe receipts. Additive077 is read-only and hosted with generation/review/spending fingerprints unchanged. Local output does not become a production customer draft or a Gemini pass. Founder MT288–291 and production unknown-spending recovery stay pending. See [98](98_LOCAL_ADMIN_OLLAMA_REHEARSAL.md).
 
 | Test | Deferred local acceptance | Status |

@@ -1,5 +1,9 @@
 # Dependencies and change-impact register
 
+BZ-118/CW-118 — customer-side local Ollama execution panel on private campaign pages, fixed loopback admin bridge with owner/site/MFA checks, read-only progress polling and refresh recovery, three-channel drafts and explicit local human review. Hosted execution remains disabled; production drafts/accounting unchanged. Writer/reviewer instructions tightened after real qwen3:4b receipt evidence. See [99](99_CUSTOMER_LOCAL_EXECUTION_AND_REVIEW.md).
+
+Local web3000 requires local admin3001 on the same hostname, Supabase project and signed-in owner/admin identity. Migration077 is reused read-only. No new schema/key/dependency. Only backend forwards HttpOnly session cookies to fixed loopback admin; no credentials in client output. API refuses hosted/foreign origins/read-only members/foreign-site snapshots. Admin independently rechecks MFA and original requester ownership.
+
 BZ-117/CW-117 — development-only local admin Ollama rehearsal from owned historical snapshots; shared prompts/schema/citation checks, three-channel preview, bounded one-attempt transport, cancellation and private local retry-safe receipts. Additive077 is read-only and hosted with generation/review/spending fingerprints unchanged. Local output does not become a production customer draft or a Gemini pass. Founder MT288–291 and production unknown-spending recovery stay pending. See [98](98_LOCAL_ADMIN_OLLAMA_REHEARSAL.md).
 
 Verified corrective delivery: 213 admin tests/23 files, 565 web tests/96 files, 76 ephemeral migrations/39 SQL assertion scripts, both typechecks/lints/production builds, application boundaries and whitespace passed. Canonical documentation projects to153 static pages. Hosted076 preserved all six checked content/test/ledger fingerprints and the one historical unknown charge. Provider/browser acceptance MT284–287 remains pending; no real provider call was made.

@@ -45,3 +45,5 @@ it('preserves ambiguous recorded-start reservations when cancellation is refused
  const h=harness();h.rpc.mockImplementation(async(name:string)=>({data:name==='bz_claim_campaign_generation_stage'?h.ctx:null,error:['bz_record_generation_request','bz_cancel_unstarted_generation_stage'].includes(name)?{message:'uncertain'}:null} as never));
  await expect(executeGeneration(source,source,h.deps)).rejects.toThrow('preserve reservation');expect(h.provider).not.toHaveBeenCalled();
 });
+
+ it("separates capability evidence from workflow advice and checks reviewer requirements",()=>{const c=context();expect(stagePrompt("content",c).instructions).toContain("never turn a title generator into keyword research");expect(stagePrompt("quality",c).instructions).toContain("Check all three channels");expect(stagePrompt("quality",c).instructions).toContain("does not require a brand name");});

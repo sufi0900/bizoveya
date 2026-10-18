@@ -1,5 +1,9 @@
 # Completed Bizoveya work only
 
+Verification BZ-118:578 web/98 files,252 admin/28 files,77 migrations/40 SQL assertions, both typechecks/lints/builds, boundaries/whitespace and155 projected pages. Browser download unavailable; real local-customer acceptance MT292–295 remains pending. No real model call, hosted SQL or production content change.
+
+| CW-118 | Local customer execution/progress/results/review; owner-scoped loopback bridge; writer/reviewer factual guidance | Automated verification recorded in99; MT292–295 pending; no production acceptance |
+
 | CW-117 | Local admin Ollama/fixture rehearsal, historical owner-scoped snapshot read, local receipt/recovery and draft preview | Source verified; real PC/Ollama MT288–291 pending; production acceptance unchanged; see98 |
 
 | CW-116 | Safe connectivity failure categories, final preflight no-dispatch recovery, schema readiness and additive076 | Historical unknown charge and real new-key connectivity remain pending; see97 |

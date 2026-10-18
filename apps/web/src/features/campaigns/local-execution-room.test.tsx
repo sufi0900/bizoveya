@@ -1,0 +1,3 @@
+import React from 'react';import {renderToStaticMarkup} from 'react-dom/server';import {describe,it,expect} from 'vitest';
+import {LocalCampaignExecution} from './local-execution-room';
+describe('customer local execution screen',()=>{it('shows private local scope, explicit run, read-only recovery and each agent stage',()=>{const html=renderToStaticMarkup(<LocalCampaignExecution runs={[]} endpoint="/api/test"/>);for(const label of ['Watch your local agency work','Coordinator','Content specialist','Quality reviewer','Run local agents once','Read saved local result','production campaign history is unchanged','Choose a snapshot for this site'])expect(html).toContain(label);expect(html).toContain('disabled');expect(html).not.toContain('dangerouslySetInnerHTML');});});

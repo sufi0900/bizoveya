@@ -1,5 +1,7 @@
 # Bizoveya platform documentation — start here
 
+- [99 Customer local execution and review](99_CUSTOMER_LOCAL_EXECUTION_AND_REVIEW.md).
+
 - [98 Local admin Ollama rehearsal](98_LOCAL_ADMIN_OLLAMA_REHEARSAL.md).
 
 - [97 Connectivity diagnostics and preflight recovery](97_CONNECTIVITY_DIAGNOSTICS_AND_PREFLIGHT_RECOVERY.md).
