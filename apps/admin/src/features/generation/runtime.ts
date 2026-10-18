@@ -39,7 +39,7 @@ export async function executeGeneration(generationId:string,actorId:string,deps:
    return {status:'failed' as const,stage:kind};
   }
   try{result=await (deps.provider??generateStage)(kind,context,deps.env);}catch{result={output:null,error:'provider_error',inputTokens:null,outputTokens:null};}
-  if(!result.error){try{result.output=validateOutput(kind,result.output,context.snapshot);}catch{result={...result,output:null,error:'invalid_output'};}}
+  if(!result.error){try{result.output=validateOutput(kind,result.output,context.snapshot,context.prior);}catch{result={...result,output:null,error:'invalid_output'};}}
   const finish=await deps.recorder.rpc('bz_finish_campaign_generation_stage',{p_stage_id:id,p_claim:claim,p_output:result.output,p_error_code:result.error,p_input_tokens:result.inputTokens,p_output_tokens:result.outputTokens});
   if(finish.error)throw new Error('Result settlement unavailable; do not retry provider execution');
   if(result.error||result.inputTokens===null||result.outputTokens===null||result.inputTokens>context.inputLimit||result.outputTokens>context.outputLimit)return {status:'failed' as const,stage:kind};

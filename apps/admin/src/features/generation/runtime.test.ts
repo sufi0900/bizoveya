@@ -2,7 +2,7 @@ import {readFileSync} from 'node:fs';
 import {describe,it,expect,vi} from 'vitest';
 import {starterAgent,agentKinds,type AgentKind} from '@bizoveya/agent-contract';
 import {executeGeneration,type RuntimeDependencies} from './runtime';
-import {stagePrompt,validateOutput,type Claim} from './contracts';
+import {stagePrompt,validateOutput,requestedBlogRange,type Claim} from './contracts';
 const source='11111111-1111-4111-8111-111111111111';const citation={sourceId:source,sourceVersion:1,factId:'f1'};
 const outputs={coordinator:{schema:'campaign-plan-v1',topic:'AI workflows',audience:'Freelancers',objective:'Explain a practical workflow',requiredFacts:[citation],channelNotes:{blog:'Explain workflow',pinterest:'Summarize workflow',linkedin:'Discuss workflow'}},content:{schema:'campaign-drafts-v1',blog:{title:'AI workflows',summary:'A practical introduction',body:'Use AI thoughtfully and review outputs.',citations:[citation]},pinterest:{title:'AI workflows',description:'Discover a practical approach.',altText:'Text summarizing an AI workflow',citations:[citation]},linkedin:{post:'Use AI thoughtfully and review outputs.',citations:[citation]}},quality:{schema:'campaign-quality-v1',approved:true,issues:[],checkedCitations:[citation]}};
 function context():Claim{return {execute:true,inputLimit:32768,outputLimit:1500,prior:{},snapshot:{schema:'campaign-generation-input-v1',campaign:{id:source,version:1,document:{title:'AI workflows',brief:'Use approved facts only',blog:'manual text is not evidence',pinterest:'',linkedin:''}},preferences:{version:0,document:{brandVoice:'Practical',audience:'Freelancers',guidance:'Draft only'}},knowledge:[{sourceId:source,sourceVersion:1,title:'Facts',facts:[{id:'f1',text:'Our website explains AI workflows.'}],approvedAt:'2026-10-04T00:00:00Z'}],stages:agentKinds.map(kind=>({kind,agentId:source,agentVersion:1,agent:{...starterAgent(kind),modelTier:'economical'},profile:{name:'Fixture',provider:'gemini',credentialRef:'platform-gemini',modelId:'fixture-model',tier:'economical',maxOutputTokens:1500,dailyBudgetCents:100}})),limits:{maxStages:3,maxAttemptsPerStage:1,publish:false,externalTools:false}}};}
@@ -47,3 +47,40 @@ it('preserves ambiguous recorded-start reservations when cancellation is refused
 });
 
  it("separates capability evidence from workflow advice and checks reviewer requirements",()=>{const c=context();expect(stagePrompt("content",c).instructions).toContain("never turn a title generator into keyword research");expect(stagePrompt("quality",c).instructions).toContain("Check all three channels");expect(stagePrompt("quality",c).instructions).toContain("does not require a brand name");});
+
+it('blocks model approval for a short blog while preserving drafts',()=>{
+ const c=context();c.snapshot.campaign.document.brief='Blog draft: 600–800 words. Keep advice practical.';
+ const q=validateOutput('quality',outputs.quality,c.snapshot,{content:outputs.content});
+ expect(q).toMatchObject({approved:false,issues:[{channel:'blog',severity:'blocker',message:expect.stringContaining('600–800')}]});
+ expect(outputs.content.blog.body).toBe('Use AI thoughtfully and review outputs.');
+});
+it('allows a matching explicit blog range without inventing requirements',()=>{
+ const c=context();c.snapshot.campaign.document.brief='Blog: 20-30 words.';
+ const content={...outputs.content,blog:{...outputs.content.blog,body:Array(25).fill('word').join(' ')}};
+ expect(validateOutput('quality',outputs.quality,c.snapshot,{content})).toMatchObject({approved:true,issues:[]});
+ c.snapshot.campaign.document.brief='Write a useful blog. Social post: 20-30 words.';
+ expect(validateOutput('quality',outputs.quality,c.snapshot,{content:outputs.content})).toMatchObject({approved:true});
+});
+it('does not use coordinator length notes as authority',()=>{
+ const c=context();expect(validateOutput('quality',outputs.quality,c.snapshot,{content:outputs.content,coordinator:{channelNotes:{blog:'600–800 words'}}})).toMatchObject({approved:true});
+});
+
+it('parses only one valid explicit blog range',()=>{
+ expect(requestedBlogRange('Blog draft: 600–800 words')).toEqual({min:600,max:800});
+ expect(requestedBlogRange('Blog: 800-600 words')).toBeNull();
+ expect(requestedBlogRange('Blog: 600-800 words. Blog: 900-1000 words.')).toBeNull();
+ expect(requestedBlogRange('Pinterest: 20-30 words.')).toBeNull();
+});
+it('blocks overlong drafts as well as short drafts',()=>{
+ const c=context();c.snapshot.campaign.document.brief='Blog: 20-30 words.';
+ const content={...outputs.content,blog:{...outputs.content.blog,body:Array(31).fill('word').join(' ')}};
+ expect(validateOutput('quality',outputs.quality,c.snapshot,{content})).toMatchObject({approved:false});
+});
+it('hosted settlement records deterministic blockers without an extra provider call',async()=>{
+ const h=harness();h.ctx.snapshot.campaign.document.brief='Blog: 600-800 words.';h.ctx.prior={content:outputs.content};
+ await executeGeneration(source,source,h.deps);
+ const calls=h.rpc.mock.calls as unknown as [string,{p_output:unknown}][];
+ const quality=calls.filter(c=>c[0]==='bz_finish_campaign_generation_stage').at(-1);
+ expect(quality?.[1].p_output).toMatchObject({approved:false,issues:[{severity:'blocker'}]});
+ expect(h.provider).toHaveBeenCalledTimes(3);
+});

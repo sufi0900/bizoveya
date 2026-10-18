@@ -1,5 +1,8 @@
 # Dependencies and change-impact register
 
+BZ-120/CW-120 — local receipt a268523a confirms all three qwen3:4b stages completed in5m45s and two human changes-requested reviews were saved. This is execution/review-storage evidence, not content acceptance or proof of a deliberate disconnect. Writer/reviewer prompts now explicitly check tool-action claims and actual channel text. Shared local/hosted quality validation adds a deterministic blocker for an explicit numeric blog word range in the frozen brief; drafts and usage are preserved, with no extra call/retry. See [101](101_DRAFT_LENGTH_AND_REVIEW_RELIABILITY.md). No hosted SQL, provider call or settings change. Factual quality and corrected real output remain pending.
+
+
 BZ-119/CW-119 — local runs now admit promptly with HTTP202 and execute through Next.js after in the local admin process, independently of the browser/proxy abort signal. Separate read-only10-second monitoring, atomic checkpoints, scheduler-failure receipts and retained one-attempt locks/replays. No automatic restart/retry or production execution. See [100](100_LOCAL_BACKGROUND_EXECUTION.md).
 
 BZ-118/CW-118 — customer-side local Ollama execution panel on private campaign pages, fixed loopback admin bridge with owner/site/MFA checks, read-only progress polling and refresh recovery, three-channel drafts and explicit local human review. Hosted execution remains disabled; production drafts/accounting unchanged. Writer/reviewer instructions tightened after real qwen3:4b receipt evidence. See [99](99_CUSTOMER_LOCAL_EXECUTION_AND_REVIEW.md).

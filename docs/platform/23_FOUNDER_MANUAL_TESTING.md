@@ -1,5 +1,10 @@
 # Founder manual testing record
 
+BZ-120 evidence: receipt a268523a has three completed real local stages and persisted changes-requested reviewv1/v2. Refresh-after-review is not independently established by the packet; deliberate disconnect/process-crash and other negative tests remain pending. Content acceptance failed (316-word body, unsupported outlining claims, inaccurate reviewer findings).
+
+MT299 — pending: after updating source, use a fresh owned snapshot with brief `Blog draft: 600–800 words.` One explicitly authorized local run should retain outputs/usage; an out-of-range body must result in a deterministic blog blocker and disabled acceptance even if the model approves. A matching length is not factual approval.
+
+
 Verified corrective delivery: 213 admin tests/23 files, 565 web tests/96 files, 76 ephemeral migrations/39 SQL assertion scripts, both typechecks/lints/production builds, application boundaries and whitespace passed. Canonical documentation projects to153 static pages. Hosted076 preserved all six checked content/test/ledger fingerprints and the one historical unknown charge. Provider/browser acceptance MT284–287 remains pending; no real provider call was made.
 
 BZ-116/CW-116 — connectivity diagnostics now distinguish safe fixed provider failure categories from final pre-provider permission/configuration failures. Additive076 retains claim/lease/accounting boundaries, releases only proven unused future preflight reservations (including request fees), and leaves historical unknown usage unchanged. Readiness is checked before reservation/provider entry. No live provider request, key read, Groq integration, publication or deployment-setting change. Hosted076 installed with all six saved-record fingerprints unchanged. See [97](97_CONNECTIVITY_DIAGNOSTICS_AND_PREFLIGHT_RECOVERY.md).

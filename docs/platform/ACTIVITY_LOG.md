@@ -1,5 +1,11 @@
 # Bizoveya chronological activity and decision log
 
+Verification BZ-120:267 admin tests/29 files,578 web tests/98 files,both typechecks/lints/production builds,application boundaries,whitespace and1055 local Markdown links passed. Web generated157 projected pages including guide101. After tightening range parsing,45 targeted runtime/local regressions also passed. No migration changed; no new hosted SQL or actual provider/browser execution. MT299 and corrected content acceptance remain pending.
+
+
+BZ-120/CW-120 — local receipt a268523a confirms all three qwen3:4b stages completed in5m45s and two human changes-requested reviews were saved. This is execution/review-storage evidence, not content acceptance or proof of a deliberate disconnect. Writer/reviewer prompts now explicitly check tool-action claims and actual channel text. Shared local/hosted quality validation adds a deterministic blocker for an explicit numeric blog word range in the frozen brief; drafts and usage are preserved, with no extra call/retry. See [101](101_DRAFT_LENGTH_AND_REVIEW_RELIABILITY.md). No hosted SQL, provider call or settings change. Factual quality and corrected real output remain pending.
+
+
 Verification BZ-119:260 admin tests/29 files,578 web tests/98 files,77 ephemeral migrations/40 SQL assertions,both typechecks/lints/builds,boundaries,whitespace and156 projected pages passed. Actual Next15 after lifecycle verified with synthetic HTTP/file probe; provider responses mocked. Real Windows/Ollama/disconnect acceptance MT296–298 remains pending.
 
 BZ-119/CW-119 — local runs now admit promptly with HTTP202 and execute through Next.js after in the local admin process, independently of the browser/proxy abort signal. Separate read-only10-second monitoring, atomic checkpoints, scheduler-failure receipts and retained one-attempt locks/replays. No automatic restart/retry or production execution. See [100](100_LOCAL_BACKGROUND_EXECUTION.md).

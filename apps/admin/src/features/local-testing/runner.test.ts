@@ -44,3 +44,16 @@ describe('local real transport and shared validation',()=>{
  it('does not call a provider when cancelled',async()=>{const c=new AbortController();c.abort();const t=vi.fn();expect((await rehearse(context().snapshot,'ollama','qwen3:8b',c.signal,t)).status).toBe('cancelled');expect(t).not.toHaveBeenCalled();});
  it('bounds response bytes and stops malformed JSON',async()=>{for(const body of ['broken','x'.repeat(262145)]){const t=vi.fn().mockResolvedValue(new Response(body));expect((await rehearse(context().snapshot,'ollama','qwen3:8b',signal(),t)).status).toBe('failed');expect(t).toHaveBeenCalledTimes(1);}});
 });
+
+it('keeps real local drafts and independently blocks an incorrect model length approval',async()=>{
+ const snapshot=context().snapshot;snapshot.campaign.document.brief='Blog draft: 600–800 words.';
+ const transport=vi.fn(async()=>{
+  const output=fixtureStage('quality',snapshot).output as Record<string,unknown>;
+  output.approved=true;output.issues=[];
+  return new Response(JSON.stringify({model:'qwen3:4b',done:true,done_reason:'stop',message:{content:JSON.stringify(output)},prompt_eval_count:100,eval_count:50}));
+ });
+ const drafts=fixtureStage('content',snapshot).output;
+ const result=await ollamaStage('quality',snapshot,{content:drafts},'qwen3:4b',signal(),transport);
+ expect(result.error).toBeNull();expect(result.output).toMatchObject({approved:false,issues:[{severity:'blocker',message:expect.stringContaining('600–800')}]});
+ expect(result.inputTokens).toBe(100);expect(transport).toHaveBeenCalledTimes(1);
+});

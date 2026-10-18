@@ -23,7 +23,7 @@ export async function ollamaStage(kind:AgentKind,snapshot:Snapshot,prior:Record<
   if(data.model!==model)return {output:null,error:'local_model_mismatch',inputTokens,outputTokens};
   if(outputTokens!==null&&outputTokens>outputLimit)return {output:null,error:'output_limit',inputTokens,outputTokens};
   phase='output';
-  const output=validateOutput(kind,JSON.parse(data.message.content),snapshot);
+  const output=validateOutput(kind,JSON.parse(data.message.content),snapshot,prior);
   return {output,error:null,inputTokens,outputTokens};
  }catch{return {output:null,error:signal.aborted?'cancelled':boundedSignal.aborted?'local_timeout':phase==='transport'?'local_connection_failed':phase==='response'?'local_response_invalid':'local_output_invalid',inputTokens,outputTokens};}
 }
